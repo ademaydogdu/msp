@@ -22,6 +22,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Cayments> payments { get; set; }
         public virtual DbSet<Products> products { get; set; }
         public virtual DbSet<Users> users { get; set; }
+        public virtual DbSet<Company> Company { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
