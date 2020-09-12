@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
+            //this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
