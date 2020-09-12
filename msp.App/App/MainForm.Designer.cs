@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
@@ -127,6 +128,15 @@
             this.skinPaletteRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barLinkContainerItem1 = new DevExpress.XtraBars.BarLinkContainerItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.bbi_Version = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.bbi_UserName = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.bbi_Connect = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
+            this.bbi_Company = new DevExpress.XtraBars.BarStaticItem();
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -147,15 +157,6 @@
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
-            this.bbi_Version = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.bbi_UserName = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
-            this.bbi_Connect = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.bbi_Company = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -289,6 +290,7 @@
             this.ribbonPage7,
             this.ribbonPage8});
             this.ribbon.QuickToolbarItemLinks.Add(this.barLinkContainerItem1);
+            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbon.Size = new System.Drawing.Size(1087, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar1;
             // 
@@ -951,6 +953,69 @@
             this.barLinkContainerItem1.Id = 98;
             this.barLinkContainerItem1.Name = "barLinkContainerItem1";
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem1.Caption = "Version";
+            this.barStaticItem1.Enabled = false;
+            this.barStaticItem1.Id = 99;
+            this.barStaticItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barStaticItem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "barHeaderItem1";
+            this.barHeaderItem1.Id = 100;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // bbi_Version
+            // 
+            this.bbi_Version.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bbi_Version.Caption = "0.0.0.0";
+            this.bbi_Version.Id = 101;
+            this.bbi_Version.Name = "bbi_Version";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "Kullanıcı :";
+            this.barStaticItem2.Enabled = false;
+            this.barStaticItem2.Id = 102;
+            this.barStaticItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barStaticItem2.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barStaticItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barStaticItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // bbi_UserName
+            // 
+            this.bbi_UserName.Id = 103;
+            this.bbi_UserName.Name = "bbi_UserName";
+            // 
+            // barStaticItem3
+            // 
+            this.barStaticItem3.Caption = "Connect :";
+            this.barStaticItem3.Enabled = false;
+            this.barStaticItem3.Id = 104;
+            this.barStaticItem3.Name = "barStaticItem3";
+            // 
+            // bbi_Connect
+            // 
+            this.bbi_Connect.Id = 105;
+            this.bbi_Connect.Name = "bbi_Connect";
+            // 
+            // barStaticItem4
+            // 
+            this.barStaticItem4.Caption = "İşyeri :";
+            this.barStaticItem4.Enabled = false;
+            this.barStaticItem4.Id = 106;
+            this.barStaticItem4.Name = "barStaticItem4";
+            // 
+            // bbi_Company
+            // 
+            this.bbi_Company.Id = 107;
+            this.bbi_Company.Name = "bbi_Company";
+            // 
             // barSatis
             // 
             this.barSatis.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1098,71 +1163,9 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem1.Caption = "Version";
-            this.barStaticItem1.Enabled = false;
-            this.barStaticItem1.Id = 99;
-            this.barStaticItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.barStaticItem1.ItemAppearance.Normal.Options.UseFont = true;
-            this.barStaticItem1.Name = "barStaticItem1";
-            // 
-            // barHeaderItem1
-            // 
-            this.barHeaderItem1.Caption = "barHeaderItem1";
-            this.barHeaderItem1.Id = 100;
-            this.barHeaderItem1.Name = "barHeaderItem1";
-            // 
-            // bbi_Version
-            // 
-            this.bbi_Version.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bbi_Version.Caption = "0.0.0.0";
-            this.bbi_Version.Id = 101;
-            this.bbi_Version.Name = "bbi_Version";
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.Caption = "Kullanıcı :";
-            this.barStaticItem2.Enabled = false;
-            this.barStaticItem2.Id = 102;
-            this.barStaticItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.barStaticItem2.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barStaticItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.barStaticItem2.ItemAppearance.Normal.Options.UseFont = true;
-            this.barStaticItem2.Name = "barStaticItem2";
-            // 
-            // bbi_UserName
-            // 
-            this.bbi_UserName.Id = 103;
-            this.bbi_UserName.Name = "bbi_UserName";
-            // 
-            // barStaticItem3
-            // 
-            this.barStaticItem3.Caption = "Connect :";
-            this.barStaticItem3.Enabled = false;
-            this.barStaticItem3.Id = 104;
-            this.barStaticItem3.Name = "barStaticItem3";
-            // 
-            // bbi_Connect
-            // 
-            this.bbi_Connect.Id = 105;
-            this.bbi_Connect.Name = "bbi_Connect";
-            // 
-            // barStaticItem4
-            // 
-            this.barStaticItem4.Caption = "İşyeri :";
-            this.barStaticItem4.Enabled = false;
-            this.barStaticItem4.Id = 106;
-            this.barStaticItem4.Name = "barStaticItem4";
-            // 
-            // bbi_Company
-            // 
-            this.bbi_Company.Id = 107;
-            this.bbi_Company.Name = "bbi_Company";
-            // 
             // MainForm
             // 
+            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 546);

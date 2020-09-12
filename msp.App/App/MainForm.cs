@@ -18,6 +18,8 @@ namespace msp.App
         public MainForm()
         {
             InitializeComponent();
+
+            this.ribbon.Minimized = true;
         }
 
         #region Method
