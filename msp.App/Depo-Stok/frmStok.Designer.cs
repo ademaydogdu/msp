@@ -79,6 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             this.SuspendLayout();
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.gridControl1);
@@ -130,6 +134,7 @@
             // 
             // colname
             // 
+            this.colname.Caption = "Adı";
             this.colname.FieldName = "name";
             this.colname.Name = "colname";
             this.colname.Visible = true;
@@ -268,6 +273,7 @@
             this.btnEditProduct.Id = 2;
             this.btnEditProduct.ImageOptions.ImageIndex = 2;
             this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditProduct_ItemClick);
             // 
             // btnSeaProduct
             // 

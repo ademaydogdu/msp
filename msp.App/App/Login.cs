@@ -57,9 +57,9 @@ namespace Msp.App.App
             ConnectionDTO config = new ConnectionDTO
             {
                 Database = "msp", //Global.SqlConnection.Database,
-                Server = "DG", //Global.SqlConnection.Server,
-                Password = "123D654!", //Global.SqlConnection.Password,
-                UserId = "sa" //Global.SqlConnection.UserId
+                Server = "R00T\\SQLEXPRESS", //Global.SqlConnection.Server,
+                Password = "123456", //Global.SqlConnection.Password,
+                UserId = "ss" //Global.SqlConnection.UserId
             };
 
             UserAuthDto model = new UserAuthDto
