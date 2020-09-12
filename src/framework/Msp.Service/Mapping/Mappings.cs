@@ -15,6 +15,8 @@ namespace Msp.Service.Mapping
         {
             cfg.CreateMap<Users, UsersDTO>();
             cfg.CreateMap<UsersDTO, Users>();
+            cfg.CreateMap<Products, ProductDTO>();
+            cfg.CreateMap<ProductDTO, Products>();
 
         }
 

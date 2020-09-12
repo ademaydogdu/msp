@@ -8,21 +8,36 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Msp.Service.Repository;
+using Msp.Models.Models;
+using Msp.Service.Service.DepotStock;
+using Msp.App.Depo_Stok;
 
 namespace msp.App
 {
     public partial class frmStok : DevExpress.XtraEditors.XtraForm
     {
+        Repository _repository;
         public frmStok()
         {
             InitializeComponent();
+            _repository = new Repository();
         }
+
+        List<ProductDTO> _productlist = new List<ProductDTO>();
 
         private void frmStok_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'mspDataSet.products' table. You can move, or remove it, as needed.
-            //this.productsTableAdapter.Fill(this.mspDataSet.products);
+            _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            productsBindingSource.DataSource = _productlist;
 
+        }
+
+        private void btnEditProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var row = (ProductDTO)bandedGridView1.GetFocusedRow();
+            frmStockEdit frm = new frmStockEdit();
+            frm.Show(row.id);
         }
     }
 }

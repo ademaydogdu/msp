@@ -8,7 +8,7 @@ namespace Msp.Entity.Entities
     public partial class MspDbContext : DbContext
     {
         public MspDbContext()
-            : base("name=Model1")
+            : base("data source=R00T\\SQLEXPRESS;initial catalog=msp;user id=ss;password=123456;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }
 
