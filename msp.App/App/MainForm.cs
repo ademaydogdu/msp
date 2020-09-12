@@ -8,8 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
-using System.Data.EntityClient;
-
+using Msp.App.App;
+using Msp.Infrastructure;
 
 namespace msp.App
 {
@@ -20,12 +20,58 @@ namespace msp.App
             InitializeComponent();
         }
 
-        //class Program
-        //{
-        //    static void Main(string[] args)
-        //    {
-        //    }
-        //}
+        #region Method
+        public bool IsConnected()
+        {
+            System.Uri Url = new System.Uri("http://www.google.com");
+            System.Net.WebRequest WebReq;
+            System.Net.WebResponse Resp;
+            WebReq = System.Net.WebRequest.Create(Url);
+            try
+            {
+                Resp = WebReq.GetResponse();
+                Resp.Close();
+                WebReq = null;
+                return true;
+            }
+            catch
+            {
+                WebReq = null;
+                return false;
+            }
+        }
+        #endregion
+
+        #region Form
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Login loForm = new Login();
+            loForm.TopMost = true;
+            loForm.ShowDialog();
+
+            if (AppMain.User != null)
+            {
+
+            }
+            else
+            {
+                Application.ExitThread();
+            }
+
+
+
+
+
+        }
+
+        #endregion
+
+
+
+        #region Bar_Buton
+
+
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -37,7 +83,7 @@ namespace msp.App
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-        
+
         }
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
@@ -56,5 +102,9 @@ namespace msp.App
         {
 
         }
+
+        #endregion
+
+
     }
 }

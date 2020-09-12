@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mspDataSet = new msp.App.mspDataSet();
-            this.productsTableAdapter = new msp.App.mspDataSetTableAdapters.productsTableAdapter();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
@@ -45,25 +43,23 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnProductCards = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddNewProduct = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.btnEditProduct = new DevExpress.XtraBars.BarButtonItem();
-            this.btnViewProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemProduct = new DevExpress.XtraBars.BarButtonItem();
-            this.bt = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEditProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnSeaProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuickChange = new DevExpress.XtraBars.BarButtonItem();
             this.btnBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
             this.btnClose = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.btnViewProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.bt = new DevExpress.XtraBars.BarButtonItem();
             this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
@@ -72,7 +68,6 @@
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mspDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -84,28 +79,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             this.SuspendLayout();
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "products";
-            this.productsBindingSource.DataSource = this.mspDataSet;
-            // 
-            // mspDataSet
-            // 
-            this.mspDataSet.DataSetName = "mspDataSet";
-            this.mspDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 41);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1018, 613);
+            this.layoutControl1.Size = new System.Drawing.Size(1018, 654);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -115,7 +96,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.bandedGridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(994, 589);
+            this.gridControl1.Size = new System.Drawing.Size(994, 630);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
@@ -190,7 +171,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1018, 613);
+            this.Root.Size = new System.Drawing.Size(1018, 654);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -199,7 +180,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(104, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(998, 593);
+            this.layoutControlItem1.Size = new System.Drawing.Size(998, 634);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -207,8 +188,6 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
@@ -234,30 +213,11 @@
             this.barToolbarsListItem1,
             this.barSubItem1,
             this.barEditItem1});
-            this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 17;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMarqueeProgressBar1});
             this.barManager1.SharedImageCollectionImageSizeMode = DevExpress.Utils.SharedImageCollectionImageSizeMode.UseImageSize;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
             // 
             // bar3
             // 
@@ -295,67 +255,6 @@
             this.btnAddNewProduct.ImageOptions.ImageIndex = 1;
             this.btnAddNewProduct.Name = "btnAddNewProduct";
             // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1018, 41);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 654);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1018, 42);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 41);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 613);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1018, 41);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 613);
-            // 
-            // svgImageCollection1
-            // 
-            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection1.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
-            this.svgImageCollection1.Add("actions_add", "image://svgimages/icon builder/actions_add.svg");
-            this.svgImageCollection1.Add("actions_edit", "image://svgimages/icon builder/actions_edit.svg");
-            this.svgImageCollection1.Add("viewmergeddata", "image://svgimages/richedit/viewmergeddata.svg");
-            this.svgImageCollection1.Add("actions_remove", "image://svgimages/icon builder/actions_remove.svg");
-            this.svgImageCollection1.Add("del", "image://svgimages/diagramicons/del.svg");
-            this.svgImageCollection1.Add("actions_zoom", "image://svgimages/icon builder/actions_zoom.svg");
-            this.svgImageCollection1.Add("movechartnewsheet", "image://svgimages/spreadsheet/movechartnewsheet.svg");
-            this.svgImageCollection1.Add("changedatasourcepivottable", "image://svgimages/spreadsheet/changedatasourcepivottable.svg");
-            this.svgImageCollection1.Add("barcode", "image://svgimages/content/barcode.svg");
-            this.svgImageCollection1.Add("saveandclose2", "image://svgimages/save/saveandclose2.svg");
-            // 
-            // btnEditProduct
-            // 
-            this.btnEditProduct.Caption = "Düzelt";
-            this.btnEditProduct.Id = 2;
-            this.btnEditProduct.ImageOptions.ImageIndex = 2;
-            this.btnEditProduct.Name = "btnEditProduct";
-            // 
-            // btnViewProduct
-            // 
-            this.btnViewProduct.Caption = "Ürün İncele";
-            this.btnViewProduct.Id = 3;
-            this.btnViewProduct.ImageOptions.ImageIndex = 3;
-            this.btnViewProduct.Name = "btnViewProduct";
-            // 
             // btnRemProduct
             // 
             this.btnRemProduct.Caption = "Ürün Sil";
@@ -363,12 +262,12 @@
             this.btnRemProduct.ImageOptions.ImageIndex = 4;
             this.btnRemProduct.Name = "btnRemProduct";
             // 
-            // bt
+            // btnEditProduct
             // 
-            this.bt.Caption = "Ürün Sil";
-            this.bt.Id = 5;
-            this.bt.ImageOptions.ImageIndex = 5;
-            this.bt.Name = "bt";
+            this.btnEditProduct.Caption = "Düzelt";
+            this.btnEditProduct.Id = 2;
+            this.btnEditProduct.ImageOptions.ImageIndex = 2;
+            this.btnEditProduct.Name = "btnEditProduct";
             // 
             // btnSeaProduct
             // 
@@ -404,6 +303,67 @@
             this.btnClose.Id = 10;
             this.btnClose.ImageOptions.ImageIndex = 10;
             this.btnClose.Name = "btnClose";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1018, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 654);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1018, 42);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 654);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1018, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 654);
+            // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
+            this.svgImageCollection1.Add("actions_add", "image://svgimages/icon builder/actions_add.svg");
+            this.svgImageCollection1.Add("actions_edit", "image://svgimages/icon builder/actions_edit.svg");
+            this.svgImageCollection1.Add("viewmergeddata", "image://svgimages/richedit/viewmergeddata.svg");
+            this.svgImageCollection1.Add("actions_remove", "image://svgimages/icon builder/actions_remove.svg");
+            this.svgImageCollection1.Add("del", "image://svgimages/diagramicons/del.svg");
+            this.svgImageCollection1.Add("actions_zoom", "image://svgimages/icon builder/actions_zoom.svg");
+            this.svgImageCollection1.Add("movechartnewsheet", "image://svgimages/spreadsheet/movechartnewsheet.svg");
+            this.svgImageCollection1.Add("changedatasourcepivottable", "image://svgimages/spreadsheet/changedatasourcepivottable.svg");
+            this.svgImageCollection1.Add("barcode", "image://svgimages/content/barcode.svg");
+            this.svgImageCollection1.Add("saveandclose2", "image://svgimages/save/saveandclose2.svg");
+            // 
+            // btnViewProduct
+            // 
+            this.btnViewProduct.Caption = "Ürün İncele";
+            this.btnViewProduct.Id = 3;
+            this.btnViewProduct.ImageOptions.ImageIndex = 3;
+            this.btnViewProduct.Name = "btnViewProduct";
+            // 
+            // bt
+            // 
+            this.bt.Caption = "Ürün Sil";
+            this.bt.Id = 5;
+            this.bt.ImageOptions.ImageIndex = 5;
+            this.bt.Name = "bt";
             // 
             // barToggleSwitchItem1
             // 
@@ -459,7 +419,6 @@
             this.Text = "frmStok";
             this.Load += new System.EventHandler(this.frmStok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mspDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -475,9 +434,9 @@
         }
 
         #endregion
-        private mspDataSet mspDataSet;
+        
         private System.Windows.Forms.BindingSource productsBindingSource;
-        private mspDataSetTableAdapters.productsTableAdapter productsTableAdapter;
+        
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
@@ -491,8 +450,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarButtonItem btnProductCards;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
