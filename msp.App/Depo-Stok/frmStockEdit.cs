@@ -37,5 +37,50 @@ namespace Msp.App.Depo_Stok
         {
 
         }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit1_EditValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barcodeTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpecialCodetextEdit3_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productGroupTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateDateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lastPriceTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
