@@ -91,6 +91,9 @@ namespace Msp.App.App
             applicationServers = _repository.Run<StartUp, List<ApplicationServerDTO>>(x => x.Get_List_ApplicationServer());
             bs_ServerList.DataSource = applicationServers;
 
+            if (applicationServers.Count > 0)
+                lc_serverList.EditValue = applicationServers.FirstOrDefault().Id;
+
 
         }
 
@@ -135,33 +138,30 @@ namespace Msp.App.App
                 XtraMessageBox.Show("Lütfen Parolanızı Giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
             }
+            if (lc_serverList.EditValue.ToString() == "")
+            {
+                XtraMessageBox.Show("Server Seçimi Yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = true;
+            }
             return _return;
         }
 
         private void do_login()
         {
             if (do_IsNotValid()) return;
-
+  
             AppMain.User = new Models.Models.UsersDTO();
             AppMain.User.password = txt_Password.Text;
             AppMain.User.username = txt_userCode.EditValue.ToString();
 
-            AppMain.SqlConnection = new ConnectionDTO
+            var connection = applicationServers.FirstOrDefault(x => x.Id == (int)lc_serverList.EditValue);
+            var config = new ConnectionDTO
             {
-                Database = "msp", //Global.SqlConnection.Database,
-                Server = "DG", //"R00T\\SQLEXPRESS", //Global.SqlConnection.Server,
-                Password = "123D654!", //Global.SqlConnection.Password,
-                UserId = "sa" //Global.SqlConnection.UserId
+                Database = "msp",
+                Server = connection.Server,
+                Password = connection.Password,
+                UserId = connection.UserName
             };
-
-            ConnectionDTO config = new ConnectionDTO
-            {
-                Database = "msp", //Global.SqlConnection.Database,
-                Server =  "DG", //"R00T\\SQLEXPRESS", //Global.SqlConnection.Server,
-                Password = "123D654!", //Global.SqlConnection.Password,
-                UserId = "sa" //Global.SqlConnection.UserId
-            };
-
             UserAuthDto model = new UserAuthDto
             {
                 Config = config,
