@@ -28,6 +28,12 @@ namespace msp.App
 
         private void frmStok_Load(object sender, EventArgs e)
         {
+
+            repositoryItemLookUpEdit1.DataSource = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+            repositoryItemLookUpEdit1.ValueMember = "UID";
+            repositoryItemLookUpEdit1.DisplayMember = "UName";
+
+
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             productsBindingSource.DataSource = _productlist;
 
@@ -35,9 +41,9 @@ namespace msp.App
 
         private void btnEditProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var row = (ProductDTO)bandedGridView1.GetFocusedRow();
+            var row = (ProductDTO)gridView1.GetFocusedRow();
             frmStockEdit frm = new frmStockEdit();
-            frm.Show(row.id);
+            frm.Show(row.PID);
         }
     }
 }

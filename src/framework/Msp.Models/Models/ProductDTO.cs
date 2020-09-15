@@ -8,20 +8,34 @@ namespace Msp.Models.Models
 {
   public class ProductDTO
     {
-        public int id { get; set; }
+        public int PID { get; set; }
 
-        public string name { get; set; }
+        public string PName { get; set; }
 
-        public string barcode { get; set; }
+        public string PBarcode { get; set; }
 
-        public int? categoryId { get; set; }
+        public int? PCategoryId { get; set; }
 
-        public DateTime? date { get; set; }
+        public DateTime? PDate { get; set; }
 
-        public long? firstPrice { get; set; }
+        public long? PFirstPrice { get; set; }
 
-        public long? total { get; set; }
+        public long? PTotal { get; set; }
 
-        public long? lastPrice { get; set; }
+        public long? PlastPrice { get; set; }
+
+        public int PUnitId { get; set; }
+
+        public string PTax { get; set; }
+
+        public string PVarDescription { get; set; }
+
+        public string PSpecCode { get; set; }
+
+        public string PBrandName { get; set; }
+
+        public string PBrandCode { get; set; }
+
+        public string PGroup { get; set; }
     }
 }

@@ -23,8 +23,20 @@ namespace Msp.Service.Service.DepotStock
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<Products,ProductDTO>(_db.products.FirstOrDefault(x=>x.id==id));
+                return base.Map<Products,ProductDTO>(_db.products.FirstOrDefault(x=>x.PID==id));
             }
         }
+
+
+        #region Unit
+        public List<UnitsDTO> GetListUnit()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<Units>, List<UnitsDTO>>(_db.Units.ToList());
+            }
+        }
+        #endregion
+
     }
 }

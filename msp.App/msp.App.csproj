@@ -200,6 +200,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.UnitsDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

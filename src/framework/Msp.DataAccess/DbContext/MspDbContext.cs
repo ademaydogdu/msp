@@ -29,6 +29,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Company> Company { get; set; }
         public virtual DbSet<ProgramsControl> ProgramsControl { get; set; }
         public virtual DbSet<ApplicationServer> ApplicationServer { get; set; }
+        public virtual DbSet<Units> Units { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -36,7 +37,7 @@ namespace Msp.Entity.Entities
             modelBuilder.Entity<Categories>()
                 .HasMany(e => e.products)
                 .WithOptional(e => e.categories)
-                .HasForeignKey(e => e.categoryId);
+                .HasForeignKey(e => e.PCategoryId);
 
             modelBuilder.Entity<Users>()
                 .Property(e => e.note)

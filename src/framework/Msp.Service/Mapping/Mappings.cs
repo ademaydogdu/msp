@@ -20,7 +20,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<ProductDTO, Products>();
             cfg.CreateMap<ProgramsControl, ProgramsControlsDTO>();
             cfg.CreateMap<ProgramsControlsDTO, ProgramsControl>();
-
+            cfg.CreateMap<Units, UnitsDTO>();
+            cfg.CreateMap<UnitsDTO, Units>();
         }
 
 
