@@ -11,6 +11,7 @@ namespace Msp.Infrastructure.DbConectionModel
     {
         public ConnectionDTO()
         {
+
             Server = "";
             Database = "";
             UserId = "";

@@ -4,11 +4,15 @@ namespace Msp.Entity.Entities
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Msp.Infrastructure;
 
     public partial class MspDbContext : DbContext
     {
         public MspDbContext()
-            : base("data source=R00T\\SQLEXPRESS;initial catalog=msp;user id=ss;password=123456;MultipleActiveResultSets=True;App=EntityFramework")
+            : base("initial catalog=" + AppMain.SqlConnection.Database
+            + ";data source=" + AppMain.SqlConnection.Server
+            + ";user id=" + AppMain.SqlConnection.UserId
+            + ";password=" + AppMain.SqlConnection.Password )
         {
         }
 
@@ -23,6 +27,9 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Products> products { get; set; }
         public virtual DbSet<Users> users { get; set; }
         public virtual DbSet<Company> Company { get; set; }
+        public virtual DbSet<ProgramsControl> ProgramsControl { get; set; }
+        public virtual DbSet<ApplicationServer> ApplicationServer { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -67,9 +67,11 @@
     <Compile Include="Mapping\Mappings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Service\App\StartUp.cs" />
     <Compile Include="Service\Authorization\AuthorizationService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Service\DepotStock\DepotStockService.cs" />
+    <Compile Include="Service\Settings\SettingsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

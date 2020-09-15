@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Msp.Entity.Entities;
 using Msp.Models.Models;
+using Msp.Models.Models.App;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<UsersDTO, Users>();
             cfg.CreateMap<Products, ProductDTO>();
             cfg.CreateMap<ProductDTO, Products>();
+            cfg.CreateMap<ProgramsControl, ProgramsControlsDTO>();
+            cfg.CreateMap<ProgramsControlsDTO, ProgramsControl>();
 
         }
 

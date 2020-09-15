@@ -92,6 +92,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\CheckDb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\CheckDb.Designer.cs">
+      <DependentUpon>CheckDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\FrmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\FrmCompany.Designer.cs">
+      <DependentUpon>FrmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\frmKullaniciTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmKullaniciTanim.Designer.cs">
+      <DependentUpon>frmKullaniciTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Parameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Parameters.Designer.cs">
+      <DependentUpon>Parameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\MspTool.cs" />
+    <EmbeddedResource Include="App\CheckDb.resx">
+      <DependentUpon>CheckDb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,8 +187,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Settings\FrmCompany.resx">
+      <DependentUpon>FrmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmKullaniciTanim.resx">
+      <DependentUpon>frmKullaniciTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Parameters.resx">
+      <DependentUpon>Parameters.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -176,7 +214,6 @@
     <Folder Include="Cariİslemler\" />
     <Folder Include="Firma\" />
     <Folder Include="Report\" />
-    <Folder Include="Settings\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\framework\Msp.Infrastructure\Msp.Infrastructure.csproj">

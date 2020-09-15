@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\App\ApplicationServerDTO.cs" />
+    <Compile Include="Models\App\ProgramsControlsDTO.cs" />
     <Compile Include="Models\CompanyDTO.cs" />
+    <Compile Include="Models\ParametersDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\UsersDTO.cs" />
     <Compile Include="Models\Utilities\ActionResponse.cs" />

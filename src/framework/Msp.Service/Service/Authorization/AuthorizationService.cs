@@ -5,6 +5,7 @@ using Msp.Models.Models;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,13 @@ namespace Msp.Service.Service.Admin
             {
                 try
                 {
-                    var users = _db.users.FirstOrDefault(x => x.username == userDto.username);
+                    string query = "select * from Users where username = @username";
+                    var _param = new SqlParameter[]
+                    {
+                        new SqlParameter{ParameterName = "username", Value = userDto.username }
+                    };
+                    UsersDTO users = _db.Database.SqlQuery<UsersDTO>(query, _param).FirstOrDefault();
+                    //var users = _db.users.FirstOrDefault(x => x.username == userDto.username);
                     if (users != null)
                     {
                         if (!string.IsNullOrEmpty(users.HaspPassword))
@@ -47,6 +54,7 @@ namespace Msp.Service.Service.Admin
                         response.ResponseType = ResponseType.Error;
                         response.Message = "Kullanıcı Bulunamadı";
                     }
+                    response.Response = users;
                 }
                 catch (Exception ex)
                 {

@@ -56,6 +56,10 @@
       <Project>{c5d3fe87-7f84-4c33-bfd6-3a3b789f1c09}</Project>
       <Name>Msp.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Msp.Infrastructure\Msp.Infrastructure.csproj">
+      <Project>{B9C80F3F-9556-4138-9A6C-BF8B372DDE90}</Project>
+      <Name>Msp.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
