@@ -15,6 +15,7 @@ using Msp.Service.Repository;
 using Msp.Service.Service.App;
 using Msp.Models.Models.App;
 using Msp.App.Settings;
+using Microsoft.Win32;
 
 namespace msp.App
 {
@@ -116,6 +117,94 @@ namespace msp.App
 
             #endregion
 
+
+            #region Regedit
+            string message = Msp.App.Tool.MspTool.CreateNewRegistry();
+            if (!string.IsNullOrEmpty(message))
+            {
+                MessageBox.Show(message);
+            }
+
+            Registry.CurrentUser.CreateSubKey(@"Software\MSP");
+
+            RegistryKey OurKey = Registry.CurrentUser;
+            OurKey = OurKey.OpenSubKey(@"Software\MSP", true);
+            string[] lsKeys = OurKey.GetSubKeyNames();
+            bool varmi = false;
+
+            OurKey = Registry.CurrentUser.OpenSubKey(@"Software\MSP", true);
+            lsKeys = OurKey.GetValueNames();
+            varmi = false;
+
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "LastServer")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("LastServer", ""); }
+
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "MspLogo")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("MspLogo", ""); }
+
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "LastDatabase")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("LastDatabase", ""); }
+
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "LastUser")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("LastUser", ""); }
+
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "LastServerId")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("LastServerId", ""); }
+
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "LastCompany")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("LastCompany", ""); }
+            #endregion
+
+
+
             //if (Global.RegistryDbSettings.Count > 0)
             //{
             //    SednaFBMain.userName = Global.RegistryDbSettings[0].Username;
@@ -150,11 +239,6 @@ namespace msp.App
             {
                 Application.ExitThread();
             }
-
-
-
-
-
         }
 
         #endregion

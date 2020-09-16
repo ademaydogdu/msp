@@ -321,6 +321,7 @@
             this.btnAddNewProduct.Id = 1;
             this.btnAddNewProduct.ImageOptions.ImageIndex = 1;
             this.btnAddNewProduct.Name = "btnAddNewProduct";
+            this.btnAddNewProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddNewProduct_ItemClick);
             // 
             // btnRemProduct
             // 

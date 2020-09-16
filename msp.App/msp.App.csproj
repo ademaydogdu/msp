@@ -65,12 +65,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
@@ -217,6 +219,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UsersDTO.datasource" />
     <None Include="Properties\Settings.settings">

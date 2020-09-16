@@ -42,8 +42,19 @@ namespace msp.App
         private void btnEditProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var row = (ProductDTO)gridView1.GetFocusedRow();
+            if (row != null)
+            {
+                frmStockEdit frm = new frmStockEdit();
+                frm._FormOpenType = Msp.Infrastructure.FormOpenType.Edit;
+                frm.Show(row.PID); 
+            }
+        }
+
+        private void btnAddNewProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             frmStockEdit frm = new frmStockEdit();
-            frm.Show(row.PID);
+            frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
+            frm.Show(0);
         }
     }
 }

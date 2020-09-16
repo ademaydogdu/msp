@@ -1,4 +1,5 @@
 ﻿using Msp.Entity.Entities;
+using Msp.Models.Models;
 using Msp.Models.Models.App;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,13 @@ namespace Msp.Service.Service.App
             }
         }
 
-
+        public List<CompanyDTO> GetList_Company()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<Company>, List<CompanyDTO>>(_db.Company.ToList());
+            }
+        }
 
 
     }

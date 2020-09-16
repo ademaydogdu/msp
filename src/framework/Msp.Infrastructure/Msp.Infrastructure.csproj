@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AppMain.cs" />
     <Compile Include="DbConectionModel\ConnectionDTO.cs" />
+    <Compile Include="Enum.cs" />
     <Compile Include="Extensions\ExpressionExtension.cs" />
     <Compile Include="Extensions\SecurityExtension.cs" />
     <Compile Include="Extensions\TypeExtension.cs" />

@@ -18,6 +18,7 @@ using Msp.Models.Models.App;
 using System.IO;
 using Msp.App.Tool;
 using Msp.Service.Service.App;
+using Microsoft.Win32;
 
 namespace Msp.App.App
 {
@@ -32,7 +33,12 @@ namespace Msp.App.App
             Set_Form();
         }
 
+        string lcUserCode = "";
+        string lcSonDatabase;
+        string lcSonServer;
+        string lcSonServerId;
         List<ApplicationServerDTO> applicationServers = new List<ApplicationServerDTO>();
+        List<CompanyDTO> _company = new List<CompanyDTO>();
 
         #region Record
 
@@ -94,6 +100,8 @@ namespace Msp.App.App
             if (applicationServers.Count > 0)
                 lc_serverList.EditValue = applicationServers.FirstOrDefault().Id;
 
+            _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
+            bs_company.DataSource = _company;
 
         }
 
@@ -177,6 +185,10 @@ namespace Msp.App.App
             }
             AppMain.User = loginResponse.Response;
 
+            Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastUser", txt_userCode.Text.ToString());
+            //Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastDatabase", this.databaseLookUpEdit.EditValue.ToString().Trim());
+            Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastServer", this.lc_serverList.Text.Trim());
+            Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastServerId", this.lc_serverList.EditValue);
 
             foreach (Form oForm in Application.OpenForms)
             {
@@ -202,6 +214,25 @@ namespace Msp.App.App
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            string lcSonkullanici = string.Empty;
+            lcSonkullanici = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastUser").ToString();
+            lcUserCode = lcSonkullanici;
+            lcSonDatabase = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastDatabase").ToString();
+            lcSonServer = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastServer").ToString();
+
+            if (lcSonkullanici.Trim() != "")
+            {
+                txt_userCode.Text = lcSonkullanici;
+            }
+            
+
+
+
+
         }
     }
 }

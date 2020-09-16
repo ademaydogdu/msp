@@ -16,5 +16,7 @@ namespace Msp.Infrastructure
         public static string LcConnectionString { get; set; }
         public static bool NetworkConnected = true;
 
+
+
     }
 }
