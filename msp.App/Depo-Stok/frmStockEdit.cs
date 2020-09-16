@@ -24,9 +24,14 @@ namespace Msp.App.Depo_Stok
         }
 
         ProductDTO product = new ProductDTO();
+        List<UnitsDTO> units = new List<UnitsDTO>();
 
         public void Show(int id)
         {
+
+            units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+            bs_Unit.DataSource = units;
+
             product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(id));
             bs_StockEdit.DataSource = product;
 

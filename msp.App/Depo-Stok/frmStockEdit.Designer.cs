@@ -51,11 +51,12 @@
             this.barcodeTextEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.taxTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.UnittextEdit = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.productGroupTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.SpecialCodetextEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.BrandCodetextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.UnittextEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -107,11 +108,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.barcodeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialCodetextEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrandCodetextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
@@ -247,11 +249,11 @@
             this.dataLayoutControl1.Controls.Add(this.barcodeTextEdit);
             this.dataLayoutControl1.Controls.Add(this.taxTextEdit);
             this.dataLayoutControl1.Controls.Add(this.textEdit2);
-            this.dataLayoutControl1.Controls.Add(this.UnittextEdit);
             this.dataLayoutControl1.Controls.Add(this.textEdit1);
             this.dataLayoutControl1.Controls.Add(this.productGroupTextEdit);
             this.dataLayoutControl1.Controls.Add(this.SpecialCodetextEdit3);
             this.dataLayoutControl1.Controls.Add(this.BrandCodetextEdit);
+            this.dataLayoutControl1.Controls.Add(this.UnittextEdit);
             this.dataLayoutControl1.DataSource = this.bs_StockEdit;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -264,7 +266,7 @@
             // 
             // nameTextEdit
             // 
-            this.nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "name", true));
+            this.nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PName", true));
             this.nameTextEdit.Location = new System.Drawing.Point(115, 12);
             this.nameTextEdit.MenuManager = this.barManager1;
             this.nameTextEdit.Name = "nameTextEdit";
@@ -390,16 +392,6 @@
             this.textEdit2.TabIndex = 12;
             this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             // 
-            // UnittextEdit
-            // 
-            this.UnittextEdit.Location = new System.Drawing.Point(516, 156);
-            this.UnittextEdit.MenuManager = this.barManager1;
-            this.UnittextEdit.Name = "UnittextEdit";
-            this.UnittextEdit.Size = new System.Drawing.Size(200, 20);
-            this.UnittextEdit.StyleController = this.dataLayoutControl1;
-            this.UnittextEdit.TabIndex = 13;
-            this.UnittextEdit.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged_1);
-            // 
             // textEdit1
             // 
             this.textEdit1.Location = new System.Drawing.Point(115, 228);
@@ -437,6 +429,27 @@
             this.BrandCodetextEdit.Size = new System.Drawing.Size(202, 20);
             this.BrandCodetextEdit.StyleController = this.dataLayoutControl1;
             this.BrandCodetextEdit.TabIndex = 17;
+            // 
+            // UnittextEdit
+            // 
+            this.UnittextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PUnitId", true));
+            this.UnittextEdit.Location = new System.Drawing.Point(516, 156);
+            this.UnittextEdit.MenuManager = this.barManager1;
+            this.UnittextEdit.Name = "UnittextEdit";
+            this.UnittextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.UnittextEdit.Properties.DataSource = this.bs_Unit;
+            this.UnittextEdit.Properties.DisplayMember = "UName";
+            this.UnittextEdit.Properties.NullText = "";
+            this.UnittextEdit.Properties.ValueMember = "UID";
+            this.UnittextEdit.Size = new System.Drawing.Size(200, 20);
+            this.UnittextEdit.StyleController = this.dataLayoutControl1;
+            this.UnittextEdit.TabIndex = 13;
+            this.UnittextEdit.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged_1);
+            // 
+            // bs_Unit
+            // 
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
             // Root
             // 
@@ -820,11 +833,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.barcodeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialCodetextEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrandCodetextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
@@ -905,7 +919,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem13;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private DevExpress.XtraEditors.TextEdit UnittextEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.TextEdit productGroupTextEdit;
@@ -927,5 +940,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem24;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraEditors.LookUpEdit UnittextEdit;
+        private System.Windows.Forms.BindingSource bs_Unit;
     }
 }

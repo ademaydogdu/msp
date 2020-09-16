@@ -8,24 +8,27 @@ namespace Msp.Entity.Entities
 
     public partial class Products
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id { get; set; }
+        public int PID { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string PName { get; set; }
 
         [StringLength(50)]
-        public string barcode { get; set; }
+        public string PBarcode { get; set; }
 
-        public int? categoryId { get; set; }
+        public int? PCategoryId { get; set; }
 
-        public DateTime? date { get; set; }
+        public DateTime? PDate { get; set; }
 
-        public long? firstPrice { get; set; }
+        public long? PFirstPrice { get; set; }
 
-        public long? total { get; set; }
+        public long? PTotal { get; set; }
 
-        public long? lastPrice { get; set; }
+        public long? PLastPrice { get; set; }
+
+        public int? PUnitId { get; set; }
 
         public virtual Categories categories { get; set; }
     }

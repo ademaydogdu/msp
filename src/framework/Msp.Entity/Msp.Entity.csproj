@@ -59,6 +59,7 @@
     <Compile Include="Entities\Parameters.cs" />
     <Compile Include="Entities\Products.cs" />
     <Compile Include="Entities\ProgramsControl.cs" />
+    <Compile Include="Entities\Units.cs" />
     <Compile Include="Entities\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
