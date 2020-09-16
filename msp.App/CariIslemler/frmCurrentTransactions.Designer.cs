@@ -87,6 +87,7 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = this.CurTranBindingSource;
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.CurTransactionGrid;
             this.gridControl1.MenuManager = this.barManager1;

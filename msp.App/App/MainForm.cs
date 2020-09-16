@@ -119,11 +119,11 @@ namespace msp.App
 
 
             #region Regedit
-            string message = Msp.App.Tool.MspTool.CreateNewRegistry();
-            if (!string.IsNullOrEmpty(message))
-            {
-                MessageBox.Show(message);
-            }
+            //string message = Msp.App.Tool.MspTool.CreateNewRegistry();
+            //if (!string.IsNullOrEmpty(message))
+            //{
+            //    MessageBox.Show(message);
+            //}
 
             Registry.CurrentUser.CreateSubKey(@"Software\MSP");
 
