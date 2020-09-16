@@ -374,6 +374,7 @@
             // 
             // taxTextEdit
             // 
+            this.taxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PTax", true));
             this.taxTextEdit.Location = new System.Drawing.Point(115, 192);
             this.taxTextEdit.MenuManager = this.barManager1;
             this.taxTextEdit.Name = "taxTextEdit";
@@ -384,6 +385,7 @@
             // 
             // textEdit2
             // 
+            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PBrandName", true));
             this.textEdit2.Location = new System.Drawing.Point(516, 48);
             this.textEdit2.MenuManager = this.barManager1;
             this.textEdit2.Name = "textEdit2";
@@ -394,6 +396,7 @@
             // 
             // textEdit1
             // 
+            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PVarDescription", true));
             this.textEdit1.Location = new System.Drawing.Point(115, 228);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
@@ -403,6 +406,7 @@
             // 
             // productGroupTextEdit
             // 
+            this.productGroupTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PGroup", true));
             this.productGroupTextEdit.Location = new System.Drawing.Point(516, 84);
             this.productGroupTextEdit.MenuManager = this.barManager1;
             this.productGroupTextEdit.Name = "productGroupTextEdit";
@@ -413,6 +417,7 @@
             // 
             // SpecialCodetextEdit3
             // 
+            this.SpecialCodetextEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PSpecCode", true));
             this.SpecialCodetextEdit3.Location = new System.Drawing.Point(516, 228);
             this.SpecialCodetextEdit3.MenuManager = this.barManager1;
             this.SpecialCodetextEdit3.Name = "SpecialCodetextEdit3";
@@ -423,12 +428,14 @@
             // 
             // BrandCodetextEdit
             // 
+            this.BrandCodetextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PBrandCode", true));
             this.BrandCodetextEdit.Location = new System.Drawing.Point(115, 48);
             this.BrandCodetextEdit.MenuManager = this.barManager1;
             this.BrandCodetextEdit.Name = "BrandCodetextEdit";
             this.BrandCodetextEdit.Size = new System.Drawing.Size(202, 20);
             this.BrandCodetextEdit.StyleController = this.dataLayoutControl1;
             this.BrandCodetextEdit.TabIndex = 17;
+            this.BrandCodetextEdit.EditValueChanged += new System.EventHandler(this.BrandCodetextEdit_EditValueChanged);
             // 
             // UnittextEdit
             // 

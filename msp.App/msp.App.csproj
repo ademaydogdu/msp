@@ -104,6 +104,18 @@
     <Compile Include="App\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\frmCurrentTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\frmCurrentTransactions.Designer.cs">
+      <DependentUpon>frmCurrentTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CariIslemler\frmCurTranEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\frmCurTranEdit.Designer.cs">
+      <DependentUpon>frmCurTranEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmDepo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,12 @@
     <EmbeddedResource Include="App\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\frmCurrentTransactions.resx">
+      <DependentUpon>frmCurrentTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\frmCurTranEdit.resx">
+      <DependentUpon>frmCurTranEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmDepo.resx">
       <DependentUpon>frmDepo.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +235,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UsersDTO.datasource" />
     <None Include="Properties\Settings.settings">
@@ -230,7 +250,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cariİslemler\" />
     <Folder Include="Firma\" />
     <Folder Include="Report\" />
   </ItemGroup>

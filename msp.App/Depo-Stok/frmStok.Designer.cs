@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -56,10 +55,10 @@
             this.btnRemProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnSeaProduct = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTransactions = new DevExpress.XtraBars.BarButtonItem();
-            this.btnQuickChange = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
-            this.btnClose = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProTransactions = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProQuickChange = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProClose = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -76,7 +75,7 @@
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -87,11 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataSource = typeof(Msp.Models.Models.ProductDTO);
             // 
             // layoutControl1
             // 
@@ -270,10 +266,10 @@
             this.btnRemProduct,
             this.bt,
             this.btnSeaProduct,
-            this.btnTransactions,
-            this.btnQuickChange,
-            this.btnBarcodeLabel,
-            this.btnClose,
+            this.btnProTransactions,
+            this.btnProQuickChange,
+            this.btnProBarcodeLabel,
+            this.btnProClose,
             this.barToggleSwitchItem1,
             this.barHeaderItem1,
             this.barDockingMenuItem1,
@@ -294,15 +290,15 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.None, false, this.btnProductCards, false),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProductCards),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddNewProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSeaProduct),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnTransactions),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnQuickChange),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBarcodeLabel),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnClose)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProQuickChange),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProBarcodeLabel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProClose)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -344,33 +340,33 @@
             this.btnSeaProduct.ImageOptions.ImageIndex = 6;
             this.btnSeaProduct.Name = "btnSeaProduct";
             // 
-            // btnTransactions
+            // btnProTransactions
             // 
-            this.btnTransactions.Caption = "Ürün Hareketleri";
-            this.btnTransactions.Id = 7;
-            this.btnTransactions.ImageOptions.ImageIndex = 7;
-            this.btnTransactions.Name = "btnTransactions";
+            this.btnProTransactions.Caption = "Ürün Hareketleri";
+            this.btnProTransactions.Id = 7;
+            this.btnProTransactions.ImageOptions.ImageIndex = 7;
+            this.btnProTransactions.Name = "btnProTransactions";
             // 
-            // btnQuickChange
+            // btnProQuickChange
             // 
-            this.btnQuickChange.Caption = "Hızlı Değiştir";
-            this.btnQuickChange.Id = 8;
-            this.btnQuickChange.ImageOptions.ImageIndex = 8;
-            this.btnQuickChange.Name = "btnQuickChange";
+            this.btnProQuickChange.Caption = "Hızlı Değiştir";
+            this.btnProQuickChange.Id = 8;
+            this.btnProQuickChange.ImageOptions.ImageIndex = 8;
+            this.btnProQuickChange.Name = "btnProQuickChange";
             // 
-            // btnBarcodeLabel
+            // btnProBarcodeLabel
             // 
-            this.btnBarcodeLabel.Caption = "Barkod Etiket";
-            this.btnBarcodeLabel.Id = 9;
-            this.btnBarcodeLabel.ImageOptions.ImageIndex = 9;
-            this.btnBarcodeLabel.Name = "btnBarcodeLabel";
+            this.btnProBarcodeLabel.Caption = "Barkod Etiket";
+            this.btnProBarcodeLabel.Id = 9;
+            this.btnProBarcodeLabel.ImageOptions.ImageIndex = 9;
+            this.btnProBarcodeLabel.Name = "btnProBarcodeLabel";
             // 
-            // btnClose
+            // btnProClose
             // 
-            this.btnClose.Caption = "Kapat";
-            this.btnClose.Id = 10;
-            this.btnClose.ImageOptions.ImageIndex = 10;
-            this.btnClose.Name = "btnClose";
+            this.btnProClose.Caption = "Kapat";
+            this.btnProClose.Id = 10;
+            this.btnProClose.ImageOptions.ImageIndex = 10;
+            this.btnProClose.Name = "btnProClose";
             // 
             // barDockControlTop
             // 
@@ -492,6 +488,10 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
             // frmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,7 +505,6 @@
             this.Name = "frmStok";
             this.Text = "Ürün Listesi";
             this.Load += new System.EventHandler(this.frmStok_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -516,14 +515,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        
-        private System.Windows.Forms.BindingSource productsBindingSource;
         
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
@@ -540,11 +538,11 @@
         private DevExpress.XtraBars.BarButtonItem btnViewProduct;
         private DevExpress.XtraBars.BarButtonItem btnRemProduct;
         private DevExpress.XtraBars.BarButtonItem btnSeaProduct;
-        private DevExpress.XtraBars.BarButtonItem btnTransactions;
-        private DevExpress.XtraBars.BarButtonItem btnQuickChange;
+        private DevExpress.XtraBars.BarButtonItem btnProTransactions;
+        private DevExpress.XtraBars.BarButtonItem btnProQuickChange;
         private DevExpress.XtraBars.BarButtonItem bt;
-        private DevExpress.XtraBars.BarButtonItem btnBarcodeLabel;
-        private DevExpress.XtraBars.BarButtonItem btnClose;
+        private DevExpress.XtraBars.BarButtonItem btnProBarcodeLabel;
+        private DevExpress.XtraBars.BarButtonItem btnProClose;
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
@@ -571,5 +569,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPGroup;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private System.Windows.Forms.BindingSource productsBindingSource;
     }
 }
