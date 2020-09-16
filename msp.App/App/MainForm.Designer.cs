@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
@@ -161,6 +160,8 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -282,10 +283,11 @@
             this.barStaticItem4,
             this.bbi_Company,
             this.btn_isyeri,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem4});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 110;
+            this.ribbon.MaxItemId = 111;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -326,6 +328,7 @@
             this.img_List.Add("bo_category", "image://svgimages/business objects/bo_category.svg");
             this.img_List.Add("bo_security_permission", "image://svgimages/business objects/bo_security_permission.svg");
             this.img_List.Add("filterelements", "image://svgimages/dashboards/filterelements.svg");
+            this.img_List.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
             // 
             // btnQuickSell
             // 
@@ -1046,7 +1049,8 @@
             // barSatis
             // 
             this.barSatis.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup10});
             this.barSatis.ImageOptions.ImageIndex = 0;
             this.barSatis.Name = "barSatis";
             this.barSatis.Text = "Satış";
@@ -1082,6 +1086,7 @@
             // 
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7});
+            this.ribbonPage6.ImageOptions.ImageIndex = 12;
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Cari İşlemleri";
             // 
@@ -1215,6 +1220,21 @@
             this.img_buton.Add("bo_organization", "image://svgimages/business objects/bo_organization.svg");
             this.img_buton.Add("bo_security_permission", "image://svgimages/business objects/bo_security_permission.svg");
             this.img_buton.Add("employeequickwelcome", "image://svgimages/outlook inspired/employeequickwelcome.svg");
+            this.img_buton.Add("bo_task", "image://svgimages/business objects/bo_task.svg");
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.AllowTextClipping = false;
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Satış Sonrası";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Satış Listesi";
+            this.barButtonItem4.Id = 110;
+            this.barButtonItem4.ImageOptions.LargeImageIndex = 9;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // MainForm
             // 
@@ -1375,5 +1395,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.Utils.SvgImageCollection img_buton;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }

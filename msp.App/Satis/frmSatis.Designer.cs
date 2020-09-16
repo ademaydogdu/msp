@@ -246,7 +246,7 @@
             this.memoEdit1.Properties.MaxLength = 50;
             this.memoEdit1.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.memoEdit1.Properties.WordWrap = false;
-            this.memoEdit1.Size = new System.Drawing.Size(262, 32);
+            this.memoEdit1.Size = new System.Drawing.Size(398, 32);
             this.memoEdit1.StyleController = this.layoutControl1;
             this.memoEdit1.TabIndex = 28;
             // 
@@ -360,9 +360,9 @@
             this.btn_Vazgec.ImageOptions.ImageList = this.img_svg;
             this.btn_Vazgec.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_Vazgec.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Vazgec.Location = new System.Drawing.Point(602, 698);
+            this.btn_Vazgec.Location = new System.Drawing.Point(575, 698);
             this.btn_Vazgec.Name = "btn_Vazgec";
-            this.btn_Vazgec.Size = new System.Drawing.Size(120, 70);
+            this.btn_Vazgec.Size = new System.Drawing.Size(124, 70);
             this.btn_Vazgec.StyleController = this.layoutControl1;
             this.btn_Vazgec.TabIndex = 6;
             this.btn_Vazgec.Text = "Vazgeç";
@@ -390,6 +390,8 @@
             this.img_svg.Add("highimportance", "image://svgimages/scheduling/highimportance.svg");
             this.img_svg.Add("warning", "image://svgimages/status/warning.svg");
             this.img_svg.Add("barcode", "image://svgimages/content/barcode.svg");
+            this.img_svg.Add("newproduct", "image://svgimages/outlook inspired/newproduct.svg");
+            this.img_svg.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
             // 
             // simpleButton2
             // 
@@ -400,9 +402,9 @@
             this.simpleButton2.ImageOptions.ImageList = this.img_svg;
             this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.simpleButton2.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.simpleButton2.Location = new System.Drawing.Point(726, 698);
+            this.simpleButton2.Location = new System.Drawing.Point(703, 698);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(119, 70);
+            this.simpleButton2.Size = new System.Drawing.Size(142, 70);
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Text = "Veresiye Satış";
@@ -557,6 +559,10 @@
             this.img_EkleSatis.Add("changedatasourcepivottable", "image://svgimages/spreadsheet/changedatasourcepivottable.svg");
             this.img_EkleSatis.Add("barcode", "image://svgimages/content/barcode.svg");
             this.img_EkleSatis.Add("saveandclose2", "image://svgimages/save/saveandclose2.svg");
+            this.img_EkleSatis.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.img_EkleSatis.Add("calculatenow", "image://svgimages/spreadsheet/calculatenow.svg");
+            this.img_EkleSatis.Add("clearformats", "image://svgimages/spreadsheet/clearformats.svg");
+            this.img_EkleSatis.Add("financial", "image://svgimages/spreadsheet/financial.svg");
             // 
             // simpleButton14
             // 
@@ -616,6 +622,9 @@
             // 
             // simpleButton16
             // 
+            this.simpleButton16.ImageOptions.ImageIndex = 14;
+            this.simpleButton16.ImageOptions.ImageList = this.img_EkleSatis;
+            this.simpleButton16.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.simpleButton16.Location = new System.Drawing.Point(983, 340);
             this.simpleButton16.Name = "simpleButton16";
             this.simpleButton16.Size = new System.Drawing.Size(134, 74);
@@ -625,6 +634,9 @@
             // 
             // simpleButton17
             // 
+            this.simpleButton17.ImageOptions.ImageIndex = 12;
+            this.simpleButton17.ImageOptions.ImageList = this.img_EkleSatis;
+            this.simpleButton17.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.simpleButton17.Location = new System.Drawing.Point(1121, 340);
             this.simpleButton17.Name = "simpleButton17";
             this.simpleButton17.Size = new System.Drawing.Size(146, 74);
@@ -634,6 +646,9 @@
             // 
             // simpleButton18
             // 
+            this.simpleButton18.ImageOptions.ImageIndex = 11;
+            this.simpleButton18.ImageOptions.ImageList = this.img_EkleSatis;
+            this.simpleButton18.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.simpleButton18.Location = new System.Drawing.Point(1271, 340);
             this.simpleButton18.Name = "simpleButton18";
             this.simpleButton18.Size = new System.Drawing.Size(130, 74);
@@ -643,6 +658,9 @@
             // 
             // simpleButton19
             // 
+            this.simpleButton19.ImageOptions.ImageIndex = 22;
+            this.simpleButton19.ImageOptions.ImageList = this.img_svg;
+            this.simpleButton19.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.simpleButton19.Location = new System.Drawing.Point(12, 622);
             this.simpleButton19.Name = "simpleButton19";
             this.simpleButton19.Size = new System.Drawing.Size(80, 72);
@@ -652,7 +670,9 @@
             // 
             // simpleButton20
             // 
-            this.simpleButton20.Location = new System.Drawing.Point(355, 12);
+            this.simpleButton20.ImageOptions.ImageIndex = 21;
+            this.simpleButton20.ImageOptions.ImageList = this.img_svg;
+            this.simpleButton20.Location = new System.Drawing.Point(491, 12);
             this.simpleButton20.Name = "simpleButton20";
             this.simpleButton20.Size = new System.Drawing.Size(80, 32);
             this.simpleButton20.StyleController = this.layoutControl1;
@@ -737,7 +757,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(355, 686);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(235, 74);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(208, 74);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
@@ -754,10 +774,10 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.simpleButton2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(714, 686);
+            this.layoutControlItem4.Location = new System.Drawing.Point(691, 686);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(78, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(123, 74);
+            this.layoutControlItem4.Size = new System.Drawing.Size(146, 74);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -765,10 +785,10 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btn_Vazgec;
-            this.layoutControlItem3.Location = new System.Drawing.Point(590, 686);
+            this.layoutControlItem3.Location = new System.Drawing.Point(563, 686);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(78, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(124, 74);
+            this.layoutControlItem3.Size = new System.Drawing.Size(128, 74);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -1078,7 +1098,7 @@
             this.layoutControlItem24.ImageOptions.ImageIndex = 9;
             this.layoutControlItem24.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(343, 36);
+            this.layoutControlItem24.Size = new System.Drawing.Size(479, 36);
             this.layoutControlItem24.Text = "Barkod : ";
             this.layoutControlItem24.TextSize = new System.Drawing.Size(74, 26);
             // 
@@ -1153,9 +1173,9 @@
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(427, 0);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(563, 0);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
-            this.emptySpaceItem10.Size = new System.Drawing.Size(534, 36);
+            this.emptySpaceItem10.Size = new System.Drawing.Size(398, 36);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem28
@@ -1172,7 +1192,7 @@
             // layoutControlItem29
             // 
             this.layoutControlItem29.Control = this.simpleButton20;
-            this.layoutControlItem29.Location = new System.Drawing.Point(343, 0);
+            this.layoutControlItem29.Location = new System.Drawing.Point(479, 0);
             this.layoutControlItem29.MinSize = new System.Drawing.Size(84, 26);
             this.layoutControlItem29.Name = "layoutControlItem29";
             this.layoutControlItem29.Size = new System.Drawing.Size(84, 36);

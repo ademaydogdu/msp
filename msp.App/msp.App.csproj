@@ -142,11 +142,23 @@
     <Compile Include="Settings\FrmCompany.Designer.cs">
       <DependentUpon>FrmCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings\FrmCompanyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\FrmCompanyEdit.Designer.cs">
+      <DependentUpon>FrmCompanyEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings\frmKullaniciTanim.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings\frmKullaniciTanim.Designer.cs">
       <DependentUpon>frmKullaniciTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\frmKullaniciTanimEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmKullaniciTanimEdit.Designer.cs">
+      <DependentUpon>frmKullaniciTanimEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\Parameters.cs">
       <SubType>Form</SubType>
@@ -190,8 +202,14 @@
     <EmbeddedResource Include="Settings\FrmCompany.resx">
       <DependentUpon>FrmCompany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings\FrmCompanyEdit.resx">
+      <DependentUpon>FrmCompanyEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings\frmKullaniciTanim.resx">
       <DependentUpon>frmKullaniciTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmKullaniciTanimEdit.resx">
+      <DependentUpon>frmKullaniciTanimEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\Parameters.resx">
       <DependentUpon>Parameters.cs</DependentUpon>
@@ -200,6 +218,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.UsersDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
