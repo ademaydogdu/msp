@@ -17,5 +17,10 @@ namespace Msp.App.CariIslemler
         {
             InitializeComponent();
         }
+
+        private void frmCurTranEdit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
