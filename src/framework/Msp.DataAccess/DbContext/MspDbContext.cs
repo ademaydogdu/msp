@@ -31,6 +31,8 @@ namespace Msp.Entity.Entities
         public virtual DbSet<ApplicationServer> ApplicationServer { get; set; }
         public virtual DbSet<Units> Units { get; set; }
 
+        public virtual DbSet<CTransactions> CurrentTransactions { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -87,5 +87,10 @@ namespace Msp.App.Depo_Stok
         {
 
         }
+
+        private void BrandCodetextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

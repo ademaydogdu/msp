@@ -18,5 +18,6 @@ namespace Msp.Service.Service
             return Mapper.Map<TSource, TDestination>(source, destination);
         }
 
+
     }
 }

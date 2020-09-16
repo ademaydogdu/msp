@@ -54,6 +54,7 @@
     <Compile Include="Entities\Cashiers.cs" />
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\CTransactions.cs" />
     <Compile Include="Entities\Customers.cs" />
     <Compile Include="Entities\Cayments.cs" />
     <Compile Include="Entities\Parameters.cs" />
