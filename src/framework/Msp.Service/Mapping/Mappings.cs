@@ -22,6 +22,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<ProgramsControlsDTO, ProgramsControl>();
             cfg.CreateMap<Units, UnitsDTO>();
             cfg.CreateMap<UnitsDTO, Units>();
+            cfg.CreateMap<CTransactions, CTransactionsDTO>();
+            cfg.CreateMap<CTransactionsDTO, CTransactions>();
         }
 
 

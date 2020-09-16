@@ -165,6 +165,8 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbi_Siparis = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -292,6 +294,10 @@
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 112;
+            this.barButtonItem1});
+            this.ribbon.LargeImages = this.img_buton;
+            this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.MaxItemId = 110;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -332,7 +338,6 @@
             this.img_List.Add("bo_category", "image://svgimages/business objects/bo_category.svg");
             this.img_List.Add("bo_security_permission", "image://svgimages/business objects/bo_security_permission.svg");
             this.img_List.Add("filterelements", "image://svgimages/dashboards/filterelements.svg");
-            this.img_List.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
             // 
             // btnQuickSell
             // 
@@ -1082,8 +1087,7 @@
             // barSatis
             // 
             this.barSatis.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup10});
+            this.ribbonPageGroup1});
             this.barSatis.ImageOptions.ImageIndex = 0;
             this.barSatis.Name = "barSatis";
             this.barSatis.Text = "Satış";
@@ -1127,7 +1131,6 @@
             // 
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7});
-            this.ribbonPage6.ImageOptions.ImageIndex = 12;
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Cari İşlemleri";
             // 
@@ -1254,6 +1257,16 @@
             this.rbi_Siparis.Id = 111;
             this.rbi_Siparis.ImageOptions.LargeImageIndex = 10;
             this.rbi_Siparis.Name = "rbi_Siparis";
+            this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
+            this.img_buton.Add("bo_sale", "image://svgimages/business objects/bo_sale.svg");
+            this.img_buton.Add("buynow", "image://svgimages/outlook inspired/buynow.svg");
+            this.img_buton.Add("high", "image://svgimages/outlook inspired/high.svg");
+            this.img_buton.Add("bo_order", "image://svgimages/business objects/bo_order.svg");
+            this.img_buton.Add("bo_price_item", "image://svgimages/business objects/bo_price_item.svg");
+            this.img_buton.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
+            this.img_buton.Add("bo_organization", "image://svgimages/business objects/bo_organization.svg");
+            this.img_buton.Add("bo_security_permission", "image://svgimages/business objects/bo_security_permission.svg");
+            this.img_buton.Add("employeequickwelcome", "image://svgimages/outlook inspired/employeequickwelcome.svg");
             // 
             // MainForm
             // 

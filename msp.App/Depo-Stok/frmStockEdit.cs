@@ -141,6 +141,9 @@ namespace Msp.App.Depo_Stok
         private void bbi_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_save();
+        private void BrandCodetextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

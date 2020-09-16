@@ -276,7 +276,9 @@ namespace msp.App
 
         private void barButtonItem63_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            frmCurrentTransactions frm = new frmCurrentTransactions();
+            frm.MdiParent = this;
+            frm.Show();
         }
         private void btnParameters_ItemClick(object sender, ItemClickEventArgs e)
         {

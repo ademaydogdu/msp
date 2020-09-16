@@ -44,6 +44,7 @@
     <Compile Include="Models\App\ApplicationServerDTO.cs" />
     <Compile Include="Models\App\ProgramsControlsDTO.cs" />
     <Compile Include="Models\CompanyDTO.cs" />
+    <Compile Include="Models\CTransactionsDTO.cs" />
     <Compile Include="Models\ParametersDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\UnitsDTO.cs" />
