@@ -63,6 +63,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cCustomersDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).BeginInit();
@@ -72,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cCustomersDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -250,6 +252,7 @@
             // 
             this.btnNewAccount.Caption = "Yeni Hesap";
             this.btnNewAccount.Id = 1;
+            this.btnNewAccount.ImageOptions.Image = global::Msp.App.Properties.Resources.add_32x32;
             this.btnNewAccount.ImageOptions.ImageIndex = 1;
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
@@ -258,6 +261,7 @@
             // 
             this.btnRemAccount.Caption = "Hesap Sil";
             this.btnRemAccount.Id = 4;
+            this.btnRemAccount.ImageOptions.Image = global::Msp.App.Properties.Resources.remove_32x32;
             this.btnRemAccount.ImageOptions.ImageIndex = 4;
             this.btnRemAccount.Name = "btnRemAccount";
             this.btnRemAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemAccount_ItemClick);
@@ -266,6 +270,7 @@
             // 
             this.btnEditAccount.Caption = "Hesap Düzelt";
             this.btnEditAccount.Id = 2;
+            this.btnEditAccount.ImageOptions.Image = global::Msp.App.Properties.Resources.floatingobjectoutlinecolor_32x32;
             this.btnEditAccount.ImageOptions.ImageIndex = 2;
             this.btnEditAccount.Name = "btnEditAccount";
             // 
@@ -273,13 +278,16 @@
             // 
             this.btnSeaAccount.Caption = "Hesap Bul";
             this.btnSeaAccount.Id = 5;
+            this.btnSeaAccount.ImageOptions.Image = global::Msp.App.Properties.Resources.marqueezoom_32x321;
             this.btnSeaAccount.ImageOptions.ImageIndex = 6;
+            this.btnSeaAccount.ImageOptions.LargeImage = global::Msp.App.Properties.Resources.marqueezoom_32x32;
             this.btnSeaAccount.Name = "btnSeaAccount";
             // 
             // btnAccountTransactions
             // 
             this.btnAccountTransactions.Caption = "Hesap Hareketleri";
             this.btnAccountTransactions.Id = 6;
+            this.btnAccountTransactions.ImageOptions.Image = global::Msp.App.Properties.Resources.chart_32x32;
             this.btnAccountTransactions.ImageOptions.ImageIndex = 7;
             this.btnAccountTransactions.Name = "btnAccountTransactions";
             // 
@@ -287,6 +295,7 @@
             // 
             this.btnRegInfo.Caption = "Kayıt Bilgisi";
             this.btnRegInfo.Id = 8;
+            this.btnRegInfo.ImageOptions.Image = global::Msp.App.Properties.Resources.reviewers_32x32;
             this.btnRegInfo.ImageOptions.ImageIndex = 11;
             this.btnRegInfo.Name = "btnRegInfo";
             // 
@@ -294,6 +303,7 @@
             // 
             this.btnCurTranClose.Caption = "Kapat";
             this.btnCurTranClose.Id = 7;
+            this.btnCurTranClose.ImageOptions.Image = global::Msp.App.Properties.Resources.cancel_32x324;
             this.btnCurTranClose.ImageOptions.ImageIndex = 5;
             this.btnCurTranClose.Name = "btnCurTranClose";
             // 
@@ -377,6 +387,10 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // cCustomersDTOBindingSource
+            // 
+            this.cCustomersDTOBindingSource.DataSource = typeof(Msp.Models.Models.CCustomersDTO);
+            // 
             // frmCurrentTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,6 +413,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cCustomersDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +455,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCurCompanyType;
         private DevExpress.XtraGrid.Columns.GridColumn colCurDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCurCreatedDate;
+        private System.Windows.Forms.BindingSource cCustomersDTOBindingSource;
     }
 }

@@ -24,6 +24,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<UnitsDTO, Units>();
             cfg.CreateMap<CTransactions, CTransactionsDTO>();
             cfg.CreateMap<CTransactionsDTO, CTransactions>();
+            cfg.CreateMap<CCustomers, CCustomersDTO>();
+            cfg.CreateMap<CCustomersDTO, CCustomers>();
         }
 
 
