@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gcvCurTransaction = new DevExpress.XtraGrid.GridControl();
+            this.CurTranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CurTransactionGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCurId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,21 +63,20 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.CurTranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransactionGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.gcvCurTransaction);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -85,17 +85,21 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gridControl1
+            // gcvCurTransaction
             // 
-            this.gridControl1.DataSource = this.CurTranBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
-            this.gridControl1.MainView = this.CurTransactionGrid;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(776, 384);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcvCurTransaction.DataSource = this.CurTranBindingSource;
+            this.gcvCurTransaction.Location = new System.Drawing.Point(12, 12);
+            this.gcvCurTransaction.MainView = this.CurTransactionGrid;
+            this.gcvCurTransaction.MenuManager = this.barManager1;
+            this.gcvCurTransaction.Name = "gcvCurTransaction";
+            this.gcvCurTransaction.Size = new System.Drawing.Size(776, 384);
+            this.gcvCurTransaction.TabIndex = 4;
+            this.gcvCurTransaction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.CurTransactionGrid});
+            // 
+            // CurTranBindingSource
+            // 
+            this.CurTranBindingSource.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
             // 
             // CurTransactionGrid
             // 
@@ -112,89 +116,89 @@
             this.colCurCompanyType,
             this.colCurDate,
             this.colCurCreatedDate});
-            this.CurTransactionGrid.GridControl = this.gridControl1;
+            this.CurTransactionGrid.GridControl = this.gcvCurTransaction;
             this.CurTransactionGrid.Name = "CurTransactionGrid";
             // 
             // colCurId
             // 
-            this.colCurId.FieldName = "CurId";
+            this.colCurId.FieldName = "ID";
             this.colCurId.Name = "colCurId";
             this.colCurId.Visible = true;
             this.colCurId.VisibleIndex = 0;
             // 
             // colCurType
             // 
-            this.colCurType.FieldName = "CurType";
+            this.colCurType.FieldName = "Cari Tipi";
             this.colCurType.Name = "colCurType";
             this.colCurType.Visible = true;
             this.colCurType.VisibleIndex = 1;
             // 
             // colCurCode
             // 
-            this.colCurCode.FieldName = "CurCode";
+            this.colCurCode.FieldName = "Cari Kodu";
             this.colCurCode.Name = "colCurCode";
             this.colCurCode.Visible = true;
             this.colCurCode.VisibleIndex = 2;
             // 
             // colCurAccountName
             // 
-            this.colCurAccountName.FieldName = "CurAccountName";
+            this.colCurAccountName.FieldName = "Cari Hesap Adı";
             this.colCurAccountName.Name = "colCurAccountName";
             this.colCurAccountName.Visible = true;
             this.colCurAccountName.VisibleIndex = 3;
             // 
             // colCurAuthPersonName
             // 
-            this.colCurAuthPersonName.FieldName = "CurAuthPersonName";
+            this.colCurAuthPersonName.FieldName = "Yetkili Kişi";
             this.colCurAuthPersonName.Name = "colCurAuthPersonName";
             this.colCurAuthPersonName.Visible = true;
             this.colCurAuthPersonName.VisibleIndex = 4;
             // 
             // colCurDiscount
             // 
-            this.colCurDiscount.FieldName = "CurDiscount";
+            this.colCurDiscount.FieldName = "İndirim Oranı";
             this.colCurDiscount.Name = "colCurDiscount";
             this.colCurDiscount.Visible = true;
             this.colCurDiscount.VisibleIndex = 5;
             // 
             // colCurRiskLimit
             // 
-            this.colCurRiskLimit.FieldName = "CurRiskLimit";
+            this.colCurRiskLimit.FieldName = "Risk Limiti";
             this.colCurRiskLimit.Name = "colCurRiskLimit";
             this.colCurRiskLimit.Visible = true;
             this.colCurRiskLimit.VisibleIndex = 6;
             // 
             // colCurCity
             // 
-            this.colCurCity.FieldName = "CurCity";
+            this.colCurCity.FieldName = "Şehir";
             this.colCurCity.Name = "colCurCity";
             this.colCurCity.Visible = true;
             this.colCurCity.VisibleIndex = 7;
             // 
             // colCurBalance
             // 
-            this.colCurBalance.FieldName = "CurBalance";
+            this.colCurBalance.FieldName = "Bakiye";
             this.colCurBalance.Name = "colCurBalance";
             this.colCurBalance.Visible = true;
             this.colCurBalance.VisibleIndex = 8;
             // 
             // colCurCompanyType
             // 
-            this.colCurCompanyType.FieldName = "CurCompanyType";
+            this.colCurCompanyType.FieldName = "Şirket Tipi";
             this.colCurCompanyType.Name = "colCurCompanyType";
             this.colCurCompanyType.Visible = true;
             this.colCurCompanyType.VisibleIndex = 9;
             // 
             // colCurDate
             // 
-            this.colCurDate.FieldName = "CurDate";
+            this.colCurDate.FieldName = "Tarih";
             this.colCurDate.Name = "colCurDate";
             this.colCurDate.Visible = true;
             this.colCurDate.VisibleIndex = 10;
             // 
             // colCurCreatedDate
             // 
-            this.colCurCreatedDate.FieldName = "CurCreatedDate";
+            this.colCurCreatedDate.FieldName = "Oluşturulduğu Tarih";
             this.colCurCreatedDate.Name = "colCurCreatedDate";
             this.colCurCreatedDate.Visible = true;
             this.colCurCreatedDate.VisibleIndex = 11;
@@ -248,6 +252,7 @@
             this.btnNewAccount.Id = 1;
             this.btnNewAccount.ImageOptions.ImageIndex = 1;
             this.btnNewAccount.Name = "btnNewAccount";
+            this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
             // 
             // btnRemAccount
             // 
@@ -255,6 +260,7 @@
             this.btnRemAccount.Id = 4;
             this.btnRemAccount.ImageOptions.ImageIndex = 4;
             this.btnRemAccount.Name = "btnRemAccount";
+            this.btnRemAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemAccount_ItemClick);
             // 
             // btnEditAccount
             // 
@@ -364,16 +370,12 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Control = this.gcvCurTransaction;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(780, 388);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // CurTranBindingSource
-            // 
-            this.CurTranBindingSource.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
             // 
             // frmCurrentTransactions
             // 
@@ -390,13 +392,13 @@
             this.Load += new System.EventHandler(this.CurrentTransactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransactionGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,7 +408,7 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gcvCurTransaction;
         private DevExpress.XtraGrid.Views.Grid.GridView CurTransactionGrid;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar3;

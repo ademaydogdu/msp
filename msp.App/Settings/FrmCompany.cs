@@ -80,7 +80,7 @@ namespace Msp.App.Settings
             {
                 if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
                 {
-                    var result = _repository.Run<SettingsService, ActionResponse<CompanyDTO>>(x => x.DeleteCompnay(oRow.RecId));
+                    var result = _repository.Run<SettingsService, ActionResponse<CompanyDTO>>(x => x.DeleteCompany(oRow.RecId));
                     do_refresh();
                 }
             }

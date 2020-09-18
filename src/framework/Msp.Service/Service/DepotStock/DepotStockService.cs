@@ -62,6 +62,58 @@ namespace Msp.Service.Service.DepotStock
             return response;
         }
 
+        public ActionResponse<ProductDTO> SaveProduct(ProductDTO model)
+        {
+            ActionResponse<ProductDTO> response = new ActionResponse<ProductDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    if (response.Response.PID == 0)
+                    {
+                        _db.products.Add(base.Map<ProductDTO, Products>(model));
+                        _db.SaveChanges();
+                    }
+                    else
+                    {
+                        var entity = _db.products.FirstOrDefault(x => x.PID == response.Response.PID);
+                        if (entity != null)
+                        {
+                            _db.Entry(entity).CurrentValues.SetValues(model);
+                            _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
+        public ActionResponse<ProductDTO> DeleteProduct(int? PID)
+        {
+            ActionResponse<ProductDTO> response = new ActionResponse<ProductDTO>();
+            using (MspDbContext _db = new MspDbContext())
+            {
+                var record = _db.products.Where(x => x.PID == PID).FirstOrDefault();
+                if (record != null)
+                {
+                    _db.products.Remove(record);
+                }
+                _db.SaveChanges();
+            }
+            return response;
+        }
+
+
         #endregion
 
         #region Unit

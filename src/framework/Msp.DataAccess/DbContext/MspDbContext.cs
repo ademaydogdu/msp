@@ -36,19 +36,19 @@ namespace Msp.Entity.Entities
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Categories>()
-                .HasMany(e => e.products)
-                .WithOptional(e => e.categories)
-                .HasForeignKey(e => e.PCategoryId);
+            //modelBuilder.Entity<Categories>()
+            //    .HasMany(e => e.products)
+            //    .WithOptional(e => e.categories)
+            //    .HasForeignKey(e => e.PCategoryId);
 
-            modelBuilder.Entity<Users>()
-                .Property(e => e.note)
-                .IsUnicode(false);
+            //modelBuilder.Entity<Users>()
+            //    .Property(e => e.note)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<Users>()
-                .HasMany(e => e.cashiers)
-                .WithOptional(e => e.users)
-                .HasForeignKey(e => e.userId);
+            //modelBuilder.Entity<Users>()
+            //    .HasMany(e => e.cashiers)
+            //    .WithOptional(e => e.users)
+            //    .HasForeignKey(e => e.userId);
         }
     }
 }

@@ -180,7 +180,7 @@
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 97, 650, 400);
             this.dataLayoutControl1.Root = this.Root;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(738, 411);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(738, 371);
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
@@ -192,11 +192,10 @@
             this.nameTextEdit.Size = new System.Drawing.Size(202, 20);
             this.nameTextEdit.StyleController = this.dataLayoutControl1;
             this.nameTextEdit.TabIndex = 4;
-            this.nameTextEdit.EditValueChanged += new System.EventHandler(this.nameTextEdit_EditValueChanged);
             // 
             // categoryIdTextEdit
             // 
-            this.categoryIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "categoryId", true));
+            this.categoryIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PCategoryId", true));
             this.categoryIdTextEdit.Location = new System.Drawing.Point(115, 84);
             this.categoryIdTextEdit.Name = "categoryIdTextEdit";
             this.categoryIdTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -211,7 +210,7 @@
             // 
             // dateDateEdit
             // 
-            this.dateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "date", true));
+            this.dateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PDate", true));
             this.dateDateEdit.EditValue = null;
             this.dateDateEdit.Location = new System.Drawing.Point(516, 192);
             this.dateDateEdit.Name = "dateDateEdit";
@@ -223,11 +222,10 @@
             this.dateDateEdit.Size = new System.Drawing.Size(200, 20);
             this.dateDateEdit.StyleController = this.dataLayoutControl1;
             this.dateDateEdit.TabIndex = 7;
-            this.dateDateEdit.EditValueChanged += new System.EventHandler(this.dateDateEdit_EditValueChanged);
             // 
             // firstPriceTextEdit
             // 
-            this.firstPriceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "firstPrice", true));
+            this.firstPriceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PFirstPrice", true));
             this.firstPriceTextEdit.Location = new System.Drawing.Point(115, 120);
             this.firstPriceTextEdit.Name = "firstPriceTextEdit";
             this.firstPriceTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -242,7 +240,7 @@
             // 
             // totalTextEdit
             // 
-            this.totalTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "total", true));
+            this.totalTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PTotal", true));
             this.totalTextEdit.EditValue = "";
             this.totalTextEdit.Location = new System.Drawing.Point(115, 156);
             this.totalTextEdit.Name = "totalTextEdit";
@@ -258,7 +256,7 @@
             // 
             // lastPriceTextEdit
             // 
-            this.lastPriceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "lastPrice", true));
+            this.lastPriceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PlastPrice", true));
             this.lastPriceTextEdit.Location = new System.Drawing.Point(516, 120);
             this.lastPriceTextEdit.Name = "lastPriceTextEdit";
             this.lastPriceTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -270,11 +268,10 @@
             this.lastPriceTextEdit.Size = new System.Drawing.Size(200, 20);
             this.lastPriceTextEdit.StyleController = this.dataLayoutControl1;
             this.lastPriceTextEdit.TabIndex = 10;
-            this.lastPriceTextEdit.EditValueChanged += new System.EventHandler(this.lastPriceTextEdit_EditValueChanged);
             // 
             // barcodeTextEdit
             // 
-            this.barcodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "barcode", true));
+            this.barcodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PBarcode", true));
             this.barcodeTextEdit.Location = new System.Drawing.Point(516, 12);
             this.barcodeTextEdit.Name = "barcodeTextEdit";
             this.barcodeTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -283,7 +280,6 @@
             this.barcodeTextEdit.Size = new System.Drawing.Size(200, 20);
             this.barcodeTextEdit.StyleController = this.dataLayoutControl1;
             this.barcodeTextEdit.TabIndex = 5;
-            this.barcodeTextEdit.EditValueChanged += new System.EventHandler(this.barcodeTextEdit_EditValueChanged);
             // 
             // taxTextEdit
             // 
@@ -293,7 +289,6 @@
             this.taxTextEdit.Size = new System.Drawing.Size(202, 20);
             this.taxTextEdit.StyleController = this.dataLayoutControl1;
             this.taxTextEdit.TabIndex = 11;
-            this.taxTextEdit.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // textEdit2
             // 
@@ -303,7 +298,6 @@
             this.textEdit2.Size = new System.Drawing.Size(200, 20);
             this.textEdit2.StyleController = this.dataLayoutControl1;
             this.textEdit2.TabIndex = 12;
-            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             // 
             // textEdit1
             // 
@@ -322,7 +316,6 @@
             this.productGroupTextEdit.Size = new System.Drawing.Size(200, 20);
             this.productGroupTextEdit.StyleController = this.dataLayoutControl1;
             this.productGroupTextEdit.TabIndex = 15;
-            this.productGroupTextEdit.EditValueChanged += new System.EventHandler(this.productGroupTextEdit_EditValueChanged);
             // 
             // SpecialCodetextEdit3
             // 
@@ -332,7 +325,6 @@
             this.SpecialCodetextEdit3.Size = new System.Drawing.Size(200, 20);
             this.SpecialCodetextEdit3.StyleController = this.dataLayoutControl1;
             this.SpecialCodetextEdit3.TabIndex = 16;
-            this.SpecialCodetextEdit3.EditValueChanged += new System.EventHandler(this.SpecialCodetextEdit3_EditValueChanged);
             // 
             // BrandCodetextEdit
             // 
@@ -342,7 +334,6 @@
             this.BrandCodetextEdit.Size = new System.Drawing.Size(202, 20);
             this.BrandCodetextEdit.StyleController = this.dataLayoutControl1;
             this.BrandCodetextEdit.TabIndex = 17;
-            this.BrandCodetextEdit.EditValueChanged += new System.EventHandler(this.BrandCodetextEdit_EditValueChanged);
             // 
             // UnittextEdit
             // 
@@ -358,7 +349,6 @@
             this.UnittextEdit.Size = new System.Drawing.Size(200, 20);
             this.UnittextEdit.StyleController = this.dataLayoutControl1;
             this.UnittextEdit.TabIndex = 13;
-            this.UnittextEdit.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged_1);
             // 
             // bs_Unit
             // 
@@ -371,7 +361,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(738, 411);
+            this.Root.Size = new System.Drawing.Size(738, 371);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -411,7 +401,7 @@
             this.emptySpaceItem24});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(718, 391);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(718, 351);
             // 
             // emptySpaceItem3
             // 
@@ -458,7 +448,7 @@
             this.emptySpaceItem7.AllowHotTrack = false;
             this.emptySpaceItem7.Location = new System.Drawing.Point(401, 252);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(317, 139);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(317, 99);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem8
@@ -466,7 +456,7 @@
             this.emptySpaceItem8.AllowHotTrack = false;
             this.emptySpaceItem8.Location = new System.Drawing.Point(0, 252);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(401, 139);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(401, 99);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem10
@@ -565,7 +555,7 @@
             // ItemForname
             // 
             this.ItemForname.Control = this.nameTextEdit;
-            this.ItemForname.ImageOptions.Image = global::Msp.App.Properties.Resources.editname_32x32;
+            this.ItemForname.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ItemForname.ImageOptions.Image")));
             this.ItemForname.Location = new System.Drawing.Point(0, 0);
             this.ItemForname.MinSize = new System.Drawing.Size(138, 36);
             this.ItemForname.Name = "ItemForname";
@@ -628,7 +618,7 @@
             // ItemForbarcode
             // 
             this.ItemForbarcode.Control = this.barcodeTextEdit;
-            this.ItemForbarcode.ImageOptions.Image = global::Msp.App.Properties.Resources.barcode2_32x32;
+            this.ItemForbarcode.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ItemForbarcode.ImageOptions.Image")));
             this.ItemForbarcode.Location = new System.Drawing.Point(401, 0);
             this.ItemForbarcode.Name = "ItemForbarcode";
             this.ItemForbarcode.Size = new System.Drawing.Size(307, 36);
@@ -813,15 +803,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 411);
+            this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
-            this.Controls.Add(this.dataLayoutControl1);
             this.Name = "frmStockEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürün Ekle";
-            this.Load += new System.EventHandler(this.frmStockEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

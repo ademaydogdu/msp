@@ -16,6 +16,7 @@ using Msp.Service.Service.App;
 using Msp.Models.Models.App;
 using Msp.App.Settings;
 using Microsoft.Win32;
+using Msp.App.Depo_Stok;
 
 namespace msp.App
 {

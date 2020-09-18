@@ -28,7 +28,7 @@ namespace Msp.App.Depo_Stok
 
         public FormOpenType _FormOpenType;
 
-        ProductDTO product = new ProductDTO();
+        private ProductDTO __product = new ProductDTO();
         List<UnitsDTO> units = new List<UnitsDTO>();
 
         public void Show(int id)
@@ -38,84 +38,33 @@ namespace Msp.App.Depo_Stok
 
             if (_FormOpenType == FormOpenType.New)
             {
-                product = new ProductDTO();
+                __product = new ProductDTO();
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
-                product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(id));
-                bs_StockEdit.DataSource = product;
+                __product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(id));
             }
 
+            bs_StockEdit.DataSource = __product;
             this.ShowDialog();
         }
 
-        private void frmStockEdit_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEdit1_EditValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEdit2_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barcodeTextEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nameTextEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SpecialCodetextEdit3_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productGroupTextEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateDateEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lastPriceTextEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-        }
-
         #region Record
-
         private void do_save()
+
         {
-            if (get_Question("Kaydedilcektir Onaylıyor musunuz?"))
+            if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
                 try
                 {
-                    var response = _repository.Run<DepotStockService, ActionResponse<ProductDTO>>(x => x.InsertProduct(product));
+                    var response = _repository.Run<DepotStockService, ActionResponse<ProductDTO>>(x => x.SaveProduct(__product));
                     if (response.ResponseType != ResponseType.Ok)
                     {
                         DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        this.Close();
                     }
                 }
                 catch (Exception ex)
@@ -124,6 +73,19 @@ namespace Msp.App.Depo_Stok
                 }
             }
         }
+
+
+
+
+
+
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+
 
         public bool get_Question(string _Question)
         {
@@ -137,10 +99,6 @@ namespace Msp.App.Depo_Stok
 
         #endregion
 
-        private void BrandCodetextEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void bbi_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
