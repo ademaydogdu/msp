@@ -253,7 +253,7 @@ namespace msp.App
         {
             frmSatis frm = new frmSatis();
             frm.MdiParent = this;
-            frm.Show();
+            frm.Show(0);
 
         }
 
@@ -300,8 +300,12 @@ namespace msp.App
         }
 
 
+
         #endregion
 
-
+        private void btnSatisListesi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
     }
 }

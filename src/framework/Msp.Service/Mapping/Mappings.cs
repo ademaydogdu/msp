@@ -2,6 +2,7 @@
 using Msp.Entity.Entities;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
+using Msp.Models.Models.Sale;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,12 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<UnitsDTO, Units>();
             cfg.CreateMap<CTransactions, CTransactionsDTO>();
             cfg.CreateMap<CTransactionsDTO, CTransactions>();
+            cfg.CreateMap<Parameters, ParametersDTO>();
+            cfg.CreateMap<ParametersDTO, Parameters>();
+            cfg.CreateMap<SaleOwner, SaleOwnerDTO>();
+            cfg.CreateMap<SaleOwnerDTO, SaleOwner>();
+            cfg.CreateMap<SaleTrans, SaleTransDTO>();
+            cfg.CreateMap<SaleTransDTO, SaleTrans>();
         }
 
 

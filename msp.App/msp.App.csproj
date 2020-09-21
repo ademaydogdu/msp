@@ -150,6 +150,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Satis\frmSatisList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmSatisList.Designer.cs">
+      <DependentUpon>frmSatisList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\FrmSiparis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\FrmSiparis.Designer.cs">
+      <DependentUpon>FrmSiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\frmSpeedSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmSpeedSatis.Designer.cs">
+      <DependentUpon>frmSpeedSatis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings\FrmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +237,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Satis\frmSatisList.resx">
+      <DependentUpon>frmSatisList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\FrmSiparis.resx">
+      <DependentUpon>FrmSiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\frmSpeedSatis.resx">
+      <DependentUpon>frmSpeedSatis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings\FrmCompany.resx">
       <DependentUpon>FrmCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,7 +267,10 @@
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.ParametersDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UsersDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

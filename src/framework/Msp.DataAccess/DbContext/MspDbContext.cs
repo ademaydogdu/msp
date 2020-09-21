@@ -27,9 +27,13 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Products> products { get; set; }
         public virtual DbSet<Users> users { get; set; }
         public virtual DbSet<Company> Company { get; set; }
+        public virtual DbSet<Parameters> Parameters { get; set; }
         public virtual DbSet<ProgramsControl> ProgramsControl { get; set; }
         public virtual DbSet<ApplicationServer> ApplicationServer { get; set; }
         public virtual DbSet<Units> Units { get; set; }
+        public virtual DbSet<SaleOwner> SaleOwner { get; set; }
+        public virtual DbSet<SaleTrans> SaleTrans { get; set; }
+
 
         public virtual DbSet<CTransactions> CurrentTransactions { get; set; }
 

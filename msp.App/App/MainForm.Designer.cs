@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            //this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
@@ -139,7 +138,8 @@
             this.bbi_Company = new DevExpress.XtraBars.BarStaticItem();
             this.btn_isyeri = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSatisListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.rbi_Siparis = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -147,6 +147,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -163,8 +164,6 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rbi_Siparis = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -287,7 +286,7 @@
             this.bbi_Company,
             this.btn_isyeri,
             this.barButtonItem1,
-            this.barButtonItem4,
+            this.btnSatisListesi,
             this.rbi_Siparis});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
@@ -1057,12 +1056,20 @@
             this.barButtonItem1.ImageOptions.LargeImageIndex = 2;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem4
+            // btnSatisListesi
             // 
-            this.barButtonItem4.Caption = "Satış Listesi";
-            this.barButtonItem4.Id = 110;
-            this.barButtonItem4.ImageOptions.LargeImageIndex = 9;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnSatisListesi.Caption = "Satış Listesi";
+            this.btnSatisListesi.Id = 110;
+            this.btnSatisListesi.ImageOptions.LargeImageIndex = 9;
+            this.btnSatisListesi.Name = "btnSatisListesi";
+            this.btnSatisListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSatisListesi_ItemClick);
+            // 
+            // rbi_Siparis
+            // 
+            this.rbi_Siparis.Caption = "Sipariş";
+            this.rbi_Siparis.Id = 111;
+            this.rbi_Siparis.ImageOptions.LargeImageIndex = 10;
+            this.rbi_Siparis.Name = "rbi_Siparis";
             // 
             // img_buton
             // 
@@ -1097,7 +1104,7 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.AllowTextClipping = false;
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnSatisListesi);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Satış Sonrası";
             // 
@@ -1122,6 +1129,12 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btnDepo);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Depo";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.rbi_Siparis);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "Sipariş";
             // 
             // ribbonPage6
             // 
@@ -1241,19 +1254,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.rbi_Siparis);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "Sipariş";
-            // 
-            // rbi_Siparis
-            // 
-            this.rbi_Siparis.Caption = "Sipariş";
-            this.rbi_Siparis.Id = 111;
-            this.rbi_Siparis.ImageOptions.LargeImageIndex = 10;
-            this.rbi_Siparis.Name = "rbi_Siparis";
             // 
             // MainForm
             // 
@@ -1414,7 +1414,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.Utils.SvgImageCollection img_buton;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnSatisListesi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem rbi_Siparis;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;

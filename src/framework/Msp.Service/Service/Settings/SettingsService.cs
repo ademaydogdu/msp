@@ -94,6 +94,17 @@ namespace Msp.Service.Service.Settings
 
         #endregion
 
+        #region Parameters
+
+        public ParametersDTO Get_Parameters()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<Parameters, ParametersDTO>(_db.Parameters.FirstOrDefault());
+            }
+        }
+
+        #endregion
 
     }
 }
