@@ -22,7 +22,7 @@ namespace Msp.Models.Models
 
         public long? PTotal { get; set; }
 
-        public long? PlastPrice { get; set; }
+        public long? PLastPrice { get; set; }
 
         public int PUnitId { get; set; }
 

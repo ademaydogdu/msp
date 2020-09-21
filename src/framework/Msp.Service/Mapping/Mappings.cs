@@ -31,6 +31,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<SaleOwnerDTO, SaleOwner>();
             cfg.CreateMap<SaleTrans, SaleTransDTO>();
             cfg.CreateMap<SaleTransDTO, SaleTrans>();
+            cfg.CreateMap<Customers, CustomersDTO>();
+            cfg.CreateMap<CustomersDTO, Customers>();
         }
 
 

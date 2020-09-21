@@ -348,3 +348,21 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/msp.App
+/src/framework/Msp.Models/Models
+/yedek
+/src/framework/Msp.Service/Service
+/App
+/CariIslemler
+/Depo-Stok
+/MusterIIslemleri
+/Properties
+/Resources
+/Satis
+/Settings
+/Tool
+/App.config
+/msp.App.csproj
+/Msp.App.csproj.bak
+/packages.config
+/Program.cs

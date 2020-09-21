@@ -9,7 +9,6 @@ namespace Msp.Entity.Entities
     public partial class Products
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PID { get; set; }
 
         [StringLength(50)]
@@ -30,6 +29,21 @@ namespace Msp.Entity.Entities
 
         public int? PUnitId { get; set; }
 
-        public virtual Categories categories { get; set; }
+
+
+        [StringLength(50)]
+        public string PTax { get; set; }
+
+        public string PVarDescription { get; set; }
+
+        public string PSpecCode { get; set; }
+
+        public string PBrandName { get; set; }
+
+        public string PBrandCode { get; set; }
+
+        public string PGroup { get; set; }
+
+        //public virtual Categories categories { get; set; }
     }
 }

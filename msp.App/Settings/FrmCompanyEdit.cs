@@ -49,11 +49,11 @@ namespace Msp.App.Settings
 
         private void do_save()
         {
-            if (get_Question("Kaydedilcektir Onaylıyor musunuz?"))
+            if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
                 try
                 {
-                    var response = _repository.Run<SettingsService, ActionResponse<CompanyDTO>>(x => x.Save_Compnay(__company));
+                    var response = _repository.Run<SettingsService, ActionResponse<CompanyDTO>>(x => x.Save_Company(__company));
                     if (response.ResponseType != ResponseType.Ok)
                     {
                         DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);

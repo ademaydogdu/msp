@@ -41,7 +41,7 @@ namespace Msp.Service.Service.Settings
             }
         }
 
-        public ActionResponse<CompanyDTO> Save_Compnay(CompanyDTO model)
+        public ActionResponse<CompanyDTO> Save_Company(CompanyDTO model)
         {
             ActionResponse<CompanyDTO> response = new ActionResponse<CompanyDTO>()
             {
@@ -77,7 +77,7 @@ namespace Msp.Service.Service.Settings
             return response;
         }
 
-        public ActionResponse<CompanyDTO> DeleteCompnay(int? RecId)
+        public ActionResponse<CompanyDTO> DeleteCompany(int? RecId)
         {
             ActionResponse<CompanyDTO> response = new ActionResponse<CompanyDTO>();
             using (MspDbContext _db = new MspDbContext())
