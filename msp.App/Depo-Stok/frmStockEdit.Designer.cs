@@ -192,6 +192,7 @@
             this.nameTextEdit.Size = new System.Drawing.Size(202, 20);
             this.nameTextEdit.StyleController = this.dataLayoutControl1;
             this.nameTextEdit.TabIndex = 4;
+            this.nameTextEdit.EditValueChanged += new System.EventHandler(this.nameTextEdit_EditValueChanged);
             // 
             // categoryIdTextEdit
             // 
@@ -256,7 +257,7 @@
             // 
             // lastPriceTextEdit
             // 
-            this.lastPriceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PlastPrice", true));
+            this.lastPriceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PLastPrice", true));
             this.lastPriceTextEdit.Location = new System.Drawing.Point(516, 120);
             this.lastPriceTextEdit.Name = "lastPriceTextEdit";
             this.lastPriceTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;

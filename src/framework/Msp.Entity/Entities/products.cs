@@ -28,9 +28,10 @@ namespace Msp.Entity.Entities
         public long? PLastPrice { get; set; }
 
         public int? PUnitId { get; set; }
-        public long? PlastPrice { get; set; }
 
 
+
+        [StringLength(50)]
         public string PTax { get; set; }
 
         public string PVarDescription { get; set; }

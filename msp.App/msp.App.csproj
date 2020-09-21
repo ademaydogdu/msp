@@ -130,6 +130,18 @@
     <Compile Include="Depo-Stok\frmStockEdit.Designer.cs">
       <DependentUpon>frmStockEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Musteri-Islemleri\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri-Islemleri\frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri-Islemleri\frmCustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri-Islemleri\frmCustomerEdit.Designer.cs">
+      <DependentUpon>frmCustomerEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satis\frmSatis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +211,12 @@
     <EmbeddedResource Include="Depo-Stok\frmStockEdit.resx">
       <DependentUpon>frmStockEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Musteri-Islemleri\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri-Islemleri\frmCustomerEdit.resx">
+      <DependentUpon>frmCustomerEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmSatis.resx">
       <DependentUpon>frmSatis.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +258,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CustomersDTO1.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UsersDTO.datasource" />
     <None Include="Properties\Settings.settings">
@@ -296,6 +315,84 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\snaptogglefieldhighlighting_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshallpivottable_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencolor_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marqueezoom_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshallpivottable_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencolor_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marqueezoom_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changedatasourcepivottable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editname_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bodetails_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bocustomer_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geopoint_32x324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radio_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

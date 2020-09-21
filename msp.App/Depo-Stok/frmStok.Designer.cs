@@ -48,6 +48,7 @@
             this.colPBrandName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPBrandCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPGroup = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPTax = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnProductsRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -75,7 +76,6 @@
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colPTax = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -257,6 +257,13 @@
             this.colPGroup.Visible = true;
             this.colPGroup.VisibleIndex = 13;
             // 
+            // colPTax
+            // 
+            this.colPTax.Caption = "KDV";
+            this.colPTax.Name = "colPTax";
+            this.colPTax.Visible = true;
+            this.colPTax.VisibleIndex = 14;
+            // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
@@ -317,6 +324,7 @@
             // 
             this.btnProductsRefresh.Caption = "barButtonItem1";
             this.btnProductsRefresh.Id = 0;
+            this.btnProductsRefresh.ImageOptions.Image = global::Msp.App.Properties.Resources.refreshallpivottable_32x321;
             this.btnProductsRefresh.ImageOptions.ImageIndex = 11;
             this.btnProductsRefresh.Name = "btnProductsRefresh";
             this.btnProductsRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductsRefresh_ItemClick);
@@ -325,6 +333,7 @@
             // 
             this.btnAddNewProduct.Caption = "Yeni Ürün";
             this.btnAddNewProduct.Id = 1;
+            this.btnAddNewProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.add_32x321;
             this.btnAddNewProduct.ImageOptions.ImageIndex = 1;
             this.btnAddNewProduct.Name = "btnAddNewProduct";
             this.btnAddNewProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddNewProduct_ItemClick);
@@ -333,6 +342,7 @@
             // 
             this.btnRemProduct.Caption = "Ürün Sil";
             this.btnRemProduct.Id = 4;
+            this.btnRemProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.remove_32x321;
             this.btnRemProduct.ImageOptions.ImageIndex = 4;
             this.btnRemProduct.Name = "btnRemProduct";
             this.btnRemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemProduct_ItemClick);
@@ -341,6 +351,7 @@
             // 
             this.btnEditProduct.Caption = "Düzelt";
             this.btnEditProduct.Id = 2;
+            this.btnEditProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.pencolor_32x321;
             this.btnEditProduct.ImageOptions.ImageIndex = 2;
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditProduct_ItemClick);
@@ -349,6 +360,7 @@
             // 
             this.btnSeaProduct.Caption = "Ürün Bul";
             this.btnSeaProduct.Id = 6;
+            this.btnSeaProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.marqueezoom_32x321;
             this.btnSeaProduct.ImageOptions.ImageIndex = 6;
             this.btnSeaProduct.Name = "btnSeaProduct";
             // 
@@ -356,6 +368,7 @@
             // 
             this.btnProTransactions.Caption = "Ürün Hareketleri";
             this.btnProTransactions.Id = 7;
+            this.btnProTransactions.ImageOptions.Image = global::Msp.App.Properties.Resources.bar_32x32;
             this.btnProTransactions.ImageOptions.ImageIndex = 7;
             this.btnProTransactions.Name = "btnProTransactions";
             // 
@@ -363,6 +376,7 @@
             // 
             this.btnProQuickChange.Caption = "Hızlı Değiştir";
             this.btnProQuickChange.Id = 8;
+            this.btnProQuickChange.ImageOptions.Image = global::Msp.App.Properties.Resources.changedatasourcepivottable_32x32;
             this.btnProQuickChange.ImageOptions.ImageIndex = 8;
             this.btnProQuickChange.Name = "btnProQuickChange";
             // 
@@ -370,6 +384,7 @@
             // 
             this.btnProBarcodeLabel.Caption = "Barkod Etiket";
             this.btnProBarcodeLabel.Id = 9;
+            this.btnProBarcodeLabel.ImageOptions.Image = global::Msp.App.Properties.Resources.barcode_32x32;
             this.btnProBarcodeLabel.ImageOptions.ImageIndex = 9;
             this.btnProBarcodeLabel.Name = "btnProBarcodeLabel";
             // 
@@ -377,6 +392,7 @@
             // 
             this.btnProClose.Caption = "Kapat";
             this.btnProClose.Id = 10;
+            this.btnProClose.ImageOptions.Image = global::Msp.App.Properties.Resources.cancel_32x321;
             this.btnProClose.ImageOptions.ImageIndex = 10;
             this.btnProClose.Name = "btnProClose";
             // 
@@ -500,13 +516,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(998, 634);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // colPTax
-            // 
-            this.colPTax.Caption = "KDV";
-            this.colPTax.Name = "colPTax";
-            this.colPTax.Visible = true;
-            this.colPTax.VisibleIndex = 14;
             // 
             // frmStok
             // 

@@ -71,6 +71,7 @@
     <Compile Include="Service\Authorization\AuthorizationService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Service\CurrentTransactions\CurrentTransactionsService.cs" />
+    <Compile Include="Service\CustomerTransactions\CustomerTransactionsService.cs" />
     <Compile Include="Service\DepotStock\DepotStockService.cs" />
     <Compile Include="Service\Settings\SettingsService.cs" />
   </ItemGroup>
