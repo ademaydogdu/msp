@@ -12,6 +12,7 @@ using DevExpress.XtraLayout;
 using Msp.Service.Repository;
 using Msp.Models.Models;
 using Msp.Service.Service.Settings;
+using Msp.App.Depo_Stok;
 
 namespace msp.App
 {
@@ -57,5 +58,10 @@ namespace msp.App
 
         #endregion
 
+        private void btnProductAdd_Click(object sender, EventArgs e)
+        {
+            frmStok frm = new frmStok();
+            frm.ShowDialog();
+        }
     }
 }

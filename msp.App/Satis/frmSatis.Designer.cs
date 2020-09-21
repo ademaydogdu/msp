@@ -35,6 +35,7 @@
             this.txt_Barcode = new DevExpress.XtraEditors.MemoEdit();
             this.txt_OdemeTipi = new DevExpress.XtraEditors.LookUpEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,13 +120,13 @@
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
@@ -185,7 +186,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -279,6 +279,10 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // bs_SaleTrans
+            // 
+            this.bs_SaleTrans.DataSource = typeof(Msp.Models.Models.Sale.SaleTransDTO);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -294,6 +298,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Ürün Barkodu";
+            this.gridColumn1.FieldName = "ProductBarcode";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
@@ -302,6 +307,7 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Ürün Adı";
+            this.gridColumn2.FieldName = "ProductName";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
@@ -312,6 +318,7 @@
             this.gridColumn3.Caption = "Miktar";
             this.gridColumn3.ColumnEdit = this.repositoryItemSpinEdit1;
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn3.FieldName = "ProductQuantity";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
@@ -328,6 +335,7 @@
             this.gridColumn4.Caption = "Fiyat";
             this.gridColumn4.ColumnEdit = this.repositoryItemSpinEdit2;
             this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn4.FieldName = "ProductPrice";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
@@ -344,6 +352,7 @@
             // 
             this.gridColumn5.Caption = "Tutar";
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn5.FieldName = "ProductAmount";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
@@ -683,6 +692,7 @@
             this.btnProductAdd.StyleController = this.layoutControl1;
             this.btnProductAdd.TabIndex = 34;
             this.btnProductAdd.Text = "Ürün Ekle";
+            this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
             // 
             // txt_CustomerName
             // 
@@ -1242,10 +1252,6 @@
             // 
             this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
             // 
-            // bs_SaleTrans
-            // 
-            this.bs_SaleTrans.DataSource = typeof(Msp.Models.Models.Sale.SaleTransDTO);
-            // 
             // frmSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1264,6 +1270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
@@ -1323,7 +1330,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
             this.ResumeLayout(false);
 
         }
