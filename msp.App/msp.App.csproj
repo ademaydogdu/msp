@@ -237,7 +237,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
-    <None Include="Properties\DataSources\Msp.Models.Models.CCustomersDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
@@ -297,96 +296,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\snaptogglefieldhighlighting_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_32x322.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_16x161.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_32x323.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\apply_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\apply_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\apply_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\apply_32x322.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_32x324.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\floatingobjectoutlinecolor_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marqueezoom_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marqueezoom_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marqueezoom_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\chart_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\reviewers_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\trash_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\barcode_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\changedatasourcepivottable_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_32x325.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

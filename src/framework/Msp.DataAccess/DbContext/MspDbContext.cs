@@ -33,8 +33,6 @@ namespace Msp.Entity.Entities
 
         public virtual DbSet<CTransactions> CurrentTransactions { get; set; }
 
-        public virtual DbSet<CCustomers> CurrentCustomers { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
