@@ -63,7 +63,7 @@ namespace Msp.App.Musteri_Islemleri
             {
                 try
                 {
-                    var response = _repository.Run<CustomerTransactionsService, ActionResponse<CustomersDTO>>(x => x.(__customers));
+                    var response = _repository.Run<CustomerTransactionsService, ActionResponse<CustomersDTO>>(x => x.SaveCustomers(__customers));
                     if (response.ResponseType != ResponseType.Ok)
                     {
                         DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);

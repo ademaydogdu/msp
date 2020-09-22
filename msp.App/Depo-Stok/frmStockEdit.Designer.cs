@@ -192,7 +192,7 @@
             this.nameTextEdit.Size = new System.Drawing.Size(202, 20);
             this.nameTextEdit.StyleController = this.dataLayoutControl1;
             this.nameTextEdit.TabIndex = 4;
-            this.nameTextEdit.EditValueChanged += new System.EventHandler(this.nameTextEdit_EditValueChanged);
+           // this.nameTextEdit.EditValueChanged += new System.EventHandler(this.nameTextEdit_EditValueChanged);
             // 
             // categoryIdTextEdit
             // 
