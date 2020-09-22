@@ -30,6 +30,17 @@ namespace msp.App
         int RecId;
         #endregion
 
+        #region Record
+
+        public void Insert_Product(int ProductId)
+        {
+
+
+        }
+
+
+        #endregion
+
         #region FORM
 
         public void Show(int _recId)
@@ -56,12 +67,14 @@ namespace msp.App
             btn_N0.AutoWidthInLayoutControl = true;
         }
 
-        #endregion
-
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
             frmStok frm = new frmStok();
             frm.ShowDialog();
         }
+
+
+        #endregion
+
     }
 }
