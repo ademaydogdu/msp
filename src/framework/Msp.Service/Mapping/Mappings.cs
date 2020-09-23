@@ -33,6 +33,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<SaleTransDTO, SaleTrans>();
             cfg.CreateMap<Customers, CustomersDTO>();
             cfg.CreateMap<CustomersDTO, Customers>();
+            cfg.CreateMap<PaymentType, PaymentTypeDTO>();
+            cfg.CreateMap<PaymentTypeDTO, PaymentType>();
         }
 
 

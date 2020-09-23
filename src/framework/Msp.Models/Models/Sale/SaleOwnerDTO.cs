@@ -11,7 +11,7 @@ namespace Msp.Models.Models.Sale
         public int RecId { get; set; }
         public DateTime? Date { get; set; }
         public string CustomerName { get; set; }
-        public string PaymentType { get; set; }
+        public int? PaymentType { get; set; }
         public decimal? NetPrice { get; set; }
         public decimal? KDV { get; set; }
         public decimal? DiscountPrice { get; set; }

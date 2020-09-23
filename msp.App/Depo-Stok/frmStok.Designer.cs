@@ -60,6 +60,7 @@
             this.btnProQuickChange = new DevExpress.XtraBars.BarButtonItem();
             this.btnProBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
             this.btnProClose = new DevExpress.XtraBars.BarButtonItem();
+            this.btnORderAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -96,7 +97,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1018, 654);
+            this.layoutControl1.Size = new System.Drawing.Size(937, 589);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -109,7 +110,7 @@
             this.gcProducts.Name = "gcProducts";
             this.gcProducts.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.gcProducts.Size = new System.Drawing.Size(994, 630);
+            this.gcProducts.Size = new System.Drawing.Size(913, 565);
             this.gcProducts.TabIndex = 4;
             this.gcProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcvProducts});
@@ -138,13 +139,14 @@
             this.colPTax});
             this.gcvProducts.GridControl = this.gcProducts;
             this.gcvProducts.Name = "gcvProducts";
+            this.gcvProducts.OptionsBehavior.Editable = false;
+            this.gcvProducts.OptionsView.ShowGroupPanel = false;
+            this.gcvProducts.DoubleClick += new System.EventHandler(this.gcvProducts_DoubleClick);
             // 
             // colPID
             // 
             this.colPID.FieldName = "PID";
             this.colPID.Name = "colPID";
-            this.colPID.Visible = true;
-            this.colPID.VisibleIndex = 0;
             // 
             // colPName
             // 
@@ -152,7 +154,7 @@
             this.colPName.FieldName = "PName";
             this.colPName.Name = "colPName";
             this.colPName.Visible = true;
-            this.colPName.VisibleIndex = 1;
+            this.colPName.VisibleIndex = 0;
             // 
             // colPBarcode
             // 
@@ -160,7 +162,7 @@
             this.colPBarcode.FieldName = "PBarcode";
             this.colPBarcode.Name = "colPBarcode";
             this.colPBarcode.Visible = true;
-            this.colPBarcode.VisibleIndex = 2;
+            this.colPBarcode.VisibleIndex = 1;
             // 
             // colPCategoryId
             // 
@@ -168,7 +170,7 @@
             this.colPCategoryId.FieldName = "PCategoryId";
             this.colPCategoryId.Name = "colPCategoryId";
             this.colPCategoryId.Visible = true;
-            this.colPCategoryId.VisibleIndex = 3;
+            this.colPCategoryId.VisibleIndex = 2;
             // 
             // colPDate
             // 
@@ -176,15 +178,17 @@
             this.colPDate.FieldName = "PDate";
             this.colPDate.Name = "colPDate";
             this.colPDate.Visible = true;
-            this.colPDate.VisibleIndex = 4;
+            this.colPDate.VisibleIndex = 3;
             // 
             // colPFirstPrice
             // 
             this.colPFirstPrice.Caption = "İlk Fiyat";
+            this.colPFirstPrice.DisplayFormat.FormatString = "n2";
+            this.colPFirstPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPFirstPrice.FieldName = "PFirstPrice";
             this.colPFirstPrice.Name = "colPFirstPrice";
             this.colPFirstPrice.Visible = true;
-            this.colPFirstPrice.VisibleIndex = 5;
+            this.colPFirstPrice.VisibleIndex = 4;
             // 
             // colPTotal
             // 
@@ -192,15 +196,17 @@
             this.colPTotal.FieldName = "PTotal";
             this.colPTotal.Name = "colPTotal";
             this.colPTotal.Visible = true;
-            this.colPTotal.VisibleIndex = 6;
+            this.colPTotal.VisibleIndex = 5;
             // 
             // colPlastPrice
             // 
             this.colPlastPrice.Caption = "Son Fiyat";
+            this.colPlastPrice.DisplayFormat.FormatString = "n2";
+            this.colPlastPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPlastPrice.FieldName = "PlastPrice";
             this.colPlastPrice.Name = "colPlastPrice";
             this.colPlastPrice.Visible = true;
-            this.colPlastPrice.VisibleIndex = 7;
+            this.colPlastPrice.VisibleIndex = 6;
             // 
             // colPUnitId
             // 
@@ -208,7 +214,7 @@
             this.colPUnitId.FieldName = "PUnitId";
             this.colPUnitId.Name = "colPUnitId";
             this.colPUnitId.Visible = true;
-            this.colPUnitId.VisibleIndex = 8;
+            this.colPUnitId.VisibleIndex = 7;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -223,7 +229,7 @@
             this.colPVarDescription.FieldName = "PVarDescription";
             this.colPVarDescription.Name = "colPVarDescription";
             this.colPVarDescription.Visible = true;
-            this.colPVarDescription.VisibleIndex = 9;
+            this.colPVarDescription.VisibleIndex = 8;
             // 
             // colPSpecCode
             // 
@@ -231,7 +237,7 @@
             this.colPSpecCode.FieldName = "PSpecCode";
             this.colPSpecCode.Name = "colPSpecCode";
             this.colPSpecCode.Visible = true;
-            this.colPSpecCode.VisibleIndex = 10;
+            this.colPSpecCode.VisibleIndex = 9;
             // 
             // colPBrandName
             // 
@@ -239,7 +245,7 @@
             this.colPBrandName.FieldName = "PBrandName";
             this.colPBrandName.Name = "colPBrandName";
             this.colPBrandName.Visible = true;
-            this.colPBrandName.VisibleIndex = 11;
+            this.colPBrandName.VisibleIndex = 10;
             // 
             // colPBrandCode
             // 
@@ -247,7 +253,7 @@
             this.colPBrandCode.FieldName = "PBrandCode";
             this.colPBrandCode.Name = "colPBrandCode";
             this.colPBrandCode.Visible = true;
-            this.colPBrandCode.VisibleIndex = 12;
+            this.colPBrandCode.VisibleIndex = 11;
             // 
             // colPGroup
             // 
@@ -255,14 +261,14 @@
             this.colPGroup.FieldName = "PGroup";
             this.colPGroup.Name = "colPGroup";
             this.colPGroup.Visible = true;
-            this.colPGroup.VisibleIndex = 13;
+            this.colPGroup.VisibleIndex = 12;
             // 
             // colPTax
             // 
             this.colPTax.Caption = "KDV";
             this.colPTax.Name = "colPTax";
             this.colPTax.Visible = true;
-            this.colPTax.VisibleIndex = 14;
+            this.colPTax.VisibleIndex = 13;
             // 
             // barManager1
             // 
@@ -291,8 +297,9 @@
             this.barDockingMenuItem1,
             this.barToolbarsListItem1,
             this.barSubItem1,
-            this.barEditItem1});
-            this.barManager1.MaxItemId = 17;
+            this.barEditItem1,
+            this.btnORderAdd});
+            this.barManager1.MaxItemId = 18;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMarqueeProgressBar1});
             this.barManager1.SharedImageCollectionImageSizeMode = DevExpress.Utils.SharedImageCollectionImageSizeMode.UseImageSize;
@@ -314,7 +321,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProQuickChange),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProBarcodeLabel),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnProClose)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProClose),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnORderAdd)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -396,21 +404,31 @@
             this.btnProClose.ImageOptions.ImageIndex = 10;
             this.btnProClose.Name = "btnProClose";
             // 
+            // btnORderAdd
+            // 
+            this.btnORderAdd.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btnORderAdd.Caption = "Ürün Satış Ekle";
+            this.btnORderAdd.Id = 17;
+            this.btnORderAdd.ImageOptions.ImageIndex = 12;
+            this.btnORderAdd.Name = "btnORderAdd";
+            this.btnORderAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnORderAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnORderAdd_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1018, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(937, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 654);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 589);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1018, 42);
+            this.barDockControlBottom.Size = new System.Drawing.Size(937, 42);
             // 
             // barDockControlLeft
             // 
@@ -418,15 +436,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 654);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 589);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1018, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(937, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 654);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 589);
             // 
             // svgImageCollection1
             // 
@@ -443,6 +461,7 @@
             this.svgImageCollection1.Add("barcode", "image://svgimages/content/barcode.svg");
             this.svgImageCollection1.Add("saveandclose2", "image://svgimages/save/saveandclose2.svg");
             this.svgImageCollection1.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
+            this.svgImageCollection1.Add("neworder", "image://svgimages/outlook inspired/neworder.svg");
             // 
             // btnViewProduct
             // 
@@ -505,7 +524,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1018, 654);
+            this.Root.Size = new System.Drawing.Size(937, 589);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -513,7 +532,7 @@
             this.layoutControlItem1.Control = this.gcProducts;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(998, 634);
+            this.layoutControlItem1.Size = new System.Drawing.Size(917, 569);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -521,15 +540,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 696);
+            this.ClientSize = new System.Drawing.Size(937, 631);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmStok";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürün Listesi";
             this.Load += new System.EventHandler(this.frmStok_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmStok_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).EndInit();
@@ -551,23 +572,13 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.BarButtonItem btnProductsRefresh;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
-        private DevExpress.XtraBars.BarButtonItem btnAddNewProduct;
-        private DevExpress.XtraBars.BarButtonItem btnEditProduct;
         private DevExpress.XtraBars.BarButtonItem btnViewProduct;
-        private DevExpress.XtraBars.BarButtonItem btnRemProduct;
-        private DevExpress.XtraBars.BarButtonItem btnSeaProduct;
-        private DevExpress.XtraBars.BarButtonItem btnProTransactions;
-        private DevExpress.XtraBars.BarButtonItem btnProQuickChange;
         private DevExpress.XtraBars.BarButtonItem bt;
-        private DevExpress.XtraBars.BarButtonItem btnProBarcodeLabel;
-        private DevExpress.XtraBars.BarButtonItem btnProClose;
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
@@ -595,5 +606,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPBrandCode;
         private DevExpress.XtraGrid.Columns.GridColumn colPGroup;
         private DevExpress.XtraGrid.Columns.GridColumn colPTax;
+        public DevExpress.XtraBars.BarButtonItem btnORderAdd;
+        public DevExpress.XtraBars.Bar bar3;
+        public DevExpress.XtraBars.BarButtonItem btnProductsRefresh;
+        public DevExpress.XtraBars.BarButtonItem btnAddNewProduct;
+        public DevExpress.XtraBars.BarButtonItem btnEditProduct;
+        public DevExpress.XtraBars.BarButtonItem btnRemProduct;
+        public DevExpress.XtraBars.BarButtonItem btnSeaProduct;
+        public DevExpress.XtraBars.BarButtonItem btnProTransactions;
+        public DevExpress.XtraBars.BarButtonItem btnProQuickChange;
+        public DevExpress.XtraBars.BarButtonItem btnProBarcodeLabel;
+        public DevExpress.XtraBars.BarButtonItem btnProClose;
     }
 }

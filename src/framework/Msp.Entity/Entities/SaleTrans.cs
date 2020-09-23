@@ -14,10 +14,14 @@ namespace Msp.Entity.Entities
         [Key]
         public int RecId { get; set; }
         public int? SaleOwnerId { get; set; }
+        public int? ProductId { get; set; }
         public string ProductBarcode { get; set; }
         public string ProductName { get; set; }
         public int? ProductQuantity { get; set; }
         public decimal? ProductPrice { get; set; }
         public decimal? ProductAmount { get; set; }
+        public int? CompanyId { get; set; }
+        public bool? Deleted { get; set; }
+        public int? UnitId { get; set; }
     }
 }

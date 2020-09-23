@@ -74,6 +74,7 @@
     <Compile Include="Service\CustomerTransactions\CustomerTransactionsService.cs" />
     <Compile Include="Service\DepotStock\DepotStockService.cs" />
     <Compile Include="Service\Settings\SettingsService.cs" />
+    <Compile Include="Service\Definitions\DefinitionsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

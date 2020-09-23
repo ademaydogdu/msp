@@ -47,6 +47,7 @@
     <Compile Include="Models\CTransactionsDTO.cs" />
     <Compile Include="Models\CustomersDTO.cs" />
     <Compile Include="Models\ParametersDTO.cs" />
+    <Compile Include="Models\PaymentTypeDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\Sale\SaleOwnerDTO.cs" />
     <Compile Include="Models\Sale\SaleTransDTO.cs" />

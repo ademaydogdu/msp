@@ -34,6 +34,7 @@
             this.txt_İndirimTutar = new DevExpress.XtraEditors.TextEdit();
             this.txt_Barcode = new DevExpress.XtraEditors.MemoEdit();
             this.txt_OdemeTipi = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,6 +42,9 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_Unit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,6 +70,7 @@
             this.txt_NetFiyat = new DevExpress.XtraEditors.TextEdit();
             this.txt_KDV = new DevExpress.XtraEditors.TextEdit();
             this.txt_Total = new DevExpress.XtraEditors.MemoEdit();
+            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.btn_NakitSatış = new DevExpress.XtraEditors.SimpleButton();
             this.btn_PosSatis = new DevExpress.XtraEditors.SimpleButton();
             this.btn_PosNakitSatis = new DevExpress.XtraEditors.SimpleButton();
@@ -119,16 +124,18 @@
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).BeginInit();
@@ -136,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties)).BeginInit();
@@ -185,7 +193,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -256,14 +263,21 @@
             // 
             // txt_OdemeTipi
             // 
-            this.txt_OdemeTipi.Enabled = false;
             this.txt_OdemeTipi.Location = new System.Drawing.Point(1060, 622);
             this.txt_OdemeTipi.Name = "txt_OdemeTipi";
             this.txt_OdemeTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txt_OdemeTipi.Properties.DataSource = this.bs_PaymentType;
+            this.txt_OdemeTipi.Properties.DisplayMember = "Remark";
+            this.txt_OdemeTipi.Properties.NullText = "";
+            this.txt_OdemeTipi.Properties.ValueMember = "RecId";
             this.txt_OdemeTipi.Size = new System.Drawing.Size(341, 20);
             this.txt_OdemeTipi.StyleController = this.layoutControl1;
             this.txt_OdemeTipi.TabIndex = 26;
+            // 
+            // bs_PaymentType
+            // 
+            this.bs_PaymentType.DataSource = typeof(Msp.Models.Models.PaymentTypeDTO);
             // 
             // gridControl1
             // 
@@ -273,7 +287,8 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
-            this.repositoryItemSpinEdit2});
+            this.repositoryItemSpinEdit2,
+            this.rp_Unit});
             this.gridControl1.Size = new System.Drawing.Size(873, 644);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -289,6 +304,7 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
+            this.gridColumn6,
             this.gridColumn4,
             this.gridColumn5});
             this.gridView1.GridControl = this.gridControl1;
@@ -296,6 +312,7 @@
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.RowHeight = 45;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // gridColumn1
             // 
@@ -307,7 +324,7 @@
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 100;
+            this.gridColumn1.Width = 146;
             // 
             // gridColumn2
             // 
@@ -319,7 +336,7 @@
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 225;
+            this.gridColumn2.Width = 265;
             // 
             // gridColumn3
             // 
@@ -332,6 +349,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 91;
             // 
             // repositoryItemSpinEdit1
             // 
@@ -340,19 +358,48 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Birim";
+            this.gridColumn6.ColumnEdit = this.rp_Unit;
+            this.gridColumn6.FieldName = "UnitId";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.Width = 85;
+            // 
+            // rp_Unit
+            // 
+            this.rp_Unit.AutoHeight = false;
+            this.rp_Unit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Unit.DataSource = this.bs_Unit;
+            this.rp_Unit.DisplayMember = "UName";
+            this.rp_Unit.Name = "rp_Unit";
+            this.rp_Unit.NullText = "";
+            this.rp_Unit.ValueMember = "UID";
+            // 
+            // bs_Unit
+            // 
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
+            // 
             // gridColumn4
             // 
             this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridColumn4.AppearanceHeader.Options.UseBackColor = true;
             this.gridColumn4.Caption = "Fiyat";
             this.gridColumn4.ColumnEdit = this.repositoryItemSpinEdit2;
+            this.gridColumn4.DisplayFormat.FormatString = "n2";
             this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn4.FieldName = "ProductPrice";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 66;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 97;
             // 
             // repositoryItemSpinEdit2
             // 
@@ -366,12 +413,13 @@
             this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.Caption = "Tutar";
+            this.gridColumn5.DisplayFormat.FormatString = "n2";
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn5.FieldName = "ProductAmount";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             this.gridColumn5.Width = 114;
             // 
             // txt_Remark
@@ -615,6 +663,7 @@
             this.btn_ProductDelete.Size = new System.Drawing.Size(80, 45);
             this.btn_ProductDelete.StyleController = this.layoutControl1;
             this.btn_ProductDelete.TabIndex = 21;
+            this.btn_ProductDelete.Text = "Toplu Sil";
             // 
             // txt_NetFiyat
             // 
@@ -638,17 +687,26 @@
             // 
             // txt_Total
             // 
+            this.txt_Total.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "TotalPrice", true));
             this.txt_Total.EditValue = "₺ 0.00";
             this.txt_Total.Location = new System.Drawing.Point(1060, 718);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_Total.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total.Properties.DisplayFormat.FormatString = "n2";
+            this.txt_Total.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txt_Total.Properties.EditFormat.FormatString = "n2";
+            this.txt_Total.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_Total.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_Total.Properties.WordWrap = false;
             this.txt_Total.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_Total.Size = new System.Drawing.Size(163, 50);
             this.txt_Total.StyleController = this.layoutControl1;
             this.txt_Total.TabIndex = 24;
+            // 
+            // bs_SaleOwner
+            // 
+            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
             // 
             // btn_NakitSatış
             // 
@@ -661,6 +719,7 @@
             this.btn_NakitSatış.StyleController = this.layoutControl1;
             this.btn_NakitSatış.TabIndex = 29;
             this.btn_NakitSatış.Text = "Nakit Satış";
+            this.btn_NakitSatış.Click += new System.EventHandler(this.btn_NakitSatış_Click);
             // 
             // btn_PosSatis
             // 
@@ -673,6 +732,7 @@
             this.btn_PosSatis.StyleController = this.layoutControl1;
             this.btn_PosSatis.TabIndex = 30;
             this.btn_PosSatis.Text = "POS Satış";
+            this.btn_PosSatis.Click += new System.EventHandler(this.btn_PosSatis_Click);
             // 
             // btn_PosNakitSatis
             // 
@@ -685,6 +745,7 @@
             this.btn_PosNakitSatis.StyleController = this.layoutControl1;
             this.btn_PosNakitSatis.TabIndex = 32;
             this.btn_PosNakitSatis.Text = "POS && Nakit Satış";
+            this.btn_PosNakitSatis.Click += new System.EventHandler(this.btn_PosNakitSatis_Click);
             // 
             // btn_CustomerAdd
             // 
@@ -712,6 +773,7 @@
             // 
             // txt_CustomerName
             // 
+            this.txt_CustomerName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "CustomerName", true));
             this.txt_CustomerName.Location = new System.Drawing.Point(1060, 597);
             this.txt_CustomerName.Name = "txt_CustomerName";
             this.txt_CustomerName.Size = new System.Drawing.Size(341, 20);
@@ -720,6 +782,7 @@
             // 
             // txt_Date
             // 
+            this.txt_Date.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "Date", true));
             this.txt_Date.EditValue = null;
             this.txt_Date.Location = new System.Drawing.Point(1060, 573);
             this.txt_Date.Name = "txt_Date";
@@ -1264,10 +1327,6 @@
             this.layoutControlItem31.Text = "Tarih";
             this.layoutControlItem31.TextSize = new System.Drawing.Size(74, 13);
             // 
-            // bs_SaleOwner
-            // 
-            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
-            // 
             // frmSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1285,10 +1344,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).EndInit();
@@ -1296,6 +1358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties)).EndInit();
@@ -1345,7 +1408,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1442,5 +1504,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
         private System.Windows.Forms.BindingSource bs_SaleOwner;
         private System.Windows.Forms.BindingSource bs_SaleTrans;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Unit;
+        private System.Windows.Forms.BindingSource bs_Unit;
+        private System.Windows.Forms.BindingSource bs_PaymentType;
     }
 }

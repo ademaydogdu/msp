@@ -46,7 +46,24 @@ namespace Msp.App.Tool
             }
             return donus;
         }
+        public static Form get_OpenForm(string _FormName)
+        {
+            Form _FormHave = null;
+            foreach (Form _Form in Application.OpenForms)
+            {
+                if (_Form.Name == _FormName)
+                {
+                    _FormHave = _Form;
+                }
+            }
 
+            return _FormHave;
+
+        }
+
+
+
+        #region Regedit
         public static string CreateNewRegistry()
         {
             string message = "";
@@ -144,7 +161,6 @@ namespace Msp.App.Tool
             }
             return message;
         }
-
         private static void getUsers()
         {
 
@@ -189,7 +205,6 @@ namespace Msp.App.Tool
             Registry.Users.Close();
 
         }
-
         private static void ReadRegistry(string registryKey)
         {
             try
@@ -296,7 +311,8 @@ namespace Msp.App.Tool
             }
             registryKey.Flush();
             registryKey.Close();
-        }
+        } 
+        #endregion
     }
 
     class ModRegistry

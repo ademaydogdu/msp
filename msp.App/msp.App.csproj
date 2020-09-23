@@ -210,6 +210,12 @@
     <Compile Include="Settings\Parameters.Designer.cs">
       <DependentUpon>Parameters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\frmBirimTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\frmBirimTanim.Designer.cs">
+      <DependentUpon>frmBirimTanim.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tool\MspTool.cs" />
     <EmbeddedResource Include="App\CheckDb.resx">
       <DependentUpon>CheckDb.cs</DependentUpon>
@@ -279,6 +285,9 @@
     <EmbeddedResource Include="Settings\Parameters.resx">
       <DependentUpon>Parameters.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\frmBirimTanim.resx">
+      <DependentUpon>frmBirimTanim.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
@@ -287,9 +296,11 @@
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ParametersDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CustomersDTO1.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.PaymentTypeDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.UnitsDTO1.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UsersDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

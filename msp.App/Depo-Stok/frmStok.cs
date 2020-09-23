@@ -12,6 +12,8 @@ using Msp.Service.Repository;
 using Msp.Models.Models;
 using Msp.Service.Service.DepotStock;
 using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
+using msp.App;
 
 namespace Msp.App.Depo_Stok
 {
@@ -23,6 +25,8 @@ namespace Msp.App.Depo_Stok
             InitializeComponent();
             _repository = new Repository();
         }
+
+        public bool IsSale = false;
 
 
         List<ProductDTO> _productlist = new List<ProductDTO>();
@@ -57,8 +61,10 @@ namespace Msp.App.Depo_Stok
             return _Return;
         }
 
+
+
         #region Edit
-        private void btnEditProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void do_Edit()
         {
             ProductDTO Orow = (ProductDTO)gcvProducts.GetFocusedRow();
             if (Orow != null)
@@ -68,7 +74,10 @@ namespace Msp.App.Depo_Stok
                 frm.Show(Orow.PID);
             }
         }
-
+        private void btnEditProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_Edit();
+        }
         #endregion
 
         #region Add
@@ -98,7 +107,7 @@ namespace Msp.App.Depo_Stok
 
         }
 
-        
+
 
 
 
@@ -107,6 +116,57 @@ namespace Msp.App.Depo_Stok
         private void btnProductsRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_refresh();
+        }
+
+        #region Sale
+        private void do_Form(int RecId)
+        {
+            Form _Form = MspTool.get_OpenForm("frmSatis");
+            if (_Form != null)
+            {
+                ((frmSatis)_Form).Insert_Product(RecId);
+            }
+            _Form = null;
+        }
+        public void SaleInsert()
+        {
+            if (IsSale)
+            {
+                ProductDTO Orow = (ProductDTO)gcvProducts.GetFocusedRow();
+                if (Orow != null)
+                {
+                    do_Form(Orow.PID);
+                    this.Close();
+                }
+            }
+        }
+        private void btnORderAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaleInsert();
+        } 
+        #endregion
+
+        private void gcvProducts_DoubleClick(object sender, EventArgs e)
+        {
+            if (IsSale)
+            {
+                SaleInsert();
+            }
+            else
+            {
+                do_Edit();
+            }
+        }
+        private void frmStok_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                SaleInsert();
+            }
         }
     }
 }
