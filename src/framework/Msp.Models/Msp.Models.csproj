@@ -50,6 +50,7 @@
     <Compile Include="Models\PaymentTypeDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\Sale\SaleOwnerDTO.cs" />
+    <Compile Include="Models\Sale\SaleRequest.cs" />
     <Compile Include="Models\Sale\SaleTransDTO.cs" />
     <Compile Include="Models\UnitsDTO.cs" />
     <Compile Include="Models\UsersDTO.cs" />

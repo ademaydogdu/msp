@@ -18,6 +18,8 @@ using Msp.Models.Models.Sale;
 using System.Globalization;
 using Msp.Infrastructure;
 using Msp.Service.Service.Tanimlar;
+using Msp.Models.Models.Utilities;
+using Msp.Service.Service.Sale;
 
 namespace msp.App
 {
@@ -96,6 +98,7 @@ namespace msp.App
             if (_parameters != null)
             {
                 if (_parameters.NumaratorShow == true) lyt_NumaratorControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always; else lyt_NumaratorControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                if (_parameters.PaymentLock == true) txt_OdemeTipi.Enabled = true; else txt_OdemeTipi.Enabled = false;
             }
 
             if (_FormOpenType == FormOpenType.New)
@@ -175,6 +178,69 @@ namespace msp.App
                 //__dll_SaleOwner.PaymentType = 2;
                 txt_OdemeTipi.EditValue = 3;
             }
+        }
+
+        public bool do_Validation()
+        {
+            bool _return = false;
+            if (__dl_List_SaleTrans.Count == 0)
+            {
+                MessageBox.Show("Ürün Kaydı olması gerekmektedir.");
+                _return = true;
+            }
+            if (_parameters.PaymentyForced.GetValueOrDefault())
+            {
+                if (txt_OdemeTipi.EditValue == "")
+                {
+                    MessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
+                    _return = true;
+                }
+            }
+         
+
+            return _return;
+        }
+
+        public bool get_Question(string _Question)
+        {
+            bool _Return = false;
+            if (DevExpress.XtraEditors.XtraMessageBox.Show(_Question, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                _Return = true;
+            }
+            return _Return;
+        }
+
+        public void do_save()
+        {
+            try
+            {
+                if (do_Validation()) return;
+                var req = new SaleRequest
+                {
+                    List_SaleTrans  = __dl_List_SaleTrans,
+                    SaleOwnerDTO = __dll_SaleOwner
+                };
+                var response = _repository.Run<SaleService, ActionResponse<SaleRequest>>(x => x.Save_Sale(req));
+                if (response.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void btnSatis_Click(object sender, EventArgs e)
+        {
+            if (_parameters.SaleApproval.GetValueOrDefault())
+            {
+                if (!get_Question("Satış Sonlnadırılactır. Onaylıyor musunuz?")) return;
+            }
+            do_save();
         }
     }
 }

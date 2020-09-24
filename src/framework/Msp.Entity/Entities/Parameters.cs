@@ -21,5 +21,7 @@ namespace Msp.Entity.Entities
         public bool? MainSaleForm { get; set; }
         public bool? AutoCurrency { get; set; }
         public bool? UserRecordMy { get; set; }
+        public bool? PaymentLock { get; set; } 
+        public bool? PaymentyForced { get; set; }
     }
 }

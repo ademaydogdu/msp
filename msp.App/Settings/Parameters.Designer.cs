@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.bs_Parameter = new System.Windows.Forms.BindingSource(this.components);
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -61,10 +62,14 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_Parameter = new System.Windows.Forms.BindingSource(this.components);
+            this.checkEdit9 = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.checkEdit10 = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Parameter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
@@ -88,7 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Parameter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -101,6 +109,8 @@
             this.layoutControl1.Controls.Add(this.checkEdit6);
             this.layoutControl1.Controls.Add(this.checkEdit7);
             this.layoutControl1.Controls.Add(this.checkEdit8);
+            this.layoutControl1.Controls.Add(this.checkEdit9);
+            this.layoutControl1.Controls.Add(this.checkEdit10);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -121,8 +131,13 @@
             this.checkEdit1.StyleController = this.layoutControl1;
             this.checkEdit1.TabIndex = 4;
             // 
+            // bs_Parameter
+            // 
+            this.bs_Parameter.DataSource = typeof(Msp.Models.Models.ParametersDTO);
+            // 
             // checkEdit2
             // 
+            this.checkEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "MainSaleForm", true));
             this.checkEdit2.Location = new System.Drawing.Point(331, 45);
             this.checkEdit2.MenuManager = this.barManager1;
             this.checkEdit2.Name = "checkEdit2";
@@ -220,6 +235,7 @@
             // 
             // checkEdit3
             // 
+            this.checkEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "SaleApproval", true));
             this.checkEdit3.Location = new System.Drawing.Point(24, 69);
             this.checkEdit3.MenuManager = this.barManager1;
             this.checkEdit3.Name = "checkEdit3";
@@ -231,6 +247,7 @@
             // 
             // checkEdit4
             // 
+            this.checkEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "AutoCurrency", true));
             this.checkEdit4.Location = new System.Drawing.Point(331, 69);
             this.checkEdit4.MenuManager = this.barManager1;
             this.checkEdit4.Name = "checkEdit4";
@@ -242,6 +259,7 @@
             // 
             // checkEdit5
             // 
+            this.checkEdit5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "SaleOutOfStock", true));
             this.checkEdit5.Location = new System.Drawing.Point(24, 93);
             this.checkEdit5.MenuManager = this.barManager1;
             this.checkEdit5.Name = "checkEdit5";
@@ -253,6 +271,7 @@
             // 
             // checkEdit6
             // 
+            this.checkEdit6.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "SaleCahnge", true));
             this.checkEdit6.Location = new System.Drawing.Point(24, 117);
             this.checkEdit6.MenuManager = this.barManager1;
             this.checkEdit6.Name = "checkEdit6";
@@ -264,6 +283,7 @@
             // 
             // checkEdit7
             // 
+            this.checkEdit7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "SaleInformationSlip", true));
             this.checkEdit7.Location = new System.Drawing.Point(24, 141);
             this.checkEdit7.MenuManager = this.barManager1;
             this.checkEdit7.Name = "checkEdit7";
@@ -275,6 +295,7 @@
             // 
             // checkEdit8
             // 
+            this.checkEdit8.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "UserRecordMy", true));
             this.checkEdit8.Location = new System.Drawing.Point(331, 93);
             this.checkEdit8.MenuManager = this.barManager1;
             this.checkEdit8.Name = "checkEdit8";
@@ -313,7 +334,9 @@
             this.layoutControlItem3,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem9,
+            this.layoutControlItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(307, 672);
@@ -322,9 +345,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 120);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 168);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(283, 507);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(283, 459);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -423,9 +446,45 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // bs_Parameter
+            // checkEdit9
             // 
-            this.bs_Parameter.DataSource = typeof(Msp.Models.Models.ParametersDTO);
+            this.checkEdit9.Location = new System.Drawing.Point(24, 165);
+            this.checkEdit9.MenuManager = this.barManager1;
+            this.checkEdit9.Name = "checkEdit9";
+            this.checkEdit9.Properties.Caption = "Satış Ekranında Ödeme Tipi Kilitlensin";
+            this.checkEdit9.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEdit9.Size = new System.Drawing.Size(279, 20);
+            this.checkEdit9.StyleController = this.layoutControl1;
+            this.checkEdit9.TabIndex = 12;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.checkEdit9;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(283, 24);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // checkEdit10
+            // 
+            this.checkEdit10.Location = new System.Drawing.Point(24, 189);
+            this.checkEdit10.MenuManager = this.barManager1;
+            this.checkEdit10.Name = "checkEdit10";
+            this.checkEdit10.Properties.Caption = "Ödeme Tipi Girilmesi zorunlu olsun";
+            this.checkEdit10.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEdit10.Size = new System.Drawing.Size(279, 20);
+            this.checkEdit10.StyleController = this.layoutControl1;
+            this.checkEdit10.TabIndex = 13;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.checkEdit10;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(283, 24);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
             // 
             // Parameters
             // 
@@ -444,6 +503,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Parameter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
@@ -467,7 +527,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Parameter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,5 +571,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.CheckEdit checkEdit8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.CheckEdit checkEdit9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.CheckEdit checkEdit10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }

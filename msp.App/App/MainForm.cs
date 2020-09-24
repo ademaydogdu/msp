@@ -299,14 +299,16 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
-
+        private void btnSatisListesi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmSatis frmSatis = new frmSatis();
+            frmSatis.MdiParent = this;
+            frmSatis.Show();
+        }
 
 
         #endregion
 
-        private void btnSatisListesi_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-        }
+
     }
 }
