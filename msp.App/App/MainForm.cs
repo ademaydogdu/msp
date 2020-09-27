@@ -148,6 +148,7 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("LastServer", ""); }
 
+            varmi = false;
             for (int i = 0; i < lsKeys.Length; i++)
             {
                 if (lsKeys[i].ToString().Trim() == "MspLogo")
@@ -159,6 +160,7 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("MspLogo", ""); }
 
+            varmi = false;
             for (int i = 0; i < lsKeys.Length; i++)
             {
                 if (lsKeys[i].ToString().Trim() == "LastDatabase")
@@ -170,6 +172,7 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("LastDatabase", ""); }
 
+            varmi = false;
             for (int i = 0; i < lsKeys.Length; i++)
             {
                 if (lsKeys[i].ToString().Trim() == "LastUser")
@@ -181,6 +184,7 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("LastUser", ""); }
 
+            varmi = false;
             for (int i = 0; i < lsKeys.Length; i++)
             {
                 if (lsKeys[i].ToString().Trim() == "LastServerId")
@@ -192,16 +196,17 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("LastServerId", ""); }
 
+            varmi = false;
             for (int i = 0; i < lsKeys.Length; i++)
             {
-                if (lsKeys[i].ToString().Trim() == "LastCompany")
+                if (lsKeys[i].ToString().Trim() == "Company")
                 {
                     varmi = true;
                     break;
                 }
             }
             if (varmi == false)
-            { OurKey.SetValue("LastCompany", ""); }
+            { OurKey.SetValue("Company", ""); }
             #endregion
 
 

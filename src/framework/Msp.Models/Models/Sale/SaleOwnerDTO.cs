@@ -15,9 +15,11 @@ namespace Msp.Models.Models.Sale
         public decimal? NetPrice { get; set; }
         public decimal? KDV { get; set; }
         public decimal? DiscountPrice { get; set; }
+        public string TotalPriceText { get; set; } = "₺ 0.00";
         public decimal? TotalPrice { get; set; }
         public decimal? ReceivedPrice { get; set; }
         public string Remark { get; set; }
         public bool? Veresiye { get; set; }
+        public int? CompanyRecId { get; set; }
     }
 }

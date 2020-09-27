@@ -102,7 +102,6 @@ namespace Msp.App.App
 
             _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
             bs_company.DataSource = _company;
-
         }
 
 
@@ -151,6 +150,11 @@ namespace Msp.App.App
                 XtraMessageBox.Show("Server Seçimi Yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
             }
+            if (lc_Company.EditValue.ToString() == "")
+            {
+                XtraMessageBox.Show("Lütfen Şirket Seçimi Yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = true;
+            }
             return _return;
         }
 
@@ -189,6 +193,7 @@ namespace Msp.App.App
             //Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastDatabase", this.databaseLookUpEdit.EditValue.ToString().Trim());
             Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastServer", this.lc_serverList.Text.Trim());
             Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastServerId", this.lc_serverList.EditValue);
+            Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Company", this.lc_Company.EditValue);
 
             foreach (Form oForm in Application.OpenForms)
             {
@@ -223,6 +228,7 @@ namespace Msp.App.App
             lcUserCode = lcSonkullanici;
             lcSonDatabase = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastDatabase").ToString();
             lcSonServer = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastServer").ToString();
+            this.lc_Company.EditValue = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Company").ToString();
 
             if (lcSonkullanici.Trim() != "")
             {

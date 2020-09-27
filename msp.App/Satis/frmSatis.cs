@@ -141,8 +141,8 @@ namespace msp.App
         {
             if (__dl_List_SaleTrans.Count > 0)
             {
-                //txt_Total.EditValue = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
-                txt_Total.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
+                __dll_SaleOwner.TotalPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
             }
         }
 
@@ -196,7 +196,7 @@ namespace msp.App
                     _return = true;
                 }
             }
-         
+
 
             return _return;
         }
@@ -218,7 +218,7 @@ namespace msp.App
                 if (do_Validation()) return;
                 var req = new SaleRequest
                 {
-                    List_SaleTrans  = __dl_List_SaleTrans,
+                    List_SaleTrans = __dl_List_SaleTrans,
                     SaleOwnerDTO = __dll_SaleOwner
                 };
                 var response = _repository.Run<SaleService, ActionResponse<SaleRequest>>(x => x.Save_Sale(req));
@@ -226,7 +226,11 @@ namespace msp.App
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
-            
+                else
+                {
+
+                }
+
             }
             catch (Exception)
             {
@@ -242,5 +246,47 @@ namespace msp.App
             }
             do_save();
         }
+
+        private void btn_Vazgec_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #region AddIntersentRemovwAt
+        private void btn_ProductDelete_Click(object sender, EventArgs e)
+        {
+            if (__dl_List_SaleTrans.Count > 0)
+            {
+                __dl_List_SaleTrans.Clear();
+                __dll_SaleOwner.TotalPrice = 0;
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
+                gridControl1.RefreshDataSource();
+            }
+        }
+
+        private void btn_QuantityAdd_Click(object sender, EventArgs e)
+        {
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                oRow.ProductQuantity += 1;
+                oRow.ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                gridControl1.RefreshDataSource();
+                TopTotal();
+            }
+        }
+
+        private void btn_Quantityinterest_Click(object sender, EventArgs e)
+        {
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                oRow.ProductQuantity -= 1;
+                oRow.ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                gridControl1.RefreshDataSource();
+                TopTotal();
+            }
+        } 
+        #endregion
     }
 }
