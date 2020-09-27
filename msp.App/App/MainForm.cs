@@ -320,10 +320,6 @@ namespace msp.App
             frmSatis.Show();
         }
 
-
-
-        #endregion
-
         private void btn_BirimTanimlari_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmBirimTanim frm = new frmBirimTanim();
@@ -344,5 +340,9 @@ namespace msp.App
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+
+        #endregion
+
     }
 }
