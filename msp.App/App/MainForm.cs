@@ -17,6 +17,8 @@ using Msp.Models.Models.App;
 using Msp.App.Settings;
 using Microsoft.Win32;
 using Msp.App.Depo_Stok;
+using Msp.App.Satis;
+using Msp.App.Tanimlar;
 
 namespace msp.App
 {
@@ -56,6 +58,7 @@ namespace msp.App
         {
             bbi_UserName.Caption = AppMain.User.username;
             bbi_Connect.Caption = IsConnected() == true ? "Connected" : "Not connected";
+            bbi_Company.Caption = AppMain.Company;
         }
 
         private void do_versionControl()
@@ -310,10 +313,36 @@ namespace msp.App
             frmSatis.MdiParent = this;
             frmSatis.Show();
         }
+        private void btnSpeedSale_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmSpeedSatis frmSatis = new frmSpeedSatis();
+            frmSatis.MdiParent = this;
+            frmSatis.Show();
+        }
+
 
 
         #endregion
 
+        private void btn_BirimTanimlari_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmBirimTanim frm = new frmBirimTanim();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
 
+        private void btn_PaymentType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmPaymnetList frm = new frmPaymnetList();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void tbnPriceInquiry_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmPriceInquiry frm = new frmPriceInquiry();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

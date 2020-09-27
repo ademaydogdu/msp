@@ -25,6 +25,8 @@ namespace Msp.Entity.Entities
         public string Remark { get; set; }
         public bool? Veresiye { get; set; }
         public int? CompanyRecId { get; set; }
+        public bool? Deleted { get; set; }
+
 
     }
 }

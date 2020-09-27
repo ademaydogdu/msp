@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
@@ -137,9 +138,13 @@
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.bbi_Company = new DevExpress.XtraBars.BarStaticItem();
             this.btn_isyeri = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSpeedSale = new DevExpress.XtraBars.BarButtonItem();
             this.btnSatisListesi = new DevExpress.XtraBars.BarButtonItem();
             this.rbi_Siparis = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_BirimTanimlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PaymentType = new DevExpress.XtraBars.BarButtonItem();
+            this.tbnPriceInquiry = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMusteriler = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -158,15 +163,13 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btn_BirimTanimlari = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_PaymentType = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -288,14 +291,16 @@
             this.barStaticItem4,
             this.bbi_Company,
             this.btn_isyeri,
-            this.barButtonItem1,
+            this.btnSpeedSale,
             this.btnSatisListesi,
             this.rbi_Siparis,
             this.btn_BirimTanimlari,
-            this.btn_PaymentType});
+            this.btn_PaymentType,
+            this.tbnPriceInquiry,
+            this.btnMusteriler});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 114;
+            this.ribbon.MaxItemId = 116;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1004,8 +1009,10 @@
             // bbi_Version
             // 
             this.bbi_Version.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bbi_Version.Caption = "0.0.0.0";
+            this.bbi_Version.Caption = "1.0.0.0";
             this.bbi_Version.Id = 101;
+            this.bbi_Version.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_Version.ItemAppearance.Normal.Options.UseFont = true;
             this.bbi_Version.Name = "bbi_Version";
             // 
             // barStaticItem2
@@ -1022,6 +1029,8 @@
             // bbi_UserName
             // 
             this.bbi_UserName.Id = 103;
+            this.bbi_UserName.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_UserName.ItemAppearance.Normal.Options.UseFont = true;
             this.bbi_UserName.Name = "bbi_UserName";
             // 
             // barStaticItem3
@@ -1034,6 +1043,8 @@
             // bbi_Connect
             // 
             this.bbi_Connect.Id = 105;
+            this.bbi_Connect.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_Connect.ItemAppearance.Normal.Options.UseFont = true;
             this.bbi_Connect.Name = "bbi_Connect";
             // 
             // barStaticItem4
@@ -1046,6 +1057,8 @@
             // bbi_Company
             // 
             this.bbi_Company.Id = 107;
+            this.bbi_Company.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_Company.ItemAppearance.Normal.Options.UseFont = true;
             this.bbi_Company.Name = "bbi_Company";
             // 
             // btn_isyeri
@@ -1056,12 +1069,13 @@
             this.btn_isyeri.Name = "btn_isyeri";
             this.btn_isyeri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_isyeri_ItemClick);
             // 
-            // barButtonItem1
+            // btnSpeedSale
             // 
-            this.barButtonItem1.Caption = "Hızlı Satış";
-            this.barButtonItem1.Id = 109;
-            this.barButtonItem1.ImageOptions.LargeImageIndex = 2;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnSpeedSale.Caption = "Hızlı Satış";
+            this.btnSpeedSale.Id = 109;
+            this.btnSpeedSale.ImageOptions.LargeImageIndex = 2;
+            this.btnSpeedSale.Name = "btnSpeedSale";
+            this.btnSpeedSale.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSpeedSale_ItemClick);
             // 
             // btnSatisListesi
             // 
@@ -1078,6 +1092,36 @@
             this.rbi_Siparis.ImageOptions.LargeImageIndex = 10;
             this.rbi_Siparis.Name = "rbi_Siparis";
             // 
+            // btn_BirimTanimlari
+            // 
+            this.btn_BirimTanimlari.Caption = "Birim Tanımları";
+            this.btn_BirimTanimlari.Id = 112;
+            this.btn_BirimTanimlari.ImageOptions.LargeImageIndex = 12;
+            this.btn_BirimTanimlari.Name = "btn_BirimTanimlari";
+            this.btn_BirimTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BirimTanimlari_ItemClick);
+            // 
+            // btn_PaymentType
+            // 
+            this.btn_PaymentType.Caption = "Ödeme Tipleri Tanımları";
+            this.btn_PaymentType.Id = 113;
+            this.btn_PaymentType.ImageOptions.LargeImageIndex = 13;
+            this.btn_PaymentType.Name = "btn_PaymentType";
+            this.btn_PaymentType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PaymentType_ItemClick);
+            // 
+            // tbnPriceInquiry
+            // 
+            this.tbnPriceInquiry.Caption = "Fiyat Sorgula";
+            this.tbnPriceInquiry.Id = 114;
+            this.tbnPriceInquiry.ImageOptions.LargeImageIndex = 11;
+            this.tbnPriceInquiry.Name = "tbnPriceInquiry";
+            this.tbnPriceInquiry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.tbnPriceInquiry_ItemClick);
+            // 
+            // btnMusteriler
+            // 
+            this.btnMusteriler.Caption = "Müşteriler";
+            this.btnMusteriler.Id = 115;
+            this.btnMusteriler.Name = "btnMusteriler";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1092,6 +1136,9 @@
             this.img_buton.Add("employeequickwelcome", "image://svgimages/outlook inspired/employeequickwelcome.svg");
             this.img_buton.Add("bo_task", "image://svgimages/business objects/bo_task.svg");
             this.img_buton.Add("productorderdetail-21", "image://svgimages/outlook inspired/productorderdetail-21.svg");
+            this.img_buton.Add("printpreview", "image://svgimages/spreadsheet/printpreview.svg");
+            this.img_buton.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
+            this.img_buton.Add("financial", "image://svgimages/spreadsheet/financial.svg");
             // 
             // barSatis
             // 
@@ -1105,7 +1152,8 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQuickSell);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnSpeedSale);
+            this.ribbonPageGroup1.ItemLinks.Add(this.tbnPriceInquiry);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup10
@@ -1202,6 +1250,7 @@
             // 
             // ribbonPageGroup5
             // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnMusteriler);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // ribbonPage7
@@ -1217,6 +1266,11 @@
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_BirimTanimlari);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.btn_PaymentType);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             // 
             // ribbonPage8
             // 
@@ -1265,23 +1319,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // btn_BirimTanimlari
-            // 
-            this.btn_BirimTanimlari.Caption = "Birim Tanımları";
-            this.btn_BirimTanimlari.Id = 112;
-            this.btn_BirimTanimlari.Name = "btn_BirimTanimlari";
-            // 
-            // ribbonPageGroup14
-            // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.btn_PaymentType);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            // 
-            // btn_PaymentType
-            // 
-            this.btn_PaymentType.Caption = "Ödeme Tipleri Tanımları";
-            this.btn_PaymentType.Id = 113;
-            this.btn_PaymentType.Name = "btn_PaymentType";
             // 
             // MainForm
             // 
@@ -1440,7 +1477,7 @@
         private DevExpress.XtraBars.BarStaticItem bbi_Company;
         private DevExpress.XtraBars.BarButtonItem btn_isyeri;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnSpeedSale;
         private DevExpress.Utils.SvgImageCollection img_buton;
         private DevExpress.XtraBars.BarButtonItem btnSatisListesi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
@@ -1449,5 +1486,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_BirimTanimlari;
         private DevExpress.XtraBars.BarButtonItem btn_PaymentType;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem tbnPriceInquiry;
+        private DevExpress.XtraBars.BarButtonItem btnMusteriler;
     }
 }

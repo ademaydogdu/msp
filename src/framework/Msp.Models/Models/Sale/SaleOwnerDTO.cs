@@ -21,5 +21,7 @@ namespace Msp.Models.Models.Sale
         public string Remark { get; set; }
         public bool? Veresiye { get; set; }
         public int? CompanyRecId { get; set; }
+        public bool? Deleted { get; set; } = false;
+
     }
 }

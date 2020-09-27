@@ -18,6 +18,9 @@ namespace Msp.Infrastructure
 
         public static bool NetworkConnected = true;
 
+        public static string Company { get; set; }
+        public static int CompanyRecId { get; set; }
+
 
 
     }

@@ -286,7 +286,7 @@ namespace msp.App
                 gridControl1.RefreshDataSource();
                 TopTotal();
             }
-        } 
+        }
         #endregion
     }
 }

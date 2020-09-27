@@ -21,11 +21,11 @@ namespace Msp.Entity.Entities
 
         public DateTime? PDate { get; set; }
 
-        public long? PFirstPrice { get; set; }
+        public decimal? PFirstPrice { get; set; }
 
-        public long? PTotal { get; set; }
+        public decimal? PTotal { get; set; }
 
-        public long? PLastPrice { get; set; }
+        public decimal? PLastPrice { get; set; }
 
         public int? PUnitId { get; set; }
 

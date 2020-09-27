@@ -142,6 +142,12 @@
     <Compile Include="Musteri-Islemleri\frmCustomerEdit.Designer.cs">
       <DependentUpon>frmCustomerEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Satis\frmPriceInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmPriceInquiry.Designer.cs">
+      <DependentUpon>frmPriceInquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satis\frmSatis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,12 @@
     <Compile Include="Tanimlar\frmBirimTanim.Designer.cs">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\frmPaymnetList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\frmPaymnetList.Designer.cs">
+      <DependentUpon>frmPaymnetList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tool\MspTool.cs" />
     <EmbeddedResource Include="App\CheckDb.resx">
       <DependentUpon>CheckDb.cs</DependentUpon>
@@ -240,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomerEdit.resx">
       <DependentUpon>frmCustomerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\frmPriceInquiry.resx">
+      <DependentUpon>frmPriceInquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmSatis.resx">
       <DependentUpon>frmSatis.cs</DependentUpon>
@@ -288,6 +303,9 @@
     <EmbeddedResource Include="Tanimlar\frmBirimTanim.resx">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\frmPaymnetList.resx">
+      <DependentUpon>frmPaymnetList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
@@ -313,7 +331,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Firma\" />
     <Folder Include="Report\" />
   </ItemGroup>
   <ItemGroup>

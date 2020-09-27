@@ -188,6 +188,8 @@ namespace Msp.App.App
                 return;
             }
             AppMain.User = loginResponse.Response;
+            AppMain.CompanyRecId = _company.Where(x=>x.CompanyCode.Trim() == lc_Company.EditValue.ToString().Trim()).FirstOrDefault().RecId;
+            AppMain.Company = lc_Company.Text;
 
             Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastUser", txt_userCode.Text.ToString());
             //Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastDatabase", this.databaseLookUpEdit.EditValue.ToString().Trim());
