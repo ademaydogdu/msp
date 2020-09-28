@@ -23,5 +23,6 @@ namespace Msp.Entity.Entities
         public int? CompanyId { get; set; }
         public bool? Deleted { get; set; }
         public int? UnitId { get; set; }
+        public int? Tax { get; set; }
     }
 }

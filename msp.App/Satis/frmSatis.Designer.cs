@@ -127,6 +127,8 @@
             this.layoutControlItem33 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.colTax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_KdvOran = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
@@ -199,6 +201,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_KdvOran)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -248,6 +251,7 @@
             // 
             // toggleSwitch1
             // 
+            this.toggleSwitch1.EditValue = true;
             this.toggleSwitch1.Location = new System.Drawing.Point(1180, 340);
             this.toggleSwitch1.Name = "toggleSwitch1";
             this.toggleSwitch1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
@@ -314,7 +318,8 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemSpinEdit2,
-            this.rp_Unit});
+            this.rp_Unit,
+            this.rp_KdvOran});
             this.gridControl1.Size = new System.Drawing.Size(887, 644);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -331,6 +336,7 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn6,
+            this.colTax,
             this.gridColumn4,
             this.gridColumn5});
             this.gridView1.GridControl = this.gridControl1;
@@ -424,7 +430,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 5;
             this.gridColumn4.Width = 97;
             // 
             // repositoryItemSpinEdit2
@@ -445,7 +451,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 6;
             this.gridColumn5.Width = 114;
             // 
             // txt_Remark
@@ -1395,6 +1401,24 @@
             this.emptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // colTax
+            // 
+            this.colTax.Caption = "KDV";
+            this.colTax.ColumnEdit = this.rp_KdvOran;
+            this.colTax.FieldName = "Tax";
+            this.colTax.Name = "colTax";
+            this.colTax.OptionsColumn.AllowEdit = false;
+            this.colTax.Visible = true;
+            this.colTax.VisibleIndex = 4;
+            // 
+            // rp_KdvOran
+            // 
+            this.rp_KdvOran.AutoHeight = false;
+            this.rp_KdvOran.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_KdvOran.Name = "rp_KdvOran";
+            this.rp_KdvOran.NullText = "";
+            // 
             // frmSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1479,6 +1503,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_KdvOran)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1582,5 +1607,7 @@
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem33;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
+        private DevExpress.XtraGrid.Columns.GridColumn colTax;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_KdvOran;
     }
 }

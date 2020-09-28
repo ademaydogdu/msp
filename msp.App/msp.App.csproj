@@ -45,6 +45,7 @@
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v20.1" />
     <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v20.1" />
     <Reference Include="DevExpress.Data.v20.1" />
     <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="App\CheckDb.Designer.cs">
       <DependentUpon>CheckDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Dashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="App\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="App\Login.cs">
       <SubType>Form</SubType>
@@ -231,6 +238,9 @@
     <Compile Include="Tool\MspTool.cs" />
     <EmbeddedResource Include="App\CheckDb.resx">
       <DependentUpon>CheckDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

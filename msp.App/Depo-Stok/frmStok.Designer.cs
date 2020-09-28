@@ -140,6 +140,7 @@
             this.gcvProducts.GridControl = this.gcProducts;
             this.gcvProducts.Name = "gcvProducts";
             this.gcvProducts.OptionsBehavior.Editable = false;
+            this.gcvProducts.OptionsView.ShowAutoFilterRow = true;
             this.gcvProducts.OptionsView.ShowGroupPanel = false;
             this.gcvProducts.DoubleClick += new System.EventHandler(this.gcvProducts_DoubleClick);
             // 

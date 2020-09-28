@@ -19,6 +19,7 @@ using Microsoft.Win32;
 using Msp.App.Depo_Stok;
 using Msp.App.Satis;
 using Msp.App.Tanimlar;
+using Msp.App.Musteri_Islemleri;
 
 namespace msp.App
 {
@@ -252,8 +253,6 @@ namespace msp.App
 
         #endregion
 
-
-
         #region Bar_Buton
 
 
@@ -344,5 +343,11 @@ namespace msp.App
 
         #endregion
 
+        private void btnMusteriler_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmCustomer frm = new frmCustomer();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
@@ -1120,7 +1119,9 @@
             // 
             this.btnMusteriler.Caption = "Müşteriler";
             this.btnMusteriler.Id = 115;
+            this.btnMusteriler.ImageOptions.LargeImageIndex = 14;
             this.btnMusteriler.Name = "btnMusteriler";
+            this.btnMusteriler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMusteriler_ItemClick);
             // 
             // img_buton
             // 
@@ -1139,6 +1140,7 @@
             this.img_buton.Add("printpreview", "image://svgimages/spreadsheet/printpreview.svg");
             this.img_buton.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
             this.img_buton.Add("financial", "image://svgimages/spreadsheet/financial.svg");
+            this.img_buton.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
             // 
             // barSatis
             // 

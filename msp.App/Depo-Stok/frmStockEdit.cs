@@ -31,6 +31,13 @@ namespace Msp.App.Depo_Stok
         private ProductDTO __product = new ProductDTO();
         List<UnitsDTO> units = new List<UnitsDTO>();
 
+        public List<SelectIdValue> KdvOrani = new List<SelectIdValue>
+        {
+            new SelectIdValue(1, "%1"),
+            new SelectIdValue(2, "%8"),
+            new SelectIdValue(3, "%18"),
+        };
+
         public void Show(int id)
         {
             units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
@@ -45,14 +52,43 @@ namespace Msp.App.Depo_Stok
                 __product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(id));
             }
 
+            taxTextEdit.Properties.DataSource = KdvOrani;
+            taxTextEdit.Properties.ValueMember = "Id";
+            taxTextEdit.Properties.DisplayMember = "Value";
+
             bs_StockEdit.DataSource = __product;
             this.ShowDialog();
         }
 
         #region Record
-        private void do_save()
 
+
+        private bool do_Validation()
         {
+            bool _return = false;
+            if (Convert.ToString(nameTextEdit.EditValue) == "")
+            {
+                XtraMessageBox.Show("Ürün Adı Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(taxTextEdit.EditValue) == "")
+            {
+                XtraMessageBox.Show("KDV Oranı Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if ((int)UnittextEdit.EditValue == 0)
+            {
+                XtraMessageBox.Show("Birim Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+
+            return _return;
+        }
+
+
+        private void do_save()
+        {
+            if (do_Validation()) return;
             if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
                 try
@@ -105,6 +141,9 @@ namespace Msp.App.Depo_Stok
             do_save();
         }
 
+        private void UnittextEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
 
+        }
     }
 }

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnSaveCustomer = new DevExpress.XtraBars.BarButtonItem();
@@ -54,9 +53,9 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.bs_CustomersEdit = new System.Windows.Forms.BindingSource(this.components);
+            this.lookUpEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -73,33 +72,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CustomersEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.lookUpEdit1);
             this.layoutControl1.Controls.Add(this.textEdit1);
             this.layoutControl1.Controls.Add(this.textEdit2);
             this.layoutControl1.Controls.Add(this.memoEdit1);
             this.layoutControl1.Controls.Add(this.textEdit3);
+            this.layoutControl1.Controls.Add(this.lookUpEdit1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(462, 263);
+            this.layoutControl1.Size = new System.Drawing.Size(451, 309);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(150, 170);
-            this.lookUpEdit1.MenuManager = this.barManager2;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(271, 20);
-            this.lookUpEdit1.StyleController = this.layoutControl1;
-            this.lookUpEdit1.TabIndex = 8;
             // 
             // barManager2
             // 
@@ -157,15 +146,15 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(462, 0);
+            this.barDockControl1.Size = new System.Drawing.Size(451, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 263);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 309);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(462, 42);
+            this.barDockControl2.Size = new System.Drawing.Size(451, 42);
             // 
             // barDockControl3
             // 
@@ -173,50 +162,50 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 263);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 309);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(462, 0);
+            this.barDockControl4.Location = new System.Drawing.Point(451, 0);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 263);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 309);
             // 
             // textEdit1
             // 
             this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(150, 26);
+            this.textEdit1.Location = new System.Drawing.Point(114, 28);
             this.textEdit1.MenuManager = this.barManager2;
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(271, 20);
+            this.textEdit1.Size = new System.Drawing.Size(297, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 4;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(150, 62);
+            this.textEdit2.Location = new System.Drawing.Point(114, 64);
             this.textEdit2.MenuManager = this.barManager2;
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(271, 20);
+            this.textEdit2.Size = new System.Drawing.Size(297, 20);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 5;
             // 
             // memoEdit1
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(150, 98);
+            this.memoEdit1.Location = new System.Drawing.Point(114, 100);
             this.memoEdit1.MenuManager = this.barManager2;
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(271, 32);
+            this.memoEdit1.Size = new System.Drawing.Size(297, 42);
             this.memoEdit1.StyleController = this.layoutControl1;
             this.memoEdit1.TabIndex = 6;
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(150, 134);
+            this.textEdit3.Location = new System.Drawing.Point(114, 146);
             this.textEdit3.MenuManager = this.barManager2;
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(271, 20);
+            this.textEdit3.Size = new System.Drawing.Size(297, 20);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 7;
             // 
@@ -235,81 +224,82 @@
             this.emptySpaceItem3,
             this.emptySpaceItem4});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(462, 263);
+            this.Root.Size = new System.Drawing.Size(451, 309);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.textEdit1;
             this.layoutControlItem1.ImageOptions.Image = global::Msp.App.Properties.Resources.bocustomer_32x32;
-            this.layoutControlItem1.Location = new System.Drawing.Point(27, 14);
+            this.layoutControlItem1.Location = new System.Drawing.Point(26, 16);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(386, 36);
+            this.layoutControlItem1.Size = new System.Drawing.Size(377, 36);
             this.layoutControlItem1.Text = "Ad";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(108, 32);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 32);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(27, 194);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(26, 194);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(386, 49);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(377, 95);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEdit2;
             this.layoutControlItem2.ImageOptions.Image = global::Msp.App.Properties.Resources.bodetails_32x32;
-            this.layoutControlItem2.Location = new System.Drawing.Point(27, 50);
+            this.layoutControlItem2.Location = new System.Drawing.Point(26, 52);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(386, 36);
+            this.layoutControlItem2.Size = new System.Drawing.Size(377, 36);
             this.layoutControlItem2.Text = "Soyad";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(108, 32);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 32);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.memoEdit1;
             this.layoutControlItem3.ImageOptions.Image = global::Msp.App.Properties.Resources.geopoint_32x32;
-            this.layoutControlItem3.Location = new System.Drawing.Point(27, 86);
+            this.layoutControlItem3.Location = new System.Drawing.Point(26, 88);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(386, 36);
+            this.layoutControlItem3.Size = new System.Drawing.Size(377, 46);
             this.layoutControlItem3.Text = "Adres";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(108, 32);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 32);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.textEdit3;
             this.layoutControlItem4.ImageOptions.Image = global::Msp.App.Properties.Resources.phone_32x32;
-            this.layoutControlItem4.Location = new System.Drawing.Point(27, 122);
+            this.layoutControlItem4.Location = new System.Drawing.Point(26, 134);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(386, 36);
+            this.layoutControlItem4.Size = new System.Drawing.Size(377, 36);
             this.layoutControlItem4.Text = "Telefon";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(108, 32);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(73, 32);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.lookUpEdit1;
             this.layoutControlItem5.ImageOptions.Image = global::Msp.App.Properties.Resources.radio_32x32;
-            this.layoutControlItem5.Location = new System.Drawing.Point(27, 158);
+            this.layoutControlItem5.Location = new System.Drawing.Point(26, 170);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(386, 36);
+            this.layoutControlItem5.Size = new System.Drawing.Size(377, 24);
             this.layoutControlItem5.Text = "Aktiflik Durumu";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(108, 32);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 14);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 16);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(27, 229);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(26, 273);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(413, 14);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(403, 16);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(29, 229);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(28, 273);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
@@ -317,18 +307,31 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(442, 14);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(431, 16);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // bs_CustomersEdit
             // 
             this.bs_CustomersEdit.DataSource = typeof(Msp.Models.Models.CustomersDTO);
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.EditValue = null;
+            this.lookUpEdit1.Location = new System.Drawing.Point(38, 182);
+            this.lookUpEdit1.MenuManager = this.barManager2;
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.lookUpEdit1.Properties.Caption = "checkEdit1";
+            this.lookUpEdit1.Properties.NullText = "[EditValue is null]";
+            this.lookUpEdit1.Size = new System.Drawing.Size(373, 20);
+            this.lookUpEdit1.StyleController = this.layoutControl1;
+            this.lookUpEdit1.TabIndex = 8;
+            // 
             // frmCustomerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 305);
+            this.ClientSize = new System.Drawing.Size(451, 351);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl4);
@@ -338,7 +341,6 @@
             this.Text = "Müşteri Düzenle";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
@@ -355,6 +357,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CustomersEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,7 +375,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
@@ -387,5 +389,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private System.Windows.Forms.BindingSource bs_CustomersEdit;
+        private DevExpress.XtraEditors.CheckEdit lookUpEdit1;
     }
 }

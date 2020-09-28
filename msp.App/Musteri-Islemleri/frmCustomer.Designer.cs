@@ -115,14 +115,13 @@
             this.coldate});
             this.gcvCustomers.GridControl = this.grdCustomers;
             this.gcvCustomers.Name = "gcvCustomers";
+            this.gcvCustomers.OptionsView.ShowAutoFilterRow = true;
             // 
             // colid
             // 
             this.colid.Caption = "ID";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
-            this.colid.Visible = true;
-            this.colid.VisibleIndex = 0;
             // 
             // colname
             // 
@@ -130,7 +129,7 @@
             this.colname.FieldName = "name";
             this.colname.Name = "colname";
             this.colname.Visible = true;
-            this.colname.VisibleIndex = 1;
+            this.colname.VisibleIndex = 0;
             // 
             // colsurname
             // 
@@ -138,7 +137,7 @@
             this.colsurname.FieldName = "surname";
             this.colsurname.Name = "colsurname";
             this.colsurname.Visible = true;
-            this.colsurname.VisibleIndex = 2;
+            this.colsurname.VisibleIndex = 1;
             // 
             // coladdress
             // 
@@ -146,7 +145,7 @@
             this.coladdress.FieldName = "address";
             this.coladdress.Name = "coladdress";
             this.coladdress.Visible = true;
-            this.coladdress.VisibleIndex = 3;
+            this.coladdress.VisibleIndex = 2;
             // 
             // colphone
             // 
@@ -154,7 +153,7 @@
             this.colphone.FieldName = "phone";
             this.colphone.Name = "colphone";
             this.colphone.Visible = true;
-            this.colphone.VisibleIndex = 4;
+            this.colphone.VisibleIndex = 3;
             // 
             // colactive
             // 
@@ -162,7 +161,7 @@
             this.colactive.FieldName = "active";
             this.colactive.Name = "colactive";
             this.colactive.Visible = true;
-            this.colactive.VisibleIndex = 5;
+            this.colactive.VisibleIndex = 4;
             // 
             // coldate
             // 
@@ -170,7 +169,7 @@
             this.coldate.FieldName = "date";
             this.coldate.Name = "coldate";
             this.coldate.Visible = true;
-            this.coldate.VisibleIndex = 6;
+            this.coldate.VisibleIndex = 5;
             // 
             // Root
             // 

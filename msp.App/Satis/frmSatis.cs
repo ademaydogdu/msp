@@ -44,7 +44,16 @@ namespace msp.App
         public FormOpenType _FormOpenType;
         List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
         List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
-        //GetListPayments
+
+
+        public List<SelectIdValue> KdvOrani = new List<SelectIdValue>
+        {
+            new SelectIdValue(1, "%1"),
+            new SelectIdValue(2, "%8"),
+            new SelectIdValue(3, "%18"),
+        };
+
+
         #endregion
 
         #region Record
@@ -115,6 +124,9 @@ namespace msp.App
             _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
 
+            rp_KdvOran.DataSource = KdvOrani;
+            rp_KdvOran.DisplayMember = "Value";
+            rp_KdvOran.ValueMember = "Id";
             bs_Unit.DataSource = _list_UnitsDTO;
             bs_PaymentType.DataSource = _list_PaymnetType;
             bs_SaleOwner.DataSource = __dll_SaleOwner;
