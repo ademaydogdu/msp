@@ -164,28 +164,28 @@
             // 
             this.btnAddNewDepot.Caption = "Yeni Depo";
             this.btnAddNewDepot.Id = 0;
-            this.btnAddNewDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.add_32x322;
+            //this.btnAddNewDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.add_32x322;
             this.btnAddNewDepot.Name = "btnAddNewDepot";
             // 
             // btnRemoveDepot
             // 
             this.btnRemoveDepot.Caption = "Depo Sil";
             this.btnRemoveDepot.Id = 1;
-            this.btnRemoveDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.remove_32x322;
+            //this.btnRemoveDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.remove_32x322;
             this.btnRemoveDepot.Name = "btnRemoveDepot";
             // 
             // btnEditDepot
             // 
             this.btnEditDepot.Caption = "Depo Düzenle";
             this.btnEditDepot.Id = 2;
-            this.btnEditDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.pencolor_32x322;
+            //this.btnEditDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.pencolor_32x322;
             this.btnEditDepot.Name = "btnEditDepot";
             // 
             // btnSeaDepot
             // 
             this.btnSeaDepot.Caption = "Depo Bul";
             this.btnSeaDepot.Id = 3;
-            this.btnSeaDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.zoom_32x32;
+            //this.btnSeaDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.zoom_32x32;
             this.btnSeaDepot.Name = "btnSeaDepot";
             // 
             // barDockControlTop
@@ -224,7 +224,7 @@
             // 
             this.btnTransacDepot.Caption = "Depo Hareketleri";
             this.btnTransacDepot.Id = 4;
-            this.btnTransacDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.bar_32x322;
+            //this.btnTransacDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.bar_32x322;
             this.btnTransacDepot.Name = "btnTransacDepot";
             // 
             // frmDepo

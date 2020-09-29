@@ -149,6 +149,11 @@
     <Compile Include="Musteri-Islemleri\frmCustomerEdit.Designer.cs">
       <DependentUpon>frmCustomerEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Satis\frmPriceInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,14 +283,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Satis\frmSatisList.resx">
       <DependentUpon>frmSatisList.cs</DependentUpon>
     </EmbeddedResource>
@@ -461,9 +461,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\radio_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_32x322.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remove_32x322.png" />

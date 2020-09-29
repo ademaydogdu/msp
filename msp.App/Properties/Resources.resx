@@ -136,9 +136,9 @@
   <data name="geopoint_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\geopoint_32x324.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="add_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="cancel_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,27 +166,27 @@
   <data name="bar_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bar_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zoom_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="zoom_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="hideproduct_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hideproduct_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remove_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="remove_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\remove_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="bosale_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bosale_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bodetails_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bodetails_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pencolor_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="pencolor_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencolor_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="barcode2_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode2_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,7 +235,7 @@
   <data name="barcode_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bar_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="bar_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bar_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
 </root>

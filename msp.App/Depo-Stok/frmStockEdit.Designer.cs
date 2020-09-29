@@ -651,7 +651,7 @@
             // ItemForlastPrice
             // 
             this.ItemForlastPrice.Control = this.lastPriceTextEdit;
-            this.ItemForlastPrice.ImageOptions.Image = global::Msp.App.Properties.Resources.bosale_32x321;
+            //this.ItemForlastPrice.ImageOptions.Image = global::Msp.App.Properties.Resources.bosale_32x321;
             this.ItemForlastPrice.Location = new System.Drawing.Point(446, 108);
             this.ItemForlastPrice.MinSize = new System.Drawing.Size(113, 24);
             this.ItemForlastPrice.Name = "ItemForlastPrice";
@@ -709,7 +709,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.productGroupTextEdit;
-            this.layoutControlItem5.ImageOptions.Image = global::Msp.App.Properties.Resources.groupby_32x32;
+           // this.layoutControlItem5.ImageOptions.Image = global::Msp.App.Properties.Resources.groupby_32x32;
             this.layoutControlItem5.Location = new System.Drawing.Point(446, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(209, 36);
@@ -742,7 +742,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.BrandCodetextEdit;
-            this.layoutControlItem7.ImageOptions.Image = global::Msp.App.Properties.Resources.tag_32x32;
+            //this.layoutControlItem7.ImageOptions.Image = global::Msp.App.Properties.Resources.tag_32x32;
             this.layoutControlItem7.Location = new System.Drawing.Point(127, 36);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(309, 36);
@@ -762,7 +762,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEdit2;
-            this.layoutControlItem2.ImageOptions.Image = global::Msp.App.Properties.Resources.tag_32x321;
+            //this.layoutControlItem2.ImageOptions.Image = global::Msp.App.Properties.Resources.tag_32x321;
             this.layoutControlItem2.Location = new System.Drawing.Point(446, 36);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(209, 36);
@@ -772,7 +772,7 @@
             // ItemForcategoryId
             // 
             this.ItemForcategoryId.Control = this.categoryIdTextEdit;
-            this.ItemForcategoryId.ImageOptions.Image = global::Msp.App.Properties.Resources.hideproduct_32x32;
+            //this.ItemForcategoryId.ImageOptions.Image = global::Msp.App.Properties.Resources.hideproduct_32x32;
             this.ItemForcategoryId.Location = new System.Drawing.Point(127, 72);
             this.ItemForcategoryId.MinSize = new System.Drawing.Size(150, 36);
             this.ItemForcategoryId.Name = "ItemForcategoryId";
