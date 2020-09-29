@@ -143,7 +143,9 @@ namespace Msp.App.Depo_Stok
 
         private void UnittextEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
+            if (e.Button.Index == 1)
+            {
+            }
         }
     }
 }
