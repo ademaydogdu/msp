@@ -29,10 +29,7 @@ namespace Msp.Entity.Entities
 
         public int? PUnitId { get; set; }
 
-
-
-        [StringLength(50)]
-        public string PTax { get; set; }
+        public int? PTax { get; set; }
 
         public string PVarDescription { get; set; }
 

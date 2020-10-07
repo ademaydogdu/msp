@@ -24,5 +24,6 @@ namespace Msp.Entity.Entities
         public bool? Deleted { get; set; }
         public int? UnitId { get; set; }
         public int? Tax { get; set; }
+        public decimal? TaxAmount { get; set; }
     }
 }

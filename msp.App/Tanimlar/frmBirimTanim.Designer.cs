@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gc_Unit = new DevExpress.XtraGrid.GridControl();
             this.bs_UnitType = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcv_Units = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -43,40 +43,41 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_UnitType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Units)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // gc_Unit
             // 
-            this.gridControl1.DataSource = this.bs_UnitType;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(420, 391);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gc_Unit.DataSource = this.bs_UnitType;
+            this.gc_Unit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_Unit.Location = new System.Drawing.Point(0, 0);
+            this.gc_Unit.MainView = this.gcv_Units;
+            this.gc_Unit.Name = "gc_Unit";
+            this.gc_Unit.Size = new System.Drawing.Size(420, 391);
+            this.gc_Unit.TabIndex = 0;
+            this.gc_Unit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_Units});
             // 
             // bs_UnitType
             // 
             this.bs_UnitType.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
-            // gridView1
+            // gcv_Units
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gcv_Units.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colUID,
             this.colUName});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gcv_Units.GridControl = this.gc_Unit;
+            this.gcv_Units.Name = "gcv_Units";
+            this.gcv_Units.OptionsView.ColumnAutoWidth = false;
+            this.gcv_Units.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gcv_Units.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_Units.OptionsView.ShowGroupPanel = false;
             // 
             // colUID
             // 
@@ -103,9 +104,10 @@
             this.barManager1.Images = this.img_bar;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbi_save,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.bbi_Delete});
             this.barManager1.LargeImages = this.img_bar;
-            this.barManager1.MaxItemId = 2;
+            this.barManager1.MaxItemId = 3;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -117,6 +119,7 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_save),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Delete),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
@@ -178,13 +181,24 @@
             this.img_bar.Add("delete", "image://svgimages/dashboards/delete.svg");
             this.img_bar.Add("save", "image://svgimages/outlook inspired/save.svg");
             this.img_bar.Add("charthorizontalaxis_logscale", "image://svgimages/spreadsheet/charthorizontalaxis_logscale.svg");
+            this.img_bar.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
+            this.img_bar.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
+            // 
+            // bbi_Delete
+            // 
+            this.bbi_Delete.Caption = "Delete";
+            this.bbi_Delete.Id = 2;
+            this.bbi_Delete.ImageOptions.ImageIndex = 3;
+            this.bbi_Delete.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Delete.Name = "bbi_Delete";
+            this.bbi_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Delete_ItemClick);
             // 
             // frmBirimTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 431);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gc_Unit);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -193,9 +207,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Birim Tanımları";
             this.Load += new System.EventHandler(this.frmBirimTanim_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_UnitType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Units)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             this.ResumeLayout(false);
@@ -205,8 +219,8 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gc_Unit;
+        private DevExpress.XtraGrid.Views.Grid.GridView gcv_Units;
         private System.Windows.Forms.BindingSource bs_UnitType;
         private DevExpress.XtraGrid.Columns.GridColumn colUID;
         private DevExpress.XtraGrid.Columns.GridColumn colUName;
@@ -219,5 +233,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.Utils.SvgImageCollection img_bar;
+        private DevExpress.XtraBars.BarButtonItem bbi_Delete;
     }
 }

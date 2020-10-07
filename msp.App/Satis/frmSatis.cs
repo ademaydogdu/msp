@@ -20,6 +20,7 @@ using Msp.Infrastructure;
 using Msp.Service.Service.Tanimlar;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Service.Sale;
+using Msp.App.Tanimlar;
 
 namespace msp.App
 {
@@ -46,11 +47,12 @@ namespace msp.App
         List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
 
 
-        public List<SelectIdValue> KdvOrani = new List<SelectIdValue>
+        public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
-            new SelectIdValue(1, "%1"),
-            new SelectIdValue(2, "%8"),
-            new SelectIdValue(3, "%18"),
+            new KDVTaxDto(1, "%0", 0.00, 0),
+            new KDVTaxDto(2, "%1", 0.01, 1),
+            new KDVTaxDto(3, "%8", 0.08, 8),
+            new KDVTaxDto(4, "%18", 0.18, 18),
         };
 
 
@@ -69,6 +71,7 @@ namespace msp.App
                 {
                     _varmi.ProductQuantity += 1;
                     _varmi.ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                    
                 }
                 else
                 {
@@ -81,6 +84,9 @@ namespace msp.App
                     saleTrans.ProductQuantity = 1;
                     saleTrans.Deleted = false;
                     saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
+                    saleTrans.Tax = _product.PTax;
+                    var amount = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
+                    saleTrans.TaxAmount = amount / 100;
                     __dl_List_SaleTrans.Add(saleTrans);
                 }
                 TopTotal();
@@ -154,6 +160,8 @@ namespace msp.App
             if (__dl_List_SaleTrans.Count > 0)
             {
                 __dll_SaleOwner.TotalPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
+                __dll_SaleOwner.KDV = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
+                txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.TaxAmount));
                 txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
             }
         }
@@ -300,5 +308,31 @@ namespace msp.App
             }
         }
         #endregion
+
+        private void txt_OdemeTipi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                frmPaymnetList frm = new frmPaymnetList();
+                frm.ShowDialog();
+                _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
+
+                bs_PaymentType.DataSource = _list_PaymnetType;
+
+            }
+        }
+
+        private void toggleSwitch1_EditValueChanged(object sender, EventArgs e)
+        {
+            if ((bool)toggleSwitch1.EditValue)
+            {
+                lyc_ParaUstu.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            else
+            {
+                lyc_ParaUstu.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+
+        }
     }
 }

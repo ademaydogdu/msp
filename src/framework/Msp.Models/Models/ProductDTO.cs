@@ -26,7 +26,7 @@ namespace Msp.Models.Models
 
         public int PUnitId { get; set; }
 
-        public string PTax { get; set; }
+        public int? PTax { get; set; }
 
         public string PVarDescription { get; set; }
 

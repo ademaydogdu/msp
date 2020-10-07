@@ -47,6 +47,8 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rp_Unit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
+            this.colTax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_KdvOran = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -127,8 +129,6 @@
             this.layoutControlItem33 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.colTax = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rp_KdvOran = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
@@ -143,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_KdvOran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).BeginInit();
@@ -201,7 +202,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_KdvOran)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -260,6 +260,7 @@
             this.toggleSwitch1.Size = new System.Drawing.Size(235, 18);
             this.toggleSwitch1.StyleController = this.layoutControl1;
             this.toggleSwitch1.TabIndex = 38;
+            this.toggleSwitch1.EditValueChanged += new System.EventHandler(this.toggleSwitch1_EditValueChanged);
             // 
             // txt_İndirimTutar
             // 
@@ -300,6 +301,7 @@
             this.txt_OdemeTipi.Size = new System.Drawing.Size(341, 20);
             this.txt_OdemeTipi.StyleController = this.layoutControl1;
             this.txt_OdemeTipi.TabIndex = 26;
+            this.txt_OdemeTipi.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txt_OdemeTipi_ButtonClick);
             // 
             // bs_SaleOwner
             // 
@@ -415,6 +417,24 @@
             // bs_Unit
             // 
             this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
+            // 
+            // colTax
+            // 
+            this.colTax.Caption = "KDV";
+            this.colTax.ColumnEdit = this.rp_KdvOran;
+            this.colTax.FieldName = "Tax";
+            this.colTax.Name = "colTax";
+            this.colTax.OptionsColumn.AllowEdit = false;
+            this.colTax.Visible = true;
+            this.colTax.VisibleIndex = 4;
+            // 
+            // rp_KdvOran
+            // 
+            this.rp_KdvOran.AutoHeight = false;
+            this.rp_KdvOran.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_KdvOran.Name = "rp_KdvOran";
+            this.rp_KdvOran.NullText = "";
             // 
             // gridColumn4
             // 
@@ -1401,24 +1421,6 @@
             this.emptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // colTax
-            // 
-            this.colTax.Caption = "KDV";
-            this.colTax.ColumnEdit = this.rp_KdvOran;
-            this.colTax.FieldName = "Tax";
-            this.colTax.Name = "colTax";
-            this.colTax.OptionsColumn.AllowEdit = false;
-            this.colTax.Visible = true;
-            this.colTax.VisibleIndex = 4;
-            // 
-            // rp_KdvOran
-            // 
-            this.rp_KdvOran.AutoHeight = false;
-            this.rp_KdvOran.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_KdvOran.Name = "rp_KdvOran";
-            this.rp_KdvOran.NullText = "";
-            // 
             // frmSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1445,6 +1447,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_KdvOran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).EndInit();
@@ -1503,7 +1506,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_KdvOran)).EndInit();
             this.ResumeLayout(false);
 
         }

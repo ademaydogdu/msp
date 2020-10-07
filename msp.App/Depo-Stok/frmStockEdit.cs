@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Msp.App.Tanimlar;
 using Msp.App.Tool;
 using Msp.Infrastructure;
 using Msp.Models.Models;
@@ -31,11 +32,12 @@ namespace Msp.App.Depo_Stok
         private ProductDTO __product = new ProductDTO();
         List<UnitsDTO> units = new List<UnitsDTO>();
 
-        public List<SelectIdValue> KdvOrani = new List<SelectIdValue>
+        public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
-            new SelectIdValue(1, "%1"),
-            new SelectIdValue(2, "%8"),
-            new SelectIdValue(3, "%18"),
+            new KDVTaxDto(1, "%0", 0.00, 0),
+            new KDVTaxDto(2, "%1", 0.01, 1),
+            new KDVTaxDto(3, "%8", 0.08, 8),
+            new KDVTaxDto(4, "%18", 0.18, 18),
         };
 
         public void Show(int id)
@@ -145,6 +147,11 @@ namespace Msp.App.Depo_Stok
         {
             if (e.Button.Index == 1)
             {
+                frmBirimTanim frm = new frmBirimTanim();
+                frm.ShowDialog();
+
+                units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+                bs_Unit.DataSource = units;
             }
         }
     }

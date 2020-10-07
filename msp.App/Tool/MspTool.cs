@@ -61,7 +61,15 @@ namespace Msp.App.Tool
 
         }
 
-
+        public bool get_Question(string _Question)
+        {
+            bool _Return = false;
+            if (DevExpress.XtraEditors.XtraMessageBox.Show(_Question, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                _Return = true;
+            }
+            return _Return;
+        }
 
         #region Regedit
         public static string CreateNewRegistry()

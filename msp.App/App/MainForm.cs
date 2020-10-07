@@ -308,7 +308,7 @@ namespace msp.App
         }
         private void btnSatisListesi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmSatis frmSatis = new frmSatis();
+            frmSatisList frmSatis = new frmSatisList();
             frmSatis.MdiParent = this;
             frmSatis.Show();
         }
@@ -322,32 +322,32 @@ namespace msp.App
         private void btn_BirimTanimlari_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmBirimTanim frm = new frmBirimTanim();
-            frm.MdiParent = this.MdiParent;
+            frm.MdiParent = this;
             frm.Show();
         }
 
         private void btn_PaymentType_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmPaymnetList frm = new frmPaymnetList();
-            frm.MdiParent = this.MdiParent;
+            frm.MdiParent = this;
             frm.Show();
         }
 
         private void tbnPriceInquiry_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmPriceInquiry frm = new frmPriceInquiry();
-            frm.MdiParent = this.MdiParent;
+            frm.MdiParent = this;
             frm.Show();
         }
-
-
-        #endregion
-
         private void btnMusteriler_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmCustomer frm = new frmCustomer();
-            frm.MdiParent = this.MdiParent;
+            frm.MdiParent = this;
             frm.Show();
         }
+
+        #endregion
+
+
     }
 }
