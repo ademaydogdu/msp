@@ -85,8 +85,10 @@ namespace msp.App
                     saleTrans.Deleted = false;
                     saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
                     saleTrans.Tax = _product.PTax;
-                    var amount = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
-                    saleTrans.TaxAmount = amount / 100;
+                    #region KDVHARİC
+                    var kdvOran = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (1 + (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani), 2); //Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
+                    saleTrans.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();  //amount / 100; 
+                    #endregion
                     __dl_List_SaleTrans.Add(saleTrans);
                 }
                 TopTotal();
@@ -159,10 +161,12 @@ namespace msp.App
         {
             if (__dl_List_SaleTrans.Count > 0)
             {
-                __dll_SaleOwner.TotalPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
-                __dll_SaleOwner.KDV = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
-                txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.TaxAmount));
-                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
+                var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
+                var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
+                __dll_SaleOwner.TotalPrice = totalAmount;
+                __dll_SaleOwner.KDV = totalKdv;
+                txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
             }
         }
 
