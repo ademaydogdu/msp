@@ -131,6 +131,12 @@
     <Compile Include="Depo-Stok\frmDepo.Designer.cs">
       <DependentUpon>frmDepo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Depo-Stok\frmDepoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmDepoEdit.Designer.cs">
+      <DependentUpon>frmDepoEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmStockEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmDepo.resx">
       <DependentUpon>frmDepo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmDepoEdit.resx">
+      <DependentUpon>frmDepoEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmStockEdit.resx">
       <DependentUpon>frmStockEdit.cs</DependentUpon>
@@ -473,6 +482,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bar_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x325.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencolor_32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marqueezoom_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x324.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

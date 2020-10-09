@@ -10,6 +10,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{CD36A3DD-FCBC-4D9E-8FE0-DB8CDEE0BD59}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msp.App", "msp.App\Msp.App.csproj", "{318C5465-8326-4DB0-BE0A-A4D5A6442D1A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D593F66F-BA5B-46AC-BD8A-988A9108816E} = {D593F66F-BA5B-46AC-BD8A-988A9108816E}
+		{C5D3FE87-7F84-4C33-BFD6-3A3B789F1C09} = {C5D3FE87-7F84-4C33-BFD6-3A3B789F1C09}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msp.DataAccess", "src\framework\Msp.DataAccess\Msp.DataAccess.csproj", "{D593F66F-BA5B-46AC-BD8A-988A9108816E}"
 EndProject
@@ -27,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Moduls", "Moduls", "{141F84
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msp.Test", "src\Test\Msp.Test\Msp.Test.csproj", "{D83BF793-CE08-40BA-827B-74B16BD19D56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msp.API", "Msp.API\Msp.API.csproj", "{44669BEF-AC82-4B64-8D21-EE479E414A9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Msp.API", "Msp.API\Msp.API.csproj", "{44669BEF-AC82-4B64-8D21-EE479E414A9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
