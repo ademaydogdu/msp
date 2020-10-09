@@ -31,8 +31,8 @@ namespace Msp.App.Depo_Stok
         public void do_refresh()
         {
 
-            _depotList = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
-            bs_products.DataSource = _productlist;
+            //_depotList = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            //bs_products.DataSource = _productlist;
         }
 
     }

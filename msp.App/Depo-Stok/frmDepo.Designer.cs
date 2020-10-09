@@ -1,4 +1,4 @@
-﻿namespace msp.App
+﻿namespace Msp.App.Depo_Stok
 {
     partial class frmDepo
     {
