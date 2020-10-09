@@ -186,10 +186,10 @@
     <Compile Include="Satis\frmSatisList.Designer.cs">
       <DependentUpon>frmSatisList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Satis\FrmSiparis.cs">
+    <Compile Include="Depo-Stok\FrmSiparis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Satis\FrmSiparis.Designer.cs">
+    <Compile Include="Depo-Stok\FrmSiparis.Designer.cs">
       <DependentUpon>FrmSiparis.cs</DependentUpon>
     </Compile>
     <Compile Include="Satis\frmSpeedSatis.cs">
@@ -289,7 +289,7 @@
     <EmbeddedResource Include="Satis\frmSatisList.resx">
       <DependentUpon>frmSatisList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Satis\FrmSiparis.resx">
+    <EmbeddedResource Include="Depo-Stok\FrmSiparis.resx">
       <DependentUpon>FrmSiparis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmSpeedSatis.resx">

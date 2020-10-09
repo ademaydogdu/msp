@@ -21,6 +21,7 @@ using Msp.Service.Service.Tanimlar;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Service.Sale;
 using Msp.App.Tanimlar;
+using Msp.App.Musteri_Islemleri;
 
 namespace msp.App
 {
@@ -71,7 +72,10 @@ namespace msp.App
                 {
                     _varmi.ProductQuantity += 1;
                     _varmi.ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
-                    
+
+                    //var kdvOran = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (1 + (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani), 2); //Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
+                    //_varmi.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
+
                 }
                 else
                 {
@@ -85,10 +89,12 @@ namespace msp.App
                     saleTrans.Deleted = false;
                     saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
                     saleTrans.Tax = _product.PTax;
+
                     #region KDVHARİC
                     var kdvOran = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (1 + (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani), 2); //Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
                     saleTrans.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();  //amount / 100; 
                     #endregion
+
                     __dl_List_SaleTrans.Add(saleTrans);
                 }
                 TopTotal();
@@ -337,6 +343,12 @@ namespace msp.App
                 lyc_ParaUstu.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             }
 
+        }
+
+        private void btn_CustomerAdd_Click(object sender, EventArgs e)
+        {
+            frmCustomer frm = new frmCustomer();
+            frm.ShowDialog();
         }
     }
 }

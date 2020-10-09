@@ -17,5 +17,16 @@ namespace Msp.App.Satis
         {
             InitializeComponent();
         }
+
+        private void frmSatisList_Load(object sender, EventArgs e)
+        {
+            dt_Date.EditValue = DateTime.Today;
+        }
+
+
+
+
+
+
     }
 }

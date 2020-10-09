@@ -26,6 +26,7 @@ namespace Msp.Entity.Entities
         public bool? Veresiye { get; set; }
         public int? CompanyRecId { get; set; }
         public bool? Deleted { get; set; }
+        public string UserCode { get; set; }
 
 
     }

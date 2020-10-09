@@ -674,7 +674,7 @@
             this.btn_QuantityAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btn_QuantityAdd.Location = new System.Drawing.Point(12, 50);
             this.btn_QuantityAdd.Name = "btn_QuantityAdd";
-            this.btn_QuantityAdd.Size = new System.Drawing.Size(80, 43);
+            this.btn_QuantityAdd.Size = new System.Drawing.Size(80, 57);
             this.btn_QuantityAdd.StyleController = this.layoutControl1;
             this.btn_QuantityAdd.TabIndex = 19;
             this.btn_QuantityAdd.Click += new System.EventHandler(this.btn_QuantityAdd_Click);
@@ -703,9 +703,9 @@
             this.btn_Quantityinterest.ImageOptions.ImageIndex = 4;
             this.btn_Quantityinterest.ImageOptions.ImageList = this.img_EkleSatis;
             this.btn_Quantityinterest.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn_Quantityinterest.Location = new System.Drawing.Point(12, 97);
+            this.btn_Quantityinterest.Location = new System.Drawing.Point(12, 111);
             this.btn_Quantityinterest.Name = "btn_Quantityinterest";
-            this.btn_Quantityinterest.Size = new System.Drawing.Size(80, 46);
+            this.btn_Quantityinterest.Size = new System.Drawing.Size(80, 55);
             this.btn_Quantityinterest.StyleController = this.layoutControl1;
             this.btn_Quantityinterest.TabIndex = 20;
             // 
@@ -714,9 +714,9 @@
             this.btn_ProductDelete.ImageOptions.ImageIndex = 5;
             this.btn_ProductDelete.ImageOptions.ImageList = this.img_EkleSatis;
             this.btn_ProductDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn_ProductDelete.Location = new System.Drawing.Point(12, 147);
+            this.btn_ProductDelete.Location = new System.Drawing.Point(12, 170);
             this.btn_ProductDelete.Name = "btn_ProductDelete";
-            this.btn_ProductDelete.Size = new System.Drawing.Size(80, 45);
+            this.btn_ProductDelete.Size = new System.Drawing.Size(80, 57);
             this.btn_ProductDelete.StyleController = this.layoutControl1;
             this.btn_ProductDelete.TabIndex = 21;
             this.btn_ProductDelete.Text = "Toplu Sil";
@@ -813,6 +813,7 @@
             this.btn_CustomerAdd.StyleController = this.layoutControl1;
             this.btn_CustomerAdd.TabIndex = 33;
             this.btn_CustomerAdd.Text = "Müşteri Ekle";
+            this.btn_CustomerAdd.Click += new System.EventHandler(this.btn_CustomerAdd_Click);
             // 
             // btnProductAdd
             // 
@@ -1149,9 +1150,10 @@
             // 
             this.layoutControlItem16.Control = this.btn_QuantityAdd;
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 38);
-            this.layoutControlItem16.MinSize = new System.Drawing.Size(42, 40);
+            this.layoutControlItem16.MaxSize = new System.Drawing.Size(84, 61);
+            this.layoutControlItem16.MinSize = new System.Drawing.Size(84, 61);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(84, 47);
+            this.layoutControlItem16.Size = new System.Drawing.Size(84, 61);
             this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
@@ -1159,18 +1161,19 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 184);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 219);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(84, 426);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(84, 391);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.btn_Quantityinterest;
-            this.layoutControlItem17.Location = new System.Drawing.Point(0, 85);
-            this.layoutControlItem17.MinSize = new System.Drawing.Size(42, 40);
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 99);
+            this.layoutControlItem17.MaxSize = new System.Drawing.Size(84, 59);
+            this.layoutControlItem17.MinSize = new System.Drawing.Size(84, 59);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(84, 50);
+            this.layoutControlItem17.Size = new System.Drawing.Size(84, 59);
             this.layoutControlItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
@@ -1178,11 +1181,11 @@
             // layoutControlItem18
             // 
             this.layoutControlItem18.Control = this.btn_ProductDelete;
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 135);
-            this.layoutControlItem18.MaxSize = new System.Drawing.Size(84, 49);
-            this.layoutControlItem18.MinSize = new System.Drawing.Size(84, 49);
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 158);
+            this.layoutControlItem18.MaxSize = new System.Drawing.Size(84, 61);
+            this.layoutControlItem18.MinSize = new System.Drawing.Size(84, 61);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(84, 49);
+            this.layoutControlItem18.Size = new System.Drawing.Size(84, 61);
             this.layoutControlItem18.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
