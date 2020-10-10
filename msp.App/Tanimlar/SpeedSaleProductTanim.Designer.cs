@@ -1,4 +1,8 @@
-﻿namespace Msp.App.Tanimlar
+﻿using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout;
+
+namespace Msp.App.Tanimlar
 {
     partial class SpeedSaleProductTanim
     {

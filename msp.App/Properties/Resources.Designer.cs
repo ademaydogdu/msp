@@ -63,16 +63,6 @@ namespace Msp.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("add_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap add_32x32 {
             get {
                 object obj = ResourceManager.GetObject("add_32x32", resourceCulture);
@@ -86,26 +76,6 @@ namespace Msp.App.Properties {
         internal static System.Drawing.Bitmap add_32x321 {
             get {
                 object obj = ResourceManager.GetObject("add_32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap add_32x322 {
-            get {
-                object obj = ResourceManager.GetObject("add_32x322", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap add_32x323 {
-            get {
-                object obj = ResourceManager.GetObject("add_32x323", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,16 +116,6 @@ namespace Msp.App.Properties {
         internal static System.Drawing.Bitmap bar_32x321 {
             get {
                 object obj = ResourceManager.GetObject("bar_32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bar_32x322 {
-            get {
-                object obj = ResourceManager.GetObject("bar_32x322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,16 +223,6 @@ namespace Msp.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cancel_32x324 {
-            get {
-                object obj = ResourceManager.GetObject("cancel_32x324", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap changedatasourcepivottable_32x32 {
             get {
                 object obj = ResourceManager.GetObject("changedatasourcepivottable_32x32", resourceCulture);
@@ -353,16 +303,6 @@ namespace Msp.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap marqueezoom_32x322 {
-            get {
-                object obj = ResourceManager.GetObject("marqueezoom_32x322", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pencolor_32x32 {
             get {
                 object obj = ResourceManager.GetObject("pencolor_32x32", resourceCulture);
@@ -376,16 +316,6 @@ namespace Msp.App.Properties {
         internal static System.Drawing.Bitmap pencolor_32x321 {
             get {
                 object obj = ResourceManager.GetObject("pencolor_32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pencolor_32x322 {
-            get {
-                object obj = ResourceManager.GetObject("pencolor_32x322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,16 +376,6 @@ namespace Msp.App.Properties {
         internal static System.Drawing.Bitmap remove_32x321 {
             get {
                 object obj = ResourceManager.GetObject("remove_32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap remove_32x322 {
-            get {
-                object obj = ResourceManager.GetObject("remove_32x322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
