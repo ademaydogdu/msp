@@ -171,10 +171,6 @@
             this.tabNavigationPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bs_StockEdit
-            // 
-            this.bs_StockEdit.DataSource = typeof(Msp.Models.Models.ProductDTO);
-            // 
             // svgImageCollection1
             // 
             this.svgImageCollection1.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
@@ -366,10 +362,6 @@
             this.UnittextEdit.StyleController = this.dataLayoutControl1;
             this.UnittextEdit.TabIndex = 13;
             this.UnittextEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.UnittextEdit_ButtonClick);
-            // 
-            // bs_Unit
-            // 
-            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
             // pictureEdit1
             // 

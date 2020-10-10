@@ -1,4 +1,4 @@
-﻿namespace msp.App
+﻿namespace Msp.App.Depo_Stok
 {
     partial class frmDepo
     {
@@ -43,11 +43,12 @@
             this.btnRemoveDepot = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditDepot = new DevExpress.XtraBars.BarButtonItem();
             this.btnSeaDepot = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTransacDepot = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnTransacDepot = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDepotClose = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -119,9 +120,10 @@
             this.btnRemoveDepot,
             this.btnEditDepot,
             this.btnSeaDepot,
-            this.btnTransacDepot});
+            this.btnTransacDepot,
+            this.btnDepotClose});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 6;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -154,7 +156,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemoveDepot),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditDepot),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSeaDepot),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnTransacDepot)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTransacDepot),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDepotClose)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -164,29 +167,37 @@
             // 
             this.btnAddNewDepot.Caption = "Yeni Depo";
             this.btnAddNewDepot.Id = 0;
-            //this.btnAddNewDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.add_32x322;
+            this.btnAddNewDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.add_32x323;
+            this.btnAddNewDepot.ImageOptions.LargeImage = global::Msp.App.Properties.Resources.add_32x322;
             this.btnAddNewDepot.Name = "btnAddNewDepot";
             // 
             // btnRemoveDepot
             // 
             this.btnRemoveDepot.Caption = "Depo Sil";
             this.btnRemoveDepot.Id = 1;
-            //this.btnRemoveDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.remove_32x322;
+            this.btnRemoveDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.remove_32x322;
             this.btnRemoveDepot.Name = "btnRemoveDepot";
             // 
             // btnEditDepot
             // 
             this.btnEditDepot.Caption = "Depo Düzenle";
             this.btnEditDepot.Id = 2;
-            //this.btnEditDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.pencolor_32x322;
+            this.btnEditDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.pencolor_32x322;
             this.btnEditDepot.Name = "btnEditDepot";
             // 
             // btnSeaDepot
             // 
             this.btnSeaDepot.Caption = "Depo Bul";
             this.btnSeaDepot.Id = 3;
-            //this.btnSeaDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.zoom_32x32;
+            this.btnSeaDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.marqueezoom_32x322;
             this.btnSeaDepot.Name = "btnSeaDepot";
+            // 
+            // btnTransacDepot
+            // 
+            this.btnTransacDepot.Caption = "Depo Hareketleri";
+            this.btnTransacDepot.Id = 4;
+            this.btnTransacDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.bar_32x322;
+            this.btnTransacDepot.Name = "btnTransacDepot";
             // 
             // barDockControlTop
             // 
@@ -220,12 +231,12 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 442);
             // 
-            // btnTransacDepot
+            // btnDepotClose
             // 
-            this.btnTransacDepot.Caption = "Depo Hareketleri";
-            this.btnTransacDepot.Id = 4;
-            //this.btnTransacDepot.ImageOptions.Image = global::Msp.App.Properties.Resources.bar_32x322;
-            this.btnTransacDepot.Name = "btnTransacDepot";
+            this.btnDepotClose.Caption = "Kapat";
+            this.btnDepotClose.Id = 5;
+            this.btnDepotClose.ImageOptions.Image = global::Msp.App.Properties.Resources.cancel_32x324;
+            this.btnDepotClose.Name = "btnDepotClose";
             // 
             // frmDepo
             // 
@@ -273,5 +284,6 @@
         private DevExpress.XtraBars.BarButtonItem btnEditDepot;
         private DevExpress.XtraBars.BarButtonItem btnSeaDepot;
         private DevExpress.XtraBars.BarButtonItem btnTransacDepot;
+        private DevExpress.XtraBars.BarButtonItem btnDepotClose;
     }
 }
