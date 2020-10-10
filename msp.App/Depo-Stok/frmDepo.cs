@@ -14,6 +14,7 @@ using Msp.Service.Service.DepotStock;
 using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
 using msp.App;
+using Msp.Service.Service.Depot;
 
 namespace Msp.App.Depo_Stok
 {
@@ -28,12 +29,78 @@ namespace Msp.App.Depo_Stok
 
         List<DepotDTO> _depotList = new List<DepotDTO>();
 
+        public bool get_Question(string _Question)
+        {
+            bool _Return = false;
+            if (DevExpress.XtraEditors.XtraMessageBox.Show(_Question, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                _Return = true;
+            }
+            return _Return;
+        }
+
+  
+
+
         public void do_refresh()
         {
 
-            //_depotList = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
-            //bs_products.DataSource = _productlist;
+            _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+            bs_Depot.DataSource = _depotList;
         }
 
+        #region Edit
+        public void do_Edit()
+        {
+            DepotDTO Orow = (DepotDTO)gcv_Depot.GetFocusedRow();
+            if (Orow != null)
+            {
+                frmDepoEdit frm = new frmDepoEdit();
+                frm._FormOpenType = Infrastructure.FormOpenType.Edit;
+                frm.Show(Orow.DID);
+            }
+        }
+
+        #endregion
+
+        #region Add
+        private void btnAddNewDepot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDepoEdit frm = new frmDepoEdit();
+            frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
+            frm.Show(0);
+        }
+
+
+        #endregion
+
+        #region Delete
+        private void btnRemoveDepot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+
+            DepotDTO oRow = (DepotDTO)gcv_Depot.GetFocusedRow();
+
+            if (oRow != null)
+            {
+                if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                {
+                    var result = _repository.Run<DepotService, ActionResponse<DepotDTO>>(x => x.DeleteDepot(oRow.DID));
+                    do_refresh();
+                }
+            }
+
+        }
+
+
+
+
+
+        #endregion
+
+        private void btnRefreshDepot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_refresh();
+        }
     }
 }
