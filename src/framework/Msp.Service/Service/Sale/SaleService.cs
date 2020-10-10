@@ -77,6 +77,38 @@ namespace Msp.Service.Service.Sale
             return response;
         }
 
+        public SaleOwnerDTO Get_SaleOwner(int RecId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<SaleOwner, SaleOwnerDTO>(_db.SaleOwner.FirstOrDefault(x=>x.RecId == RecId));
+            }
+        }
+
+        public List<SaleTransDTO> Get_List_SaleOwner(int RecId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<SaleTrans>, List<SaleTransDTO>>(_db.SaleTrans.Where(x => x.SaleOwnerId == RecId).ToList());
+            }
+        }
+
+
         #endregion
+
+        #region SaleList
+
+        public List<SaleOwnerDTO> GetList_Date(DateTime date)
+        {
+            using (var _db = new MspDbContext())
+            {
+                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Date == date).ToList());
+                return result;
+            }
+        }
+
+
+        #endregion
+
     }
 }

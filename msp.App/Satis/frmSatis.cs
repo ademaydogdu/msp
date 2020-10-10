@@ -71,10 +71,11 @@ namespace msp.App
                 if (_varmi != null)
                 {
                     _varmi.ProductQuantity += 1;
-                    _varmi.ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
-
-                    //var kdvOran = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (1 + (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani), 2); //Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
-                    //_varmi.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
+                    var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                    _varmi.ProductAmount = ProductAmount;
+                    var totalkdv = Math.Round((decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(),2);
+                    var kdvOran = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * Convert.ToDecimal((1 +  totalkdv)), 2);
+                    _varmi.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
 
                 }
                 else
@@ -169,10 +170,13 @@ namespace msp.App
             {
                 var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
                 var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
+                __dll_SaleOwner.NetPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 __dll_SaleOwner.TotalPrice = totalAmount;
                 __dll_SaleOwner.KDV = totalKdv;
+                txt_NetFiyat.EditValue = __dll_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
                 txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
                 txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
+
             }
         }
 
@@ -246,6 +250,8 @@ namespace msp.App
             try
             {
                 if (do_Validation()) return;
+                __dll_SaleOwner.UserCode = AppMain.User.username;
+                __dll_SaleOwner.CompanyRecId = AppMain.CompanyRecId;
                 var req = new SaleRequest
                 {
                     List_SaleTrans = __dl_List_SaleTrans,
@@ -258,6 +264,7 @@ namespace msp.App
                 }
                 else
                 {
+
 
                 }
 
@@ -300,7 +307,13 @@ namespace msp.App
             if (oRow != null)
             {
                 oRow.ProductQuantity += 1;
-                oRow.ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                var ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                oRow.ProductAmount = ProductAmount;
+                var totalkdv = Math.Round((decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                var kdvOran = Math.Round(oRow.ProductPrice.GetValueOrDefault() * Convert.ToDecimal((1 + totalkdv)), 2);
+                oRow.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
+
+
                 gridControl1.RefreshDataSource();
                 TopTotal();
             }
@@ -349,6 +362,17 @@ namespace msp.App
         {
             frmCustomer frm = new frmCustomer();
             frm.ShowDialog();
+        }
+
+        private void btnVeresiyeSatis_Click(object sender, EventArgs e)
+        {
+            if (txt_CustomerName.EditValue == "")
+            {
+                XtraMessageBox.Show("Müşteri Adı Giriniz...");
+                return;
+            }
+
+
         }
     }
 }

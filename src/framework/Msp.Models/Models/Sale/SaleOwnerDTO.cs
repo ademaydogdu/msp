@@ -13,6 +13,7 @@ namespace Msp.Models.Models.Sale
         public string CustomerName { get; set; }
         public int? PaymentType { get; set; }
         public decimal? NetPrice { get; set; }
+        public string NetPriceText { get; set; } = "₺ 0.00";
         public decimal? KDV { get; set; }
         public decimal? DiscountPrice { get; set; }
         public string TotalPriceText { get; set; } = "₺ 0.00";

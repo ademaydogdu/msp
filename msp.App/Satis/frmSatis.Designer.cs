@@ -540,6 +540,7 @@
             this.btnVeresiyeSatis.StyleController = this.layoutControl1;
             this.btnVeresiyeSatis.TabIndex = 7;
             this.btnVeresiyeSatis.Text = "Veresiye Satış";
+            this.btnVeresiyeSatis.Click += new System.EventHandler(this.btnVeresiyeSatis_Click);
             // 
             // btnSatis
             // 
@@ -708,6 +709,7 @@
             this.btn_Quantityinterest.Size = new System.Drawing.Size(80, 55);
             this.btn_Quantityinterest.StyleController = this.layoutControl1;
             this.btn_Quantityinterest.TabIndex = 20;
+            this.btn_Quantityinterest.Click += new System.EventHandler(this.btn_Quantityinterest_Click);
             // 
             // btn_ProductDelete
             // 
@@ -724,6 +726,7 @@
             // 
             // txt_NetFiyat
             // 
+            this.txt_NetFiyat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "NetPriceText", true));
             this.txt_NetFiyat.EditValue = "0.00 ";
             this.txt_NetFiyat.Location = new System.Drawing.Point(1074, 697);
             this.txt_NetFiyat.Name = "txt_NetFiyat";

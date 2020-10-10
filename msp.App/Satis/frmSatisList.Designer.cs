@@ -45,7 +45,7 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVeresiye = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.dt_Date = new DevExpress.XtraEditors.DateEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -190,22 +190,23 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Controls.Add(this.btnRefresh);
             this.panelControl1.Controls.Add(this.dt_Date);
             this.panelControl1.Location = new System.Drawing.Point(12, 12);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(871, 46);
             this.panelControl1.TabIndex = 4;
             // 
-            // simpleButton1
+            // btnRefresh
             // 
-            this.simpleButton1.ImageOptions.ImageIndex = 0;
-            this.simpleButton1.ImageOptions.ImageList = this.svgImageCollection1;
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(215, 5);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 36);
-            this.simpleButton1.TabIndex = 1;
+            this.btnRefresh.ImageOptions.ImageIndex = 0;
+            this.btnRefresh.ImageOptions.ImageList = this.svgImageCollection1;
+            this.btnRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnRefresh.Location = new System.Drawing.Point(215, 5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 36);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // svgImageCollection1
             // 
@@ -306,7 +307,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colVeresiye;
         private System.Windows.Forms.BindingSource bs_SaleTrans;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
     }
 }
