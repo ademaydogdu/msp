@@ -52,6 +52,9 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
+            this.colNetPriceText = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalPriceText = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -100,6 +103,9 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colRecId,
             this.colDate,
+            this.colTotalPriceText,
+            this.colUserCode,
+            this.colNetPriceText,
             this.colCustomerName,
             this.colPaymentType,
             this.colNetPrice,
@@ -111,6 +117,8 @@
             this.colVeresiye});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colRecId
@@ -137,56 +145,56 @@
             this.colPaymentType.FieldName = "PaymentType";
             this.colPaymentType.Name = "colPaymentType";
             this.colPaymentType.Visible = true;
-            this.colPaymentType.VisibleIndex = 2;
+            this.colPaymentType.VisibleIndex = 5;
             // 
             // colNetPrice
             // 
             this.colNetPrice.FieldName = "NetPrice";
             this.colNetPrice.Name = "colNetPrice";
             this.colNetPrice.Visible = true;
-            this.colNetPrice.VisibleIndex = 3;
+            this.colNetPrice.VisibleIndex = 6;
             // 
             // colKDV
             // 
             this.colKDV.FieldName = "KDV";
             this.colKDV.Name = "colKDV";
             this.colKDV.Visible = true;
-            this.colKDV.VisibleIndex = 4;
+            this.colKDV.VisibleIndex = 7;
             // 
             // colDiscountPrice
             // 
             this.colDiscountPrice.FieldName = "DiscountPrice";
             this.colDiscountPrice.Name = "colDiscountPrice";
             this.colDiscountPrice.Visible = true;
-            this.colDiscountPrice.VisibleIndex = 5;
+            this.colDiscountPrice.VisibleIndex = 8;
             // 
             // colTotalPrice
             // 
             this.colTotalPrice.FieldName = "TotalPrice";
             this.colTotalPrice.Name = "colTotalPrice";
             this.colTotalPrice.Visible = true;
-            this.colTotalPrice.VisibleIndex = 6;
+            this.colTotalPrice.VisibleIndex = 9;
             // 
             // colReceivedPrice
             // 
             this.colReceivedPrice.FieldName = "ReceivedPrice";
             this.colReceivedPrice.Name = "colReceivedPrice";
             this.colReceivedPrice.Visible = true;
-            this.colReceivedPrice.VisibleIndex = 7;
+            this.colReceivedPrice.VisibleIndex = 10;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
+            this.colRemark.VisibleIndex = 11;
             // 
             // colVeresiye
             // 
             this.colVeresiye.FieldName = "Veresiye";
             this.colVeresiye.Name = "colVeresiye";
             this.colVeresiye.Visible = true;
-            this.colVeresiye.VisibleIndex = 9;
+            this.colVeresiye.VisibleIndex = 12;
             // 
             // panelControl1
             // 
@@ -257,6 +265,27 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // colNetPriceText
+            // 
+            this.colNetPriceText.FieldName = "NetPriceText";
+            this.colNetPriceText.Name = "colNetPriceText";
+            this.colNetPriceText.Visible = true;
+            this.colNetPriceText.VisibleIndex = 4;
+            // 
+            // colTotalPriceText
+            // 
+            this.colTotalPriceText.FieldName = "TotalPriceText";
+            this.colTotalPriceText.Name = "colTotalPriceText";
+            this.colTotalPriceText.Visible = true;
+            this.colTotalPriceText.VisibleIndex = 2;
+            // 
+            // colUserCode
+            // 
+            this.colUserCode.FieldName = "UserCode";
+            this.colUserCode.Name = "colUserCode";
+            this.colUserCode.Visible = true;
+            this.colUserCode.VisibleIndex = 3;
+            // 
             // frmSatisList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,5 +338,8 @@
         private System.Windows.Forms.BindingSource bs_SaleTrans;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalPriceText;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colNetPriceText;
     }
 }

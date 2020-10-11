@@ -146,6 +146,7 @@
             this.btnMusteriler = new DevExpress.XtraBars.BarButtonItem();
             this.btnDashboard = new DevExpress.XtraBars.BarButtonItem();
             this.btnSonKullanmaTar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSpeedPrudctTanim = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -166,14 +167,13 @@
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnSpeedPrudctTanim = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -1137,6 +1137,7 @@
             this.btnDashboard.Id = 116;
             this.btnDashboard.ImageOptions.LargeImageIndex = 15;
             this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDashboard_ItemClick);
             // 
             // btnSonKullanmaTar
             // 
@@ -1144,6 +1145,13 @@
             this.btnSonKullanmaTar.Id = 117;
             this.btnSonKullanmaTar.ImageOptions.LargeImageIndex = 16;
             this.btnSonKullanmaTar.Name = "btnSonKullanmaTar";
+            // 
+            // btnSpeedPrudctTanim
+            // 
+            this.btnSpeedPrudctTanim.Caption = "Hızlı Satış Ürün Tanımları";
+            this.btnSpeedPrudctTanim.Id = 118;
+            this.btnSpeedPrudctTanim.ImageOptions.LargeImageIndex = 17;
+            this.btnSpeedPrudctTanim.Name = "btnSpeedPrudctTanim";
             // 
             // img_buton
             // 
@@ -1307,6 +1315,12 @@
             this.ribbonPageGroup14.ItemLinks.Add(this.btn_PaymentType);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.btnSpeedPrudctTanim);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "Hızlı Satış";
+            // 
             // ribbonPage8
             // 
             this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1354,19 +1368,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // ribbonPageGroup16
-            // 
-            this.ribbonPageGroup16.ItemLinks.Add(this.btnSpeedPrudctTanim);
-            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
-            this.ribbonPageGroup16.Text = "Hızlı Satış";
-            // 
-            // btnSpeedPrudctTanim
-            // 
-            this.btnSpeedPrudctTanim.Caption = "Hızlı Satış Ürün Tanımları";
-            this.btnSpeedPrudctTanim.Id = 118;
-            this.btnSpeedPrudctTanim.ImageOptions.LargeImageIndex = 17;
-            this.btnSpeedPrudctTanim.Name = "btnSpeedPrudctTanim";
             // 
             // MainForm
             // 

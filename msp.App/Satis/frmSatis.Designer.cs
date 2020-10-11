@@ -82,6 +82,7 @@
             this.txt_CustomerName = new DevExpress.XtraEditors.TextEdit();
             this.txt_Date = new DevExpress.XtraEditors.DateEdit();
             this.textEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -129,6 +130,7 @@
             this.layoutControlItem33 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem34 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
@@ -202,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem34)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -239,6 +242,7 @@
             this.layoutControl1.Controls.Add(this.txt_CustomerName);
             this.layoutControl1.Controls.Add(this.txt_Date);
             this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Images = this.img_EkleSatis;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -491,9 +495,9 @@
             this.btn_Vazgec.ImageOptions.ImageList = this.img_svg;
             this.btn_Vazgec.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_Vazgec.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Vazgec.Location = new System.Drawing.Point(580, 698);
+            this.btn_Vazgec.Location = new System.Drawing.Point(426, 698);
             this.btn_Vazgec.Name = "btn_Vazgec";
-            this.btn_Vazgec.Size = new System.Drawing.Size(127, 70);
+            this.btn_Vazgec.Size = new System.Drawing.Size(128, 70);
             this.btn_Vazgec.StyleController = this.layoutControl1;
             this.btn_Vazgec.TabIndex = 6;
             this.btn_Vazgec.Text = "Vazgeç";
@@ -534,9 +538,9 @@
             this.btnVeresiyeSatis.ImageOptions.ImageList = this.img_svg;
             this.btnVeresiyeSatis.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnVeresiyeSatis.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.btnVeresiyeSatis.Location = new System.Drawing.Point(711, 698);
+            this.btnVeresiyeSatis.Location = new System.Drawing.Point(692, 698);
             this.btnVeresiyeSatis.Name = "btnVeresiyeSatis";
-            this.btnVeresiyeSatis.Size = new System.Drawing.Size(145, 70);
+            this.btnVeresiyeSatis.Size = new System.Drawing.Size(148, 70);
             this.btnVeresiyeSatis.StyleController = this.layoutControl1;
             this.btnVeresiyeSatis.TabIndex = 7;
             this.btnVeresiyeSatis.Text = "Veresiye Satış";
@@ -550,9 +554,9 @@
             this.btnSatis.ImageOptions.ImageList = this.img_svg;
             this.btnSatis.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnSatis.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.btnSatis.Location = new System.Drawing.Point(860, 698);
+            this.btnSatis.Location = new System.Drawing.Point(844, 698);
             this.btnSatis.Name = "btnSatis";
-            this.btnSatis.Size = new System.Drawing.Size(123, 70);
+            this.btnSatis.Size = new System.Drawing.Size(139, 70);
             this.btnSatis.StyleController = this.layoutControl1;
             this.btnSatis.TabIndex = 8;
             this.btnSatis.Text = "Satış";
@@ -867,6 +871,21 @@
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 37;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.ImageIndex = 0;
+            this.simpleButton1.ImageOptions.ImageList = this.img_svg;
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.simpleButton1.Location = new System.Drawing.Point(558, 698);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(130, 70);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 39;
+            this.simpleButton1.Text = "Yeni Fiş";
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -904,7 +923,8 @@
             this.layoutControlItem20,
             this.layoutControlItem33,
             this.emptySpaceItem2,
-            this.emptySpaceItem5});
+            this.emptySpaceItem5,
+            this.layoutControlItem34});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1427, 780);
             this.Root.TextVisible = false;
@@ -937,16 +957,16 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(355, 686);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(213, 74);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(59, 74);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnSatis;
-            this.layoutControlItem5.Location = new System.Drawing.Point(848, 686);
+            this.layoutControlItem5.Location = new System.Drawing.Point(832, 686);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(78, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(127, 74);
+            this.layoutControlItem5.Size = new System.Drawing.Size(143, 74);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -954,10 +974,10 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnVeresiyeSatis;
-            this.layoutControlItem4.Location = new System.Drawing.Point(699, 686);
+            this.layoutControlItem4.Location = new System.Drawing.Point(680, 686);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(78, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(149, 74);
+            this.layoutControlItem4.Size = new System.Drawing.Size(152, 74);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -965,10 +985,10 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btn_Vazgec;
-            this.layoutControlItem3.Location = new System.Drawing.Point(568, 686);
+            this.layoutControlItem3.Location = new System.Drawing.Point(414, 686);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(78, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(131, 74);
+            this.layoutControlItem3.Size = new System.Drawing.Size(132, 74);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -1427,6 +1447,17 @@
             this.emptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem34
+            // 
+            this.layoutControlItem34.Control = this.simpleButton1;
+            this.layoutControlItem34.Location = new System.Drawing.Point(546, 686);
+            this.layoutControlItem34.MinSize = new System.Drawing.Size(78, 26);
+            this.layoutControlItem34.Name = "layoutControlItem34";
+            this.layoutControlItem34.Size = new System.Drawing.Size(134, 74);
+            this.layoutControlItem34.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem34.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem34.TextVisible = false;
+            // 
             // frmSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1512,6 +1543,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem34)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1617,5 +1649,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraGrid.Columns.GridColumn colTax;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_KdvOran;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem34;
     }
 }
