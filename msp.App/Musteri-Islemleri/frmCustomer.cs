@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Msp.App.Musteri_Islemleri 
 {
-    public partial class frmCustomer : XtraForm
+    public partial class frmCustomer : DevExpress.XtraEditors.XtraForm
     {
         public frmCustomer()
         {

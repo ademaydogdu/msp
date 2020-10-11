@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDepoEdit));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lookUpEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.bs_DepotEdit = new System.Windows.Forms.BindingSource(this.components);
             this.DepotTaxAdminsTE = new DevExpress.XtraEditors.TextEdit();
+            this.bs_DepotEdit = new System.Windows.Forms.BindingSource(this.components);
             this.DepotNameTE = new DevExpress.XtraEditors.TextEdit();
             this.DepTaxNoTE = new DevExpress.XtraEditors.TextEdit();
             this.DepotAuthPersonTE = new DevExpress.XtraEditors.TextEdit();
@@ -66,11 +67,12 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_DepotEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepotTaxAdminsTE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_DepotEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepotNameTE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepTaxNoTE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepotAuthPersonTE.Properties)).BeginInit();
@@ -95,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -120,7 +123,7 @@
             // lookUpEdit1
             // 
             this.lookUpEdit1.EditValue = null;
-            this.lookUpEdit1.Location = new System.Drawing.Point(12, 265);
+            this.lookUpEdit1.Location = new System.Drawing.Point(12, 264);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.lookUpEdit1.Properties.Caption = "Aktif";
@@ -128,10 +131,6 @@
             this.lookUpEdit1.Size = new System.Drawing.Size(643, 20);
             this.lookUpEdit1.StyleController = this.layoutControl1;
             this.lookUpEdit1.TabIndex = 9;
-            // 
-            // bs_DepotEdit
-            // 
-            this.bs_DepotEdit.DataSource = typeof(Msp.Models.Models.DepotDTO);
             // 
             // DepotTaxAdminsTE
             // 
@@ -141,6 +140,10 @@
             this.DepotTaxAdminsTE.Size = new System.Drawing.Size(208, 20);
             this.DepotTaxAdminsTE.StyleController = this.layoutControl1;
             this.DepotTaxAdminsTE.TabIndex = 5;
+            // 
+            // bs_DepotEdit
+            // 
+            this.bs_DepotEdit.DataSource = typeof(Msp.Models.Models.DepotDTO);
             // 
             // DepotNameTE
             // 
@@ -172,7 +175,7 @@
             // textEdit6
             // 
             this.textEdit6.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_DepotEdit, "DepCity", true));
-            this.textEdit6.Location = new System.Drawing.Point(123, 193);
+            this.textEdit6.Location = new System.Drawing.Point(123, 192);
             this.textEdit6.Name = "textEdit6";
             this.textEdit6.Size = new System.Drawing.Size(206, 20);
             this.textEdit6.StyleController = this.layoutControl1;
@@ -181,7 +184,7 @@
             // textEdit7
             // 
             this.textEdit7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_DepotEdit, "DepDistrict", true));
-            this.textEdit7.Location = new System.Drawing.Point(444, 193);
+            this.textEdit7.Location = new System.Drawing.Point(444, 192);
             this.textEdit7.Name = "textEdit7";
             this.textEdit7.Size = new System.Drawing.Size(211, 20);
             this.textEdit7.StyleController = this.layoutControl1;
@@ -190,7 +193,7 @@
             // textEdit8
             // 
             this.textEdit8.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_DepotEdit, "DepPhoneOne", true));
-            this.textEdit8.Location = new System.Drawing.Point(123, 229);
+            this.textEdit8.Location = new System.Drawing.Point(123, 228);
             this.textEdit8.Name = "textEdit8";
             this.textEdit8.Size = new System.Drawing.Size(208, 20);
             this.textEdit8.StyleController = this.layoutControl1;
@@ -199,7 +202,7 @@
             // textEdit9
             // 
             this.textEdit9.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_DepotEdit, "DepPhoneTwo", true));
-            this.textEdit9.Location = new System.Drawing.Point(446, 229);
+            this.textEdit9.Location = new System.Drawing.Point(446, 228);
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Size = new System.Drawing.Size(209, 20);
             this.textEdit9.StyleController = this.layoutControl1;
@@ -210,7 +213,7 @@
             this.memoEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_DepotEdit, "DepAddress", true));
             this.memoEdit1.Location = new System.Drawing.Point(123, 120);
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(208, 69);
+            this.memoEdit1.Size = new System.Drawing.Size(208, 68);
             this.memoEdit1.StyleController = this.layoutControl1;
             this.memoEdit1.TabIndex = 14;
             // 
@@ -240,7 +243,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.DepotTaxAdminsTE;
-            this.layoutControlItem2.ImageOptions.Image = global::Msp.App.Properties.Resources.home_32x32;
+            this.layoutControlItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem2.ImageOptions.SvgImage")));
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(323, 36);
@@ -250,8 +253,8 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.textEdit6;
-            this.layoutControlItem6.ImageOptions.Image = global::Msp.App.Properties.Resources.shapelabels_32x32;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 181);
+            this.layoutControlItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem6.ImageOptions.SvgImage")));
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 180);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(321, 36);
             this.layoutControlItem6.Text = "İl";
@@ -268,7 +271,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.DepTaxNoTE;
-            this.layoutControlItem3.ImageOptions.Image = global::Msp.App.Properties.Resources.gettingstarted_32x32;
+            this.layoutControlItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem3.ImageOptions.SvgImage")));
             this.layoutControlItem3.Location = new System.Drawing.Point(323, 36);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(324, 36);
@@ -277,8 +280,9 @@
             // 
             // layoutControlItem1
             // 
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseImage = true;
             this.layoutControlItem1.Control = this.DepotNameTE;
-            this.layoutControlItem1.ImageOptions.Image = global::Msp.App.Properties.Resources.editname_32x321;
+            this.layoutControlItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem1.ImageOptions.SvgImage")));
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(321, 36);
@@ -288,7 +292,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.DepotAuthPersonTE;
-            this.layoutControlItem4.ImageOptions.Image = global::Msp.App.Properties.Resources.bouser_32x32;
+            this.layoutControlItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem4.ImageOptions.SvgImage")));
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(323, 36);
@@ -298,8 +302,8 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.textEdit7;
-            this.layoutControlItem7.ImageOptions.Image = global::Msp.App.Properties.Resources.map_32x32;
-            this.layoutControlItem7.Location = new System.Drawing.Point(321, 181);
+            this.layoutControlItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem7.ImageOptions.SvgImage")));
+            this.layoutControlItem7.Location = new System.Drawing.Point(321, 180);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(326, 36);
             this.layoutControlItem7.Text = "İlçe";
@@ -308,10 +312,10 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.memoEdit1;
-            this.layoutControlItem5.ImageOptions.Image = global::Msp.App.Properties.Resources.geopoint_32x32;
+            this.layoutControlItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem5.ImageOptions.SvgImage")));
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(323, 73);
+            this.layoutControlItem5.Size = new System.Drawing.Size(323, 72);
             this.layoutControlItem5.Text = "Adres";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(108, 32);
             // 
@@ -320,14 +324,14 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(323, 108);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(324, 73);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(324, 72);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.textEdit8;
-            this.layoutControlItem8.ImageOptions.Image = global::Msp.App.Properties.Resources.bocontact_32x32;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 217);
+            this.layoutControlItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem8.ImageOptions.SvgImage")));
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 216);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(323, 36);
             this.layoutControlItem8.Text = "Telefon No";
@@ -336,8 +340,8 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.textEdit9;
-            this.layoutControlItem9.ImageOptions.Image = global::Msp.App.Properties.Resources.phone_32x32;
-            this.layoutControlItem9.Location = new System.Drawing.Point(323, 217);
+            this.layoutControlItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem9.ImageOptions.SvgImage")));
+            this.layoutControlItem9.Location = new System.Drawing.Point(323, 216);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(324, 36);
             this.layoutControlItem9.Text = "Telefon No 2";
@@ -346,9 +350,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 277);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 276);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(647, 37);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(647, 38);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem9
@@ -362,7 +366,7 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.lookUpEdit1;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 253);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 252);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(647, 24);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -379,6 +383,7 @@
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
+            this.barManager1.Images = this.svgImageCollection1;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
             this.barButtonItem2});
@@ -423,7 +428,7 @@
             // 
             this.barButtonItem1.Caption = "Kaydet";
             this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.Image = global::Msp.App.Properties.Resources.apply_32x32;
+            this.barButtonItem1.ImageOptions.ImageIndex = 30;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
@@ -431,7 +436,7 @@
             // 
             this.barButtonItem2.Caption = "Kapat";
             this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.Image = global::Msp.App.Properties.Resources.cancel_32x32;
+            this.barButtonItem2.ImageOptions.ImageIndex = 18;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
@@ -467,6 +472,45 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 334);
             // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("statistics-document-svgrepo-com", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.statistics-document-svgrepo-com"))));
+            this.svgImageCollection1.Add("alcaline_spiral_calendar", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.alcaline_spiral_calendar"))));
+            this.svgImageCollection1.Add("primary-percent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-percent"))));
+            this.svgImageCollection1.Add("ftpercent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.ftpercent"))));
+            this.svgImageCollection1.Add("Architetto----Calcolatrice", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Architetto----Calcolatrice"))));
+            this.svgImageCollection1.Add("calculator", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.calculator"))));
+            this.svgImageCollection1.Add("kuba-icon-delete", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.kuba-icon-delete"))));
+            this.svgImageCollection1.Add("1550775830", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1550775830"))));
+            this.svgImageCollection1.Add("tag (1)", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag (1)"))));
+            this.svgImageCollection1.Add("1307548250", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1307548250"))));
+            this.svgImageCollection1.Add("1298512738", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1298512738"))));
+            this.svgImageCollection1.Add("Remove-349235435", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Remove-349235435"))));
+            this.svgImageCollection1.Add("tag", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag"))));
+            this.svgImageCollection1.Add("eastshores_Warning_Notification", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.eastshores_Warning_Notification"))));
+            this.svgImageCollection1.Add("Warning", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Warning"))));
+            this.svgImageCollection1.Add("warning-17", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.warning-17"))));
+            this.svgImageCollection1.Add("tasto-8-architetto-franc-01", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tasto-8-architetto-franc-01"))));
+            this.svgImageCollection1.Add("jean_victor_balin_cross", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_cross"))));
+            this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.molumen_red_round_error_warning_icon"))));
+            this.svgImageCollection1.Add("error-button", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.error-button"))));
+            this.svgImageCollection1.Add("map-pin", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.map-pin"))));
+            this.svgImageCollection1.Add("color-icons-green-home", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.color-icons-green-home"))));
+            this.svgImageCollection1.Add("1392496432", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1392496432"))));
+            this.svgImageCollection1.Add("green", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.green"))));
+            this.svgImageCollection1.Add("location_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.location_icon"))));
+            this.svgImageCollection1.Add("1328388231", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1328388231"))));
+            this.svgImageCollection1.Add("Android-Phone-1", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Android-Phone-1"))));
+            this.svgImageCollection1.Add("matt-icons_contact-add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.matt-icons_contact-add"))));
+            this.svgImageCollection1.Add("Planned-obsolescence-barcode-in-squarre---French", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Planned-obsolescence-barcode-in-squarre---French"))));
+            this.svgImageCollection1.Add("rodentia-icons_ok", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.rodentia-icons_ok"))));
+            this.svgImageCollection1.Add("primary-apply", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-apply"))));
+            this.svgImageCollection1.Add("jean_victor_balin_add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_add"))));
+            this.svgImageCollection1.Add("primary-tab-new", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-tab-new"))));
+            this.svgImageCollection1.Add("positive", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.positive"))));
+            this.svgImageCollection1.Add("view-refresh", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.view-refresh"))));
+            // 
             // frmDepoEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,8 +526,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_DepotEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepotTaxAdminsTE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_DepotEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepotNameTE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepTaxNoTE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepotAuthPersonTE.Properties)).EndInit();
@@ -508,6 +552,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,5 +597,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraEditors.CheckEdit lookUpEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.Utils.SvgImageCollection svgImageCollection1;
     }
 }

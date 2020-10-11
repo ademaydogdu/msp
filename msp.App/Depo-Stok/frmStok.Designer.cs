@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStok));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcProducts = new DevExpress.XtraGrid.GridControl();
             this.bs_products = new System.Windows.Forms.BindingSource(this.components);
@@ -318,7 +319,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddNewProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditProduct),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeaProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProQuickChange),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProBarcodeLabel),
@@ -333,8 +333,7 @@
             // 
             this.btnProductsRefresh.Caption = "barButtonItem1";
             this.btnProductsRefresh.Id = 0;
-            this.btnProductsRefresh.ImageOptions.Image = global::Msp.App.Properties.Resources.refreshallpivottable_32x321;
-            this.btnProductsRefresh.ImageOptions.ImageIndex = 11;
+            this.btnProductsRefresh.ImageOptions.ImageIndex = 47;
             this.btnProductsRefresh.Name = "btnProductsRefresh";
             this.btnProductsRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductsRefresh_ItemClick);
             // 
@@ -342,8 +341,7 @@
             // 
             this.btnAddNewProduct.Caption = "Yeni Ürün";
             this.btnAddNewProduct.Id = 1;
-            this.btnAddNewProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.add_32x321;
-            this.btnAddNewProduct.ImageOptions.ImageIndex = 1;
+            this.btnAddNewProduct.ImageOptions.ImageIndex = 44;
             this.btnAddNewProduct.Name = "btnAddNewProduct";
             this.btnAddNewProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddNewProduct_ItemClick);
             // 
@@ -351,8 +349,7 @@
             // 
             this.btnRemProduct.Caption = "Ürün Sil";
             this.btnRemProduct.Id = 4;
-            this.btnRemProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.remove_32x321;
-            this.btnRemProduct.ImageOptions.ImageIndex = 4;
+            this.btnRemProduct.ImageOptions.ImageIndex = 24;
             this.btnRemProduct.Name = "btnRemProduct";
             this.btnRemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemProduct_ItemClick);
             // 
@@ -360,8 +357,7 @@
             // 
             this.btnEditProduct.Caption = "Düzelt";
             this.btnEditProduct.Id = 2;
-            this.btnEditProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.pencolor_32x321;
-            this.btnEditProduct.ImageOptions.ImageIndex = 2;
+            this.btnEditProduct.ImageOptions.ImageIndex = 23;
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditProduct_ItemClick);
             // 
@@ -369,7 +365,6 @@
             // 
             this.btnSeaProduct.Caption = "Ürün Bul";
             this.btnSeaProduct.Id = 6;
-            this.btnSeaProduct.ImageOptions.Image = global::Msp.App.Properties.Resources.marqueezoom_32x321;
             this.btnSeaProduct.ImageOptions.ImageIndex = 6;
             this.btnSeaProduct.Name = "btnSeaProduct";
             // 
@@ -377,15 +372,13 @@
             // 
             this.btnProTransactions.Caption = "Ürün Hareketleri";
             this.btnProTransactions.Id = 7;
-            this.btnProTransactions.ImageOptions.Image = global::Msp.App.Properties.Resources.bar_32x32;
-            this.btnProTransactions.ImageOptions.ImageIndex = 7;
+            this.btnProTransactions.ImageOptions.ImageIndex = 3;
             this.btnProTransactions.Name = "btnProTransactions";
             // 
             // btnProQuickChange
             // 
             this.btnProQuickChange.Caption = "Hızlı Değiştir";
             this.btnProQuickChange.Id = 8;
-            this.btnProQuickChange.ImageOptions.Image = global::Msp.App.Properties.Resources.changedatasourcepivottable_32x32;
             this.btnProQuickChange.ImageOptions.ImageIndex = 8;
             this.btnProQuickChange.Name = "btnProQuickChange";
             // 
@@ -393,16 +386,14 @@
             // 
             this.btnProBarcodeLabel.Caption = "Barkod Etiket";
             this.btnProBarcodeLabel.Id = 9;
-            this.btnProBarcodeLabel.ImageOptions.Image = global::Msp.App.Properties.Resources.barcode_32x32;
-            this.btnProBarcodeLabel.ImageOptions.ImageIndex = 9;
+            this.btnProBarcodeLabel.ImageOptions.ImageIndex = 41;
             this.btnProBarcodeLabel.Name = "btnProBarcodeLabel";
             // 
             // btnProClose
             // 
             this.btnProClose.Caption = "Kapat";
             this.btnProClose.Id = 10;
-            this.btnProClose.ImageOptions.Image = global::Msp.App.Properties.Resources.cancel_32x321;
-            this.btnProClose.ImageOptions.ImageIndex = 10;
+            this.btnProClose.ImageOptions.ImageIndex = 31;
             this.btnProClose.Name = "btnProClose";
             // 
             // btnORderAdd
@@ -463,6 +454,41 @@
             this.svgImageCollection1.Add("saveandclose2", "image://svgimages/save/saveandclose2.svg");
             this.svgImageCollection1.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
             this.svgImageCollection1.Add("neworder", "image://svgimages/outlook inspired/neworder.svg");
+            this.svgImageCollection1.Add("statistics-document-svgrepo-com", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.statistics-document-svgrepo-com"))));
+            this.svgImageCollection1.Add("alcaline_spiral_calendar", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.alcaline_spiral_calendar"))));
+            this.svgImageCollection1.Add("primary-percent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-percent"))));
+            this.svgImageCollection1.Add("ftpercent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.ftpercent"))));
+            this.svgImageCollection1.Add("Architetto----Calcolatrice", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Architetto----Calcolatrice"))));
+            this.svgImageCollection1.Add("calculator", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.calculator"))));
+            this.svgImageCollection1.Add("kuba-icon-delete", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.kuba-icon-delete"))));
+            this.svgImageCollection1.Add("1550775830", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1550775830"))));
+            this.svgImageCollection1.Add("tag (1)", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag (1)"))));
+            this.svgImageCollection1.Add("1307548250", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1307548250"))));
+            this.svgImageCollection1.Add("1298512738", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1298512738"))));
+            this.svgImageCollection1.Add("Remove-349235435", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Remove-349235435"))));
+            this.svgImageCollection1.Add("tag", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag"))));
+            this.svgImageCollection1.Add("eastshores_Warning_Notification", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.eastshores_Warning_Notification"))));
+            this.svgImageCollection1.Add("Warning", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Warning"))));
+            this.svgImageCollection1.Add("warning-17", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.warning-17"))));
+            this.svgImageCollection1.Add("tasto-8-architetto-franc-01", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tasto-8-architetto-franc-01"))));
+            this.svgImageCollection1.Add("jean_victor_balin_cross", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_cross"))));
+            this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.molumen_red_round_error_warning_icon"))));
+            this.svgImageCollection1.Add("error-button", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.error-button"))));
+            this.svgImageCollection1.Add("map-pin", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.map-pin"))));
+            this.svgImageCollection1.Add("color-icons-green-home", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.color-icons-green-home"))));
+            this.svgImageCollection1.Add("1392496432", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1392496432"))));
+            this.svgImageCollection1.Add("green", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.green"))));
+            this.svgImageCollection1.Add("location_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.location_icon"))));
+            this.svgImageCollection1.Add("1328388231", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1328388231"))));
+            this.svgImageCollection1.Add("Android-Phone-1", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Android-Phone-1"))));
+            this.svgImageCollection1.Add("matt-icons_contact-add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.matt-icons_contact-add"))));
+            this.svgImageCollection1.Add("Planned-obsolescence-barcode-in-squarre---French", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Planned-obsolescence-barcode-in-squarre---French"))));
+            this.svgImageCollection1.Add("rodentia-icons_ok", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.rodentia-icons_ok"))));
+            this.svgImageCollection1.Add("primary-apply", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-apply"))));
+            this.svgImageCollection1.Add("jean_victor_balin_add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_add"))));
+            this.svgImageCollection1.Add("primary-tab-new", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-tab-new"))));
+            this.svgImageCollection1.Add("positive", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.positive"))));
+            this.svgImageCollection1.Add("view-refresh", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.view-refresh"))));
             // 
             // btnViewProduct
             // 
