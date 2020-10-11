@@ -40,6 +40,22 @@ namespace Msp.App.Depo_Stok
             new KDVTaxDto(4, "%18", 0.18, 18),
         };
 
+
+        //public void calculateTotalPrice()
+        //{
+        //    bool __return = false;
+
+
+                
+        //        decimal fPrice, taxVal = 0;
+        //        fPrice = Convert.ToInt32(firstPriceTextEdit.Text);
+        //        taxVal = Convert.ToInt32(taxTextEdit.Text);
+        //        var TotalPrice = fPrice + (fPrice * taxVal / 100);
+        //        lastPriceTextEdit.Text = Convert.ToString(TotalPrice);
+
+            
+        //}
+
         public void Show(int id)
         {
             units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
@@ -153,6 +169,15 @@ namespace Msp.App.Depo_Stok
                 units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
                 bs_Unit.DataSource = units;
             }
+        }
+
+        private void taxTextEdit_TextChanged(object sender, EventArgs e)
+        {
+            decimal fPrice, taxVal;
+            decimal.TryParse(firstPriceTextEdit.Text,out fPrice);
+            decimal.TryParse(taxTextEdit.Text,out taxVal);
+            var TotalPrice = fPrice + (fPrice * taxVal / 100);
+            lastPriceTextEdit.Text = Convert.ToString(TotalPrice);
         }
     }
 }
