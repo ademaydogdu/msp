@@ -11,12 +11,16 @@ namespace Msp.Models.Models
 
         public int DID { get; set; }
 
+        public string DepName { get; set; }
         public string DepAuthPerson { get; set; }
 
+        public string DepAddress { get; set; }
 
-        public string  DepPhoneOne { get; set; }
+        public string DepCity { get; set; }
 
+        public string DepDistrict { get; set; }
 
+        public string DepPhoneOne { get; set; }
         public string DepPhoneTwo { get; set; }
 
         public string DepTaxAdministration { get; set; }
@@ -26,7 +30,7 @@ namespace Msp.Models.Models
 
         public DateTime? DepDate { get; set; }
 
-        public bool? active { get; set; }
+        public bool? DepActive { get; set; }
 
         
     }

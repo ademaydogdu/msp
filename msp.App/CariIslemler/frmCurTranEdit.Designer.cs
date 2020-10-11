@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCurTranEdit));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEdit4 = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
@@ -46,10 +48,30 @@
             this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit13 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit14 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit15 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit16 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit18 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit19 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit20 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit22 = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -60,74 +82,76 @@
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.bs_CurTransactionSource = new System.Windows.Forms.BindingSource(this.components);
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit13 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textEdit14 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit15 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textEdit17 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit16 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textEdit18 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit19 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit20 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit22 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lookUpEdit4 = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.bs_CurTransactionSource = new System.Windows.Forms.BindingSource(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.textEdit17 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -138,61 +162,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -227,20 +230,20 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 250, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 429);
+            this.layoutControl1.Size = new System.Drawing.Size(800, 407);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // lookUpEdit1
+            // lookUpEdit4
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(475, 12);
-            this.lookUpEdit1.MenuManager = this.barManager1;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lookUpEdit4.Location = new System.Drawing.Point(140, 269);
+            this.lookUpEdit4.MenuManager = this.barManager1;
+            this.lookUpEdit4.Name = "lookUpEdit4";
+            this.lookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(303, 20);
-            this.lookUpEdit1.StyleController = this.layoutControl1;
-            this.lookUpEdit1.TabIndex = 7;
+            this.lookUpEdit4.Size = new System.Drawing.Size(249, 20);
+            this.lookUpEdit4.StyleController = this.layoutControl1;
+            this.lookUpEdit4.TabIndex = 28;
             // 
             // barManager1
             // 
@@ -256,8 +259,10 @@
             this.barEditItem1,
             this.barEditItem2,
             this.barEditItem3,
-            this.barEditItem4});
-            this.barManager1.MaxItemId = 5;
+            this.barEditItem4,
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 7;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemLookUpEdit1,
@@ -273,6 +278,9 @@
             this.bar3.DockCol = 0;
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -290,9 +298,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 429);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 407);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(800, 21);
+            this.barDockControlBottom.Size = new System.Drawing.Size(800, 43);
             // 
             // barDockControlLeft
             // 
@@ -300,7 +308,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 429);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 407);
             // 
             // barDockControlRight
             // 
@@ -308,7 +316,46 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(800, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 429);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 407);
+            // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("statistics-document-svgrepo-com", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.statistics-document-svgrepo-com"))));
+            this.svgImageCollection1.Add("alcaline_spiral_calendar", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.alcaline_spiral_calendar"))));
+            this.svgImageCollection1.Add("primary-percent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-percent"))));
+            this.svgImageCollection1.Add("ftpercent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.ftpercent"))));
+            this.svgImageCollection1.Add("Architetto----Calcolatrice", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Architetto----Calcolatrice"))));
+            this.svgImageCollection1.Add("calculator", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.calculator"))));
+            this.svgImageCollection1.Add("kuba-icon-delete", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.kuba-icon-delete"))));
+            this.svgImageCollection1.Add("1550775830", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1550775830"))));
+            this.svgImageCollection1.Add("tag (1)", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag (1)"))));
+            this.svgImageCollection1.Add("1307548250", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1307548250"))));
+            this.svgImageCollection1.Add("1298512738", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1298512738"))));
+            this.svgImageCollection1.Add("Remove-349235435", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Remove-349235435"))));
+            this.svgImageCollection1.Add("tag", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag"))));
+            this.svgImageCollection1.Add("eastshores_Warning_Notification", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.eastshores_Warning_Notification"))));
+            this.svgImageCollection1.Add("Warning", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Warning"))));
+            this.svgImageCollection1.Add("warning-17", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.warning-17"))));
+            this.svgImageCollection1.Add("tasto-8-architetto-franc-01", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tasto-8-architetto-franc-01"))));
+            this.svgImageCollection1.Add("jean_victor_balin_cross", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_cross"))));
+            this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.molumen_red_round_error_warning_icon"))));
+            this.svgImageCollection1.Add("error-button", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.error-button"))));
+            this.svgImageCollection1.Add("map-pin", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.map-pin"))));
+            this.svgImageCollection1.Add("color-icons-green-home", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.color-icons-green-home"))));
+            this.svgImageCollection1.Add("1392496432", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1392496432"))));
+            this.svgImageCollection1.Add("green", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.green"))));
+            this.svgImageCollection1.Add("location_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.location_icon"))));
+            this.svgImageCollection1.Add("1328388231", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1328388231"))));
+            this.svgImageCollection1.Add("Android-Phone-1", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Android-Phone-1"))));
+            this.svgImageCollection1.Add("matt-icons_contact-add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.matt-icons_contact-add"))));
+            this.svgImageCollection1.Add("Planned-obsolescence-barcode-in-squarre---French", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Planned-obsolescence-barcode-in-squarre---French"))));
+            this.svgImageCollection1.Add("rodentia-icons_ok", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.rodentia-icons_ok"))));
+            this.svgImageCollection1.Add("primary-apply", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-apply"))));
+            this.svgImageCollection1.Add("jean_victor_balin_add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_add"))));
+            this.svgImageCollection1.Add("primary-tab-new", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-tab-new"))));
+            this.svgImageCollection1.Add("positive", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.positive"))));
+            this.svgImageCollection1.Add("view-refresh", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.view-refresh"))));
             // 
             // barEditItem1
             // 
@@ -369,41 +416,227 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
             // 
+            // lookUpEdit3
+            // 
+            this.lookUpEdit3.Location = new System.Drawing.Point(509, 187);
+            this.lookUpEdit3.MenuManager = this.barManager1;
+            this.lookUpEdit3.Name = "lookUpEdit3";
+            this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit3.Size = new System.Drawing.Size(250, 20);
+            this.lookUpEdit3.StyleController = this.layoutControl1;
+            this.lookUpEdit3.TabIndex = 25;
+            // 
+            // lookUpEdit2
+            // 
+            this.lookUpEdit2.Location = new System.Drawing.Point(509, 151);
+            this.lookUpEdit2.MenuManager = this.barManager1;
+            this.lookUpEdit2.Name = "lookUpEdit2";
+            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit2.Size = new System.Drawing.Size(250, 20);
+            this.lookUpEdit2.StyleController = this.layoutControl1;
+            this.lookUpEdit2.TabIndex = 23;
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(504, -38);
+            this.lookUpEdit1.MenuManager = this.barManager1;
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Size = new System.Drawing.Size(257, 20);
+            this.lookUpEdit1.StyleController = this.layoutControl1;
+            this.lookUpEdit1.TabIndex = 7;
+            // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(101, 12);
+            this.textEdit1.Location = new System.Drawing.Point(138, -38);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(198, 20);
+            this.textEdit1.Size = new System.Drawing.Size(155, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 4;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(101, 46);
+            this.textEdit2.Location = new System.Drawing.Point(138, 8);
             this.textEdit2.MenuManager = this.barManager1;
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(677, 20);
+            this.textEdit2.Size = new System.Drawing.Size(623, 20);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 5;
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(101, 70);
+            this.textEdit3.Location = new System.Drawing.Point(138, 44);
             this.textEdit3.MenuManager = this.barManager1;
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(677, 20);
+            this.textEdit3.Size = new System.Drawing.Size(623, 20);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 6;
             // 
             // textEdit4
             // 
-            this.textEdit4.Location = new System.Drawing.Point(103, 129);
+            this.textEdit4.Location = new System.Drawing.Point(140, 115);
             this.textEdit4.MenuManager = this.barManager1;
             this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(673, 20);
+            this.textEdit4.Size = new System.Drawing.Size(619, 20);
             this.textEdit4.StyleController = this.layoutControl1;
             this.textEdit4.TabIndex = 8;
+            // 
+            // textEdit5
+            // 
+            this.textEdit5.Location = new System.Drawing.Point(140, 151);
+            this.textEdit5.MenuManager = this.barManager1;
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(619, 20);
+            this.textEdit5.StyleController = this.layoutControl1;
+            this.textEdit5.TabIndex = 9;
+            // 
+            // textEdit6
+            // 
+            this.textEdit6.Location = new System.Drawing.Point(140, 187);
+            this.textEdit6.MenuManager = this.barManager1;
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Size = new System.Drawing.Size(243, 20);
+            this.textEdit6.StyleController = this.layoutControl1;
+            this.textEdit6.TabIndex = 10;
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.Location = new System.Drawing.Point(503, 187);
+            this.textEdit7.MenuManager = this.barManager1;
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Size = new System.Drawing.Size(256, 20);
+            this.textEdit7.StyleController = this.layoutControl1;
+            this.textEdit7.TabIndex = 11;
+            // 
+            // textEdit8
+            // 
+            this.textEdit8.Location = new System.Drawing.Point(140, 223);
+            this.textEdit8.MenuManager = this.barManager1;
+            this.textEdit8.Name = "textEdit8";
+            this.textEdit8.Size = new System.Drawing.Size(87, 20);
+            this.textEdit8.StyleController = this.layoutControl1;
+            this.textEdit8.TabIndex = 12;
+            // 
+            // textEdit9
+            // 
+            this.textEdit9.Location = new System.Drawing.Point(231, 223);
+            this.textEdit9.MenuManager = this.barManager1;
+            this.textEdit9.Name = "textEdit9";
+            this.textEdit9.Size = new System.Drawing.Size(528, 20);
+            this.textEdit9.StyleController = this.layoutControl1;
+            this.textEdit9.TabIndex = 13;
+            // 
+            // textEdit10
+            // 
+            this.textEdit10.Location = new System.Drawing.Point(140, 259);
+            this.textEdit10.MenuManager = this.barManager1;
+            this.textEdit10.Name = "textEdit10";
+            this.textEdit10.Size = new System.Drawing.Size(244, 20);
+            this.textEdit10.StyleController = this.layoutControl1;
+            this.textEdit10.TabIndex = 14;
+            // 
+            // textEdit11
+            // 
+            this.textEdit11.Location = new System.Drawing.Point(504, 259);
+            this.textEdit11.MenuManager = this.barManager1;
+            this.textEdit11.Name = "textEdit11";
+            this.textEdit11.Size = new System.Drawing.Size(255, 20);
+            this.textEdit11.StyleController = this.layoutControl1;
+            this.textEdit11.TabIndex = 15;
+            // 
+            // textEdit12
+            // 
+            this.textEdit12.Location = new System.Drawing.Point(140, 305);
+            this.textEdit12.MenuManager = this.barManager1;
+            this.textEdit12.Name = "textEdit12";
+            this.textEdit12.Size = new System.Drawing.Size(241, 20);
+            this.textEdit12.StyleController = this.layoutControl1;
+            this.textEdit12.TabIndex = 16;
+            // 
+            // textEdit13
+            // 
+            this.textEdit13.Location = new System.Drawing.Point(140, 341);
+            this.textEdit13.MenuManager = this.barManager1;
+            this.textEdit13.Name = "textEdit13";
+            this.textEdit13.Size = new System.Drawing.Size(241, 20);
+            this.textEdit13.StyleController = this.layoutControl1;
+            this.textEdit13.TabIndex = 17;
+            // 
+            // textEdit14
+            // 
+            this.textEdit14.Location = new System.Drawing.Point(501, 305);
+            this.textEdit14.MenuManager = this.barManager1;
+            this.textEdit14.Name = "textEdit14";
+            this.textEdit14.Size = new System.Drawing.Size(258, 20);
+            this.textEdit14.StyleController = this.layoutControl1;
+            this.textEdit14.TabIndex = 18;
+            // 
+            // textEdit15
+            // 
+            this.textEdit15.Location = new System.Drawing.Point(501, 341);
+            this.textEdit15.MenuManager = this.barManager1;
+            this.textEdit15.Name = "textEdit15";
+            this.textEdit15.Size = new System.Drawing.Size(258, 20);
+            this.textEdit15.StyleController = this.layoutControl1;
+            this.textEdit15.TabIndex = 19;
+            // 
+            // textEdit16
+            // 
+            this.textEdit16.Location = new System.Drawing.Point(140, 115);
+            this.textEdit16.MenuManager = this.barManager1;
+            this.textEdit16.Name = "textEdit16";
+            this.textEdit16.Size = new System.Drawing.Size(249, 20);
+            this.textEdit16.StyleController = this.layoutControl1;
+            this.textEdit16.TabIndex = 20;
+            // 
+            // textEdit18
+            // 
+            this.textEdit18.Location = new System.Drawing.Point(509, 115);
+            this.textEdit18.MenuManager = this.barManager1;
+            this.textEdit18.Name = "textEdit18";
+            this.textEdit18.Size = new System.Drawing.Size(250, 20);
+            this.textEdit18.StyleController = this.layoutControl1;
+            this.textEdit18.TabIndex = 21;
+            // 
+            // textEdit19
+            // 
+            this.textEdit19.Location = new System.Drawing.Point(140, 151);
+            this.textEdit19.MenuManager = this.barManager1;
+            this.textEdit19.Name = "textEdit19";
+            this.textEdit19.Size = new System.Drawing.Size(249, 20);
+            this.textEdit19.StyleController = this.layoutControl1;
+            this.textEdit19.TabIndex = 22;
+            // 
+            // textEdit20
+            // 
+            this.textEdit20.Location = new System.Drawing.Point(140, 187);
+            this.textEdit20.MenuManager = this.barManager1;
+            this.textEdit20.Name = "textEdit20";
+            this.textEdit20.Size = new System.Drawing.Size(249, 20);
+            this.textEdit20.StyleController = this.layoutControl1;
+            this.textEdit20.TabIndex = 24;
+            // 
+            // textEdit21
+            // 
+            this.textEdit21.Location = new System.Drawing.Point(140, 223);
+            this.textEdit21.MenuManager = this.barManager1;
+            this.textEdit21.Name = "textEdit21";
+            this.textEdit21.Size = new System.Drawing.Size(249, 20);
+            this.textEdit21.StyleController = this.layoutControl1;
+            this.textEdit21.TabIndex = 26;
+            // 
+            // textEdit22
+            // 
+            this.textEdit22.Location = new System.Drawing.Point(509, 223);
+            this.textEdit22.MenuManager = this.barManager1;
+            this.textEdit22.Name = "textEdit22";
+            this.textEdit22.Size = new System.Drawing.Size(250, 20);
+            this.textEdit22.StyleController = this.layoutControl1;
+            this.textEdit22.TabIndex = 27;
             // 
             // Root
             // 
@@ -421,67 +654,71 @@
             this.emptySpaceItem9,
             this.emptySpaceItem11});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 429);
+            this.Root.Size = new System.Drawing.Size(783, 457);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.textEdit1;
+            this.layoutControlItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem1.ImageOptions.SvgImage")));
             this.layoutControlItem1.Location = new System.Drawing.Point(10, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(281, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(275, 36);
             this.layoutControlItem1.Text = "Hesap Kodu";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(113, 32);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEdit2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(10, 34);
+            this.layoutControlItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem2.ImageOptions.SvgImage")));
+            this.layoutControlItem2.Location = new System.Drawing.Point(10, 46);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(760, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(743, 36);
             this.layoutControlItem2.Text = "Hesap Adı";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(113, 32);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textEdit3;
-            this.layoutControlItem3.Location = new System.Drawing.Point(10, 58);
+            this.layoutControlItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem3.ImageOptions.SvgImage")));
+            this.layoutControlItem3.Location = new System.Drawing.Point(10, 82);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(760, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(743, 36);
             this.layoutControlItem3.Text = "Yetkili Kişi";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(113, 32);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lookUpEdit1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(384, 0);
+            this.layoutControlItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem4.ImageOptions.SvgImage")));
+            this.layoutControlItem4.Location = new System.Drawing.Point(376, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(386, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(377, 36);
             this.layoutControlItem4.Text = "Hesap Türü";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(113, 32);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(291, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(285, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(93, 24);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(91, 36);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(770, 34);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(753, 46);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(10, 48);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(10, 72);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabbedControlGroup1
             // 
-            this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 82);
+            this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 118);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(780, 327);
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(763, 319);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
             this.layoutControlGroup2});
@@ -505,17 +742,144 @@
             this.emptySpaceItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(756, 280);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(739, 272);
             this.layoutControlGroup1.Text = "İletişim";
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.textEdit4;
+            this.layoutControlItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem5.ImageOptions.SvgImage")));
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(756, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(739, 36);
             this.layoutControlItem5.Text = "Adres";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.textEdit5;
+            this.layoutControlItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem6.ImageOptions.SvgImage")));
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(739, 36);
+            this.layoutControlItem6.Text = "Adres 2";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.textEdit6;
+            this.layoutControlItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem7.ImageOptions.SvgImage")));
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(363, 36);
+            this.layoutControlItem7.Text = "İlçe";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.textEdit7;
+            this.layoutControlItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem8.ImageOptions.SvgImage")));
+            this.layoutControlItem8.Location = new System.Drawing.Point(363, 72);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(376, 36);
+            this.layoutControlItem8.Text = "İl";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.textEdit8;
+            this.layoutControlItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem9.ImageOptions.SvgImage")));
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(207, 36);
+            this.layoutControlItem9.Text = "Ülke Kodu / Adı";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.textEdit9;
+            this.layoutControlItem10.Location = new System.Drawing.Point(207, 108);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(532, 36);
+            this.layoutControlItem10.Text = " ";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.textEdit10;
+            this.layoutControlItem11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem11.ImageOptions.SvgImage")));
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(364, 36);
+            this.layoutControlItem11.Text = "Posta Kodu";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.textEdit11;
+            this.layoutControlItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem12.ImageOptions.SvgImage")));
+            this.layoutControlItem12.Location = new System.Drawing.Point(364, 144);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(375, 36);
+            this.layoutControlItem12.Text = "E-Posta";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.textEdit13;
+            this.layoutControlItem14.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem14.ImageOptions.SvgImage")));
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 226);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(361, 36);
+            this.layoutControlItem14.Text = "Telefon 2";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 180);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(739, 10);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.textEdit12;
+            this.layoutControlItem13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem13.ImageOptions.SvgImage")));
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 190);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(361, 36);
+            this.layoutControlItem13.Text = "Telefon 1";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.textEdit14;
+            this.layoutControlItem15.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem15.ImageOptions.SvgImage")));
+            this.layoutControlItem15.Location = new System.Drawing.Point(361, 190);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(378, 36);
+            this.layoutControlItem15.Text = "Faks No";
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.textEdit15;
+            this.layoutControlItem16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem16.ImageOptions.SvgImage")));
+            this.layoutControlItem16.Location = new System.Drawing.Point(361, 226);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(378, 36);
+            this.layoutControlItem16.Text = "Özel Kodu";
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // emptySpaceItem10
+            // 
+            this.emptySpaceItem10.AllowHotTrack = false;
+            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 262);
+            this.emptySpaceItem10.Name = "emptySpaceItem10";
+            this.emptySpaceItem10.Size = new System.Drawing.Size(739, 10);
+            this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup2
             // 
@@ -534,8 +898,146 @@
             this.emptySpaceItem8});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(756, 280);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(739, 272);
             this.layoutControlGroup2.Text = "Diğer";
+            // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.textEdit16;
+            this.layoutControlItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem17.ImageOptions.SvgImage")));
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(369, 36);
+            this.layoutControlItem17.Text = "Vergi No";
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(369, 144);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(370, 10);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.textEdit18;
+            this.layoutControlItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem19.ImageOptions.SvgImage")));
+            this.layoutControlItem19.Location = new System.Drawing.Point(369, 0);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(370, 36);
+            this.layoutControlItem19.Text = "Vergi Dairesi";
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.textEdit19;
+            this.layoutControlItem20.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem20.ImageOptions.SvgImage")));
+            this.layoutControlItem20.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(369, 36);
+            this.layoutControlItem20.Text = "TC No";
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.lookUpEdit2;
+            this.layoutControlItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem21.ImageOptions.SvgImage")));
+            this.layoutControlItem21.Location = new System.Drawing.Point(369, 36);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Size = new System.Drawing.Size(370, 36);
+            this.layoutControlItem21.Text = "Şahıs Şirketi";
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem22
+            // 
+            this.layoutControlItem22.Control = this.textEdit20;
+            this.layoutControlItem22.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem22.ImageOptions.SvgImage")));
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem22.Name = "layoutControlItem22";
+            this.layoutControlItem22.Size = new System.Drawing.Size(369, 36);
+            this.layoutControlItem22.Text = "Kart No";
+            this.layoutControlItem22.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem23
+            // 
+            this.layoutControlItem23.Control = this.lookUpEdit3;
+            this.layoutControlItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem23.ImageOptions.SvgImage")));
+            this.layoutControlItem23.Location = new System.Drawing.Point(369, 72);
+            this.layoutControlItem23.Name = "layoutControlItem23";
+            this.layoutControlItem23.Size = new System.Drawing.Size(370, 36);
+            this.layoutControlItem23.Text = "Veresiye Satış";
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem24
+            // 
+            this.layoutControlItem24.Control = this.textEdit21;
+            this.layoutControlItem24.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem24.ImageOptions.SvgImage")));
+            this.layoutControlItem24.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(369, 46);
+            this.layoutControlItem24.Text = "Risk Limiti";
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem25
+            // 
+            this.layoutControlItem25.Control = this.textEdit22;
+            this.layoutControlItem25.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem25.ImageOptions.SvgImage")));
+            this.layoutControlItem25.Location = new System.Drawing.Point(369, 108);
+            this.layoutControlItem25.Name = "layoutControlItem25";
+            this.layoutControlItem25.Size = new System.Drawing.Size(370, 36);
+            this.layoutControlItem25.Text = "İskonto Oranı";
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // layoutControlItem26
+            // 
+            this.layoutControlItem26.Control = this.lookUpEdit4;
+            this.layoutControlItem26.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem26.ImageOptions.SvgImage")));
+            this.layoutControlItem26.Location = new System.Drawing.Point(0, 154);
+            this.layoutControlItem26.Name = "layoutControlItem26";
+            this.layoutControlItem26.Size = new System.Drawing.Size(369, 36);
+            this.layoutControlItem26.Text = "Özel Satış Fiyatı";
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(113, 32);
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(369, 154);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(370, 118);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem8
+            // 
+            this.emptySpaceItem8.AllowHotTrack = false;
+            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 190);
+            this.emptySpaceItem8.Name = "emptySpaceItem8";
+            this.emptySpaceItem8.Size = new System.Drawing.Size(369, 82);
+            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(10, 36);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(753, 10);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(753, 0);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(10, 36);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem11
+            // 
+            this.emptySpaceItem11.AllowHotTrack = false;
+            this.emptySpaceItem11.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem11.Name = "emptySpaceItem11";
+            this.emptySpaceItem11.Size = new System.Drawing.Size(10, 118);
+            this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
             // 
             // bs_CurTransactionSource
             // 
@@ -544,226 +1046,6 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // textEdit5
-            // 
-            this.textEdit5.Location = new System.Drawing.Point(103, 153);
-            this.textEdit5.MenuManager = this.barManager1;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(673, 20);
-            this.textEdit5.StyleController = this.layoutControl1;
-            this.textEdit5.TabIndex = 9;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.textEdit5;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(756, 24);
-            this.layoutControlItem6.Text = "Adres 2";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.Location = new System.Drawing.Point(103, 177);
-            this.textEdit6.MenuManager = this.barManager1;
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(288, 20);
-            this.textEdit6.StyleController = this.layoutControl1;
-            this.textEdit6.TabIndex = 10;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.textEdit6;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(371, 24);
-            this.layoutControlItem7.Text = "İlçe";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit7
-            // 
-            this.textEdit7.Location = new System.Drawing.Point(474, 177);
-            this.textEdit7.MenuManager = this.barManager1;
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(302, 20);
-            this.textEdit7.StyleController = this.layoutControl1;
-            this.textEdit7.TabIndex = 11;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.textEdit7;
-            this.layoutControlItem8.Location = new System.Drawing.Point(371, 48);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(385, 24);
-            this.layoutControlItem8.Text = "Şehir";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit8
-            // 
-            this.textEdit8.Location = new System.Drawing.Point(103, 201);
-            this.textEdit8.MenuManager = this.barManager1;
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(129, 20);
-            this.textEdit8.StyleController = this.layoutControl1;
-            this.textEdit8.TabIndex = 12;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.textEdit8;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(212, 24);
-            this.layoutControlItem9.Text = "Ülke Kodu / Adı";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit9
-            // 
-            this.textEdit9.Location = new System.Drawing.Point(236, 201);
-            this.textEdit9.MenuManager = this.barManager1;
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(540, 20);
-            this.textEdit9.StyleController = this.layoutControl1;
-            this.textEdit9.TabIndex = 13;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.textEdit9;
-            this.layoutControlItem10.Location = new System.Drawing.Point(212, 72);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(544, 24);
-            this.layoutControlItem10.Text = " ";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // textEdit10
-            // 
-            this.textEdit10.Location = new System.Drawing.Point(103, 225);
-            this.textEdit10.MenuManager = this.barManager1;
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Size = new System.Drawing.Size(289, 20);
-            this.textEdit10.StyleController = this.layoutControl1;
-            this.textEdit10.TabIndex = 14;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.textEdit10;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(372, 24);
-            this.layoutControlItem11.Text = "Posta Kodu";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit11
-            // 
-            this.textEdit11.Location = new System.Drawing.Point(475, 225);
-            this.textEdit11.MenuManager = this.barManager1;
-            this.textEdit11.Name = "textEdit11";
-            this.textEdit11.Size = new System.Drawing.Size(301, 20);
-            this.textEdit11.StyleController = this.layoutControl1;
-            this.textEdit11.TabIndex = 15;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.textEdit11;
-            this.layoutControlItem12.Location = new System.Drawing.Point(372, 96);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(384, 24);
-            this.layoutControlItem12.Text = "E-Posta";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit12
-            // 
-            this.textEdit12.Location = new System.Drawing.Point(103, 273);
-            this.textEdit12.MenuManager = this.barManager1;
-            this.textEdit12.Name = "textEdit12";
-            this.textEdit12.Size = new System.Drawing.Size(286, 20);
-            this.textEdit12.StyleController = this.layoutControl1;
-            this.textEdit12.TabIndex = 16;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.textEdit12;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 144);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(369, 24);
-            this.layoutControlItem13.Text = "Telefon 1";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit13
-            // 
-            this.textEdit13.Location = new System.Drawing.Point(103, 297);
-            this.textEdit13.MenuManager = this.barManager1;
-            this.textEdit13.Name = "textEdit13";
-            this.textEdit13.Size = new System.Drawing.Size(286, 20);
-            this.textEdit13.StyleController = this.layoutControl1;
-            this.textEdit13.TabIndex = 17;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.textEdit13;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 168);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(369, 24);
-            this.layoutControlItem14.Text = "Telefon 2";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 120);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(756, 24);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // textEdit14
-            // 
-            this.textEdit14.Location = new System.Drawing.Point(472, 273);
-            this.textEdit14.MenuManager = this.barManager1;
-            this.textEdit14.Name = "textEdit14";
-            this.textEdit14.Size = new System.Drawing.Size(304, 20);
-            this.textEdit14.StyleController = this.layoutControl1;
-            this.textEdit14.TabIndex = 18;
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.Control = this.textEdit14;
-            this.layoutControlItem15.Location = new System.Drawing.Point(369, 144);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(387, 24);
-            this.layoutControlItem15.Text = "Faks No";
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit15
-            // 
-            this.textEdit15.Location = new System.Drawing.Point(472, 297);
-            this.textEdit15.MenuManager = this.barManager1;
-            this.textEdit15.Name = "textEdit15";
-            this.textEdit15.Size = new System.Drawing.Size(304, 20);
-            this.textEdit15.StyleController = this.layoutControl1;
-            this.textEdit15.TabIndex = 19;
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.Control = this.textEdit15;
-            this.layoutControlItem16.Location = new System.Drawing.Point(369, 168);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(387, 24);
-            this.layoutControlItem16.Text = "Özel Kodu";
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // emptySpaceItem10
-            // 
-            this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 192);
-            this.emptySpaceItem10.Name = "emptySpaceItem10";
-            this.emptySpaceItem10.Size = new System.Drawing.Size(756, 88);
-            this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // svgImageCollection1
-            // 
-            this.svgImageCollection1.Add("groupbyresource", "image://svgimages/scheduling/groupbyresource.svg");
-            this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
             // 
             // emptySpaceItem3
             // 
@@ -789,221 +1071,19 @@
             this.layoutControlItem18.Size = new System.Drawing.Size(514, 24);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(76, 13);
             // 
-            // textEdit16
+            // barButtonItem1
             // 
-            this.textEdit16.Location = new System.Drawing.Point(103, 129);
-            this.textEdit16.MenuManager = this.barManager1;
-            this.textEdit16.Name = "textEdit16";
-            this.textEdit16.Size = new System.Drawing.Size(295, 20);
-            this.textEdit16.StyleController = this.layoutControl1;
-            this.textEdit16.TabIndex = 20;
+            this.barButtonItem1.Caption = "Kaydet";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.ImageOptions.ImageIndex = 30;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // layoutControlItem17
+            // barButtonItem2
             // 
-            this.layoutControlItem17.Control = this.textEdit16;
-            this.layoutControlItem17.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem17.Text = "Vergi No";
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // emptySpaceItem6
-            // 
-            this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(378, 96);
-            this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(378, 10);
-            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // textEdit18
-            // 
-            this.textEdit18.Location = new System.Drawing.Point(481, 129);
-            this.textEdit18.MenuManager = this.barManager1;
-            this.textEdit18.Name = "textEdit18";
-            this.textEdit18.Size = new System.Drawing.Size(295, 20);
-            this.textEdit18.StyleController = this.layoutControl1;
-            this.textEdit18.TabIndex = 21;
-            // 
-            // layoutControlItem19
-            // 
-            this.layoutControlItem19.Control = this.textEdit18;
-            this.layoutControlItem19.Location = new System.Drawing.Point(378, 0);
-            this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem19.Text = "Vergi Dairesi";
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit19
-            // 
-            this.textEdit19.Location = new System.Drawing.Point(103, 153);
-            this.textEdit19.MenuManager = this.barManager1;
-            this.textEdit19.Name = "textEdit19";
-            this.textEdit19.Size = new System.Drawing.Size(295, 20);
-            this.textEdit19.StyleController = this.layoutControl1;
-            this.textEdit19.TabIndex = 22;
-            // 
-            // layoutControlItem20
-            // 
-            this.layoutControlItem20.Control = this.textEdit19;
-            this.layoutControlItem20.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem20.Text = "TC No";
-            this.layoutControlItem20.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // lookUpEdit2
-            // 
-            this.lookUpEdit2.Location = new System.Drawing.Point(481, 153);
-            this.lookUpEdit2.MenuManager = this.barManager1;
-            this.lookUpEdit2.Name = "lookUpEdit2";
-            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit2.Size = new System.Drawing.Size(295, 20);
-            this.lookUpEdit2.StyleController = this.layoutControl1;
-            this.lookUpEdit2.TabIndex = 23;
-            // 
-            // layoutControlItem21
-            // 
-            this.layoutControlItem21.Control = this.lookUpEdit2;
-            this.layoutControlItem21.Location = new System.Drawing.Point(378, 24);
-            this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem21.Text = "Şahıs Şirketi";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit20
-            // 
-            this.textEdit20.Location = new System.Drawing.Point(103, 177);
-            this.textEdit20.MenuManager = this.barManager1;
-            this.textEdit20.Name = "textEdit20";
-            this.textEdit20.Size = new System.Drawing.Size(295, 20);
-            this.textEdit20.StyleController = this.layoutControl1;
-            this.textEdit20.TabIndex = 24;
-            // 
-            // layoutControlItem22
-            // 
-            this.layoutControlItem22.Control = this.textEdit20;
-            this.layoutControlItem22.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem22.Name = "layoutControlItem22";
-            this.layoutControlItem22.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem22.Text = "Kart No";
-            this.layoutControlItem22.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // lookUpEdit3
-            // 
-            this.lookUpEdit3.Location = new System.Drawing.Point(481, 177);
-            this.lookUpEdit3.MenuManager = this.barManager1;
-            this.lookUpEdit3.Name = "lookUpEdit3";
-            this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit3.Size = new System.Drawing.Size(295, 20);
-            this.lookUpEdit3.StyleController = this.layoutControl1;
-            this.lookUpEdit3.TabIndex = 25;
-            // 
-            // layoutControlItem23
-            // 
-            this.layoutControlItem23.Control = this.lookUpEdit3;
-            this.layoutControlItem23.Location = new System.Drawing.Point(378, 48);
-            this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem23.Text = "Veresiye Satış";
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit21
-            // 
-            this.textEdit21.Location = new System.Drawing.Point(103, 201);
-            this.textEdit21.MenuManager = this.barManager1;
-            this.textEdit21.Name = "textEdit21";
-            this.textEdit21.Size = new System.Drawing.Size(295, 20);
-            this.textEdit21.StyleController = this.layoutControl1;
-            this.textEdit21.TabIndex = 26;
-            // 
-            // layoutControlItem24
-            // 
-            this.layoutControlItem24.Control = this.textEdit21;
-            this.layoutControlItem24.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(378, 34);
-            this.layoutControlItem24.Text = "Risk Limiti";
-            this.layoutControlItem24.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // textEdit22
-            // 
-            this.textEdit22.Location = new System.Drawing.Point(481, 201);
-            this.textEdit22.MenuManager = this.barManager1;
-            this.textEdit22.Name = "textEdit22";
-            this.textEdit22.Size = new System.Drawing.Size(295, 20);
-            this.textEdit22.StyleController = this.layoutControl1;
-            this.textEdit22.TabIndex = 27;
-            // 
-            // layoutControlItem25
-            // 
-            this.layoutControlItem25.Control = this.textEdit22;
-            this.layoutControlItem25.Location = new System.Drawing.Point(378, 72);
-            this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem25.Text = "İskonto Oranı";
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // lookUpEdit4
-            // 
-            this.lookUpEdit4.Location = new System.Drawing.Point(103, 235);
-            this.lookUpEdit4.MenuManager = this.barManager1;
-            this.lookUpEdit4.Name = "lookUpEdit4";
-            this.lookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit4.Size = new System.Drawing.Size(295, 20);
-            this.lookUpEdit4.StyleController = this.layoutControl1;
-            this.lookUpEdit4.TabIndex = 28;
-            // 
-            // layoutControlItem26
-            // 
-            this.layoutControlItem26.Control = this.lookUpEdit4;
-            this.layoutControlItem26.Location = new System.Drawing.Point(0, 106);
-            this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem26.Text = "Özel Satış Fiyatı";
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(378, 106);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(378, 174);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem8
-            // 
-            this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 130);
-            this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(378, 150);
-            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(10, 24);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(770, 10);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem9
-            // 
-            this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(770, 0);
-            this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(10, 24);
-            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem11
-            // 
-            this.emptySpaceItem11.AllowHotTrack = false;
-            this.emptySpaceItem11.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem11.Name = "emptySpaceItem11";
-            this.emptySpaceItem11.Size = new System.Drawing.Size(10, 82);
-            this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.barButtonItem2.Caption = "Kapat";
+            this.barButtonItem2.Id = 6;
+            this.barButtonItem2.ImageOptions.ImageIndex = 18;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmCurTranEdit
             // 
@@ -1021,17 +1101,38 @@
             this.Load += new System.EventHandler(this.frmCurTranEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -1042,61 +1143,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1190,5 +1270,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

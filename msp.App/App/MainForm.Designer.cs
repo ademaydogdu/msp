@@ -978,6 +978,7 @@
             this.btnDepo.Id = 93;
             this.btnDepo.ImageOptions.LargeImageIndex = 3;
             this.btnDepo.Name = "btnDepo";
+            this.btnDepo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDepo_ItemClick);
             // 
             // skinPaletteRibbonGalleryBarItem2
             // 

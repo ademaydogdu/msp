@@ -16,6 +16,18 @@ namespace Msp.Entity.Entities
         public int DID { get; set; }
 
         [StringLength(50)]
+        public string DepName { get; set; }
+
+        [StringLength(50)]
+        public string DepAddress { get; set; }
+
+        [StringLength(50)]
+        public string DepCity { get; set; }
+
+        [StringLength(50)]
+        public string DepDistrict { get; set; }
+
+        [StringLength(50)]
         public string DepAuthPerson { get; set; }
 
         [StringLength(50)]
@@ -32,7 +44,7 @@ namespace Msp.Entity.Entities
 
         public DateTime? DepDate { get; set; }
 
-        public bool? active { get; set; }
+        public bool? DepActive { get; set; }
 
     }
 }

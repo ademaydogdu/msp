@@ -356,6 +356,13 @@ namespace msp.App
 
         #endregion
 
+        #endregion
 
+        private void btnDepo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDepo frm = new frmDepo();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
