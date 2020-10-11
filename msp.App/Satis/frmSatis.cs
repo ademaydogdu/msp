@@ -312,6 +312,8 @@ namespace msp.App
                 var totalkdv = Math.Round((decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
                 var kdvOran = Math.Round(oRow.ProductPrice.GetValueOrDefault() * Convert.ToDecimal((1 + totalkdv)), 2);
                 oRow.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
+
+
                 gridControl1.RefreshDataSource();
                 TopTotal();
             }

@@ -34,6 +34,7 @@
             this.bs_StockEdit = new System.Windows.Forms.BindingSource(this.components);
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.nameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.categoryIdTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.dateDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -57,7 +58,6 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.taxTextEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -96,6 +96,8 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.emptySpaceItem23 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -103,8 +105,6 @@
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.barCodeControl1 = new DevExpress.XtraEditors.BarCodeControl();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -126,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -165,13 +164,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // svgImageCollection1
@@ -242,6 +242,13 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(697, 474);
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 442);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(673, 20);
+            this.progressBar1.TabIndex = 20;
             // 
             // nameTextEdit
             // 
@@ -324,6 +331,7 @@
             this.lastPriceTextEdit.Properties.Mask.EditMask = "N0";
             this.lastPriceTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.lastPriceTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.lastPriceTextEdit.Properties.ReadOnly = true;
             this.lastPriceTextEdit.Size = new System.Drawing.Size(102, 20);
             this.lastPriceTextEdit.StyleController = this.dataLayoutControl1;
             this.lastPriceTextEdit.TabIndex = 10;
@@ -495,12 +503,6 @@
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 503);
             // 
-            // img_bar
-            // 
-            this.img_bar.Add("delete", "image://svgimages/dashboards/delete.svg");
-            this.img_bar.Add("save", "image://svgimages/outlook inspired/save.svg");
-            this.img_bar.Add("charthorizontalaxis_logscale", "image://svgimages/spreadsheet/charthorizontalaxis_logscale.svg");
-            // 
             // buttonEdit1
             // 
             this.buttonEdit1.Location = new System.Drawing.Point(12, 120);
@@ -523,6 +525,7 @@
             this.taxTextEdit.Size = new System.Drawing.Size(202, 20);
             this.taxTextEdit.StyleController = this.dataLayoutControl1;
             this.taxTextEdit.TabIndex = 11;
+            this.taxTextEdit.TextChanged += new System.EventHandler(this.taxTextEdit_TextChanged);
             // 
             // Root
             // 
@@ -892,6 +895,21 @@
             this.emptySpaceItem12.Size = new System.Drawing.Size(10, 36);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.progressBar1;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 430);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(677, 24);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
+            // 
+            // img_bar
+            // 
+            this.img_bar.Add("delete", "image://svgimages/dashboards/delete.svg");
+            this.img_bar.Add("save", "image://svgimages/outlook inspired/save.svg");
+            this.img_bar.Add("charthorizontalaxis_logscale", "image://svgimages/spreadsheet/charthorizontalaxis_logscale.svg");
+            // 
             // emptySpaceItem23
             // 
             this.emptySpaceItem23.AllowHotTrack = false;
@@ -960,22 +978,6 @@
             this.barCodeControl1.Symbology = code128Generator3;
             this.barCodeControl1.TabIndex = 0;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 442);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(673, 20);
-            this.progressBar1.TabIndex = 20;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.progressBar1;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 430);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(677, 24);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
-            // 
             // frmStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1010,7 +1012,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -1049,13 +1050,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
