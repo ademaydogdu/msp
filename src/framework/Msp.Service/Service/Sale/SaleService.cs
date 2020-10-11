@@ -111,5 +111,18 @@ namespace Msp.Service.Service.Sale
 
         #endregion
 
+        #region SpeedSale
+        public List<SpeedSaleProductDTO> GetList_SpeedSaleProduct()
+        {
+            using (var _db = new MspDbContext())
+            {
+                var result = base.Map<List<SpeedSaleProduct>, List<SpeedSaleProductDTO>>(_db.SpeedSaleProduct.ToList());
+                return result;
+            }
+        }
+
+
+
+        #endregion
     }
 }

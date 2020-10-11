@@ -33,6 +33,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Units> Units { get; set; }
         public virtual DbSet<SaleOwner> SaleOwner { get; set; }
         public virtual DbSet<SaleTrans> SaleTrans { get; set; }
+        public virtual DbSet<SpeedSaleProduct> SpeedSaleProduct { get; set; }
         public virtual DbSet<PaymentType> PaymentTypes { get; set; }
         public virtual DbSet<CTransactions> CurrentTransactions { get; set; }
         public virtual DbSet<Depots> Depot { get; set; }

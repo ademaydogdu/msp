@@ -73,9 +73,9 @@ namespace msp.App
                     _varmi.ProductQuantity += 1;
                     var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                     _varmi.ProductAmount = ProductAmount;
-                    var totalkdv = Math.Round((decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(),2);
-                    var kdvOran = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * Convert.ToDecimal((1 +  totalkdv)), 2);
-                    _varmi.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
+                    //var totalkdv = Math.Round((decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(),2);
+                    //var kdvOran = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * Convert.ToDecimal((1 +  totalkdv)), 2);
+                    //_varmi.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
 
                 }
                 else
@@ -92,8 +92,8 @@ namespace msp.App
                     saleTrans.Tax = _product.PTax;
 
                     #region KDVHARİC
-                    var kdvOran = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (1 + (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani), 2); //Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
-                    saleTrans.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();  //amount / 100; 
+                    //var kdvOran = Math.Round(_product.PFirstPrice.GetValueOrDefault() * (1 + (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani), 2); //Math.Round(_product.PFirstPrice.GetValueOrDefault() * (decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani, 2);
+                    //saleTrans.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();  //amount / 100; 
                     #endregion
 
                     __dl_List_SaleTrans.Add(saleTrans);
@@ -169,7 +169,8 @@ namespace msp.App
             if (__dl_List_SaleTrans.Count > 0)
             {
                 var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
-                var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
+                //var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
+                var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 __dll_SaleOwner.NetPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 __dll_SaleOwner.TotalPrice = totalAmount;
                 __dll_SaleOwner.KDV = totalKdv;
