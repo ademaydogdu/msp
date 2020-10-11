@@ -291,9 +291,6 @@
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomerEdit.resx">
       <DependentUpon>frmCustomerEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Satis\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmPriceInquiry.resx">
       <DependentUpon>frmPriceInquiry.cs</DependentUpon>
     </EmbeddedResource>

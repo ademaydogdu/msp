@@ -348,15 +348,12 @@ namespace msp.App
 
         private void btnDashboard_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Dashboard frm = new Dashboard();
-            frm.MdiParent = this;
-            frm.Show();
+
         }
 
 
         #endregion
 
-        #endregion
 
         private void btnDepo_ItemClick(object sender, ItemClickEventArgs e)
         {
