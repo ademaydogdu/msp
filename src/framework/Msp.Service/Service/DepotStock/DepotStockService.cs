@@ -4,6 +4,7 @@ using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -129,10 +130,8 @@ namespace Msp.Service.Service.DepotStock
             
             DateTime endDate = DateTime.Now;
             using (var _db = new MspDbContext())
-            {
-               
-               return base.Map<List<Products>,  List<ProductDTO>>(_db.products.Where(x => x.PExpDate <= endDate).ToList());
-               
+            {               
+               return base.Map<List<Products>,  List<ProductDTO>>(_db.products.Where(x => EntityFunctions.TruncateTime(x.PExpDate) <= endDate).ToList());  
             }
         }
 
