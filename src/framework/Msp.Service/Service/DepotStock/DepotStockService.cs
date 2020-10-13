@@ -3,7 +3,9 @@ using Msp.Models.Models;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +28,10 @@ namespace Msp.Service.Service.DepotStock
                 return base.Map<Products, ProductDTO>(_db.products.FirstOrDefault(x => x.PID == id));
             }
         }
+
+
+
+
         public ActionResponse<ProductDTO> InsertProduct(ProductDTO model)
         {
             ActionResponse<ProductDTO> response = new ActionResponse<ProductDTO>()
@@ -115,6 +121,23 @@ namespace Msp.Service.Service.DepotStock
 
 
         #endregion
+
+        #region Product Expiry Day
+
+        public List<ProductDTO> GetListExpDateProducts()
+        {
+            
+            DateTime endDate = DateTime.Now;
+            using (var _db = new MspDbContext())
+            {
+               
+               return base.Map<List<Products>,  List<ProductDTO>>(_db.products.Where(x => x.PExpDate <= endDate).ToList());
+               
+            }
+        }
+
+        #endregion
+
 
         #region Unit
 
@@ -248,5 +271,6 @@ namespace Msp.Service.Service.DepotStock
 
 
         #endregion
+
     }
 }

@@ -84,6 +84,7 @@ namespace Msp.App.Musteri_Islemleri
 
         private void btnSaveCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            __customers.date = DateTime.Now;
             do_save();
         }
 

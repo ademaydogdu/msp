@@ -1,4 +1,7 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Office.Utils;
+using DevExpress.Utils.CommonDialogs;
+using DevExpress.Utils.MVVM.Services;
+using DevExpress.XtraEditors;
 using Msp.App.Tanimlar;
 using Msp.App.Tool;
 using Msp.Infrastructure;
@@ -11,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +42,8 @@ namespace Msp.App.Depo_Stok
             new KDVTaxDto(2, "%1", 0.01, 1),
             new KDVTaxDto(3, "%8", 0.08, 8),
             new KDVTaxDto(4, "%18", 0.18, 18),
+
+
         };
 
 
@@ -46,14 +52,14 @@ namespace Msp.App.Depo_Stok
         //    bool __return = false;
 
 
-                
-        //        decimal fPrice, taxVal = 0;
-        //        fPrice = Convert.ToInt32(firstPriceTextEdit.Text);
-        //        taxVal = Convert.ToInt32(taxTextEdit.Text);
-        //        var TotalPrice = fPrice + (fPrice * taxVal / 100);
-        //        lastPriceTextEdit.Text = Convert.ToString(TotalPrice);
 
-            
+        //    decimal fPrice, taxVal = 0;
+        //    fPrice = Convert.ToInt32(firstPriceTextEdit.SelectedText);
+        //    taxVal = Convert.ToInt32(taxTextEdit.GetSelectedDataRow();
+        //    var TotalPrice = fPrice + (fPrice * taxVal / 100);
+        //    lastPriceTextEdit.Text = Convert.ToString(TotalPrice);
+
+
         //}
 
         public void Show(int id)
@@ -111,6 +117,7 @@ namespace Msp.App.Depo_Stok
             {
                 try
                 {
+
                     var response = _repository.Run<DepotStockService, ActionResponse<ProductDTO>>(x => x.SaveProduct(__product));
                     if (response.ResponseType != ResponseType.Ok)
                     {
@@ -156,6 +163,7 @@ namespace Msp.App.Depo_Stok
 
         private void bbi_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             do_save();
         }
 
@@ -171,13 +179,44 @@ namespace Msp.App.Depo_Stok
             }
         }
 
-        private void taxTextEdit_TextChanged(object sender, EventArgs e)
+
+
+
+        private void btnBrowse_Click(object sender, EventArgs e)
         {
-            decimal fPrice, taxVal;
-            decimal.TryParse(firstPriceTextEdit.Text,out fPrice);
-            decimal.TryParse(taxTextEdit.Text,out taxVal);
-            var TotalPrice = fPrice + (fPrice * taxVal / 100);
-            lastPriceTextEdit.Text = Convert.ToString(TotalPrice);
+            var filePath = string.Empty;
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Resim Dosyaları (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            fileDialog.RestoreDirectory = true;
+            fileDialog.FilterIndex = 2;
+            fileDialog.InitialDirectory = desktopPath;
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = fileDialog.FileName;
+                StockEditPE.Image = Image.FromFile(filePath);
+                // byte[] newImg = (byte[])StockEditPE.EditValue;
+                
+            }
+        }
+
+
+
+      
+
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+
+        }
+        private void frmStockEdit_Load(object sender, EventArgs e)
+        {
+           // StockEditPE.DataBindings.Add("EditValue", bs_StockEdit, "image");
         }
     }
+
 }

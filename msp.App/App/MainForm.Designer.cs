@@ -1168,6 +1168,7 @@
             this.btnSonKullanmaTar.Id = 117;
             this.btnSonKullanmaTar.ImageOptions.LargeImageIndex = 16;
             this.btnSonKullanmaTar.Name = "btnSonKullanmaTar";
+            this.btnSonKullanmaTar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSonKullanmaTar_ItemClick);
             // 
             // btnSpeedPrudctTanim
             // 
@@ -1176,6 +1177,55 @@
             this.btnSpeedPrudctTanim.ImageOptions.LargeImageIndex = 17;
             this.btnSpeedPrudctTanim.Name = "btnSpeedPrudctTanim";
             this.btnSpeedPrudctTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSpeedPrudctTanim_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Excel";
+            this.barButtonItem1.Id = 119;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Excel";
+            this.barSubItem1.Id = 120;
+            this.barSubItem1.ImageOptions.LargeImageIndex = 18;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Excel\'den Ürün Aktarımı";
+            this.barButtonItem4.Id = 121;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Ürün Excel\'e Aktarım";
+            this.barButtonItem5.Id = 122;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Pos Entegrasyonu";
+            this.barButtonItem7.Id = 123;
+            this.barButtonItem7.ImageOptions.LargeImageIndex = 26;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem63
+            // 
+            this.barButtonItem63.Caption = "Caller ID (Telefon)";
+            this.barButtonItem63.Id = 124;
+            this.barButtonItem63.ImageOptions.LargeImageIndex = 23;
+            this.barButtonItem63.Name = "barButtonItem63";
+            // 
+            // barButtonItem73
+            // 
+            this.barButtonItem73.Caption = "Müşteri Sipariş";
+            this.barButtonItem73.Id = 125;
+            this.barButtonItem73.ImageOptions.LargeImageIndex = 22;
+            this.barButtonItem73.Name = "barButtonItem73";
             // 
             // barButtonItem1
             // 
