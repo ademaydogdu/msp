@@ -361,5 +361,12 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnSonKullanmaTar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmExpDateProducts frm = new frmExpDateProducts();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

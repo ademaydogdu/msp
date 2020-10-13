@@ -141,11 +141,11 @@
     <Compile Include="CariIslemler\frmCurTranEdit.Designer.cs">
       <DependentUpon>frmCurTranEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Depo-Stok\ExpDateProducts.cs">
+    <Compile Include="Depo-Stok\frmExpDateProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Depo-Stok\ExpDateProducts.Designer.cs">
-      <DependentUpon>ExpDateProducts.cs</DependentUpon>
+    <Compile Include="Depo-Stok\frmExpDateProducts.Designer.cs">
+      <DependentUpon>frmExpDateProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Depo-Stok\frmDepo.cs">
       <SubType>Form</SubType>
@@ -282,8 +282,8 @@
     <EmbeddedResource Include="CariIslemler\frmCurTranEdit.resx">
       <DependentUpon>frmCurTranEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Depo-Stok\ExpDateProducts.resx">
-      <DependentUpon>ExpDateProducts.cs</DependentUpon>
+    <EmbeddedResource Include="Depo-Stok\frmExpDateProducts.resx">
+      <DependentUpon>frmExpDateProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmDepo.resx">
       <DependentUpon>frmDepo.cs</DependentUpon>
