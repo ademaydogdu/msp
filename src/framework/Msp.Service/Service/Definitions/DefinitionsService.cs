@@ -20,6 +20,12 @@ namespace Msp.Service.Service.Tanimlar
             }
         } 
 
+
+
+
+
+
+
         #endregion
 
     }

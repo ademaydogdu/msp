@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Msp.Models.Models.Sale;
 
 namespace Msp.App.Satis
 {
@@ -17,5 +18,16 @@ namespace Msp.App.Satis
         {
             InitializeComponent();
         }
+        List<SpeedSaleProductDTO> speedSaleProducts = new List<SpeedSaleProductDTO>();
+
+
+        private void frmSpeedSatis_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
     }
 }

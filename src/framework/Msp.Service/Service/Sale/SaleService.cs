@@ -121,7 +121,59 @@ namespace Msp.Service.Service.Sale
             }
         }
 
+        public ActionResponse<List<SpeedSaleProductDTO>> SaveSpeedSaleProduct(List<SpeedSaleProductDTO> model)
+        {
+            ActionResponse<List<SpeedSaleProductDTO>> response = new ActionResponse<List<SpeedSaleProductDTO>>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    foreach (var item in model)
+                    {
+                        if (item.RecId == 0)
+                        {
+                            _db.SpeedSaleProduct.Add(base.Map<SpeedSaleProductDTO, SpeedSaleProduct>(item));
+                            _db.SaveChanges();
+                        }
+                        else
+                        {
+                            var entity = _db.SpeedSaleProduct.FirstOrDefault(x => x.RecId == item.RecId);
+                            if (entity != null)
+                            {
+                                _db.Entry(entity).CurrentValues.SetValues(item);
+                                _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            }
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
 
+        public ActionResponse<SpeedSaleProductDTO> DeleteSpeedSaleProduct(int? id)
+        {
+            ActionResponse<SpeedSaleProductDTO> response = new ActionResponse<SpeedSaleProductDTO>();
+            using (MspDbContext _db = new MspDbContext())
+            {
+                var record = _db.SpeedSaleProduct.Where(x => x.RecId == id).FirstOrDefault();
+                if (record != null)
+                {
+                    _db.SpeedSaleProduct.Remove(record);
+                }
+                _db.SaveChanges();
+            }
+            return response;
+        }
 
         #endregion
     }

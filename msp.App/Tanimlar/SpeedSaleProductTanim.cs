@@ -13,6 +13,8 @@ using Msp.Models.Models;
 using Msp.Service.Service.DepotStock;
 using Msp.Models.Models.Sale;
 using Msp.Service.Service.Sale;
+using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
 
 namespace Msp.App.Tanimlar
 {
@@ -27,7 +29,7 @@ namespace Msp.App.Tanimlar
             _repository = new Repository();
 
         }
-
+        MspTool mspTool = new MspTool();
         List<ProductDTO> _productlist = new List<ProductDTO>();
         List<SpeedSaleProductDTO> _speedSaleProduct = new List<SpeedSaleProductDTO>();
 
@@ -45,6 +47,11 @@ namespace Msp.App.Tanimlar
             ProductDTO oRow = (ProductDTO)gcv_Product.GetFocusedRow();
             if (oRow != null)
             {
+                if (_speedSaleProduct.Any(x => x.ProductId == oRow.PID))
+                {
+                    XtraMessageBox.Show("Aynı Ürün Mevcuttur");
+                    return;
+                }
                 SpeedSaleProductDTO speedSaleProduct = new SpeedSaleProductDTO();
                 speedSaleProduct.ProductId = oRow.PID;
                 _speedSaleProduct.Add(speedSaleProduct);
@@ -57,14 +64,49 @@ namespace Msp.App.Tanimlar
             SpeedSaleProductDTO speedSaleProduct = (SpeedSaleProductDTO)gcv_SpeedSaleProduct.GetFocusedRow();
             if (speedSaleProduct != null)
             {
-                _speedSaleProduct.Remove(speedSaleProduct);
+                if (speedSaleProduct.RecId == 0)
+                {
+                    _speedSaleProduct.Remove(speedSaleProduct);
+                }
+                else
+                {
+                    if (mspTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                    {
+                        var result = _repository.Run<SaleService, ActionResponse<SpeedSaleProductDTO>>(x => x.DeleteSpeedSaleProduct(speedSaleProduct.RecId));
+                        _speedSaleProduct.Remove(speedSaleProduct);
+                        gc_SpeedSaleProduct.RefreshDataSource();
+                    }
+                }
             }
             gc_SpeedSaleProduct.RefreshDataSource();
         }
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (mspTool.get_Question("Kaydedilecektir Onaylıyor musunuz ?"))
+            {
+                gcv_SpeedSaleProduct.CloseEditor();
+                try
+                {
+                    var response = _repository.Run<SaleService, ActionResponse<List<SpeedSaleProductDTO>>>(x => x.SaveSpeedSaleProduct(_speedSaleProduct));
+                    if (response.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
 
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }
