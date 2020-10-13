@@ -8,7 +8,7 @@ namespace Msp.Entity.Entities
 
     public partial class Customers
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int id { get; set; }
 
         [StringLength(50)]

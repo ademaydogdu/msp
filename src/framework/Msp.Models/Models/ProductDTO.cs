@@ -37,5 +37,9 @@ namespace Msp.Models.Models
         public string PBrandCode { get; set; }
 
         public string PGroup { get; set; }
+
+        public byte[] PImages { get; set; }
+
+        public DateTime? PExpDate { get; set; }
     }
 }

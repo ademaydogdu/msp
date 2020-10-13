@@ -72,7 +72,12 @@ namespace Msp.App.Depo_Stok
                 frmStockEdit frm = new frmStockEdit();
                 frm._FormOpenType = Infrastructure.FormOpenType.Edit;
                 frm.Show(Orow.PID);
+               
             }
+
+           
+
+
         }
         private void btnEditProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

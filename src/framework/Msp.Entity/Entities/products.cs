@@ -41,6 +41,10 @@ namespace Msp.Entity.Entities
 
         public string PGroup { get; set; }
 
+        public byte[] PImages { get; set; }
+
+        public DateTime? PExpDate { get; set; }
+
         //public virtual Categories categories { get; set; }
     }
 }

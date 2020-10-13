@@ -56,7 +56,6 @@
             this.btnAddNewProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditProduct = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSeaProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnProTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.btnProQuickChange = new DevExpress.XtraBars.BarButtonItem();
             this.btnProBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
@@ -69,6 +68,7 @@
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.btnViewProduct = new DevExpress.XtraBars.BarButtonItem();
             this.bt = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSeaProduct = new DevExpress.XtraBars.BarButtonItem();
             this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
@@ -78,6 +78,7 @@
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colPImages = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -137,6 +138,7 @@
             this.colPBrandName,
             this.colPBrandCode,
             this.colPGroup,
+            this.colPImages,
             this.colPTax});
             this.gcvProducts.GridControl = this.gcProducts;
             this.gcvProducts.Name = "gcvProducts";
@@ -361,13 +363,6 @@
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditProduct_ItemClick);
             // 
-            // btnSeaProduct
-            // 
-            this.btnSeaProduct.Caption = "Ürün Bul";
-            this.btnSeaProduct.Id = 6;
-            this.btnSeaProduct.ImageOptions.ImageIndex = 6;
-            this.btnSeaProduct.Name = "btnSeaProduct";
-            // 
             // btnProTransactions
             // 
             this.btnProTransactions.Caption = "Ürün Hareketleri";
@@ -504,6 +499,13 @@
             this.bt.ImageOptions.ImageIndex = 5;
             this.bt.Name = "bt";
             // 
+            // btnSeaProduct
+            // 
+            this.btnSeaProduct.Caption = "Ürün Bul";
+            this.btnSeaProduct.Id = 6;
+            this.btnSeaProduct.ImageOptions.ImageIndex = 6;
+            this.btnSeaProduct.Name = "btnSeaProduct";
+            // 
             // barToggleSwitchItem1
             // 
             this.barToggleSwitchItem1.Caption = "barToggleSwitchItem1";
@@ -562,6 +564,13 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(917, 569);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // colPImages
+            // 
+            this.colPImages.FieldName = "Fotoğraf";
+            this.colPImages.Name = "colPImages";
+            this.colPImages.Visible = true;
+            this.colPImages.VisibleIndex = 14;
             // 
             // frmStok
             // 
@@ -644,5 +653,6 @@
         public DevExpress.XtraBars.BarButtonItem btnProQuickChange;
         public DevExpress.XtraBars.BarButtonItem btnProBarcodeLabel;
         public DevExpress.XtraBars.BarButtonItem btnProClose;
+        private DevExpress.XtraGrid.Columns.GridColumn colPImages;
     }
 }
