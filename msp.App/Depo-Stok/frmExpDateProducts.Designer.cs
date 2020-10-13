@@ -347,8 +347,8 @@
             // svgImageCollection1
             // 
             this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection1.Add("view-refresh", "view_refresh", typeof(Msp.App.Properties.Resources));
-            this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", "molumen_red_round_error_warning_icon", typeof(Msp.App.Properties.Resources));
+            //this.svgImageCollection1.Add("view-refresh", "view_refresh", typeof(Msp.App.Properties.Resources));
+            //this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", "molumen_red_round_error_warning_icon", typeof(Msp.App.Properties.Resources));
             // 
             // Root
             // 
