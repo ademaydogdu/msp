@@ -81,7 +81,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 41);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(955, 414);
+            this.layoutControl1.Size = new System.Drawing.Size(955, 434);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -92,7 +92,7 @@
             this.gridControl1.MainView = this.gcv_ExpDateProd;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(931, 390);
+            this.gridControl1.Size = new System.Drawing.Size(931, 410);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_ExpDateProd});
@@ -324,9 +324,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 455);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 475);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(955, 42);
+            this.barDockControlBottom.Size = new System.Drawing.Size(955, 22);
             // 
             // barDockControlLeft
             // 
@@ -334,7 +334,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 41);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 414);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 434);
             // 
             // barDockControlRight
             // 
@@ -342,7 +342,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(955, 41);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 414);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 434);
             // 
             // svgImageCollection1
             // 
@@ -357,7 +357,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(955, 414);
+            this.Root.Size = new System.Drawing.Size(955, 434);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -365,7 +365,7 @@
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(935, 394);
+            this.layoutControlItem1.Size = new System.Drawing.Size(935, 414);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
