@@ -14,10 +14,10 @@ using Msp.Service.Repository;
 
 namespace Msp.App.Depo_Stok
 {
-    public partial class ExpDateProducts : DevExpress.XtraEditors.XtraForm
+    public partial class frmExpDateProducts : DevExpress.XtraEditors.XtraForm
     {
         Repository _repository;
-        public ExpDateProducts()
+        public frmExpDateProducts()
         {
             InitializeComponent();
             _repository = new Repository();
@@ -25,15 +25,22 @@ namespace Msp.App.Depo_Stok
 
         List<ProductDTO>__listExpDateProducts = new List<ProductDTO>();
 
-        private void ExpDateProducts_Load(object sender, EventArgs e)
+        private void do_refresh() 
         {
             __listExpDateProducts = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListExpDateProducts());
             bs_ExpDateProd.DataSource = __listExpDateProducts;
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
+        private void ExpDateProducts_Load(object sender, EventArgs e)
         {
+            do_refresh();
+        }
 
+
+
+        private void btnExpDateRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_refresh();
         }
     }
 }

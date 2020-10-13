@@ -1,6 +1,6 @@
 ﻿namespace Msp.App.Depo_Stok
 {
-    partial class ExpDateProducts
+    partial class frmExpDateProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -54,24 +54,24 @@
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.btnExpDateRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnExpDateRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_ExpDateProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_ExpDateProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -96,7 +96,6 @@
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_ExpDateProd});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // bs_ExpDateProd
             // 
@@ -296,6 +295,23 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
+            // btnExpDateRefresh
+            // 
+            this.btnExpDateRefresh.Caption = "Yenile";
+            this.btnExpDateRefresh.Id = 0;
+            this.btnExpDateRefresh.ImageOptions.ImageIndex = 0;
+            this.btnExpDateRefresh.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.btnExpDateRefresh.Name = "btnExpDateRefresh";
+            this.btnExpDateRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExpDateRefresh_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Kapat";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.ImageOptions.ImageIndex = 1;
+            this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -328,6 +344,12 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 414);
             // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("view-refresh", "view_refresh", typeof(Msp.App.Properties.Resources));
+            this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", "molumen_red_round_error_warning_icon", typeof(Msp.App.Properties.Resources));
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -347,28 +369,7 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // btnExpDateRefresh
-            // 
-            this.btnExpDateRefresh.Caption = "Yenile";
-            this.btnExpDateRefresh.Id = 0;
-            this.btnExpDateRefresh.ImageOptions.ImageIndex = 0;
-            this.btnExpDateRefresh.Name = "btnExpDateRefresh";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Kapat";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.ImageIndex = 2;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // svgImageCollection1
-            // 
-            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-          //  this.svgImageCollection1.Add("view-refresh", "view_refresh", typeof(Msp.App.Properties.Resources));
-            //this.svgImageCollection1.Add("error-button", "error_button", typeof(Msp.App.Properties.Resources));
-          //  this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", "molumen_red_round_error_warning_icon", typeof(Msp.App.Properties.Resources));
-            // 
-            // ExpDateProducts
+            // frmExpDateProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -378,7 +379,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "ExpDateProducts";
+            this.Name = "frmExpDateProducts";
             this.Text = "ExpDateProducts";
             this.Load += new System.EventHandler(this.ExpDateProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -387,9 +388,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_ExpDateProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_ExpDateProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
