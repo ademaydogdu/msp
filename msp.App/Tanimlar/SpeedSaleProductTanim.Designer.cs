@@ -39,44 +39,44 @@ namespace Msp.App.Tanimlar
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSpeedNext = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSpeedProductRetrun = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gc_SpeedSaleProduct = new DevExpress.XtraGrid.GridControl();
+            this.bs_SpeedSaleProduct = new System.Windows.Forms.BindingSource(this.components);
+            this.gcv_SpeedSaleProduct = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_products = new System.Windows.Forms.BindingSource(this.components);
+            this.colİmage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colButtonType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gc_Product = new DevExpress.XtraGrid.GridControl();
+            this.gcv_Product = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_products = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_SpeedSaleProduct = new System.Windows.Forms.BindingSource(this.components);
-            this.colPName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colİmage = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colButtonType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_SpeedSaleProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SpeedSaleProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_SpeedSaleProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SpeedSaleProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // img_bar
@@ -104,8 +104,8 @@ namespace Msp.App.Tanimlar
             this.bbi_save,
             this.barButtonItem2,
             this.bbi_Delete,
-            this.barButtonItem1,
-            this.barButtonItem3});
+            this.btnSpeedNext,
+            this.btnSpeedProductRetrun});
             this.barManager1.LargeImages = this.img_bar;
             this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
@@ -121,8 +121,8 @@ namespace Msp.App.Tanimlar
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_save),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Delete),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSpeedNext, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSpeedProductRetrun)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -135,6 +135,7 @@ namespace Msp.App.Tanimlar
             this.bbi_save.ImageOptions.ImageIndex = 1;
             this.bbi_save.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_save.Name = "bbi_save";
+            this.bbi_save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_save_ItemClick);
             // 
             // bbi_Delete
             // 
@@ -152,21 +153,23 @@ namespace Msp.App.Tanimlar
             this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // barButtonItem1
+            // btnSpeedNext
             // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.ImageOptions.ImageIndex = 5;
-            this.barButtonItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnSpeedNext.Caption = "barButtonItem1";
+            this.btnSpeedNext.Id = 3;
+            this.btnSpeedNext.ImageOptions.ImageIndex = 5;
+            this.btnSpeedNext.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.btnSpeedNext.Name = "btnSpeedNext";
+            this.btnSpeedNext.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSpeedNext_ItemClick);
             // 
-            // barButtonItem3
+            // btnSpeedProductRetrun
             // 
-            this.barButtonItem3.Caption = "barButtonItem3";
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ImageOptions.ImageIndex = 6;
-            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnSpeedProductRetrun.Caption = "barButtonItem3";
+            this.btnSpeedProductRetrun.Id = 4;
+            this.btnSpeedProductRetrun.ImageOptions.ImageIndex = 6;
+            this.btnSpeedProductRetrun.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.btnSpeedProductRetrun.Name = "btnSpeedProductRetrun";
+            this.btnSpeedProductRetrun.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSpeedProductRetrun_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -202,8 +205,8 @@ namespace Msp.App.Tanimlar
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.gridControl2);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.gc_SpeedSaleProduct);
+            this.layoutControl1.Controls.Add(this.gc_Product);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -212,101 +215,35 @@ namespace Msp.App.Tanimlar
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gridControl2
+            // gc_SpeedSaleProduct
             // 
-            this.gridControl2.DataSource = this.bs_SpeedSaleProduct;
-            this.gridControl2.Location = new System.Drawing.Point(364, 12);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.MenuManager = this.barManager1;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gc_SpeedSaleProduct.DataSource = this.bs_SpeedSaleProduct;
+            this.gc_SpeedSaleProduct.Location = new System.Drawing.Point(364, 12);
+            this.gc_SpeedSaleProduct.MainView = this.gcv_SpeedSaleProduct;
+            this.gc_SpeedSaleProduct.MenuManager = this.barManager1;
+            this.gc_SpeedSaleProduct.Name = "gc_SpeedSaleProduct";
+            this.gc_SpeedSaleProduct.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.gridControl2.Size = new System.Drawing.Size(415, 575);
-            this.gridControl2.TabIndex = 5;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colRecId,
-            this.colProductId,
-            this.colİmage,
-            this.colButtonType});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.bs_products;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(338, 575);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPName});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.splitterItem1,
-            this.layoutControlItem2});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(791, 599);
-            this.Root.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(342, 579);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // splitterItem1
-            // 
-            this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(342, 0);
-            this.splitterItem1.Name = "splitterItem1";
-            this.splitterItem1.Size = new System.Drawing.Size(10, 579);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.gridControl2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(352, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(419, 579);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // bs_products
-            // 
-            this.bs_products.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            this.gc_SpeedSaleProduct.Size = new System.Drawing.Size(415, 575);
+            this.gc_SpeedSaleProduct.TabIndex = 5;
+            this.gc_SpeedSaleProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_SpeedSaleProduct});
             // 
             // bs_SpeedSaleProduct
             // 
             this.bs_SpeedSaleProduct.DataSource = typeof(Msp.Models.Models.Sale.SpeedSaleProductDTO);
             // 
-            // colPName
+            // gcv_SpeedSaleProduct
             // 
-            this.colPName.Caption = "Ürün Adı";
-            this.colPName.FieldName = "PName";
-            this.colPName.Name = "colPName";
-            this.colPName.Visible = true;
-            this.colPName.VisibleIndex = 0;
+            this.gcv_SpeedSaleProduct.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRecId,
+            this.colProductId,
+            this.colİmage,
+            this.colButtonType});
+            this.gcv_SpeedSaleProduct.GridControl = this.gc_SpeedSaleProduct;
+            this.gcv_SpeedSaleProduct.Name = "gcv_SpeedSaleProduct";
+            this.gcv_SpeedSaleProduct.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_SpeedSaleProduct.OptionsView.ShowGroupPanel = false;
             // 
             // colRecId
             // 
@@ -323,6 +260,20 @@ namespace Msp.App.Tanimlar
             this.colProductId.Visible = true;
             this.colProductId.VisibleIndex = 0;
             // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.DataSource = this.bs_products;
+            this.repositoryItemLookUpEdit1.DisplayMember = "PName";
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.ValueMember = "PID";
+            // 
+            // bs_products
+            // 
+            this.bs_products.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
             // colİmage
             // 
             this.colİmage.FieldName = "İmage";
@@ -337,15 +288,71 @@ namespace Msp.App.Tanimlar
             this.colButtonType.Visible = true;
             this.colButtonType.VisibleIndex = 2;
             // 
-            // repositoryItemLookUpEdit1
+            // gc_Product
             // 
-            this.repositoryItemLookUpEdit1.AutoHeight = false;
-            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit1.DataSource = this.bs_products;
-            this.repositoryItemLookUpEdit1.DisplayMember = "PName";
-            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
-            this.repositoryItemLookUpEdit1.ValueMember = "PID";
+            this.gc_Product.DataSource = this.bs_products;
+            this.gc_Product.Location = new System.Drawing.Point(12, 12);
+            this.gc_Product.MainView = this.gcv_Product;
+            this.gc_Product.MenuManager = this.barManager1;
+            this.gc_Product.Name = "gc_Product";
+            this.gc_Product.Size = new System.Drawing.Size(338, 575);
+            this.gc_Product.TabIndex = 4;
+            this.gc_Product.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_Product});
+            // 
+            // gcv_Product
+            // 
+            this.gcv_Product.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPName});
+            this.gcv_Product.GridControl = this.gc_Product;
+            this.gcv_Product.Name = "gcv_Product";
+            this.gcv_Product.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_Product.OptionsView.ShowGroupPanel = false;
+            // 
+            // colPName
+            // 
+            this.colPName.Caption = "Ürün Adı";
+            this.colPName.FieldName = "PName";
+            this.colPName.Name = "colPName";
+            this.colPName.Visible = true;
+            this.colPName.VisibleIndex = 0;
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.splitterItem1,
+            this.layoutControlItem2});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(791, 599);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gc_Product;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(342, 579);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // splitterItem1
+            // 
+            this.splitterItem1.AllowHotTrack = true;
+            this.splitterItem1.Location = new System.Drawing.Point(342, 0);
+            this.splitterItem1.Name = "splitterItem1";
+            this.splitterItem1.Size = new System.Drawing.Size(10, 579);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.gc_SpeedSaleProduct;
+            this.layoutControlItem2.Location = new System.Drawing.Point(352, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(419, 579);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // SpeedSaleProductTanim
             // 
@@ -364,17 +371,17 @@ namespace Msp.App.Tanimlar
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_SpeedSaleProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SpeedSaleProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_SpeedSaleProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SpeedSaleProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,15 +401,15 @@ namespace Msp.App.Tanimlar
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private GridControl gridControl2;
-        private GridView gridView2;
-        private GridControl gridControl1;
-        private GridView gridView1;
+        private GridControl gc_SpeedSaleProduct;
+        private GridView gcv_SpeedSaleProduct;
+        private GridControl gc_Product;
+        private GridView gcv_Product;
         private LayoutControlItem layoutControlItem1;
         private SplitterItem splitterItem1;
         private LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnSpeedNext;
+        private DevExpress.XtraBars.BarButtonItem btnSpeedProductRetrun;
         private System.Windows.Forms.BindingSource bs_products;
         private System.Windows.Forms.BindingSource bs_SpeedSaleProduct;
         private DevExpress.XtraGrid.Columns.GridColumn colRecId;

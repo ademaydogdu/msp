@@ -38,7 +38,32 @@ namespace Msp.App.Tanimlar
 
             _speedSaleProduct = _repository.Run<SaleService, List<SpeedSaleProductDTO>>(x => x.GetList_SpeedSaleProduct());
             bs_SpeedSaleProduct.DataSource = _speedSaleProduct;
+        }
 
+        private void btnSpeedNext_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ProductDTO oRow = (ProductDTO)gcv_Product.GetFocusedRow();
+            if (oRow != null)
+            {
+                SpeedSaleProductDTO speedSaleProduct = new SpeedSaleProductDTO();
+                speedSaleProduct.ProductId = oRow.PID;
+                _speedSaleProduct.Add(speedSaleProduct);
+                gc_SpeedSaleProduct.RefreshDataSource();
+            }
+        }
+
+        private void btnSpeedProductRetrun_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SpeedSaleProductDTO speedSaleProduct = (SpeedSaleProductDTO)gcv_SpeedSaleProduct.GetFocusedRow();
+            if (speedSaleProduct != null)
+            {
+                _speedSaleProduct.Remove(speedSaleProduct);
+            }
+            gc_SpeedSaleProduct.RefreshDataSource();
+        }
+
+        private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
 
         }
     }

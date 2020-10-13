@@ -361,5 +361,18 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void rbi_Siparis_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSpeedPrudctTanim_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SpeedSaleProductTanim frm = new SpeedSaleProductTanim();
+            frm.MdiParent = this;
+            frm.Show();
+               
+        }
     }
 }
