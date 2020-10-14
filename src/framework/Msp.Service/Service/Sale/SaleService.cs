@@ -108,7 +108,6 @@ namespace Msp.Service.Service.Sale
             }
         }
 
-
         #endregion
 
         #region SpeedSale

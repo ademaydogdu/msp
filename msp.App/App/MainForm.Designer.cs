@@ -1175,6 +1175,7 @@
             this.btnSpeedPrudctTanim.Id = 118;
             this.btnSpeedPrudctTanim.ImageOptions.LargeImageIndex = 17;
             this.btnSpeedPrudctTanim.Name = "btnSpeedPrudctTanim";
+            this.btnSpeedPrudctTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSpeedPrudctTanim_ItemClick);
             // 
             // barButtonItem1
             // 

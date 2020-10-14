@@ -33,8 +33,19 @@ namespace Msp.App.Tanimlar
         List<ProductDTO> _productlist = new List<ProductDTO>();
         List<SpeedSaleProductDTO> _speedSaleProduct = new List<SpeedSaleProductDTO>();
 
+        public List<SelectIdValue> selectIds = new List<SelectIdValue>
+        {
+            new SelectIdValue(0,"Default"),
+            new SelectIdValue(1 ,"Medium"),
+            new SelectIdValue(2,"Wide")
+        };
+
         private void SpeedSaleProductTanim_Load(object sender, EventArgs e)
         {
+            repositoryItemLookUpEdit2.DataSource = selectIds;
+            repositoryItemLookUpEdit2.DisplayMember = "Value";
+            repositoryItemLookUpEdit2.ValueMember = "Id";
+
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_products.DataSource = _productlist;
 
@@ -83,6 +94,19 @@ namespace Msp.App.Tanimlar
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            bool xy = false;
+            foreach (var item in _speedSaleProduct)
+            {
+                if (item.ButtonType == null)
+                {
+                    xy = true;
+                }
+            }
+            if(xy)
+            {
+                XtraMessageBox.Show("Lütfen Buton Tipini Seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (mspTool.get_Question("Kaydedilecektir Onaylıyor musunuz ?"))
             {
                 gcv_SpeedSaleProduct.CloseEditor();

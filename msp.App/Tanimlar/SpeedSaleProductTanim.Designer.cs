@@ -62,6 +62,8 @@ namespace Msp.App.Tanimlar
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -77,6 +79,8 @@ namespace Msp.App.Tanimlar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // img_bar
@@ -224,7 +228,9 @@ namespace Msp.App.Tanimlar
             this.gc_SpeedSaleProduct.MenuManager = this.barManager1;
             this.gc_SpeedSaleProduct.Name = "gc_SpeedSaleProduct";
             this.gc_SpeedSaleProduct.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEdit1});
+            this.repositoryItemLookUpEdit1,
+            this.repositoryItemLookUpEdit2,
+            this.repositoryItemPictureEdit1});
             this.gc_SpeedSaleProduct.Size = new System.Drawing.Size(415, 575);
             this.gc_SpeedSaleProduct.TabIndex = 5;
             this.gc_SpeedSaleProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -277,6 +283,7 @@ namespace Msp.App.Tanimlar
             // 
             // colİmage
             // 
+            this.colİmage.ColumnEdit = this.repositoryItemPictureEdit1;
             this.colİmage.FieldName = "İmage";
             this.colİmage.Name = "colİmage";
             this.colİmage.Visible = true;
@@ -284,6 +291,7 @@ namespace Msp.App.Tanimlar
             // 
             // colButtonType
             // 
+            this.colButtonType.ColumnEdit = this.repositoryItemLookUpEdit2;
             this.colButtonType.FieldName = "ButtonType";
             this.colButtonType.Name = "colButtonType";
             this.colButtonType.Visible = true;
@@ -355,6 +363,18 @@ namespace Msp.App.Tanimlar
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            this.repositoryItemLookUpEdit2.NullText = "";
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            // 
             // SpeedSaleProductTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +403,8 @@ namespace Msp.App.Tanimlar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,5 +441,7 @@ namespace Msp.App.Tanimlar
         private DevExpress.XtraGrid.Columns.GridColumn colButtonType;
         private DevExpress.XtraGrid.Columns.GridColumn colPName;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
     }
 }
