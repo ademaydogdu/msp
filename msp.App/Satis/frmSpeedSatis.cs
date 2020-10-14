@@ -53,16 +53,6 @@ namespace Msp.App.Satis
                 group1.Items.Add(item1);
             }
 
-
-            //TileBarItem item1 = new TileBarItem();
-            //item1.ItemSize = TileBarItemSize.Medium;
-            //TileBarItem item2 = new TileBarItem();
-            //item2.ItemSize = TileBarItemSize.Wide;
-
-            //group1.Items.Add(item1);
-            //group1.Items.Add(item2);
-
-
         }
 
 
