@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerEdit));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.bs_CustomersEdit = new System.Windows.Forms.BindingSource(this.components);
@@ -41,7 +40,6 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
@@ -56,12 +54,12 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CustomersEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -76,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -86,6 +85,7 @@
             this.layoutControl1.Controls.Add(this.textEdit3);
             this.layoutControl1.Controls.Add(this.lookUpEdit1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Images = this.svgImageCollection1;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
@@ -143,7 +143,7 @@
             // 
             this.btnSaveCustomer.Caption = "Kaydet";
             this.btnSaveCustomer.Id = 0;
-            this.btnSaveCustomer.ImageOptions.ImageIndex = 30;
+            this.btnSaveCustomer.ImageOptions.ImageIndex = 0;
             this.btnSaveCustomer.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.btnSaveCustomer.Name = "btnSaveCustomer";
             this.btnSaveCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaveCustomer_ItemClick);
@@ -152,7 +152,7 @@
             // 
             this.btnCustomerClose.Caption = "Kapat";
             this.btnCustomerClose.Id = 1;
-            this.btnCustomerClose.ImageOptions.ImageIndex = 18;
+            this.btnCustomerClose.ImageOptions.ImageIndex = 1;
             this.btnCustomerClose.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.btnCustomerClose.Name = "btnCustomerClose";
             this.btnCustomerClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomerClose_ItemClick);
@@ -188,45 +188,6 @@
             this.barDockControl4.Location = new System.Drawing.Point(527, 0);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 468);
-            // 
-            // svgImageCollection1
-            // 
-            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection1.Add("statistics-document-svgrepo-com", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.statistics-document-svgrepo-com"))));
-            this.svgImageCollection1.Add("alcaline_spiral_calendar", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.alcaline_spiral_calendar"))));
-            this.svgImageCollection1.Add("primary-percent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-percent"))));
-            this.svgImageCollection1.Add("ftpercent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.ftpercent"))));
-            this.svgImageCollection1.Add("Architetto----Calcolatrice", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Architetto----Calcolatrice"))));
-            this.svgImageCollection1.Add("calculator", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.calculator"))));
-            this.svgImageCollection1.Add("kuba-icon-delete", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.kuba-icon-delete"))));
-            this.svgImageCollection1.Add("1550775830", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1550775830"))));
-            this.svgImageCollection1.Add("tag (1)", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag (1)"))));
-            this.svgImageCollection1.Add("1307548250", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1307548250"))));
-            this.svgImageCollection1.Add("1298512738", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1298512738"))));
-            this.svgImageCollection1.Add("Remove-349235435", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Remove-349235435"))));
-            this.svgImageCollection1.Add("tag", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag"))));
-            this.svgImageCollection1.Add("eastshores_Warning_Notification", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.eastshores_Warning_Notification"))));
-            this.svgImageCollection1.Add("Warning", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Warning"))));
-            this.svgImageCollection1.Add("warning-17", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.warning-17"))));
-            this.svgImageCollection1.Add("tasto-8-architetto-franc-01", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tasto-8-architetto-franc-01"))));
-            this.svgImageCollection1.Add("jean_victor_balin_cross", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_cross"))));
-            this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.molumen_red_round_error_warning_icon"))));
-            this.svgImageCollection1.Add("error-button", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.error-button"))));
-            this.svgImageCollection1.Add("map-pin", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.map-pin"))));
-            this.svgImageCollection1.Add("color-icons-green-home", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.color-icons-green-home"))));
-            this.svgImageCollection1.Add("1392496432", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1392496432"))));
-            this.svgImageCollection1.Add("green", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.green"))));
-            this.svgImageCollection1.Add("location_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.location_icon"))));
-            this.svgImageCollection1.Add("1328388231", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1328388231"))));
-            this.svgImageCollection1.Add("Android-Phone-1", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Android-Phone-1"))));
-            this.svgImageCollection1.Add("matt-icons_contact-add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.matt-icons_contact-add"))));
-            this.svgImageCollection1.Add("Planned-obsolescence-barcode-in-squarre---French", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Planned-obsolescence-barcode-in-squarre---French"))));
-            this.svgImageCollection1.Add("rodentia-icons_ok", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.rodentia-icons_ok"))));
-            this.svgImageCollection1.Add("primary-apply", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-apply"))));
-            this.svgImageCollection1.Add("jean_victor_balin_add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_add"))));
-            this.svgImageCollection1.Add("primary-tab-new", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-tab-new"))));
-            this.svgImageCollection1.Add("positive", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.positive"))));
-            this.svgImageCollection1.Add("view-refresh", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.view-refresh"))));
             // 
             // textEdit2
             // 
@@ -293,7 +254,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.textEdit1;
-            this.layoutControlItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem1.ImageOptions.SvgImage")));
+            this.layoutControlItem1.ImageOptions.ImageIndex = 7;
             this.layoutControlItem1.Location = new System.Drawing.Point(31, 15);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(443, 36);
@@ -311,7 +272,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEdit2;
-            this.layoutControlItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem2.ImageOptions.SvgImage")));
+            this.layoutControlItem2.ImageOptions.ImageIndex = 6;
             this.layoutControlItem2.Location = new System.Drawing.Point(31, 51);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(443, 36);
@@ -321,7 +282,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.memoEdit1;
-            this.layoutControlItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem3.ImageOptions.SvgImage")));
+            this.layoutControlItem3.ImageOptions.ImageIndex = 29;
             this.layoutControlItem3.Location = new System.Drawing.Point(31, 87);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(443, 42);
@@ -331,7 +292,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.textEdit3;
-            this.layoutControlItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem4.ImageOptions.SvgImage")));
+            this.layoutControlItem4.ImageOptions.ImageIndex = 8;
             this.layoutControlItem4.Location = new System.Drawing.Point(31, 129);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(443, 36);
@@ -372,6 +333,75 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(507, 15);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
+            this.svgImageCollection1.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
+            this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
+            this.svgImageCollection1.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
+            this.svgImageCollection1.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
+            this.svgImageCollection1.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            this.svgImageCollection1.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
+            this.svgImageCollection1.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
+            this.svgImageCollection1.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
+            this.svgImageCollection1.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
+            this.svgImageCollection1.Add("about", "image://svgimages/outlook inspired/about.svg");
+            this.svgImageCollection1.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
+            this.svgImageCollection1.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.svgImageCollection1.Add("fax", "image://svgimages/outlook inspired/fax.svg");
+            this.svgImageCollection1.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
+            this.svgImageCollection1.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
+            this.svgImageCollection1.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
+            this.svgImageCollection1.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
+            this.svgImageCollection1.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
+            this.svgImageCollection1.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
+            this.svgImageCollection1.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
+            this.svgImageCollection1.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
+            this.svgImageCollection1.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
+            this.svgImageCollection1.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
+            this.svgImageCollection1.Add("general", "image://svgimages/spreadsheet/general.svg");
+            this.svgImageCollection1.Add("warning", "image://svgimages/status/warning.svg");
+            this.svgImageCollection1.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
+            this.svgImageCollection1.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
+            this.svgImageCollection1.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
+            this.svgImageCollection1.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
+            this.svgImageCollection1.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
+            this.svgImageCollection1.Add("timezones", "image://svgimages/scheduling/timezones.svg");
+            this.svgImageCollection1.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
+            this.svgImageCollection1.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
+            this.svgImageCollection1.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
+            this.svgImageCollection1.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
+            this.svgImageCollection1.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
+            this.svgImageCollection1.Add("card", "image://svgimages/outlook inspired/card.svg");
+            this.svgImageCollection1.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
+            this.svgImageCollection1.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
+            this.svgImageCollection1.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            this.svgImageCollection1.Add("newdatasource", "image://svgimages/dashboards/newdatasource.svg");
+            this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
+            this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
+            this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            this.svgImageCollection1.Add("bo_attention_1", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
+            this.svgImageCollection1.Add("bo_price_item", "image://svgimages/business objects/bo_price_item.svg");
+            this.svgImageCollection1.Add("buynow", "image://svgimages/outlook inspired/buynow.svg");
+            this.svgImageCollection1.Add("categorize", "image://svgimages/outlook inspired/categorize.svg");
+            this.svgImageCollection1.Add("group", "image://svgimages/dashboards/group.svg");
+            this.svgImageCollection1.Add("bo_sale", "image://svgimages/business objects/bo_sale.svg");
+            this.svgImageCollection1.Add("sales", "image://svgimages/outlook inspired/sales.svg");
+            this.svgImageCollection1.Add("bo_sale_item", "image://svgimages/business objects/bo_sale_item.svg");
+            this.svgImageCollection1.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
+            this.svgImageCollection1.Add("bo_product", "image://svgimages/business objects/bo_product.svg");
+            this.svgImageCollection1.Add("bo_product_group", "image://svgimages/business objects/bo_product_group.svg");
+            this.svgImageCollection1.Add("shipmentreceived", "image://svgimages/outlook inspired/shipmentreceived.svg");
+            this.svgImageCollection1.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
+            this.svgImageCollection1.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
+            // 
             // frmCustomerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,7 +419,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CustomersEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
@@ -404,6 +433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

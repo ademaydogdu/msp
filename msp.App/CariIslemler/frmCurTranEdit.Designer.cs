@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCurTranEdit));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lookUpEdit4 = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -116,8 +117,6 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.textEdit17 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
@@ -226,6 +225,7 @@
             this.layoutControl1.Controls.Add(this.textEdit21);
             this.layoutControl1.Controls.Add(this.textEdit22);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Images = this.svgImageCollection1;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 250, 650, 400);
@@ -236,7 +236,7 @@
             // 
             // lookUpEdit4
             // 
-            this.lookUpEdit4.Location = new System.Drawing.Point(140, 269);
+            this.lookUpEdit4.Location = new System.Drawing.Point(140, 319);
             this.lookUpEdit4.MenuManager = this.barManager1;
             this.lookUpEdit4.Name = "lookUpEdit4";
             this.lookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -286,6 +286,20 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Kaydet";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.ImageOptions.ImageIndex = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Kapat";
+            this.barButtonItem2.Id = 6;
+            this.barButtonItem2.ImageOptions.ImageIndex = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -321,41 +335,49 @@
             // svgImageCollection1
             // 
             this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection1.Add("statistics-document-svgrepo-com", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.statistics-document-svgrepo-com"))));
-            this.svgImageCollection1.Add("alcaline_spiral_calendar", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.alcaline_spiral_calendar"))));
-            this.svgImageCollection1.Add("primary-percent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-percent"))));
-            this.svgImageCollection1.Add("ftpercent", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.ftpercent"))));
-            this.svgImageCollection1.Add("Architetto----Calcolatrice", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Architetto----Calcolatrice"))));
-            this.svgImageCollection1.Add("calculator", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.calculator"))));
-            this.svgImageCollection1.Add("kuba-icon-delete", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.kuba-icon-delete"))));
-            this.svgImageCollection1.Add("1550775830", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1550775830"))));
-            this.svgImageCollection1.Add("tag (1)", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag (1)"))));
-            this.svgImageCollection1.Add("1307548250", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1307548250"))));
-            this.svgImageCollection1.Add("1298512738", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1298512738"))));
-            this.svgImageCollection1.Add("Remove-349235435", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Remove-349235435"))));
-            this.svgImageCollection1.Add("tag", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tag"))));
-            this.svgImageCollection1.Add("eastshores_Warning_Notification", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.eastshores_Warning_Notification"))));
-            this.svgImageCollection1.Add("Warning", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Warning"))));
-            this.svgImageCollection1.Add("warning-17", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.warning-17"))));
-            this.svgImageCollection1.Add("tasto-8-architetto-franc-01", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.tasto-8-architetto-franc-01"))));
-            this.svgImageCollection1.Add("jean_victor_balin_cross", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_cross"))));
-            this.svgImageCollection1.Add("molumen_red_round_error_warning_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.molumen_red_round_error_warning_icon"))));
-            this.svgImageCollection1.Add("error-button", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.error-button"))));
-            this.svgImageCollection1.Add("map-pin", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.map-pin"))));
-            this.svgImageCollection1.Add("color-icons-green-home", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.color-icons-green-home"))));
-            this.svgImageCollection1.Add("1392496432", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1392496432"))));
-            this.svgImageCollection1.Add("green", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.green"))));
-            this.svgImageCollection1.Add("location_icon", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.location_icon"))));
-            this.svgImageCollection1.Add("1328388231", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.1328388231"))));
-            this.svgImageCollection1.Add("Android-Phone-1", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Android-Phone-1"))));
-            this.svgImageCollection1.Add("matt-icons_contact-add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.matt-icons_contact-add"))));
-            this.svgImageCollection1.Add("Planned-obsolescence-barcode-in-squarre---French", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.Planned-obsolescence-barcode-in-squarre---French"))));
-            this.svgImageCollection1.Add("rodentia-icons_ok", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.rodentia-icons_ok"))));
-            this.svgImageCollection1.Add("primary-apply", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-apply"))));
-            this.svgImageCollection1.Add("jean_victor_balin_add", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.jean_victor_balin_add"))));
-            this.svgImageCollection1.Add("primary-tab-new", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.primary-tab-new"))));
-            this.svgImageCollection1.Add("positive", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.positive"))));
-            this.svgImageCollection1.Add("view-refresh", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageCollection1.view-refresh"))));
+            this.svgImageCollection1.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
+            this.svgImageCollection1.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
+            this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
+            this.svgImageCollection1.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
+            this.svgImageCollection1.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
+            this.svgImageCollection1.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            this.svgImageCollection1.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
+            this.svgImageCollection1.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
+            this.svgImageCollection1.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
+            this.svgImageCollection1.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
+            this.svgImageCollection1.Add("about", "image://svgimages/outlook inspired/about.svg");
+            this.svgImageCollection1.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
+            this.svgImageCollection1.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.svgImageCollection1.Add("fax", "image://svgimages/outlook inspired/fax.svg");
+            this.svgImageCollection1.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
+            this.svgImageCollection1.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
+            this.svgImageCollection1.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
+            this.svgImageCollection1.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
+            this.svgImageCollection1.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
+            this.svgImageCollection1.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
+            this.svgImageCollection1.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
+            this.svgImageCollection1.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
+            this.svgImageCollection1.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
+            this.svgImageCollection1.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
+            this.svgImageCollection1.Add("general", "image://svgimages/spreadsheet/general.svg");
+            this.svgImageCollection1.Add("warning", "image://svgimages/status/warning.svg");
+            this.svgImageCollection1.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
+            this.svgImageCollection1.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
+            this.svgImageCollection1.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
+            this.svgImageCollection1.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
+            this.svgImageCollection1.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
+            this.svgImageCollection1.Add("timezones", "image://svgimages/scheduling/timezones.svg");
+            this.svgImageCollection1.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
+            this.svgImageCollection1.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
+            this.svgImageCollection1.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
+            this.svgImageCollection1.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
+            this.svgImageCollection1.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
+            this.svgImageCollection1.Add("card", "image://svgimages/outlook inspired/card.svg");
+            this.svgImageCollection1.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
             // 
             // barEditItem1
             // 
@@ -418,7 +440,7 @@
             // 
             // lookUpEdit3
             // 
-            this.lookUpEdit3.Location = new System.Drawing.Point(509, 187);
+            this.lookUpEdit3.Location = new System.Drawing.Point(509, 237);
             this.lookUpEdit3.MenuManager = this.barManager1;
             this.lookUpEdit3.Name = "lookUpEdit3";
             this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -429,7 +451,7 @@
             // 
             // lookUpEdit2
             // 
-            this.lookUpEdit2.Location = new System.Drawing.Point(509, 151);
+            this.lookUpEdit2.Location = new System.Drawing.Point(509, 201);
             this.lookUpEdit2.MenuManager = this.barManager1;
             this.lookUpEdit2.Name = "lookUpEdit2";
             this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -440,7 +462,7 @@
             // 
             // lookUpEdit1
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(504, -38);
+            this.lookUpEdit1.Location = new System.Drawing.Point(504, 12);
             this.lookUpEdit1.MenuManager = this.barManager1;
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -451,7 +473,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(138, -38);
+            this.textEdit1.Location = new System.Drawing.Point(138, 12);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(155, 20);
@@ -460,7 +482,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(138, 8);
+            this.textEdit2.Location = new System.Drawing.Point(138, 58);
             this.textEdit2.MenuManager = this.barManager1;
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(623, 20);
@@ -469,7 +491,7 @@
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(138, 44);
+            this.textEdit3.Location = new System.Drawing.Point(138, 94);
             this.textEdit3.MenuManager = this.barManager1;
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(623, 20);
@@ -478,7 +500,7 @@
             // 
             // textEdit4
             // 
-            this.textEdit4.Location = new System.Drawing.Point(140, 115);
+            this.textEdit4.Location = new System.Drawing.Point(140, 165);
             this.textEdit4.MenuManager = this.barManager1;
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Size = new System.Drawing.Size(619, 20);
@@ -487,7 +509,7 @@
             // 
             // textEdit5
             // 
-            this.textEdit5.Location = new System.Drawing.Point(140, 151);
+            this.textEdit5.Location = new System.Drawing.Point(140, 201);
             this.textEdit5.MenuManager = this.barManager1;
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Size = new System.Drawing.Size(619, 20);
@@ -496,7 +518,7 @@
             // 
             // textEdit6
             // 
-            this.textEdit6.Location = new System.Drawing.Point(140, 187);
+            this.textEdit6.Location = new System.Drawing.Point(140, 237);
             this.textEdit6.MenuManager = this.barManager1;
             this.textEdit6.Name = "textEdit6";
             this.textEdit6.Size = new System.Drawing.Size(243, 20);
@@ -505,7 +527,7 @@
             // 
             // textEdit7
             // 
-            this.textEdit7.Location = new System.Drawing.Point(503, 187);
+            this.textEdit7.Location = new System.Drawing.Point(503, 237);
             this.textEdit7.MenuManager = this.barManager1;
             this.textEdit7.Name = "textEdit7";
             this.textEdit7.Size = new System.Drawing.Size(256, 20);
@@ -514,7 +536,7 @@
             // 
             // textEdit8
             // 
-            this.textEdit8.Location = new System.Drawing.Point(140, 223);
+            this.textEdit8.Location = new System.Drawing.Point(140, 273);
             this.textEdit8.MenuManager = this.barManager1;
             this.textEdit8.Name = "textEdit8";
             this.textEdit8.Size = new System.Drawing.Size(87, 20);
@@ -523,7 +545,7 @@
             // 
             // textEdit9
             // 
-            this.textEdit9.Location = new System.Drawing.Point(231, 223);
+            this.textEdit9.Location = new System.Drawing.Point(231, 273);
             this.textEdit9.MenuManager = this.barManager1;
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Size = new System.Drawing.Size(528, 20);
@@ -532,7 +554,7 @@
             // 
             // textEdit10
             // 
-            this.textEdit10.Location = new System.Drawing.Point(140, 259);
+            this.textEdit10.Location = new System.Drawing.Point(140, 309);
             this.textEdit10.MenuManager = this.barManager1;
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Size = new System.Drawing.Size(244, 20);
@@ -541,7 +563,7 @@
             // 
             // textEdit11
             // 
-            this.textEdit11.Location = new System.Drawing.Point(504, 259);
+            this.textEdit11.Location = new System.Drawing.Point(504, 309);
             this.textEdit11.MenuManager = this.barManager1;
             this.textEdit11.Name = "textEdit11";
             this.textEdit11.Size = new System.Drawing.Size(255, 20);
@@ -550,7 +572,7 @@
             // 
             // textEdit12
             // 
-            this.textEdit12.Location = new System.Drawing.Point(140, 305);
+            this.textEdit12.Location = new System.Drawing.Point(140, 355);
             this.textEdit12.MenuManager = this.barManager1;
             this.textEdit12.Name = "textEdit12";
             this.textEdit12.Size = new System.Drawing.Size(241, 20);
@@ -559,7 +581,7 @@
             // 
             // textEdit13
             // 
-            this.textEdit13.Location = new System.Drawing.Point(140, 341);
+            this.textEdit13.Location = new System.Drawing.Point(140, 391);
             this.textEdit13.MenuManager = this.barManager1;
             this.textEdit13.Name = "textEdit13";
             this.textEdit13.Size = new System.Drawing.Size(241, 20);
@@ -568,7 +590,7 @@
             // 
             // textEdit14
             // 
-            this.textEdit14.Location = new System.Drawing.Point(501, 305);
+            this.textEdit14.Location = new System.Drawing.Point(501, 355);
             this.textEdit14.MenuManager = this.barManager1;
             this.textEdit14.Name = "textEdit14";
             this.textEdit14.Size = new System.Drawing.Size(258, 20);
@@ -577,7 +599,7 @@
             // 
             // textEdit15
             // 
-            this.textEdit15.Location = new System.Drawing.Point(501, 341);
+            this.textEdit15.Location = new System.Drawing.Point(501, 391);
             this.textEdit15.MenuManager = this.barManager1;
             this.textEdit15.Name = "textEdit15";
             this.textEdit15.Size = new System.Drawing.Size(258, 20);
@@ -586,7 +608,7 @@
             // 
             // textEdit16
             // 
-            this.textEdit16.Location = new System.Drawing.Point(140, 115);
+            this.textEdit16.Location = new System.Drawing.Point(140, 165);
             this.textEdit16.MenuManager = this.barManager1;
             this.textEdit16.Name = "textEdit16";
             this.textEdit16.Size = new System.Drawing.Size(249, 20);
@@ -595,7 +617,7 @@
             // 
             // textEdit18
             // 
-            this.textEdit18.Location = new System.Drawing.Point(509, 115);
+            this.textEdit18.Location = new System.Drawing.Point(509, 165);
             this.textEdit18.MenuManager = this.barManager1;
             this.textEdit18.Name = "textEdit18";
             this.textEdit18.Size = new System.Drawing.Size(250, 20);
@@ -604,7 +626,7 @@
             // 
             // textEdit19
             // 
-            this.textEdit19.Location = new System.Drawing.Point(140, 151);
+            this.textEdit19.Location = new System.Drawing.Point(140, 201);
             this.textEdit19.MenuManager = this.barManager1;
             this.textEdit19.Name = "textEdit19";
             this.textEdit19.Size = new System.Drawing.Size(249, 20);
@@ -613,7 +635,7 @@
             // 
             // textEdit20
             // 
-            this.textEdit20.Location = new System.Drawing.Point(140, 187);
+            this.textEdit20.Location = new System.Drawing.Point(140, 237);
             this.textEdit20.MenuManager = this.barManager1;
             this.textEdit20.Name = "textEdit20";
             this.textEdit20.Size = new System.Drawing.Size(249, 20);
@@ -622,7 +644,7 @@
             // 
             // textEdit21
             // 
-            this.textEdit21.Location = new System.Drawing.Point(140, 223);
+            this.textEdit21.Location = new System.Drawing.Point(140, 273);
             this.textEdit21.MenuManager = this.barManager1;
             this.textEdit21.Name = "textEdit21";
             this.textEdit21.Size = new System.Drawing.Size(249, 20);
@@ -631,7 +653,7 @@
             // 
             // textEdit22
             // 
-            this.textEdit22.Location = new System.Drawing.Point(509, 223);
+            this.textEdit22.Location = new System.Drawing.Point(509, 273);
             this.textEdit22.MenuManager = this.barManager1;
             this.textEdit22.Name = "textEdit22";
             this.textEdit22.Size = new System.Drawing.Size(250, 20);
@@ -660,7 +682,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.textEdit1;
-            this.layoutControlItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem1.ImageOptions.SvgImage")));
+            this.layoutControlItem1.ImageOptions.ImageIndex = 7;
             this.layoutControlItem1.Location = new System.Drawing.Point(10, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(275, 36);
@@ -670,7 +692,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEdit2;
-            this.layoutControlItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem2.ImageOptions.SvgImage")));
+            this.layoutControlItem2.ImageOptions.ImageIndex = 22;
             this.layoutControlItem2.Location = new System.Drawing.Point(10, 46);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(743, 36);
@@ -680,7 +702,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textEdit3;
-            this.layoutControlItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem3.ImageOptions.SvgImage")));
+            this.layoutControlItem3.ImageOptions.ImageIndex = 10;
             this.layoutControlItem3.Location = new System.Drawing.Point(10, 82);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(743, 36);
@@ -690,7 +712,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lookUpEdit1;
-            this.layoutControlItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem4.ImageOptions.SvgImage")));
+            this.layoutControlItem4.ImageOptions.ImageIndex = 5;
             this.layoutControlItem4.Location = new System.Drawing.Point(376, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(377, 36);
@@ -748,7 +770,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.textEdit4;
-            this.layoutControlItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem5.ImageOptions.SvgImage")));
+            this.layoutControlItem5.ImageOptions.ImageIndex = 19;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(739, 36);
@@ -758,7 +780,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.textEdit5;
-            this.layoutControlItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem6.ImageOptions.SvgImage")));
+            this.layoutControlItem6.ImageOptions.ImageIndex = 29;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(739, 36);
@@ -768,7 +790,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.textEdit6;
-            this.layoutControlItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem7.ImageOptions.SvgImage")));
+            this.layoutControlItem7.ImageOptions.ImageIndex = 31;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(363, 36);
@@ -778,7 +800,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.textEdit7;
-            this.layoutControlItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem8.ImageOptions.SvgImage")));
+            this.layoutControlItem8.ImageOptions.ImageIndex = 32;
             this.layoutControlItem8.Location = new System.Drawing.Point(363, 72);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(376, 36);
@@ -788,7 +810,7 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.textEdit8;
-            this.layoutControlItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem9.ImageOptions.SvgImage")));
+            this.layoutControlItem9.ImageOptions.ImageIndex = 30;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(207, 36);
@@ -808,7 +830,7 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.textEdit10;
-            this.layoutControlItem11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem11.ImageOptions.SvgImage")));
+            this.layoutControlItem11.ImageOptions.ImageIndex = 34;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(364, 36);
@@ -818,7 +840,7 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.textEdit11;
-            this.layoutControlItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem12.ImageOptions.SvgImage")));
+            this.layoutControlItem12.ImageOptions.ImageIndex = 35;
             this.layoutControlItem12.Location = new System.Drawing.Point(364, 144);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(375, 36);
@@ -828,7 +850,7 @@
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.textEdit13;
-            this.layoutControlItem14.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem14.ImageOptions.SvgImage")));
+            this.layoutControlItem14.ImageOptions.ImageIndex = 23;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 226);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(361, 36);
@@ -846,7 +868,7 @@
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.textEdit12;
-            this.layoutControlItem13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem13.ImageOptions.SvgImage")));
+            this.layoutControlItem13.ImageOptions.ImageIndex = 8;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 190);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(361, 36);
@@ -856,7 +878,7 @@
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.textEdit14;
-            this.layoutControlItem15.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem15.ImageOptions.SvgImage")));
+            this.layoutControlItem15.ImageOptions.ImageIndex = 16;
             this.layoutControlItem15.Location = new System.Drawing.Point(361, 190);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(378, 36);
@@ -866,7 +888,7 @@
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.textEdit15;
-            this.layoutControlItem16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem16.ImageOptions.SvgImage")));
+            this.layoutControlItem16.ImageOptions.ImageIndex = 14;
             this.layoutControlItem16.Location = new System.Drawing.Point(361, 226);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(378, 36);
@@ -904,7 +926,7 @@
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.textEdit16;
-            this.layoutControlItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem17.ImageOptions.SvgImage")));
+            this.layoutControlItem17.ImageOptions.ImageIndex = 36;
             this.layoutControlItem17.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.Size = new System.Drawing.Size(369, 36);
@@ -922,7 +944,7 @@
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.textEdit18;
-            this.layoutControlItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem19.ImageOptions.SvgImage")));
+            this.layoutControlItem19.ImageOptions.ImageIndex = 2;
             this.layoutControlItem19.Location = new System.Drawing.Point(369, 0);
             this.layoutControlItem19.Name = "layoutControlItem19";
             this.layoutControlItem19.Size = new System.Drawing.Size(370, 36);
@@ -932,7 +954,7 @@
             // layoutControlItem20
             // 
             this.layoutControlItem20.Control = this.textEdit19;
-            this.layoutControlItem20.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem20.ImageOptions.SvgImage")));
+            this.layoutControlItem20.ImageOptions.ImageIndex = 3;
             this.layoutControlItem20.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.Size = new System.Drawing.Size(369, 36);
@@ -942,7 +964,7 @@
             // layoutControlItem21
             // 
             this.layoutControlItem21.Control = this.lookUpEdit2;
-            this.layoutControlItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem21.ImageOptions.SvgImage")));
+            this.layoutControlItem21.ImageOptions.ImageIndex = 6;
             this.layoutControlItem21.Location = new System.Drawing.Point(369, 36);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Size = new System.Drawing.Size(370, 36);
@@ -952,7 +974,7 @@
             // layoutControlItem22
             // 
             this.layoutControlItem22.Control = this.textEdit20;
-            this.layoutControlItem22.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem22.ImageOptions.SvgImage")));
+            this.layoutControlItem22.ImageOptions.ImageIndex = 41;
             this.layoutControlItem22.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem22.Name = "layoutControlItem22";
             this.layoutControlItem22.Size = new System.Drawing.Size(369, 36);
@@ -962,7 +984,7 @@
             // layoutControlItem23
             // 
             this.layoutControlItem23.Control = this.lookUpEdit3;
-            this.layoutControlItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem23.ImageOptions.SvgImage")));
+            this.layoutControlItem23.ImageOptions.ImageIndex = 39;
             this.layoutControlItem23.Location = new System.Drawing.Point(369, 72);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(370, 36);
@@ -972,7 +994,7 @@
             // layoutControlItem24
             // 
             this.layoutControlItem24.Control = this.textEdit21;
-            this.layoutControlItem24.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem24.ImageOptions.SvgImage")));
+            this.layoutControlItem24.ImageOptions.ImageIndex = 37;
             this.layoutControlItem24.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.Size = new System.Drawing.Size(369, 46);
@@ -982,7 +1004,7 @@
             // layoutControlItem25
             // 
             this.layoutControlItem25.Control = this.textEdit22;
-            this.layoutControlItem25.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem25.ImageOptions.SvgImage")));
+            this.layoutControlItem25.ImageOptions.ImageIndex = 40;
             this.layoutControlItem25.Location = new System.Drawing.Point(369, 108);
             this.layoutControlItem25.Name = "layoutControlItem25";
             this.layoutControlItem25.Size = new System.Drawing.Size(370, 36);
@@ -992,7 +1014,7 @@
             // layoutControlItem26
             // 
             this.layoutControlItem26.Control = this.lookUpEdit4;
-            this.layoutControlItem26.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("layoutControlItem26.ImageOptions.SvgImage")));
+            this.layoutControlItem26.ImageOptions.ImageIndex = 15;
             this.layoutControlItem26.Location = new System.Drawing.Point(0, 154);
             this.layoutControlItem26.Name = "layoutControlItem26";
             this.layoutControlItem26.Size = new System.Drawing.Size(369, 36);
@@ -1045,6 +1067,7 @@
             // 
             // xtraTabbedMdiManager1
             // 
+            this.xtraTabbedMdiManager1.Images = this.svgImageCollection1;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // emptySpaceItem3
@@ -1070,20 +1093,6 @@
             this.layoutControlItem18.Name = "layoutControlItem18";
             this.layoutControlItem18.Size = new System.Drawing.Size(514, 24);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Kaydet";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ImageOptions.ImageIndex = 30;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Kapat";
-            this.barButtonItem2.Id = 6;
-            this.barButtonItem2.ImageOptions.ImageIndex = 18;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmCurTranEdit
             // 
