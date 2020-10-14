@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -163,7 +164,7 @@ namespace Msp.App.Depo_Stok
 
         private void bbi_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
             do_save();
         }
 
@@ -182,7 +183,25 @@ namespace Msp.App.Depo_Stok
 
 
 
-        private void btnBrowse_Click(object sender, EventArgs e)
+
+
+
+
+
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+
+        }
+        private void frmStockEdit_Load(object sender, EventArgs e)
+        {
+            // StockEditPE.DataBindings.Add("EditValue", bs_StockEdit, "image");
+        }
+
+        private void buttonEdit1_EditValueChanged(object sender, EventArgs e)
         {
             var filePath = string.Empty;
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -197,26 +216,10 @@ namespace Msp.App.Depo_Stok
                 filePath = fileDialog.FileName;
                 StockEditPE.Image = Image.FromFile(filePath);
                 // byte[] newImg = (byte[])StockEditPE.EditValue;
-                
+
             }
         }
 
-
-
-      
-
-
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-
-        }
-        private void frmStockEdit_Load(object sender, EventArgs e)
-        {
-           // StockEditPE.DataBindings.Add("EditValue", bs_StockEdit, "image");
-        }
     }
 
 }

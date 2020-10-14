@@ -31,14 +31,17 @@ namespace Msp.App.Depo_Stok
             bs_ExpDateProd.DataSource = __listExpDateProducts;
         }
 
-        private void ExpDateProducts_Load(object sender, EventArgs e)
+
+
+
+ 
+
+        private void btnExpDateRefr_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_refresh();
         }
 
-
-
-        private void btnExpDateRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void frmExpDateProducts_Load(object sender, EventArgs e)
         {
             do_refresh();
         }
