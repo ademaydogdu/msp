@@ -63,8 +63,9 @@ namespace Msp.App.Satis
     
         }
 
+        private void tileControl1_Click(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

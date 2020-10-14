@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -126,6 +126,7 @@
             this.tileControl1.Size = new System.Drawing.Size(1023, 622);
             this.tileControl1.TabIndex = 25;
             this.tileControl1.Text = "tileControl1";
+            this.tileControl1.Click += new System.EventHandler(this.tileControl1_Click);
             // 
             // gridControl1
             // 
@@ -167,8 +168,6 @@
             this.gridColumn1.FieldName = "ProductBarcode";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 146;
             // 
             // gridColumn2
@@ -180,7 +179,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             this.gridColumn2.Width = 113;
             // 
             // gridColumn3
@@ -209,7 +208,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.VisibleIndex = 1;
             this.gridColumn6.Width = 85;
             // 
             // rp_Unit
@@ -230,7 +229,7 @@
             this.colTax.Name = "colTax";
             this.colTax.OptionsColumn.AllowEdit = false;
             this.colTax.Visible = true;
-            this.colTax.VisibleIndex = 3;
+            this.colTax.VisibleIndex = 2;
             // 
             // rp_KdvOran
             // 
@@ -254,7 +253,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 97;
             // 
             // repositoryItemSpinEdit2
@@ -275,7 +274,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 114;
             // 
             // txt_Total
@@ -531,32 +530,32 @@
             // 
             // tileItem4
             // 
-            tileItemElement5.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement5);
+            tileItemElement13.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement13);
             this.tileItem4.Id = 3;
             this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem4.Name = "tileItem4";
             // 
             // tileItem8
             // 
-            tileItemElement6.Text = "tileItem8";
-            this.tileItem8.Elements.Add(tileItemElement6);
+            tileItemElement14.Text = "tileItem8";
+            this.tileItem8.Elements.Add(tileItemElement14);
             this.tileItem8.Id = 7;
             this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem8.Name = "tileItem8";
             // 
             // tileItem5
             // 
-            tileItemElement7.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement7);
+            tileItemElement15.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement15);
             this.tileItem5.Id = 4;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem5.Name = "tileItem5";
             // 
             // tileItem2
             // 
-            tileItemElement8.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement8);
+            tileItemElement16.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement16);
             this.tileItem2.Id = 1;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileItem2.Name = "tileItem2";
