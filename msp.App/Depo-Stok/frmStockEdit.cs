@@ -220,6 +220,56 @@ namespace Msp.App.Depo_Stok
             }
         }
 
+        private void do_hesapla()
+        {
+
+            if (string.IsNullOrEmpty(firstPriceTextEdit.Text))
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(taxTextEdit.Text))
+            {
+                return;
+            }
+            decimal price = (decimal)firstPriceTextEdit.EditValue;
+            decimal kdvTutar = 0;
+            decimal MalBedeli = 0;
+            decimal SatisFiyati = 0;
+            if (rdgDahilHaric.SelectedIndex == 0) //Dahil
+            {
+                kdvTutar = Math.Round((price / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani), 2);
+                MalBedeli = Math.Round((price - kdvTutar), 2);
+                SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+            }
+            else //Hariç
+            {
+                kdvTutar = Math.Round(price * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
+                MalBedeli = Math.Round(price, 2);
+                SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+            }
+            lblKDVTutar.Text = Convert.ToString(kdvTutar);
+            lblMalBedeli.Text = Convert.ToString(MalBedeli);
+            lblSatisFiyati.Text = Convert.ToString(SatisFiyati);
+        }
+
+        private void taxTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            if (taxTextEdit.EditValue != null && taxTextEdit.EditValue != "")
+            {
+                do_hesapla();
+                lblKdvOrani.Text = taxTextEdit.Text;
+            }
+        }
+
+        private void rdgDahilHaric_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            do_hesapla();
+        }
+
+        private void firstPriceTextEdit_Leave(object sender, EventArgs e)
+        {
+            do_hesapla();
+        }
     }
 
 }
