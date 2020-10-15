@@ -41,5 +41,12 @@ namespace Msp.Models.Models
         public byte[] PImages { get; set; }
 
         public DateTime? PExpDate { get; set; }
+
+        public decimal? PSalePrice { get; set; } = 0;
+        public int? PTaxType { get; set; } = 0;
+        public decimal? PMalBedeli { get; set; } = 0;
+        public decimal? PPaxAmout { get; set; } = 0;
+        public bool? PKdvIstisna { get; set; } = false;
+
     }
 }

@@ -47,22 +47,6 @@ namespace Msp.App.Depo_Stok
 
         };
 
-
-        //public void calculateTotalPrice()
-        //{
-        //    bool __return = false;
-
-
-
-        //    decimal fPrice, taxVal = 0;
-        //    fPrice = Convert.ToInt32(firstPriceTextEdit.SelectedText);
-        //    taxVal = Convert.ToInt32(taxTextEdit.GetSelectedDataRow();
-        //    var TotalPrice = fPrice + (fPrice * taxVal / 100);
-        //    lastPriceTextEdit.Text = Convert.ToString(TotalPrice);
-
-
-        //}
-
         public void Show(int id)
         {
             units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
@@ -71,6 +55,8 @@ namespace Msp.App.Depo_Stok
             if (_FormOpenType == FormOpenType.New)
             {
                 __product = new ProductDTO();
+                __product.PDate = DateTime.Now;
+                __product.PExpDate = DateTime.Now;
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
@@ -106,6 +92,11 @@ namespace Msp.App.Depo_Stok
                 XtraMessageBox.Show("Birim Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _return = true;
             }
+            if ((decimal)firstPriceTextEdit.EditValue == 0)
+            {
+                XtraMessageBox.Show("Fiyat Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
 
             return _return;
         }
@@ -126,6 +117,13 @@ namespace Msp.App.Depo_Stok
                     }
                     else
                     {
+                        foreach (Form item in Application.OpenForms)
+                        {
+                            if (item.Name == "frmStok")
+                            {
+                                ((frmStok)item).do_refresh();
+                            }
+                        }
                         this.Close();
                     }
                 }
@@ -164,7 +162,6 @@ namespace Msp.App.Depo_Stok
 
         private void bbi_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             do_save();
         }
 
@@ -235,21 +232,34 @@ namespace Msp.App.Depo_Stok
             decimal kdvTutar = 0;
             decimal MalBedeli = 0;
             decimal SatisFiyati = 0;
-            if (rdgDahilHaric.SelectedIndex == 0) //Dahil
+            if (!chkKDVIstisna.Checked)
             {
-                kdvTutar = Math.Round((price / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani), 2);
-                MalBedeli = Math.Round((price - kdvTutar), 2);
-                SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+                if (rdgDahilHaric.SelectedIndex == 0) //Dahil
+                {
+                    kdvTutar = Math.Round((price / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani), 2);
+                    MalBedeli = Math.Round((price - kdvTutar), 2);
+                    SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+                }
+                else //Hariç
+                {
+                    kdvTutar = Math.Round(price * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
+                    MalBedeli = Math.Round(price, 2);
+                    SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+                }
             }
-            else //Hariç
+            else
             {
-                kdvTutar = Math.Round(price * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
-                MalBedeli = Math.Round(price, 2);
-                SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+                SatisFiyati = price;
             }
             lblKDVTutar.Text = Convert.ToString(kdvTutar);
             lblMalBedeli.Text = Convert.ToString(MalBedeli);
             lblSatisFiyati.Text = Convert.ToString(SatisFiyati);
+            txtSalePrice.EditValue = Convert.ToString(SatisFiyati);
+
+            //__product.PTaxType = (int)rdgDahilHaric.SelectedIndex;
+            __product.PSalePrice = SatisFiyati;
+            __product.PMalBedeli = MalBedeli;
+            __product.PPaxAmout = kdvTutar;
         }
 
         private void taxTextEdit_EditValueChanged(object sender, EventArgs e)
@@ -269,6 +279,26 @@ namespace Msp.App.Depo_Stok
         private void firstPriceTextEdit_Leave(object sender, EventArgs e)
         {
             do_hesapla();
+        }
+
+        private void chkKDVIstisna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkKDVIstisna.Checked)
+            {
+                lyControlKDVOrani.Enabled = false;
+                lytDahilHaric.Enabled = false;
+                taxTextEdit.EditValue = 1;
+                __product.PTaxType = -1;
+                do_hesapla();
+            }
+            else
+            {
+                lyControlKDVOrani.Enabled = true;
+                lytDahilHaric.Enabled = true;
+                __product.PTaxType = 0;
+                taxTextEdit.EditValue = 2;
+                do_hesapla();
+            }
         }
     }
 

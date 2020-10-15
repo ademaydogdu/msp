@@ -45,6 +45,13 @@ namespace Msp.Entity.Entities
 
         public DateTime? PExpDate { get; set; }
 
+        public decimal? PSalePrice { get; set; }
+        public int? PTaxType { get; set; } = 0;
+        public decimal? PMalBedeli { get; set; }
+        public decimal? PPaxAmout { get; set; }
+        public bool? PKdvIstisna { get; set; } = false;
+
+
         //public virtual Categories categories { get; set; }
     }
 }

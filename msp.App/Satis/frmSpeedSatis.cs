@@ -50,9 +50,9 @@ namespace Msp.App.Satis
                 TileBarItem item1 = new TileBarItem();
                 item1.ItemSize = (TileBarItemSize)item.ButtonType;
                 item1.Text = products.Where(x => x.PID == item.ProductId).FirstOrDefault().PName;
+                item1.Name = Convert.ToString(products.Where(x => x.PID == item.ProductId).FirstOrDefault().PID);
                 group1.Items.Add(item1);
             }
-
         }
 
 
