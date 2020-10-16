@@ -33,22 +33,13 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bs_ExpDateProd = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_ExpDateProd = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colPID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPCategoryId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPFirstPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPTotal = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPLastPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPUnitId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPTax = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPVarDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPSpecCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPBrandName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPBrandCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPGroup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPImages = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPExpDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -62,6 +53,7 @@
             this.btnExpDateRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -104,144 +96,82 @@
             // gcv_ExpDateProd
             // 
             this.gcv_ExpDateProd.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPID,
+            this.colPExpDate,
             this.colPName,
-            this.colPBarcode,
             this.colPCategoryId,
             this.colPDate,
             this.colPFirstPrice,
-            this.colPTotal,
-            this.colPLastPrice,
             this.colPUnitId,
             this.colPTax,
-            this.colPVarDescription,
-            this.colPSpecCode,
-            this.colPBrandName,
-            this.colPBrandCode,
-            this.colPGroup,
-            this.colPImages,
-            this.colPExpDate});
+            this.colPBrandName});
             this.gcv_ExpDateProd.GridControl = this.gridControl1;
             this.gcv_ExpDateProd.Name = "gcv_ExpDateProd";
-            // 
-            // colPID
-            // 
-            this.colPID.FieldName = "ID";
-            this.colPID.Name = "colPID";
-            this.colPID.Visible = true;
-            this.colPID.VisibleIndex = 0;
+            this.gcv_ExpDateProd.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_ExpDateProd.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gcv_ExpDateProd_CustomDrawCell);
             // 
             // colPName
             // 
-            this.colPName.FieldName = "Ürün Adı";
+            this.colPName.Caption = "Ürün Adı";
+            this.colPName.FieldName = "PName";
             this.colPName.Name = "colPName";
             this.colPName.Visible = true;
-            this.colPName.VisibleIndex = 1;
-            // 
-            // colPBarcode
-            // 
-            this.colPBarcode.FieldName = "Barkod";
-            this.colPBarcode.Name = "colPBarcode";
-            this.colPBarcode.Visible = true;
-            this.colPBarcode.VisibleIndex = 2;
+            this.colPName.VisibleIndex = 0;
             // 
             // colPCategoryId
             // 
-            this.colPCategoryId.FieldName = "Kat.ID";
+            this.colPCategoryId.Caption = "Kat.ID";
+            this.colPCategoryId.FieldName = "PCategoryId";
             this.colPCategoryId.Name = "colPCategoryId";
             this.colPCategoryId.Visible = true;
-            this.colPCategoryId.VisibleIndex = 3;
+            this.colPCategoryId.VisibleIndex = 1;
             // 
             // colPDate
             // 
-            this.colPDate.FieldName = "Tarih";
+            this.colPDate.Caption = "Kayıt Tarih";
+            this.colPDate.FieldName = "PDate";
             this.colPDate.Name = "colPDate";
             this.colPDate.Visible = true;
-            this.colPDate.VisibleIndex = 4;
+            this.colPDate.VisibleIndex = 2;
             // 
             // colPFirstPrice
             // 
-            this.colPFirstPrice.FieldName = "Geliş Fiyatı";
+            this.colPFirstPrice.Caption = "Geliş Fiyatı";
+            this.colPFirstPrice.FieldName = "PFirstPrice";
             this.colPFirstPrice.Name = "colPFirstPrice";
             this.colPFirstPrice.Visible = true;
-            this.colPFirstPrice.VisibleIndex = 5;
-            // 
-            // colPTotal
-            // 
-            this.colPTotal.FieldName = "Stok";
-            this.colPTotal.Name = "colPTotal";
-            this.colPTotal.Visible = true;
-            this.colPTotal.VisibleIndex = 6;
-            // 
-            // colPLastPrice
-            // 
-            this.colPLastPrice.FieldName = "Satış Fiyatı";
-            this.colPLastPrice.Name = "colPLastPrice";
-            this.colPLastPrice.Visible = true;
-            this.colPLastPrice.VisibleIndex = 7;
+            this.colPFirstPrice.VisibleIndex = 3;
             // 
             // colPUnitId
             // 
-            this.colPUnitId.FieldName = "Birim";
+            this.colPUnitId.Caption = "Birim";
+            this.colPUnitId.FieldName = "PUnitId";
             this.colPUnitId.Name = "colPUnitId";
             this.colPUnitId.Visible = true;
-            this.colPUnitId.VisibleIndex = 8;
+            this.colPUnitId.VisibleIndex = 4;
             // 
             // colPTax
             // 
-            this.colPTax.FieldName = "KDV";
+            this.colPTax.Caption = "KDV";
+            this.colPTax.FieldName = "PTax";
             this.colPTax.Name = "colPTax";
             this.colPTax.Visible = true;
-            this.colPTax.VisibleIndex = 9;
-            // 
-            // colPVarDescription
-            // 
-            this.colPVarDescription.FieldName = "PVarDescription";
-            this.colPVarDescription.Name = "colPVarDescription";
-            this.colPVarDescription.Visible = true;
-            this.colPVarDescription.VisibleIndex = 10;
-            // 
-            // colPSpecCode
-            // 
-            this.colPSpecCode.FieldName = "Özel Kodu";
-            this.colPSpecCode.Name = "colPSpecCode";
-            this.colPSpecCode.Visible = true;
-            this.colPSpecCode.VisibleIndex = 11;
+            this.colPTax.VisibleIndex = 5;
             // 
             // colPBrandName
             // 
-            this.colPBrandName.FieldName = "Marka";
+            this.colPBrandName.Caption = "Marka";
+            this.colPBrandName.FieldName = "PBrandName";
             this.colPBrandName.Name = "colPBrandName";
             this.colPBrandName.Visible = true;
-            this.colPBrandName.VisibleIndex = 12;
-            // 
-            // colPBrandCode
-            // 
-            this.colPBrandCode.FieldName = "Marka Kodu";
-            this.colPBrandCode.Name = "colPBrandCode";
-            this.colPBrandCode.Visible = true;
-            this.colPBrandCode.VisibleIndex = 13;
-            // 
-            // colPGroup
-            // 
-            this.colPGroup.FieldName = "Grup";
-            this.colPGroup.Name = "colPGroup";
-            this.colPGroup.Visible = true;
-            this.colPGroup.VisibleIndex = 14;
-            // 
-            // colPImages
-            // 
-            this.colPImages.FieldName = "Fotoğraf";
-            this.colPImages.Name = "colPImages";
-            this.colPImages.Visible = true;
-            this.colPImages.VisibleIndex = 15;
+            this.colPBrandName.VisibleIndex = 6;
             // 
             // colPExpDate
             // 
-            this.colPExpDate.FieldName = "S.K.T";
+            this.colPExpDate.Caption = "S.K.T";
+            this.colPExpDate.FieldName = "PExpDate";
             this.colPExpDate.Name = "colPExpDate";
             this.colPExpDate.Visible = true;
-            this.colPExpDate.VisibleIndex = 16;
+            this.colPExpDate.VisibleIndex = 7;
             // 
             // barManager1
             // 
@@ -256,8 +186,9 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnExpDateRefresh,
             this.barButtonItem2,
-            this.btnExpDateRefr});
-            this.barManager1.MaxItemId = 3;
+            this.btnExpDateRefr,
+            this.barButtonItem1});
+            this.barManager1.MaxItemId = 4;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -269,7 +200,8 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnExpDateRefr),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -279,7 +211,7 @@
             // 
             this.btnExpDateRefr.Caption = "Yenile";
             this.btnExpDateRefr.Id = 2;
-            this.btnExpDateRefr.ImageOptions.ImageIndex = 0;
+            this.btnExpDateRefr.ImageOptions.ImageIndex = 50;
             this.btnExpDateRefr.Name = "btnExpDateRefr";
             this.btnExpDateRefr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExpDateRefr_ItemClick);
             // 
@@ -290,6 +222,7 @@
             this.barButtonItem2.ImageOptions.ImageIndex = 1;
             this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -376,6 +309,7 @@
             this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
             this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
             this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            this.svgImageCollection1.Add("print", "image://svgimages/dashboards/print.svg");
             // 
             // btnExpDateRefresh
             // 
@@ -403,6 +337,14 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(935, 435);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Yenile";
+            this.barButtonItem1.Id = 3;
+            this.barButtonItem1.ImageOptions.ImageIndex = 43;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // frmExpDateProducts
             // 
@@ -445,26 +387,18 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gcv_ExpDateProd;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private System.Windows.Forms.BindingSource bs_ExpDateProd;
-        private DevExpress.XtraGrid.Columns.GridColumn colPID;
         private DevExpress.XtraGrid.Columns.GridColumn colPName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPBarcode;
         private DevExpress.XtraGrid.Columns.GridColumn colPCategoryId;
         private DevExpress.XtraGrid.Columns.GridColumn colPDate;
         private DevExpress.XtraGrid.Columns.GridColumn colPFirstPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colPTotal;
-        private DevExpress.XtraGrid.Columns.GridColumn colPLastPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colPUnitId;
         private DevExpress.XtraGrid.Columns.GridColumn colPTax;
-        private DevExpress.XtraGrid.Columns.GridColumn colPVarDescription;
-        private DevExpress.XtraGrid.Columns.GridColumn colPSpecCode;
         private DevExpress.XtraGrid.Columns.GridColumn colPBrandName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPBrandCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colPGroup;
-        private DevExpress.XtraGrid.Columns.GridColumn colPImages;
         private DevExpress.XtraGrid.Columns.GridColumn colPExpDate;
         private DevExpress.XtraBars.BarButtonItem btnExpDateRefresh;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btnExpDateRefr;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

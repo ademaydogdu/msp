@@ -38,12 +38,40 @@ namespace Msp.App.Depo_Stok
 
         private void btnExpDateRefr_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            do_refresh();
+            
         }
 
         private void frmExpDateProducts_Load(object sender, EventArgs e)
         {
             do_refresh();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_refresh();
+        }
+
+        private void gcv_ExpDateProd_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(gcv_ExpDateProd.GetRowCellValue(e.RowHandle, colPExpDate));
+            if (date != null)
+            {
+                if (date == DateTime.Now)
+                {
+                    e.Appearance.BackColor = Color.DarkSalmon;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.Red;
+                    e.Appearance.ForeColor = Color.White;
+                }
+
+            }
         }
     }
 }

@@ -43,8 +43,6 @@ namespace Msp.App.Depo_Stok
             new KDVTaxDto(2, "%1", 0.01, 1),
             new KDVTaxDto(3, "%8", 0.08, 8),
             new KDVTaxDto(4, "%18", 0.18, 18),
-
-
         };
 
         public void Show(int id)
@@ -177,15 +175,6 @@ namespace Msp.App.Depo_Stok
             }
         }
 
-
-
-
-
-
-
-
-
-
         public Image byteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
@@ -213,7 +202,6 @@ namespace Msp.App.Depo_Stok
                 filePath = fileDialog.FileName;
                 StockEditPE.Image = Image.FromFile(filePath);
                 // byte[] newImg = (byte[])StockEditPE.EditValue;
-
             }
         }
 
