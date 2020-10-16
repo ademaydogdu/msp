@@ -302,10 +302,7 @@ namespace msp.App
                 oRow.ProductQuantity += 1;
                 var ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
                 oRow.ProductAmount = ProductAmount;
-                var totalkdv = Math.Round((decimal)KdvOrani.Where(x => x.Id == _product.PTax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
-                var kdvOran = Math.Round(oRow.ProductPrice.GetValueOrDefault() * Convert.ToDecimal((1 + totalkdv)), 2);
-                oRow.TaxAmount = (Math.Round(_product.PFirstPrice.GetValueOrDefault() * kdvOran, 2)) - _product.PFirstPrice.GetValueOrDefault();
-
+                oRow.TaxAmount = Math.Round(oRow.TaxAmount.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
 
                 gridControl1.RefreshDataSource();
                 TopTotal();
@@ -321,8 +318,9 @@ namespace msp.App
                 {
                     oRow.ProductQuantity -= 1;
                     oRow.ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                    oRow.TaxAmount = Math.Round(oRow.TaxAmount.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
                     gridControl1.RefreshDataSource();
-                    TopTotal(); 
+                    TopTotal();
                 }
             }
         }
@@ -369,6 +367,14 @@ namespace msp.App
             }
 
 
+        }
+
+        private void btn_NewProcess_Click(object sender, EventArgs e)
+        {
+            __dll_SaleOwner = new SaleOwnerDTO();
+            __dl_List_SaleTrans.Clear();
+            __dl_List_SaleTrans = new List<SaleTransDTO>();
+            gridControl1.RefreshDataSource();
         }
     }
 }
