@@ -28,6 +28,8 @@ namespace Msp.App.Depo_Stok
 
         public bool IsSale = false;
 
+        private ProductDTO __product = new ProductDTO();
+
 
         List<ProductDTO> _productlist = new List<ProductDTO>();
 
@@ -38,8 +40,12 @@ namespace Msp.App.Depo_Stok
             bs_products.DataSource = _productlist;
         }
 
+
+        int valPTax;
+
         private void frmStok_Load(object sender, EventArgs e)
         {
+            
 
             repositoryItemLookUpEdit1.DataSource = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             repositoryItemLookUpEdit1.ValueMember = "UID";
@@ -49,7 +55,13 @@ namespace Msp.App.Depo_Stok
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_products.DataSource = _productlist;
 
-        }
+
+
+
+
+
+
+    }
 
         public bool get_Question(string _Question)
         {
