@@ -115,6 +115,12 @@ namespace Msp.Service.Service.DepotStock
                 {
                     _db.products.Remove(record);
                 }
+                var speedRecord = _db.SpeedSaleProduct.Where(x => x.ProductId == PID).ToList();
+                if (speedRecord.Count > 0)
+                {
+                    _db.SpeedSaleProduct.RemoveRange(speedRecord);
+                }
+
                 _db.SaveChanges();
             }
             return response;

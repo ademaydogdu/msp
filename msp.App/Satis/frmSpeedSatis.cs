@@ -59,13 +59,13 @@ namespace Msp.App.Satis
         private void frmSpeedSatis_Load(object sender, EventArgs e)
         {
 
-   
-    
         }
 
         private void tileControl1_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }

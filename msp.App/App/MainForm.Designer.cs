@@ -194,7 +194,6 @@
             // ribbon
             // 
             this.ribbon.CaptionBarItemLinks.Add(this.skinPaletteDropDownButtonItem2);
-            this.ribbon.CaptionBarItemLinks.Add(this.skinPaletteRibbonGalleryBarItem1);
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Images = this.img_List;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
