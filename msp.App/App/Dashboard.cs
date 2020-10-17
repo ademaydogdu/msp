@@ -20,7 +20,7 @@ namespace Msp.App.App
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbDate.Text = DateTime.Now.ToLongTimeString();
+            //lbDate.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

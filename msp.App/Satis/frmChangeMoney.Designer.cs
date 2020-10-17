@@ -31,9 +31,11 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -51,6 +53,7 @@
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.simpleLabelItem2,
             this.simpleLabelItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(493, 221);
@@ -59,10 +62,18 @@
             // simpleLabelItem1
             // 
             this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
+            this.simpleLabelItem1.Location = new System.Drawing.Point(123, 0);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.Size = new System.Drawing.Size(473, 201);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(350, 201);
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(107, 13);
+            // 
+            // simpleLabelItem2
+            // 
+            this.simpleLabelItem2.AllowHotTrack = false;
+            this.simpleLabelItem2.Location = new System.Drawing.Point(0, 0);
+            this.simpleLabelItem2.Name = "simpleLabelItem2";
+            this.simpleLabelItem2.Size = new System.Drawing.Size(123, 201);
+            this.simpleLabelItem2.TextSize = new System.Drawing.Size(107, 13);
             // 
             // frmChangeMoney
             // 
@@ -78,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,5 +99,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem2;
     }
 }
