@@ -37,6 +37,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<PaymentType> PaymentTypes { get; set; }
         public virtual DbSet<CTransactions> CurrentTransactions { get; set; }
         public virtual DbSet<Depots> Depot { get; set; }
+        public virtual DbSet<BankEntry> BankEntries { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

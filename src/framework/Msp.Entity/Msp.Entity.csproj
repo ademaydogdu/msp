@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\ApplicationServer.cs" />
+    <Compile Include="Entities\BankEntry.cs" />
     <Compile Include="Entities\Cashiers.cs" />
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Company.cs" />

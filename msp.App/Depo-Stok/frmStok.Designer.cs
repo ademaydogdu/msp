@@ -57,7 +57,6 @@
             this.btnRemProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnProTransactions = new DevExpress.XtraBars.BarButtonItem();
-            this.btnProQuickChange = new DevExpress.XtraBars.BarButtonItem();
             this.btnProBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
             this.btnProClose = new DevExpress.XtraBars.BarButtonItem();
             this.btnORderAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -65,9 +64,11 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.btnViewProduct = new DevExpress.XtraBars.BarButtonItem();
             this.bt = new DevExpress.XtraBars.BarButtonItem();
             this.btnSeaProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProQuickChange = new DevExpress.XtraBars.BarButtonItem();
             this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
@@ -77,7 +78,7 @@
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -85,10 +86,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -110,7 +112,8 @@
             this.gcProducts.MenuManager = this.barManager1;
             this.gcProducts.Name = "gcProducts";
             this.gcProducts.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEdit1});
+            this.repositoryItemLookUpEdit1,
+            this.repositoryItemLookUpEdit2});
             this.gcProducts.Size = new System.Drawing.Size(913, 565);
             this.gcProducts.TabIndex = 4;
             this.gcProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -375,13 +378,6 @@
             this.btnProTransactions.ImageOptions.ImageIndex = 49;
             this.btnProTransactions.Name = "btnProTransactions";
             // 
-            // btnProQuickChange
-            // 
-            this.btnProQuickChange.Caption = "Hızlı Değiştir";
-            this.btnProQuickChange.Id = 8;
-            this.btnProQuickChange.ImageOptions.ImageIndex = 8;
-            this.btnProQuickChange.Name = "btnProQuickChange";
-            // 
             // btnProBarcodeLabel
             // 
             this.btnProBarcodeLabel.Caption = "Barkod Etiket";
@@ -437,86 +433,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(937, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 589);
-            // 
-            // btnViewProduct
-            // 
-            this.btnViewProduct.Caption = "Ürün İncele";
-            this.btnViewProduct.Id = 3;
-            this.btnViewProduct.ImageOptions.ImageIndex = 3;
-            this.btnViewProduct.Name = "btnViewProduct";
-            // 
-            // bt
-            // 
-            this.bt.Caption = "Ürün Sil";
-            this.bt.Id = 5;
-            this.bt.ImageOptions.ImageIndex = 5;
-            this.bt.Name = "bt";
-            // 
-            // btnSeaProduct
-            // 
-            this.btnSeaProduct.Caption = "Ürün Bul";
-            this.btnSeaProduct.Id = 6;
-            this.btnSeaProduct.ImageOptions.ImageIndex = 6;
-            this.btnSeaProduct.Name = "btnSeaProduct";
-            // 
-            // barToggleSwitchItem1
-            // 
-            this.barToggleSwitchItem1.Caption = "barToggleSwitchItem1";
-            this.barToggleSwitchItem1.Id = 11;
-            this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
-            // 
-            // barHeaderItem1
-            // 
-            this.barHeaderItem1.Id = 12;
-            this.barHeaderItem1.Name = "barHeaderItem1";
-            // 
-            // barDockingMenuItem1
-            // 
-            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
-            this.barDockingMenuItem1.Id = 13;
-            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
-            // 
-            // barToolbarsListItem1
-            // 
-            this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
-            this.barToolbarsListItem1.Id = 14;
-            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "barSubItem1";
-            this.barSubItem1.Id = 15;
-            this.barSubItem1.Name = "barSubItem1";
-            // 
-            // barEditItem1
-            // 
-            this.barEditItem1.Caption = "barEditItem1";
-            this.barEditItem1.Edit = this.repositoryItemMarqueeProgressBar1;
-            this.barEditItem1.Id = 16;
-            this.barEditItem1.Name = "barEditItem1";
-            // 
-            // repositoryItemMarqueeProgressBar1
-            // 
-            this.repositoryItemMarqueeProgressBar1.Name = "repositoryItemMarqueeProgressBar1";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(937, 589);
-            this.Root.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.gcProducts;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(917, 569);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
             // 
             // svgImageCollection1
             // 
@@ -587,6 +503,100 @@
             this.svgImageCollection1.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
             this.svgImageCollection1.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
             // 
+            // btnViewProduct
+            // 
+            this.btnViewProduct.Caption = "Ürün İncele";
+            this.btnViewProduct.Id = 3;
+            this.btnViewProduct.ImageOptions.ImageIndex = 3;
+            this.btnViewProduct.Name = "btnViewProduct";
+            // 
+            // bt
+            // 
+            this.bt.Caption = "Ürün Sil";
+            this.bt.Id = 5;
+            this.bt.ImageOptions.ImageIndex = 5;
+            this.bt.Name = "bt";
+            // 
+            // btnSeaProduct
+            // 
+            this.btnSeaProduct.Caption = "Ürün Bul";
+            this.btnSeaProduct.Id = 6;
+            this.btnSeaProduct.ImageOptions.ImageIndex = 6;
+            this.btnSeaProduct.Name = "btnSeaProduct";
+            // 
+            // btnProQuickChange
+            // 
+            this.btnProQuickChange.Caption = "Hızlı Değiştir";
+            this.btnProQuickChange.Id = 8;
+            this.btnProQuickChange.ImageOptions.ImageIndex = 8;
+            this.btnProQuickChange.Name = "btnProQuickChange";
+            // 
+            // barToggleSwitchItem1
+            // 
+            this.barToggleSwitchItem1.Caption = "barToggleSwitchItem1";
+            this.barToggleSwitchItem1.Id = 11;
+            this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Id = 12;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // barDockingMenuItem1
+            // 
+            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
+            this.barDockingMenuItem1.Id = 13;
+            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
+            // 
+            // barToolbarsListItem1
+            // 
+            this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
+            this.barToolbarsListItem1.Id = 14;
+            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "barSubItem1";
+            this.barSubItem1.Id = 15;
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemMarqueeProgressBar1;
+            this.barEditItem1.Id = 16;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemMarqueeProgressBar1
+            // 
+            this.repositoryItemMarqueeProgressBar1.Name = "repositoryItemMarqueeProgressBar1";
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(937, 589);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gcProducts;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(917, 569);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            // 
             // frmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,10 +619,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,5 +680,6 @@
         public DevExpress.XtraBars.BarButtonItem btnProClose;
         private DevExpress.XtraGrid.Columns.GridColumn colPImages;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
     }
 }

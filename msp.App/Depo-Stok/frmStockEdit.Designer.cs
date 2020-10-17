@@ -708,6 +708,8 @@
             this.taxTextEdit.Name = "taxTextEdit";
             this.taxTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.taxTextEdit.Properties.DataSource = this.bs_StockEdit;
+            this.taxTextEdit.Properties.DisplayMember = "PTax";
             this.taxTextEdit.Properties.NullText = "";
             this.taxTextEdit.Size = new System.Drawing.Size(239, 20);
             this.taxTextEdit.StyleController = this.dataLayoutControl1;
