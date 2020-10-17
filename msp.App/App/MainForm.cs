@@ -378,5 +378,10 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem63_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
