@@ -9,18 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace Msp.App.App
+namespace Msp.App.Satis
 {
-    public partial class Dashboard : DevExpress.XtraEditors.XtraForm
+    public partial class frmChangeMoney : DevExpress.XtraEditors.XtraForm
     {
-        public Dashboard()
+        public frmChangeMoney()
         {
             InitializeComponent();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lbDate.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

@@ -31,11 +31,6 @@ namespace Msp.App.Depo_Stok
             bs_ExpDateProd.DataSource = __listExpDateProducts;
         }
 
-
-
-
- 
-
         private void btnExpDateRefr_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             

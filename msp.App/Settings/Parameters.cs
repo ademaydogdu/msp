@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using Msp.Service.Repository;
 using Msp.Models.Models;
 using Msp.Service.Service.Settings;
+using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
 
 namespace Msp.App.Settings
 {
@@ -24,6 +26,7 @@ namespace Msp.App.Settings
         }
 
         ParametersDTO _parameters = new ParametersDTO();
+        MspTool oTool = new MspTool(); 
 
         private void Parameters_Load(object sender, EventArgs e)
         {
@@ -31,5 +34,27 @@ namespace Msp.App.Settings
             bs_Parameter.DataSource = _parameters;
         }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (oTool.get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
+            {
+                try
+                {
+                    var response = _repository.Run<SettingsService, ActionResponse<ParametersDTO>>(x => x.Save_Parameters(_parameters));
+                    if (response.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

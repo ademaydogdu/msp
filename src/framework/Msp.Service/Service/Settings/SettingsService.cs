@@ -104,6 +104,42 @@ namespace Msp.Service.Service.Settings
             }
         }
 
+        public ActionResponse<ParametersDTO> Save_Parameters(ParametersDTO model)
+        {
+            ActionResponse<ParametersDTO> response = new ActionResponse<ParametersDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    if (response.Response.RecId == 0)
+                    {
+                        _db.Parameters.Add(base.Map<ParametersDTO, Parameters>(model));
+                        _db.SaveChanges();
+                    }
+                    else
+                    {
+                        var entity = _db.Parameters.FirstOrDefault(x => x.RecId == response.Response.RecId);
+                        if (entity != null)
+                        {
+                            _db.Entry(entity).CurrentValues.SetValues(model);
+                            _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
         #endregion
 
     }

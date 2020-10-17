@@ -22,6 +22,7 @@ using Msp.Models.Models.Utilities;
 using Msp.Service.Service.Sale;
 using Msp.App.Tanimlar;
 using Msp.App.Musteri_Islemleri;
+using Msp.App.Satis;
 
 namespace msp.App
 {
@@ -375,6 +376,12 @@ namespace msp.App
             __dl_List_SaleTrans.Clear();
             __dl_List_SaleTrans = new List<SaleTransDTO>();
             gridControl1.RefreshDataSource();
+        }
+
+        private void btnIskonto_Click(object sender, EventArgs e)
+        {
+            frmIskonto frm = new frmIskonto();
+            frm.ShowDialog();
         }
     }
 }

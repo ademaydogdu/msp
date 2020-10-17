@@ -348,7 +348,10 @@ namespace msp.App
 
         private void btnDashboard_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            Dashboard frm = new Dashboard();
+            frm.MdiParent = this;
+            frm.Show();
+                
         }
 
 
