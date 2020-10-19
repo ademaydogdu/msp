@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.img_List = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.btnQuickSell = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -198,9 +198,9 @@
             this.ribbon.Images = this.img_List;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.skinPaletteDropDownButtonItem2,
-            this.skinPaletteRibbonGalleryBarItem1,
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
+            this.skinPaletteRibbonGalleryBarItem1,
             this.btnQuickSell,
             this.barButtonItem2,
             this.barButtonItem3,
@@ -345,12 +345,6 @@
             this.skinPaletteDropDownButtonItem2.Id = 94;
             this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
             // 
-            // skinPaletteRibbonGalleryBarItem1
-            // 
-            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
-            this.skinPaletteRibbonGalleryBarItem1.Id = 95;
-            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
-            // 
             // img_List
             // 
             this.img_List.Add("bo_invoice", "image://svgimages/business objects/bo_invoice.svg");
@@ -368,6 +362,12 @@
             this.img_List.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
             this.img_List.Add("productspecificationssummary", "image://svgimages/outlook inspired/productspecificationssummary.svg");
             this.img_List.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            // 
+            // skinPaletteRibbonGalleryBarItem1
+            // 
+            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
+            this.skinPaletteRibbonGalleryBarItem1.Id = 95;
+            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
             // 
             // btnQuickSell
             // 
@@ -978,6 +978,7 @@
             this.barButtonItem70.Id = 90;
             this.barButtonItem70.ImageOptions.LargeImageIndex = 20;
             this.barButtonItem70.Name = "barButtonItem70";
+            this.barButtonItem70.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem70_ItemClick);
             // 
             // barButtonItem71
             // 

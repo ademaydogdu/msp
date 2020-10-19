@@ -183,6 +183,12 @@
     <Compile Include="Islemler\frmBankEntry.Designer.cs">
       <DependentUpon>frmBankEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Islemler\frmBankEntryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Islemler\frmBankEntryEdit.Designer.cs">
+      <DependentUpon>frmBankEntryEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri-Islemleri\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,12 @@
     <Compile Include="Settings\Parameters.Designer.cs">
       <DependentUpon>Parameters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\frmBankDefinition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\frmBankDefinition.Designer.cs">
+      <DependentUpon>frmBankDefinition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tanimlar\frmBirimTanim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +351,10 @@
     <EmbeddedResource Include="Islemler\frmBankEntry.resx">
       <DependentUpon>frmBankEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\frmBankEntryEdit.resx">
+      <DependentUpon>frmBankEntryEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +409,9 @@
     <EmbeddedResource Include="Settings\Parameters.resx">
       <DependentUpon>Parameters.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\frmBankDefinition.resx">
+      <DependentUpon>frmBankDefinition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\frmBirimTanim.resx">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
     </EmbeddedResource>
@@ -409,6 +428,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.BankEntryDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.BanksDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />

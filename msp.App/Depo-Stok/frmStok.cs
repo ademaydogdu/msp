@@ -41,7 +41,7 @@ namespace Msp.App.Depo_Stok
         }
 
 
-        int valPTax;
+      
 
         private void frmStok_Load(object sender, EventArgs e)
         {
@@ -54,12 +54,6 @@ namespace Msp.App.Depo_Stok
 
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_products.DataSource = _productlist;
-
-
-
-
-
-
 
     }
 

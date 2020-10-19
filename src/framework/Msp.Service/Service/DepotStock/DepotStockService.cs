@@ -181,7 +181,7 @@ namespace Msp.Service.Service.DepotStock
                                 _db.Entry(entity).CurrentValues.SetValues(item);
                                 _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                             }
-                        } 
+                        }
                     }
                     _db.SaveChanges();
                 }
@@ -193,6 +193,43 @@ namespace Msp.Service.Service.DepotStock
             }
             return response;
         }
+
+        public ActionResponse<UnitsDTO> SaveUnit(UnitsDTO model)
+        {
+            ActionResponse<UnitsDTO> response = new ActionResponse<UnitsDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    if (response.Response.UID == 0)
+                    {
+                        _db.Units.Add(base.Map<UnitsDTO, Units>(model));
+                        _db.SaveChanges();
+                    }
+                    else
+                    {
+                        var entity = _db.Units.FirstOrDefault(x => x.UID == response.Response.UID);
+                        if (entity != null)
+                        {
+                            _db.Entry(entity).CurrentValues.SetValues(model);
+                            _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
 
         public ActionResponse<UnitsDTO> DeleteUnit(int? id)
         {
