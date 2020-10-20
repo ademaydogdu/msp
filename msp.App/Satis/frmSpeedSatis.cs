@@ -15,6 +15,7 @@ using Msp.Models.Models;
 using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.Sale;
 using Msp.Models.Models.Utilities;
+using System.Globalization;
 
 namespace Msp.App.Satis
 {
@@ -31,7 +32,19 @@ namespace Msp.App.Satis
         List<ProductDTO> products = new List<ProductDTO>();
         List<SpeedSaleProductDTO> speedSaleProducts = new List<SpeedSaleProductDTO>();
 
-      
+        SaleOwnerDTO __dl_SaleOwner = new SaleOwnerDTO();
+        List<SaleTransDTO> __dl_List_SaleTrans = new List<SaleTransDTO>();
+
+        public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
+        {
+            new KDVTaxDto(1, "%0", 0.00, 0),
+            new KDVTaxDto(2, "%1", 0.01, 1),
+            new KDVTaxDto(3, "%8", 0.08, 8),
+            new KDVTaxDto(4, "%18", 0.18, 18),
+        };
+        ProductDTO _product = new ProductDTO();
+
+
         private void do_refresh()
         {
             products = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
@@ -58,14 +71,80 @@ namespace Msp.App.Satis
 
         private void frmSpeedSatis_Load(object sender, EventArgs e)
         {
-
+            __dl_SaleOwner.Date = DateTime.Now;
         }
 
         private void tileControl1_Click(object sender, EventArgs e)
         {
+            //var tileControl = sender as TileControl;
+        }
+
+        private void do_AddPRoduct(int ProductId)
+        {
+            try
+            {
+                _product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(ProductId));
+                if (_product == null) return;
+                var _varmi = __dl_List_SaleTrans.Where(x => x.ProductId == _product.PID).FirstOrDefault();
+                if (_varmi != null)
+                {
+                    _varmi.ProductQuantity += 1;
+                    var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                    _varmi.ProductAmount = ProductAmount;
+                    _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+
+                }
+                else
+                {
+                    SaleTransDTO saleTrans = new SaleTransDTO();
+                    saleTrans.ProductId = _product.PID;
+                    saleTrans.ProductName = _product.PName;
+                    saleTrans.ProductBarcode = _product.PBarcode;
+                    saleTrans.ProductPrice = _product.PMalBedeli;
+                    saleTrans.UnitId = _product.PUnitId;
+                    saleTrans.ProductQuantity = 1;
+                    saleTrans.Deleted = false;
+                    saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
+                    saleTrans.Tax = _product.PTax;
+                    saleTrans.TaxAmount = _product.PPaxAmout;
+                    __dl_List_SaleTrans.Add(saleTrans);
+                }
+                TopTotal();
+                bs_SaleTrans.DataSource = __dl_List_SaleTrans;
+                gridControl1.RefreshDataSource();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
+        public void TopTotal()
+        {
+            if (__dl_List_SaleTrans.Count > 0)
+            {
+                var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
+                var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
+                //var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
+                __dl_SaleOwner.NetPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
+                __dl_SaleOwner.TotalPrice = totalAmount;
+                __dl_SaleOwner.KDV = totalKdv;
+                txt_NetFiyat.EditValue = __dl_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
+                txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
+                txt_Total.EditValue = __dl_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
 
+            }
+        }
+
+        private void tileControl1_ItemClick(object sender, TileItemEventArgs e)
+        {
+            string name = e.Item.Name;
+            if (!string.IsNullOrEmpty(name))
+            {
+                do_AddPRoduct(Convert.ToInt32(name));
+            }
+
+        }
     }
 }

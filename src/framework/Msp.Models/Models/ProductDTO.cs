@@ -47,6 +47,8 @@ namespace Msp.Models.Models
         public decimal? PMalBedeli { get; set; } = 0;
         public decimal? PPaxAmout { get; set; } = 0;
         public bool? PKdvIstisna { get; set; } = false;
+        public decimal? PKarPrice { get; set; } = 0;
+
 
     }
 }

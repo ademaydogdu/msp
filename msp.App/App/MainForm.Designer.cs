@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.img_List = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.btnQuickSell = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -185,6 +185,7 @@
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnSKTGecenUrun = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -198,9 +199,9 @@
             this.ribbon.Images = this.img_List;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.skinPaletteDropDownButtonItem2,
-            this.skinPaletteRibbonGalleryBarItem1,
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
+            this.skinPaletteRibbonGalleryBarItem1,
             this.btnQuickSell,
             this.barButtonItem2,
             this.barButtonItem3,
@@ -321,10 +322,11 @@
             this.barButtonItem5,
             this.barButtonItem7,
             this.barButtonItem63,
-            this.barButtonItem73});
+            this.barButtonItem73,
+            this.btnSKTGecenUrun});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 126;
+            this.ribbon.MaxItemId = 127;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -345,12 +347,6 @@
             this.skinPaletteDropDownButtonItem2.Id = 94;
             this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
             // 
-            // skinPaletteRibbonGalleryBarItem1
-            // 
-            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
-            this.skinPaletteRibbonGalleryBarItem1.Id = 95;
-            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
-            // 
             // img_List
             // 
             this.img_List.Add("bo_invoice", "image://svgimages/business objects/bo_invoice.svg");
@@ -368,6 +364,12 @@
             this.img_List.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
             this.img_List.Add("productspecificationssummary", "image://svgimages/outlook inspired/productspecificationssummary.svg");
             this.img_List.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            // 
+            // skinPaletteRibbonGalleryBarItem1
+            // 
+            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
+            this.skinPaletteRibbonGalleryBarItem1.Id = 95;
+            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
             // 
             // btnQuickSell
             // 
@@ -1256,6 +1258,7 @@
             this.img_buton.Add("printquick", "image://svgimages/outlook inspired/printquick.svg");
             this.img_buton.Add("printdialog", "image://svgimages/print/printdialog.svg");
             this.img_buton.Add("calculationoptions", "image://svgimages/spreadsheet/calculationoptions.svg");
+            this.img_buton.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
             // 
             // barSatis
             // 
@@ -1300,6 +1303,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnStok);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSonKullanmaTar);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnSKTGecenUrun);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Stok";
             // 
@@ -1475,6 +1479,13 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btnSKTGecenUrun
+            // 
+            this.btnSKTGecenUrun.Caption = "Son Kullanma Tarihi Yaklaşan Ürünler";
+            this.btnSKTGecenUrun.Id = 126;
+            this.btnSKTGecenUrun.ImageOptions.LargeImageIndex = 27;
+            this.btnSKTGecenUrun.Name = "btnSKTGecenUrun";
             // 
             // MainForm
             // 
@@ -1660,5 +1671,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem63;
         private DevExpress.XtraBars.BarButtonItem barButtonItem73;
+        private DevExpress.XtraBars.BarButtonItem btnSKTGecenUrun;
     }
 }

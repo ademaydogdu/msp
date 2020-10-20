@@ -50,6 +50,7 @@ namespace Msp.Entity.Entities
         public decimal? PMalBedeli { get; set; }
         public decimal? PPaxAmout { get; set; }
         public bool? PKdvIstisna { get; set; } = false;
+        public decimal? PKarPrice { get; set; } = 0;
 
 
         //public virtual Categories categories { get; set; }

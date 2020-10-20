@@ -36,6 +36,7 @@ namespace Msp.App.Depo_Stok
 
         private ProductDTO __product = new ProductDTO();
         List<UnitsDTO> units = new List<UnitsDTO>();
+        byte[] imgbyte;
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -80,7 +81,7 @@ namespace Msp.App.Depo_Stok
                 XtraMessageBox.Show("Ürün Adı Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _return = true;
             }
-            if (chkKDVIstisna.Checked =  false || Convert.ToString(taxTextEdit.EditValue) == "")
+            if (chkKDVIstisna.Checked = false || Convert.ToString(taxTextEdit.EditValue) == "")
             {
                 XtraMessageBox.Show("KDV Oranı Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _return = true;
@@ -107,7 +108,10 @@ namespace Msp.App.Depo_Stok
             {
                 try
                 {
-
+                    if (imgbyte != null)
+                    {
+                        __product.PImages = imgbyte;
+                    }
                     var response = _repository.Run<DepotStockService, ActionResponse<ProductDTO>>(x => x.SaveProduct(__product));
                     if (response.ResponseType != ResponseType.Ok)
                     {
@@ -189,20 +193,20 @@ namespace Msp.App.Depo_Stok
 
         private void buttonEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            var filePath = string.Empty;
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Resim Dosyaları (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            fileDialog.RestoreDirectory = true;
-            fileDialog.FilterIndex = 2;
-            fileDialog.InitialDirectory = desktopPath;
+            //var filePath = string.Empty;
+            //string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //OpenFileDialog fileDialog = new OpenFileDialog();
+            //fileDialog.Filter = "Resim Dosyaları (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            //fileDialog.RestoreDirectory = true;
+            //fileDialog.FilterIndex = 2;
+            //fileDialog.InitialDirectory = desktopPath;
 
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filePath = fileDialog.FileName;
-                StockEditPE.Image = Image.FromFile(filePath);
-                // byte[] newImg = (byte[])StockEditPE.EditValue;
-            }
+            //if (fileDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    filePath = fileDialog.FileName;
+            //    StockEditPE.Image = Image.FromFile(filePath);
+            //    byte[] newImg = (byte[])StockEditPE.EditValue;
+            //}
         }
 
         private void do_hesapla()
@@ -216,10 +220,15 @@ namespace Msp.App.Depo_Stok
             {
                 return;
             }
+            if (string.IsNullOrEmpty(txtKarPrice.Text))
+            {
+                return;
+            }
             decimal price = (decimal)firstPriceTextEdit.EditValue;
             decimal kdvTutar = 0;
             decimal MalBedeli = 0;
             decimal SatisFiyati = 0;
+            decimal KarTutar = 0;
             if (!chkKDVIstisna.Checked)
             {
                 if (rdgDahilHaric.SelectedIndex == 0) //Dahil
@@ -287,6 +296,37 @@ namespace Msp.App.Depo_Stok
                 taxTextEdit.EditValue = 2;
                 do_hesapla();
             }
+        }
+
+        private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Select Image to Upload.";
+                dlg.Filter = "Image File (*.jpg;*.bmp;*.gif,*.png)|*.jpg;*.bmp;*.gif;*.png";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    //con = new SqlConnection(connectionString);
+                    try
+                    {
+                        String imageName = dlg.FileName;
+                        Bitmap bmp = new Bitmap(imageName);
+                        StockEditPE.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+                        StockEditPE.Image = (Image)bmp;
+                        FileStream fstream = new FileStream(@imageName, FileMode.Open, FileAccess.Read);
+                        imgbyte = new byte[fstream.Length];
+                        fstream.Read(imgbyte, 0, Convert.ToInt32(fstream.Length));
+                        fstream.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }
+            }
+
         }
     }
 
