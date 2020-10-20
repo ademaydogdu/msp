@@ -20,6 +20,7 @@ using Msp.App.Depo_Stok;
 using Msp.App.Satis;
 using Msp.App.Tanimlar;
 using Msp.App.Musteri_Islemleri;
+using Msp.App.Islemler;
 
 namespace msp.App
 {
@@ -382,6 +383,13 @@ namespace msp.App
         private void barButtonItem63_ItemClick_1(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void barButtonItem70_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmBankEntry frm = new frmBankEntry();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

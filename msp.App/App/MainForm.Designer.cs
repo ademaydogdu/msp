@@ -980,6 +980,7 @@
             this.barButtonItem70.Id = 90;
             this.barButtonItem70.ImageOptions.LargeImageIndex = 20;
             this.barButtonItem70.Name = "barButtonItem70";
+            this.barButtonItem70.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem70_ItemClick);
             // 
             // barButtonItem71
             // 

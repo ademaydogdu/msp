@@ -13,7 +13,7 @@ namespace Msp.Models.Models
 
         public string docNo { get; set; }
 
-        public string bankName { get; set; }
+        public int bankID { get; set; }
 
         public string description { get; set; }
 
