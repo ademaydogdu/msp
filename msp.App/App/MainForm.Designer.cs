@@ -154,6 +154,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem63 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem73 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSKTGecenUrun = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -185,7 +186,8 @@
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btnSKTGecenUrun = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbi_kampanya = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -323,10 +325,11 @@
             this.barButtonItem7,
             this.barButtonItem63,
             this.barButtonItem73,
-            this.btnSKTGecenUrun});
+            this.btnSKTGecenUrun,
+            this.bbi_kampanya});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 127;
+            this.ribbon.MaxItemId = 128;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1229,6 +1232,13 @@
             this.barButtonItem73.ImageOptions.LargeImageIndex = 22;
             this.barButtonItem73.Name = "barButtonItem73";
             // 
+            // btnSKTGecenUrun
+            // 
+            this.btnSKTGecenUrun.Caption = "Son Kullanma Tarihi Yaklaşan Ürünler";
+            this.btnSKTGecenUrun.Id = 126;
+            this.btnSKTGecenUrun.ImageOptions.LargeImageIndex = 27;
+            this.btnSKTGecenUrun.Name = "btnSKTGecenUrun";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1260,6 +1270,7 @@
             this.img_buton.Add("printdialog", "image://svgimages/print/printdialog.svg");
             this.img_buton.Add("calculationoptions", "image://svgimages/spreadsheet/calculationoptions.svg");
             this.img_buton.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
+            this.img_buton.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
             // 
             // barSatis
             // 
@@ -1399,7 +1410,8 @@
             this.ribbonPageGroup8,
             this.ribbonPageGroup14,
             this.ribbonPageGroup16,
-            this.ribbonPageGroup17});
+            this.ribbonPageGroup17,
+            this.ribbonPageGroup21});
             this.ribbonPage7.ImageOptions.ImageIndex = 13;
             this.ribbonPage7.Name = "ribbonPage7";
             this.ribbonPage7.Text = "Tanımlar";
@@ -1481,12 +1493,17 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // btnSKTGecenUrun
+            // ribbonPageGroup21
             // 
-            this.btnSKTGecenUrun.Caption = "Son Kullanma Tarihi Yaklaşan Ürünler";
-            this.btnSKTGecenUrun.Id = 126;
-            this.btnSKTGecenUrun.ImageOptions.LargeImageIndex = 27;
-            this.btnSKTGecenUrun.Name = "btnSKTGecenUrun";
+            this.ribbonPageGroup21.ItemLinks.Add(this.bbi_kampanya);
+            this.ribbonPageGroup21.Name = "ribbonPageGroup21";
+            // 
+            // bbi_kampanya
+            // 
+            this.bbi_kampanya.Caption = "Kampanyalar";
+            this.bbi_kampanya.Id = 127;
+            this.bbi_kampanya.ImageOptions.LargeImageIndex = 28;
+            this.bbi_kampanya.Name = "bbi_kampanya";
             // 
             // MainForm
             // 
@@ -1673,5 +1690,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem63;
         private DevExpress.XtraBars.BarButtonItem barButtonItem73;
         private DevExpress.XtraBars.BarButtonItem btnSKTGecenUrun;
+        private DevExpress.XtraBars.BarButtonItem bbi_kampanya;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup21;
     }
 }
