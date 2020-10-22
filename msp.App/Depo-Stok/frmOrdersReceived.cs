@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace Msp.App.Depo_Stok
 {
-    public partial class OrdersReceived : DevExpress.XtraEditors.XtraForm
+    public partial class frmOrdersReceived : DevExpress.XtraEditors.XtraForm
     {
-        public OrdersReceived()
+        public frmOrdersReceived()
         {
             InitializeComponent();
         }

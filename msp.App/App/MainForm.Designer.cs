@@ -186,8 +186,7 @@
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbi_kampanya = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSKTGecenUrun = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -1125,6 +1124,7 @@
             this.rbi_Siparis.Id = 111;
             this.rbi_Siparis.ImageOptions.LargeImageIndex = 10;
             this.rbi_Siparis.Name = "rbi_Siparis";
+            this.rbi_Siparis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.rbi_Siparis_ItemClick);
             // 
             // btn_BirimTanimlari
             // 
@@ -1493,17 +1493,12 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // ribbonPageGroup21
+            // btnSKTGecenUrun
             // 
-            this.ribbonPageGroup21.ItemLinks.Add(this.bbi_kampanya);
-            this.ribbonPageGroup21.Name = "ribbonPageGroup21";
-            // 
-            // bbi_kampanya
-            // 
-            this.bbi_kampanya.Caption = "Kampanyalar";
-            this.bbi_kampanya.Id = 127;
-            this.bbi_kampanya.ImageOptions.LargeImageIndex = 28;
-            this.bbi_kampanya.Name = "bbi_kampanya";
+            this.btnSKTGecenUrun.Caption = "Son Kullanma Tarihi Yaklaşan Ürünler";
+            this.btnSKTGecenUrun.Id = 126;
+            this.btnSKTGecenUrun.ImageOptions.LargeImageIndex = 27;
+            this.btnSKTGecenUrun.Name = "btnSKTGecenUrun";
             // 
             // MainForm
             // 

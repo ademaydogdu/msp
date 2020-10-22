@@ -39,7 +39,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Depots> Depot { get; set; }
         public virtual DbSet<BankEntry> BankEntry { get; set; }
         public virtual DbSet<Banks> Banks { get; set; }
-
+        public virtual DbSet<OrderManagement> OrderManagement { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

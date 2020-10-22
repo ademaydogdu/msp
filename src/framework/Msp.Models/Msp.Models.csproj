@@ -50,6 +50,7 @@
     <Compile Include="Models\CustomersDTO.cs" />
     <Compile Include="Models\DepotDTO.cs" />
     <Compile Include="Models\KDVTaxDto.cs" />
+    <Compile Include="Models\OrderManagementDTO.cs" />
     <Compile Include="Models\ParametersDTO.cs" />
     <Compile Include="Models\PaymentTypeDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />

@@ -28,7 +28,7 @@ namespace Msp.Service.Service.CustomerTransactions
             }
         }
 
-        public ActionResponse<CustomersDTO> InserCustomers(CustomersDTO model)
+        public ActionResponse<CustomersDTO> InsertCustomers(CustomersDTO model)
         {
             ActionResponse<CustomersDTO> response = new ActionResponse<CustomersDTO>()
             {

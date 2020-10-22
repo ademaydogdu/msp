@@ -1,6 +1,6 @@
 ﻿namespace Msp.App.Depo_Stok
 {
-    partial class OrdersReceived
+    partial class frmOrdersReceived
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,10 @@
             this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
+            this.btnORRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnORSave = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOREdit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnORRemove = new DevExpress.XtraBars.BarButtonItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -50,14 +54,16 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.bs_OrdersReceived = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_OrdersReceived = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.oROrderStatusLE = new DevExpress.XtraEditors.LookUpEdit();
+            this.oROrderDate = new DevExpress.XtraEditors.DateEdit();
+            this.oROrderNoTE = new DevExpress.XtraEditors.TextEdit();
+            this.oROrderDescTE = new DevExpress.XtraEditors.TextEdit();
+            this.oRCTransNoTe = new DevExpress.XtraEditors.TextEdit();
+            this.oRAccNameTE = new DevExpress.XtraEditors.TextEdit();
+            this.oRAccAdmin = new DevExpress.XtraEditors.TextEdit();
+            this.bs_ = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -69,16 +75,17 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_OrdersReceived = new System.Windows.Forms.BindingSource(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.bs_CTransaction = new System.Windows.Forms.BindingSource(this.components);
+            this.btnORClose = new DevExpress.XtraBars.BarButtonItem();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -89,15 +96,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_OrdersReceived)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_OrdersReceived)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderStatusLE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderNoTE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderDescTE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRCTransNoTe.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRAccNameTE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRAccAdmin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -109,34 +117,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_OrdersReceived)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CTransaction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.groupControl1);
             this.layoutControl1.Controls.Add(this.gridControl1);
-            this.layoutControl1.Controls.Add(this.lookUpEdit1);
-            this.layoutControl1.Controls.Add(this.dateEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.textEdit4);
-            this.layoutControl1.Controls.Add(this.textEdit5);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.oROrderStatusLE);
+            this.layoutControl1.Controls.Add(this.oROrderDate);
+            this.layoutControl1.Controls.Add(this.oROrderNoTE);
+            this.layoutControl1.Controls.Add(this.oROrderDescTE);
+            this.layoutControl1.Controls.Add(this.oRCTransNoTe);
+            this.layoutControl1.Controls.Add(this.oRAccNameTE);
+            this.layoutControl1.Controls.Add(this.oRAccAdmin);
+            this.layoutControl1.Controls.Add(this.bs_);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 41);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 61);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(879, 687);
+            this.layoutControl1.Size = new System.Drawing.Size(879, 667);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -152,9 +161,9 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Location = new System.Drawing.Point(12, 445);
+            this.groupControl1.Location = new System.Drawing.Point(12, 432);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(855, 230);
+            this.groupControl1.Size = new System.Drawing.Size(855, 223);
             this.groupControl1.TabIndex = 17;
             // 
             // textEdit9
@@ -177,7 +186,15 @@
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
+            this.barManager1.Images = this.svgImageCollection1;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnORRefresh,
+            this.btnORSave,
+            this.btnOREdit,
+            this.btnORRemove,
+            this.btnORClose});
             this.barManager1.MainMenu = this.bar2;
+            this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -186,7 +203,41 @@
             this.bar1.DockCol = 0;
             this.bar1.DockRow = 1;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnORRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnORSave),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnOREdit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnORRemove),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnORClose)});
             this.bar1.Text = "Tools";
+            // 
+            // btnORRefresh
+            // 
+            this.btnORRefresh.Caption = "Yenile";
+            this.btnORRefresh.Id = 0;
+            this.btnORRefresh.ImageOptions.ImageIndex = 43;
+            this.btnORRefresh.Name = "btnORRefresh";
+            // 
+            // btnORSave
+            // 
+            this.btnORSave.Caption = "Kaydet";
+            this.btnORSave.Id = 1;
+            this.btnORSave.ImageOptions.ImageIndex = 0;
+            this.btnORSave.Name = "btnORSave";
+            // 
+            // btnOREdit
+            // 
+            this.btnOREdit.Caption = "Düzenle";
+            this.btnOREdit.Id = 2;
+            this.btnOREdit.ImageOptions.ImageIndex = 48;
+            this.btnOREdit.Name = "btnOREdit";
+            // 
+            // btnORRemove
+            // 
+            this.btnORRemove.Caption = "Sil";
+            this.btnORRemove.Id = 3;
+            this.btnORRemove.ImageOptions.ImageIndex = 44;
+            this.btnORRemove.Name = "btnORRemove";
             // 
             // bar2
             // 
@@ -216,7 +267,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(879, 41);
+            this.barDockControlTop.Size = new System.Drawing.Size(879, 61);
             // 
             // barDockControlBottom
             // 
@@ -230,17 +281,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 41);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 61);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 687);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 667);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(879, 41);
+            this.barDockControlRight.Location = new System.Drawing.Point(879, 61);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 687);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 667);
             // 
             // textEdit8
             // 
@@ -319,89 +370,103 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 175);
+            this.gridControl1.DataSource = this.bs_OrdersReceived;
+            this.gridControl1.Location = new System.Drawing.Point(12, 170);
             this.gridControl1.MainView = this.gcv_OrdersReceived;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(855, 249);
+            this.gridControl1.Size = new System.Drawing.Size(855, 241);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_OrdersReceived});
+            // 
+            // bs_OrdersReceived
+            // 
+            this.bs_OrdersReceived.DataSource = typeof(Msp.Models.Models.ProductDTO);
             // 
             // gcv_OrdersReceived
             // 
             this.gcv_OrdersReceived.GridControl = this.gridControl1;
             this.gcv_OrdersReceived.Name = "gcv_OrdersReceived";
             // 
-            // lookUpEdit1
+            // oROrderStatusLE
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(327, 45);
-            this.lookUpEdit1.MenuManager = this.barManager1;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.oROrderStatusLE.Location = new System.Drawing.Point(327, 45);
+            this.oROrderStatusLE.MenuManager = this.barManager1;
+            this.oROrderStatusLE.Name = "oROrderStatusLE";
+            this.oROrderStatusLE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(133, 20);
-            this.lookUpEdit1.StyleController = this.layoutControl1;
-            this.lookUpEdit1.TabIndex = 5;
+            this.oROrderStatusLE.Size = new System.Drawing.Size(133, 20);
+            this.oROrderStatusLE.StyleController = this.layoutControl1;
+            this.oROrderStatusLE.TabIndex = 5;
             // 
-            // dateEdit1
+            // oROrderDate
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(98, 45);
-            this.dateEdit1.MenuManager = this.barManager1;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.oROrderDate.EditValue = null;
+            this.oROrderDate.Location = new System.Drawing.Point(98, 45);
+            this.oROrderDate.MenuManager = this.barManager1;
+            this.oROrderDate.Name = "oROrderDate";
+            this.oROrderDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.oROrderDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(151, 20);
-            this.dateEdit1.StyleController = this.layoutControl1;
-            this.dateEdit1.TabIndex = 4;
+            this.oROrderDate.Size = new System.Drawing.Size(151, 20);
+            this.oROrderDate.StyleController = this.layoutControl1;
+            this.oROrderDate.TabIndex = 4;
             // 
-            // textEdit1
+            // oROrderNoTE
             // 
-            this.textEdit1.Location = new System.Drawing.Point(98, 69);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(151, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 6;
+            this.oROrderNoTE.Location = new System.Drawing.Point(98, 69);
+            this.oROrderNoTE.MenuManager = this.barManager1;
+            this.oROrderNoTE.Name = "oROrderNoTE";
+            this.oROrderNoTE.Size = new System.Drawing.Size(151, 20);
+            this.oROrderNoTE.StyleController = this.layoutControl1;
+            this.oROrderNoTE.TabIndex = 6;
             // 
-            // textEdit2
+            // oROrderDescTE
             // 
-            this.textEdit2.Location = new System.Drawing.Point(98, 93);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(362, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 7;
+            this.oROrderDescTE.Location = new System.Drawing.Point(98, 93);
+            this.oROrderDescTE.MenuManager = this.barManager1;
+            this.oROrderDescTE.Name = "oROrderDescTE";
+            this.oROrderDescTE.Size = new System.Drawing.Size(362, 20);
+            this.oROrderDescTE.StyleController = this.layoutControl1;
+            this.oROrderDescTE.TabIndex = 7;
             // 
-            // textEdit3
+            // oRCTransNoTe
             // 
-            this.textEdit3.Location = new System.Drawing.Point(562, 45);
-            this.textEdit3.MenuManager = this.barManager1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(293, 20);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 8;
+            this.oRCTransNoTe.Location = new System.Drawing.Point(562, 45);
+            this.oRCTransNoTe.MenuManager = this.barManager1;
+            this.oRCTransNoTe.Name = "oRCTransNoTe";
+            this.oRCTransNoTe.Size = new System.Drawing.Size(293, 20);
+            this.oRCTransNoTe.StyleController = this.layoutControl1;
+            this.oRCTransNoTe.TabIndex = 8;
             // 
-            // textEdit4
+            // oRAccNameTE
             // 
-            this.textEdit4.Location = new System.Drawing.Point(562, 69);
-            this.textEdit4.MenuManager = this.barManager1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(293, 20);
-            this.textEdit4.StyleController = this.layoutControl1;
-            this.textEdit4.TabIndex = 9;
+            this.oRAccNameTE.Location = new System.Drawing.Point(562, 69);
+            this.oRAccNameTE.MenuManager = this.barManager1;
+            this.oRAccNameTE.Name = "oRAccNameTE";
+            this.oRAccNameTE.Size = new System.Drawing.Size(293, 20);
+            this.oRAccNameTE.StyleController = this.layoutControl1;
+            this.oRAccNameTE.TabIndex = 9;
             // 
-            // textEdit5
+            // oRAccAdmin
             // 
-            this.textEdit5.Location = new System.Drawing.Point(562, 93);
-            this.textEdit5.MenuManager = this.barManager1;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(293, 20);
-            this.textEdit5.StyleController = this.layoutControl1;
-            this.textEdit5.TabIndex = 10;
+            this.oRAccAdmin.Location = new System.Drawing.Point(562, 93);
+            this.oRAccAdmin.MenuManager = this.barManager1;
+            this.oRAccAdmin.Name = "oRAccAdmin";
+            this.oRAccAdmin.Size = new System.Drawing.Size(293, 20);
+            this.oRAccAdmin.StyleController = this.layoutControl1;
+            this.oRAccAdmin.TabIndex = 10;
+            // 
+            // bs_
+            // 
+            this.bs_.Location = new System.Drawing.Point(618, 117);
+            this.bs_.Name = "bs_";
+            this.bs_.Size = new System.Drawing.Size(108, 22);
+            this.bs_.StyleController = this.layoutControl1;
+            this.bs_.TabIndex = 18;
+            this.bs_.Text = "Cari Bul";
             // 
             // Root
             // 
@@ -416,7 +481,7 @@
             this.emptySpaceItem9,
             this.layoutControlItem14});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(879, 687);
+            this.Root.Size = new System.Drawing.Size(879, 667);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -434,7 +499,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.dateEdit1;
+            this.layoutControlItem1.Control = this.oROrderDate;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(229, 24);
@@ -443,7 +508,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.lookUpEdit1;
+            this.layoutControlItem2.Control = this.oROrderStatusLE;
             this.layoutControlItem2.Location = new System.Drawing.Point(229, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(211, 24);
@@ -452,7 +517,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textEdit1;
+            this.layoutControlItem3.Control = this.oROrderNoTE;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(229, 24);
@@ -469,7 +534,7 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.textEdit2;
+            this.layoutControlItem4.Control = this.oROrderDescTE;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(440, 50);
@@ -492,7 +557,7 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.textEdit3;
+            this.layoutControlItem5.Control = this.oRCTransNoTe;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(371, 24);
@@ -501,7 +566,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.textEdit4;
+            this.layoutControlItem6.Control = this.oRAccNameTE;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(371, 24);
@@ -510,67 +575,16 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.textEdit5;
+            this.layoutControlItem7.Control = this.oRAccAdmin;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(371, 24);
             this.layoutControlItem7.Text = "Yetkili Kişi";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(71, 13);
             // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 143);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(464, 20);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(464, 143);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(395, 20);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.gridControl1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 163);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(859, 253);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
-            // 
-            // emptySpaceItem9
-            // 
-            this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 416);
-            this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(859, 17);
-            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.groupControl1;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 433);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(859, 234);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(618, 117);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(108, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 18;
-            this.simpleButton1.Text = "Cari Bul";
-            // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.simpleButton1;
+            this.layoutControlItem9.Control = this.bs_;
             this.layoutControlItem9.Location = new System.Drawing.Point(130, 72);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(112, 26);
@@ -593,7 +607,130 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(129, 26);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // OrdersReceived
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 143);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(464, 15);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(464, 143);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(395, 15);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.gridControl1;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 158);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(859, 245);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 403);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(859, 17);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.groupControl1;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 420);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(859, 227);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
+            // 
+            // bs_CTransaction
+            // 
+            this.bs_CTransaction.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
+            // 
+            // btnORClose
+            // 
+            this.btnORClose.Caption = "Kapat";
+            this.btnORClose.Id = 4;
+            this.btnORClose.ImageOptions.ImageIndex = 1;
+            this.btnORClose.Name = "btnORClose";
+            // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
+            this.svgImageCollection1.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
+            this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
+            this.svgImageCollection1.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
+            this.svgImageCollection1.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
+            this.svgImageCollection1.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            this.svgImageCollection1.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
+            this.svgImageCollection1.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
+            this.svgImageCollection1.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
+            this.svgImageCollection1.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
+            this.svgImageCollection1.Add("about", "image://svgimages/outlook inspired/about.svg");
+            this.svgImageCollection1.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
+            this.svgImageCollection1.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.svgImageCollection1.Add("fax", "image://svgimages/outlook inspired/fax.svg");
+            this.svgImageCollection1.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
+            this.svgImageCollection1.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
+            this.svgImageCollection1.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
+            this.svgImageCollection1.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
+            this.svgImageCollection1.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
+            this.svgImageCollection1.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
+            this.svgImageCollection1.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
+            this.svgImageCollection1.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
+            this.svgImageCollection1.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
+            this.svgImageCollection1.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
+            this.svgImageCollection1.Add("general", "image://svgimages/spreadsheet/general.svg");
+            this.svgImageCollection1.Add("warning", "image://svgimages/status/warning.svg");
+            this.svgImageCollection1.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
+            this.svgImageCollection1.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
+            this.svgImageCollection1.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
+            this.svgImageCollection1.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
+            this.svgImageCollection1.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
+            this.svgImageCollection1.Add("timezones", "image://svgimages/scheduling/timezones.svg");
+            this.svgImageCollection1.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
+            this.svgImageCollection1.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
+            this.svgImageCollection1.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
+            this.svgImageCollection1.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
+            this.svgImageCollection1.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
+            this.svgImageCollection1.Add("card", "image://svgimages/outlook inspired/card.svg");
+            this.svgImageCollection1.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
+            this.svgImageCollection1.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
+            this.svgImageCollection1.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            this.svgImageCollection1.Add("newdatasource", "image://svgimages/dashboards/newdatasource.svg");
+            this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
+            this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
+            this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            this.svgImageCollection1.Add("bo_attention_1", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
+            this.svgImageCollection1.Add("bo_price_item", "image://svgimages/business objects/bo_price_item.svg");
+            this.svgImageCollection1.Add("buynow", "image://svgimages/outlook inspired/buynow.svg");
+            this.svgImageCollection1.Add("categorize", "image://svgimages/outlook inspired/categorize.svg");
+            this.svgImageCollection1.Add("group", "image://svgimages/dashboards/group.svg");
+            this.svgImageCollection1.Add("bo_sale", "image://svgimages/business objects/bo_sale.svg");
+            this.svgImageCollection1.Add("sales", "image://svgimages/outlook inspired/sales.svg");
+            this.svgImageCollection1.Add("bo_sale_item", "image://svgimages/business objects/bo_sale_item.svg");
+            this.svgImageCollection1.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
+            this.svgImageCollection1.Add("bo_product", "image://svgimages/business objects/bo_product.svg");
+            this.svgImageCollection1.Add("bo_product_group", "image://svgimages/business objects/bo_product_group.svg");
+            this.svgImageCollection1.Add("shipmentreceived", "image://svgimages/outlook inspired/shipmentreceived.svg");
+            this.svgImageCollection1.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
+            this.svgImageCollection1.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
+            this.svgImageCollection1.Add("top10percent", "image://svgimages/spreadsheet/top10percent.svg");
+            // 
+            // frmOrdersReceived
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -603,7 +740,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "OrdersReceived";
+            this.Name = "frmOrdersReceived";
             this.Text = "OrdersReceived";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -616,15 +753,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_OrdersReceived)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_OrdersReceived)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderStatusLE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderNoTE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oROrderDescTE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRCTransNoTe.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRAccNameTE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRAccAdmin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -636,15 +774,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_OrdersReceived)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CTransaction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -662,10 +801,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.LookUpEdit oROrderStatusLE;
+        private DevExpress.XtraEditors.DateEdit oROrderDate;
+        private DevExpress.XtraEditors.TextEdit oROrderNoTE;
+        private DevExpress.XtraEditors.TextEdit oROrderDescTE;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -674,11 +813,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private System.Windows.Forms.BindingSource bs_OrdersReceived;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit oRCTransNoTe;
+        private DevExpress.XtraEditors.TextEdit oRAccNameTE;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit oRAccAdmin;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
@@ -698,9 +837,16 @@
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraEditors.TextEdit textEdit7;
         private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton bs_;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
+        private DevExpress.XtraBars.BarButtonItem btnORRefresh;
+        private DevExpress.XtraBars.BarButtonItem btnORSave;
+        private DevExpress.XtraBars.BarButtonItem btnOREdit;
+        private DevExpress.XtraBars.BarButtonItem btnORRemove;
+        private System.Windows.Forms.BindingSource bs_CTransaction;
+        private DevExpress.XtraBars.BarButtonItem btnORClose;
+        private DevExpress.Utils.SvgImageCollection svgImageCollection1;
     }
 }

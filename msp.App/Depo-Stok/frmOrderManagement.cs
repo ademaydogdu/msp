@@ -17,5 +17,19 @@ namespace Msp.App.Depo_Stok
         {
             InitializeComponent();
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmOrdersReceived frm = new frmOrdersReceived();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmOrdersReceived frm = new frmOrdersReceived();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
-}
+    }

@@ -12,7 +12,7 @@ namespace Msp.Service.Service.DepotStock
    public class OrderManagementService : BaseService
     {
 
-        public List<OrderManagementDTO> GetListOrders()
+        public List<OrderManagementDTO> GetListOrder()
         {
             using (var _db = new MspDbContext())
             {
@@ -96,6 +96,22 @@ namespace Msp.Service.Service.DepotStock
                     response.Message = e.ToString();
                     response.ResponseType = ResponseType.Error;
                 }
+            }
+            return response;
+        }
+
+        public ActionResponse<OrderManagementDTO> DeleteOrder(int? oid)
+        {
+            ActionResponse<OrderManagementDTO> response = new ActionResponse<OrderManagementDTO>();
+            using (MspDbContext _db = new MspDbContext())
+            {
+                var record = _db.OrderManagement.Where(x => x.oid == oid).FirstOrDefault();
+                if (record != null)
+                {
+                    _db.OrderManagement.Remove(record);
+                }
+
+                _db.SaveChanges();
             }
             return response;
         }

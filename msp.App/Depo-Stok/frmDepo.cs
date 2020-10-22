@@ -102,5 +102,10 @@ namespace Msp.App.Depo_Stok
         {
             do_refresh();
         }
+
+        private void btnEditDepot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_Edit();
+        }
     }
 }
