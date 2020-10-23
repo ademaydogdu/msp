@@ -228,7 +228,8 @@ namespace Msp.App.Depo_Stok
             decimal kdvTutar = 0;
             decimal MalBedeli = 0;
             decimal SatisFiyati = 0;
-            decimal KarTutar = 0;
+            decimal KarTutar = (decimal)txtKarPrice.EditValue;
+            price = Math.Round(price + KarTutar, 2);
             if (!chkKDVIstisna.Checked)
             {
                 if (rdgDahilHaric.SelectedIndex == 0) //Dahil
@@ -239,6 +240,7 @@ namespace Msp.App.Depo_Stok
                 }
                 else //Hariç
                 {
+
                     kdvTutar = Math.Round(price * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
                     MalBedeli = Math.Round(price, 2);
                     SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
@@ -249,8 +251,9 @@ namespace Msp.App.Depo_Stok
                 SatisFiyati = price;
             }
             lblKDVTutar.Text = Convert.ToString(kdvTutar);
-            lblMalBedeli.Text = Convert.ToString(MalBedeli);
+            lblMalBedeli.Text = Convert.ToString(firstPriceTextEdit.EditValue);
             lblSatisFiyati.Text = Convert.ToString(SatisFiyati);
+            lblKar.Text = Convert.ToString(KarTutar);
             txtSalePrice.EditValue = Convert.ToString(SatisFiyati);
 
             //__product.PTaxType = (int)rdgDahilHaric.SelectedIndex;
@@ -327,6 +330,11 @@ namespace Msp.App.Depo_Stok
                 }
             }
 
+        }
+
+        private void txtKarPrice_EditValueChanged(object sender, EventArgs e)
+        {
+            do_hesapla();
         }
     }
 

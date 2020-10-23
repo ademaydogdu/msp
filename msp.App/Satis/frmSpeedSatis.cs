@@ -16,6 +16,8 @@ using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.Sale;
 using Msp.Models.Models.Utilities;
 using System.Globalization;
+using Msp.Service.Service.Tanimlar;
+using System.IO;
 
 namespace Msp.App.Satis
 {
@@ -34,6 +36,10 @@ namespace Msp.App.Satis
 
         SaleOwnerDTO __dl_SaleOwner = new SaleOwnerDTO();
         List<SaleTransDTO> __dl_List_SaleTrans = new List<SaleTransDTO>();
+
+        List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
+        List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
+
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -64,19 +70,44 @@ namespace Msp.App.Satis
                 item1.ItemSize = (TileBarItemSize)item.ButtonType;
                 item1.Text = products.Where(x => x.PID == item.ProductId).FirstOrDefault().PName;
                 item1.Name = Convert.ToString(products.Where(x => x.PID == item.ProductId).FirstOrDefault().PID);
+                if (products.Where(x => x.PID == item.ProductId).FirstOrDefault().PImages.Length > 0)
+                {
+                    item1.BackgroundImage = byteArrayToImage(products.Where(x => x.PID == item.ProductId).FirstOrDefault().PImages); // System.Text.Encoding.Default.GetString(products.Where(x => x.PID == item.ProductId).FirstOrDefault().PImages);
+                    item1.BackgroundImageAlignment = TileItemContentAlignment.Default;
+                    item1.BackgroundImageScaleMode = TileItemImageScaleMode.Stretch;
+                }
+    
+                item1.ImageToTextAlignment = TileControlImageToTextAlignment.Default;
+                item1.BorderVisibility = TileItemBorderVisibility.Always;
+                item1.AppearanceItem.Normal.ForeColor = Color.Black;
+                item1.AppearanceItem.Normal.BorderColor = Color.Black;
+                item1.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 13F);
                 group1.Items.Add(item1);
             }
         }
-
+        public Image byteArrayToImage(byte[] bytesArr)
+        {
+            using (MemoryStream memstr = new MemoryStream(bytesArr))
+            {
+                Image img = Image.FromStream(memstr);
+                return img;
+            }
+        }
 
         private void frmSpeedSatis_Load(object sender, EventArgs e)
         {
             __dl_SaleOwner.Date = DateTime.Now;
+            _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+            _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
+
+            rp_Unit.DataSource = _list_UnitsDTO;
+            rp_KdvOran.DataSource = KdvOrani;
+
+
         }
 
         private void tileControl1_Click(object sender, EventArgs e)
         {
-            //var tileControl = sender as TileControl;
         }
 
         private void do_AddPRoduct(int ProductId)
@@ -144,6 +175,11 @@ namespace Msp.App.Satis
             {
                 do_AddPRoduct(Convert.ToInt32(name));
             }
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
 
         }
     }

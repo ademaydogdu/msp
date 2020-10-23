@@ -94,6 +94,7 @@ namespace Msp.App.Tanimlar
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            gcv_SpeedSaleProduct.CloseEditor();
             bool xy = false;
             foreach (var item in _speedSaleProduct)
             {
