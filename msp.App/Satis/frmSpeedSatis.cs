@@ -51,6 +51,7 @@ namespace Msp.App.Satis
         ProductDTO _product = new ProductDTO();
 
 
+
         private void do_refresh()
         {
             products = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
