@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace Msp.App.Satis
+namespace Msp.App.Musteri_Islemleri
 {
-    public partial class FrmSiparis : DevExpress.XtraEditors.XtraForm
+    public partial class frmCustomerOrder : DevExpress.XtraEditors.XtraForm
     {
-        public FrmSiparis()
+        public frmCustomerOrder()
         {
             InitializeComponent();
         }

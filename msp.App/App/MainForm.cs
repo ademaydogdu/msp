@@ -391,5 +391,12 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void rbi_Siparis_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmOrderManagement frm = new frmOrderManagement();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

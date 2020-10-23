@@ -61,8 +61,8 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnSeaDepot = new DevExpress.XtraBars.BarButtonItem();
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.btnSeaDepot = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -312,6 +312,7 @@
             this.btnEditDepot.Id = 2;
             this.btnEditDepot.ImageOptions.ImageIndex = 48;
             this.btnEditDepot.Name = "btnEditDepot";
+            this.btnEditDepot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditDepot_ItemClick);
             // 
             // btnTransacDepot
             // 
@@ -358,12 +359,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(843, 41);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 442);
-            // 
-            // btnSeaDepot
-            // 
-            this.btnSeaDepot.Caption = "Depo Bul";
-            this.btnSeaDepot.Id = 3;
-            this.btnSeaDepot.Name = "btnSeaDepot";
             // 
             // svgImageCollection1
             // 
@@ -418,6 +413,12 @@
             this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
             this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
             this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            // 
+            // btnSeaDepot
+            // 
+            this.btnSeaDepot.Caption = "Depo Bul";
+            this.btnSeaDepot.Id = 3;
+            this.btnSeaDepot.Name = "btnSeaDepot";
             // 
             // frmDepo
             // 

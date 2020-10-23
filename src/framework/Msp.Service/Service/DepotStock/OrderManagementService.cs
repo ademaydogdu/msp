@@ -7,31 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Msp.Service.Service.CurrentTransactions
+namespace Msp.Service.Service.DepotStock
 {
-   public class CurrentTransactionsService : BaseService
+   public class OrderManagementService : BaseService
     {
 
-        public List<CTransactionsDTO> GetListCurrentTransactions()
+        public List<OrderManagementDTO> GetListOrder()
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<List<CTransactions>, List<CTransactionsDTO>>(_db.CurrentTransactions.ToList());
+                return base.Map<List<OrderManagement>, List<OrderManagementDTO>>(_db.OrderManagement.ToList());
             }
         }
 
-
-        public CTransactionsDTO GetCurrentTransaction(int id)
+        public OrderManagementDTO GetOrder(int id)
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<CTransactions, CTransactionsDTO>(_db.CurrentTransactions.FirstOrDefault(x => x.CurID == id));
+                return base.Map<OrderManagement, OrderManagementDTO>(_db.OrderManagement.FirstOrDefault(x => x.oid == id));
             }
         }
 
-        public ActionResponse<CTransactionsDTO> InsertCurrentCustomer(CTransactionsDTO model)
+        public ActionResponse<OrderManagementDTO> InsertOrder(OrderManagementDTO model)
         {
-            ActionResponse<CTransactionsDTO> response = new ActionResponse<CTransactionsDTO>()
+            ActionResponse<OrderManagementDTO> response = new ActionResponse<OrderManagementDTO>()
             {
                 Response = model,
                 ResponseType = ResponseType.Ok
@@ -40,14 +39,14 @@ namespace Msp.Service.Service.CurrentTransactions
             {
                 try
                 {
-                    if (response.Response.CurID == 0)
+                    if (response.Response.oid == 0)
                     {
-                        _db.CurrentTransactions.Add(base.Map<CTransactionsDTO, CTransactions>(model));
+                        _db.OrderManagement.Add(base.Map<OrderManagementDTO, OrderManagement>(model));
                         _db.SaveChanges();
                     }
                     else
                     {
-                        var entity = _db.CurrentTransactions.FirstOrDefault(x => x.CurID == response.Response.CurID);
+                        var entity = _db.OrderManagement.FirstOrDefault(x => x.oid == response.Response.oid);
                         if (entity != null)
                         {
                             _db.Entry(entity).CurrentValues.SetValues(entity);
@@ -65,9 +64,9 @@ namespace Msp.Service.Service.CurrentTransactions
             return response;
         }
 
-        public ActionResponse<CTransactionsDTO> SaveCurrrentCustomer(CTransactionsDTO model)
+        public ActionResponse<OrderManagementDTO> SaveOrder(OrderManagementDTO model)
         {
-            ActionResponse<CTransactionsDTO> response = new ActionResponse<CTransactionsDTO>()
+            ActionResponse<OrderManagementDTO> response = new ActionResponse<OrderManagementDTO>()
             {
                 Response = model,
                 ResponseType = ResponseType.Ok
@@ -76,14 +75,14 @@ namespace Msp.Service.Service.CurrentTransactions
             {
                 try
                 {
-                    if (response.Response.CurID == 0)
+                    if (response.Response.oid == 0)
                     {
-                        _db.CurrentTransactions.Add(base.Map<CTransactionsDTO, CTransactions>(model));
+                        _db.OrderManagement.Add(base.Map<OrderManagementDTO, OrderManagement>(model));
                         _db.SaveChanges();
                     }
                     else
                     {
-                        var entity = _db.CurrentTransactions.FirstOrDefault(x => x.CurID == response.Response.CurID);
+                        var entity = _db.OrderManagement.FirstOrDefault(x => x.oid == response.Response.oid);
                         if (entity != null)
                         {
                             _db.Entry(entity).CurrentValues.SetValues(model);
@@ -101,15 +100,15 @@ namespace Msp.Service.Service.CurrentTransactions
             return response;
         }
 
-        public ActionResponse<CTransactionsDTO> DeleteCurrentCustomer(int? PID)
+        public ActionResponse<OrderManagementDTO> DeleteOrder(int? oid)
         {
-            ActionResponse<CTransactionsDTO> response = new ActionResponse<CTransactionsDTO>();
+            ActionResponse<OrderManagementDTO> response = new ActionResponse<OrderManagementDTO>();
             using (MspDbContext _db = new MspDbContext())
             {
-                var record = _db.CurrentTransactions.Where(x => x.CurID == PID).FirstOrDefault();
+                var record = _db.OrderManagement.Where(x => x.oid == oid).FirstOrDefault();
                 if (record != null)
                 {
-                    _db.CurrentTransactions.Remove(record);
+                    _db.OrderManagement.Remove(record);
                 }
 
                 _db.SaveChanges();
@@ -117,11 +116,5 @@ namespace Msp.Service.Service.CurrentTransactions
             return response;
         }
 
-
-
-
     }
-
-
 }
-

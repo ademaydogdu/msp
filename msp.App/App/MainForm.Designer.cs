@@ -192,6 +192,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.btnFatura = new DevExpress.XtraBars.BarButtonItem();
             this.bntfatura = new DevExpress.XtraBars.BarSubItem();
+            this.btnSKTGecenUrun = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -1132,6 +1133,7 @@
             this.rbi_Siparis.Id = 111;
             this.rbi_Siparis.ImageOptions.LargeImageIndex = 10;
             this.rbi_Siparis.Name = "rbi_Siparis";
+            this.rbi_Siparis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.rbi_Siparis_ItemClick);
             // 
             // btn_BirimTanimlari
             // 
@@ -1540,6 +1542,12 @@
             this.bntfatura.Id = 130;
             this.bntfatura.ImageOptions.LargeImageIndex = 30;
             this.bntfatura.Name = "bntfatura";
+            // btnSKTGecenUrun
+            // 
+            this.btnSKTGecenUrun.Caption = "Son Kullanma Tarihi Yaklaşan Ürünler";
+            this.btnSKTGecenUrun.Id = 126;
+            this.btnSKTGecenUrun.ImageOptions.LargeImageIndex = 27;
+            this.btnSKTGecenUrun.Name = "btnSKTGecenUrun";
             // 
             // MainForm
             // 

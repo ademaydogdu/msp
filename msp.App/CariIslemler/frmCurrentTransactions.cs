@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Msp.Service.Service.CurrentTransactions;
 using Msp.App.CariIslemler;
+using Msp.Models.Models.Utilities;
 
 namespace msp.App
 {
@@ -28,9 +29,31 @@ namespace msp.App
 
         private void CurrentTransactions_Load(object sender, EventArgs e)
         {
-            _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetCurrentTransactions());
+            do_refresh();
+        }
+
+        public void do_refresh()
+        {
+
+            _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
             CurTranBindingSource.DataSource = _currentTransactionsList;
         }
+
+
+        #region Edit
+        public void do_Edit()
+        {
+            CTransactionsDTO Orow = (CTransactionsDTO)gcv_CurTrans.GetFocusedRow();
+            if (Orow != null)
+            {
+                frmCurTranEdit frm = new frmCurTranEdit();
+                frm._FormOpenType = Msp.Infrastructure.FormOpenType.Edit;
+                frm.Show(Orow.CurID);
+            }
+        }
+
+        #endregion
+
 
         public bool get_Question(string _Question)
         {
@@ -42,22 +65,30 @@ namespace msp.App
             return _Return;
         }
 
-        #region Form_Button
-
-
-
-
-        #endregion
-
         private void btnRemAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            CTransactionsDTO oRow = (CTransactionsDTO)gcv_CurTrans.GetFocusedRow();
+
+            if (oRow != null)
+            {
+                if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                {
+                    var result = _repository.Run<CurrentTransactionsService, ActionResponse<CTransactionsDTO>>(x => x.DeleteCurrentCustomer(oRow.CurID));
+                    do_refresh();
+                }
+            }
         }
 
         private void btnNewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmCurTranEdit frm = new frmCurTranEdit();
-            frm.ShowDialog();
+            frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
+            frm.Show(0);
+        }
+
+        private void btnEditAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_Edit();
         }
     }
 }
