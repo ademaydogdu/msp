@@ -127,6 +127,9 @@ namespace Msp.App.Depo_Stok
             this.Close();
         }
 
-        
+        private void frmDepoEdit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
