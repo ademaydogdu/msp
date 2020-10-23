@@ -103,6 +103,7 @@ namespace Msp.App.Depo_Stok
 
         private void do_save()
         {
+            bs_StockEdit.EndEdit();
             if (do_Validation()) return;
             if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
@@ -295,7 +296,7 @@ namespace Msp.App.Depo_Stok
             {
                 lyControlKDVOrani.Enabled = true;
                 lytDahilHaric.Enabled = true;
-                __product.PTaxType = 0;
+                __product.PTaxType = 1;
                 taxTextEdit.EditValue = 2;
                 do_hesapla();
             }

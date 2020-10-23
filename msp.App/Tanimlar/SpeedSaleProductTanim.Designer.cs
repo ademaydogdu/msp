@@ -54,7 +54,9 @@ namespace Msp.App.Tanimlar
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.bs_products = new System.Windows.Forms.BindingSource(this.components);
             this.colİmage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.colButtonType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gc_Product = new DevExpress.XtraGrid.GridControl();
             this.gcv_Product = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,8 +64,6 @@ namespace Msp.App.Tanimlar
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -73,14 +73,14 @@ namespace Msp.App.Tanimlar
             ((System.ComponentModel.ISupportInitialize)(this.gcv_SpeedSaleProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_products)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // img_bar
@@ -289,6 +289,10 @@ namespace Msp.App.Tanimlar
             this.colİmage.Visible = true;
             this.colİmage.VisibleIndex = 1;
             // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            // 
             // colButtonType
             // 
             this.colButtonType.ColumnEdit = this.repositoryItemLookUpEdit2;
@@ -296,6 +300,14 @@ namespace Msp.App.Tanimlar
             this.colButtonType.Name = "colButtonType";
             this.colButtonType.Visible = true;
             this.colButtonType.VisibleIndex = 2;
+            // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            this.repositoryItemLookUpEdit2.NullText = "";
             // 
             // gc_Product
             // 
@@ -315,6 +327,7 @@ namespace Msp.App.Tanimlar
             this.colPName});
             this.gcv_Product.GridControl = this.gc_Product;
             this.gcv_Product.Name = "gcv_Product";
+            this.gcv_Product.OptionsBehavior.Editable = false;
             this.gcv_Product.OptionsView.ShowAutoFilterRow = true;
             this.gcv_Product.OptionsView.ShowGroupPanel = false;
             // 
@@ -363,18 +376,6 @@ namespace Msp.App.Tanimlar
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // repositoryItemLookUpEdit2
-            // 
-            this.repositoryItemLookUpEdit2.AutoHeight = false;
-            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
-            this.repositoryItemLookUpEdit2.NullText = "";
-            // 
-            // repositoryItemPictureEdit1
-            // 
-            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            // 
             // SpeedSaleProductTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,14 +398,14 @@ namespace Msp.App.Tanimlar
             ((System.ComponentModel.ISupportInitialize)(this.gcv_SpeedSaleProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_products)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
