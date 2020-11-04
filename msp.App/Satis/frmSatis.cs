@@ -383,5 +383,11 @@ namespace msp.App
             frmIskonto frm = new frmIskonto();
             frm.ShowDialog();
         }
+
+        private void txtParaUstu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            frmChangeMoney frm = new frmChangeMoney();
+            frm.ShowDialog();
+        }
     }
 }

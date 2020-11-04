@@ -787,7 +787,7 @@
             this.txt_Total.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_Total.Properties.WordWrap = false;
             this.txt_Total.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_Total.Size = new System.Drawing.Size(179, 71);
+            this.txt_Total.Size = new System.Drawing.Size(203, 71);
             this.txt_Total.StyleController = this.layoutControl1;
             this.txt_Total.TabIndex = 24;
             // 
@@ -945,6 +945,7 @@
             this.txtParaUstu.Size = new System.Drawing.Size(341, 46);
             this.txtParaUstu.StyleController = this.layoutControl1;
             this.txtParaUstu.TabIndex = 37;
+            this.txtParaUstu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtParaUstu_ButtonClick);
             // 
             // Root
             // 
@@ -1394,8 +1395,8 @@
             this.layoutControlItem21.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem21.Control = this.txt_Total;
             this.layoutControlItem21.Location = new System.Drawing.Point(1106, 765);
-            this.layoutControlItem21.MaxSize = new System.Drawing.Size(260, 75);
-            this.layoutControlItem21.MinSize = new System.Drawing.Size(260, 75);
+            this.layoutControlItem21.MaxSize = new System.Drawing.Size(284, 75);
+            this.layoutControlItem21.MinSize = new System.Drawing.Size(284, 75);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Size = new System.Drawing.Size(284, 75);
             this.layoutControlItem21.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;

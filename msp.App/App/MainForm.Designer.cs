@@ -157,6 +157,8 @@
             this.btnSKTGecenUrun = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_kampanya = new DevExpress.XtraBars.BarButtonItem();
             this.btnLog = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFatura = new DevExpress.XtraBars.BarButtonItem();
+            this.bntfatura = new DevExpress.XtraBars.BarSubItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -171,6 +173,8 @@
             this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -190,9 +194,7 @@
             this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btnFatura = new DevExpress.XtraBars.BarButtonItem();
-            this.bntfatura = new DevExpress.XtraBars.BarSubItem();
-            this.btnSKTGecenUrun = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -344,6 +346,7 @@
             this.ribbonPage2,
             this.ribbonPage6,
             this.ribbonPage3,
+            this.ribbonPage1,
             this.ribbonPage5,
             this.ribbonPage4,
             this.ribbonPage7,
@@ -375,6 +378,7 @@
             this.img_List.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
             this.img_List.Add("productspecificationssummary", "image://svgimages/outlook inspired/productspecificationssummary.svg");
             this.img_List.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            this.img_List.Add("datalabels", "image://svgimages/dashboards/datalabels.svg");
             // 
             // skinPaletteRibbonGalleryBarItem1
             // 
@@ -1262,6 +1266,19 @@
             this.btnLog.ImageOptions.LargeImageIndex = 29;
             this.btnLog.Name = "btnLog";
             // 
+            // btnFatura
+            // 
+            this.btnFatura.Caption = "Fatura";
+            this.btnFatura.Id = 129;
+            this.btnFatura.Name = "btnFatura";
+            // 
+            // bntfatura
+            // 
+            this.bntfatura.Caption = "Fatura";
+            this.bntfatura.Id = 130;
+            this.bntfatura.ImageOptions.LargeImageIndex = 30;
+            this.bntfatura.Name = "bntfatura";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1394,6 +1411,18 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem8);
             this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem9);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup24});
+            this.ribbonPage1.ImageOptions.ImageIndex = 15;
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Modüller";
+            // 
+            // ribbonPageGroup24
+            // 
+            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
             // 
             // ribbonPage5
             // 
@@ -1530,24 +1559,10 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // btnFatura
+            // ribbonPageGroup23
             // 
-            this.btnFatura.Caption = "Fatura";
-            this.btnFatura.Id = 129;
-            this.btnFatura.Name = "btnFatura";
-            // 
-            // bntfatura
-            // 
-            this.bntfatura.Caption = "Fatura";
-            this.bntfatura.Id = 130;
-            this.bntfatura.ImageOptions.LargeImageIndex = 30;
-            this.bntfatura.Name = "bntfatura";
-            // btnSKTGecenUrun
-            // 
-            this.btnSKTGecenUrun.Caption = "Son Kullanma Tarihi Yaklaşan Ürünler";
-            this.btnSKTGecenUrun.Id = 126;
-            this.btnSKTGecenUrun.ImageOptions.LargeImageIndex = 27;
-            this.btnSKTGecenUrun.Name = "btnSKTGecenUrun";
+            this.ribbonPageGroup23.Name = "ribbonPageGroup23";
+            this.ribbonPageGroup23.Text = "ribbonPageGroup23";
             // 
             // MainForm
             // 
@@ -1740,5 +1755,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup22;
         private DevExpress.XtraBars.BarButtonItem btnFatura;
         private DevExpress.XtraBars.BarSubItem bntfatura;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup23;
     }
 }
