@@ -18,6 +18,16 @@ namespace Msp.App.Satis
             InitializeComponent();
         }
 
+        decimal TotalTutar = 0;
+        decimal AlinanPara = 0;
+
+        public void Show(decimal _totalTutar, decimal _paraAlinan)
+        {
+            TotalTutar = _totalTutar;
+            AlinanPara = _paraAlinan;
+            this.ShowDialog();
+        }
+
         private void frmChangeMoney_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

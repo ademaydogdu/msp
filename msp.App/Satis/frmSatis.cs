@@ -386,8 +386,18 @@ namespace msp.App
 
         private void txtParaUstu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
+            var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
             frmChangeMoney frm = new frmChangeMoney();
-            frm.ShowDialog();
+            frm.Show(Convert.ToDecimal(totalAmount), Convert.ToDecimal(txtParaUstu.EditValue));
+        }
+
+        private void frmSatis_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

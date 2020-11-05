@@ -1574,6 +1574,7 @@
             this.Name = "frmSatis";
             this.Text = "Satış Ekranı";
             this.Load += new System.EventHandler(this.frmSatis_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSatis_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

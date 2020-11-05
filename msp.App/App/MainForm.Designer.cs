@@ -195,6 +195,7 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbi_FisEntegra = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -336,10 +337,11 @@
             this.bbi_kampanya,
             this.btnLog,
             this.btnFatura,
-            this.bntfatura});
+            this.bntfatura,
+            this.bbi_FisEntegra});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 131;
+            this.ribbon.MaxItemId = 132;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1313,6 +1315,7 @@
             this.img_buton.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
             this.img_buton.Add("charthorizontalaxis_logscale", "image://svgimages/spreadsheet/charthorizontalaxis_logscale.svg");
             this.img_buton.Add("employeesummary", "image://svgimages/outlook inspired/employeesummary.svg");
+            this.img_buton.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
             // 
             // barSatis
             // 
@@ -1531,6 +1534,7 @@
             // 
             this.ribbonPageGroup18.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup18.ItemLinks.Add(this.barButtonItem63);
+            this.ribbonPageGroup18.ItemLinks.Add(this.bbi_FisEntegra);
             this.ribbonPageGroup18.Name = "ribbonPageGroup18";
             this.ribbonPageGroup18.Text = "Entegrasyon";
             // 
@@ -1563,6 +1567,13 @@
             // 
             this.ribbonPageGroup23.Name = "ribbonPageGroup23";
             this.ribbonPageGroup23.Text = "ribbonPageGroup23";
+            // 
+            // bbi_FisEntegra
+            // 
+            this.bbi_FisEntegra.Caption = "Fiş/Makbuz Entegrasyonu";
+            this.bbi_FisEntegra.Id = 131;
+            this.bbi_FisEntegra.ImageOptions.LargeImageIndex = 31;
+            this.bbi_FisEntegra.Name = "bbi_FisEntegra";
             // 
             // MainForm
             // 
@@ -1758,5 +1769,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup23;
+        private DevExpress.XtraBars.BarButtonItem bbi_FisEntegra;
     }
 }

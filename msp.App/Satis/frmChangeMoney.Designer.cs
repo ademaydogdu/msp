@@ -143,6 +143,7 @@
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Enabled = false;
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.ImageIndex = 0;
             this.barButtonItem1.Name = "barButtonItem1";
