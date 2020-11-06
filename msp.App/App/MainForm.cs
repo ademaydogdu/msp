@@ -398,5 +398,10 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem74_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //radialMenu1.ShowPopup(new Point(100, 100));
+        }
     }
 }

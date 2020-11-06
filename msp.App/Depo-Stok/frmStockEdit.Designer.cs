@@ -125,18 +125,23 @@
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.barCodeControl1 = new DevExpress.XtraEditors.BarCodeControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.barCodeControl1 = new DevExpress.XtraEditors.BarCodeControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtBarcode = new DevExpress.XtraEditors.MemoEdit();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtBarcode = new DevExpress.XtraEditors.MemoEdit();
+            this.lblBarcod = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -223,14 +228,18 @@
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblBarcod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // bs_StockEdit
@@ -1376,13 +1385,15 @@
             // 
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
+            this.tabPane1.Controls.Add(this.tabNavigationPage3);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 0);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
-            this.tabNavigationPage2});
+            this.tabNavigationPage2,
+            this.tabNavigationPage3});
             this.tabPane1.RegularSize = new System.Drawing.Size(809, 696);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.Size = new System.Drawing.Size(809, 696);
@@ -1403,23 +1414,13 @@
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(809, 667);
             // 
-            // barCodeControl1
-            // 
-            this.barCodeControl1.AutoModule = true;
-            this.barCodeControl1.Location = new System.Drawing.Point(12, 48);
-            this.barCodeControl1.Name = "barCodeControl1";
-            this.barCodeControl1.Padding = new System.Windows.Forms.Padding(10, 2, 10, 0);
-            this.barCodeControl1.Size = new System.Drawing.Size(266, 98);
-            this.barCodeControl1.StyleController = this.layoutControl1;
-            this.barCodeControl1.Symbology = code128Generator1;
-            this.barCodeControl1.TabIndex = 0;
-            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.barCodeControl1);
             this.layoutControl1.Controls.Add(this.simpleButton2);
             this.layoutControl1.Controls.Add(this.simpleButton3);
             this.layoutControl1.Controls.Add(this.txtBarcode);
+            this.layoutControl1.Controls.Add(this.pictureEdit1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -1427,6 +1428,45 @@
             this.layoutControl1.Size = new System.Drawing.Size(809, 667);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // barCodeControl1
+            // 
+            this.barCodeControl1.AutoModule = true;
+            this.barCodeControl1.Location = new System.Drawing.Point(12, 48);
+            this.barCodeControl1.Name = "barCodeControl1";
+            this.barCodeControl1.Padding = new System.Windows.Forms.Padding(10, 2, 10, 0);
+            this.barCodeControl1.Size = new System.Drawing.Size(266, 104);
+            this.barCodeControl1.StyleController = this.layoutControl1;
+            this.barCodeControl1.Symbology = code128Generator1;
+            this.barCodeControl1.TabIndex = 0;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(12, 179);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(88, 22);
+            this.simpleButton2.StyleController = this.layoutControl1;
+            this.simpleButton2.TabIndex = 5;
+            this.simpleButton2.Text = "Yazdır";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(104, 179);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(693, 22);
+            this.simpleButton3.StyleController = this.layoutControl1;
+            this.simpleButton3.TabIndex = 6;
+            this.simpleButton3.Text = "Rastgale Barkod";
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(145, 12);
+            this.txtBarcode.MenuManager = this.barManager2;
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBarcode.Size = new System.Drawing.Size(652, 32);
+            this.txtBarcode.StyleController = this.layoutControl1;
+            this.txtBarcode.TabIndex = 4;
             // 
             // layoutControlGroup5
             // 
@@ -1438,7 +1478,10 @@
             this.layoutControlItem21,
             this.layoutControlItem22,
             this.emptySpaceItem7,
-            this.layoutControlItem23});
+            this.layoutControlItem23,
+            this.lblBarcod,
+            this.layoutControlItem24,
+            this.emptySpaceItem4});
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Size = new System.Drawing.Size(809, 667);
             this.layoutControlGroup5.TextVisible = false;
@@ -1447,9 +1490,10 @@
             // 
             this.layoutControlItem16.Control = this.barCodeControl1;
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 36);
-            this.layoutControlItem16.MinSize = new System.Drawing.Size(54, 20);
+            this.layoutControlItem16.MaxSize = new System.Drawing.Size(270, 108);
+            this.layoutControlItem16.MinSize = new System.Drawing.Size(270, 108);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(270, 102);
+            this.layoutControlItem16.Size = new System.Drawing.Size(270, 108);
             this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
@@ -1459,16 +1503,8 @@
             this.emptySpaceItem6.AllowHotTrack = false;
             this.emptySpaceItem6.Location = new System.Drawing.Point(270, 36);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(519, 102);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(519, 108);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 164);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(789, 483);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem21
             // 
@@ -1479,53 +1515,77 @@
             this.layoutControlItem21.Size = new System.Drawing.Size(789, 36);
             this.layoutControlItem21.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem21.Text = "Ürün Barkodu ";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(68, 13);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(12, 150);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(88, 22);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Yazdır";
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem22
             // 
             this.layoutControlItem22.Control = this.simpleButton2;
-            this.layoutControlItem22.Location = new System.Drawing.Point(0, 138);
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 167);
             this.layoutControlItem22.Name = "layoutControlItem22";
             this.layoutControlItem22.Size = new System.Drawing.Size(92, 26);
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem22.TextVisible = false;
             // 
-            // simpleButton3
+            // emptySpaceItem7
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(104, 150);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(693, 22);
-            this.simpleButton3.StyleController = this.layoutControl1;
-            this.simpleButton3.TabIndex = 6;
-            this.simpleButton3.Text = "Rastgale Barkod";
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 320);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(789, 327);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem23
             // 
             this.layoutControlItem23.Control = this.simpleButton3;
-            this.layoutControlItem23.Location = new System.Drawing.Point(92, 138);
+            this.layoutControlItem23.Location = new System.Drawing.Point(92, 167);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(697, 26);
             this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem23.TextVisible = false;
             // 
-            // txtBarcode
+            // lblBarcod
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(92, 12);
-            this.txtBarcode.MenuManager = this.barManager2;
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBarcode.Size = new System.Drawing.Size(705, 32);
-            this.txtBarcode.StyleController = this.layoutControl1;
-            this.txtBarcode.TabIndex = 4;
+            this.lblBarcod.AllowHotTrack = false;
+            this.lblBarcod.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblBarcod.AppearanceItemCaption.Options.UseFont = true;
+            this.lblBarcod.Location = new System.Drawing.Point(0, 144);
+            this.lblBarcod.Name = "lblBarcod";
+            this.lblBarcod.Size = new System.Drawing.Size(789, 23);
+            this.lblBarcod.Text = "8690504206071";
+            this.lblBarcod.TextSize = new System.Drawing.Size(130, 19);
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(12, 205);
+            this.pictureEdit1.MenuManager = this.barManager2;
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(309, 123);
+            this.pictureEdit1.StyleController = this.layoutControl1;
+            this.pictureEdit1.TabIndex = 7;
+            // 
+            // layoutControlItem24
+            // 
+            this.layoutControlItem24.Control = this.pictureEdit1;
+            this.layoutControlItem24.Location = new System.Drawing.Point(0, 193);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(313, 127);
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem24.TextVisible = false;
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(313, 193);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(476, 127);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // tabNavigationPage3
+            // 
+            this.tabNavigationPage3.Caption = "Ürün QR Kod";
+            this.tabNavigationPage3.Name = "tabNavigationPage3";
+            this.tabNavigationPage3.Size = new System.Drawing.Size(809, 667);
             // 
             // frmStockEdit
             // 
@@ -1633,14 +1693,18 @@
             this.tabNavigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblBarcod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1755,5 +1819,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
+        private DevExpress.XtraLayout.SimpleLabelItem lblBarcod;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
     }
 }

@@ -121,7 +121,7 @@
             this.barButtonItem68 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem69 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem70 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem71 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_cekler = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem72 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDepo = new DevExpress.XtraBars.BarButtonItem();
             this.skinPaletteRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
@@ -196,10 +196,17 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bbi_FisEntegra = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
+            this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem75 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem76 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem77 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -300,7 +307,7 @@
             this.barButtonItem68,
             this.barButtonItem69,
             this.barButtonItem70,
-            this.barButtonItem71,
+            this.bbi_cekler,
             this.barButtonItem72,
             this.btnDepo,
             this.skinPaletteRibbonGalleryBarItem2,
@@ -338,10 +345,14 @@
             this.btnLog,
             this.btnFatura,
             this.bntfatura,
-            this.bbi_FisEntegra});
+            this.bbi_FisEntegra,
+            this.barButtonItem74,
+            this.barButtonItem75,
+            this.barButtonItem76,
+            this.barButtonItem77});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 132;
+            this.ribbon.MaxItemId = 136;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -999,12 +1010,12 @@
             this.barButtonItem70.Name = "barButtonItem70";
             this.barButtonItem70.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem70_ItemClick);
             // 
-            // barButtonItem71
+            // bbi_cekler
             // 
-            this.barButtonItem71.Caption = "Kendi Çeklerim";
-            this.barButtonItem71.Id = 91;
-            this.barButtonItem71.ImageOptions.LargeImageIndex = 19;
-            this.barButtonItem71.Name = "barButtonItem71";
+            this.bbi_cekler.Caption = "Kendi Çeklerim";
+            this.bbi_cekler.Id = 91;
+            this.bbi_cekler.ImageOptions.LargeImageIndex = 19;
+            this.bbi_cekler.Name = "bbi_cekler";
             // 
             // barButtonItem72
             // 
@@ -1316,13 +1327,15 @@
             this.img_buton.Add("charthorizontalaxis_logscale", "image://svgimages/spreadsheet/charthorizontalaxis_logscale.svg");
             this.img_buton.Add("employeesummary", "image://svgimages/outlook inspired/employeesummary.svg");
             this.img_buton.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
+            this.img_buton.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
             // 
             // barSatis
             // 
             this.barSatis.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup10,
-            this.ribbonPageGroup15});
+            this.ribbonPageGroup15,
+            this.ribbonPageGroup25});
             this.barSatis.ImageOptions.ImageIndex = 0;
             this.barSatis.Name = "barSatis";
             this.barSatis.Text = "Satış";
@@ -1439,7 +1452,7 @@
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barSubItem13);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem70);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem71);
+            this.ribbonPageGroup6.ItemLinks.Add(this.bbi_cekler);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // ribbonPage4
@@ -1575,6 +1588,45 @@
             this.bbi_FisEntegra.ImageOptions.LargeImageIndex = 31;
             this.bbi_FisEntegra.Name = "bbi_FisEntegra";
             // 
+            // ribbonPageGroup25
+            // 
+            this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem74);
+            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
+            // 
+            // barButtonItem74
+            // 
+            this.barButtonItem74.Caption = "Satış Anında Barkod İşlemleri";
+            this.barButtonItem74.Id = 132;
+            this.barButtonItem74.ImageOptions.LargeImageIndex = 32;
+            this.barButtonItem74.Name = "barButtonItem74";
+            this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick);
+            // 
+            // radialMenu1
+            // 
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem75);
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem76);
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
+            this.radialMenu1.Name = "radialMenu1";
+            this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barButtonItem75
+            // 
+            this.barButtonItem75.Caption = "Yeni Kayıt";
+            this.barButtonItem75.Id = 133;
+            this.barButtonItem75.Name = "barButtonItem75";
+            // 
+            // barButtonItem76
+            // 
+            this.barButtonItem76.Caption = "Kaydet & Yeni Kayıt";
+            this.barButtonItem76.Id = 134;
+            this.barButtonItem76.Name = "barButtonItem76";
+            // 
+            // barButtonItem77
+            // 
+            this.barButtonItem77.Caption = "Vazgeç";
+            this.barButtonItem77.Id = 135;
+            this.barButtonItem77.Name = "barButtonItem77";
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1595,6 +1647,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1711,7 +1764,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem68;
         private DevExpress.XtraBars.BarButtonItem barButtonItem69;
         private DevExpress.XtraBars.BarButtonItem barButtonItem70;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem71;
+        private DevExpress.XtraBars.BarButtonItem bbi_cekler;
         private DevExpress.XtraBars.BarButtonItem barButtonItem72;
         private DevExpress.XtraBars.BarButtonItem btnDepo;
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem2;
@@ -1770,5 +1823,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup23;
         private DevExpress.XtraBars.BarButtonItem bbi_FisEntegra;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem74;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup25;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem75;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem76;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem77;
+        private DevExpress.XtraBars.Ribbon.RadialMenu radialMenu1;
     }
 }

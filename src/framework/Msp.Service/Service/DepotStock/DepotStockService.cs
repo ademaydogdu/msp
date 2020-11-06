@@ -82,6 +82,16 @@ namespace Msp.Service.Service.DepotStock
                 {
                     if (response.Response.PID == 0)
                     {
+
+                        if (model.PBarcode.Length > 0)
+                        {
+                            var barcodControl = _db.products.Where(x => x.PBarcode == model.PBarcode).Any();
+                            if (barcodControl)
+                            {
+                                response.Message = "Aynı Barkod Ürününden Mevcuttur.";
+                                response.ResponseType = ResponseType.Error;
+                            } 
+                        }
                         _db.products.Add(base.Map<ProductDTO, Products>(model));
                         _db.SaveChanges();
                     }
