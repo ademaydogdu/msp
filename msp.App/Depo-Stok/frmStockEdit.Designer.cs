@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.EAN13Generator eaN13Generator1 = new DevExpress.XtraPrinting.BarCode.EAN13Generator();
             this.bs_StockEdit = new System.Windows.Forms.BindingSource(this.components);
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
@@ -1432,12 +1432,13 @@
             // barCodeControl1
             // 
             this.barCodeControl1.AutoModule = true;
+            this.barCodeControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.barCodeControl1.Location = new System.Drawing.Point(12, 48);
             this.barCodeControl1.Name = "barCodeControl1";
             this.barCodeControl1.Padding = new System.Windows.Forms.Padding(10, 2, 10, 0);
             this.barCodeControl1.Size = new System.Drawing.Size(266, 104);
             this.barCodeControl1.StyleController = this.layoutControl1;
-            this.barCodeControl1.Symbology = code128Generator1;
+            this.barCodeControl1.Symbology = eaN13Generator1;
             this.barCodeControl1.TabIndex = 0;
             // 
             // simpleButton2
@@ -1457,6 +1458,7 @@
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 6;
             this.simpleButton3.Text = "Rastgale Barkod";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // txtBarcode
             // 
@@ -1474,7 +1476,8 @@
             this.pictureEdit1.MenuManager = this.barManager2;
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(309, 123);
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(391, 173);
             this.pictureEdit1.StyleController = this.layoutControl1;
             this.pictureEdit1.TabIndex = 7;
             // 
@@ -1539,9 +1542,9 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 320);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 370);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(789, 327);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(789, 277);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem23
@@ -1569,16 +1572,16 @@
             this.layoutControlItem24.Control = this.pictureEdit1;
             this.layoutControlItem24.Location = new System.Drawing.Point(0, 193);
             this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(313, 127);
+            this.layoutControlItem24.Size = new System.Drawing.Size(395, 177);
             this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem24.TextVisible = false;
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(313, 193);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(395, 193);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(476, 127);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(394, 177);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabNavigationPage3
@@ -1822,9 +1825,9 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
         private DevExpress.XtraLayout.SimpleLabelItem lblBarcod;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

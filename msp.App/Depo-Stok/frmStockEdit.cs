@@ -1,4 +1,5 @@
-﻿using DevExpress.Office.Utils;
+﻿using DevExpress.BarCodes;
+using DevExpress.Office.Utils;
 using DevExpress.Utils.CommonDialogs;
 using DevExpress.Utils.MVVM.Services;
 using DevExpress.XtraEditors;
@@ -347,6 +348,29 @@ namespace Msp.App.Depo_Stok
         {
             MspTool.Get_Layout(this);
 
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            this.pictureEdit1.Image = null;
+            barCodeControl1.BackgroundImage = null;
+
+            BarCode barCode = new BarCode();
+            barCode.Symbology = Symbology.EAN13;
+            barCode.CodeText = "8123456789012";
+            barCode.BackColor = Color.White;
+            barCode.ForeColor = Color.Black;
+            barCode.RotationAngle = 0;
+            barCode.CodeBinaryData = Encoding.Default.GetBytes(barCode.CodeText);
+            //barCode.Options.QRCode.CompactionMode = QRCodeCompactionMode.Byte;
+            //barCode.Options.QRCode.ErrorLevel = QRCodeErrorLevel.Q;
+            //barCode.Options.QRCode.ShowCodeText = false;
+            barCode.DpiX = 72;
+            barCode.DpiY = 72;
+            barCode.Module = 2f;
+
+            barCodeControl1.BackgroundImage = barCode.BarCodeImage;
+            this.pictureEdit1.Image = barCode.BarCodeImage;
         }
     }
 
