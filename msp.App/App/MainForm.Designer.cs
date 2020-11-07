@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.img_List = new DevExpress.Utils.SvgImageCollection(this.components);
@@ -159,11 +160,19 @@
             this.btnLog = new DevExpress.XtraBars.BarButtonItem();
             this.btnFatura = new DevExpress.XtraBars.BarButtonItem();
             this.bntfatura = new DevExpress.XtraBars.BarSubItem();
+            this.bbi_FisEntegra = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem75 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem76 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem77 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem71 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup26 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -195,13 +204,8 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbi_FisEntegra = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem75 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem76 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem77 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_veresiye = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
@@ -349,10 +353,12 @@
             this.barButtonItem74,
             this.barButtonItem75,
             this.barButtonItem76,
-            this.barButtonItem77});
+            this.barButtonItem77,
+            this.barButtonItem71,
+            this.bbi_veresiye});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 136;
+            this.ribbon.MaxItemId = 138;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -366,7 +372,7 @@
             this.ribbonPage8});
             this.ribbon.QuickToolbarItemLinks.Add(this.barLinkContainerItem1);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbon.Size = new System.Drawing.Size(1046, 161);
+            this.ribbon.Size = new System.Drawing.Size(1226, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar1;
             // 
             // skinPaletteDropDownButtonItem2
@@ -1264,6 +1270,7 @@
             this.btnSKTGecenUrun.Id = 126;
             this.btnSKTGecenUrun.ImageOptions.LargeImageIndex = 27;
             this.btnSKTGecenUrun.Name = "btnSKTGecenUrun";
+            this.btnSKTGecenUrun.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSKTGecenUrun_ItemClick);
             // 
             // bbi_kampanya
             // 
@@ -1271,6 +1278,7 @@
             this.bbi_kampanya.Id = 127;
             this.bbi_kampanya.ImageOptions.LargeImageIndex = 28;
             this.bbi_kampanya.Name = "bbi_kampanya";
+            this.bbi_kampanya.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_kampanya_ItemClick);
             // 
             // btnLog
             // 
@@ -1291,6 +1299,46 @@
             this.bntfatura.Id = 130;
             this.bntfatura.ImageOptions.LargeImageIndex = 30;
             this.bntfatura.Name = "bntfatura";
+            // 
+            // bbi_FisEntegra
+            // 
+            this.bbi_FisEntegra.Caption = "Fiş/Makbuz Entegrasyonu";
+            this.bbi_FisEntegra.Id = 131;
+            this.bbi_FisEntegra.ImageOptions.LargeImageIndex = 31;
+            this.bbi_FisEntegra.Name = "bbi_FisEntegra";
+            // 
+            // barButtonItem74
+            // 
+            this.barButtonItem74.Caption = "Satış Anında Barkod İşlemleri";
+            this.barButtonItem74.Id = 132;
+            this.barButtonItem74.ImageOptions.LargeImageIndex = 32;
+            this.barButtonItem74.Name = "barButtonItem74";
+            this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick);
+            // 
+            // barButtonItem75
+            // 
+            this.barButtonItem75.Caption = "Yeni Kayıt";
+            this.barButtonItem75.Id = 133;
+            this.barButtonItem75.Name = "barButtonItem75";
+            // 
+            // barButtonItem76
+            // 
+            this.barButtonItem76.Caption = "Kaydet & Yeni Kayıt";
+            this.barButtonItem76.Id = 134;
+            this.barButtonItem76.Name = "barButtonItem76";
+            // 
+            // barButtonItem77
+            // 
+            this.barButtonItem77.Caption = "Vazgeç";
+            this.barButtonItem77.Id = 135;
+            this.barButtonItem77.Name = "barButtonItem77";
+            // 
+            // barButtonItem71
+            // 
+            this.barButtonItem71.Caption = "E-Fatura / E-İrsaliye";
+            this.barButtonItem71.Id = 136;
+            this.barButtonItem71.ImageOptions.LargeImageIndex = 34;
+            this.barButtonItem71.Name = "barButtonItem71";
             // 
             // img_buton
             // 
@@ -1328,6 +1376,8 @@
             this.img_buton.Add("employeesummary", "image://svgimages/outlook inspired/employeesummary.svg");
             this.img_buton.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
             this.img_buton.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
+            this.img_buton.Add("text", "image://svgimages/spreadsheet/text.svg");
+            this.img_buton.Add("functionsinformation", "image://svgimages/spreadsheet/functionsinformation.svg");
             // 
             // barSatis
             // 
@@ -1335,7 +1385,8 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup10,
             this.ribbonPageGroup15,
-            this.ribbonPageGroup25});
+            this.ribbonPageGroup25,
+            this.ribbonPageGroup26});
             this.barSatis.ImageOptions.ImageIndex = 0;
             this.barSatis.Name = "barSatis";
             this.barSatis.Text = "Satış";
@@ -1358,6 +1409,17 @@
             // 
             this.ribbonPageGroup15.ItemLinks.Add(this.btnDashboard);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            // 
+            // ribbonPageGroup25
+            // 
+            this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem74);
+            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
+            // 
+            // ribbonPageGroup26
+            // 
+            this.ribbonPageGroup26.ItemLinks.Add(this.bbi_veresiye);
+            this.ribbonPageGroup26.Name = "ribbonPageGroup26";
+            this.ribbonPageGroup26.Text = "Veresiye Satış";
             // 
             // ribbonPage2
             // 
@@ -1438,6 +1500,7 @@
             // 
             // ribbonPageGroup24
             // 
+            this.ribbonPageGroup24.ItemLinks.Add(this.barButtonItem71);
             this.ribbonPageGroup24.Name = "ribbonPageGroup24";
             // 
             // ribbonPage5
@@ -1569,7 +1632,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 582);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbon;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1046, 24);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1226, 24);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -1581,26 +1644,6 @@
             this.ribbonPageGroup23.Name = "ribbonPageGroup23";
             this.ribbonPageGroup23.Text = "ribbonPageGroup23";
             // 
-            // bbi_FisEntegra
-            // 
-            this.bbi_FisEntegra.Caption = "Fiş/Makbuz Entegrasyonu";
-            this.bbi_FisEntegra.Id = 131;
-            this.bbi_FisEntegra.ImageOptions.LargeImageIndex = 31;
-            this.bbi_FisEntegra.Name = "bbi_FisEntegra";
-            // 
-            // ribbonPageGroup25
-            // 
-            this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem74);
-            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
-            // 
-            // barButtonItem74
-            // 
-            this.barButtonItem74.Caption = "Satış Anında Barkod İşlemleri";
-            this.barButtonItem74.Id = 132;
-            this.barButtonItem74.ImageOptions.LargeImageIndex = 32;
-            this.barButtonItem74.Name = "barButtonItem74";
-            this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick);
-            // 
             // radialMenu1
             // 
             this.radialMenu1.ItemLinks.Add(this.barButtonItem75);
@@ -1609,30 +1652,19 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // barButtonItem75
+            // bbi_veresiye
             // 
-            this.barButtonItem75.Caption = "Yeni Kayıt";
-            this.barButtonItem75.Id = 133;
-            this.barButtonItem75.Name = "barButtonItem75";
-            // 
-            // barButtonItem76
-            // 
-            this.barButtonItem76.Caption = "Kaydet & Yeni Kayıt";
-            this.barButtonItem76.Id = 134;
-            this.barButtonItem76.Name = "barButtonItem76";
-            // 
-            // barButtonItem77
-            // 
-            this.barButtonItem77.Caption = "Vazgeç";
-            this.barButtonItem77.Id = 135;
-            this.barButtonItem77.Name = "barButtonItem77";
+            this.bbi_veresiye.Caption = "Veresiye Defter";
+            this.bbi_veresiye.Id = 137;
+            this.bbi_veresiye.ImageOptions.LargeImageIndex = 33;
+            this.bbi_veresiye.Name = "bbi_veresiye";
             // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 606);
+            this.ClientSize = new System.Drawing.Size(1226, 606);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
@@ -1829,5 +1861,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem76;
         private DevExpress.XtraBars.BarButtonItem barButtonItem77;
         private DevExpress.XtraBars.Ribbon.RadialMenu radialMenu1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem71;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup26;
+        private DevExpress.XtraBars.BarButtonItem bbi_veresiye;
     }
 }

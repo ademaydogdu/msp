@@ -165,6 +165,12 @@
     <Compile Include="Depo-Stok\frmDepoEdit.Designer.cs">
       <DependentUpon>frmDepoEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Depo-Stok\frmoncomingProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmoncomingProduct.Designer.cs">
+      <DependentUpon>frmoncomingProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmDepoEdit.resx">
       <DependentUpon>frmDepoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmoncomingProduct.resx">
+      <DependentUpon>frmoncomingProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>

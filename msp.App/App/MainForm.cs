@@ -403,5 +403,17 @@ namespace msp.App
         {
             //radialMenu1.ShowPopup(new Point(100, 100));
         }
+
+        private void btnSKTGecenUrun_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmoncomingProduct frm = new frmoncomingProduct();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void bbi_kampanya_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
