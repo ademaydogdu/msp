@@ -23,6 +23,7 @@ using Msp.Service.Service.Sale;
 using Msp.App.Tanimlar;
 using Msp.App.Musteri_Islemleri;
 using Msp.App.Satis;
+using Msp.App.Tool;
 
 namespace msp.App
 {
@@ -36,6 +37,7 @@ namespace msp.App
             _repository = new Repository();
             _parameters = new ParametersDTO();
         }
+        MspTool MspTool = new MspTool();
 
 
         #region Descriptons
@@ -146,6 +148,10 @@ namespace msp.App
         private void frmSatis_Load(object sender, EventArgs e)
         {
             btn_N0.AutoWidthInLayoutControl = true;
+
+            MspTool.Get_Layout(this);
+
+
         }
 
         private void btnProductAdd_Click(object sender, EventArgs e)
@@ -398,6 +404,11 @@ namespace msp.App
             {
                 this.Close();
             }
+        }
+
+        private void frmSatis_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MspTool.do_Save_Layout(this);
         }
     }
 }

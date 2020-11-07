@@ -1573,6 +1573,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmSatis";
             this.Text = "Satış Ekranı";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSatis_FormClosing);
             this.Load += new System.EventHandler(this.frmSatis_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSatis_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).EndInit();

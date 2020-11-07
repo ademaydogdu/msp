@@ -33,7 +33,7 @@ namespace Msp.App.Depo_Stok
         }
 
         public FormOpenType _FormOpenType;
-
+        MspTool MspTool = new MspTool();
         private ProductDTO __product = new ProductDTO();
         List<UnitsDTO> units = new List<UnitsDTO>();
         byte[] imgbyte;
@@ -336,6 +336,17 @@ namespace Msp.App.Depo_Stok
         private void txtKarPrice_EditValueChanged(object sender, EventArgs e)
         {
             do_hesapla();
+        }
+
+        private void frmStockEdit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MspTool.do_Save_Layout(this);
+        }
+
+        private void frmStockEdit_Load_1(object sender, EventArgs e)
+        {
+            MspTool.Get_Layout(this);
+
         }
     }
 
