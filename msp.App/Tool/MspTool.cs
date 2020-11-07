@@ -4,6 +4,7 @@ using Microsoft.VisualBasic.CompilerServices;
 using Microsoft.Win32;
 using Msp.Infrastructure;
 using Msp.Infrastructure.DbConectionModel;
+using Msp.Models.Models;
 using Msp.Models.Models.App;
 using Msp.Models.Models.Utilities;
 using System;
@@ -575,6 +576,26 @@ namespace Msp.App.Tool
         }
         #endregion
 
+        #region SaveSkin
+
+        public void do_save_User_Skin(string _UserCode, string _SkinGallery, string _SkinPalette, string _FormName)
+        {
+            Service.Repository.Repository _repository = new Service.Repository.Repository();
+            UsersDTO _user = _repository.Run<Service.Service.App.StartUp, UsersDTO>(r => r.GetUser(_UserCode));
+            if (_user != null)
+            {
+                _user.DefaultTheme = _SkinGallery;
+                _user.DefaultTheme2 = _SkinPalette;
+                var _ReturnProcess = _repository.Run<Service.Service.Settings.SettingsService, ActionResponse<UsersDTO>>(r => r.Save_Users(_user));
+                if (_ReturnProcess.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(_ReturnProcess.Message);
+                }
+            }
+
+        }
+
+        #endregion
 
     }
 

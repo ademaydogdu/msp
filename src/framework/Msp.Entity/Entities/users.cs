@@ -31,6 +31,8 @@ namespace Msp.Entity.Entities
         public bool Active { get; set; }
         public string HaspPassword { get; set; }
         public string Email { get; set; }
+        public string DefaultTheme { get; set; }
+        public string DefaultTheme2 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cashiers> cashiers { get; set; }

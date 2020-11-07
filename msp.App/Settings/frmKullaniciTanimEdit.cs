@@ -8,14 +8,82 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Msp.Service.Repository;
+using Msp.Models.Models;
+using Msp.Infrastructure;
+using Msp.Service.Service.Settings;
+using Msp.Models.Models.Utilities;
 
 namespace Msp.App.Settings
 {
     public partial class frmKullaniciTanimEdit : DevExpress.XtraEditors.XtraForm
     {
+        Repository _repository;
+
         public frmKullaniciTanimEdit()
         {
             InitializeComponent();
+            _repository = new Repository();
+
+        }
+        public FormOpenType _FormOpenType;
+        private UsersDTO _user = new UsersDTO();
+
+        public void Show(string _UserCode)
+        {
+            if (_FormOpenType == FormOpenType.New)
+            {
+                _user = new UsersDTO();
+            }
+            if (_FormOpenType == FormOpenType.Edit)
+            {
+                 _user = _repository.Run<Service.Service.App.StartUp, UsersDTO>(r => r.GetUser(_UserCode));
+            }
+            bs_usersEdit.DataSource = _user;
+            this.Show();
+        }
+
+        private void do_save()
+        {
+            if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
+            {
+                try
+                {
+                    var response = _repository.Run<SettingsService, ActionResponse<UsersDTO>>(x => x.Save_Users(_user));
+                    if (response.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        public bool get_Question(string _Question)
+        {
+            bool _Return = false;
+            if (DevExpress.XtraEditors.XtraMessageBox.Show(_Question, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                _Return = true;
+            }
+            return _Return;
+        }
+
+        private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_save();
+        }
+
+        private void frmKullaniciTanimEdit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.bbi_ProgramKilitle = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Closed = new DevExpress.XtraBars.BarButtonItem();
+            this.skinRibbonGalleryBarItem3 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.img_List = new DevExpress.Utils.SvgImageCollection(this.components);
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
@@ -166,6 +169,7 @@
             this.barButtonItem76 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem77 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem71 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_veresiye = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -205,8 +209,10 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.bbi_veresiye = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_ParolaDegistir = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_AllFormClosed = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -215,10 +221,13 @@
             // 
             // ribbon
             // 
+            this.ribbon.ApplicationButtonDropDownControl = this.applicationMenu1;
+            this.ribbon.CaptionBarItemLinks.Add(this.skinRibbonGalleryBarItem3);
             this.ribbon.CaptionBarItemLinks.Add(this.skinPaletteDropDownButtonItem2);
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Images = this.img_List;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.skinRibbonGalleryBarItem3,
             this.skinPaletteDropDownButtonItem2,
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
@@ -355,10 +364,14 @@
             this.barButtonItem76,
             this.barButtonItem77,
             this.barButtonItem71,
-            this.bbi_veresiye});
+            this.bbi_veresiye,
+            this.bbi_ProgramKilitle,
+            this.bbi_Closed,
+            this.bbi_ParolaDegistir,
+            this.bbi_AllFormClosed});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 138;
+            this.ribbon.MaxItemId = 143;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -374,6 +387,36 @@
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbon.Size = new System.Drawing.Size(1226, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar1;
+            // 
+            // applicationMenu1
+            // 
+            this.applicationMenu1.ItemLinks.Add(this.bbi_ProgramKilitle);
+            this.applicationMenu1.ItemLinks.Add(this.bbi_AllFormClosed);
+            this.applicationMenu1.ItemLinks.Add(this.bbi_Closed);
+            this.applicationMenu1.Name = "applicationMenu1";
+            this.applicationMenu1.Ribbon = this.ribbon;
+            // 
+            // bbi_ProgramKilitle
+            // 
+            this.bbi_ProgramKilitle.Caption = "Program Kilitle";
+            this.bbi_ProgramKilitle.Enabled = false;
+            this.bbi_ProgramKilitle.Id = 139;
+            this.bbi_ProgramKilitle.ImageOptions.ImageIndex = 10;
+            this.bbi_ProgramKilitle.Name = "bbi_ProgramKilitle";
+            // 
+            // bbi_Closed
+            // 
+            this.bbi_Closed.Caption = "Çıkış";
+            this.bbi_Closed.Id = 140;
+            this.bbi_Closed.ImageOptions.ImageIndex = 16;
+            this.bbi_Closed.Name = "bbi_Closed";
+            this.bbi_Closed.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Closed_ItemClick);
+            // 
+            // skinRibbonGalleryBarItem3
+            // 
+            this.skinRibbonGalleryBarItem3.Caption = "skinRibbonGalleryBarItem3";
+            this.skinRibbonGalleryBarItem3.Id = 138;
+            this.skinRibbonGalleryBarItem3.Name = "skinRibbonGalleryBarItem3";
             // 
             // skinPaletteDropDownButtonItem2
             // 
@@ -398,6 +441,8 @@
             this.img_List.Add("productspecificationssummary", "image://svgimages/outlook inspired/productspecificationssummary.svg");
             this.img_List.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
             this.img_List.Add("datalabels", "image://svgimages/dashboards/datalabels.svg");
+            this.img_List.Add("clearheaderandfooter", "image://svgimages/richedit/clearheaderandfooter.svg");
+            this.img_List.Add("deletetable", "image://svgimages/richedit/deletetable.svg");
             // 
             // skinPaletteRibbonGalleryBarItem1
             // 
@@ -1340,6 +1385,13 @@
             this.barButtonItem71.ImageOptions.LargeImageIndex = 34;
             this.barButtonItem71.Name = "barButtonItem71";
             // 
+            // bbi_veresiye
+            // 
+            this.bbi_veresiye.Caption = "Veresiye Defter";
+            this.bbi_veresiye.Id = 137;
+            this.bbi_veresiye.ImageOptions.LargeImageIndex = 33;
+            this.bbi_veresiye.Name = "bbi_veresiye";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1378,6 +1430,7 @@
             this.img_buton.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
             this.img_buton.Add("text", "image://svgimages/spreadsheet/text.svg");
             this.img_buton.Add("functionsinformation", "image://svgimages/spreadsheet/functionsinformation.svg");
+            this.img_buton.Add("encrypt", "image://svgimages/spreadsheet/encrypt.svg");
             // 
             // barSatis
             // 
@@ -1417,6 +1470,7 @@
             // 
             // ribbonPageGroup26
             // 
+            this.ribbonPageGroup26.AllowTextClipping = false;
             this.ribbonPageGroup26.ItemLinks.Add(this.bbi_veresiye);
             this.ribbonPageGroup26.Name = "ribbonPageGroup26";
             this.ribbonPageGroup26.Text = "Veresiye Satış";
@@ -1597,6 +1651,7 @@
             // ribbonPageGroup12
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.btnUserSettings);
+            this.ribbonPageGroup12.ItemLinks.Add(this.bbi_ParolaDegistir);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Kullanıcılar";
             // 
@@ -1652,12 +1707,21 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // bbi_veresiye
+            // bbi_ParolaDegistir
             // 
-            this.bbi_veresiye.Caption = "Veresiye Defter";
-            this.bbi_veresiye.Id = 137;
-            this.bbi_veresiye.ImageOptions.LargeImageIndex = 33;
-            this.bbi_veresiye.Name = "bbi_veresiye";
+            this.bbi_ParolaDegistir.Caption = "Parola Değiştir";
+            this.bbi_ParolaDegistir.Id = 141;
+            this.bbi_ParolaDegistir.ImageOptions.LargeImageIndex = 35;
+            this.bbi_ParolaDegistir.Name = "bbi_ParolaDegistir";
+            this.bbi_ParolaDegistir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_ParolaDegistir_ItemClick);
+            // 
+            // bbi_AllFormClosed
+            // 
+            this.bbi_AllFormClosed.Caption = "Bütün Formları Kapat";
+            this.bbi_AllFormClosed.Id = 142;
+            this.bbi_AllFormClosed.ImageOptions.ImageIndex = 17;
+            this.bbi_AllFormClosed.Name = "bbi_AllFormClosed";
+            this.bbi_AllFormClosed.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_AllFormClosed_ItemClick);
             // 
             // MainForm
             // 
@@ -1674,8 +1738,10 @@
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_buton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -1864,5 +1930,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem71;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup26;
         private DevExpress.XtraBars.BarButtonItem bbi_veresiye;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem3;
+        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
+        private DevExpress.XtraBars.BarButtonItem bbi_ProgramKilitle;
+        private DevExpress.XtraBars.BarButtonItem bbi_Closed;
+        private DevExpress.XtraBars.BarButtonItem bbi_ParolaDegistir;
+        private DevExpress.XtraBars.BarButtonItem bbi_AllFormClosed;
     }
 }

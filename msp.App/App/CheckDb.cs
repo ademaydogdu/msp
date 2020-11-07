@@ -428,6 +428,23 @@ namespace Msp.App.App
             //}
             //progressBarControl1.PerformStep();
             //progressBarControl1.Update(); Application.DoEvents();
+
+
+            sCommand.CommandText = "Select top 1 * from Users  WITH (nolock) ";
+            DataTable tblProductionMeans = ExecuteSelectCommand(sCommand);
+            if (tblProductionMeans.Columns.Contains("DefaultTheme") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Users ADD DefaultTheme nvarchar(max) NULL";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            if (tblProductionMeans.Columns.Contains("DefaultTheme2") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Users ADD DefaultTheme2 nvarchar(max) NULL";
+                ExecuteNonQuery(sCommand);
+            }
+
+            progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
             #endregion

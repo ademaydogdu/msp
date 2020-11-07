@@ -48,6 +48,15 @@ namespace Msp.Service.Service.App
                 return base.Map<List<Company>, List<CompanyDTO>>(_db.Company.ToList());
             }
         }
+        public UsersDTO GetUser(string UserCode)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<Users, UsersDTO>(_db.users.FirstOrDefault(x=>x.username == UserCode));
+            }
+        }
+
+
 
         public ActionResponse<FormLayoutsDTO> Save_FormLayout(FormLayoutsDTO gridSettings)
         {

@@ -21,6 +21,56 @@ namespace Msp.Service.Service.Settings
                 return base.Map<List<Users>, List<UsersDTO>>(_db.users.ToList());
             }
         }
+        public UsersDTO GetUser(string UserCode)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<Users, UsersDTO>(_db.users.FirstOrDefault(x => x.username == UserCode));
+            }
+        }
+
+        public ActionResponse<UsersDTO> Save_Users(UsersDTO model)
+        {
+            ActionResponse<UsersDTO> response = new ActionResponse<UsersDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    if (response.Response.id == 0)
+                    {
+                        var varMi = _db.users.FirstOrDefault(x => x.username == model.username);
+                        if (varMi != null)
+                        {
+                            response.Message ="Aynı Kullanıcı Kodu Kullanılmıştır.";
+                            response.ResponseType = ResponseType.Error;
+                            return response;
+                        }
+                        _db.users.Add(base.Map<UsersDTO, Users>(model));
+                        _db.SaveChanges();
+                    }
+                    else
+                    {
+                        var entity = _db.users.FirstOrDefault(x => x.id == response.Response.id);
+                        if (entity != null)
+                        {
+                            _db.Entry(entity).CurrentValues.SetValues(model);
+                            _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
         #endregion
 
         #region Company

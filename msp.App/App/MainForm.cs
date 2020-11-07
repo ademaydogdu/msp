@@ -21,6 +21,8 @@ using Msp.App.Satis;
 using Msp.App.Tanimlar;
 using Msp.App.Musteri_Islemleri;
 using Msp.App.Islemler;
+using Msp.App.Tool;
+using DevExpress.LookAndFeel;
 
 namespace msp.App
 {
@@ -34,6 +36,7 @@ namespace msp.App
 
             this.ribbon.Minimized = true;
         }
+        MspTool tool = new MspTool();
 
         #region Method
         public bool IsConnected()
@@ -80,7 +83,7 @@ namespace msp.App
             }
             if (sqlVersionFB.CompareTo(AppMain.MspVersion) > 0)
             {
-                MessageBox.Show("Eski Versiyon.Programı Güncelleyiniz...","Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Eski Versiyon.Programı Güncelleyiniz...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 Application.Exit();
             }
         }
@@ -214,6 +217,11 @@ namespace msp.App
             }
             if (varmi == false)
             { OurKey.SetValue("Company", ""); }
+
+
+
+
+
             #endregion
 
 
@@ -230,7 +238,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(2, 1, 1, 1);
+            Version oVersionFB = new Version(2, 1, 1, 2);
             AppMain.MspVersion = oVersionFB;
 
             //if (Global.RunningLocal && (string.IsNullOrEmpty(Global.AppPath) || !Directory.Exists(Global.AppPath)))
@@ -247,6 +255,7 @@ namespace msp.App
             {
                 do_versionControl();
                 do_barDoldur();
+                UserLookAndFeel.Default.SetSkinStyle(AppMain.User.DefaultTheme, AppMain.User.DefaultTheme2);
             }
             else
             {
@@ -354,11 +363,11 @@ namespace msp.App
             Dashboard frm = new Dashboard();
             frm.MdiParent = this;
             frm.Show();
-                
+
         }
 
 
-        #endregion
+
 
 
         private void btnDepo_ItemClick(object sender, ItemClickEventArgs e)
@@ -417,5 +426,44 @@ namespace msp.App
         {
 
         }
+        private void bbi_ParolaDegistir_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ChangePassword frm = new ChangePassword();
+            //frm.MdiParent = this;
+            frm.ShowDialog();
+
+        }
+        #endregion
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (mesassizcik == false)
+            //{
+            if (MessageBox.Show("Programdan çıkışı onaylıyormusunuz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+            }
+            tool.do_save_User_Skin(AppMain.User.username, UserLookAndFeel.Default.ActiveSkinName, UserLookAndFeel.Default.ActiveSvgPaletteName, this.Name);
+            //}
+        }
+
+        #region applicationMenu
+        private void bbi_Closed_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bbi_AllFormClosed_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            foreach (Form oForm in this.MdiChildren)
+            {
+                if (!oForm.Focused)
+                {
+                    oForm.Close();
+                }
+            }
+        } 
+        #endregion
     }
 }

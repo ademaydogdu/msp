@@ -13,6 +13,7 @@ using Msp.Models.Models;
 using Msp.Service.Repository;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
 
 namespace Msp.App.Settings
 {
@@ -25,8 +26,8 @@ namespace Msp.App.Settings
             _repository = new Repository();
         }
 
+        MspTool tool = new MspTool();
         public FormOpenType _FormOpenType;
-
         private CompanyDTO __company = new CompanyDTO();
 
         public void Show(int RecId)
