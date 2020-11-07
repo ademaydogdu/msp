@@ -385,20 +385,24 @@ namespace Msp.App.App
             progressBarControl1.Update();
             Application.DoEvents();
 
-            if (tblTableList.Rows.Contains("GridSetting") == false)
+            if (tblTableList.Rows.Contains("FormLayouts") == false)
             {
-                sCommand.CommandText = "CREATE TABLE [dbo].[GridSetting]( "
-                + "    [RecId][int] IDENTITY(1, 1) NOT NULL, "
-                + "    [UserCode] [varchar] (20) NULL, "
-                + "	[FormName] [varchar] (50) NULL, "
-                + "	[GridName] [varchar] (50) NULL, "
-                + "	[XmlData] [text] NULL, "
-                + "	[ApplicationId] [int] NULL, "
-                + " CONSTRAINT[PK_GridSetting] PRIMARY KEY CLUSTERED "
-                + "( "
-                + "   [RecId] ASC "
-                + ")WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
-                + ") ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                sCommand.CommandText = "CREATE TABLE [dbo].[FormLayouts](  "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "  "
+                    + "     [UserCode] [varchar] (20) NULL, "
+                    + " 	[FormName] [varchar] (50) NULL, "
+                    + " 	[ControlName] [varchar] (50) NULL, "
+                    + " 	[XmlData] "
+                    + "         [varbinary] "
+                    + "         (max) NULL, "
+                    + "  "
+                    + "     [ApplicationId] [int] NULL, "
+                    + "  CONSTRAINT[PK_GridSetting] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
 
             }
