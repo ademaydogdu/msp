@@ -64,5 +64,21 @@ namespace Msp.App.Satis
         {
             mspTool.Save_GridControl(this.Name, gc_SiparisList);
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            mspTool.Export2AnyDocument("xls", gc_SiparisList);
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            mspTool.Export2AnyDocument("pdf", gc_SiparisList);
+
+        }
+
+        private void bbi_Report_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

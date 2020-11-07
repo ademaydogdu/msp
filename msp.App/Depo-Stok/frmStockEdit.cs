@@ -352,12 +352,21 @@ namespace Msp.App.Depo_Stok
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
+            //Random rakam
+            int sayi = Convert.ToInt32(9999999999999);
+            Random Rnd = new Random();
+            int RandomSayi = Convert.ToInt32(Rnd.Next(0, sayi));
+            txtBarcode.EditValue = Convert.ToString(RandomSayi);
+        }
+
+        private void txtBarcode_Leave(object sender, EventArgs e)
+        {
             this.pictureEdit1.Image = null;
             barCodeControl1.BackgroundImage = null;
 
             BarCode barCode = new BarCode();
             barCode.Symbology = Symbology.EAN13;
-            barCode.CodeText = "8123456789012";
+            barCode.CodeText = txtBarcode.Text;
             barCode.BackColor = Color.White;
             barCode.ForeColor = Color.Black;
             barCode.RotationAngle = 0;

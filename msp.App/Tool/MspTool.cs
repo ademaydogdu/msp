@@ -597,6 +597,56 @@ namespace Msp.App.Tool
 
         #endregion
 
+        #region Export
+        public void Export2AnyDocument(string Docum, GridControl gridControl1)
+        {
+            string lcFName = @DateTime.Now.Month.ToString().PadLeft(2, '0')
+           + DateTime.Now.Day.ToString().PadLeft(2, '0')
+          + DateTime.Now.Year.ToString()
+           + DateTime.Now.Hour.ToString().PadLeft(2, '0')
+           + DateTime.Now.Minute.ToString().PadLeft(2, '0')
+           + DateTime.Now.Second.ToString().PadLeft(2, '0')
+           + "." + Docum;
+            string LcDir = System.IO.Path.GetTempPath();
+            string LcFileName = LcDir + lcFName;
+            string lcDocName = "";
+            try
+            {
+                if (Docum == "xls")
+                {
+
+                    gridControl1.ExportToXls(LcFileName);
+                    lcDocName = "Excel Dosyası";
+                }
+                if (Docum == "xlsx")
+                {
+                    gridControl1.ExportToXlsx(LcFileName);
+                    lcDocName = "Excel Dosyası";
+                }
+                if (Docum == "pdf")
+                {
+                    gridControl1.ExportToPdf(LcFileName);
+                    lcDocName = "Pdf Dosyası";
+                }
+                if (Docum == "doc")
+                {
+                    gridControl1.ExportToHtml(LcFileName);
+                    lcDocName = "Word Dosyası";
+                }
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = LcFileName;
+                process.StartInfo.Verb = "Open";
+                process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+                process.Start();
+            }
+            catch
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show(lcDocName + " Açılamadı.", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
     }
 
     class ModRegistry

@@ -49,12 +49,24 @@
             this.colVeresiye = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.img_sig = new DevExpress.Utils.SvgImageCollection(this.components);
             this.dt_Date = new DevExpress.XtraEditors.DateEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.bbi_Export = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.bbi_exp = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Report = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).BeginInit();
@@ -62,13 +74,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_sig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -79,7 +93,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(895, 682);
+            this.layoutControl1.Size = new System.Drawing.Size(895, 648);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -89,7 +103,7 @@
             this.gc_SiparisList.Location = new System.Drawing.Point(12, 62);
             this.gc_SiparisList.MainView = this.gridView1;
             this.gc_SiparisList.Name = "gc_SiparisList";
-            this.gc_SiparisList.Size = new System.Drawing.Size(871, 608);
+            this.gc_SiparisList.Size = new System.Drawing.Size(871, 574);
             this.gc_SiparisList.TabIndex = 0;
             this.gc_SiparisList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -229,7 +243,7 @@
             // btnRefresh
             // 
             this.btnRefresh.ImageOptions.ImageIndex = 0;
-            this.btnRefresh.ImageOptions.ImageList = this.svgImageCollection1;
+            this.btnRefresh.ImageOptions.ImageList = this.img_sig;
             this.btnRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnRefresh.Location = new System.Drawing.Point(215, 5);
             this.btnRefresh.Name = "btnRefresh";
@@ -237,10 +251,14 @@
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // svgImageCollection1
+            // img_sig
             // 
-            this.svgImageCollection1.ImageSize = new System.Drawing.Size(34, 34);
-            this.svgImageCollection1.Add("rotateclockwise", "image://svgimages/pdf viewer/rotateclockwise.svg");
+            this.img_sig.ImageSize = new System.Drawing.Size(24, 24);
+            this.img_sig.Add("rotateclockwise", "image://svgimages/pdf viewer/rotateclockwise.svg");
+            this.img_sig.Add("exporttopdf", "image://svgimages/export/exporttopdf.svg");
+            this.img_sig.Add("exporttoxls", "image://svgimages/export/exporttoxls.svg");
+            this.img_sig.Add("open2", "image://svgimages/actions/open2.svg");
+            this.img_sig.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
             // 
             // dt_Date
             // 
@@ -262,7 +280,7 @@
             this.layoutControlItem1,
             this.layoutControlItem2});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(895, 682);
+            this.Root.Size = new System.Drawing.Size(895, 648);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -282,9 +300,122 @@
             this.layoutControlItem2.Control = this.gc_SiparisList;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(875, 612);
+            this.layoutControlItem2.Size = new System.Drawing.Size(875, 578);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Images = this.img_sig;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.bbi_Export,
+            this.bbi_exp,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.bbi_Report});
+            this.barManager1.MaxItemId = 5;
+            this.barManager1.StatusBar = this.bar3;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(895, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 648);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(895, 34);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 648);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(895, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 648);
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Report),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_exp, true)});
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
+            // bbi_Export
+            // 
+            this.bbi_Export.ActAsDropDown = true;
+            this.bbi_Export.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.bbi_Export.Caption = "Export";
+            this.bbi_Export.DropDownControl = this.popupMenu1;
+            this.bbi_Export.Id = 0;
+            this.bbi_Export.Name = "bbi_Export";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // bbi_exp
+            // 
+            this.bbi_exp.Caption = "Export";
+            this.bbi_exp.Id = 1;
+            this.bbi_exp.ImageOptions.ImageIndex = 3;
+            this.bbi_exp.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.bbi_exp.Name = "bbi_exp";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Excel";
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.ImageOptions.ImageIndex = 2;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "PDF";
+            this.barButtonItem2.Id = 3;
+            this.barButtonItem2.ImageOptions.ImageIndex = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // bbi_Report
+            // 
+            this.bbi_Report.Caption = "Rapor";
+            this.bbi_Report.Id = 4;
+            this.bbi_Report.ImageOptions.ImageIndex = 4;
+            this.bbi_Report.Name = "bbi_Report";
+            this.bbi_Report.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Report_ItemClick);
             // 
             // frmSatisList
             // 
@@ -292,6 +423,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 682);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "frmSatisList";
             this.Text = "Satış Listesi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSatisList_FormClosing);
@@ -303,14 +438,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_sig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -338,9 +476,21 @@
         private DevExpress.XtraGrid.Columns.GridColumn colVeresiye;
         private System.Windows.Forms.BindingSource bs_SaleTrans;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
-        private DevExpress.Utils.SvgImageCollection svgImageCollection1;
+        private DevExpress.Utils.SvgImageCollection img_sig;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalPriceText;
         private DevExpress.XtraGrid.Columns.GridColumn colUserCode;
         private DevExpress.XtraGrid.Columns.GridColumn colNetPriceText;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarSubItem bbi_exp;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem bbi_Export;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarButtonItem bbi_Report;
     }
 }
