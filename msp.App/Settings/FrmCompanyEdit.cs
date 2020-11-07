@@ -14,6 +14,7 @@ using Msp.Service.Repository;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
+using System.IO;
 
 namespace Msp.App.Settings
 {
@@ -29,6 +30,7 @@ namespace Msp.App.Settings
         MspTool tool = new MspTool();
         public FormOpenType _FormOpenType;
         private CompanyDTO __company = new CompanyDTO();
+        byte[] imgbyte;
 
         public void Show(int RecId)
         {
@@ -54,6 +56,10 @@ namespace Msp.App.Settings
             {
                 try
                 {
+                    if (imgbyte != null)
+                    {
+                        __company.Logo = imgbyte;
+                    }
                     var response = _repository.Run<SettingsService, ActionResponse<CompanyDTO>>(x => x.Save_Company(__company));
                     if (response.ResponseType != ResponseType.Ok)
                     {
@@ -88,6 +94,41 @@ namespace Msp.App.Settings
         private void bbi_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_save();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Select Image to Upload.";
+                dlg.Filter = "Image File (*.jpg;*.bmp;*.gif,*.png)|*.jpg;*.bmp;*.gif;*.png";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    try
+                    {
+                        String imageName = dlg.FileName;
+                        Bitmap bmp = new Bitmap(imageName);
+                        pcLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+                        pcLogo.Image = (Image)bmp;
+                        FileStream fstream = new FileStream(@imageName, FileMode.Open, FileAccess.Read);
+                        imgbyte = new byte[fstream.Length];
+                        fstream.Read(imgbyte, 0, Convert.ToInt32(fstream.Length));
+                        fstream.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            pcLogo.Image = null;
+            __company.Logo = null;
         }
     }
 }

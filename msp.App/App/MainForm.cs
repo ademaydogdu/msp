@@ -218,7 +218,17 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("Company", ""); }
 
-
+            varmi = false;
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "BeniHatirla")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("BeniHatirla", "False"); }
 
 
 

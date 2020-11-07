@@ -19,6 +19,7 @@ using System.IO;
 using Msp.App.Tool;
 using Msp.Service.Service.App;
 using Microsoft.Win32;
+using Msp.App.Settings;
 
 namespace Msp.App.App
 {
@@ -187,6 +188,11 @@ namespace Msp.App.App
                 txt_Password.Focus();
                 return;
             }
+            if (_ResetPassword.Checked == true)
+            {
+                ChangePassword oForm = new ChangePassword();
+                oForm.ShowDialog();
+            }
             AppMain.User = loginResponse.Response;
             AppMain.CompanyRecId = _company.Where(x=>x.CompanyCode.Trim() == lc_Company.EditValue.ToString().Trim()).FirstOrDefault().RecId;
             AppMain.Company = lc_Company.Text;
@@ -196,6 +202,9 @@ namespace Msp.App.App
             Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastServer", this.lc_serverList.Text.Trim());
             Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastServerId", this.lc_serverList.EditValue);
             Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Company", this.lc_Company.EditValue);
+            Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("BeniHatirla", this.chk_BeniHatirla.Checked);
+
+
 
             foreach (Form oForm in Application.OpenForms)
             {
@@ -226,15 +235,19 @@ namespace Msp.App.App
         private void Login_Load(object sender, EventArgs e)
         {
             string lcSonkullanici = string.Empty;
-            lcSonkullanici = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastUser").ToString();
-            lcUserCode = lcSonkullanici;
-            lcSonDatabase = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastDatabase").ToString();
-            lcSonServer = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastServer").ToString();
-            this.lc_Company.EditValue = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Company").ToString();
-
-            if (lcSonkullanici.Trim() != "")
+            if (Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("BeniHatirla").ToString() == "True")
             {
-                txt_userCode.Text = lcSonkullanici;
+                lcSonkullanici = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastUser").ToString();
+                lcUserCode = lcSonkullanici;
+                lcSonDatabase = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastDatabase").ToString();
+                lcSonServer = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("LastServer").ToString();
+                this.lc_Company.EditValue = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Company").ToString();
+                this.chk_BeniHatirla.Checked = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("BeniHatirla").ToString());
+
+                if (lcSonkullanici.Trim() != "")
+                {
+                    txt_userCode.Text = lcSonkullanici;
+                } 
             }
             
 

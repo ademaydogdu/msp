@@ -37,12 +37,12 @@
             this.bs_company = new System.Windows.Forms.BindingSource(this.components);
             this.txt_userCode = new DevExpress.XtraEditors.TextEdit();
             this.txt_Password = new DevExpress.XtraEditors.TextEdit();
-            this.checkEdit11 = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_BeniHatirla = new DevExpress.XtraEditors.CheckEdit();
             this.btn_login = new DevExpress.XtraEditors.SimpleButton();
             this.img_sic = new DevExpress.Utils.SvgImageCollection(this.components);
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this._ResetPassword = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -64,10 +64,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_userCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Password.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_BeniHatirla.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._ResetPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -89,11 +89,11 @@
             this.layoutControl1.Controls.Add(this.lc_Company);
             this.layoutControl1.Controls.Add(this.txt_userCode);
             this.layoutControl1.Controls.Add(this.txt_Password);
-            this.layoutControl1.Controls.Add(this.checkEdit11);
+            this.layoutControl1.Controls.Add(this.chk_BeniHatirla);
             this.layoutControl1.Controls.Add(this.btn_login);
             this.layoutControl1.Controls.Add(this.btn_Cancel);
             this.layoutControl1.Controls.Add(this.pictureEdit1);
-            this.layoutControl1.Controls.Add(this.checkEdit1);
+            this.layoutControl1.Controls.Add(this._ResetPassword);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Images = this.img_sic;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -165,15 +165,19 @@
             this.txt_Password.StyleController = this.layoutControl1;
             this.txt_Password.TabIndex = 5;
             // 
-            // checkEdit11
+            // chk_BeniHatirla
             // 
-            this.checkEdit11.Location = new System.Drawing.Point(12, 221);
-            this.checkEdit11.Name = "checkEdit11";
-            this.checkEdit11.Properties.Caption = "Beni Hatırla";
-            this.checkEdit11.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.checkEdit11.Size = new System.Drawing.Size(281, 20);
-            this.checkEdit11.StyleController = this.layoutControl1;
-            this.checkEdit11.TabIndex = 6;
+            this.chk_BeniHatirla.Location = new System.Drawing.Point(12, 221);
+            this.chk_BeniHatirla.Name = "chk_BeniHatirla";
+            this.chk_BeniHatirla.Properties.Caption = "Beni Hatırla";
+            this.chk_BeniHatirla.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.chk_BeniHatirla.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.chk_BeniHatirla.Properties.ValueChecked = 1;
+            this.chk_BeniHatirla.Properties.ValueGrayed = 0;
+            this.chk_BeniHatirla.Properties.ValueUnchecked = 0;
+            this.chk_BeniHatirla.Size = new System.Drawing.Size(281, 20);
+            this.chk_BeniHatirla.StyleController = this.layoutControl1;
+            this.chk_BeniHatirla.TabIndex = 6;
             // 
             // btn_login
             // 
@@ -222,14 +226,14 @@
             this.pictureEdit1.StyleController = this.layoutControl1;
             this.pictureEdit1.TabIndex = 9;
             // 
-            // checkEdit1
+            // _ResetPassword
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(12, 245);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "Şifre Değiştir";
-            this.checkEdit1.Size = new System.Drawing.Size(281, 20);
-            this.checkEdit1.StyleController = this.layoutControl1;
-            this.checkEdit1.TabIndex = 11;
+            this._ResetPassword.Location = new System.Drawing.Point(12, 245);
+            this._ResetPassword.Name = "_ResetPassword";
+            this._ResetPassword.Properties.Caption = "Şifre Değiştir";
+            this._ResetPassword.Size = new System.Drawing.Size(281, 20);
+            this._ResetPassword.StyleController = this.layoutControl1;
+            this._ResetPassword.TabIndex = 11;
             // 
             // layoutControlGroup1
             // 
@@ -283,7 +287,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.checkEdit11;
+            this.layoutControlItem3.Control = this.chk_BeniHatirla;
             this.layoutControlItem3.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 209);
@@ -351,7 +355,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.checkEdit1;
+            this.layoutControlItem8.Control = this._ResetPassword;
             this.layoutControlItem8.ImageOptions.ImageIndex = 7;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 233);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -417,10 +421,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_userCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Password.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_BeniHatirla.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._ResetPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -444,7 +448,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.TextEdit txt_userCode;
         private DevExpress.XtraEditors.TextEdit txt_Password;
-        private DevExpress.XtraEditors.CheckEdit checkEdit11;
+        private DevExpress.XtraEditors.CheckEdit chk_BeniHatirla;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -458,7 +462,7 @@
         private DevExpress.XtraEditors.LookUpEdit lc_Company;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.CheckEdit _ResetPassword;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.LookUpEdit lc_serverList;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;

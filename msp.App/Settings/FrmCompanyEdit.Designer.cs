@@ -42,7 +42,7 @@
             this.txt_companyCode = new DevExpress.XtraEditors.TextEdit();
             this.bs_CompanyEdit = new System.Windows.Forms.BindingSource(this.components);
             this.txt_companyName = new DevExpress.XtraEditors.TextEdit();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.pcLogo = new DevExpress.XtraEditors.PictureEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -88,7 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_companyCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CompanyEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_companyName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -220,7 +220,7 @@
             // 
             this.layoutControl1.Controls.Add(this.txt_companyCode);
             this.layoutControl1.Controls.Add(this.txt_companyName);
-            this.layoutControl1.Controls.Add(this.pictureEdit1);
+            this.layoutControl1.Controls.Add(this.pcLogo);
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.simpleButton2);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -255,16 +255,16 @@
             this.txt_companyName.StyleController = this.layoutControl1;
             this.txt_companyName.TabIndex = 5;
             // 
-            // pictureEdit1
+            // pcLogo
             // 
-            this.pictureEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CompanyEdit, "Logo", true));
-            this.pictureEdit1.Location = new System.Drawing.Point(90, 12);
-            this.pictureEdit1.MenuManager = this.barManager1;
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(160, 99);
-            this.pictureEdit1.StyleController = this.layoutControl1;
-            this.pictureEdit1.TabIndex = 6;
+            this.pcLogo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CompanyEdit, "Logo", true));
+            this.pcLogo.Location = new System.Drawing.Point(90, 12);
+            this.pcLogo.MenuManager = this.barManager1;
+            this.pcLogo.Name = "pcLogo";
+            this.pcLogo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pcLogo.Size = new System.Drawing.Size(160, 99);
+            this.pcLogo.StyleController = this.layoutControl1;
+            this.pcLogo.TabIndex = 6;
             // 
             // simpleButton1
             // 
@@ -274,6 +274,7 @@
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Logo Yükle";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
@@ -283,6 +284,7 @@
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 8;
             this.simpleButton2.Text = "Logo Sil";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // Root
             // 
@@ -322,7 +324,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.pictureEdit1;
+            this.layoutControlItem3.Control = this.pcLogo;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(242, 103);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(242, 103);
@@ -668,7 +670,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_companyCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CompanyEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_companyName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -728,7 +730,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.TextEdit txt_companyCode;
         private DevExpress.XtraEditors.TextEdit txt_companyName;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.PictureEdit pcLogo;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
