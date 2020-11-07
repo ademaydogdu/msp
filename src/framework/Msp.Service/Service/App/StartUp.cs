@@ -49,9 +49,9 @@ namespace Msp.Service.Service.App
             }
         }
 
-        public ActionResponse<GridSettingsDTO> Save_GridControl(GridSettingsDTO gridSettings)
+        public ActionResponse<FormLayoutsDTO> Save_FormLayout(FormLayoutsDTO gridSettings)
         {
-            ActionResponse<GridSettingsDTO> response = new ActionResponse<GridSettingsDTO>()
+            ActionResponse<FormLayoutsDTO> response = new ActionResponse<FormLayoutsDTO>()
             {
                 Response = gridSettings,
                 ResponseType = ResponseType.Ok
@@ -60,7 +60,7 @@ namespace Msp.Service.Service.App
             {
                 try
                 {
-                    var grid = _db.GridSettings.Where(x => x.GridName == gridSettings.GridName && x.FormName == gridSettings.FormName && x.UserCode == gridSettings.UserCode).FirstOrDefault();
+                    var grid = _db.FormLayouts.Where(x => x.ControlName == gridSettings.ControlName && x.FormName == gridSettings.FormName && x.UserCode == gridSettings.UserCode).FirstOrDefault();
                     if (grid != null)
                     {
                         gridSettings.RecId = grid.RecId;
@@ -69,7 +69,7 @@ namespace Msp.Service.Service.App
                     }
                     else
                     {
-                        _db.GridSettings.Add(base.Map<GridSettingsDTO, GridSettings>(gridSettings));
+                        _db.FormLayouts.Add(base.Map<FormLayoutsDTO, FormLayouts>(gridSettings));
                         _db.SaveChanges();
                     }
                     _db.SaveChanges();
@@ -83,11 +83,11 @@ namespace Msp.Service.Service.App
             return response;
         }
 
-        public GridSettingsDTO Get_GridControl(GridSettingsDTO gridSettings)
+        public FormLayoutsDTO Get_FormLayout(FormLayoutsDTO gridSettings)
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<GridSettings, GridSettingsDTO>(_db.GridSettings.FirstOrDefault(x => x.GridName == gridSettings.GridName && x.FormName == gridSettings.FormName && x.UserCode == gridSettings.UserCode));
+                return base.Map<FormLayouts, FormLayoutsDTO>(_db.FormLayouts.FirstOrDefault(x => x.ControlName == gridSettings.ControlName && x.FormName == gridSettings.FormName && x.UserCode == gridSettings.UserCode));
             }
         }
 

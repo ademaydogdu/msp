@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Msp.Models.Models;
 using Msp.Service.Service.DepotStock;
 using Msp.Service.Repository;
+using Msp.App.Tool;
 
 namespace Msp.App.Depo_Stok
 {
@@ -24,6 +25,7 @@ namespace Msp.App.Depo_Stok
         }
 
         List<ProductDTO>__listExpDateProducts = new List<ProductDTO>();
+        MspTool mspTool = new MspTool();
 
         private void do_refresh() 
         {
@@ -39,6 +41,8 @@ namespace Msp.App.Depo_Stok
         private void frmExpDateProducts_Load(object sender, EventArgs e)
         {
             do_refresh();
+            mspTool.Get_GridControl(this.Name, gridControl1);
+
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -67,6 +71,12 @@ namespace Msp.App.Depo_Stok
                 }
 
             }
+        }
+
+        private void frmExpDateProducts_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gridControl1);
+
         }
     }
 }

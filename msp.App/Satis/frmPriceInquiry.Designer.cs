@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gc_PriceInQuery = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,12 +47,11 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_PriceInQuery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).BeginInit();
@@ -67,7 +67,7 @@
             // 
             this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.searchControl1);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.gc_PriceInQuery);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2});
@@ -77,6 +77,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(711, 609);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Italic);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(687, 40);
+            this.textBox1.TabIndex = 7;
+            this.textBox1.Text = "Barkod Okutunuz";
             // 
             // searchControl1
             // 
@@ -89,19 +99,19 @@
             this.searchControl1.StyleController = this.layoutControl1;
             this.searchControl1.TabIndex = 6;
             // 
-            // gridControl1
+            // gc_PriceInQuery
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 56);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gc_PriceInQuery.Location = new System.Drawing.Point(12, 56);
+            this.gc_PriceInQuery.MainView = this.gridView1;
+            this.gc_PriceInQuery.Name = "gc_PriceInQuery";
+            this.gc_PriceInQuery.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemSpinEdit2,
             this.rp_Unit,
             this.rp_KdvOran});
-            this.gridControl1.Size = new System.Drawing.Size(687, 541);
-            this.gridControl1.TabIndex = 5;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gc_PriceInQuery.Size = new System.Drawing.Size(687, 541);
+            this.gc_PriceInQuery.TabIndex = 5;
+            this.gc_PriceInQuery.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -114,7 +124,7 @@
             this.colTax,
             this.gridColumn4,
             this.gridColumn5});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gc_PriceInQuery;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
@@ -264,22 +274,12 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Control = this.gc_PriceInQuery;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 44);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(691, 545);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Italic);
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(687, 40);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Barkod Okutunuz";
             // 
             // layoutControlItem3
             // 
@@ -301,10 +301,12 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmPriceInquiry";
             this.Text = "Fiyat Srogulama";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPriceInquiry_FormClosing);
+            this.Load += new System.EventHandler(this.frmPriceInquiry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_PriceInQuery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).EndInit();
@@ -323,7 +325,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraEditors.SearchControl searchControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gc_PriceInQuery;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;

@@ -33,6 +33,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bs_ExpDateProd = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_ExpDateProd = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPExpDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPCategoryId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,11 +41,11 @@
             this.colPUnitId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPTax = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPBrandName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPExpDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnExpDateRefr = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -53,7 +54,6 @@
             this.btnExpDateRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -108,6 +108,14 @@
             this.gcv_ExpDateProd.Name = "gcv_ExpDateProd";
             this.gcv_ExpDateProd.OptionsView.ShowAutoFilterRow = true;
             this.gcv_ExpDateProd.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gcv_ExpDateProd_CustomDrawCell);
+            // 
+            // colPExpDate
+            // 
+            this.colPExpDate.Caption = "S.K.T";
+            this.colPExpDate.FieldName = "PExpDate";
+            this.colPExpDate.Name = "colPExpDate";
+            this.colPExpDate.Visible = true;
+            this.colPExpDate.VisibleIndex = 7;
             // 
             // colPName
             // 
@@ -165,14 +173,6 @@
             this.colPBrandName.Visible = true;
             this.colPBrandName.VisibleIndex = 6;
             // 
-            // colPExpDate
-            // 
-            this.colPExpDate.Caption = "S.K.T";
-            this.colPExpDate.FieldName = "PExpDate";
-            this.colPExpDate.Name = "colPExpDate";
-            this.colPExpDate.Visible = true;
-            this.colPExpDate.VisibleIndex = 7;
-            // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
@@ -223,6 +223,14 @@
             this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Yenile";
+            this.barButtonItem1.Id = 3;
+            this.barButtonItem1.ImageOptions.ImageIndex = 43;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -338,14 +346,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Yenile";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.ImageOptions.ImageIndex = 43;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // frmExpDateProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +358,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmExpDateProducts";
             this.Text = "Son Kullanma Tarihi Kontrol";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmExpDateProducts_FormClosing);
             this.Load += new System.EventHandler(this.frmExpDateProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

@@ -37,13 +37,13 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_UnitType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Units)).BeginInit();
@@ -135,6 +135,15 @@
             this.bbi_save.Name = "bbi_save";
             this.bbi_save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_save_ItemClick);
             // 
+            // bbi_Delete
+            // 
+            this.bbi_Delete.Caption = "Delete";
+            this.bbi_Delete.Id = 2;
+            this.bbi_Delete.ImageOptions.ImageIndex = 3;
+            this.bbi_Delete.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Delete.Name = "bbi_Delete";
+            this.bbi_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Delete_ItemClick);
+            // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "Vazgeç";
@@ -184,15 +193,6 @@
             this.img_bar.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
             this.img_bar.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
             // 
-            // bbi_Delete
-            // 
-            this.bbi_Delete.Caption = "Delete";
-            this.bbi_Delete.Id = 2;
-            this.bbi_Delete.ImageOptions.ImageIndex = 3;
-            this.bbi_Delete.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.bbi_Delete.Name = "bbi_Delete";
-            this.bbi_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Delete_ItemClick);
-            // 
             // frmBirimTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +206,7 @@
             this.Name = "frmBirimTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Birim Tanımları";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBirimTanim_FormClosing);
             this.Load += new System.EventHandler(this.frmBirimTanim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_UnitType)).EndInit();

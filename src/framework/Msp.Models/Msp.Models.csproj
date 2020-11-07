@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\App\ApplicationServerDTO.cs" />
-    <Compile Include="Models\App\GridSettingsDTO.cs" />
+    <Compile Include="Models\App\FormLayoutsDTO.cs" />
     <Compile Include="Models\App\ProgramsControlsDTO.cs" />
     <Compile Include="Models\BankEntryDTO.cs" />
     <Compile Include="Models\BanksDTO.cs" />

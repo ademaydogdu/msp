@@ -410,6 +410,8 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmDepo";
             this.Text = "Depo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDepo_FormClosing);
+            this.Load += new System.EventHandler(this.frmDepo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

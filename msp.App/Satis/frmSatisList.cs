@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Msp.Service.Repository;
 using Msp.Models.Models.Sale;
 using Msp.Service.Service.Sale;
+using Msp.App.Tool;
 
 namespace Msp.App.Satis
 {
@@ -23,6 +24,7 @@ namespace Msp.App.Satis
             _repository = new Repository();
         }
 
+        MspTool mspTool = new MspTool();
         List<SaleOwnerDTO> __dll_SaleOwner = new List<SaleOwnerDTO>();
 
 
@@ -49,11 +51,18 @@ namespace Msp.App.Satis
         {
             dt_Date.EditValue = DateTime.Today;
             do_refresh(dt_Date.DateTime);
+
+            mspTool.Get_GridControl(this.Name, gc_SiparisList);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             do_refresh(dt_Date.DateTime);
+        }
+
+        private void frmSatisList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gc_SiparisList);
         }
     }
 }

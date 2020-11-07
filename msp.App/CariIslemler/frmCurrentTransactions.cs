@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Msp.Service.Service.CurrentTransactions;
 using Msp.App.CariIslemler;
 using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
 
 namespace msp.App
 {
@@ -26,10 +27,14 @@ namespace msp.App
         }
 
         List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
+        MspTool mspTool = new MspTool();
 
         private void CurrentTransactions_Load(object sender, EventArgs e)
         {
             do_refresh();
+
+            mspTool.Get_GridControl(this.Name, gcvCurTransaction);
+
         }
 
         public void do_refresh()
@@ -89,6 +94,11 @@ namespace msp.App
         private void btnEditAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_Edit();
+        }
+
+        private void frmCurrentTransactions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gcvCurTransaction);
         }
     }
 }

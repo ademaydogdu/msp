@@ -40,11 +40,10 @@
             this.colBankAccountNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBankAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnBankDefRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnBankDefSave = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBankDefAddNew = new DevExpress.XtraBars.BarButtonItem();
             this.btnBankDefRemove = new DevExpress.XtraBars.BarButtonItem();
             this.btnBankDefClose = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -65,7 +64,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnBankDefAddNew = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -97,10 +95,10 @@
             this.layoutControl1.Controls.Add(this.bankDefAccName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Images = this.svgImageCollection1;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 41);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(531, 365);
+            this.layoutControl1.Size = new System.Drawing.Size(531, 406);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -111,7 +109,7 @@
             this.gridControl1.MainView = this.gcv_BankDetails;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(507, 269);
+            this.gridControl1.Size = new System.Drawing.Size(507, 310);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_BankDetails});
@@ -177,8 +175,6 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
@@ -193,27 +189,8 @@
             this.btnBankDefClose,
             this.btnBankDefRefresh,
             this.btnBankDefAddNew});
-            this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 6;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
             // 
             // bar3
             // 
@@ -249,6 +226,14 @@
             this.btnBankDefSave.Name = "btnBankDefSave";
             this.btnBankDefSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBankDefSave_ItemClick);
             // 
+            // btnBankDefAddNew
+            // 
+            this.btnBankDefAddNew.Caption = "Yeni";
+            this.btnBankDefAddNew.Id = 5;
+            this.btnBankDefAddNew.ImageOptions.ImageIndex = 46;
+            this.btnBankDefAddNew.Name = "btnBankDefAddNew";
+            this.btnBankDefAddNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBankDefAddNew_ItemClick);
+            // 
             // btnBankDefRemove
             // 
             this.btnBankDefRemove.Caption = "Sil";
@@ -270,7 +255,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(531, 41);
+            this.barDockControlTop.Size = new System.Drawing.Size(531, 0);
             // 
             // barDockControlBottom
             // 
@@ -284,17 +269,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 41);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 365);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 406);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(531, 41);
+            this.barDockControlRight.Location = new System.Drawing.Point(531, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 365);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 406);
             // 
             // svgImageCollection1
             // 
@@ -440,7 +425,7 @@
             this.layoutControlItem4,
             this.layoutControlItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(531, 365);
+            this.Root.Size = new System.Drawing.Size(531, 406);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -493,17 +478,9 @@
             this.layoutControlItem6.Control = this.gridControl1;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(511, 273);
+            this.layoutControlItem6.Size = new System.Drawing.Size(511, 314);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
-            // 
-            // btnBankDefAddNew
-            // 
-            this.btnBankDefAddNew.Caption = "Yeni";
-            this.btnBankDefAddNew.Id = 5;
-            this.btnBankDefAddNew.ImageOptions.ImageIndex = 46;
-            this.btnBankDefAddNew.Name = "btnBankDefAddNew";
-            this.btnBankDefAddNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBankDefAddNew_ItemClick);
             // 
             // frmBankDefinition
             // 
@@ -547,8 +524,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.TextEdit bankDefBankNameTE;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;

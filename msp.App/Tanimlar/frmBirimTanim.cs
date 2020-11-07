@@ -12,6 +12,7 @@ using Msp.Models.Models;
 using Msp.Service.Repository;
 using Msp.Service.Service.DepotStock;
 using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
 
 namespace Msp.App.Tanimlar
 {
@@ -24,6 +25,7 @@ namespace Msp.App.Tanimlar
             _repository = new Repository();
         }
 
+        MspTool mspTool = new MspTool();
         List<UnitsDTO> __dl_List_Units = new List<UnitsDTO>();
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -72,6 +74,9 @@ namespace Msp.App.Tanimlar
         private void frmBirimTanim_Load(object sender, EventArgs e)
         {
             do_refresh();
+
+            mspTool.Get_GridControl(this.Name, gc_Unit);
+
         }
 
         private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -97,5 +102,10 @@ namespace Msp.App.Tanimlar
             return _Return;
         }
 
+        private void frmBirimTanim_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gc_Unit);
+
+        }
     }
 }

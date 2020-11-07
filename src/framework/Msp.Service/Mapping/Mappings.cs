@@ -37,8 +37,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<PaymentTypeDTO, PaymentType>();
             cfg.CreateMap<SpeedSaleProduct, SpeedSaleProductDTO>();
             cfg.CreateMap<SpeedSaleProductDTO, SpeedSaleProduct>();
-            cfg.CreateMap<GridSettings, GridSettingsDTO>();
-            cfg.CreateMap<GridSettingsDTO, GridSettings>();
+            cfg.CreateMap<FormLayouts, FormLayoutsDTO>();
+            cfg.CreateMap<FormLayoutsDTO, FormLayouts>();
         }
 
 

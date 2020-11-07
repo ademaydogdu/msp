@@ -12,6 +12,7 @@ using Msp.Service.Repository;
 using Msp.Models.Models;
 using Msp.Service.Service.Operations;
 using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
 
 namespace Msp.App.Islemler
 {
@@ -25,6 +26,7 @@ namespace Msp.App.Islemler
         }
 
         List<BankEntryDTO> _bankEntries = new List<BankEntryDTO>();
+        MspTool mspTool = new MspTool();
 
         public void do_refresh()
         {
@@ -39,6 +41,9 @@ namespace Msp.App.Islemler
             repositoryItemLookUpEdit1.ValueMember = "Bid";
             repositoryItemLookUpEdit1.DisplayMember = "BankName";
             do_refresh();
+
+            mspTool.Get_GridControl(this.Name, gridControl1);
+
         }
 
         public bool get_Question(string _Question)
@@ -99,6 +104,12 @@ namespace Msp.App.Islemler
                     do_refresh();
                 }
             }
+        }
+
+        private void frmBankEntry_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gridControl1);
+
         }
     }
 }

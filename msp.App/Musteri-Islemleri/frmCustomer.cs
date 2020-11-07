@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Msp.App.Tool;
 using Msp.Models.Models;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Repository;
@@ -23,7 +24,7 @@ namespace Msp.App.Musteri_Islemleri
             InitializeComponent();
             _repository = new Repository();
         }
-
+        MspTool mspTool = new MspTool();
         List<CustomersDTO> _customerList = new List<CustomersDTO>();
 
         public bool get_Question(string _Question)
@@ -81,6 +82,7 @@ namespace Msp.App.Musteri_Islemleri
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             do_refresh();
+            mspTool.Get_GridControl(this.Name, grdCustomers);
         }
 
         #region Edit
@@ -117,6 +119,11 @@ namespace Msp.App.Musteri_Islemleri
         private void btnCustomerRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_refresh();
+        }
+
+        private void frmCustomer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, grdCustomers);
         }
     }
 }

@@ -212,6 +212,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FrmCompany";
             this.Text = "İşyeri Listesi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCompany_FormClosing);
             this.Load += new System.EventHandler(this.FrmCompany_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();

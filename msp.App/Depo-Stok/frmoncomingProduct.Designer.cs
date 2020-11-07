@@ -310,6 +310,8 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmoncomingProduct";
             this.Text = "Son Kullanma Tarihi Yaklaşan Ürünler";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmoncomingProduct_FormClosing);
+            this.Load += new System.EventHandler(this.frmoncomingProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

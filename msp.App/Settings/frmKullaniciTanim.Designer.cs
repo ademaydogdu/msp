@@ -36,6 +36,7 @@
             this.bbi_Cancel = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_View = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -48,7 +49,6 @@
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusername = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bbi_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -131,6 +131,13 @@
             this.bbi_Refresh.Id = 5;
             this.bbi_Refresh.ImageOptions.ImageIndex = 3;
             this.bbi_Refresh.Name = "bbi_Refresh";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "LOG";
+            this.barButtonItem1.Id = 6;
+            this.barButtonItem1.ImageOptions.ImageIndex = 5;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // barDockControlTop
             // 
@@ -234,13 +241,6 @@
             this.colEmail.VisibleIndex = 2;
             this.colEmail.Width = 156;
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "LOG";
-            this.barButtonItem1.Id = 6;
-            this.barButtonItem1.ImageOptions.ImageIndex = 5;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
             // frmKullaniciTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,6 +253,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmKullaniciTanim";
             this.Text = "Kulalnıcı Tanımları";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmKullaniciTanim_FormClosing);
             this.Load += new System.EventHandler(this.frmKullaniciTanim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bbi_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();

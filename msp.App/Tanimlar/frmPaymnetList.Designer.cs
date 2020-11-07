@@ -205,6 +205,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmPaymnetList";
             this.Text = "Ödeme Tipi Tanımları";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPaymnetList_FormClosing);
             this.Load += new System.EventHandler(this.frmPaymnetList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();

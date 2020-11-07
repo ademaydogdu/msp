@@ -40,6 +40,7 @@
             this.colphone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colactive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.svgImageCollection2 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -66,17 +67,16 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
-            this.svgImageCollection2 = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Customers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -173,6 +173,77 @@
             this.coldate.Name = "coldate";
             this.coldate.Visible = true;
             this.coldate.VisibleIndex = 5;
+            // 
+            // svgImageCollection2
+            // 
+            this.svgImageCollection2.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection2.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection2.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
+            this.svgImageCollection2.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
+            this.svgImageCollection2.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection2.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
+            this.svgImageCollection2.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
+            this.svgImageCollection2.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
+            this.svgImageCollection2.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            this.svgImageCollection2.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
+            this.svgImageCollection2.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
+            this.svgImageCollection2.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
+            this.svgImageCollection2.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection2.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
+            this.svgImageCollection2.Add("about", "image://svgimages/outlook inspired/about.svg");
+            this.svgImageCollection2.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
+            this.svgImageCollection2.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.svgImageCollection2.Add("fax", "image://svgimages/outlook inspired/fax.svg");
+            this.svgImageCollection2.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
+            this.svgImageCollection2.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
+            this.svgImageCollection2.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
+            this.svgImageCollection2.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
+            this.svgImageCollection2.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
+            this.svgImageCollection2.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
+            this.svgImageCollection2.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
+            this.svgImageCollection2.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
+            this.svgImageCollection2.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
+            this.svgImageCollection2.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
+            this.svgImageCollection2.Add("general", "image://svgimages/spreadsheet/general.svg");
+            this.svgImageCollection2.Add("warning", "image://svgimages/status/warning.svg");
+            this.svgImageCollection2.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
+            this.svgImageCollection2.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
+            this.svgImageCollection2.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
+            this.svgImageCollection2.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
+            this.svgImageCollection2.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
+            this.svgImageCollection2.Add("timezones", "image://svgimages/scheduling/timezones.svg");
+            this.svgImageCollection2.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
+            this.svgImageCollection2.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
+            this.svgImageCollection2.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection2.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
+            this.svgImageCollection2.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
+            this.svgImageCollection2.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
+            this.svgImageCollection2.Add("card", "image://svgimages/outlook inspired/card.svg");
+            this.svgImageCollection2.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection2.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
+            this.svgImageCollection2.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
+            this.svgImageCollection2.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            this.svgImageCollection2.Add("newdatasource", "image://svgimages/dashboards/newdatasource.svg");
+            this.svgImageCollection2.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
+            this.svgImageCollection2.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
+            this.svgImageCollection2.Add("datasource", "image://svgimages/snap/datasource.svg");
+            this.svgImageCollection2.Add("bo_attention_1", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection2.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
+            this.svgImageCollection2.Add("bo_price_item", "image://svgimages/business objects/bo_price_item.svg");
+            this.svgImageCollection2.Add("buynow", "image://svgimages/outlook inspired/buynow.svg");
+            this.svgImageCollection2.Add("categorize", "image://svgimages/outlook inspired/categorize.svg");
+            this.svgImageCollection2.Add("group", "image://svgimages/dashboards/group.svg");
+            this.svgImageCollection2.Add("bo_sale", "image://svgimages/business objects/bo_sale.svg");
+            this.svgImageCollection2.Add("sales", "image://svgimages/outlook inspired/sales.svg");
+            this.svgImageCollection2.Add("bo_sale_item", "image://svgimages/business objects/bo_sale_item.svg");
+            this.svgImageCollection2.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
+            this.svgImageCollection2.Add("bo_product", "image://svgimages/business objects/bo_product.svg");
+            this.svgImageCollection2.Add("bo_product_group", "image://svgimages/business objects/bo_product_group.svg");
+            this.svgImageCollection2.Add("shipmentreceived", "image://svgimages/outlook inspired/shipmentreceived.svg");
+            this.svgImageCollection2.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
+            this.svgImageCollection2.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
+            this.svgImageCollection2.Add("delete", "image://svgimages/scheduling/delete.svg");
+            this.svgImageCollection2.Add("delete_1", "image://svgimages/scheduling/delete.svg");
             // 
             // Root
             // 
@@ -399,77 +470,6 @@
             // 
             this.repositoryItemMarqueeProgressBar1.Name = "repositoryItemMarqueeProgressBar1";
             // 
-            // svgImageCollection2
-            // 
-            this.svgImageCollection2.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection2.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
-            this.svgImageCollection2.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
-            this.svgImageCollection2.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
-            this.svgImageCollection2.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
-            this.svgImageCollection2.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
-            this.svgImageCollection2.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
-            this.svgImageCollection2.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
-            this.svgImageCollection2.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
-            this.svgImageCollection2.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
-            this.svgImageCollection2.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
-            this.svgImageCollection2.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
-            this.svgImageCollection2.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
-            this.svgImageCollection2.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
-            this.svgImageCollection2.Add("about", "image://svgimages/outlook inspired/about.svg");
-            this.svgImageCollection2.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
-            this.svgImageCollection2.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
-            this.svgImageCollection2.Add("fax", "image://svgimages/outlook inspired/fax.svg");
-            this.svgImageCollection2.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
-            this.svgImageCollection2.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
-            this.svgImageCollection2.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
-            this.svgImageCollection2.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
-            this.svgImageCollection2.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
-            this.svgImageCollection2.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
-            this.svgImageCollection2.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
-            this.svgImageCollection2.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
-            this.svgImageCollection2.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
-            this.svgImageCollection2.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
-            this.svgImageCollection2.Add("general", "image://svgimages/spreadsheet/general.svg");
-            this.svgImageCollection2.Add("warning", "image://svgimages/status/warning.svg");
-            this.svgImageCollection2.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
-            this.svgImageCollection2.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
-            this.svgImageCollection2.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
-            this.svgImageCollection2.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
-            this.svgImageCollection2.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
-            this.svgImageCollection2.Add("timezones", "image://svgimages/scheduling/timezones.svg");
-            this.svgImageCollection2.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
-            this.svgImageCollection2.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
-            this.svgImageCollection2.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
-            this.svgImageCollection2.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
-            this.svgImageCollection2.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
-            this.svgImageCollection2.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
-            this.svgImageCollection2.Add("card", "image://svgimages/outlook inspired/card.svg");
-            this.svgImageCollection2.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
-            this.svgImageCollection2.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
-            this.svgImageCollection2.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
-            this.svgImageCollection2.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
-            this.svgImageCollection2.Add("newdatasource", "image://svgimages/dashboards/newdatasource.svg");
-            this.svgImageCollection2.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
-            this.svgImageCollection2.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
-            this.svgImageCollection2.Add("datasource", "image://svgimages/snap/datasource.svg");
-            this.svgImageCollection2.Add("bo_attention_1", "image://svgimages/business objects/bo_attention.svg");
-            this.svgImageCollection2.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
-            this.svgImageCollection2.Add("bo_price_item", "image://svgimages/business objects/bo_price_item.svg");
-            this.svgImageCollection2.Add("buynow", "image://svgimages/outlook inspired/buynow.svg");
-            this.svgImageCollection2.Add("categorize", "image://svgimages/outlook inspired/categorize.svg");
-            this.svgImageCollection2.Add("group", "image://svgimages/dashboards/group.svg");
-            this.svgImageCollection2.Add("bo_sale", "image://svgimages/business objects/bo_sale.svg");
-            this.svgImageCollection2.Add("sales", "image://svgimages/outlook inspired/sales.svg");
-            this.svgImageCollection2.Add("bo_sale_item", "image://svgimages/business objects/bo_sale_item.svg");
-            this.svgImageCollection2.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
-            this.svgImageCollection2.Add("bo_product", "image://svgimages/business objects/bo_product.svg");
-            this.svgImageCollection2.Add("bo_product_group", "image://svgimages/business objects/bo_product_group.svg");
-            this.svgImageCollection2.Add("shipmentreceived", "image://svgimages/outlook inspired/shipmentreceived.svg");
-            this.svgImageCollection2.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
-            this.svgImageCollection2.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
-            this.svgImageCollection2.Add("delete", "image://svgimages/scheduling/delete.svg");
-            this.svgImageCollection2.Add("delete_1", "image://svgimages/scheduling/delete.svg");
-            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,17 +483,18 @@
             this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Müşteriler";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomer_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Customers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

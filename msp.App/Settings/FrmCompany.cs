@@ -12,6 +12,7 @@ using Msp.Service.Repository;
 using Msp.Models.Models;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
+using Msp.App.Tool;
 
 namespace Msp.App.Settings
 {
@@ -25,6 +26,7 @@ namespace Msp.App.Settings
         }
 
         List<CompanyDTO> _List_Company = new List<CompanyDTO>();
+        MspTool mspTool = new MspTool();
 
         public void do_refresh()
         {
@@ -37,6 +39,8 @@ namespace Msp.App.Settings
         private void FrmCompany_Load(object sender, EventArgs e)
         {
             do_refresh();
+            mspTool.Get_GridControl(this.Name, gc_company);
+
         }
 
         public bool get_Question(string _Question)
@@ -84,6 +88,12 @@ namespace Msp.App.Settings
                     do_refresh();
                 }
             }
+
+        }
+
+        private void FrmCompany_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gc_company);
 
         }
     }

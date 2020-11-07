@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -711,32 +711,32 @@
             // 
             // tileItem4
             // 
-            tileItemElement5.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement5);
+            tileItemElement1.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement1);
             this.tileItem4.Id = 3;
             this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem4.Name = "tileItem4";
             // 
             // tileItem8
             // 
-            tileItemElement6.Text = "tileItem8";
-            this.tileItem8.Elements.Add(tileItemElement6);
+            tileItemElement2.Text = "tileItem8";
+            this.tileItem8.Elements.Add(tileItemElement2);
             this.tileItem8.Id = 7;
             this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem8.Name = "tileItem8";
             // 
             // tileItem5
             // 
-            tileItemElement7.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement7);
+            tileItemElement3.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement3);
             this.tileItem5.Id = 4;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem5.Name = "tileItem5";
             // 
             // tileItem2
             // 
-            tileItemElement8.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement8);
+            tileItemElement4.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement4);
             this.tileItem2.Id = 1;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileItem2.Name = "tileItem2";
@@ -749,6 +749,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmSpeedSatis";
             this.Text = "Hızlı Satış";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSpeedSatis_FormClosing);
             this.Load += new System.EventHandler(this.frmSpeedSatis_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSpeedSatis_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

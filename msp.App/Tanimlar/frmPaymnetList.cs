@@ -89,6 +89,7 @@ namespace Msp.App.Tanimlar
         private void frmPaymnetList_Load(object sender, EventArgs e)
         {
             do_refresh();
+            oTool.Get_GridControl(this.Name, gridControl1);
         }
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,6 +112,11 @@ namespace Msp.App.Tanimlar
                     do_refresh();
                 }
             }
+        }
+
+        private void frmPaymnetList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            oTool.Save_GridControl(this.Name, gridControl1);
         }
     }
 }

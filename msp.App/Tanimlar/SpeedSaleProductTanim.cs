@@ -51,6 +51,10 @@ namespace Msp.App.Tanimlar
 
             _speedSaleProduct = _repository.Run<SaleService, List<SpeedSaleProductDTO>>(x => x.GetList_SpeedSaleProduct());
             bs_SpeedSaleProduct.DataSource = _speedSaleProduct;
+
+            mspTool.Get_GridControl(this.Name, gc_Product);
+            mspTool.Get_GridControl(this.Name, gc_SpeedSaleProduct);
+
         }
 
         private void btnSpeedNext_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -133,6 +137,12 @@ namespace Msp.App.Tanimlar
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void SpeedSaleProductTanim_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gc_Product);
+            mspTool.Save_GridControl(this.Name, gc_SpeedSaleProduct);
         }
     }
 }

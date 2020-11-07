@@ -18,6 +18,7 @@ using Msp.Models.Models.Utilities;
 using System.Globalization;
 using Msp.Service.Service.Tanimlar;
 using System.IO;
+using Msp.App.Tool;
 
 namespace Msp.App.Satis
 {
@@ -30,6 +31,7 @@ namespace Msp.App.Satis
             _repository = new Repository();
             Set_Form();
         }
+        MspTool mspTool = new MspTool();
 
         List<ProductDTO> products = new List<ProductDTO>();
         List<SpeedSaleProductDTO> speedSaleProducts = new List<SpeedSaleProductDTO>();
@@ -104,7 +106,7 @@ namespace Msp.App.Satis
             rp_Unit.DataSource = _list_UnitsDTO;
             rp_KdvOran.DataSource = KdvOrani;
 
-
+            mspTool.Get_Layout(this);
         }
 
         private void tileControl1_Click(object sender, EventArgs e)
@@ -190,6 +192,11 @@ namespace Msp.App.Satis
             {
                 this.Close();
             }
+        }
+
+        private void frmSpeedSatis_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.do_Save_Layout(this);
         }
     }
 }

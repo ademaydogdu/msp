@@ -388,6 +388,7 @@ namespace Msp.App.Tanimlar
             this.Controls.Add(this.barDockControlTop);
             this.Name = "SpeedSaleProductTanim";
             this.Text = "Hızlı Satış Ekranı Ürün Tanım";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SpeedSaleProductTanim_FormClosing);
             this.Load += new System.EventHandler(this.SpeedSaleProductTanim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

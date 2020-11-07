@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Msp.App.Tool;
 
 namespace Msp.App.Satis
 {
@@ -16,6 +17,19 @@ namespace Msp.App.Satis
         public frmPriceInquiry()
         {
             InitializeComponent();
+        }
+        MspTool mspTool = new MspTool();
+
+
+
+        private void frmPriceInquiry_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gc_PriceInQuery);
+        }
+
+        private void frmPriceInquiry_Load(object sender, EventArgs e)
+        {
+            mspTool.Get_GridControl(this.Name, gc_PriceInQuery);
         }
     }
 }

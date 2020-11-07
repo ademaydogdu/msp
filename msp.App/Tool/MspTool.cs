@@ -327,6 +327,29 @@ namespace Msp.App.Tool
 
         #region GridControlDesigner
 
+        public void do_Save_Layout(Form _Form)
+        {
+            foreach (Control oControl in _Form.Controls)
+            {
+                do_Save_Layout_Control(_Form.Name, oControl);
+            }
+        }
+        public void do_Save_Layout_Control(string _FormName, Control _Control)
+        {
+            if (_Control.GetType().Name == "GridControl")
+            {
+                Save_GridControl(_FormName, (DevExpress.XtraGrid.GridControl)_Control);
+            }
+            if (_Control.GetType().Name == "SearchLookUpEdit")
+            {
+                //do_Save_Layout(_FormName, (GridView)(((DevExpress.XtraEditors.SearchLookUpEdit)_Control).Properties.View));
+            }
+            if (_Control.GetType().Name == "LayoutControl")
+            {
+                Save_Layout(_FormName, (DevExpress.XtraLayout.LayoutControl)_Control);
+            }
+        }
+
         public void Save_GridControl(string _FormName, GridControl _GridControl)
         {
             try
@@ -337,13 +360,13 @@ namespace Msp.App.Tool
                     _GridControl.MainView.SaveLayoutToStream(_MemoryStream);
                     _MemoryStream.Seek(0, System.IO.SeekOrigin.Begin);
 
-                    GridSettingsDTO gridSettings = new GridSettingsDTO();
+                    FormLayoutsDTO gridSettings = new FormLayoutsDTO();
                     gridSettings.FormName = _FormName;
-                    gridSettings.GridName = _GridControl.Name;
+                    gridSettings.ControlName = _GridControl.Name;
                     gridSettings.UserCode = AppMain.User.username;
                     gridSettings.XmlData = Compress(_MemoryStream.ToArray());
                     Service.Repository.Repository _repository = new Service.Repository.Repository();
-                    ActionResponse<GridSettingsDTO> result  = _repository.Run<Service.Service.App.StartUp, ActionResponse<GridSettingsDTO>>(x => x.Save_GridControl(gridSettings));
+                    ActionResponse<FormLayoutsDTO> result = _repository.Run<Service.Service.App.StartUp, ActionResponse<FormLayoutsDTO>>(x => x.Save_FormLayout(gridSettings));
                     if (result.ResponseType != ResponseType.Ok)
                     {
                         DevExpress.XtraEditors.XtraMessageBox.Show("Grid Ayarları Kayıt Edilemedi");
@@ -356,16 +379,45 @@ namespace Msp.App.Tool
 
         }
 
+        public void Save_Layout(string _FormName, DevExpress.XtraLayout.LayoutControl _LayoutControl)
+        {
+            try
+            {
+
+                System.IO.MemoryStream _MemoryStream = new System.IO.MemoryStream();
+                _LayoutControl.SaveLayoutToStream(_MemoryStream);
+                _MemoryStream.Seek(0, System.IO.SeekOrigin.Begin);
+
+
+                FormLayoutsDTO gridSettings = new FormLayoutsDTO();
+                gridSettings.FormName = _FormName;
+                gridSettings.ControlName = _LayoutControl.Name;
+                gridSettings.UserCode = AppMain.User.username;
+                gridSettings.XmlData = Compress(_MemoryStream.ToArray());
+                Service.Repository.Repository _repository = new Service.Repository.Repository();
+                ActionResponse<FormLayoutsDTO> result = _repository.Run<Service.Service.App.StartUp, ActionResponse<FormLayoutsDTO>>(x => x.Save_FormLayout(gridSettings));
+                if (result.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Grid Ayarları Kayıt Edilemedi");
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+
+        }
+
         public void Get_GridControl(string _FormName, GridControl _GridControl)
         {
             try
             {
-                GridSettingsDTO gridSettings = new GridSettingsDTO();
+                FormLayoutsDTO gridSettings = new FormLayoutsDTO();
                 gridSettings.FormName = _FormName;
-                gridSettings.GridName = _GridControl.Name;
+                gridSettings.ControlName = _GridControl.Name;
                 gridSettings.UserCode = AppMain.User.username;
                 Service.Repository.Repository _repository = new Service.Repository.Repository();
-                GridSettingsDTO _grid = _repository.Run<Service.Service.App.StartUp, GridSettingsDTO>(x => x.Get_GridControl(gridSettings));
+                FormLayoutsDTO _grid = _repository.Run<Service.Service.App.StartUp, FormLayoutsDTO>(x => x.Get_FormLayout(gridSettings));
                 if (_grid != null)
                 {
                     MemoryStream _MemoryStream = Decompress(_grid.XmlData.ToArray());
@@ -379,6 +431,67 @@ namespace Msp.App.Tool
 
             }
 
+        }
+
+        public void Get_Layout(Form _Form)
+        {
+            foreach (Control oControl in _Form.Controls)
+            {
+                get_Layout_Control(_Form.Name, oControl);
+            }
+        }
+        private void get_Layout_Control(string _FormName, Control _Control)
+        {
+
+            if (_Control.GetType().Name == "GridControl")
+            {
+
+                Get_GridControl(_FormName, (DevExpress.XtraGrid.GridControl)_Control);
+            }
+
+            if (_Control.GetType().Name == "SearchLookUpEdit")
+            {
+                // get_Layout(_FormName, (GridView)(((DevExpress.XtraEditors.SearchLookUpEdit)_Control).Properties.View));
+
+            }
+
+            if (_Control.GetType().Name == "ControlContainer")
+            {
+
+            }
+
+            if (_Control.GetType().Name == "LayoutControl")
+            {
+                get_Layout(_FormName, (DevExpress.XtraLayout.LayoutControl)_Control);
+            }
+            if (_Control.GetType().Name == "DataLayoutControl")
+            {
+                //get_Layout(_FormName, (DevExpress.XtraDataLayout.DataLayoutControl)_Control);
+            }
+            if (_Control.HasChildren == true)
+            {
+                foreach (Control __Control in _Control.Controls)
+                {
+                    get_Layout_Control(_FormName, __Control);
+                }
+            }
+
+        }
+        public void get_Layout(string _FormName, DevExpress.XtraLayout.LayoutControl _LayoutControl)
+        {
+            FormLayoutsDTO form = new FormLayoutsDTO();
+            form.FormName = _FormName;
+            form.ControlName = _LayoutControl.Name;
+            form.UserCode = AppMain.User.username;
+            Service.Repository.Repository _repository = new Service.Repository.Repository();
+            FormLayoutsDTO _FormLayouts = _repository.Run<Service.Service.App.StartUp, FormLayoutsDTO>(x => x.Get_FormLayout(form));
+            if (_FormLayouts != null)
+            {
+                MemoryStream _MemoryStream = Decompress(_FormLayouts.XmlData.ToArray());
+                _MemoryStream.Position = 0;
+                _LayoutControl.RestoreLayoutFromStream(_MemoryStream);
+
+            }
         }
 
         private byte[] Compress(byte[] raw)

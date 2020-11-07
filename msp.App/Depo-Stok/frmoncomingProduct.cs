@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Msp.App.Tool;
 
 namespace Msp.App.Depo_Stok
 {
@@ -16,6 +17,20 @@ namespace Msp.App.Depo_Stok
         public frmoncomingProduct()
         {
             InitializeComponent();
+        }
+        MspTool mspTool = new MspTool();
+
+        private void frmoncomingProduct_Load(object sender, EventArgs e)
+        {
+
+            mspTool.Get_GridControl(this.Name, gridControl1);
+
+        }
+
+        private void frmoncomingProduct_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gridControl1);
+
         }
     }
 }

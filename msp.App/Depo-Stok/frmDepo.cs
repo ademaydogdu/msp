@@ -28,6 +28,7 @@ namespace Msp.App.Depo_Stok
         }
 
         List<DepotDTO> _depotList = new List<DepotDTO>();
+        MspTool mspTool = new MspTool();
 
         public bool get_Question(string _Question)
         {
@@ -106,6 +107,17 @@ namespace Msp.App.Depo_Stok
         private void btnEditDepot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_Edit();
+        }
+
+        private void frmDepo_Load(object sender, EventArgs e)
+        {
+            do_refresh();
+            mspTool.Get_GridControl(this.Name, gridControl1);
+        }
+
+        private void frmDepo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gridControl1);
         }
     }
 }
