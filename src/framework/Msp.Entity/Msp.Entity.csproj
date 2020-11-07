@@ -60,6 +60,7 @@
     <Compile Include="Entities\Customers.cs" />
     <Compile Include="Entities\Cayments.cs" />
     <Compile Include="Entities\Depots.cs" />
+    <Compile Include="Entities\GridSettings.cs" />
     <Compile Include="Entities\OrderManagement.cs" />
     <Compile Include="Entities\Parameters.cs" />
     <Compile Include="Entities\PaymentType.cs" />

@@ -144,22 +144,22 @@ namespace Msp.App.App
             if (tblTableList.Rows.Contains("Cashiers") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Cashiers]( "
-                        +"     [id][int] NOT NULL, "
-                        +"    [name] [nvarchar] (50) NULL, "
-                        +" 	[surname] [nvarchar] (50) NULL, "
-                        +" 	[address] [nvarchar] (50) NULL, "
-                        +" 	[phone] [nvarchar] (50) NULL, "
-                        +" 	[tcId] [nvarchar] (50) NULL, "
-                        +" 	[authority] [bit] NULL, "
-                        +" 	[date] [datetime] NULL, "
-                        +" 	[salary] [bigint] NULL, "
-                        +" 	[userId] [int] NULL, "
-                        +" 	[cashNo] [int] NULL, "
-                        +"  CONSTRAINT[PK_cashiers] PRIMARY KEY CLUSTERED "
-                        +" ( "
-                        +"    [id] ASC "
-                        +" )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
-                        +" ) ON[PRIMARY]";
+                        + "     [id][int] NOT NULL, "
+                        + "    [name] [nvarchar] (50) NULL, "
+                        + " 	[surname] [nvarchar] (50) NULL, "
+                        + " 	[address] [nvarchar] (50) NULL, "
+                        + " 	[phone] [nvarchar] (50) NULL, "
+                        + " 	[tcId] [nvarchar] (50) NULL, "
+                        + " 	[authority] [bit] NULL, "
+                        + " 	[date] [datetime] NULL, "
+                        + " 	[salary] [bigint] NULL, "
+                        + " 	[userId] [int] NULL, "
+                        + " 	[cashNo] [int] NULL, "
+                        + "  CONSTRAINT[PK_cashiers] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [id] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
             }
             progressBarControl1.PerformStep();
@@ -188,7 +188,7 @@ namespace Msp.App.App
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Company]( "
                     + "     [RecId][int] NOT NULL, "
-                    
+
                     + "    [CompanyCode] [nchar] (10) NULL, "
                     + " 	[CompanyName] [nchar] (10) NULL, "
                     + "  CONSTRAINT[PK_Company] PRIMARY KEY CLUSTERED "
@@ -238,19 +238,195 @@ namespace Msp.App.App
             progressBarControl1.Update();
             Application.DoEvents();
 
-            //sCommand.CommandText = "Select top 1 * from ProductionMeans  WITH (nolock) ";
-            //DataTable tblProductionMeans = GenericDataAccess.ExecuteSelectCommand(sCommand);
-            //if (tblProductionMeans.Columns.Contains("MainId") == false)
+            if (tblTableList.Rows.Contains("Products") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[products]( "
+                        + "    [PID][int] IDENTITY(1, 1) NOT NULL, "
+                        + "    [PName] [nvarchar] (50) NULL, "
+                        + "	[PBarcode] [nvarchar] (50) NULL, "
+                        + "	[PCategoryId] [int] NULL, "
+                        + "	[PDate] [datetime] NULL, "
+                        + "	[PFirstPrice] [decimal](18, 2) NULL, "
+                        + "	[PTotal] [decimal](18, 2) NULL, "
+                        + "	[PLastPrice] [decimal](18, 2) NULL, "
+                        + "	[PUnitId] [int] NULL, "
+                        + "	[PTax] [int] NULL, "
+                        + "	[PVarDescription] [nvarchar] (50) NULL, "
+                        + "	[PSpecCode] [nvarchar] (50) NULL, "
+                        + "	[PBrandName] [nvarchar] (50) NULL, "
+                        + "	[PBrandCode] [nvarchar] (50) NULL, "
+                        + "	[PGroup] [nvarchar] (50) NULL, "
+                        + "	[PImages] [varbinary] (max) NULL, "
+                        + "    [PExpDate] [datetime] NULL, "
+                        + "	[PSalePrice] [decimal](18, 2) NULL, "
+                        + "	[PTaxType] [int] NULL, "
+                        + "	[PMalBedeli] [decimal](18, 2) NULL, "
+                        + "	[PPaxAmout] [decimal](18, 2) NULL, "
+                        + "	[PKdvIstisna] [bit] NULL, "
+                        + "	[PKarPrice] [decimal](18, 2) NULL, "
+                        + " CONSTRAINT[PK_products] PRIMARY KEY CLUSTERED "
+                        + "( "
+                        + "   [PID] ASC "
+                        + ")WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + ") ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            if (tblTableList.Rows.Contains("BankEntry") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[BankEntry]( "
+                + "     [bid][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [docNo] [nvarchar] (50) NULL, "
+                + " 	[bankID] [int] NULL, "
+                + " 	[description] [nvarchar] (50) NULL, "
+                + " 	[amountDeposited] [bigint] NULL, "
+                + " 	[withdrawnDeposited] [bigint] NULL, "
+                + " 	[bDate] [datetime] NULL, "
+                + "  CONSTRAINT[PK_BankEntry] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [bid] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            if (tblTableList.Rows.Contains("Banks") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[Banks]( "
+                        + "     [Bid][int] IDENTITY(1, 1) NOT NULL, "
+                        + "     [BankName] [nvarchar] (50) NULL, "
+                        + " 	[BankBranch] [nvarchar] (50) NULL, "
+                        + " 	[BankBranchCode] [int] NULL, "
+                        + " 	[BankAccountNumber] [nvarchar] (50) NULL, "
+                        + " 	[BankAccountName] [nvarchar] (50) NULL, "
+                        + "  CONSTRAINT[PK_Banks] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [Bid] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            if (tblTableList.Rows.Contains("OrderManagement") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[OrderManagement]( "
+                    + "     [oid][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [oType] [nvarchar] (50) NULL, "
+                    + " 	[oStatus] [nvarchar] (50) NULL, "
+                    + " 	[oDate] [datetime] NULL, "
+                    + " 	[oNo] [int] NULL, "
+                    + " 	[oAmount] [int] NULL, "
+                    + " 	[oCTransactionNo] [int] NULL, "
+                    + " 	[oCTransactionTitle] [nvarchar] (50) NULL, "
+                    + " 	[oDescription] [nvarchar] (50) NULL, "
+                    + "  CONSTRAINT[PK_OrderManagement] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [oid] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            if (tblTableList.Rows.Contains("CTransactions") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[CTransactions]( "
+                    + "     [CurID][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [CurType] [nvarchar] (50) NULL, "
+                    + " 	[CurCode] [bigint] NULL, "
+                    + " 	[CurAccountName] [nvarchar] (50) NULL, "
+                    + " 	[CurAuthPersonName] [nvarchar] (50) NULL, "
+                    + " 	[CurDiscount] [int] NULL, "
+                    + " 	[CurRiskLimit] [nvarchar] (50) NULL,                      "
+                    + " 	[CurCity] [nvarchar] (50) NULL,                           "
+                    + " 	[CurDistrict] [nvarchar] (50) NULL,                       "
+                    + " 	[CurBalance] [bigint] NULL,                               "
+                    + " 	[CurCompanyType] [nvarchar] (50) NULL,                    "
+                    + " 	[CurCreatedDate] [datetime] NULL,                         "
+                    + " 	[CurAdress] [nvarchar] (50) NULL,                         "
+                    + " 	[CurAdressTwo] [nchar] (10) NULL,                         "
+                    + " 	[CurCountryCode] [int] NULL,                              "
+                    + " 	[CurCountryName] [nvarchar] (50) NULL,                    "
+                    + " 	[CurZipCode] [int] NULL,                                  "
+                    + " 	[CurPhoneOne] [nvarchar] (50) NULL,                       "
+                    + " 	[CurPhoneTwo] [nvarchar] (50) NULL,                       "
+                    + " 	[CurFax] [nvarchar] (50) NULL,                            "
+                    + " 	[CurEmail] [nvarchar] (50) NULL,                          "
+                    + " 	[CurDescription] [nvarchar] (50) NULL,                    "
+                    + " 	[CurTaxNo] [nvarchar] (50) NULL,                          "
+                    + " 	[CurTaxOffice] [nvarchar] (50) NULL,                      "
+                    + " 	[CurCardNo] [nvarchar] (50) NULL,                         "
+                    + " 	[CurIdentNo] [nvarchar] (50) NULL,                        "
+                    + " 	[CurTitle] [nvarchar] (50) NULL,                          "
+                    + "  CONSTRAINT[PK_CurrentTransactions] PRIMARY KEY CLUSTERED     "
+                    + " ( "
+                    + "    [CurID] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            if (tblTableList.Rows.Contains("GridSetting") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[GridSetting]( "
+                + "    [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "    [UserCode] [varchar] (20) NULL, "
+                + "	[FormName] [varchar] (50) NULL, "
+                + "	[GridName] [varchar] (50) NULL, "
+                + "	[XmlData] [text] NULL, "
+                + "	[ApplicationId] [int] NULL, "
+                + " CONSTRAINT[PK_GridSetting] PRIMARY KEY CLUSTERED "
+                + "( "
+                + "   [RecId] ASC "
+                + ")WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + ") ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+
+
+
+            #endregion
+
+            #region CreateColumn
+
+
+            #region Excemple
+            //sCommand.CommandText = "Select top 1 * from Products  WITH (nolock) ";
+            //DataTable tblProductionMeans = ExecuteSelectCommand(sCommand);
+            //if (tblProductionMeans.Columns.Contains("PKarPrice") == false)
             //{
-            //    sCommand.CommandText = "ALTER TABLE ProductionMeans ADD MainId int NULL";
-            //    GenericDataAccess.ExecuteNonQuery(sCommand);
-            //    sCommand.CommandText = "Update ProductionMeans set MainId = 0";
-            //    GenericDataAccess.ExecuteNonQuery(sCommand);
-            //    sCommand.CommandText = "ALTER TABLE dbo.ProductionMeans ADD CONSTRAINT DF_ProductionMeans_MainId DEFAULT 0 FOR MainId";
-            //    GenericDataAccess.ExecuteNonQuery(sCommand);
+            //    sCommand.CommandText = "ALTER TABLE Products ADD PKarPrice [decimal](18, 2) NULL";
+            //    ExecuteNonQuery(sCommand);
             //}
             //progressBarControl1.PerformStep();
             //progressBarControl1.Update(); Application.DoEvents();
+            #endregion
+
+            #endregion
 
 
 
@@ -263,7 +439,6 @@ namespace Msp.App.App
 
             this.Close();
 
-            #endregion
 
 
         }

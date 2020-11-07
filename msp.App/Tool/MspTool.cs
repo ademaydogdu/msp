@@ -1,7 +1,11 @@
-﻿using Microsoft.VisualBasic;
+﻿using DevExpress.XtraGrid;
+using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using Microsoft.Win32;
+using Msp.Infrastructure;
 using Msp.Infrastructure.DbConectionModel;
+using Msp.Models.Models.App;
+using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -60,7 +64,6 @@ namespace Msp.App.Tool
             return _FormHave;
 
         }
-
         public bool get_Question(string _Question)
         {
             bool _Return = false;
@@ -319,8 +322,101 @@ namespace Msp.App.Tool
             }
             registryKey.Flush();
             registryKey.Close();
-        } 
+        }
         #endregion
+
+        #region GridControlDesigner
+
+        public void Save_GridControl(string _FormName, GridControl _GridControl)
+        {
+            try
+            {
+                if (_GridControl.MainView != null)
+                {
+                    System.IO.MemoryStream _MemoryStream = new System.IO.MemoryStream();
+                    _GridControl.MainView.SaveLayoutToStream(_MemoryStream);
+                    _MemoryStream.Seek(0, System.IO.SeekOrigin.Begin);
+
+                    GridSettingsDTO gridSettings = new GridSettingsDTO();
+                    gridSettings.FormName = _FormName;
+                    gridSettings.GridName = _GridControl.Name;
+                    gridSettings.UserCode = AppMain.User.username;
+                    gridSettings.XmlData = Compress(_MemoryStream.ToArray());
+                    Service.Repository.Repository _repository = new Service.Repository.Repository();
+                    ActionResponse<GridSettingsDTO> result  = _repository.Run<Service.Service.App.StartUp, ActionResponse<GridSettingsDTO>>(x => x.Save_GridControl(gridSettings));
+                    if (result.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Grid Ayarları Kayıt Edilemedi");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+        }
+
+        public void Get_GridControl(string _FormName, GridControl _GridControl)
+        {
+            try
+            {
+                GridSettingsDTO gridSettings = new GridSettingsDTO();
+                gridSettings.FormName = _FormName;
+                gridSettings.GridName = _GridControl.Name;
+                gridSettings.UserCode = AppMain.User.username;
+                Service.Repository.Repository _repository = new Service.Repository.Repository();
+                GridSettingsDTO _grid = _repository.Run<Service.Service.App.StartUp, GridSettingsDTO>(x => x.Get_GridControl(gridSettings));
+                if (_grid != null)
+                {
+                    MemoryStream _MemoryStream = Decompress(_grid.XmlData.ToArray());
+                    _MemoryStream.Position = 0;
+                    _GridControl.MainView.RestoreLayoutFromStream(_MemoryStream);
+                    _MemoryStream.Seek(0, System.IO.SeekOrigin.Begin);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        private byte[] Compress(byte[] raw)
+        {
+            using (var memory = new MemoryStream())
+            {
+                using (var gzip = new System.IO.Compression.GZipStream(memory, System.IO.Compression.CompressionMode.Compress, true))
+                {
+                    gzip.Write(raw, 0, raw.Length);
+                }
+                return memory.ToArray();
+            }
+        }
+        private static MemoryStream Decompress(byte[] gzip)
+        {
+
+            using (var stream = new System.IO.Compression.GZipStream(new MemoryStream(gzip), System.IO.Compression.CompressionMode.Decompress))
+            {
+                const int size = 4096;
+                byte[] buffer = new byte[size];
+                MemoryStream memory = new MemoryStream();
+                int count = 0;
+                do
+                {
+                    count = stream.Read(buffer, 0, size);
+                    if (count > 0)
+                    {
+                        memory.Write(buffer, 0, count);
+                    }
+                }
+                while (count > 0);
+                return memory;
+            }
+
+        }
+        #endregion
+
+
     }
 
     class ModRegistry

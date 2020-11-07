@@ -40,6 +40,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<BankEntry> BankEntry { get; set; }
         public virtual DbSet<Banks> Banks { get; set; }
         public virtual DbSet<OrderManagement> OrderManagement { get; set; }
+        public virtual DbSet<GridSettings> GridSettings { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -27,35 +27,27 @@ namespace Msp.App.Depo_Stok
         }
 
         public bool IsSale = false;
-
+        MspTool mspTool = new MspTool();
         private ProductDTO __product = new ProductDTO();
-
-
         List<ProductDTO> _productlist = new List<ProductDTO>();
 
         public void do_refresh()
         {
-
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_products.DataSource = _productlist;
         }
 
-
-      
-
         private void frmStok_Load(object sender, EventArgs e)
         {
-            
 
             repositoryItemLookUpEdit1.DataSource = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             repositoryItemLookUpEdit1.ValueMember = "UID";
             repositoryItemLookUpEdit1.DisplayMember = "UName";
-
-
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_products.DataSource = _productlist;
 
-    }
+            mspTool.Get_GridControl(this.Name, gcProducts);
+        }
 
         public bool get_Question(string _Question)
         {
@@ -78,10 +70,10 @@ namespace Msp.App.Depo_Stok
                 frmStockEdit frm = new frmStockEdit();
                 frm._FormOpenType = Infrastructure.FormOpenType.Edit;
                 frm.Show(Orow.PID);
-               
+
             }
 
-           
+
 
 
         }
@@ -154,7 +146,7 @@ namespace Msp.App.Depo_Stok
         private void btnORderAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SaleInsert();
-        } 
+        }
         #endregion
 
         private void gcvProducts_DoubleClick(object sender, EventArgs e)
@@ -178,6 +170,11 @@ namespace Msp.App.Depo_Stok
             {
                 SaleInsert();
             }
+        }
+
+        private void frmStok_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mspTool.Save_GridControl(this.Name, gcProducts);
         }
     }
 }

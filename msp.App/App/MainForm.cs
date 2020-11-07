@@ -61,6 +61,8 @@ namespace msp.App
             bbi_UserName.Caption = AppMain.User.username;
             bbi_Connect.Caption = IsConnected() == true ? "Connected" : "Not connected";
             bbi_Company.Caption = AppMain.Company;
+            bbi_Version.Caption = Convert.ToString(AppMain.MspVersion);
+
         }
 
         private void do_versionControl()
@@ -228,7 +230,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(1, 0, 0, 1);
+            Version oVersionFB = new Version(1, 0, 0, 4);
             AppMain.MspVersion = oVersionFB;
 
             //if (Global.RunningLocal && (string.IsNullOrEmpty(Global.AppPath) || !Directory.Exists(Global.AppPath)))
