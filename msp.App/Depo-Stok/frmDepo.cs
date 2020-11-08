@@ -29,7 +29,7 @@ namespace Msp.App.Depo_Stok
 
         List<DepotDTO> _depotList = new List<DepotDTO>();
         MspTool mspTool = new MspTool();
-
+        //deneme
         public bool get_Question(string _Question)
         {
             bool _Return = false;
