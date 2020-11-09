@@ -173,6 +173,7 @@
             this.bbi_veresiye = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_ParolaDegistir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem14 = new DevExpress.XtraBars.BarSubItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -212,7 +213,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barSubItem14 = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -486,7 +486,7 @@
             // 
             // btnStok
             // 
-            this.btnStok.Caption = "Stok Takip";
+            this.btnStok.Caption = "Ürün Kartları";
             this.btnStok.Id = 4;
             this.btnStok.ImageOptions.LargeImageIndex = 4;
             this.btnStok.Name = "btnStok";
@@ -1420,6 +1420,12 @@
             this.barButtonItem78.ImageOptions.LargeImageIndex = 36;
             this.barButtonItem78.Name = "barButtonItem78";
             // 
+            // barSubItem14
+            // 
+            this.barSubItem14.Caption = "Satış Faturas";
+            this.barSubItem14.Id = 144;
+            this.barSubItem14.Name = "barSubItem14";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1737,12 +1743,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barSubItem14
-            // 
-            this.barSubItem14.Caption = "Satış Faturas";
-            this.barSubItem14.Id = 144;
-            this.barSubItem14.Name = "barSubItem14";
             // 
             // MainForm
             // 

@@ -12,7 +12,7 @@ namespace Msp.Models.Models
 
         public string PName { get; set; }
 
-        public string PBarcode { get; set; }
+        public string PBarcode { get; set; } = "";
 
         public int? PCategoryId { get; set; }
 

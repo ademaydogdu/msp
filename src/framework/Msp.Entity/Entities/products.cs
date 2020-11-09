@@ -15,7 +15,7 @@ namespace Msp.Entity.Entities
         public string PName { get; set; }
 
         [StringLength(50)]
-        public string PBarcode { get; set; }
+        public string PBarcode { get; set; } = "";
 
         public int? PCategoryId { get; set; }
 

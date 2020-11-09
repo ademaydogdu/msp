@@ -229,6 +229,7 @@ namespace Msp.App.Depo_Stok
             decimal price = (decimal)firstPriceTextEdit.EditValue;
             decimal kdvTutar = 0;
             decimal MalBedeli = 0;
+            decimal textMalBedeli = 0;
             decimal SatisFiyati = 0;
             decimal KarTutar = (decimal)txtKarPrice.EditValue;
             price = Math.Round(price + KarTutar, 2);
@@ -238,6 +239,7 @@ namespace Msp.App.Depo_Stok
                 {
                     kdvTutar = Math.Round((price / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani), 2);
                     MalBedeli = Math.Round((price - kdvTutar), 2);
+                    textMalBedeli = Math.Round((price - KarTutar - kdvTutar), 2);
                     SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
                 }
                 else //Hariç
@@ -253,15 +255,16 @@ namespace Msp.App.Depo_Stok
                 SatisFiyati = price;
             }
             lblKDVTutar.Text = Convert.ToString(kdvTutar);
-            lblMalBedeli.Text = Convert.ToString(firstPriceTextEdit.EditValue);
+            lblMalBedeli.Text = Convert.ToString(textMalBedeli);
             lblSatisFiyati.Text = Convert.ToString(SatisFiyati);
             lblKar.Text = Convert.ToString(KarTutar);
             txtSalePrice.EditValue = Convert.ToString(SatisFiyati);
 
             //__product.PTaxType = (int)rdgDahilHaric.SelectedIndex;
             __product.PSalePrice = SatisFiyati;
-            __product.PMalBedeli = MalBedeli;
+            __product.PMalBedeli = textMalBedeli;
             __product.PPaxAmout = kdvTutar;
+            __product.PKarPrice = KarTutar;
         }
 
         private void taxTextEdit_EditValueChanged(object sender, EventArgs e)
@@ -362,7 +365,7 @@ namespace Msp.App.Depo_Stok
         private void txtBarcode_Leave(object sender, EventArgs e)
         {
             this.pictureEdit1.Image = null;
-            barCodeControl1.BackgroundImage = null;
+            //barCodeControl1.BackgroundImage = null;
 
             BarCode barCode = new BarCode();
             barCode.Symbology = Symbology.EAN13;
@@ -378,7 +381,7 @@ namespace Msp.App.Depo_Stok
             barCode.DpiY = 72;
             barCode.Module = 2f;
 
-            barCodeControl1.BackgroundImage = barCode.BarCodeImage;
+            //barCodeControl1.BackgroundImage = barCode.BarCodeImage;
             this.pictureEdit1.Image = barCode.BarCodeImage;
         }
     }
