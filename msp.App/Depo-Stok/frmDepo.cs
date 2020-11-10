@@ -31,6 +31,7 @@ namespace Msp.App.Depo_Stok
         MspTool mspTool = new MspTool();
         //deneme
 
+
         public bool get_Question(string _Question)
         {
             bool _Return = false;
