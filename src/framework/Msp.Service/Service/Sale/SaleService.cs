@@ -52,6 +52,15 @@ namespace Msp.Service.Service.Sale
                             {
                                 item.SaleOwnerId = saleOwnerId;
                                 _db.SaleTrans.Add(base.Map<SaleTransDTO, SaleTrans>(item));
+                                var product = _db.products.FirstOrDefault(x => x.PID == item.ProductId);
+                                if (product != null)
+                                {
+                                    Products updatePro = new Products();
+                                    updatePro = product;
+                                    updatePro.PTotal = updatePro.PTotal - item.ProductQuantity;
+                                    _db.Entry(product).CurrentValues.SetValues(updatePro);
+                                    _db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                                }
                             }
                             else
                             {
@@ -104,6 +113,15 @@ namespace Msp.Service.Service.Sale
             using (var _db = new MspDbContext())
             {
                 var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => EntityFunctions.TruncateTime(x.Date) == date).ToList());
+                return result;
+            }
+        }
+
+        public List<SaleOwnerDTO> GetList_VeresiyeSale()
+        {
+            using (var _db = new MspDbContext())
+            {
+                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Veresiye == true).ToList());
                 return result;
             }
         }

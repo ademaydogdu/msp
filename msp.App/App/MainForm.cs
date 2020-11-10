@@ -473,7 +473,14 @@ namespace msp.App
                     oForm.Close();
                 }
             }
-        } 
+        }
         #endregion
+
+        private void bbi_veresiye_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmVeresiyeSatisList frm = new frmVeresiyeSatisList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

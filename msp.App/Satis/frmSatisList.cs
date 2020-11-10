@@ -12,6 +12,7 @@ using Msp.Service.Repository;
 using Msp.Models.Models.Sale;
 using Msp.Service.Service.Sale;
 using Msp.App.Tool;
+using msp.App;
 
 namespace Msp.App.Satis
 {
@@ -79,6 +80,13 @@ namespace Msp.App.Satis
         private void bbi_Report_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            frmSatis frm = new frmSatis();
+            frm.MdiParent = this;
+            frm.Show(0);
         }
     }
 }

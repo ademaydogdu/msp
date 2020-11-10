@@ -21,7 +21,7 @@ namespace Msp.Models.Models
 
         public string phone { get; set; }
 
-        public bool? active { get; set; }
+        public bool? active { get; set; } = true;
 
         public DateTime? date { get; set; }
     }

@@ -32,6 +32,7 @@
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.bbi_ProgramKilitle = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_AllFormClosed = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Closed = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem3 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
@@ -170,6 +171,9 @@
             this.barButtonItem77 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem71 = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_veresiye = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_ParolaDegistir = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem14 = new DevExpress.XtraBars.BarSubItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -209,8 +213,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.bbi_ParolaDegistir = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_AllFormClosed = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem79 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -368,10 +371,13 @@
             this.bbi_ProgramKilitle,
             this.bbi_Closed,
             this.bbi_ParolaDegistir,
-            this.bbi_AllFormClosed});
+            this.bbi_AllFormClosed,
+            this.barButtonItem78,
+            this.barSubItem14,
+            this.barButtonItem79});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 143;
+            this.ribbon.MaxItemId = 146;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -403,6 +409,14 @@
             this.bbi_ProgramKilitle.Id = 139;
             this.bbi_ProgramKilitle.ImageOptions.ImageIndex = 10;
             this.bbi_ProgramKilitle.Name = "bbi_ProgramKilitle";
+            // 
+            // bbi_AllFormClosed
+            // 
+            this.bbi_AllFormClosed.Caption = "Bütün Formları Kapat";
+            this.bbi_AllFormClosed.Id = 142;
+            this.bbi_AllFormClosed.ImageOptions.ImageIndex = 17;
+            this.bbi_AllFormClosed.Name = "bbi_AllFormClosed";
+            this.bbi_AllFormClosed.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_AllFormClosed_ItemClick);
             // 
             // bbi_Closed
             // 
@@ -474,7 +488,7 @@
             // 
             // btnStok
             // 
-            this.btnStok.Caption = "Stok Takip";
+            this.btnStok.Caption = "Ürün Kartları";
             this.btnStok.Id = 4;
             this.btnStok.ImageOptions.LargeImageIndex = 4;
             this.btnStok.Name = "btnStok";
@@ -1034,6 +1048,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem67),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem68)});
             this.barSubItem13.Name = "barSubItem13";
+            this.barSubItem13.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barButtonItem67
             // 
@@ -1340,9 +1355,9 @@
             // 
             // bntfatura
             // 
-            this.bntfatura.Caption = "Fatura";
+            this.bntfatura.Caption = "Alış Fatura";
             this.bntfatura.Id = 130;
-            this.bntfatura.ImageOptions.LargeImageIndex = 30;
+            this.bntfatura.ImageOptions.LargeImageIndex = 39;
             this.bntfatura.Name = "bntfatura";
             // 
             // bbi_FisEntegra
@@ -1391,6 +1406,29 @@
             this.bbi_veresiye.Id = 137;
             this.bbi_veresiye.ImageOptions.LargeImageIndex = 33;
             this.bbi_veresiye.Name = "bbi_veresiye";
+            this.bbi_veresiye.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_veresiye_ItemClick);
+            // 
+            // bbi_ParolaDegistir
+            // 
+            this.bbi_ParolaDegistir.Caption = "Parola Değiştir";
+            this.bbi_ParolaDegistir.Id = 141;
+            this.bbi_ParolaDegistir.ImageOptions.LargeImageIndex = 35;
+            this.bbi_ParolaDegistir.Name = "bbi_ParolaDegistir";
+            this.bbi_ParolaDegistir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_ParolaDegistir_ItemClick);
+            // 
+            // barButtonItem78
+            // 
+            this.barButtonItem78.Caption = "Grid Ve Layout Ayarlarını Sıfırla";
+            this.barButtonItem78.Id = 143;
+            this.barButtonItem78.ImageOptions.LargeImageIndex = 36;
+            this.barButtonItem78.Name = "barButtonItem78";
+            // 
+            // barSubItem14
+            // 
+            this.barSubItem14.Caption = "Satış Faturas";
+            this.barSubItem14.Id = 144;
+            this.barSubItem14.ImageOptions.LargeImageIndex = 38;
+            this.barSubItem14.Name = "barSubItem14";
             // 
             // img_buton
             // 
@@ -1431,6 +1469,10 @@
             this.img_buton.Add("text", "image://svgimages/spreadsheet/text.svg");
             this.img_buton.Add("functionsinformation", "image://svgimages/spreadsheet/functionsinformation.svg");
             this.img_buton.Add("encrypt", "image://svgimages/spreadsheet/encrypt.svg");
+            this.img_buton.Add("resetrange", "image://svgimages/spreadsheet/resetrange.svg");
+            this.img_buton.Add("bo_notifications", "image://svgimages/business objects/bo_notifications.svg");
+            this.img_buton.Add("removeheader", "image://svgimages/snap/removeheader.svg");
+            this.img_buton.Add("snapinsertfooter", "image://svgimages/snap/snapinsertfooter.svg");
             // 
             // barSatis
             // 
@@ -1472,6 +1514,7 @@
             // 
             this.ribbonPageGroup26.AllowTextClipping = false;
             this.ribbonPageGroup26.ItemLinks.Add(this.bbi_veresiye);
+            this.ribbonPageGroup26.ItemLinks.Add(this.barButtonItem79);
             this.ribbonPageGroup26.Name = "ribbonPageGroup26";
             this.ribbonPageGroup26.Text = "Veresiye Satış";
             // 
@@ -1522,6 +1565,7 @@
             // ribbonPageGroup19
             // 
             this.ribbonPageGroup19.ItemLinks.Add(this.bntfatura);
+            this.ribbonPageGroup19.ItemLinks.Add(this.barSubItem14);
             this.ribbonPageGroup19.Name = "ribbonPageGroup19";
             this.ribbonPageGroup19.Text = "Faturalar";
             // 
@@ -1645,6 +1689,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnParameters);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem78);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Sistem";
             // 
@@ -1707,21 +1752,13 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // bbi_ParolaDegistir
+            // barButtonItem79
             // 
-            this.bbi_ParolaDegistir.Caption = "Parola Değiştir";
-            this.bbi_ParolaDegistir.Id = 141;
-            this.bbi_ParolaDegistir.ImageOptions.LargeImageIndex = 35;
-            this.bbi_ParolaDegistir.Name = "bbi_ParolaDegistir";
-            this.bbi_ParolaDegistir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_ParolaDegistir_ItemClick);
-            // 
-            // bbi_AllFormClosed
-            // 
-            this.bbi_AllFormClosed.Caption = "Bütün Formları Kapat";
-            this.bbi_AllFormClosed.Id = 142;
-            this.bbi_AllFormClosed.ImageOptions.ImageIndex = 17;
-            this.bbi_AllFormClosed.Name = "bbi_AllFormClosed";
-            this.bbi_AllFormClosed.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_AllFormClosed_ItemClick);
+            this.barButtonItem79.Caption = "Veresiye Süresi Geçenler";
+            this.barButtonItem79.Enabled = false;
+            this.barButtonItem79.Id = 145;
+            this.barButtonItem79.ImageOptions.LargeImageIndex = 37;
+            this.barButtonItem79.Name = "barButtonItem79";
             // 
             // MainForm
             // 
@@ -1936,5 +1973,8 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Closed;
         private DevExpress.XtraBars.BarButtonItem bbi_ParolaDegistir;
         private DevExpress.XtraBars.BarButtonItem bbi_AllFormClosed;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem78;
+        private DevExpress.XtraBars.BarSubItem barSubItem14;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem79;
     }
 }

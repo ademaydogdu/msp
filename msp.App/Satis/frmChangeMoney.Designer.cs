@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.lblParaUstu = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -44,7 +44,7 @@
             this.sic_img = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblParaUstu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -66,28 +66,28 @@
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.simpleLabelItem1,
+            this.lblParaUstu,
             this.simpleLabelItem2,
             this.emptySpaceItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(500, 226);
             this.Root.TextVisible = false;
             // 
-            // simpleLabelItem1
+            // lblParaUstu
             // 
-            this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.simpleLabelItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem1.AppearanceItemCaption.Options.UseForeColor = true;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 60);
-            this.simpleLabelItem1.MaxSize = new System.Drawing.Size(236, 141);
-            this.simpleLabelItem1.MinSize = new System.Drawing.Size(236, 141);
-            this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.Size = new System.Drawing.Size(236, 146);
-            this.simpleLabelItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.simpleLabelItem1.Text = "0.00 ₺";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(203, 77);
+            this.lblParaUstu.AllowHotTrack = false;
+            this.lblParaUstu.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblParaUstu.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblParaUstu.AppearanceItemCaption.Options.UseFont = true;
+            this.lblParaUstu.AppearanceItemCaption.Options.UseForeColor = true;
+            this.lblParaUstu.Location = new System.Drawing.Point(0, 60);
+            this.lblParaUstu.MaxSize = new System.Drawing.Size(236, 141);
+            this.lblParaUstu.MinSize = new System.Drawing.Size(236, 141);
+            this.lblParaUstu.Name = "lblParaUstu";
+            this.lblParaUstu.Size = new System.Drawing.Size(236, 146);
+            this.lblParaUstu.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.lblParaUstu.Text = "0.00 ₺";
+            this.lblParaUstu.TextSize = new System.Drawing.Size(203, 77);
             // 
             // simpleLabelItem2
             // 
@@ -200,10 +200,11 @@
             this.MinimizeBox = false;
             this.Name = "frmChangeMoney";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmChangeMoney_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmChangeMoney_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblParaUstu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -217,7 +218,7 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
+        private DevExpress.XtraLayout.SimpleLabelItem lblParaUstu;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraBars.BarManager barManager1;

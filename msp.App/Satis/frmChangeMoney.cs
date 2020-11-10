@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Globalization;
 
 namespace Msp.App.Satis
 {
@@ -33,6 +34,16 @@ namespace Msp.App.Satis
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
+            }
+        }
+
+        private void frmChangeMoney_Load(object sender, EventArgs e)
+        {
+            if (TotalTutar > 0 && AlinanPara > 0)
+            {
+                decimal paraustu = 0;
+                paraustu = Convert.ToDecimal(AlinanPara - TotalTutar);
+                lblParaUstu.Text = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", paraustu);
             }
         }
     }

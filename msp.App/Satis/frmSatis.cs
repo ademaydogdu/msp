@@ -24,6 +24,7 @@ using Msp.App.Tanimlar;
 using Msp.App.Musteri_Islemleri;
 using Msp.App.Satis;
 using Msp.App.Tool;
+using Msp.Service.Service.CustomerTransactions;
 
 namespace msp.App
 {
@@ -49,6 +50,7 @@ namespace msp.App
         public FormOpenType _FormOpenType;
         List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
         List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
+        List<CustomersDTO> _customerList = new List<CustomersDTO>();
 
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
@@ -91,6 +93,7 @@ namespace msp.App
                     saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
                     saleTrans.Tax = _product.PTax;
                     saleTrans.TaxAmount = _product.PPaxAmout;
+                    saleTrans.ProductDate = _product.PExpDate.GetValueOrDefault();
                     __dl_List_SaleTrans.Add(saleTrans);
                 }
                 TopTotal();
@@ -124,11 +127,11 @@ namespace msp.App
             {
                 __dll_SaleOwner = new SaleOwnerDTO();
                 __dll_SaleOwner.Date = DateTime.Now;
-
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
-
+                __dll_SaleOwner = _repository.Run<SaleService, SaleOwnerDTO>(x => x.Get_SaleOwner(RecId));
+                __dl_List_SaleTrans = _repository.Run<SaleService, List<SaleTransDTO>>(x => x.Get_List_SaleOwner(RecId));
             }
 
             _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
@@ -250,6 +253,17 @@ namespace msp.App
             try
             {
                 if (do_Validation()) return;
+                if (_parameters.SaleProductEndDate.GetValueOrDefault())
+                {
+                    foreach (var item in __dl_List_SaleTrans)
+                    {
+                        if (item.ProductDate == DateTime.Now)
+                        {
+                            DevExpress.XtraEditors.XtraMessageBox.Show("Son Kullanma Tarihi Geçmiş Ürün " + item.ProductName , "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                }
                 __dll_SaleOwner.UserCode = AppMain.User.username;
                 __dll_SaleOwner.CompanyRecId = AppMain.CompanyRecId;
                 var req = new SaleRequest
@@ -264,7 +278,16 @@ namespace msp.App
                 }
                 else
                 {
-
+                    if (_parameters.SaleNewRecord.GetValueOrDefault())
+                    {
+                        __dll_SaleOwner = new SaleOwnerDTO();
+                        __dl_List_SaleTrans.Clear();
+                        __dl_List_SaleTrans = new List<SaleTransDTO>();
+                        txt_CustomerName.Text = "";
+                        txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
+                        txt_OdemeTipi.EditValue = "";
+                        gridControl1.RefreshDataSource();
+                    }
 
                 }
 
@@ -362,18 +385,26 @@ namespace msp.App
         private void btn_CustomerAdd_Click(object sender, EventArgs e)
         {
             frmCustomer frm = new frmCustomer();
+            frm.SatisSale = true;
             frm.ShowDialog();
+        }
+        public void CustomerSelect(CustomersDTO customers)
+        {
+            if (customers != null)
+            {
+                txt_CustomerName.EditValue = __dll_SaleOwner.CustomerName = customers.name;
+            }
         }
 
         private void btnVeresiyeSatis_Click(object sender, EventArgs e)
         {
-            if (txt_CustomerName.EditValue == "")
+            if (string.IsNullOrEmpty(txt_CustomerName.Text))
             {
                 XtraMessageBox.Show("Müşteri Adı Giriniz...");
                 return;
             }
-
-
+            __dll_SaleOwner.Veresiye = true;
+            do_save();
         }
 
         private void btn_NewProcess_Click(object sender, EventArgs e)
@@ -381,6 +412,9 @@ namespace msp.App
             __dll_SaleOwner = new SaleOwnerDTO();
             __dl_List_SaleTrans.Clear();
             __dl_List_SaleTrans = new List<SaleTransDTO>();
+            txt_CustomerName.Text = "";
+            txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
+            txt_OdemeTipi.EditValue = "";
             gridControl1.RefreshDataSource();
         }
 
