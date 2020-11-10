@@ -214,6 +214,8 @@
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.barButtonItem79 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -374,10 +376,11 @@
             this.bbi_AllFormClosed,
             this.barButtonItem78,
             this.barSubItem14,
-            this.barButtonItem79});
+            this.barButtonItem79,
+            this.barButtonItem80});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 146;
+            this.ribbon.MaxItemId = 147;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1604,7 +1607,8 @@
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup27});
             this.ribbonPage5.ImageOptions.ImageIndex = 6;
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "İşlemler";
@@ -1759,6 +1763,18 @@
             this.barButtonItem79.Id = 145;
             this.barButtonItem79.ImageOptions.LargeImageIndex = 37;
             this.barButtonItem79.Name = "barButtonItem79";
+            // 
+            // ribbonPageGroup27
+            // 
+            this.ribbonPageGroup27.ItemLinks.Add(this.barButtonItem80);
+            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
+            this.ribbonPageGroup27.Text = "Kur";
+            // 
+            // barButtonItem80
+            // 
+            this.barButtonItem80.Caption = "Döviz Kurları";
+            this.barButtonItem80.Id = 146;
+            this.barButtonItem80.Name = "barButtonItem80";
             // 
             // MainForm
             // 
@@ -1976,5 +1992,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem78;
         private DevExpress.XtraBars.BarSubItem barSubItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem79;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem80;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup27;
     }
 }

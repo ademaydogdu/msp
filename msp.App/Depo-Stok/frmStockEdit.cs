@@ -232,15 +232,20 @@ namespace Msp.App.Depo_Stok
             decimal textMalBedeli = 0;
             decimal SatisFiyati = 0;
             decimal KarTutar = (decimal)txtKarPrice.EditValue;
-            price = Math.Round(price + KarTutar, 2);
+            price = Math.Round(price, 2);
             if (!chkKDVIstisna.Checked)
             {
                 if (rdgDahilHaric.SelectedIndex == 0) //Dahil
                 {
-                    kdvTutar = Math.Round((price / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani), 2);
-                    MalBedeli = Math.Round((price - kdvTutar), 2);
+                    ////kdvTutar = Math.Round((price / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani), 2);
+                    ////MalBedeli = Math.Round((price - kdvTutar), 2);
+                    ////textMalBedeli = Math.Round((price - KarTutar - kdvTutar), 2);
+                    ////SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+                    ///
+                    kdvTutar = Math.Round(price * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
+                    MalBedeli = Math.Round(price, 2);
                     textMalBedeli = Math.Round((price - KarTutar - kdvTutar), 2);
-                    SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
+                    SatisFiyati = Math.Round(MalBedeli + KarTutar + kdvTutar, 2);
                 }
                 else //Hariç
                 {
