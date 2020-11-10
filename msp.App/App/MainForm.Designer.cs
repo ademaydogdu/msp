@@ -213,6 +213,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem79 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -372,10 +373,11 @@
             this.bbi_ParolaDegistir,
             this.bbi_AllFormClosed,
             this.barButtonItem78,
-            this.barSubItem14});
+            this.barSubItem14,
+            this.barButtonItem79});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 145;
+            this.ribbon.MaxItemId = 146;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1355,7 +1357,7 @@
             // 
             this.bntfatura.Caption = "Alış Fatura";
             this.bntfatura.Id = 130;
-            this.bntfatura.ImageOptions.LargeImageIndex = 30;
+            this.bntfatura.ImageOptions.LargeImageIndex = 39;
             this.bntfatura.Name = "bntfatura";
             // 
             // bbi_FisEntegra
@@ -1404,6 +1406,7 @@
             this.bbi_veresiye.Id = 137;
             this.bbi_veresiye.ImageOptions.LargeImageIndex = 33;
             this.bbi_veresiye.Name = "bbi_veresiye";
+            this.bbi_veresiye.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_veresiye_ItemClick);
             // 
             // bbi_ParolaDegistir
             // 
@@ -1424,6 +1427,7 @@
             // 
             this.barSubItem14.Caption = "Satış Faturas";
             this.barSubItem14.Id = 144;
+            this.barSubItem14.ImageOptions.LargeImageIndex = 38;
             this.barSubItem14.Name = "barSubItem14";
             // 
             // img_buton
@@ -1466,6 +1470,9 @@
             this.img_buton.Add("functionsinformation", "image://svgimages/spreadsheet/functionsinformation.svg");
             this.img_buton.Add("encrypt", "image://svgimages/spreadsheet/encrypt.svg");
             this.img_buton.Add("resetrange", "image://svgimages/spreadsheet/resetrange.svg");
+            this.img_buton.Add("bo_notifications", "image://svgimages/business objects/bo_notifications.svg");
+            this.img_buton.Add("removeheader", "image://svgimages/snap/removeheader.svg");
+            this.img_buton.Add("snapinsertfooter", "image://svgimages/snap/snapinsertfooter.svg");
             // 
             // barSatis
             // 
@@ -1507,6 +1514,7 @@
             // 
             this.ribbonPageGroup26.AllowTextClipping = false;
             this.ribbonPageGroup26.ItemLinks.Add(this.bbi_veresiye);
+            this.ribbonPageGroup26.ItemLinks.Add(this.barButtonItem79);
             this.ribbonPageGroup26.Name = "ribbonPageGroup26";
             this.ribbonPageGroup26.Text = "Veresiye Satış";
             // 
@@ -1744,6 +1752,14 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
+            // barButtonItem79
+            // 
+            this.barButtonItem79.Caption = "Veresiye Süresi Geçenler";
+            this.barButtonItem79.Enabled = false;
+            this.barButtonItem79.Id = 145;
+            this.barButtonItem79.ImageOptions.LargeImageIndex = 37;
+            this.barButtonItem79.Name = "barButtonItem79";
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1959,5 +1975,6 @@
         private DevExpress.XtraBars.BarButtonItem bbi_AllFormClosed;
         private DevExpress.XtraBars.BarButtonItem barButtonItem78;
         private DevExpress.XtraBars.BarSubItem barSubItem14;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem79;
     }
 }

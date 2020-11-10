@@ -118,7 +118,9 @@
             this.coldate});
             this.gcvCustomers.GridControl = this.grdCustomers;
             this.gcvCustomers.Name = "gcvCustomers";
+            this.gcvCustomers.OptionsBehavior.Editable = false;
             this.gcvCustomers.OptionsView.ShowAutoFilterRow = true;
+            this.gcvCustomers.DoubleClick += new System.EventHandler(this.gcvCustomers_DoubleClick);
             // 
             // colid
             // 
@@ -485,6 +487,7 @@
             this.Text = "Müşteriler";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomer_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomer_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCustomer_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).EndInit();

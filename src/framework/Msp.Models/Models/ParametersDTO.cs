@@ -9,15 +9,18 @@ namespace Msp.Models.Models
     public class ParametersDTO
     {
         public int RecId { get; set; }
-        public bool NumaratorShow { get; set; }
-        public bool? SaleApproval { get; set; }
-        public bool? SaleOutOfStock { get; set; }
-        public bool? SaleCahnge { get; set; }
-        public bool? SaleInformationSlip { get; set; }
-        public bool? MainSaleForm { get; set; }
-        public bool? AutoCurrency { get; set; }
-        public bool? UserRecordMy { get; set; }
-        public bool? PaymentLock { get; set; }
-        public bool? PaymentyForced { get; set; }
+        public bool? NumaratorShow { get; set; } = false;
+        public bool? SaleApproval { get; set; } = false;
+        public bool? SaleOutOfStock { get; set; } = false;
+        public bool? SaleCahnge { get; set; } = false;
+        public bool? SaleInformationSlip { get; set; } = false;
+        public bool? MainSaleForm { get; set; } = false;
+        public bool? AutoCurrency { get; set; } = false;
+        public bool? UserRecordMy { get; set; } = false;
+        public bool? PaymentLock { get; set; } = false;
+        public bool? PaymentyForced { get; set; } = false;
+        public bool? SaleNewRecord { get; set; } = false;
+        public bool? SaleProductEndDate { get; set; } = false;
+        public int? ProductEndDateDay { get; set; } = 0;
     }
 }

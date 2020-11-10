@@ -36,6 +36,7 @@ namespace Msp.App.Settings
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            bs_Parameter.EndEdit();
             if (oTool.get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
                 try

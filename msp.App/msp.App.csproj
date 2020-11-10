@@ -291,6 +291,12 @@
     <Compile Include="Satis\frmSpeedSatis.Designer.cs">
       <DependentUpon>frmSpeedSatis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Satis\frmVeresiyeSatisList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmVeresiyeSatisList.Designer.cs">
+      <DependentUpon>frmVeresiyeSatisList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmSpeedSatis.resx">
       <DependentUpon>frmSpeedSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\frmVeresiyeSatisList.resx">
+      <DependentUpon>frmVeresiyeSatisList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>

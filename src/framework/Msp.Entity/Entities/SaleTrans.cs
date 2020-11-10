@@ -25,5 +25,7 @@ namespace Msp.Entity.Entities
         public int? UnitId { get; set; }
         public int? Tax { get; set; }
         public decimal? TaxAmount { get; set; }
+        public DateTime ProductDate { get; set; }
+
     }
 }

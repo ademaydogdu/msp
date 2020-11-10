@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using msp.App;
 using Msp.App.Tool;
 using Msp.Models.Models;
 using Msp.Models.Models.Utilities;
@@ -25,6 +26,7 @@ namespace Msp.App.Musteri_Islemleri
             _repository = new Repository();
         }
         MspTool mspTool = new MspTool();
+        public bool SatisSale = false;
         List<CustomersDTO> _customerList = new List<CustomersDTO>();
 
         public bool get_Question(string _Question)
@@ -53,19 +55,19 @@ namespace Msp.App.Musteri_Islemleri
 
 
         }
-     
+
         #endregion
 
 
         #region Add
         private void btnAddNewCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
-   
-                frmCustomerEdit frm = new frmCustomerEdit();
-                frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
-                frm.Show(0);
-            }
+
+
+            frmCustomerEdit frm = new frmCustomerEdit();
+            frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
+            frm.Show(0);
+        }
 
 
 
@@ -88,9 +90,7 @@ namespace Msp.App.Musteri_Islemleri
         #region Edit
         private void btnEditCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             do_Edit();
-
         }
         #endregion
 
@@ -124,6 +124,54 @@ namespace Msp.App.Musteri_Islemleri
         private void frmCustomer_FormClosing(object sender, FormClosingEventArgs e)
         {
             mspTool.Save_GridControl(this.Name, grdCustomers);
+        }
+
+        private void gcvCustomers_DoubleClick(object sender, EventArgs e)
+        {
+            if (SatisSale)
+            {
+                MusteriSec();
+            }
+            else
+            {
+                do_Edit();
+            }
+        }
+
+        private void do_Form(CustomersDTO Customers)
+        {
+            Form _Form = MspTool.get_OpenForm("frmSatis");
+            if (_Form != null)
+            {
+                ((frmSatis)_Form).CustomerSelect(Customers);
+            }
+            _Form = null;
+        }
+
+        public void MusteriSec()
+        {
+            CustomersDTO Orow = (CustomersDTO)gcvCustomers.GetFocusedRow();
+            if (Orow != null)
+            {
+                do_Form(Orow);
+                this.Close();
+            }
+        }
+
+        private void frmCustomer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+            if (SatisSale)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    MusteriSec();
+                }
+            }
+            
         }
     }
 }
