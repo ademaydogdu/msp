@@ -434,7 +434,9 @@ namespace msp.App
 
         private void bbi_kampanya_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            frmKampanyalar frm = new frmKampanyalar();
+            frm.MdiParent = this;
+            frm.Show();
         }
         private void bbi_ParolaDegistir_ItemClick(object sender, ItemClickEventArgs e)
         {

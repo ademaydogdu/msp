@@ -14,6 +14,7 @@ using Msp.Service.Service.DepotStock;
 using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
 using msp.App;
+using Msp.App.Report;
 
 namespace Msp.App.Depo_Stok
 {
@@ -175,6 +176,18 @@ namespace Msp.App.Depo_Stok
         private void frmStok_FormClosing(object sender, FormClosingEventArgs e)
         {
             mspTool.Save_GridControl(this.Name, gcProducts);
+        }
+
+        private void btnProClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bbi_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPrint frm = new frmPrint();
+            frm.PrintProduct(_productlist);
+            frm.ShowDialog();
         }
     }
 }

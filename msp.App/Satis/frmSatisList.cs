@@ -84,9 +84,15 @@ namespace Msp.App.Satis
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            frmSatis frm = new frmSatis();
-            frm.MdiParent = this;
-            frm.Show(0);
+            SaleOwnerDTO oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                frmSatis frm = new frmSatis();
+                frm.MdiParent = this.MdiParent;
+                frm._FormOpenType = Infrastructure.FormOpenType.Edit;
+                frm.Show(oRow.RecId);
+
+            }
         }
     }
 }

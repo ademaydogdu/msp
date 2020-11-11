@@ -235,6 +235,12 @@
     <Compile Include="Musteri-Islemleri\frmCustomerOrder.Designer.cs">
       <DependentUpon>frmCustomerOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\ProductList.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -345,6 +351,12 @@
     <Compile Include="Tanimlar\frmBirimTanim.Designer.cs">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\frmKampanyalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\frmKampanyalar.Designer.cs">
+      <DependentUpon>frmKampanyalar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tanimlar\frmPaymnetList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomerOrder.resx">
       <DependentUpon>frmCustomerOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>

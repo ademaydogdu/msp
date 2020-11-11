@@ -79,6 +79,7 @@
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -311,8 +312,9 @@
             this.barToolbarsListItem1,
             this.barSubItem1,
             this.barEditItem1,
-            this.btnORderAdd});
-            this.barManager1.MaxItemId = 18;
+            this.btnORderAdd,
+            this.bbi_Print});
+            this.barManager1.MaxItemId = 19;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMarqueeProgressBar1});
             this.barManager1.SharedImageCollectionImageSizeMode = DevExpress.Utils.SharedImageCollectionImageSizeMode.UseImageSize;
@@ -333,7 +335,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProBarcodeLabel),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProClose),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnORderAdd)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnORderAdd),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -391,6 +394,7 @@
             this.btnProClose.Id = 10;
             this.btnProClose.ImageOptions.ImageIndex = 1;
             this.btnProClose.Name = "btnProClose";
+            this.btnProClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProClose_ItemClick);
             // 
             // btnORderAdd
             // 
@@ -502,6 +506,7 @@
             this.svgImageCollection1.Add("shipmentreceived", "image://svgimages/outlook inspired/shipmentreceived.svg");
             this.svgImageCollection1.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
             this.svgImageCollection1.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
+            this.svgImageCollection1.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
             // 
             // btnViewProduct
             // 
@@ -597,6 +602,14 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // bbi_Print
+            // 
+            this.bbi_Print.Caption = "Ürün Listesi Ve Satış Fiyatları";
+            this.bbi_Print.Id = 18;
+            this.bbi_Print.ImageOptions.ImageIndex = 65;
+            this.bbi_Print.Name = "bbi_Print";
+            this.bbi_Print.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Print_ItemClick);
+            // 
             // frmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,5 +695,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPImages;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
+        private DevExpress.XtraBars.BarButtonItem bbi_Print;
     }
 }

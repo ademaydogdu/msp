@@ -174,6 +174,8 @@
             this.bbi_ParolaDegistir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem14 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem79 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -194,6 +196,7 @@
             this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -213,9 +216,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem79 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem81 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -377,10 +378,11 @@
             this.barButtonItem78,
             this.barSubItem14,
             this.barButtonItem79,
-            this.barButtonItem80});
+            this.barButtonItem80,
+            this.barButtonItem81});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 147;
+            this.ribbon.MaxItemId = 148;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1433,6 +1435,21 @@
             this.barSubItem14.ImageOptions.LargeImageIndex = 38;
             this.barSubItem14.Name = "barSubItem14";
             // 
+            // barButtonItem79
+            // 
+            this.barButtonItem79.Caption = "Veresiye Süresi Geçenler";
+            this.barButtonItem79.Enabled = false;
+            this.barButtonItem79.Id = 145;
+            this.barButtonItem79.ImageOptions.LargeImageIndex = 37;
+            this.barButtonItem79.Name = "barButtonItem79";
+            // 
+            // barButtonItem80
+            // 
+            this.barButtonItem80.Caption = "Döviz Kurları";
+            this.barButtonItem80.Id = 146;
+            this.barButtonItem80.ImageOptions.LargeImageIndex = 21;
+            this.barButtonItem80.Name = "barButtonItem80";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1476,6 +1493,7 @@
             this.img_buton.Add("bo_notifications", "image://svgimages/business objects/bo_notifications.svg");
             this.img_buton.Add("removeheader", "image://svgimages/snap/removeheader.svg");
             this.img_buton.Add("snapinsertfooter", "image://svgimages/snap/snapinsertfooter.svg");
+            this.img_buton.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
             // 
             // barSatis
             // 
@@ -1534,6 +1552,7 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnStok);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem81);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSonKullanmaTar);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSKTGecenUrun);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
@@ -1619,6 +1638,12 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem70);
             this.ribbonPageGroup6.ItemLinks.Add(this.bbi_cekler);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // ribbonPageGroup27
+            // 
+            this.ribbonPageGroup27.ItemLinks.Add(this.barButtonItem80);
+            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
+            this.ribbonPageGroup27.Text = "Kur";
             // 
             // ribbonPage4
             // 
@@ -1756,25 +1781,12 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // barButtonItem79
+            // barButtonItem81
             // 
-            this.barButtonItem79.Caption = "Veresiye Süresi Geçenler";
-            this.barButtonItem79.Enabled = false;
-            this.barButtonItem79.Id = 145;
-            this.barButtonItem79.ImageOptions.LargeImageIndex = 37;
-            this.barButtonItem79.Name = "barButtonItem79";
-            // 
-            // ribbonPageGroup27
-            // 
-            this.ribbonPageGroup27.ItemLinks.Add(this.barButtonItem80);
-            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
-            this.ribbonPageGroup27.Text = "Kur";
-            // 
-            // barButtonItem80
-            // 
-            this.barButtonItem80.Caption = "Döviz Kurları";
-            this.barButtonItem80.Id = 146;
-            this.barButtonItem80.Name = "barButtonItem80";
+            this.barButtonItem81.Caption = "Ürün Envanter Bilgileri";
+            this.barButtonItem81.Id = 147;
+            this.barButtonItem81.ImageOptions.LargeImageIndex = 40;
+            this.barButtonItem81.Name = "barButtonItem81";
             // 
             // MainForm
             // 
@@ -1994,5 +2006,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem79;
         private DevExpress.XtraBars.BarButtonItem barButtonItem80;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup27;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem81;
     }
 }
