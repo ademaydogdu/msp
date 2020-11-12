@@ -185,9 +185,31 @@ namespace Msp.App.Depo_Stok
 
         private void bbi_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmPrint frm = new frmPrint();
-            frm.PrintProduct(_productlist);
-            frm.ShowDialog();
+            if (_productlist.Count > 0)
+            {
+                frmPrint frm = new frmPrint();
+                frm.PrintProduct(_productlist);
+                frm.ShowDialog();
+            }
+        }
+
+        private void btnProTransactions_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ProductDTO Orow = (ProductDTO)gcvProducts.GetFocusedRow();
+            if (Orow != null)
+            {
+                frmStockMovement frm = new frmStockMovement();
+                frm.ShowDialog();
+            }
+        }
+
+        private void bbi_EnvanterGiris_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (_productlist.Count > 0)
+            {
+                frmProductEnvanter frm = new frmProductEnvanter();
+                frm.ShowDialog();
+            }
         }
     }
 }

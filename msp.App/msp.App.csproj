@@ -151,6 +151,12 @@
     <Compile Include="CariIslemler\frmCurTranEdit.Designer.cs">
       <DependentUpon>frmCurTranEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Depo-Stok\frmEnvanterBilgiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmEnvanterBilgiler.Designer.cs">
+      <DependentUpon>frmEnvanterBilgiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmExpDateProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,12 @@
     <Compile Include="Depo-Stok\frmOrderPlaced.Designer.cs">
       <DependentUpon>frmOrderPlaced.cs</DependentUpon>
     </Compile>
+    <Compile Include="Depo-Stok\frmProductEnvanter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmProductEnvanter.Designer.cs">
+      <DependentUpon>frmProductEnvanter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmStockEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     </Compile>
     <Compile Include="Depo-Stok\frmOrdersReceived.Designer.cs">
       <DependentUpon>frmOrdersReceived.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Depo-Stok\frmStockMovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmStockMovement.Designer.cs">
+      <DependentUpon>frmStockMovement.cs</DependentUpon>
     </Compile>
     <Compile Include="Islemler\frmBankEntry.cs">
       <SubType>Form</SubType>
@@ -391,6 +409,9 @@
     <EmbeddedResource Include="CariIslemler\frmCurTranEdit.resx">
       <DependentUpon>frmCurTranEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmEnvanterBilgiler.resx">
+      <DependentUpon>frmEnvanterBilgiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmExpDateProducts.resx">
       <DependentUpon>frmExpDateProducts.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,11 +433,17 @@
     <EmbeddedResource Include="Depo-Stok\frmOrderPlaced.resx">
       <DependentUpon>frmOrderPlaced.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmProductEnvanter.resx">
+      <DependentUpon>frmProductEnvanter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmStockEdit.resx">
       <DependentUpon>frmStockEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmOrdersReceived.resx">
       <DependentUpon>frmOrdersReceived.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmStockMovement.resx">
+      <DependentUpon>frmStockMovement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Islemler\frmBankEntry.resx">
       <DependentUpon>frmBankEntry.cs</DependentUpon>

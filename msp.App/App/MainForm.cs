@@ -265,6 +265,7 @@ namespace msp.App
             {
                 do_versionControl();
                 do_barDoldur();
+
                 UserLookAndFeel.Default.SetSkinStyle(AppMain.User.DefaultTheme, AppMain.User.DefaultTheme2);
             }
             else
@@ -272,6 +273,12 @@ namespace msp.App
                 Application.ExitThread();
             }
         }
+
+        public void do_FormSecRight()
+        {
+
+        }
+
 
         #endregion
 
@@ -483,6 +490,18 @@ namespace msp.App
             frmVeresiyeSatisList frm = new frmVeresiyeSatisList();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnGrdiLayouytDeleted_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

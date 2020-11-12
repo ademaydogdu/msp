@@ -10,14 +10,13 @@ namespace Msp.Infrastructure
 {
     public class AppMain
     {
+        public static Dictionary<string, string> Forms { get; set; }
         public static ConnectionDTO SqlConnection { get; set; }
        // public static ParametersDTO Parameters { get; set; }
         public static UsersDTO User { get; set; }
         public static Version MspVersion { get; set; }
         public static string LcConnectionString { get; set; }
-
         public static bool NetworkConnected = true;
-
         public static string Company { get; set; }
         public static int CompanyRecId { get; set; }
 

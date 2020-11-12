@@ -181,6 +181,17 @@ namespace msp.App
                 txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
 
             }
+            else
+            {
+                var totalKdv = 0;
+                var totalAmount = 0;
+                __dll_SaleOwner.NetPrice = 0;
+                __dll_SaleOwner.TotalPrice = 0;
+                __dll_SaleOwner.KDV = 0;
+                txt_NetFiyat.EditValue = __dll_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
+                txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
+            }
         }
 
         #endregion
@@ -287,6 +298,7 @@ namespace msp.App
                         txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
                         txt_OdemeTipi.EditValue = "";
                         gridControl1.RefreshDataSource();
+                        TopTotal();
                     }
 
                 }
@@ -443,6 +455,17 @@ namespace msp.App
         private void frmSatis_FormClosing(object sender, FormClosingEventArgs e)
         {
             MspTool.do_Save_Layout(this);
+        }
+
+        private void btnDeleteRow_Click(object sender, EventArgs e)
+        {
+            SaleTransDTO oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                __dl_List_SaleTrans.Remove(oRow);
+                gridControl1.RefreshDataSource();
+                TopTotal();
+            }
         }
     }
 }
