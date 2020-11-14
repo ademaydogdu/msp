@@ -90,6 +90,7 @@
             this.btnIskonto = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.txtParaUstu = new DevExpress.XtraEditors.SpinEdit();
+            this.btnDeleteRow = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -142,7 +143,6 @@
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDeleteRow = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem37 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -927,6 +927,7 @@
             // 
             // txtParaUstu
             // 
+            this.txtParaUstu.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "AlinanPrice", true));
             this.txtParaUstu.EditValue = new decimal(new int[] {
             0,
             0,
@@ -950,6 +951,18 @@
             this.txtParaUstu.StyleController = this.layoutControl1;
             this.txtParaUstu.TabIndex = 37;
             this.txtParaUstu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtParaUstu_ButtonClick);
+            // 
+            // btnDeleteRow
+            // 
+            this.btnDeleteRow.ImageOptions.ImageIndex = 19;
+            this.btnDeleteRow.ImageOptions.ImageList = this.img_EkleSatis;
+            this.btnDeleteRow.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnDeleteRow.Location = new System.Drawing.Point(12, 172);
+            this.btnDeleteRow.Name = "btnDeleteRow";
+            this.btnDeleteRow.Size = new System.Drawing.Size(80, 55);
+            this.btnDeleteRow.StyleController = this.layoutControl1;
+            this.btnDeleteRow.TabIndex = 42;
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
             // 
             // Root
             // 
@@ -1566,18 +1579,6 @@
             this.layoutControlItem22.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem22.TextVisible = false;
-            // 
-            // btnDeleteRow
-            // 
-            this.btnDeleteRow.ImageOptions.ImageIndex = 19;
-            this.btnDeleteRow.ImageOptions.ImageList = this.img_EkleSatis;
-            this.btnDeleteRow.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnDeleteRow.Location = new System.Drawing.Point(12, 172);
-            this.btnDeleteRow.Name = "btnDeleteRow";
-            this.btnDeleteRow.Size = new System.Drawing.Size(80, 55);
-            this.btnDeleteRow.StyleController = this.layoutControl1;
-            this.btnDeleteRow.TabIndex = 42;
-            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
             // 
             // layoutControlItem37
             // 

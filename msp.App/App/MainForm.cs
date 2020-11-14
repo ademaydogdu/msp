@@ -23,6 +23,8 @@ using Msp.App.Musteri_Islemleri;
 using Msp.App.Islemler;
 using Msp.App.Tool;
 using DevExpress.LookAndFeel;
+using Msp.Service.Service.Settings;
+using Msp.Models.Models.Utilities;
 
 namespace msp.App
 {
@@ -231,6 +233,17 @@ namespace msp.App
             { OurKey.SetValue("BeniHatirla", "False"); }
 
 
+            varmi = false;
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "ParaUstu")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("ParaUstu", "True"); }
 
             #endregion
 
@@ -501,7 +514,15 @@ namespace msp.App
 
         private void btnGrdiLayouytDeleted_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            var result = _repository.Run<SettingsService, ActionResponse<FormLayoutsDTO>>(x => x.DeleteAllFormLayoutsDTO());
+            if (result.ResponseType != ResponseType.Ok)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show(result.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("İşlem Tamamlandı.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

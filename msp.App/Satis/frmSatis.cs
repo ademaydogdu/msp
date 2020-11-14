@@ -25,6 +25,7 @@ using Msp.App.Musteri_Islemleri;
 using Msp.App.Satis;
 using Msp.App.Tool;
 using Msp.Service.Service.CustomerTransactions;
+using Microsoft.Win32;
 
 namespace msp.App
 {
@@ -151,10 +152,8 @@ namespace msp.App
         private void frmSatis_Load(object sender, EventArgs e)
         {
             btn_N0.AutoWidthInLayoutControl = true;
-
             MspTool.Get_Layout(this);
-
-
+            toggleSwitch1.IsOn = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("ParaUstu").ToString());
         }
 
         private void btnProductAdd_Click(object sender, EventArgs e)
@@ -391,6 +390,7 @@ namespace msp.App
             {
                 lyc_ParaUstu.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             }
+            Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("ParaUstu", toggleSwitch1.EditValue);
 
         }
 

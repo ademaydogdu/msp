@@ -27,6 +27,7 @@ namespace Msp.Entity.Entities
         public int? CompanyRecId { get; set; }
         public bool? Deleted { get; set; }
         public string UserCode { get; set; }
+        public decimal? AlinanPrice { get; set; }
 
 
     }

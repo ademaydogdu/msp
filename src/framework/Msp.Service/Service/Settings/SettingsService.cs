@@ -1,5 +1,6 @@
 ﻿using Msp.Entity.Entities;
 using Msp.Models.Models;
+using Msp.Models.Models.App;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
@@ -189,6 +190,34 @@ namespace Msp.Service.Service.Settings
             }
             return response;
         }
+
+        #endregion
+
+        #region LayoutGridDeleted
+
+        public ActionResponse<FormLayoutsDTO> DeleteAllFormLayoutsDTO()
+        {
+            ActionResponse<FormLayoutsDTO> response = new ActionResponse<FormLayoutsDTO>() { ResponseType = ResponseType.Ok };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    var record = _db.FormLayouts.ToList();
+                    if (record.Count > 0)
+                    {
+                        _db.FormLayouts.RemoveRange(record);
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
 
         #endregion
 

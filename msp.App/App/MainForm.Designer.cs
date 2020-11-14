@@ -178,6 +178,7 @@
             this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem81 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem82 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -219,7 +220,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -544,6 +544,7 @@
             // barButtonItem8
             // 
             this.barButtonItem8.Caption = "Kullanıcı Yetkileri";
+            this.barButtonItem8.Enabled = false;
             this.barButtonItem8.Id = 10;
             this.barButtonItem8.Name = "barButtonItem8";
             // 
@@ -1471,6 +1472,13 @@
             this.barButtonItem82.ImageOptions.LargeImageIndex = 25;
             this.barButtonItem82.Name = "barButtonItem82";
             // 
+            // barButtonItem78
+            // 
+            this.barButtonItem78.Caption = "Ürüm Marka Tanımları";
+            this.barButtonItem78.Id = 149;
+            this.barButtonItem78.ImageOptions.LargeImageIndex = 41;
+            this.barButtonItem78.Name = "barButtonItem78";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1810,13 +1818,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem78
-            // 
-            this.barButtonItem78.Caption = "Ürüm Marka Tanımları";
-            this.barButtonItem78.Id = 149;
-            this.barButtonItem78.ImageOptions.LargeImageIndex = 41;
-            this.barButtonItem78.Name = "barButtonItem78";
             // 
             // MainForm
             // 

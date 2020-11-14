@@ -19,16 +19,22 @@ using System.Globalization;
 using Msp.Service.Service.Tanimlar;
 using System.IO;
 using Msp.App.Tool;
+using Msp.Infrastructure;
+using Msp.Service.Service.Settings;
 
 namespace Msp.App.Satis
 {
     public partial class frmSpeedSatis : DevExpress.XtraEditors.XtraForm
     {
-        Repository _repository; 
+        Repository _repository;
+        ParametersDTO _parameters;
+
         public frmSpeedSatis()
         {
             InitializeComponent();
             _repository = new Repository();
+            _parameters = new ParametersDTO();
+
             Set_Form();
         }
         MspTool mspTool = new MspTool();
@@ -58,6 +64,7 @@ namespace Msp.App.Satis
         {
             products = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             speedSaleProducts = _repository.Run<SaleService, List<SpeedSaleProductDTO>>(x => x.GetList_SpeedSaleProduct());
+            _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
         }
 
         private void Set_Form()
@@ -141,6 +148,7 @@ namespace Msp.App.Satis
                     saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
                     saleTrans.Tax = _product.PTax;
                     saleTrans.TaxAmount = _product.PPaxAmout;
+                    saleTrans.ProductDate = _product.PDate.GetValueOrDefault();
                     __dl_List_SaleTrans.Add(saleTrans);
                 }
                 TopTotal();
@@ -181,9 +189,91 @@ namespace Msp.App.Satis
 
         }
 
+        public bool get_Question(string _Question)
+        {
+            bool _Return = false;
+            if (DevExpress.XtraEditors.XtraMessageBox.Show(_Question, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                _Return = true;
+            }
+            return _Return;
+        }
+
+        public bool do_Validation()
+        {
+            bool _return = false;
+            if (__dl_List_SaleTrans.Count == 0)
+            {
+                MessageBox.Show("Ürün Kaydı olması gerekmektedir.");
+                _return = true;
+            }
+            if (_parameters.PaymentyForced.GetValueOrDefault())
+            {
+                //if (txt_OdemeTipi.EditValue == "")
+                //{
+                //    MessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
+                //    _return = true;
+                //}
+            }
+
+
+            return _return;
+        }
+
+        public void do_save()
+        {
+            try
+            {
+                if (do_Validation()) return;
+                if (_parameters.SaleProductEndDate.GetValueOrDefault())
+                {
+                    foreach (var item in __dl_List_SaleTrans)
+                    {
+                        if (item.ProductDate == DateTime.Now)
+                        {
+                            DevExpress.XtraEditors.XtraMessageBox.Show("Son Kullanma Tarihi Geçmiş Ürün " + item.ProductName, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                }
+                __dl_SaleOwner.UserCode = AppMain.User.username;
+                __dl_SaleOwner.CompanyRecId = AppMain.CompanyRecId;
+                var req = new SaleRequest
+                {
+                    List_SaleTrans = __dl_List_SaleTrans,
+                    SaleOwnerDTO = __dl_SaleOwner
+                };
+                var response = _repository.Run<SaleService, ActionResponse<SaleRequest>>(x => x.Save_Sale(req));
+                if (response.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    if (_parameters.SaleNewRecord.GetValueOrDefault())
+                    {
+                        __dl_SaleOwner = new SaleOwnerDTO();
+                        __dl_List_SaleTrans.Clear();
+                        __dl_List_SaleTrans = new List<SaleTransDTO>();
+                        //txt_CustomerName.Text = "";
+                        txt_Total.EditValue = __dl_SaleOwner.TotalPriceText = "₺ 0.00";
+                        //txt_OdemeTipi.EditValue = "";
+                        gridControl1.RefreshDataSource();
+                        TopTotal();
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            do_save();
         }
 
         private void frmSpeedSatis_KeyDown(object sender, KeyEventArgs e)
@@ -197,6 +287,59 @@ namespace Msp.App.Satis
         private void frmSpeedSatis_FormClosing(object sender, FormClosingEventArgs e)
         {
             mspTool.do_Save_Layout(this);
+        }
+
+        private void btnInsertQuantity_Click(object sender, EventArgs e)
+        {
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                oRow.ProductQuantity += 1;
+                var ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                oRow.ProductAmount = ProductAmount;
+                oRow.TaxAmount = Math.Round(oRow.TaxAmount.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+
+                gridControl1.RefreshDataSource();
+                TopTotal();
+            }
+        }
+
+        private void btnDeleteProducr_Click(object sender, EventArgs e)
+        {
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (oRow.ProductQuantity >= 1)
+                {
+                    oRow.ProductQuantity -= 1;
+                    oRow.ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                    oRow.TaxAmount = Math.Round(oRow.TaxAmount.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                    gridControl1.RefreshDataSource();
+                    TopTotal();
+                }
+            }
+        }
+
+        private void btnRowDeleted_Click(object sender, EventArgs e)
+        {
+            SaleTransDTO oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                __dl_List_SaleTrans.Remove(oRow);
+                gridControl1.RefreshDataSource();
+                TopTotal();
+            }
+        }
+
+        private void btnTopluSil_Click(object sender, EventArgs e)
+        {
+            if (__dl_List_SaleTrans.Count > 0)
+            {
+                __dl_List_SaleTrans.Clear();
+                __dl_SaleOwner.TotalPrice = 0;
+                txt_Total.EditValue = __dl_SaleOwner.TotalPriceText = "₺ 0.00";
+                gridControl1.RefreshDataSource();
+            }
         }
     }
 }

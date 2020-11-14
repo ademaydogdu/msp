@@ -24,6 +24,8 @@ namespace Msp.Models.Models.Sale
         public int? CompanyRecId { get; set; }
         public bool? Deleted { get; set; } = false;
         public string UserCode { get; set; }
+        public decimal? AlinanPrice { get; set; }
+
 
 
     }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -57,9 +57,9 @@
             this.img_svg = new DevExpress.Utils.SvgImageCollection(this.components);
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txt_Date = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnInsertQuantity = new DevExpress.XtraEditors.SimpleButton();
             this.img_EkleSatis = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDeleteProducr = new DevExpress.XtraEditors.SimpleButton();
             this.btnTopluSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -84,6 +84,8 @@
             this.tileItem5 = new DevExpress.XtraEditors.TileItem();
             this.tileItem2 = new DevExpress.XtraEditors.TileItem();
             this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
+            this.btnRowDeleted = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -119,6 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -132,10 +135,11 @@
             this.layoutControl1.Controls.Add(this.btn_New);
             this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.txt_Date);
-            this.layoutControl1.Controls.Add(this.simpleButton3);
-            this.layoutControl1.Controls.Add(this.simpleButton4);
+            this.layoutControl1.Controls.Add(this.btnInsertQuantity);
+            this.layoutControl1.Controls.Add(this.btnDeleteProducr);
             this.layoutControl1.Controls.Add(this.btnTopluSil);
             this.layoutControl1.Controls.Add(this.btnCancel);
+            this.layoutControl1.Controls.Add(this.btnRowDeleted);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -430,16 +434,17 @@
             this.txt_Date.StyleController = this.layoutControl1;
             this.txt_Date.TabIndex = 36;
             // 
-            // simpleButton3
+            // btnInsertQuantity
             // 
-            this.simpleButton3.ImageOptions.ImageIndex = 1;
-            this.simpleButton3.ImageOptions.ImageList = this.img_EkleSatis;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(12, 638);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(82, 64);
-            this.simpleButton3.StyleController = this.layoutControl1;
-            this.simpleButton3.TabIndex = 37;
+            this.btnInsertQuantity.ImageOptions.ImageIndex = 1;
+            this.btnInsertQuantity.ImageOptions.ImageList = this.img_EkleSatis;
+            this.btnInsertQuantity.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnInsertQuantity.Location = new System.Drawing.Point(12, 638);
+            this.btnInsertQuantity.Name = "btnInsertQuantity";
+            this.btnInsertQuantity.Size = new System.Drawing.Size(82, 64);
+            this.btnInsertQuantity.StyleController = this.layoutControl1;
+            this.btnInsertQuantity.TabIndex = 37;
+            this.btnInsertQuantity.Click += new System.EventHandler(this.btnInsertQuantity_Click);
             // 
             // img_EkleSatis
             // 
@@ -463,28 +468,31 @@
             this.img_EkleSatis.Add("clearformats_1", "image://svgimages/spreadsheet/clearformats.svg");
             this.img_EkleSatis.Add("fraction", "image://svgimages/spreadsheet/fraction.svg");
             this.img_EkleSatis.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
+            this.img_EkleSatis.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
             // 
-            // simpleButton4
+            // btnDeleteProducr
             // 
-            this.simpleButton4.ImageOptions.ImageIndex = 4;
-            this.simpleButton4.ImageOptions.ImageList = this.img_EkleSatis;
-            this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(98, 638);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(74, 64);
-            this.simpleButton4.StyleController = this.layoutControl1;
-            this.simpleButton4.TabIndex = 38;
+            this.btnDeleteProducr.ImageOptions.ImageIndex = 4;
+            this.btnDeleteProducr.ImageOptions.ImageList = this.img_EkleSatis;
+            this.btnDeleteProducr.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnDeleteProducr.Location = new System.Drawing.Point(98, 638);
+            this.btnDeleteProducr.Name = "btnDeleteProducr";
+            this.btnDeleteProducr.Size = new System.Drawing.Size(74, 64);
+            this.btnDeleteProducr.StyleController = this.layoutControl1;
+            this.btnDeleteProducr.TabIndex = 38;
+            this.btnDeleteProducr.Click += new System.EventHandler(this.btnDeleteProducr_Click);
             // 
             // btnTopluSil
             // 
             this.btnTopluSil.ImageOptions.ImageIndex = 5;
             this.btnTopluSil.ImageOptions.ImageList = this.img_EkleSatis;
             this.btnTopluSil.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnTopluSil.Location = new System.Drawing.Point(176, 638);
+            this.btnTopluSil.Location = new System.Drawing.Point(254, 638);
             this.btnTopluSil.Name = "btnTopluSil";
             this.btnTopluSil.Size = new System.Drawing.Size(74, 64);
             this.btnTopluSil.StyleController = this.layoutControl1;
             this.btnTopluSil.TabIndex = 39;
+            this.btnTopluSil.Click += new System.EventHandler(this.btnTopluSil_Click);
             // 
             // btnCancel
             // 
@@ -520,7 +528,8 @@
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem9});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1351, 714);
             this.Root.TextVisible = false;
@@ -616,10 +625,10 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(464, 626);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(480, 626);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(120, 68);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(104, 68);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -645,9 +654,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(242, 626);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(320, 626);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(222, 68);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(160, 68);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem31
@@ -663,7 +672,7 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.simpleButton3;
+            this.layoutControlItem5.Control = this.btnInsertQuantity;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 626);
             this.layoutControlItem5.MaxSize = new System.Drawing.Size(86, 68);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(86, 68);
@@ -675,7 +684,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.simpleButton4;
+            this.layoutControlItem6.Control = this.btnDeleteProducr;
             this.layoutControlItem6.Location = new System.Drawing.Point(86, 626);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(78, 68);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(78, 68);
@@ -688,7 +697,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnTopluSil;
-            this.layoutControlItem7.Location = new System.Drawing.Point(164, 626);
+            this.layoutControlItem7.Location = new System.Drawing.Point(242, 626);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(78, 68);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(78, 68);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -711,35 +720,58 @@
             // 
             // tileItem4
             // 
-            tileItemElement1.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement1);
+            tileItemElement17.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement17);
             this.tileItem4.Id = 3;
             this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem4.Name = "tileItem4";
             // 
             // tileItem8
             // 
-            tileItemElement2.Text = "tileItem8";
-            this.tileItem8.Elements.Add(tileItemElement2);
+            tileItemElement18.Text = "tileItem8";
+            this.tileItem8.Elements.Add(tileItemElement18);
             this.tileItem8.Id = 7;
             this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem8.Name = "tileItem8";
             // 
             // tileItem5
             // 
-            tileItemElement3.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement3);
+            tileItemElement19.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement19);
             this.tileItem5.Id = 4;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem5.Name = "tileItem5";
             // 
             // tileItem2
             // 
-            tileItemElement4.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement4);
+            tileItemElement20.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement20);
             this.tileItem2.Id = 1;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileItem2.Name = "tileItem2";
+            // 
+            // btnRowDeleted
+            // 
+            this.btnRowDeleted.ImageOptions.ImageIndex = 19;
+            this.btnRowDeleted.ImageOptions.ImageList = this.img_EkleSatis;
+            this.btnRowDeleted.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnRowDeleted.Location = new System.Drawing.Point(176, 638);
+            this.btnRowDeleted.Name = "btnRowDeleted";
+            this.btnRowDeleted.Size = new System.Drawing.Size(74, 64);
+            this.btnRowDeleted.StyleController = this.layoutControl1;
+            this.btnRowDeleted.TabIndex = 41;
+            this.btnRowDeleted.Click += new System.EventHandler(this.btnRowDeleted_Click);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.btnRowDeleted;
+            this.layoutControlItem9.Location = new System.Drawing.Point(164, 626);
+            this.layoutControlItem9.MinSize = new System.Drawing.Size(78, 26);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(78, 68);
+            this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
             // 
             // frmSpeedSatis
             // 
@@ -787,6 +819,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -836,13 +869,15 @@
         private System.Windows.Forms.BindingSource bs_SaleTrans;
         private DevExpress.XtraEditors.DateEdit txt_Date;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnInsertQuantity;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteProducr;
         private DevExpress.XtraEditors.SimpleButton btnTopluSil;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.SimpleButton btnRowDeleted;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }
