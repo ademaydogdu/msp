@@ -41,6 +41,8 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Banks> Banks { get; set; }
         public virtual DbSet<OrderManagement> OrderManagement { get; set; }
         public virtual DbSet<FormLayouts> FormLayouts { get; set; }
+        public virtual DbSet<InvoiceOwner> InvoiceOwner { get; set; }
+        public virtual DbSet<InvoiceTrans> InvoiceTrans { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

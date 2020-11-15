@@ -12,7 +12,6 @@ namespace Msp.Entity.Entities
    public partial class CTransactions
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CurID { get; set; }
 
         [StringLength(50)]

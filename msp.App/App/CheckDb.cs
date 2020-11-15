@@ -410,8 +410,65 @@ namespace Msp.App.App
             progressBarControl1.Update();
             Application.DoEvents();
 
+            if (tblTableList.Rows.Contains("InvoiceOwner") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[InvoiceOwner]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [InvoiceType] [int] NULL, "
+                    + " 	[FicDate] [datetime] NULL, "
+                    + " 	[FichTime] [time] (7) NULL, "
+                    + " 	[FicheType] [int] NULL, "
+                    + " 	[FicheDocumentNo] "
+                    + "         [nvarchar] "
+                    + "         (max) NULL, "
+                    + "     [FicheRemark] [nvarchar] (max) NULL, "
+                    + "     [CariRecId] [int] NULL, " 
+                    + " 	[VadeTarih] [datetime] NULL, "
+                    + " 	[DepoName] [int] NULL, "
+                    + " 	[Indirim] [decimal](18, 0) NULL, "
+                    + " 	[AraToplam] [decimal](18, 0) NULL, "
+                    + " 	[ToplamKDV] [decimal](18, 0) NULL, "
+                    + " 	[DigerMasraflar] [decimal](18, 0) NULL, "
+                    + " 	[GenelToplam] [decimal](18, 0) NULL, "
+                    + "  CONSTRAINT[PK_InvoiceOwner] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
 
 
+            if (tblTableList.Rows.Contains("InvoiceTrans") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[InvoiceTrans]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [InvoiceOwnerId] [int] NULL, "
+                + " 	[ProductId] [int] NULL, "
+                + " 	[Quentity] [int] NULL, "
+                + " 	[UnitID] [int] NULL, "
+                + " 	[KDV] [int] NULL, "
+                + " 	[Indirim] [int] NULL, "
+                + " 	[BirimFiyat] [decimal](18, 0) NULL, "
+                + " 	[Tutar] [decimal](18, 0) NULL, "
+                + " 	[SKT] [datetime] NULL, "
+                + " 	[AlisFiyati] [decimal](18, 0) NULL, "
+                + " 	[KarOrani] [int] NULL, "
+                + "  CONSTRAINT[PK_InvoiceTrans] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
 
             #endregion
 

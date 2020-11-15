@@ -2,6 +2,7 @@
 using Msp.Entity.Entities;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
+using Msp.Models.Models.Invoice;
 using Msp.Models.Models.Sale;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,10 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<SpeedSaleProductDTO, SpeedSaleProduct>();
             cfg.CreateMap<FormLayouts, FormLayoutsDTO>();
             cfg.CreateMap<FormLayoutsDTO, FormLayouts>();
+            cfg.CreateMap<InvoiceOwner, InvoiceOwnerDTO>();
+            cfg.CreateMap<InvoiceOwnerDTO, InvoiceOwner>();
+            cfg.CreateMap<InvoiceTrans, InvoiceTransDTO>();
+            cfg.CreateMap<InvoiceTransDTO, InvoiceTrans>();
         }
 
 

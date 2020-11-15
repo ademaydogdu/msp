@@ -32,9 +32,11 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnNewAccount = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRemAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditAccount = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRemAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Document = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
             this.btnCurTranClose = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -46,14 +48,27 @@
             this.btnSeaAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_Document = new DevExpress.XtraBars.BarButtonItem();
+            this.gc_Invoice = new DevExpress.XtraGrid.GridControl();
+            this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
+            this.gcv_Invoice = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colFicDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFichTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFicheType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFicheDocumentNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFicheRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVadeTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDepoName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIndirim = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiğerMasraflar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -76,7 +91,7 @@
             this.btnAccountTransactions,
             this.btnCurTranClose,
             this.btnRegInfo,
-            this.barButtonItem3,
+            this.bbi_Refresh,
             this.bbi_Print,
             this.bbi_Document});
             this.barManager1.MaxItemId = 12;
@@ -91,9 +106,9 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNewAccount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemAccount),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditAccount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemAccount),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Refresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Document),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCurTranClose, true)});
@@ -110,6 +125,14 @@
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
             // 
+            // btnEditAccount
+            // 
+            this.btnEditAccount.Caption = "Hesap Düzelt";
+            this.btnEditAccount.Id = 2;
+            this.btnEditAccount.ImageOptions.ImageIndex = 6;
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditAccount_ItemClick);
+            // 
             // btnRemAccount
             // 
             this.btnRemAccount.Caption = "Hesap Sil";
@@ -117,19 +140,27 @@
             this.btnRemAccount.ImageOptions.ImageIndex = 5;
             this.btnRemAccount.Name = "btnRemAccount";
             // 
-            // btnEditAccount
+            // bbi_Refresh
             // 
-            this.btnEditAccount.Caption = "Hesap Düzelt";
-            this.btnEditAccount.Id = 2;
-            this.btnEditAccount.ImageOptions.ImageIndex = 6;
-            this.btnEditAccount.Name = "btnEditAccount";
+            this.bbi_Refresh.Caption = "Yenile";
+            this.bbi_Refresh.Id = 9;
+            this.bbi_Refresh.ImageOptions.ImageIndex = 7;
+            this.bbi_Refresh.Name = "bbi_Refresh";
+            this.bbi_Refresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Refresh_ItemClick);
             // 
-            // barButtonItem3
+            // bbi_Document
             // 
-            this.barButtonItem3.Caption = "Yenile";
-            this.barButtonItem3.Id = 9;
-            this.barButtonItem3.ImageOptions.ImageIndex = 7;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.bbi_Document.Caption = "Dosyalar";
+            this.bbi_Document.Id = 11;
+            this.bbi_Document.ImageOptions.ImageIndex = 9;
+            this.bbi_Document.Name = "bbi_Document";
+            // 
+            // bbi_Print
+            // 
+            this.bbi_Print.Caption = "Yazdır";
+            this.bbi_Print.Id = 10;
+            this.bbi_Print.ImageOptions.ImageIndex = 8;
+            this.bbi_Print.Name = "bbi_Print";
             // 
             // btnCurTranClose
             // 
@@ -218,43 +249,151 @@
             this.btnRegInfo.ImageOptions.ImageIndex = 11;
             this.btnRegInfo.Name = "btnRegInfo";
             // 
-            // gridControl1
+            // gc_Invoice
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(950, 536);
-            this.gridControl1.TabIndex = 5;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gc_Invoice.DataSource = this.bs_Invoice;
+            this.gc_Invoice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_Invoice.Location = new System.Drawing.Point(0, 0);
+            this.gc_Invoice.MainView = this.gcv_Invoice;
+            this.gc_Invoice.MenuManager = this.barManager1;
+            this.gc_Invoice.Name = "gc_Invoice";
+            this.gc_Invoice.Size = new System.Drawing.Size(950, 536);
+            this.gc_Invoice.TabIndex = 5;
+            this.gc_Invoice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_Invoice});
             // 
-            // gridView1
+            // bs_Invoice
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.bs_Invoice.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceOwnerDTO);
             // 
-            // bbi_Print
+            // gcv_Invoice
             // 
-            this.bbi_Print.Caption = "Yazdır";
-            this.bbi_Print.Id = 10;
-            this.bbi_Print.ImageOptions.ImageIndex = 8;
-            this.bbi_Print.Name = "bbi_Print";
+            this.gcv_Invoice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colFicDate,
+            this.colFichTime,
+            this.colFicheType,
+            this.colFicheDocumentNo,
+            this.colFicheRemark,
+            this.colCariRecId,
+            this.colVadeTarih,
+            this.colDepoName,
+            this.colIndirim,
+            this.colAraToplam,
+            this.colToplamKDV,
+            this.colDiğerMasraflar,
+            this.colGenelToplam});
+            this.gcv_Invoice.GridControl = this.gc_Invoice;
+            this.gcv_Invoice.Name = "gcv_Invoice";
+            this.gcv_Invoice.OptionsBehavior.Editable = false;
+            this.gcv_Invoice.OptionsView.ColumnAutoWidth = false;
+            this.gcv_Invoice.OptionsView.ShowFooter = true;
+            this.gcv_Invoice.OptionsView.ShowGroupPanel = false;
             // 
-            // bbi_Document
+            // colFicDate
             // 
-            this.bbi_Document.Caption = "Dosyalar";
-            this.bbi_Document.Id = 11;
-            this.bbi_Document.ImageOptions.ImageIndex = 9;
-            this.bbi_Document.Name = "bbi_Document";
+            this.colFicDate.Caption = "Fatura Tarihi";
+            this.colFicDate.FieldName = "FicDate";
+            this.colFicDate.Name = "colFicDate";
+            this.colFicDate.Visible = true;
+            this.colFicDate.VisibleIndex = 0;
+            // 
+            // colFichTime
+            // 
+            this.colFichTime.Caption = "Fatura Saat";
+            this.colFichTime.FieldName = "FichTime";
+            this.colFichTime.Name = "colFichTime";
+            this.colFichTime.Visible = true;
+            this.colFichTime.VisibleIndex = 1;
+            // 
+            // colFicheType
+            // 
+            this.colFicheType.FieldName = "FicheType";
+            this.colFicheType.Name = "colFicheType";
+            this.colFicheType.Visible = true;
+            this.colFicheType.VisibleIndex = 2;
+            // 
+            // colFicheDocumentNo
+            // 
+            this.colFicheDocumentNo.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colFicheDocumentNo.AppearanceCell.Options.UseFont = true;
+            this.colFicheDocumentNo.Caption = "Fatura Belge No";
+            this.colFicheDocumentNo.FieldName = "FicheDocumentNo";
+            this.colFicheDocumentNo.Name = "colFicheDocumentNo";
+            this.colFicheDocumentNo.Visible = true;
+            this.colFicheDocumentNo.VisibleIndex = 3;
+            // 
+            // colFicheRemark
+            // 
+            this.colFicheRemark.Caption = "Fatura Açıklama";
+            this.colFicheRemark.FieldName = "FicheRemark";
+            this.colFicheRemark.Name = "colFicheRemark";
+            this.colFicheRemark.Visible = true;
+            this.colFicheRemark.VisibleIndex = 4;
+            // 
+            // colCariRecId
+            // 
+            this.colCariRecId.Caption = "Cari Hesap Adı";
+            this.colCariRecId.FieldName = "CariRecId";
+            this.colCariRecId.Name = "colCariRecId";
+            this.colCariRecId.Visible = true;
+            this.colCariRecId.VisibleIndex = 5;
+            // 
+            // colVadeTarih
+            // 
+            this.colVadeTarih.FieldName = "VadeTarih";
+            this.colVadeTarih.Name = "colVadeTarih";
+            this.colVadeTarih.Visible = true;
+            this.colVadeTarih.VisibleIndex = 6;
+            // 
+            // colDepoName
+            // 
+            this.colDepoName.Caption = "Depo Adı";
+            this.colDepoName.FieldName = "DepoName";
+            this.colDepoName.Name = "colDepoName";
+            this.colDepoName.Visible = true;
+            this.colDepoName.VisibleIndex = 7;
+            // 
+            // colIndirim
+            // 
+            this.colIndirim.FieldName = "Indirim";
+            this.colIndirim.Name = "colIndirim";
+            this.colIndirim.Visible = true;
+            this.colIndirim.VisibleIndex = 8;
+            // 
+            // colAraToplam
+            // 
+            this.colAraToplam.FieldName = "AraToplam";
+            this.colAraToplam.Name = "colAraToplam";
+            this.colAraToplam.Visible = true;
+            this.colAraToplam.VisibleIndex = 9;
+            // 
+            // colToplamKDV
+            // 
+            this.colToplamKDV.FieldName = "ToplamKDV";
+            this.colToplamKDV.Name = "colToplamKDV";
+            this.colToplamKDV.Visible = true;
+            this.colToplamKDV.VisibleIndex = 10;
+            // 
+            // colDiğerMasraflar
+            // 
+            this.colDiğerMasraflar.FieldName = "DiğerMasraflar";
+            this.colDiğerMasraflar.Name = "colDiğerMasraflar";
+            this.colDiğerMasraflar.Visible = true;
+            this.colDiğerMasraflar.VisibleIndex = 11;
+            // 
+            // colGenelToplam
+            // 
+            this.colGenelToplam.FieldName = "GenelToplam";
+            this.colGenelToplam.Name = "colGenelToplam";
+            this.colGenelToplam.Visible = true;
+            this.colGenelToplam.VisibleIndex = 12;
             // 
             // InvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 578);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gc_Invoice);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -266,8 +405,9 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InvoiceList_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,10 +431,24 @@
         private DevExpress.XtraBars.BarButtonItem btnSeaAccount;
         private DevExpress.XtraBars.BarButtonItem btnAccountTransactions;
         private DevExpress.XtraBars.BarButtonItem btnRegInfo;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraBars.BarButtonItem bbi_Refresh;
+        private DevExpress.XtraGrid.GridControl gc_Invoice;
+        private DevExpress.XtraGrid.Views.Grid.GridView gcv_Invoice;
         private DevExpress.XtraBars.BarButtonItem bbi_Print;
         private DevExpress.XtraBars.BarButtonItem bbi_Document;
+        private System.Windows.Forms.BindingSource bs_Invoice;
+        private DevExpress.XtraGrid.Columns.GridColumn colFicDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colFichTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colFicheType;
+        private DevExpress.XtraGrid.Columns.GridColumn colFicheDocumentNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colFicheRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariRecId;
+        private DevExpress.XtraGrid.Columns.GridColumn colVadeTarih;
+        private DevExpress.XtraGrid.Columns.GridColumn colDepoName;
+        private DevExpress.XtraGrid.Columns.GridColumn colIndirim;
+        private DevExpress.XtraGrid.Columns.GridColumn colAraToplam;
+        private DevExpress.XtraGrid.Columns.GridColumn colToplamKDV;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiğerMasraflar;
+        private DevExpress.XtraGrid.Columns.GridColumn colGenelToplam;
     }
 }

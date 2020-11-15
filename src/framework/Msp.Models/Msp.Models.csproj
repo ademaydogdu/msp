@@ -50,6 +50,9 @@
     <Compile Include="Models\CTransactionsDTO.cs" />
     <Compile Include="Models\CustomersDTO.cs" />
     <Compile Include="Models\DepotDTO.cs" />
+    <Compile Include="Models\Invoice\InvoiceOwnerDTO.cs" />
+    <Compile Include="Models\Invoice\InvoiceSaveRequest.cs" />
+    <Compile Include="Models\Invoice\InvoiceTransDTO.cs" />
     <Compile Include="Models\KDVTaxDto.cs" />
     <Compile Include="Models\OrderManagementDTO.cs" />
     <Compile Include="Models\ParametersDTO.cs" />
