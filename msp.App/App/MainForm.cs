@@ -25,6 +25,7 @@ using Msp.App.Tool;
 using DevExpress.LookAndFeel;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
+using Msp.App.CariIslemler;
 
 namespace msp.App
 {
@@ -523,6 +524,14 @@ namespace msp.App
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("İşlem Tamamlandı.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnAlimFaturasi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.MdiParent = this;
+            frm.invoice = InvoiceType.AlımFaturası;
+            frm.Show();
         }
     }
 }

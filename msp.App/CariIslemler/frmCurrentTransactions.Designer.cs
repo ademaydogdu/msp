@@ -120,6 +120,8 @@
             this.colCurPhoneOneTwo});
             this.gcv_CurTrans.GridControl = this.gcvCurTransaction;
             this.gcv_CurTrans.Name = "gcv_CurTrans";
+            this.gcv_CurTrans.OptionsBehavior.Editable = false;
+            this.gcv_CurTrans.OptionsView.ShowAutoFilterRow = true;
             // 
             // ID
             // 

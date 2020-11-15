@@ -17,4 +17,10 @@ namespace Msp.Infrastructure
         View = 3,
     }
 
+    public enum InvoiceType
+    {
+        AlımFaturası = 1
+    }
+
+
 }

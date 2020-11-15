@@ -220,6 +220,8 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem83 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAlimFaturasi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -384,10 +386,12 @@
             this.barButtonItem80,
             this.barButtonItem81,
             this.barButtonItem82,
-            this.barButtonItem78});
+            this.barButtonItem78,
+            this.barButtonItem83,
+            this.btnAlimFaturasi});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 150;
+            this.ribbon.MaxItemId = 152;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1623,8 +1627,7 @@
             // 
             // ribbonPageGroup19
             // 
-            this.ribbonPageGroup19.ItemLinks.Add(this.bntfatura);
-            this.ribbonPageGroup19.ItemLinks.Add(this.barSubItem14);
+            this.ribbonPageGroup19.ItemLinks.Add(this.btnAlimFaturasi);
             this.ribbonPageGroup19.Name = "ribbonPageGroup19";
             this.ribbonPageGroup19.Text = "Faturalar";
             // 
@@ -1818,6 +1821,20 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barButtonItem83
+            // 
+            this.barButtonItem83.Caption = "barButtonItem83";
+            this.barButtonItem83.Id = 150;
+            this.barButtonItem83.Name = "barButtonItem83";
+            // 
+            // btnAlimFaturasi
+            // 
+            this.btnAlimFaturasi.Caption = "Alım Faturası";
+            this.btnAlimFaturasi.Id = 151;
+            this.btnAlimFaturasi.ImageOptions.LargeImageIndex = 39;
+            this.btnAlimFaturasi.Name = "btnAlimFaturasi";
+            this.btnAlimFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlimFaturasi_ItemClick);
             // 
             // MainForm
             // 
@@ -2041,5 +2058,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem82;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup28;
         private DevExpress.XtraBars.BarButtonItem barButtonItem78;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem83;
+        private DevExpress.XtraBars.BarButtonItem btnAlimFaturasi;
     }
 }
