@@ -393,6 +393,12 @@
     <Compile Include="Tanimlar\frmPaymnetList.Designer.cs">
       <DependentUpon>frmPaymnetList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\frmUrunTanimlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\frmUrunTanimlari.Designer.cs">
+      <DependentUpon>frmUrunTanimlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tanimlar\SpeedSaleProductTanim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\frmPaymnetList.resx">
       <DependentUpon>frmPaymnetList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\frmUrunTanimlari.resx">
+      <DependentUpon>frmUrunTanimlari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\SpeedSaleProductTanim.resx">
       <DependentUpon>SpeedSaleProductTanim.cs</DependentUpon>

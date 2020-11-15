@@ -178,7 +178,7 @@
             this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem81 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem82 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUrunMarka = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem83 = new DevExpress.XtraBars.BarButtonItem();
             this.btnAlimFaturasi = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
@@ -386,7 +386,7 @@
             this.barButtonItem80,
             this.barButtonItem81,
             this.barButtonItem82,
-            this.barButtonItem78,
+            this.btnUrunMarka,
             this.barButtonItem83,
             this.btnAlimFaturasi});
             this.ribbon.LargeImages = this.img_buton;
@@ -1359,6 +1359,7 @@
             // btnLog
             // 
             this.btnLog.Caption = "Log";
+            this.btnLog.Enabled = false;
             this.btnLog.Id = 128;
             this.btnLog.ImageOptions.LargeImageIndex = 29;
             this.btnLog.Name = "btnLog";
@@ -1478,12 +1479,13 @@
             this.barButtonItem82.ImageOptions.LargeImageIndex = 25;
             this.barButtonItem82.Name = "barButtonItem82";
             // 
-            // barButtonItem78
+            // btnUrunMarka
             // 
-            this.barButtonItem78.Caption = "Ürüm Marka Tanımları";
-            this.barButtonItem78.Id = 149;
-            this.barButtonItem78.ImageOptions.LargeImageIndex = 41;
-            this.barButtonItem78.Name = "barButtonItem78";
+            this.btnUrunMarka.Caption = "Ürüm Marka Tanımları";
+            this.btnUrunMarka.Id = 149;
+            this.btnUrunMarka.ImageOptions.LargeImageIndex = 41;
+            this.btnUrunMarka.Name = "btnUrunMarka";
+            this.btnUrunMarka.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunMarka_ItemClick);
             // 
             // barButtonItem83
             // 
@@ -1736,7 +1738,7 @@
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_BirimTanimlari);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem78);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnUrunMarka);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPageGroup14
@@ -2059,7 +2061,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem81;
         private DevExpress.XtraBars.BarButtonItem barButtonItem82;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup28;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem78;
+        private DevExpress.XtraBars.BarButtonItem btnUrunMarka;
         private DevExpress.XtraBars.BarButtonItem barButtonItem83;
         private DevExpress.XtraBars.BarButtonItem btnAlimFaturasi;
     }

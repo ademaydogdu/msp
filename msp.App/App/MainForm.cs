@@ -533,5 +533,12 @@ namespace msp.App
             frm.invoice = InvoiceType.AlımFaturası;
             frm.Show();
         }
+
+        private void btnUrunMarka_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmUrunTanimlari frm = new frmUrunTanimlari();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
