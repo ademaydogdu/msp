@@ -33,8 +33,8 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_New = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Edit = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_Cancel = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_View = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Cancel = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -49,6 +49,7 @@
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusername = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bbi_DeletedRow = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bbi_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -73,9 +74,10 @@
             this.bbi_Cancel,
             this.bbi_View,
             this.bbi_Refresh,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.bbi_DeletedRow});
             this.bbi_bar.LargeImages = this.img_bar;
-            this.bbi_bar.MaxItemId = 7;
+            this.bbi_bar.MaxItemId = 8;
             this.bbi_bar.StatusBar = this.bar3;
             // 
             // bar3
@@ -88,9 +90,10 @@
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_New),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Edit),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Cancel),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_View),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_DeletedRow),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Refresh, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Cancel),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
@@ -103,6 +106,7 @@
             this.bbi_New.Id = 1;
             this.bbi_New.ImageOptions.ImageIndex = 0;
             this.bbi_New.Name = "bbi_New";
+            this.bbi_New.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_New_ItemClick);
             // 
             // bbi_Edit
             // 
@@ -110,13 +114,7 @@
             this.bbi_Edit.Id = 2;
             this.bbi_Edit.ImageOptions.ImageIndex = 2;
             this.bbi_Edit.Name = "bbi_Edit";
-            // 
-            // bbi_Cancel
-            // 
-            this.bbi_Cancel.Caption = "Sil";
-            this.bbi_Cancel.Id = 3;
-            this.bbi_Cancel.ImageOptions.ImageIndex = 1;
-            this.bbi_Cancel.Name = "bbi_Cancel";
+            this.bbi_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Edit_ItemClick);
             // 
             // bbi_View
             // 
@@ -124,6 +122,15 @@
             this.bbi_View.Id = 4;
             this.bbi_View.ImageOptions.ImageIndex = 4;
             this.bbi_View.Name = "bbi_View";
+            this.bbi_View.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_View_ItemClick);
+            // 
+            // bbi_Cancel
+            // 
+            this.bbi_Cancel.Caption = "Çıkış";
+            this.bbi_Cancel.Id = 3;
+            this.bbi_Cancel.ImageOptions.ImageIndex = 1;
+            this.bbi_Cancel.Name = "bbi_Cancel";
+            this.bbi_Cancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Cancel_ItemClick);
             // 
             // bbi_Refresh
             // 
@@ -131,6 +138,7 @@
             this.bbi_Refresh.Id = 5;
             this.bbi_Refresh.ImageOptions.ImageIndex = 3;
             this.bbi_Refresh.Name = "bbi_Refresh";
+            this.bbi_Refresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Refresh_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -180,6 +188,7 @@
             this.img_bar.Add("convertto", "image://svgimages/dashboards/convertto.svg");
             this.img_bar.Add("preview", "image://svgimages/print/preview.svg");
             this.img_bar.Add("chartverticalaxis_logscale", "image://svgimages/spreadsheet/chartverticalaxis_logscale.svg");
+            this.img_bar.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
             // 
             // barCheckItem1
             // 
@@ -212,6 +221,7 @@
             this.colEmail});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -240,6 +250,13 @@
             this.colEmail.Visible = true;
             this.colEmail.VisibleIndex = 2;
             this.colEmail.Width = 156;
+            // 
+            // bbi_DeletedRow
+            // 
+            this.bbi_DeletedRow.Caption = "Satır Sil";
+            this.bbi_DeletedRow.Id = 7;
+            this.bbi_DeletedRow.ImageOptions.ImageIndex = 6;
+            this.bbi_DeletedRow.Name = "bbi_DeletedRow";
             // 
             // frmKullaniciTanim
             // 
@@ -287,5 +304,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
         private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem bbi_DeletedRow;
     }
 }

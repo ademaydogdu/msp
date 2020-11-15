@@ -179,6 +179,8 @@
             this.barButtonItem81 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem82 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem83 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAlimFaturasi = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -220,8 +222,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem83 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAlimFaturasi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1268,6 +1268,7 @@
             // btnDashboard
             // 
             this.btnDashboard.Caption = "Kontrol Paneli";
+            this.btnDashboard.Enabled = false;
             this.btnDashboard.Id = 116;
             this.btnDashboard.ImageOptions.LargeImageIndex = 15;
             this.btnDashboard.Name = "btnDashboard";
@@ -1385,6 +1386,7 @@
             // barButtonItem74
             // 
             this.barButtonItem74.Caption = "Satış Anında Barkod İşlemleri";
+            this.barButtonItem74.Enabled = false;
             this.barButtonItem74.Id = 132;
             this.barButtonItem74.ImageOptions.LargeImageIndex = 32;
             this.barButtonItem74.Name = "barButtonItem74";
@@ -1482,6 +1484,20 @@
             this.barButtonItem78.Id = 149;
             this.barButtonItem78.ImageOptions.LargeImageIndex = 41;
             this.barButtonItem78.Name = "barButtonItem78";
+            // 
+            // barButtonItem83
+            // 
+            this.barButtonItem83.Caption = "barButtonItem83";
+            this.barButtonItem83.Id = 150;
+            this.barButtonItem83.Name = "barButtonItem83";
+            // 
+            // btnAlimFaturasi
+            // 
+            this.btnAlimFaturasi.Caption = "Alım Faturası";
+            this.btnAlimFaturasi.Id = 151;
+            this.btnAlimFaturasi.ImageOptions.LargeImageIndex = 39;
+            this.btnAlimFaturasi.Name = "btnAlimFaturasi";
+            this.btnAlimFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlimFaturasi_ItemClick);
             // 
             // img_buton
             // 
@@ -1821,20 +1837,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem83
-            // 
-            this.barButtonItem83.Caption = "barButtonItem83";
-            this.barButtonItem83.Id = 150;
-            this.barButtonItem83.Name = "barButtonItem83";
-            // 
-            // btnAlimFaturasi
-            // 
-            this.btnAlimFaturasi.Caption = "Alım Faturası";
-            this.btnAlimFaturasi.Id = 151;
-            this.btnAlimFaturasi.ImageOptions.LargeImageIndex = 39;
-            this.btnAlimFaturasi.Name = "btnAlimFaturasi";
-            this.btnAlimFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlimFaturasi_ItemClick);
             // 
             // MainForm
             // 
