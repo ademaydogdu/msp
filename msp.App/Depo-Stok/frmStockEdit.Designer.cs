@@ -78,6 +78,7 @@
             this.chkKDVIstisna = new DevExpress.XtraEditors.CheckEdit();
             this.txtKarPrice = new DevExpress.XtraEditors.TextEdit();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
+            this.txtIskonto = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -95,6 +96,7 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -142,8 +144,6 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtIskonto = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -183,6 +183,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkKDVIstisna.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKarPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -200,6 +201,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
@@ -245,8 +247,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             this.SuspendLayout();
             // 
             // bs_StockEdit
@@ -892,6 +892,18 @@
             this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_ButtonClick);
             this.buttonEdit1.EditValueChanged += new System.EventHandler(this.buttonEdit1_EditValueChanged);
             // 
+            // txtIskonto
+            // 
+            this.txtIskonto.Enabled = false;
+            this.txtIskonto.Location = new System.Drawing.Point(509, 356);
+            this.txtIskonto.MenuManager = this.barManager2;
+            this.txtIskonto.Name = "txtIskonto";
+            this.txtIskonto.Properties.Mask.EditMask = "n2";
+            this.txtIskonto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtIskonto.Size = new System.Drawing.Size(264, 20);
+            this.txtIskonto.StyleController = this.dataLayoutControl1;
+            this.txtIskonto.TabIndex = 36;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -1095,6 +1107,16 @@
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.txtIskonto;
+            this.layoutControlItem16.ImageOptions.ImageIndex = 40;
+            this.layoutControlItem16.Location = new System.Drawing.Point(0, 98);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(398, 36);
+            this.layoutControlItem16.Text = "İndirim";
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(127, 32);
+            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.txtSalePrice;
@@ -1214,7 +1236,7 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(309, 36);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem6.Text = "Özel Kod";
+            this.layoutControlItem6.Text = "Stok Kodu";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(127, 32);
             // 
             // layoutControlItem2
@@ -1621,28 +1643,6 @@
             this.layoutControlItem26.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem26.TextVisible = false;
             // 
-            // txtIskonto
-            // 
-            this.txtIskonto.Enabled = false;
-            this.txtIskonto.Location = new System.Drawing.Point(509, 356);
-            this.txtIskonto.MenuManager = this.barManager2;
-            this.txtIskonto.Name = "txtIskonto";
-            this.txtIskonto.Properties.Mask.EditMask = "n2";
-            this.txtIskonto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtIskonto.Size = new System.Drawing.Size(264, 20);
-            this.txtIskonto.StyleController = this.dataLayoutControl1;
-            this.txtIskonto.TabIndex = 36;
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.Control = this.txtIskonto;
-            this.layoutControlItem16.ImageOptions.ImageIndex = 40;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 98);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(398, 36);
-            this.layoutControlItem16.Text = "İndirim";
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(127, 32);
-            // 
             // frmStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1704,6 +1704,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkKDVIstisna.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKarPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -1721,6 +1722,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
@@ -1766,8 +1768,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
