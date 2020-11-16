@@ -66,6 +66,8 @@
     <Compile Include="Entities\OrderManagement.cs" />
     <Compile Include="Entities\Parameters.cs" />
     <Compile Include="Entities\PaymentType.cs" />
+    <Compile Include="Entities\ProductMark.cs" />
+    <Compile Include="Entities\ProductMovement.cs" />
     <Compile Include="Entities\Products.cs" />
     <Compile Include="Entities\ProgramsControl.cs" />
     <Compile Include="Entities\SaleOwner.cs" />

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using msp.App;
+using Msp.App.Tool;
 
 namespace Msp.App.Satis
 {
@@ -18,7 +20,7 @@ namespace Msp.App.Satis
             InitializeComponent();
         }
         public decimal TotalPrice;
-
+        decimal indirimTutar = 0;
         public void Show(decimal _totalPrice)
         {
             TotalPrice = _totalPrice;
@@ -41,7 +43,15 @@ namespace Msp.App.Satis
 
         public void do_indirimUygula()
         {
-
+            if (indirimTutar > 0)
+            {
+                Form _Form = MspTool.get_OpenForm("frmSatis");
+                if (_Form != null)
+                {
+                    ((frmSatis)_Form).IskontoUygula(indirimTutar);
+                }
+                _Form = null;
+            }
         }
 
         private void bbi_Hesapla_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -77,7 +87,7 @@ namespace Msp.App.Satis
         {
             if (TotalPrice > 0)
             {
-                decimal indirimTutar = Math.Round((TotalPrice * Convert.ToDecimal(txtIndirimOrani.EditValue)) / 100, 2);
+                indirimTutar = Math.Round((TotalPrice * Convert.ToDecimal(txtIndirimOrani.EditValue)) / 100, 2);
                 lblIndirimTutar.Text = Convert.ToString(indirimTutar);
                 lblTotalDiscount.Text = Convert.ToString(Math.Round(TotalPrice - indirimTutar, 2));
             }

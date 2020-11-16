@@ -25,6 +25,8 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Customers> customers { get; set; }
         public virtual DbSet<Cayments> payments { get; set; }
         public virtual DbSet<Products> products { get; set; }
+        public virtual DbSet<ProductMark> ProductMark { get; set; }
+        public virtual DbSet<ProductMovement> ProductMovement { get; set; }
         public virtual DbSet<Users> users { get; set; }
         public virtual DbSet<Company> Company { get; set; }
         public virtual DbSet<Parameters> Parameters { get; set; }

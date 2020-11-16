@@ -88,7 +88,7 @@
             this.txt_Date = new DevExpress.XtraEditors.DateEdit();
             this.btn_NewProcess = new DevExpress.XtraEditors.SimpleButton();
             this.btnIskonto = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIskontoIptal = new DevExpress.XtraEditors.SimpleButton();
             this.txtParaUstu = new DevExpress.XtraEditors.SpinEdit();
             this.btnDeleteRow = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -287,7 +287,7 @@
             this.layoutControl1.Controls.Add(this.txt_Date);
             this.layoutControl1.Controls.Add(this.btn_NewProcess);
             this.layoutControl1.Controls.Add(this.btnIskonto);
-            this.layoutControl1.Controls.Add(this.simpleButton3);
+            this.layoutControl1.Controls.Add(this.btnIskontoIptal);
             this.layoutControl1.Controls.Add(this.txtParaUstu);
             this.layoutControl1.Controls.Add(this.btnDeleteRow);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -913,17 +913,18 @@
             this.btnIskonto.Text = "İskonto";
             this.btnIskonto.Click += new System.EventHandler(this.btnIskonto_Click);
             // 
-            // simpleButton3
+            // btnIskontoIptal
             // 
-            this.simpleButton3.ImageOptions.ImageIndex = 16;
-            this.simpleButton3.ImageOptions.ImageList = this.img_EkleSatis;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(1256, 623);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(130, 55);
-            this.simpleButton3.StyleController = this.layoutControl1;
-            this.simpleButton3.TabIndex = 41;
-            this.simpleButton3.Text = "İskonto İptal";
+            this.btnIskontoIptal.ImageOptions.ImageIndex = 16;
+            this.btnIskontoIptal.ImageOptions.ImageList = this.img_EkleSatis;
+            this.btnIskontoIptal.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnIskontoIptal.Location = new System.Drawing.Point(1256, 623);
+            this.btnIskontoIptal.Name = "btnIskontoIptal";
+            this.btnIskontoIptal.Size = new System.Drawing.Size(130, 55);
+            this.btnIskontoIptal.StyleController = this.layoutControl1;
+            this.btnIskontoIptal.TabIndex = 41;
+            this.btnIskontoIptal.Text = "İskonto İptal";
+            this.btnIskontoIptal.Click += new System.EventHandler(this.btnIskontoIptal_Click);
             // 
             // txtParaUstu
             // 
@@ -1522,7 +1523,7 @@
             // 
             // layoutControlItem36
             // 
-            this.layoutControlItem36.Control = this.simpleButton3;
+            this.layoutControlItem36.Control = this.btnIskontoIptal;
             this.layoutControlItem36.Location = new System.Drawing.Point(288, 0);
             this.layoutControlItem36.MaxSize = new System.Drawing.Size(134, 59);
             this.layoutControlItem36.MinSize = new System.Drawing.Size(134, 59);
@@ -1792,7 +1793,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem34;
         private DevExpress.XtraEditors.SimpleButton btnIskonto;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem35;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnIskontoIptal;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem36;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;

@@ -53,6 +53,7 @@ namespace msp.App
         List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
         List<CustomersDTO> _customerList = new List<CustomersDTO>();
 
+        decimal IskontoTutari = 0;
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -436,6 +437,15 @@ namespace msp.App
             frm.Show(__dll_SaleOwner.TotalPrice.GetValueOrDefault());
         }
 
+        public void IskontoUygula(decimal _indirimTutari)
+        {
+            IskontoTutari = _indirimTutari;
+            var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
+            txt_İndirimTutar.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", IskontoTutari);
+            txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount- IskontoTutari);
+        }
+
+
         private void txtParaUstu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
@@ -465,6 +475,17 @@ namespace msp.App
                 __dl_List_SaleTrans.Remove(oRow);
                 gridControl1.RefreshDataSource();
                 TopTotal();
+            }
+        }
+
+        private void btnIskontoIptal_Click(object sender, EventArgs e)
+        {
+            if (IskontoTutari != 0)
+            {
+                IskontoTutari = 0;
+                var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
+                txt_İndirimTutar.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", IskontoTutari);
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
             }
         }
     }
