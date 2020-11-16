@@ -199,6 +199,7 @@ namespace msp.App
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
 
+
         }
 
         private void btn_NakitSatış_Click(object sender, EventArgs e)
