@@ -81,6 +81,7 @@
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colPSalePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -133,6 +134,7 @@
             this.colPBarcode,
             this.colPCategoryId,
             this.colPDate,
+            this.colPSalePrice,
             this.colPFirstPrice,
             this.colPTotal,
             this.colPlastPrice,
@@ -623,6 +625,16 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // colPSalePrice
+            // 
+            this.colPSalePrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colPSalePrice.AppearanceCell.Options.UseFont = true;
+            this.colPSalePrice.Caption = "Satış Fiyatı";
+            this.colPSalePrice.FieldName = "PSalePrice";
+            this.colPSalePrice.Name = "colPSalePrice";
+            this.colPSalePrice.Visible = true;
+            this.colPSalePrice.VisibleIndex = 15;
+            // 
             // frmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -710,5 +722,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private DevExpress.XtraBars.BarButtonItem bbi_Print;
         private DevExpress.XtraBars.BarButtonItem bbi_EnvanterGiris;
+        private DevExpress.XtraGrid.Columns.GridColumn colPSalePrice;
     }
 }

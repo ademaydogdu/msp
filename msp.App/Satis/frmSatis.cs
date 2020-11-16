@@ -87,7 +87,7 @@ namespace msp.App
                     saleTrans.ProductId = _product.PID;
                     saleTrans.ProductName = _product.PName;
                     saleTrans.ProductBarcode = _product.PBarcode;
-                    saleTrans.ProductPrice = _product.PMalBedeli;
+                    saleTrans.ProductPrice = _product.PSalePrice.GetValueOrDefault(); //_product.PMalBedeli;
                     saleTrans.UnitId = _product.PUnitId;
                     saleTrans.ProductQuantity = 1;
                     saleTrans.Deleted = false;
@@ -170,7 +170,7 @@ namespace msp.App
             if (__dl_List_SaleTrans.Count > 0)
             {
                 var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
-                var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
+                var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 //var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 __dll_SaleOwner.NetPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 __dll_SaleOwner.TotalPrice = totalAmount;
@@ -433,7 +433,7 @@ namespace msp.App
         private void btnIskonto_Click(object sender, EventArgs e)
         {
             frmIskonto frm = new frmIskonto();
-            frm.ShowDialog();
+            frm.Show(__dll_SaleOwner.TotalPrice.GetValueOrDefault());
         }
 
         private void txtParaUstu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
