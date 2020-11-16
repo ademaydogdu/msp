@@ -49,9 +49,9 @@
             this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_CurTransactionSource = new System.Windows.Forms.BindingSource(this.components);
             this.CurTransEditCompanyTypeLE = new DevExpress.XtraEditors.LookUpEdit();
             this.CurTransEditAccTypeLE = new DevExpress.XtraEditors.LookUpEdit();
-            this.bs_CurTransactionSource = new System.Windows.Forms.BindingSource(this.components);
             this.CurTransEditAccNo = new DevExpress.XtraEditors.TextEdit();
             this.CurTransEditAccNameTE = new DevExpress.XtraEditors.TextEdit();
             this.CurTransEditAccAuthTE = new DevExpress.XtraEditors.TextEdit();
@@ -87,6 +87,13 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -112,13 +119,7 @@
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -135,9 +136,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditCompanyTypeLE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccTypeLE.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccNameTE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccAuthTE.Properties)).BeginInit();
@@ -173,6 +174,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -198,13 +206,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -261,7 +263,7 @@
             this.lookUpEdit3.Name = "lookUpEdit3";
             this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit3.Size = new System.Drawing.Size(258, 20);
+            this.lookUpEdit3.Size = new System.Drawing.Size(254, 20);
             this.lookUpEdit3.StyleController = this.layoutControl1;
             this.lookUpEdit3.TabIndex = 25;
             // 
@@ -469,6 +471,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
             // 
+            // bs_CurTransactionSource
+            // 
+            this.bs_CurTransactionSource.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
+            // 
             // CurTransEditCompanyTypeLE
             // 
             this.CurTransEditCompanyTypeLE.Location = new System.Drawing.Point(508, 191);
@@ -476,7 +482,7 @@
             this.CurTransEditCompanyTypeLE.Name = "CurTransEditCompanyTypeLE";
             this.CurTransEditCompanyTypeLE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CurTransEditCompanyTypeLE.Size = new System.Drawing.Size(258, 20);
+            this.CurTransEditCompanyTypeLE.Size = new System.Drawing.Size(254, 20);
             this.CurTransEditCompanyTypeLE.StyleController = this.layoutControl1;
             this.CurTransEditCompanyTypeLE.TabIndex = 23;
             // 
@@ -488,13 +494,9 @@
             this.CurTransEditAccTypeLE.Name = "CurTransEditAccTypeLE";
             this.CurTransEditAccTypeLE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CurTransEditAccTypeLE.Size = new System.Drawing.Size(264, 20);
+            this.CurTransEditAccTypeLE.Size = new System.Drawing.Size(261, 20);
             this.CurTransEditAccTypeLE.StyleController = this.layoutControl1;
             this.CurTransEditAccTypeLE.TabIndex = 7;
-            // 
-            // bs_CurTransactionSource
-            // 
-            this.bs_CurTransactionSource.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
             // 
             // CurTransEditAccNo
             // 
@@ -627,7 +629,7 @@
             // 
             // CurTransEditTaxNoTE
             // 
-            this.CurTransEditTaxNoTE.Location = new System.Drawing.Point(136, 155);
+            this.CurTransEditTaxNoTE.Location = new System.Drawing.Point(136, 165);
             this.CurTransEditTaxNoTE.MenuManager = this.barManager1;
             this.CurTransEditTaxNoTE.Name = "CurTransEditTaxNoTE";
             this.CurTransEditTaxNoTE.Size = new System.Drawing.Size(256, 20);
@@ -636,7 +638,7 @@
             // 
             // CurTransEditTaxOfficeTE
             // 
-            this.CurTransEditTaxOfficeTE.Location = new System.Drawing.Point(508, 155);
+            this.CurTransEditTaxOfficeTE.Location = new System.Drawing.Point(505, 165);
             this.CurTransEditTaxOfficeTE.MenuManager = this.barManager1;
             this.CurTransEditTaxOfficeTE.Name = "CurTransEditTaxOfficeTE";
             this.CurTransEditTaxOfficeTE.Size = new System.Drawing.Size(258, 20);
@@ -645,7 +647,7 @@
             // 
             // CurTransEditIdentNoTE
             // 
-            this.CurTransEditIdentNoTE.Location = new System.Drawing.Point(136, 191);
+            this.CurTransEditIdentNoTE.Location = new System.Drawing.Point(136, 201);
             this.CurTransEditIdentNoTE.MenuManager = this.barManager1;
             this.CurTransEditIdentNoTE.Name = "CurTransEditIdentNoTE";
             this.CurTransEditIdentNoTE.Size = new System.Drawing.Size(256, 20);
@@ -663,7 +665,7 @@
             // 
             // CurTransEditRiskLimitTE
             // 
-            this.CurTransEditRiskLimitTE.Location = new System.Drawing.Point(136, 263);
+            this.CurTransEditRiskLimitTE.Location = new System.Drawing.Point(136, 273);
             this.CurTransEditRiskLimitTE.MenuManager = this.barManager1;
             this.CurTransEditRiskLimitTE.Name = "CurTransEditRiskLimitTE";
             this.CurTransEditRiskLimitTE.Size = new System.Drawing.Size(256, 20);
@@ -672,7 +674,7 @@
             // 
             // CurTransEditDiscountTE
             // 
-            this.CurTransEditDiscountTE.Location = new System.Drawing.Point(508, 263);
+            this.CurTransEditDiscountTE.Location = new System.Drawing.Point(505, 273);
             this.CurTransEditDiscountTE.MenuManager = this.barManager1;
             this.CurTransEditDiscountTE.Name = "CurTransEditDiscountTE";
             this.CurTransEditDiscountTE.Size = new System.Drawing.Size(258, 20);
@@ -821,11 +823,85 @@
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 108);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(770, 343);
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(763, 319);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
             this.layoutControlGroup2,
             this.layoutControlGroup3});
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton()});
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem27,
+            this.layoutControlItem28,
+            this.layoutControlItem30,
+            this.emptySpaceItem6,
+            this.layoutControlItem29,
+            this.layoutControlItem31});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(739, 272);
+            this.layoutControlGroup3.Text = "Banka Bilgileri";
+            // 
+            // layoutControlItem27
+            // 
+            this.layoutControlItem27.Control = this.CurTranEditBankNameTE;
+            this.layoutControlItem27.ImageOptions.ImageIndex = 13;
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem27.Name = "layoutControlItem27";
+            this.layoutControlItem27.Size = new System.Drawing.Size(369, 36);
+            this.layoutControlItem27.Text = "Banka Adı";
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(109, 32);
+            // 
+            // layoutControlItem28
+            // 
+            this.layoutControlItem28.Control = this.CurTranEditBankBranchTE;
+            this.layoutControlItem28.ImageOptions.ImageIndex = 2;
+            this.layoutControlItem28.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem28.Name = "layoutControlItem28";
+            this.layoutControlItem28.Size = new System.Drawing.Size(369, 36);
+            this.layoutControlItem28.Text = "Banka Şubesi";
+            this.layoutControlItem28.TextSize = new System.Drawing.Size(109, 32);
+            // 
+            // layoutControlItem30
+            // 
+            this.layoutControlItem30.Control = this.CurTranEditAccNoTE;
+            this.layoutControlItem30.ImageOptions.ImageIndex = 48;
+            this.layoutControlItem30.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem30.Name = "layoutControlItem30";
+            this.layoutControlItem30.Size = new System.Drawing.Size(369, 200);
+            this.layoutControlItem30.Text = "Hesap  No";
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(109, 32);
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(369, 0);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(370, 36);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem29
+            // 
+            this.layoutControlItem29.Control = this.CurTranEditBankBranchCodeTE;
+            this.layoutControlItem29.ImageOptions.ImageIndex = 49;
+            this.layoutControlItem29.Location = new System.Drawing.Point(369, 36);
+            this.layoutControlItem29.Name = "layoutControlItem29";
+            this.layoutControlItem29.Size = new System.Drawing.Size(370, 36);
+            this.layoutControlItem29.Text = "Şube Kodu";
+            this.layoutControlItem29.TextSize = new System.Drawing.Size(109, 32);
+            // 
+            // layoutControlItem31
+            // 
+            this.layoutControlItem31.Control = this.CurTranEditAccNameTE;
+            this.layoutControlItem31.ImageOptions.ImageIndex = 45;
+            this.layoutControlItem31.Location = new System.Drawing.Point(369, 72);
+            this.layoutControlItem31.Name = "layoutControlItem31";
+            this.layoutControlItem31.Size = new System.Drawing.Size(370, 200);
+            this.layoutControlItem31.Text = "Hesap Adı";
+            this.layoutControlItem31.TextSize = new System.Drawing.Size(109, 32);
             // 
             // layoutControlGroup1
             // 
@@ -992,7 +1068,7 @@
             this.emptySpaceItem8});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(746, 296);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(739, 272);
             this.layoutControlGroup2.Text = "Diğer";
             // 
             // layoutControlItem17
@@ -1001,7 +1077,7 @@
             this.layoutControlItem17.ImageOptions.ImageIndex = 36;
             this.layoutControlItem17.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(372, 36);
+            this.layoutControlItem17.Size = new System.Drawing.Size(369, 36);
             this.layoutControlItem17.Text = "Vergi No";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(109, 32);
             // 
@@ -1009,9 +1085,9 @@
             // 
             this.layoutControlItem19.Control = this.CurTransEditTaxOfficeTE;
             this.layoutControlItem19.ImageOptions.ImageIndex = 2;
-            this.layoutControlItem19.Location = new System.Drawing.Point(372, 0);
+            this.layoutControlItem19.Location = new System.Drawing.Point(369, 0);
             this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(374, 36);
+            this.layoutControlItem19.Size = new System.Drawing.Size(370, 36);
             this.layoutControlItem19.Text = "Vergi Dairesi";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(109, 32);
             // 
@@ -1021,7 +1097,7 @@
             this.layoutControlItem20.ImageOptions.ImageIndex = 3;
             this.layoutControlItem20.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(372, 36);
+            this.layoutControlItem20.Size = new System.Drawing.Size(369, 36);
             this.layoutControlItem20.Text = "TC No";
             this.layoutControlItem20.TextSize = new System.Drawing.Size(109, 32);
             // 
@@ -1029,66 +1105,66 @@
             // 
             this.layoutControlItem21.Control = this.CurTransEditCompanyTypeLE;
             this.layoutControlItem21.ImageOptions.ImageIndex = 6;
-            this.layoutControlItem21.Location = new System.Drawing.Point(372, 36);
+            this.layoutControlItem21.Location = new System.Drawing.Point(369, 36);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(374, 36);
+            this.layoutControlItem21.Size = new System.Drawing.Size(370, 36);
             this.layoutControlItem21.Text = "Şahıs Şirketi";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(109, 32);
             // 
-            // layoutControlItem22
+            // layoutControlItem27
             // 
             this.layoutControlItem22.Control = this.CurTransEditTitleTE;
             this.layoutControlItem22.ImageOptions.ImageIndex = 41;
             this.layoutControlItem22.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem22.Name = "layoutControlItem22";
-            this.layoutControlItem22.Size = new System.Drawing.Size(372, 36);
+            this.layoutControlItem22.Size = new System.Drawing.Size(369, 36);
             this.layoutControlItem22.Text = "Ünvanı";
             this.layoutControlItem22.TextSize = new System.Drawing.Size(109, 32);
             // 
-            // layoutControlItem23
+            // layoutControlItem28
             // 
             this.layoutControlItem23.Control = this.lookUpEdit3;
             this.layoutControlItem23.ImageOptions.ImageIndex = 39;
-            this.layoutControlItem23.Location = new System.Drawing.Point(372, 72);
+            this.layoutControlItem23.Location = new System.Drawing.Point(369, 72);
             this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(374, 36);
+            this.layoutControlItem23.Size = new System.Drawing.Size(370, 36);
             this.layoutControlItem23.Text = "Veresiye Satış";
             this.layoutControlItem23.TextSize = new System.Drawing.Size(109, 32);
             // 
-            // layoutControlItem24
+            // layoutControlItem30
             // 
             this.layoutControlItem24.Control = this.CurTransEditRiskLimitTE;
             this.layoutControlItem24.ImageOptions.ImageIndex = 37;
             this.layoutControlItem24.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(372, 36);
+            this.layoutControlItem24.Size = new System.Drawing.Size(369, 36);
             this.layoutControlItem24.Text = "Risk Limiti";
             this.layoutControlItem24.TextSize = new System.Drawing.Size(109, 32);
             // 
-            // layoutControlItem25
+            // emptySpaceItem6
             // 
             this.layoutControlItem25.Control = this.CurTransEditDiscountTE;
             this.layoutControlItem25.ImageOptions.ImageIndex = 40;
-            this.layoutControlItem25.Location = new System.Drawing.Point(372, 108);
+            this.layoutControlItem25.Location = new System.Drawing.Point(369, 108);
             this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(374, 36);
+            this.layoutControlItem25.Size = new System.Drawing.Size(370, 36);
             this.layoutControlItem25.Text = "İskonto Oranı";
             this.layoutControlItem25.TextSize = new System.Drawing.Size(109, 32);
             // 
-            // emptySpaceItem7
+            // layoutControlItem29
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(372, 144);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(369, 144);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(374, 152);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(370, 128);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem8
+            // layoutControlItem31
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
             this.emptySpaceItem8.Location = new System.Drawing.Point(0, 144);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(372, 152);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(369, 128);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
@@ -1224,6 +1300,7 @@
             this.Name = "frmCurTranEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cari İşlemler";
+            this.Load += new System.EventHandler(this.frmCurTranEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).EndInit();
@@ -1234,9 +1311,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditCompanyTypeLE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccTypeLE.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurTransactionSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccNameTE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTransEditAccAuthTE.Properties)).EndInit();
@@ -1272,6 +1349,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -1297,13 +1381,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();

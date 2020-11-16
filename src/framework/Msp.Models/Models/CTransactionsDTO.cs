@@ -8,21 +8,24 @@ namespace Msp.Models.Models
 {
     public class CTransactionsDTO
     {
+        
         public int CurID { get; set; }
 
         public string CurType { get; set; }
 
-        public Int64 CurCode { get; set; }
+        public Int64? CurCode { get; set; }
 
+        public string CurSoleProp { get; set; }
 
         public string CurAccountName { get; set; }
 
 
         public string CurAuthPersonName { get; set; }
 
-        public int CurDiscount { get; set; }
+        public int? CurDiscount { get; set; }
 
-   
+        public string CurOnCredit { get; set; }
+
         public string CurRiskLimit { get; set; }
 
        
@@ -30,7 +33,7 @@ namespace Msp.Models.Models
 
         public string CurDistrict { get; set; }
 
-        public Int64 CurBalance { get; set; }
+        public Int64? CurBalance { get; set; }
        
         public string CurCompanyType { get; set; }
 
@@ -40,15 +43,15 @@ namespace Msp.Models.Models
 
         public string CurAdressTwo { get; set; }
 
-        public int CurCountryCode { get; set; }
+        public int? CurCountryCode { get; set; }
 
         public string CurCountryName { get; set; }
 
-        public int CurZipCode { get; set; }
+        public int? CurZipCode { get; set; }
 
         public string CurPhoneOne { get; set; }
 
-        public string CurPhoneOneTwo { get; set; }
+        public string CurPhoneTwo { get; set; }
 
         public string CurFax { get; set; }
 
@@ -58,7 +61,7 @@ namespace Msp.Models.Models
 
         public string CurTaxNo { get; set; }
 
-        public string TaxOffice { get; set; }
+        public string CurTaxOffice { get; set; }
 
         public string CurCardNo { get; set; }
 

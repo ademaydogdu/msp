@@ -14,7 +14,7 @@ namespace Msp.Entity.Entities
         public int oid { get; set; }
 
         [StringLength(50)]
-        public string oType { get; set; }
+        public Boolean oType { get; set; }
 
         [StringLength(50)]
         public string oStatus { get; set; }
