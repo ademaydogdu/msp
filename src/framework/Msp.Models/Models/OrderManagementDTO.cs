@@ -12,7 +12,7 @@ namespace Msp.Models.Models
         public int oid { get; set; }
 
 
-        public Boolean oType { get; set; }
+        public bool oType { get; set; }
 
  
         public string oStatus { get; set; }
