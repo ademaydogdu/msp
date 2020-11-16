@@ -151,21 +151,15 @@
     <Compile Include="CariIslemler\frmCurTranEdit.Designer.cs">
       <DependentUpon>frmCurTranEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="CariIslemler\InvoiceEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="CariIslemler\InvoiceEdit.cs" />
     <Compile Include="CariIslemler\InvoiceEdit.Designer.cs">
       <DependentUpon>InvoiceEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="CariIslemler\InvoiceList.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="CariIslemler\InvoiceList.cs" />
     <Compile Include="CariIslemler\InvoiceList.Designer.cs">
       <DependentUpon>InvoiceList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Depo-Stok\frmEnvanterBilgiler.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Depo-Stok\frmEnvanterBilgiler.cs" />
     <Compile Include="Depo-Stok\frmEnvanterBilgiler.Designer.cs">
       <DependentUpon>frmEnvanterBilgiler.cs</DependentUpon>
     </Compile>
@@ -211,9 +205,7 @@
     <Compile Include="Depo-Stok\frmOrderPlaced.Designer.cs">
       <DependentUpon>frmOrderPlaced.cs</DependentUpon>
     </Compile>
-    <Compile Include="Depo-Stok\frmProductEnvanter.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Depo-Stok\frmProductEnvanter.cs" />
     <Compile Include="Depo-Stok\frmProductEnvanter.Designer.cs">
       <DependentUpon>frmProductEnvanter.cs</DependentUpon>
     </Compile>
@@ -223,15 +215,13 @@
     <Compile Include="Depo-Stok\frmStockEdit.Designer.cs">
       <DependentUpon>frmStockEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Depo-Stok\frmOrdersReceived.cs">
+    <Compile Include="Depo-Stok\frmNewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Depo-Stok\frmOrdersReceived.Designer.cs">
-      <DependentUpon>frmOrdersReceived.cs</DependentUpon>
+    <Compile Include="Depo-Stok\frmNewOrder.Designer.cs">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Depo-Stok\frmStockMovement.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Depo-Stok\frmStockMovement.cs" />
     <Compile Include="Depo-Stok\frmStockMovement.Designer.cs">
       <DependentUpon>frmStockMovement.cs</DependentUpon>
     </Compile>
@@ -265,9 +255,7 @@
     <Compile Include="Musteri-Islemleri\frmCustomerOrder.Designer.cs">
       <DependentUpon>frmCustomerOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\frmPrint.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Report\frmPrint.cs" />
     <Compile Include="Report\frmPrint.Designer.cs">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
@@ -327,9 +315,7 @@
     <Compile Include="Satis\frmSpeedSatis.Designer.cs">
       <DependentUpon>frmSpeedSatis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Satis\frmVeresiyeSatisList.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Satis\frmVeresiyeSatisList.cs" />
     <Compile Include="Satis\frmVeresiyeSatisList.Designer.cs">
       <DependentUpon>frmVeresiyeSatisList.cs</DependentUpon>
     </Compile>
@@ -381,9 +367,7 @@
     <Compile Include="Tanimlar\frmBirimTanim.Designer.cs">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tanimlar\frmKampanyalar.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Tanimlar\frmKampanyalar.cs" />
     <Compile Include="Tanimlar\frmKampanyalar.Designer.cs">
       <DependentUpon>frmKampanyalar.cs</DependentUpon>
     </Compile>
@@ -393,9 +377,7 @@
     <Compile Include="Tanimlar\frmPaymnetList.Designer.cs">
       <DependentUpon>frmPaymnetList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tanimlar\frmUrunTanimlari.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Tanimlar\frmUrunTanimlari.cs" />
     <Compile Include="Tanimlar\frmUrunTanimlari.Designer.cs">
       <DependentUpon>frmUrunTanimlari.cs</DependentUpon>
     </Compile>
@@ -463,8 +445,8 @@
     <EmbeddedResource Include="Depo-Stok\frmStockEdit.resx">
       <DependentUpon>frmStockEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Depo-Stok\frmOrdersReceived.resx">
-      <DependentUpon>frmOrdersReceived.cs</DependentUpon>
+    <EmbeddedResource Include="Depo-Stok\frmNewOrder.resx">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmStockMovement.resx">
       <DependentUpon>frmStockMovement.cs</DependentUpon>
@@ -569,8 +551,6 @@
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.DepotDTO1.datasource" />
-    <None Include="Properties\DataSources\Msp.Models.Models.Invoice.InvoiceOwnerDTO.datasource" />
-    <None Include="Properties\DataSources\Msp.Models.Models.Invoice.InvoiceTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.OrderManagementDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ParametersDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CustomersDTO1.datasource" />

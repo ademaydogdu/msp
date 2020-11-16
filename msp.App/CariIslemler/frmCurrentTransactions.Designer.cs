@@ -57,22 +57,22 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnSeaAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_CurTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -248,7 +248,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNewAccount),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemAccount),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditAccount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnAccountTransactions),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCurTranClose)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
@@ -259,7 +258,7 @@
             // 
             this.btnNewAccount.Caption = "Yeni Hesap";
             this.btnNewAccount.Id = 1;
-            this.btnNewAccount.ImageOptions.ImageIndex = 2;
+            this.btnNewAccount.ImageOptions.ImageIndex = 46;
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
             // 
@@ -267,7 +266,7 @@
             // 
             this.btnRemAccount.Caption = "Hesap Sil";
             this.btnRemAccount.Id = 4;
-            this.btnRemAccount.ImageOptions.ImageIndex = 5;
+            this.btnRemAccount.ImageOptions.ImageIndex = 44;
             this.btnRemAccount.Name = "btnRemAccount";
             this.btnRemAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemAccount_ItemClick);
             // 
@@ -275,7 +274,7 @@
             // 
             this.btnEditAccount.Caption = "Hesap Düzelt";
             this.btnEditAccount.Id = 2;
-            this.btnEditAccount.ImageOptions.ImageIndex = 6;
+            this.btnEditAccount.ImageOptions.ImageIndex = 48;
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditAccount_ItemClick);
             // 
@@ -290,7 +289,7 @@
             // 
             this.btnCurTranClose.Caption = "Kapat";
             this.btnCurTranClose.Id = 7;
-            this.btnCurTranClose.ImageOptions.ImageIndex = 0;
+            this.btnCurTranClose.ImageOptions.ImageIndex = 1;
             this.btnCurTranClose.Name = "btnCurTranClose";
             // 
             // barDockControlTop
@@ -324,17 +323,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(887, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 408);
-            // 
-            // svgImageCollection1
-            // 
-            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
-            this.svgImageCollection1.Add("linecolor", "image://svgimages/spreadsheet/linecolor.svg");
-            this.svgImageCollection1.Add("addfile", "image://svgimages/outlook inspired/addfile.svg");
-            this.svgImageCollection1.Add("removedataitems", "image://svgimages/dashboards/removedataitems.svg");
-            this.svgImageCollection1.Add("movechartnewsheet", "image://svgimages/spreadsheet/movechartnewsheet.svg");
-            this.svgImageCollection1.Add("snapdeletelist", "image://svgimages/snap/snapdeletelist.svg");
-            this.svgImageCollection1.Add("edit", "image://svgimages/dashboards/edit.svg");
             // 
             // barButtonItem1
             // 
@@ -382,6 +370,60 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
+            this.svgImageCollection1.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
+            this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
+            this.svgImageCollection1.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
+            this.svgImageCollection1.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
+            this.svgImageCollection1.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            this.svgImageCollection1.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
+            this.svgImageCollection1.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
+            this.svgImageCollection1.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
+            this.svgImageCollection1.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
+            this.svgImageCollection1.Add("about", "image://svgimages/outlook inspired/about.svg");
+            this.svgImageCollection1.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
+            this.svgImageCollection1.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.svgImageCollection1.Add("fax", "image://svgimages/outlook inspired/fax.svg");
+            this.svgImageCollection1.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
+            this.svgImageCollection1.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
+            this.svgImageCollection1.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
+            this.svgImageCollection1.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
+            this.svgImageCollection1.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
+            this.svgImageCollection1.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
+            this.svgImageCollection1.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
+            this.svgImageCollection1.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
+            this.svgImageCollection1.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
+            this.svgImageCollection1.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
+            this.svgImageCollection1.Add("general", "image://svgimages/spreadsheet/general.svg");
+            this.svgImageCollection1.Add("warning", "image://svgimages/status/warning.svg");
+            this.svgImageCollection1.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
+            this.svgImageCollection1.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
+            this.svgImageCollection1.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
+            this.svgImageCollection1.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
+            this.svgImageCollection1.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
+            this.svgImageCollection1.Add("timezones", "image://svgimages/scheduling/timezones.svg");
+            this.svgImageCollection1.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
+            this.svgImageCollection1.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
+            this.svgImageCollection1.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
+            this.svgImageCollection1.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
+            this.svgImageCollection1.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
+            this.svgImageCollection1.Add("card", "image://svgimages/outlook inspired/card.svg");
+            this.svgImageCollection1.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
+            this.svgImageCollection1.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
+            this.svgImageCollection1.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            this.svgImageCollection1.Add("newdatasource", "image://svgimages/dashboards/newdatasource.svg");
+            this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
+            this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
+            this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            // 
             // frmCurrentTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,9 +444,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_CurTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,7 +473,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSeaAccount;
         private DevExpress.XtraBars.BarButtonItem btnAccountTransactions;
         private DevExpress.XtraBars.BarButtonItem btnCurTranClose;
-        private DevExpress.Utils.SvgImageCollection svgImageCollection1;
         private DevExpress.XtraBars.BarButtonItem btnRegInfo;
         private System.Windows.Forms.BindingSource CurTranBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
@@ -447,5 +488,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCurCreatedDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCurPhoneOne;
         private DevExpress.XtraGrid.Columns.GridColumn colCurPhoneOneTwo;
+        private DevExpress.Utils.SvgImageCollection svgImageCollection1;
     }
 }

@@ -17,7 +17,10 @@ namespace Msp.Entity.Entities
         [StringLength(50)]
         public string CurType{ get; set; }
 
-        public Int64 CurCode { get; set; }
+        [StringLength(50)]
+        public string CurSoleProp { get; set; }
+
+        public Int64? CurCode { get; set; }
 
         [StringLength(50)]
         public string CurAccountName { get; set; }
@@ -25,7 +28,10 @@ namespace Msp.Entity.Entities
         [StringLength(50)]
         public string CurAuthPersonName { get; set; }
 
-        public int CurDiscount { get; set; }
+        public int? CurDiscount { get; set; }
+
+        [StringLength(50)]
+        public string CurOnCredit { get; set; }
 
         [StringLength(50)]
         public string CurRiskLimit { get; set; }
@@ -33,7 +39,7 @@ namespace Msp.Entity.Entities
         [StringLength(50)]
         public string CurCity { get; set; }
 
-        public Int64 CurBalance { get; set; }
+        public Int64? CurBalance { get; set; }
 
         [StringLength(50)]
         public string CurCompanyType { get; set; }
@@ -46,18 +52,18 @@ namespace Msp.Entity.Entities
         [StringLength(50)]
         public string CurAdressTwo { get; set; }
 
-        public int CurCountryCode { get; set; }
+        public int? CurCountryCode { get; set; }
 
         [StringLength(50)]
         public string CurCountryName { get; set; }
 
-        public int CurZipCode { get; set; }
+        public int? CurZipCode { get; set; }
 
         [StringLength(50)]
         public string CurPhoneOne { get; set; }
 
         [StringLength(50)]
-        public string CurPhoneOneTwo { get; set; }
+        public string CurPhoneTwo { get; set; }
 
         [StringLength(50)]
         public string CurFax { get; set; }
@@ -72,7 +78,7 @@ namespace Msp.Entity.Entities
         public string CurTaxNo { get; set; }
 
         [StringLength(50)]
-        public string TaxOffice { get; set; }
+        public string CurTaxOffice { get; set; }
 
         [StringLength(50)]
         public string CurCardNo { get; set; }
