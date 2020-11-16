@@ -51,6 +51,7 @@ namespace Msp.App.Satis
                     ((frmSatis)_Form).IskontoUygula(indirimTutar);
                 }
                 _Form = null;
+                this.Close();
             }
         }
 
