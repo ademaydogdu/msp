@@ -187,11 +187,35 @@
     <Compile Include="Depo-Stok\frmDepoEdit.Designer.cs">
       <DependentUpon>frmDepoEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Depo-Stok\frmNewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmNewOrder.Designer.cs">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmoncomingProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Depo-Stok\frmoncomingProduct.Designer.cs">
       <DependentUpon>frmoncomingProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Depo-Stok\frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Depo-Stok\frmOrderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmOrderManagement.Designer.cs">
+      <DependentUpon>frmOrderManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Depo-Stok\frmOrderPlaced.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depo-Stok\frmOrderPlaced.Designer.cs">
+      <DependentUpon>frmOrderPlaced.cs</DependentUpon>
     </Compile>
     <Compile Include="Depo-Stok\frmProductEnvanter.cs">
       <SubType>Form</SubType>
@@ -421,8 +445,20 @@
     <EmbeddedResource Include="Depo-Stok\frmDepoEdit.resx">
       <DependentUpon>frmDepoEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmNewOrder.resx">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmoncomingProduct.resx">
       <DependentUpon>frmoncomingProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmOrderManagement.resx">
+      <DependentUpon>frmOrderManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depo-Stok\frmOrderPlaced.resx">
+      <DependentUpon>frmOrderPlaced.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmProductEnvanter.resx">
       <DependentUpon>frmProductEnvanter.cs</DependentUpon>
