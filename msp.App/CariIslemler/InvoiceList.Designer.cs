@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.btnNewAccount = new DevExpress.XtraBars.BarButtonItem();
-            this.btnEditAccount = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRemAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNew = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Document = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
@@ -83,10 +83,10 @@
             this.barManager1.Images = this.img_sic;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
-            this.btnNewAccount,
-            this.btnEditAccount,
+            this.btnNew,
+            this.btnEdit,
             this.barButtonItem2,
-            this.btnRemAccount,
+            this.btnDelete,
             this.btnSeaAccount,
             this.btnAccountTransactions,
             this.btnCurTranClose,
@@ -105,9 +105,9 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnNewAccount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEditAccount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemAccount),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNew),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDelete),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Refresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Document),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print),
@@ -117,28 +117,28 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // btnNewAccount
+            // btnNew
             // 
-            this.btnNewAccount.Caption = "Yeni Hesap";
-            this.btnNewAccount.Id = 1;
-            this.btnNewAccount.ImageOptions.ImageIndex = 2;
-            this.btnNewAccount.Name = "btnNewAccount";
-            this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
+            this.btnNew.Caption = "Yeni Hesap";
+            this.btnNew.Id = 1;
+            this.btnNew.ImageOptions.ImageIndex = 2;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
             // 
-            // btnEditAccount
+            // btnEdit
             // 
-            this.btnEditAccount.Caption = "Hesap Düzelt";
-            this.btnEditAccount.Id = 2;
-            this.btnEditAccount.ImageOptions.ImageIndex = 6;
-            this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditAccount_ItemClick);
+            this.btnEdit.Caption = "Hesap Düzelt";
+            this.btnEdit.Id = 2;
+            this.btnEdit.ImageOptions.ImageIndex = 6;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditAccount_ItemClick);
             // 
-            // btnRemAccount
+            // btnDelete
             // 
-            this.btnRemAccount.Caption = "Hesap Sil";
-            this.btnRemAccount.Id = 4;
-            this.btnRemAccount.ImageOptions.ImageIndex = 5;
-            this.btnRemAccount.Name = "btnRemAccount";
+            this.btnDelete.Caption = "Hesap Sil";
+            this.btnDelete.Id = 4;
+            this.btnDelete.ImageOptions.ImageIndex = 5;
+            this.btnDelete.Name = "btnDelete";
             // 
             // bbi_Refresh
             // 
@@ -417,9 +417,9 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.BarButtonItem btnNewAccount;
-        private DevExpress.XtraBars.BarButtonItem btnRemAccount;
-        private DevExpress.XtraBars.BarButtonItem btnEditAccount;
+        private DevExpress.XtraBars.BarButtonItem btnNew;
+        private DevExpress.XtraBars.BarButtonItem btnDelete;
+        private DevExpress.XtraBars.BarButtonItem btnEdit;
         private DevExpress.XtraBars.BarButtonItem btnCurTranClose;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;

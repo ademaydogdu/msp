@@ -17,6 +17,7 @@ using Msp.Models.Models.Utilities;
 using Msp.Service.Service.Invoice;
 using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.CurrentTransactions;
+using Msp.Service.Service.App;
 
 namespace Msp.App.CariIslemler
 {
@@ -39,7 +40,7 @@ namespace Msp.App.CariIslemler
         List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
         List<ProductDTO> _productlist = new List<ProductDTO>();
         List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
-
+        List<CompanyDTO> _company = new List<CompanyDTO>();
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -103,15 +104,35 @@ namespace Msp.App.CariIslemler
 
         private void InvoiceEdit_Load(object sender, EventArgs e)
         {
+            MspTool.Get_Layout(this);
+
             switch (invoice)
             {
                 case InvoiceType.AlımFaturası:
                     this.Text = "Alım Faturası";
+                    lytSatisFaturasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    break;
+                case InvoiceType.SatisFaturasi:
+                    this.Text = "Satış Faturası";
+                    lytSatisFaturasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    break;
+                case InvoiceType.AlisIrsaliye:
+                    this.Text = "Alış İrsaliyesi";
+                    lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    break;
+                case InvoiceType.SatisIrsaliye:
+                    this.Text = "Satış İrsaliyesi";
+                    lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     break;
                 default:
                     break;
             }
-            MspTool.Get_Layout(this);
 
 
             if (_FormOpenType == FormOpenType.New)
@@ -120,7 +141,6 @@ namespace Msp.App.CariIslemler
                 __dll_List_InoviceTrans = new List<InvoiceTransDTO>();
                 __dll_InvoiceOwner.InvoiceType = (int)invoice;
                 __dll_InvoiceOwner.FicDate = DateTime.Now;
-                __dll_InvoiceOwner.FichTime = DateTime.Now.TimeOfDay;
                 __dll_InvoiceOwner.VadeTarih = DateTime.Now;
             }
             if (_FormOpenType == FormOpenType.Edit)
@@ -141,9 +161,12 @@ namespace Msp.App.CariIslemler
             _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
             bs_CariHesap.DataSource = _currentTransactionsList;
 
+            _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
+            bs_company.DataSource = _company;
+
             rp_KDV.DataSource = KdvOrani;
-            rp_KDV.ValueMember = "id";
-            rp_KDV.DisplayMember = "value";
+            rp_KDV.ValueMember = "Id";
+            rp_KDV.DisplayMember = "Value";
 
             bs_InvoiceOwner.DataSource = __dll_InvoiceOwner;
             bs_InvoiceTrans.DataSource = __dll_List_InoviceTrans;

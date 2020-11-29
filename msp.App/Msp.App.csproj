@@ -223,6 +223,12 @@
     <Compile Include="Islemler\frmBankEntryEdit.Designer.cs">
       <DependentUpon>frmBankEntryEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Islemler\frmDovizKurlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Islemler\frmDovizKurlari.Designer.cs">
+      <DependentUpon>frmDovizKurlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri-Islemleri\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +451,9 @@
     <EmbeddedResource Include="Islemler\frmBankEntryEdit.resx">
       <DependentUpon>frmBankEntryEdit.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\frmDovizKurlari.resx">
+      <DependentUpon>frmDovizKurlari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>

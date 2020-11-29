@@ -19,7 +19,20 @@ namespace Msp.Service.Service.Invoice
         {
             using (var _db = new MspDbContext())
             {
-                var result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == invoiceType).ToList());
+                List<InvoiceOwnerDTO> result = new List<InvoiceOwnerDTO>();
+                if (invoiceType == 3)
+                {
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 1 || x.InvoiceType == 2).ToList()); 
+                }
+                if (invoiceType == 6)
+                {
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 || x.InvoiceType == 5).ToList());
+
+                }
+                else
+                {
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == invoiceType).ToList());
+                }
                 return result;
             }
         }

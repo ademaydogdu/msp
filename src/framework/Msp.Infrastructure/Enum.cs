@@ -19,7 +19,12 @@ namespace Msp.Infrastructure
 
     public enum InvoiceType
     {
-        AlımFaturası = 1
+        AlımFaturası = 1,
+        SatisFaturasi = 2,
+        AllFatura = 3,
+        AlisIrsaliye = 4,
+        SatisIrsaliye = 5,
+        AllIrsaliye = 6,
     }
 
 

@@ -436,9 +436,9 @@ namespace msp.App
 
         private void rbi_Siparis_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmOrderManagement frm = new frmOrderManagement();
-            frm.MdiParent = this;
-            frm.Show();
+            //frmOrderManagement frm = new frmOrderManagement();
+            //frm.MdiParent = this;
+            //frm.Show();
         }
 
         private void barButtonItem74_ItemClick(object sender, ItemClickEventArgs e)
@@ -538,6 +538,53 @@ namespace msp.App
         {
             frmUrunTanimlari frm = new frmUrunTanimlari();
             frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem87_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.MdiParent = this;
+            frm.invoice = InvoiceType.SatisFaturasi;
+            frm.Show();
+        }
+
+        private void btnFaturaAra_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.MdiParent = this;
+            frm.invoice = InvoiceType.AllFatura;
+            frm.Show();
+        }
+
+        private void barButtonItem89_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.MdiParent = this;
+            frm.invoice = InvoiceType.AlisIrsaliye;
+            frm.Show();
+        }
+
+        private void barButtonItem90_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.MdiParent = this;
+            frm.invoice = InvoiceType.SatisIrsaliye;
+            frm.Show();
+        }
+
+        private void bbi_DovizKurlari_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDovizKurlari frm = new frmDovizKurlari();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem91_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.MdiParent = this;
+            frm.invoice = InvoiceType.AllIrsaliye;
             frm.Show();
         }
     }

@@ -14,6 +14,7 @@ using Msp.App.Tool;
 using Msp.Models.Models;
 using Msp.Models.Models.Invoice;
 using Msp.Service.Service.Invoice;
+using Msp.Models.Models.Utilities;
 
 namespace Msp.App.CariIslemler
 {
@@ -23,13 +24,20 @@ namespace Msp.App.CariIslemler
         ParametersDTO _parameters;
         public InvoiceList()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             _repository = new Repository();
             _parameters = new ParametersDTO();
         }
         MspTool MspTool = new MspTool();
         List<InvoiceOwnerDTO> invoiceList = new List<InvoiceOwnerDTO>();
 
+        List<SelectIdValue> IceType = new List<SelectIdValue>()
+        {
+            new SelectIdValue(1, "Alım Faturası"),
+            new SelectIdValue(2, "Satış Faturasi"),
+            new SelectIdValue(4, "Alım İrsaliyesi"),
+            new SelectIdValue(5, "Satış İrsaliyesi"),
+        };
 
         public InvoiceType invoice;
         private void InvoiceList_Load(object sender, EventArgs e)
@@ -38,6 +46,25 @@ namespace Msp.App.CariIslemler
             {
                 case InvoiceType.AlımFaturası:
                     this.Text = "Alım Faturası Listesi";
+                    break;
+                case InvoiceType.SatisFaturasi:
+                    this.Text = "Satış Faturası Listesi";
+                    break;
+                case InvoiceType.AllFatura:
+                    this.Text = "Alım/Satış Faturası Listesi";
+                    btnNew.Enabled = false;
+                    btnEdit.Enabled = false;
+                    break;
+                case InvoiceType.AlisIrsaliye:
+                    this.Text = "Alış İrsaliyesi Listesi";
+                    break;
+                case InvoiceType.SatisIrsaliye:
+                    this.Text = "Satış İrsaliyesi Listesi";
+                    break;
+                case InvoiceType.AllIrsaliye:
+                    this.Text = "Alış/Satış İrsaliyesi Listesi";
+                    btnNew.Enabled = false;
+                    btnEdit.Enabled = false;
                     break;
                 default:
                     break;
@@ -63,7 +90,7 @@ namespace Msp.App.CariIslemler
         {
             try
             {
-                invoiceList = _repository.Run<InvoiceService, List<InvoiceOwnerDTO>>(x=>x.GetList_Invoice((int)invoice));
+                invoiceList = _repository.Run<InvoiceService, List<InvoiceOwnerDTO>>(x => x.GetList_Invoice((int)invoice));
                 bs_Invoice.DataSource = invoiceList;
             }
             catch (Exception)
@@ -97,7 +124,7 @@ namespace Msp.App.CariIslemler
                 frm.invoice = invoice;
                 frm._FormOpenType = FormOpenType.Edit;
                 frm.RecId = oRow.RecId;
-                frm.Show(); 
+                frm.Show();
             }
         }
     }
