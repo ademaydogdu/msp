@@ -57,9 +57,11 @@
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\CTransactions.cs" />
+    <Compile Include="Entities\CurrencyType.cs" />
     <Compile Include="Entities\Customers.cs" />
     <Compile Include="Entities\Cayments.cs" />
     <Compile Include="Entities\Depots.cs" />
+    <Compile Include="Entities\ExchangeRate.cs" />
     <Compile Include="Entities\FormLayouts.cs" />
     <Compile Include="Entities\InvoiceOwner.cs" />
     <Compile Include="Entities\InvoiceTrans.cs" />

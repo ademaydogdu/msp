@@ -34,14 +34,27 @@
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Close = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_InternetAl = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.gc_DovizKurlari = new DevExpress.XtraGrid.GridControl();
+            this.bs_ExranceRate = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_DovizKurlari = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bbi_InternetAl = new DevExpress.XtraBars.BarButtonItem();
+            this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurrDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurrencyCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExchange = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPos = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBuying = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSelling = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEffectiveBuying = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEffectiveSelling = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecordUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -51,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_DovizKurlari)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_ExranceRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_DovizKurlari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
@@ -123,6 +137,15 @@
             this.bbi_Close.Name = "bbi_Close";
             this.bbi_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
+            // bbi_InternetAl
+            // 
+            this.bbi_InternetAl.Caption = "İnternetden Al";
+            this.bbi_InternetAl.Id = 3;
+            this.bbi_InternetAl.ImageOptions.ImageIndex = 5;
+            this.bbi_InternetAl.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_InternetAl.Name = "bbi_InternetAl";
+            this.bbi_InternetAl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_InternetAl_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -166,6 +189,7 @@
             // 
             // gc_DovizKurlari
             // 
+            this.gc_DovizKurlari.DataSource = this.bs_ExranceRate;
             this.gc_DovizKurlari.Location = new System.Drawing.Point(12, 36);
             this.gc_DovizKurlari.MainView = this.gcv_DovizKurlari;
             this.gc_DovizKurlari.MenuManager = this.barManager1;
@@ -175,34 +199,127 @@
             this.gc_DovizKurlari.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_DovizKurlari});
             // 
+            // bs_ExranceRate
+            // 
+            this.bs_ExranceRate.DataSource = typeof(Msp.Models.Models.ExchangeRateDTO);
+            // 
             // gcv_DovizKurlari
             // 
+            this.gcv_DovizKurlari.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRecId,
+            this.colCurrDate,
+            this.colCurrencyCode,
+            this.colInvoice,
+            this.colExchange,
+            this.colPos,
+            this.colBuying,
+            this.colSelling,
+            this.colEffectiveBuying,
+            this.colEffectiveSelling,
+            this.colRecordUser,
+            this.colRecordDate});
             this.gcv_DovizKurlari.GridControl = this.gc_DovizKurlari;
             this.gcv_DovizKurlari.Name = "gcv_DovizKurlari";
+            this.gcv_DovizKurlari.OptionsView.ColumnAutoWidth = false;
             this.gcv_DovizKurlari.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gcv_DovizKurlari.OptionsView.ShowGroupPanel = false;
             // 
-            // bbi_InternetAl
+            // colRecId
             // 
-            this.bbi_InternetAl.Caption = "İnternetden Al";
-            this.bbi_InternetAl.Id = 3;
-            this.bbi_InternetAl.ImageOptions.ImageIndex = 5;
-            this.bbi_InternetAl.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.bbi_InternetAl.Name = "bbi_InternetAl";
+            this.colRecId.FieldName = "RecId";
+            this.colRecId.Name = "colRecId";
+            // 
+            // colCurrDate
+            // 
+            this.colCurrDate.FieldName = "CurrDate";
+            this.colCurrDate.Name = "colCurrDate";
+            this.colCurrDate.Visible = true;
+            this.colCurrDate.VisibleIndex = 0;
+            // 
+            // colCurrencyCode
+            // 
+            this.colCurrencyCode.FieldName = "CurrencyCode";
+            this.colCurrencyCode.Name = "colCurrencyCode";
+            this.colCurrencyCode.Visible = true;
+            this.colCurrencyCode.VisibleIndex = 1;
+            // 
+            // colInvoice
+            // 
+            this.colInvoice.FieldName = "Invoice";
+            this.colInvoice.Name = "colInvoice";
+            this.colInvoice.Visible = true;
+            this.colInvoice.VisibleIndex = 2;
+            // 
+            // colExchange
+            // 
+            this.colExchange.FieldName = "Exchange";
+            this.colExchange.Name = "colExchange";
+            this.colExchange.Visible = true;
+            this.colExchange.VisibleIndex = 3;
+            // 
+            // colPos
+            // 
+            this.colPos.FieldName = "Pos";
+            this.colPos.Name = "colPos";
+            this.colPos.Visible = true;
+            this.colPos.VisibleIndex = 4;
+            // 
+            // colBuying
+            // 
+            this.colBuying.FieldName = "Buying";
+            this.colBuying.Name = "colBuying";
+            this.colBuying.Visible = true;
+            this.colBuying.VisibleIndex = 5;
+            // 
+            // colSelling
+            // 
+            this.colSelling.FieldName = "Selling";
+            this.colSelling.Name = "colSelling";
+            this.colSelling.Visible = true;
+            this.colSelling.VisibleIndex = 6;
+            // 
+            // colEffectiveBuying
+            // 
+            this.colEffectiveBuying.FieldName = "EffectiveBuying";
+            this.colEffectiveBuying.Name = "colEffectiveBuying";
+            this.colEffectiveBuying.Visible = true;
+            this.colEffectiveBuying.VisibleIndex = 7;
+            // 
+            // colEffectiveSelling
+            // 
+            this.colEffectiveSelling.FieldName = "EffectiveSelling";
+            this.colEffectiveSelling.Name = "colEffectiveSelling";
+            this.colEffectiveSelling.Visible = true;
+            this.colEffectiveSelling.VisibleIndex = 8;
+            // 
+            // colRecordUser
+            // 
+            this.colRecordUser.FieldName = "RecordUser";
+            this.colRecordUser.Name = "colRecordUser";
+            this.colRecordUser.Visible = true;
+            this.colRecordUser.VisibleIndex = 9;
+            // 
+            // colRecordDate
+            // 
+            this.colRecordDate.FieldName = "RecordDate";
+            this.colRecordDate.Name = "colRecordDate";
+            this.colRecordDate.Visible = true;
+            this.colRecordDate.VisibleIndex = 10;
             // 
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(48, 12);
+            this.dateEdit1.Location = new System.Drawing.Point(39, 12);
             this.dateEdit1.MenuManager = this.barManager1;
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(308, 20);
+            this.dateEdit1.Size = new System.Drawing.Size(174, 20);
             this.dateEdit1.StyleController = this.layoutControl1;
             this.dateEdit1.TabIndex = 0;
+            this.dateEdit1.EditValueChanged += new System.EventHandler(this.dateEdit1_EditValueChanged);
             // 
             // layoutControl1
             // 
@@ -232,8 +349,11 @@
             // 
             this.layoutControlItem1.Control = this.dateEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.MaxSize = new System.Drawing.Size(205, 24);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(205, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(348, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(205, 24);
+            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Tarih";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 13);
             // 
@@ -249,9 +369,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(348, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(205, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(349, 24);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(492, 24);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmDovizKurlari
@@ -267,10 +387,12 @@
             this.Name = "frmDovizKurlari";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Döviz Kurları";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDovizKurlari_FormClosing);
             this.Load += new System.EventHandler(this.frmDovizKurlari_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_DovizKurlari)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_ExranceRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_DovizKurlari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
@@ -306,5 +428,18 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private System.Windows.Forms.BindingSource bs_ExranceRate;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurrDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurrencyCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoice;
+        private DevExpress.XtraGrid.Columns.GridColumn colExchange;
+        private DevExpress.XtraGrid.Columns.GridColumn colPos;
+        private DevExpress.XtraGrid.Columns.GridColumn colBuying;
+        private DevExpress.XtraGrid.Columns.GridColumn colSelling;
+        private DevExpress.XtraGrid.Columns.GridColumn colEffectiveBuying;
+        private DevExpress.XtraGrid.Columns.GridColumn colEffectiveSelling;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecordUser;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecordDate;
     }
 }

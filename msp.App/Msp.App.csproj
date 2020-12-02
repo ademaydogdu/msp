@@ -86,6 +86,7 @@
     <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -357,6 +358,12 @@
     <Compile Include="Sipariş\frmReceivedOrders.Designer.cs">
       <DependentUpon>frmReceivedOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\CurrencyTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\CurrencyTypeList.Designer.cs">
+      <DependentUpon>CurrencyTypeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tanimlar\frmBankDefinition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -524,11 +531,17 @@
     <EmbeddedResource Include="Sipariş\frmReceivedOrders.resx">
       <DependentUpon>frmReceivedOrders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\CurrencyTypeList.resx">
+      <DependentUpon>CurrencyTypeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\frmBankDefinition.resx">
       <DependentUpon>frmBankDefinition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\frmBirimTanim.resx">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\frmKampanyalar.resx">
+      <DependentUpon>frmKampanyalar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\frmPaymnetList.resx">
       <DependentUpon>frmPaymnetList.cs</DependentUpon>
@@ -549,8 +562,10 @@
     <None Include="Properties\DataSources\Msp.Models.Models.BanksDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CurrencyTypeDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.DepotDTO1.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.ExchangeRateDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Invoice.InvoiceOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Invoice.InvoiceTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.OrderManagementDTO.datasource" />

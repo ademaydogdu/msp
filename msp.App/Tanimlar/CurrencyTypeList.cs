@@ -10,46 +10,45 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Msp.Service.Repository;
 using Msp.Models.Models;
-using Msp.App.Tool;
 using Msp.Service.Service.Tanimlar;
+using Msp.App.Tool;
 using Msp.Models.Models.Utilities;
 
 namespace Msp.App.Tanimlar
 {
-    public partial class frmUrunTanimlari : DevExpress.XtraEditors.XtraForm
+    public partial class CurrencyTypeList : DevExpress.XtraEditors.XtraForm
     {
         Repository _repository;
-        public frmUrunTanimlari()
+        List<CurrencyTypeDTO> __List_CurrencyType;
+        public CurrencyTypeList()
         {
             InitializeComponent();
             _repository = new Repository();
+            __List_CurrencyType = new List<CurrencyTypeDTO>();
         }
 
-        List<ProductMarkDTO> productMarks = new List<ProductMarkDTO>();
         MspTool MspTool = new MspTool();
 
 
         #region Record
-
         public void do_refresh()
         {
-            productMarks = _repository.Run<DefinitionsService, List<ProductMarkDTO>>(x => x.Get_List_ProductMark());
-            bs_ProductMarks.DataSource = productMarks;
-        }
-
+            __List_CurrencyType = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyList.DataSource = __List_CurrencyType;
+        } 
         public void do_Save()
         {
             try
             {
-                foreach (var item in productMarks)
+                foreach (var item in __List_CurrencyType)
                 {
-                    if (productMarks.Where(x => x.Mark == item.Mark).Count() > 1)
+                    if (__List_CurrencyType.Where(x => x.CurrencyCode == item.CurrencyCode).Count() > 1)
                     {
                         XtraMessageBox.Show("Mükerrer Kayıt var. Lütfen Kontrol Ediniz.");
                         return;
                     }
                 }
-                var response = _repository.Run<DefinitionsService, ActionResponse<List<ProductMarkDTO>>>(x => x.SaveProductMark(productMarks));
+                var response = _repository.Run<DefinitionsService, ActionResponse<List<CurrencyTypeDTO>>>(x => x.SaveCurrencyType(__List_CurrencyType));
                 if (response.ResponseType != ResponseType.Ok)
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -63,19 +62,18 @@ namespace Msp.App.Tanimlar
             {
             }
         }
-
-
         #endregion
 
-        private void frmUrunTanimlari_Load(object sender, EventArgs e)
+        private void CurrencyTypeList_Load(object sender, EventArgs e)
         {
             do_refresh();
             MspTool.Get_Layout(this);
         }
 
-        private void frmUrunTanimlari_FormClosing(object sender, FormClosingEventArgs e)
+        private void CurrencyTypeList_FormClosing(object sender, FormClosingEventArgs e)
         {
             MspTool.do_Save_Layout(this);
+
         }
 
         private void bbi_Refresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -83,35 +81,35 @@ namespace Msp.App.Tanimlar
             do_refresh();
         }
 
-        private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            do_Save();
-        }
-
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbi_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
         }
 
+        private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
         private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ProductMarkDTO oRow = (ProductMarkDTO)gcv_ProductMarks.GetFocusedRow();
+            CurrencyTypeDTO oRow = (CurrencyTypeDTO)gcv_DovizCinsi.GetFocusedRow();
             if (oRow != null)
             {
                 if (MspTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
                 {
                     if (oRow.RecId != 0)
                     {
-                        var result = _repository.Run<DefinitionsService, ActionResponse<ProductMarkDTO>>(x => x.DeleteProductMark(oRow.RecId));
+                        var result = _repository.Run<DefinitionsService, ActionResponse<CurrencyTypeDTO>>(x => x.DeleteCurrencyType(oRow.RecId));
                         do_refresh();
                     }
                     else
                     {
-                       productMarks.Remove(oRow);
-                        gc_ProductMarks.RefreshDataSource();
+                        __List_CurrencyType.Remove(oRow);
+                        gc_DovizCinsi.RefreshDataSource();
                     }
 
-
+             
                 }
             }
         }

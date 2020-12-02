@@ -587,5 +587,12 @@ namespace msp.App
             frm.invoice = InvoiceType.AllIrsaliye;
             frm.Show();
         }
+
+        private void bbi_DovizCinsi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            CurrencyTypeList frm = new CurrencyTypeList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

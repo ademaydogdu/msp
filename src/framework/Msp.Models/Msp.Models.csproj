@@ -48,8 +48,10 @@
     <Compile Include="Models\BanksDTO.cs" />
     <Compile Include="Models\CompanyDTO.cs" />
     <Compile Include="Models\CTransactionsDTO.cs" />
+    <Compile Include="Models\CurrencyTypeDTO.cs" />
     <Compile Include="Models\CustomersDTO.cs" />
     <Compile Include="Models\DepotDTO.cs" />
+    <Compile Include="Models\ExchangeRateDTO.cs" />
     <Compile Include="Models\Invoice\InvoiceOwnerDTO.cs" />
     <Compile Include="Models\Invoice\InvoiceSaveRequest.cs" />
     <Compile Include="Models\Invoice\InvoiceTransDTO.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Models\Sale\SaleRequest.cs" />
     <Compile Include="Models\Sale\SaleTransDTO.cs" />
     <Compile Include="Models\Sale\SpeedSaleProductDTO.cs" />
+    <Compile Include="Models\TCMBCurrency.cs" />
     <Compile Include="Models\UnitsDTO.cs" />
     <Compile Include="Models\UsersDTO.cs" />
     <Compile Include="Models\Utilities\ActionResponse.cs" />

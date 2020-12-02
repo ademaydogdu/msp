@@ -44,6 +44,10 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<InvoiceOwnerDTO, InvoiceOwner>();
             cfg.CreateMap<InvoiceTrans, InvoiceTransDTO>();
             cfg.CreateMap<InvoiceTransDTO, InvoiceTrans>();
+            cfg.CreateMap<ExchangeRate, ExchangeRateDTO>();
+            cfg.CreateMap<ExchangeRateDTO, ExchangeRate>();
+            cfg.CreateMap<CurrencyType, CurrencyTypeDTO>();
+            cfg.CreateMap<CurrencyTypeDTO, CurrencyType>();
         }
 
 

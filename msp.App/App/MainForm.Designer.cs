@@ -190,6 +190,7 @@
             this.barButtonItem89 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem90 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem91 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_DovizCinsi = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -200,7 +201,6 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup28 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -408,10 +408,11 @@
             this.btnFaturaAra,
             this.barButtonItem89,
             this.barButtonItem90,
-            this.barButtonItem91});
+            this.barButtonItem91,
+            this.bbi_DovizCinsi});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 161;
+            this.ribbon.MaxItemId = 162;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1590,6 +1591,14 @@
             this.barButtonItem91.Name = "barButtonItem91";
             this.barButtonItem91.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem91_ItemClick);
             // 
+            // bbi_DovizCinsi
+            // 
+            this.bbi_DovizCinsi.Caption = "Döviz Cinsi Tanımları";
+            this.bbi_DovizCinsi.Id = 161;
+            this.bbi_DovizCinsi.ImageOptions.LargeImageIndex = 55;
+            this.bbi_DovizCinsi.Name = "bbi_DovizCinsi";
+            this.bbi_DovizCinsi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_DovizCinsi_ItemClick);
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1648,6 +1657,7 @@
             this.img_buton.Add("productorderdetail-21_1", "image://svgimages/outlook inspired/productorderdetail-21.svg");
             this.img_buton.Add("shipmentreceived_1", "image://svgimages/outlook inspired/shipmentreceived.svg");
             this.img_buton.Add("preview", "image://svgimages/reports/preview.svg");
+            this.img_buton.Add("accountingnumberformat_1", "image://svgimages/spreadsheet/accountingnumberformat.svg");
             // 
             // barSatis
             // 
@@ -1698,7 +1708,6 @@
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
             this.ribbonPageGroup11,
-            this.ribbonPageGroup13,
             this.ribbonPageGroup28});
             this.ribbonPage2.ImageOptions.ImageIndex = 1;
             this.ribbonPage2.Name = "ribbonPage2";
@@ -1718,13 +1727,6 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btnDepo);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Depo";
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.rbi_Siparis);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "Sipariş";
-            this.ribbonPageGroup13.Visible = false;
             // 
             // ribbonPageGroup28
             // 
@@ -1783,13 +1785,6 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem3);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem4);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem5);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem6);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem7);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem8);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem9);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPage1
@@ -1868,6 +1863,7 @@
             // ribbonPageGroup14
             // 
             this.ribbonPageGroup14.ItemLinks.Add(this.btn_PaymentType);
+            this.ribbonPageGroup14.ItemLinks.Add(this.bbi_DovizCinsi);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             // 
             // ribbonPageGroup16
@@ -2129,7 +2125,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSatisListesi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem rbi_Siparis;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.BarButtonItem btn_BirimTanimlari;
         private DevExpress.XtraBars.BarButtonItem btn_PaymentType;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
@@ -2199,5 +2194,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem89;
         private DevExpress.XtraBars.BarButtonItem barButtonItem90;
         private DevExpress.XtraBars.BarButtonItem barButtonItem91;
+        private DevExpress.XtraBars.BarButtonItem bbi_DovizCinsi;
     }
 }
