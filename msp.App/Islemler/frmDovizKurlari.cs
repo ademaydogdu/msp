@@ -13,6 +13,7 @@ using Msp.Models.Models;
 using System.Globalization;
 using Msp.Service.Repository;
 using Msp.App.Tool;
+using Msp.Service.Service.Tanimlar;
 
 namespace Msp.App.Islemler
 {
@@ -29,6 +30,12 @@ namespace Msp.App.Islemler
             InitializeComponent();
             _repository = new Repository();
             __List_exchanceRate = new List<ExchangeRateDTO>();
+            Set_Form();
+        }
+
+        public void Set_Form()
+        {
+            __dl_List_CurrencyTypeSelect = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
         }
 
         private void frmDovizKurlari_Load(object sender, EventArgs e)

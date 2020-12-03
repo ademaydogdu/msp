@@ -88,7 +88,7 @@ namespace Msp.App.Tanimlar
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            do_Save();
         }
 
         private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
