@@ -255,5 +255,33 @@ namespace Msp.App.App
 
 
         }
+
+        private void lc_Company_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lc_Company.Text != "")
+            {
+                var logo = _company.Where(x => x.CompanyCode.Trim() == lc_Company.EditValue.ToString().Trim()).FirstOrDefault().Logo;
+                if (logo != null)
+                {
+                    if (logo.Length > 0)
+                    {
+                        Image img1 = byteArrayToImage(logo);
+                        pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+                        pictureEdit1.Image = img1;
+                    }
+                    else
+                    {
+                        pictureEdit1.Image = null;
+                    }
+                }
+            }
+        }
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream mStream = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(mStream);
+            }
+        }
     }
 }

@@ -183,6 +183,7 @@
             this.colCompanyName});
             this.gcv_company.GridControl = this.gc_company;
             this.gcv_company.Name = "gcv_company";
+            this.gcv_company.OptionsBehavior.Editable = false;
             this.gcv_company.OptionsView.ColumnAutoWidth = false;
             this.gcv_company.OptionsView.ShowGroupPanel = false;
             // 

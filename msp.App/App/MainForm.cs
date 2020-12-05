@@ -509,8 +509,7 @@ namespace msp.App
         private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
-            frm.MdiParent = this;
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void btnGrdiLayouytDeleted_ItemClick(object sender, ItemClickEventArgs e)

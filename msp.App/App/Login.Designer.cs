@@ -141,6 +141,7 @@
             this.lc_Company.Size = new System.Drawing.Size(190, 20);
             this.lc_Company.StyleController = this.layoutControl1;
             this.lc_Company.TabIndex = 10;
+            this.lc_Company.EditValueChanged += new System.EventHandler(this.lc_Company_EditValueChanged);
             // 
             // bs_company
             // 

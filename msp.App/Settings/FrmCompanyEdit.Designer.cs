@@ -262,6 +262,7 @@
             this.pcLogo.MenuManager = this.barManager1;
             this.pcLogo.Name = "pcLogo";
             this.pcLogo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pcLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pcLogo.Size = new System.Drawing.Size(160, 99);
             this.pcLogo.StyleController = this.layoutControl1;
             this.pcLogo.TabIndex = 6;
