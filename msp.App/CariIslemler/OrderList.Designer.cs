@@ -49,13 +49,32 @@
             this.btnAccountTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
             this.bs_OrderList = new System.Windows.Forms.BindingSource(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gc_OrderList = new DevExpress.XtraGrid.GridControl();
+            this.gcv_OrderList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrderType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSiparisNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSiparisDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSiparisTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOzelKod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDovizId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKDVId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDurum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTeklifSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalKDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_OrderList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderList)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -233,30 +252,204 @@
             this.btnRegInfo.ImageOptions.ImageIndex = 11;
             this.btnRegInfo.Name = "btnRegInfo";
             // 
-            // gridControl1
+            // bs_OrderList
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(872, 534);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.bs_OrderList.DataSource = typeof(Msp.Models.Models.Order.OrderOwnerDTO);
             // 
-            // gridView1
+            // gc_OrderList
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gc_OrderList.DataSource = this.bs_OrderList;
+            this.gc_OrderList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_OrderList.Location = new System.Drawing.Point(0, 0);
+            this.gc_OrderList.MainView = this.gcv_OrderList;
+            this.gc_OrderList.MenuManager = this.barManager1;
+            this.gc_OrderList.Name = "gc_OrderList";
+            this.gc_OrderList.Size = new System.Drawing.Size(872, 534);
+            this.gc_OrderList.TabIndex = 4;
+            this.gc_OrderList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_OrderList});
+            // 
+            // gcv_OrderList
+            // 
+            this.gcv_OrderList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRecId,
+            this.colCariRecId,
+            this.colOrderType,
+            this.colCompanyId,
+            this.colSiparisNo,
+            this.colSiparisDate,
+            this.colSiparisTime,
+            this.colOzelKod,
+            this.colDovizId,
+            this.colKDVId,
+            this.colIskonto,
+            this.colDurum,
+            this.colTeklifSiparis,
+            this.colRemark,
+            this.colTotalToplam,
+            this.colTotalIskonto,
+            this.colTotalKDV,
+            this.colTotalSiparis,
+            this.colDeleted});
+            this.gcv_OrderList.GridControl = this.gc_OrderList;
+            this.gcv_OrderList.Name = "gcv_OrderList";
+            this.gcv_OrderList.OptionsView.ShowGroupPanel = false;
+            // 
+            // colRecId
+            // 
+            this.colRecId.FieldName = "RecId";
+            this.colRecId.Name = "colRecId";
+            // 
+            // colCariRecId
+            // 
+            this.colCariRecId.FieldName = "CariRecId";
+            this.colCariRecId.Name = "colCariRecId";
+            this.colCariRecId.Visible = true;
+            this.colCariRecId.VisibleIndex = 0;
+            this.colCariRecId.Width = 86;
+            // 
+            // colOrderType
+            // 
+            this.colOrderType.FieldName = "OrderType";
+            this.colOrderType.Name = "colOrderType";
+            this.colOrderType.Visible = true;
+            this.colOrderType.VisibleIndex = 1;
+            this.colOrderType.Width = 44;
+            // 
+            // colCompanyId
+            // 
+            this.colCompanyId.FieldName = "CompanyId";
+            this.colCompanyId.Name = "colCompanyId";
+            this.colCompanyId.Visible = true;
+            this.colCompanyId.VisibleIndex = 2;
+            this.colCompanyId.Width = 44;
+            // 
+            // colSiparisNo
+            // 
+            this.colSiparisNo.FieldName = "SiparisNo";
+            this.colSiparisNo.Name = "colSiparisNo";
+            this.colSiparisNo.Visible = true;
+            this.colSiparisNo.VisibleIndex = 3;
+            this.colSiparisNo.Width = 44;
+            // 
+            // colSiparisDate
+            // 
+            this.colSiparisDate.FieldName = "SiparisDate";
+            this.colSiparisDate.Name = "colSiparisDate";
+            this.colSiparisDate.Visible = true;
+            this.colSiparisDate.VisibleIndex = 4;
+            this.colSiparisDate.Width = 44;
+            // 
+            // colSiparisTime
+            // 
+            this.colSiparisTime.FieldName = "SiparisTime";
+            this.colSiparisTime.Name = "colSiparisTime";
+            this.colSiparisTime.Visible = true;
+            this.colSiparisTime.VisibleIndex = 5;
+            this.colSiparisTime.Width = 44;
+            // 
+            // colOzelKod
+            // 
+            this.colOzelKod.FieldName = "OzelKod";
+            this.colOzelKod.Name = "colOzelKod";
+            this.colOzelKod.Visible = true;
+            this.colOzelKod.VisibleIndex = 6;
+            this.colOzelKod.Width = 44;
+            // 
+            // colDovizId
+            // 
+            this.colDovizId.FieldName = "DovizId";
+            this.colDovizId.Name = "colDovizId";
+            this.colDovizId.Visible = true;
+            this.colDovizId.VisibleIndex = 7;
+            this.colDovizId.Width = 44;
+            // 
+            // colKDVId
+            // 
+            this.colKDVId.FieldName = "KDVId";
+            this.colKDVId.Name = "colKDVId";
+            this.colKDVId.Visible = true;
+            this.colKDVId.VisibleIndex = 8;
+            this.colKDVId.Width = 44;
+            // 
+            // colIskonto
+            // 
+            this.colIskonto.FieldName = "Iskonto";
+            this.colIskonto.Name = "colIskonto";
+            this.colIskonto.Visible = true;
+            this.colIskonto.VisibleIndex = 9;
+            this.colIskonto.Width = 44;
+            // 
+            // colDurum
+            // 
+            this.colDurum.FieldName = "Durum";
+            this.colDurum.Name = "colDurum";
+            this.colDurum.Visible = true;
+            this.colDurum.VisibleIndex = 10;
+            this.colDurum.Width = 44;
+            // 
+            // colTeklifSiparis
+            // 
+            this.colTeklifSiparis.FieldName = "TeklifSiparis";
+            this.colTeklifSiparis.Name = "colTeklifSiparis";
+            this.colTeklifSiparis.Visible = true;
+            this.colTeklifSiparis.VisibleIndex = 11;
+            this.colTeklifSiparis.Width = 44;
+            // 
+            // colRemark
+            // 
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 12;
+            this.colRemark.Width = 44;
+            // 
+            // colTotalToplam
+            // 
+            this.colTotalToplam.FieldName = "TotalToplam";
+            this.colTotalToplam.Name = "colTotalToplam";
+            this.colTotalToplam.Visible = true;
+            this.colTotalToplam.VisibleIndex = 13;
+            this.colTotalToplam.Width = 44;
+            // 
+            // colTotalIskonto
+            // 
+            this.colTotalIskonto.FieldName = "TotalIskonto";
+            this.colTotalIskonto.Name = "colTotalIskonto";
+            this.colTotalIskonto.Visible = true;
+            this.colTotalIskonto.VisibleIndex = 14;
+            this.colTotalIskonto.Width = 44;
+            // 
+            // colTotalKDV
+            // 
+            this.colTotalKDV.FieldName = "TotalKDV";
+            this.colTotalKDV.Name = "colTotalKDV";
+            this.colTotalKDV.Visible = true;
+            this.colTotalKDV.VisibleIndex = 15;
+            this.colTotalKDV.Width = 44;
+            // 
+            // colTotalSiparis
+            // 
+            this.colTotalSiparis.FieldName = "TotalSiparis";
+            this.colTotalSiparis.Name = "colTotalSiparis";
+            this.colTotalSiparis.Visible = true;
+            this.colTotalSiparis.VisibleIndex = 16;
+            this.colTotalSiparis.Width = 44;
+            // 
+            // colDeleted
+            // 
+            this.colDeleted.FieldName = "Deleted";
+            this.colDeleted.Name = "colDeleted";
+            this.colDeleted.Visible = true;
+            this.colDeleted.VisibleIndex = 17;
+            this.colDeleted.Width = 57;
             // 
             // OrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 576);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gc_OrderList);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -270,8 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_OrderList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,7 +492,26 @@
         private DevExpress.XtraBars.BarButtonItem btnAccountTransactions;
         private DevExpress.XtraBars.BarButtonItem btnRegInfo;
         private System.Windows.Forms.BindingSource bs_OrderList;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gc_OrderList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gcv_OrderList;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariRecId;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrderType;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSiparisNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colSiparisDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colSiparisTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colOzelKod;
+        private DevExpress.XtraGrid.Columns.GridColumn colDovizId;
+        private DevExpress.XtraGrid.Columns.GridColumn colKDVId;
+        private DevExpress.XtraGrid.Columns.GridColumn colIskonto;
+        private DevExpress.XtraGrid.Columns.GridColumn colDurum;
+        private DevExpress.XtraGrid.Columns.GridColumn colTeklifSiparis;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalToplam;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalIskonto;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalKDV;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalSiparis;
+        private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
     }
 }

@@ -112,10 +112,6 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lc_FaturaTuru = new DevExpress.XtraLayout.LayoutControlItem();
             this.lc_VadeGun = new DevExpress.XtraLayout.LayoutControlItem();
@@ -125,15 +121,12 @@
             this.lc_OdemeTuru = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lytSatisFaturasi = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem32 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -152,6 +145,14 @@
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem3 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.layoutControlGroup8 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -160,7 +161,6 @@
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
-            this.layoutControlGroup8 = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Company.Properties)).BeginInit();
@@ -222,10 +222,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_FaturaTuru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_VadeGun)).BeginInit();
@@ -235,15 +231,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.lc_OdemeTuru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lytSatisFaturasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
@@ -262,6 +255,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
@@ -270,7 +271,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -1192,54 +1192,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(1561, 282);
             this.layoutControlGroup1.Text = "Fatura Başlık";
             // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.txtCariHesapAdi;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem7.MaxSize = new System.Drawing.Size(368, 27);
-            this.layoutControlItem7.MinSize = new System.Drawing.Size(368, 27);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(368, 27);
-            this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem7.Text = "Cari Hesap Adı";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(77, 13);
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.txtDepo;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 102);
-            this.layoutControlItem6.MaxSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(368, 24);
-            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem6.Text = "Depo";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(77, 13);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txtFisTarihi;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 78);
-            this.layoutControlItem1.MaxSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(368, 24);
-            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem1.Text = "Fiş Tarihi";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(77, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txtBelgeNo;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 51);
-            this.layoutControlItem3.MaxSize = new System.Drawing.Size(368, 27);
-            this.layoutControlItem3.MinSize = new System.Drawing.Size(368, 27);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(368, 27);
-            this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem3.Text = "Fatura No";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(77, 13);
-            // 
             // layoutControlGroup5
             // 
             this.layoutControlGroup5.GroupStyle = DevExpress.Utils.GroupStyle.Light;
@@ -1349,30 +1301,6 @@
             this.emptySpaceItem6.Size = new System.Drawing.Size(360, 91);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtFisAciklama;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 126);
-            this.layoutControlItem4.MaxSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(368, 24);
-            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem4.Text = "Fiş Açıklama";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(77, 13);
-            // 
-            // layoutControlItem25
-            // 
-            this.layoutControlItem25.Control = this.lc_Company;
-            this.layoutControlItem25.Location = new System.Drawing.Point(0, 27);
-            this.layoutControlItem25.MaxSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem25.MinSize = new System.Drawing.Size(368, 24);
-            this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(368, 24);
-            this.layoutControlItem25.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem25.Text = "İşyeri";
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(77, 13);
-            // 
             // lytSatisFaturasi
             // 
             this.lytSatisFaturasi.GroupStyle = DevExpress.Utils.GroupStyle.Light;
@@ -1443,17 +1371,6 @@
             this.layoutControlItem32.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem32.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem32.TextVisible = false;
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 150);
-            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(368, 87);
-            this.emptySpaceItem2.MinSize = new System.Drawing.Size(368, 87);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(368, 87);
-            this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
             // 
@@ -1655,6 +1572,105 @@
             this.simpleLabelItem3.Text = "Fatura Tarihi :";
             this.simpleLabelItem3.TextSize = new System.Drawing.Size(77, 13);
             // 
+            // layoutControlGroup8
+            // 
+            this.layoutControlGroup8.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup8.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem2,
+            this.layoutControlItem4,
+            this.layoutControlItem6,
+            this.layoutControlItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem25,
+            this.layoutControlItem7});
+            this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup8.Name = "layoutControlGroup8";
+            this.layoutControlGroup8.Size = new System.Drawing.Size(392, 282);
+            this.layoutControlGroup8.Text = "Genel";
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 150);
+            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(368, 87);
+            this.emptySpaceItem2.MinSize = new System.Drawing.Size(368, 87);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(368, 87);
+            this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtFisAciklama;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 126);
+            this.layoutControlItem4.MaxSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(368, 24);
+            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem4.Text = "Fiş Açıklama";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtDepo;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 102);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(368, 24);
+            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem6.Text = "Depo";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txtFisTarihi;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 78);
+            this.layoutControlItem1.MaxSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(368, 24);
+            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem1.Text = "Fiş Tarihi";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtBelgeNo;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 51);
+            this.layoutControlItem3.MaxSize = new System.Drawing.Size(368, 27);
+            this.layoutControlItem3.MinSize = new System.Drawing.Size(368, 27);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(368, 27);
+            this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem3.Text = "Fatura No";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem25
+            // 
+            this.layoutControlItem25.Control = this.lc_Company;
+            this.layoutControlItem25.Location = new System.Drawing.Point(0, 27);
+            this.layoutControlItem25.MaxSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem25.MinSize = new System.Drawing.Size(368, 24);
+            this.layoutControlItem25.Name = "layoutControlItem25";
+            this.layoutControlItem25.Size = new System.Drawing.Size(368, 24);
+            this.layoutControlItem25.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem25.Text = "İşyeri";
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.txtCariHesapAdi;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem7.MaxSize = new System.Drawing.Size(368, 27);
+            this.layoutControlItem7.MinSize = new System.Drawing.Size(368, 27);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(368, 27);
+            this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem7.Text = "Cari Hesap Adı";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(77, 13);
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -1727,22 +1743,6 @@
             this.splitterItem1.Location = new System.Drawing.Point(0, 329);
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(1585, 10);
-            // 
-            // layoutControlGroup8
-            // 
-            this.layoutControlGroup8.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.layoutControlGroup8.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem2,
-            this.layoutControlItem4,
-            this.layoutControlItem6,
-            this.layoutControlItem1,
-            this.layoutControlItem3,
-            this.layoutControlItem25,
-            this.layoutControlItem7});
-            this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup8.Name = "layoutControlGroup8";
-            this.layoutControlGroup8.Size = new System.Drawing.Size(392, 282);
-            this.layoutControlGroup8.Text = "Genel";
             // 
             // InvoiceEdit
             // 
@@ -1820,10 +1820,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_FaturaTuru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_VadeGun)).EndInit();
@@ -1833,15 +1829,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.lc_OdemeTuru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lytSatisFaturasi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
@@ -1860,6 +1853,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
@@ -1868,7 +1869,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -66,6 +66,8 @@
     <Compile Include="Entities\InvoiceOwner.cs" />
     <Compile Include="Entities\InvoiceTrans.cs" />
     <Compile Include="Entities\OrderManagement.cs" />
+    <Compile Include="Entities\OrderOwner.cs" />
+    <Compile Include="Entities\OrderTrans.cs" />
     <Compile Include="Entities\Parameters.cs" />
     <Compile Include="Entities\PaymentType.cs" />
     <Compile Include="Entities\ProductMark.cs" />

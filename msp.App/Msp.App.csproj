@@ -242,6 +242,12 @@
     <Compile Include="Islemler\frmDovizKurlari.Designer.cs">
       <DependentUpon>frmDovizKurlari.cs</DependentUpon>
     </Compile>
+    <Compile Include="Islemler\Hatirlatici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Islemler\Hatirlatici.Designer.cs">
+      <DependentUpon>Hatirlatici.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri-Islemleri\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -480,6 +486,9 @@
     <EmbeddedResource Include="Islemler\frmDovizKurlari.resx">
       <DependentUpon>frmDovizKurlari.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\Hatirlatici.resx">
+      <DependentUpon>Hatirlatici.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,6 +595,8 @@
     <None Include="Properties\DataSources\Msp.Models.Models.ExchangeRateDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Invoice.InvoiceOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Invoice.InvoiceTransDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Order.OrderOwnerDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Order.OrderTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.OrderManagementDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ParametersDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CustomersDTO1.datasource" />

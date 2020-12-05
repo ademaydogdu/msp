@@ -262,7 +262,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(2, 1, 1, 3);
+            Version oVersionFB = new Version(2, 1, 1, 4);
             AppMain.MspVersion = oVersionFB;
 
             //if (Global.RunningLocal && (string.IsNullOrEmpty(Global.AppPath) || !Directory.Exists(Global.AppPath)))
@@ -599,6 +599,31 @@ namespace msp.App
         {
             OrderList frm = new OrderList();
             frm.MdiParent = this;
+            frm.orderType = OrderType.AlisSiparis;
+            frm.Show();
+        }
+
+        private void barButtonItem84_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OrderList frm = new OrderList();
+            frm.MdiParent = this;
+            frm.orderType = OrderType.SatisSiparis;
+            frm.Show();
+        }
+
+        private void barButtonItem85_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OrderList frm = new OrderList();
+            frm.MdiParent = this;
+            frm.orderType = OrderType.AllSiparis;
+            frm.Show();
+        }
+
+        private void barButtonItem86_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OrderList frm = new OrderList();
+            frm.MdiParent = this;
+            frm.orderType = OrderType.BekleyenSiparis;
             frm.Show();
         }
     }

@@ -47,6 +47,8 @@ namespace Msp.Entity.Entities
         public virtual DbSet<InvoiceTrans> InvoiceTrans { get; set; }
         public virtual DbSet<ExchangeRate> ExchangeRate { get; set; }
         public virtual DbSet<CurrencyType> CurrencyType { get; set; }
+        public virtual DbSet<OrderOwner> OrderOwner { get; set; }
+        public virtual DbSet<OrderTrans> OrderTrans { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

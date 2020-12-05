@@ -242,7 +242,7 @@ namespace Msp.App.App
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[products]( "
                         + "    [PID][int] IDENTITY(1, 1) NOT NULL, "
-                        + "    [PName] [nvarchar] (50) NULL, "
+                        + "    [PName] [nvarchar] (max) NULL, "
                         + "	[PBarcode] [nvarchar] (50) NULL, "
                         + "	[PCategoryId] [int] NULL, "
                         + "	[PDate] [datetime] NULL, "
@@ -264,6 +264,7 @@ namespace Msp.App.App
                         + "	[PPaxAmout] [decimal](18, 2) NULL, "
                         + "	[PKdvIstisna] [bit] NULL, "
                         + "	[PKarPrice] [decimal](18, 2) NULL, "
+                        + " [PCode] [nvarchar] (max) NULL, "
                         + " CONSTRAINT[PK_products] PRIMARY KEY CLUSTERED "
                         + "( "
                         + "   [PID] ASC "
@@ -470,6 +471,95 @@ namespace Msp.App.App
             progressBarControl1.Update();
             Application.DoEvents();
 
+            if (tblTableList.Rows.Contains("OrderOwner") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE[dbo].[OrderOwner]( "
+                +"     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                +"     [CariRecId] [int] NULL, "
+                +" 	[OrderType] [int] NULL, "
+                +" 	[CompanyId] [int] NULL, "
+                +" 	[SiparisNo] [nvarchar] (50) NULL, "
+                +" 	[SiparisDate] [datetime] NULL, "
+                +" 	[SiparisTime] [time] (7) NULL, "
+                +" 	[OzelKod] [nvarchar] (50) NULL, "
+                +" 	[DovizId] [int] NULL, "
+                +" 	[Kdv] [nvarchar] (50) NULL, "
+                +" 	[Iskonto] [int] NULL, "
+                +" 	[Durum] [nvarchar] (50) NULL, "
+                +" 	[TeklifSiparis] [int] NULL, "
+                +" 	[Remark] [nvarchar](max) NULL, "
+                +"  [TotalToplam] [decimal](18, 0) NULL, "
+                +" 	[TotalIskonto] [decimal](18, 0) NULL, "
+                +" 	[TotalKDV] [decimal](18, 0) NULL, "
+                +" 	[TotalSiparis] [decimal](18, 0) NULL, "
+                +" 	[Deleted] [bit] NULL, "
+                +"  CONSTRAINT[PK_OrderOwner] PRIMARY KEY CLUSTERED "
+                +" ( "
+                +"    [RecId] ASC "
+                +" )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                +" ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            if (tblTableList.Rows.Contains("OrderTrans") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[OrderTrans]( "
+            + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+            + "     [OwnerId] [int] NULL, "
+            + " 	[StockId] [int] NULL, "
+            + " 	[Miktar] [int] NULL, "
+            + " 	[Sevk] [nvarchar] (50) NULL, "
+            + " 	[Bekleyen] [nvarchar] (50) NULL, "
+            + " 	[BirimId] [int] NULL, "
+            + " 	[BirimFiyat] [decimal](18, 0) NULL, "
+            + " 	[KDV] [int] NULL, "
+            + " 	[Tutar] [decimal](18, 0) NULL, "
+            + " 	[Remark] "
+            + "         [nvarchar] "
+            + "         (max) NULL, "
+            + "  CONSTRAINT[PK_OrderTrans] PRIMARY KEY CLUSTERED "
+            + " ( "
+            + "    [RecId] ASC "
+            + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+            + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            if (tblTableList.Rows.Contains("Depot") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[Depot]( "
+                + "     [DID][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [DepName] [nvarchar] (50) NULL, "
+                + " 	[DepAddress] [nvarchar] (50) NULL, "
+                + " 	[DepDistrict] [nvarchar] (50) NULL, "
+                + " 	[DepCity] [nvarchar] (50) NULL, "
+                + " 	[DepAuthPerson] [nvarchar] (50) NULL, "
+                + " 	[DepPhoneOne] [nvarchar] (50) NULL, "
+                + " 	[DepPhoneTwo] [nvarchar] (50) NULL, "
+                + " 	[DepTaxAdministration] [nvarchar] (50) NULL, "
+                + " 	[DepTaxNo] [nvarchar] (50) NULL, "
+                + " 	[DepActive] [bit] NULL, "
+                + " 	[DepDate] [datetime] NULL, "
+                + "  CONSTRAINT[PK_Depot] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [DID] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
             #endregion
 
             #region CreateColumn
@@ -495,14 +585,27 @@ namespace Msp.App.App
                 ExecuteNonQuery(sCommand);
             }
             progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
             if (tblProductionMeans.Columns.Contains("DefaultTheme2") == false)
             {
                 sCommand.CommandText = "ALTER TABLE Users ADD DefaultTheme2 nvarchar(max) NULL";
                 ExecuteNonQuery(sCommand);
             }
+            progressBarControl1.Update(); Application.DoEvents();
+            progressBarControl1.PerformStep();
 
+            sCommand.CommandText = "Select top 1 * from products  WITH (nolock) ";
+            DataTable tblProduct = ExecuteSelectCommand(sCommand);
+
+            if (tblProduct.Columns.Contains("PCode") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE products ADD PCode nvarchar(max) NULL";
+                ExecuteNonQuery(sCommand);
+            }
             progressBarControl1.Update(); Application.DoEvents();
             #endregion
+
+            //PCode
 
             #endregion
 

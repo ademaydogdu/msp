@@ -3,6 +3,7 @@ using Msp.Entity.Entities;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
 using Msp.Models.Models.Invoice;
+using Msp.Models.Models.Order;
 using Msp.Models.Models.Sale;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,10 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<ExchangeRateDTO, ExchangeRate>();
             cfg.CreateMap<CurrencyType, CurrencyTypeDTO>();
             cfg.CreateMap<CurrencyTypeDTO, CurrencyType>();
+            cfg.CreateMap<OrderOwner, OrderOwnerDTO>();
+            cfg.CreateMap<OrderOwnerDTO, OrderOwner>();
+            cfg.CreateMap<OrderTrans, OrderTransDTO>();
+            cfg.CreateMap<OrderTransDTO, OrderTrans>();
         }
 
 

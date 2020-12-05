@@ -57,6 +57,9 @@
     <Compile Include="Models\Invoice\InvoiceTransDTO.cs" />
     <Compile Include="Models\KDVTaxDto.cs" />
     <Compile Include="Models\OrderManagementDTO.cs" />
+    <Compile Include="Models\Order\OrderOwnerDTO.cs" />
+    <Compile Include="Models\Order\OrderRequest.cs" />
+    <Compile Include="Models\Order\OrderTransDTO.cs" />
     <Compile Include="Models\ParametersDTO.cs" />
     <Compile Include="Models\PaymentTypeDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />

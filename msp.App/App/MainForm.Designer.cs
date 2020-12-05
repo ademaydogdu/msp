@@ -191,7 +191,7 @@
             this.barButtonItem90 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem91 = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_DovizCinsi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_BekleyenIrsaliye = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem88 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -413,7 +413,7 @@
             this.barButtonItem90,
             this.barButtonItem91,
             this.bbi_DovizCinsi,
-            this.barButtonItem80,
+            this.bbi_BekleyenIrsaliye,
             this.barButtonItem88});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
@@ -1542,6 +1542,7 @@
             this.barButtonItem84.Id = 153;
             this.barButtonItem84.ImageOptions.LargeImageIndex = 44;
             this.barButtonItem84.Name = "barButtonItem84";
+            this.barButtonItem84.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem84_ItemClick);
             // 
             // barButtonItem85
             // 
@@ -1549,6 +1550,7 @@
             this.barButtonItem85.Id = 154;
             this.barButtonItem85.ImageOptions.LargeImageIndex = 57;
             this.barButtonItem85.Name = "barButtonItem85";
+            this.barButtonItem85.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem85_ItemClick);
             // 
             // barButtonItem86
             // 
@@ -1556,6 +1558,7 @@
             this.barButtonItem86.Id = 155;
             this.barButtonItem86.ImageOptions.LargeImageIndex = 47;
             this.barButtonItem86.Name = "barButtonItem86";
+            this.barButtonItem86.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem86_ItemClick);
             // 
             // barButtonItem87
             // 
@@ -1605,12 +1608,12 @@
             this.bbi_DovizCinsi.Name = "bbi_DovizCinsi";
             this.bbi_DovizCinsi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_DovizCinsi_ItemClick);
             // 
-            // barButtonItem80
+            // bbi_BekleyenIrsaliye
             // 
-            this.barButtonItem80.Caption = "Bekleyen İrsaliye";
-            this.barButtonItem80.Id = 162;
-            this.barButtonItem80.ImageOptions.LargeImageIndex = 56;
-            this.barButtonItem80.Name = "barButtonItem80";
+            this.bbi_BekleyenIrsaliye.Caption = "Bekleyen İrsaliye";
+            this.bbi_BekleyenIrsaliye.Id = 162;
+            this.bbi_BekleyenIrsaliye.ImageOptions.LargeImageIndex = 56;
+            this.bbi_BekleyenIrsaliye.Name = "bbi_BekleyenIrsaliye";
             // 
             // barButtonItem88
             // 
@@ -1787,7 +1790,7 @@
             this.ribbonPageGroup30.ItemLinks.Add(this.barButtonItem89);
             this.ribbonPageGroup30.ItemLinks.Add(this.barButtonItem90);
             this.ribbonPageGroup30.ItemLinks.Add(this.barButtonItem91);
-            this.ribbonPageGroup30.ItemLinks.Add(this.barButtonItem80);
+            this.ribbonPageGroup30.ItemLinks.Add(this.bbi_BekleyenIrsaliye);
             this.ribbonPageGroup30.Name = "ribbonPageGroup30";
             this.ribbonPageGroup30.Text = "İrsaliye";
             // 
@@ -2225,7 +2228,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem90;
         private DevExpress.XtraBars.BarButtonItem barButtonItem91;
         private DevExpress.XtraBars.BarButtonItem bbi_DovizCinsi;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem80;
+        private DevExpress.XtraBars.BarButtonItem bbi_BekleyenIrsaliye;
         private DevExpress.XtraBars.BarButtonItem barButtonItem88;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
     }

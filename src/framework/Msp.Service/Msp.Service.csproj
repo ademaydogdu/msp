@@ -77,6 +77,7 @@
     <Compile Include="Service\Depot\DepotService.cs" />
     <Compile Include="Service\Invoice\InvoiceService.cs" />
     <Compile Include="Service\Operations\BankEntryServices.cs" />
+    <Compile Include="Service\Order\OrderService.cs" />
     <Compile Include="Service\Sale\SaleService.cs" />
     <Compile Include="Service\Settings\SettingsService.cs" />
     <Compile Include="Service\Definitions\DefinitionsService.cs" />
