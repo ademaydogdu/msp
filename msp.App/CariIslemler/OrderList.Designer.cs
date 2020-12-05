@@ -37,7 +37,7 @@
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Document = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
-            this.btnCurTranClose = new DevExpress.XtraBars.BarButtonItem();
+            this.btnClose = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -95,7 +95,7 @@
             this.btnDelete,
             this.btnSeaAccount,
             this.btnAccountTransactions,
-            this.btnCurTranClose,
+            this.btnClose,
             this.btnRegInfo,
             this.bbi_Refresh,
             this.bbi_Print,
@@ -117,7 +117,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Refresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Document),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnCurTranClose, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnClose, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -129,6 +129,7 @@
             this.btnNew.Id = 1;
             this.btnNew.ImageOptions.ImageIndex = 2;
             this.btnNew.Name = "btnNew";
+            this.btnNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNew_ItemClick);
             // 
             // btnEdit
             // 
@@ -136,6 +137,7 @@
             this.btnEdit.Id = 2;
             this.btnEdit.ImageOptions.ImageIndex = 6;
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDelete
             // 
@@ -150,6 +152,7 @@
             this.bbi_Refresh.Id = 9;
             this.bbi_Refresh.ImageOptions.ImageIndex = 7;
             this.bbi_Refresh.Name = "bbi_Refresh";
+            this.bbi_Refresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Refresh_ItemClick);
             // 
             // bbi_Document
             // 
@@ -165,12 +168,13 @@
             this.bbi_Print.ImageOptions.ImageIndex = 8;
             this.bbi_Print.Name = "bbi_Print";
             // 
-            // btnCurTranClose
+            // btnClose
             // 
-            this.btnCurTranClose.Caption = "Kapat";
-            this.btnCurTranClose.Id = 7;
-            this.btnCurTranClose.ImageOptions.ImageIndex = 0;
-            this.btnCurTranClose.Name = "btnCurTranClose";
+            this.btnClose.Caption = "Kapat";
+            this.btnClose.Id = 7;
+            this.btnClose.ImageOptions.ImageIndex = 0;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClose_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -293,6 +297,9 @@
             this.colDeleted});
             this.gcv_OrderList.GridControl = this.gc_OrderList;
             this.gcv_OrderList.Name = "gcv_OrderList";
+            this.gcv_OrderList.OptionsBehavior.Editable = false;
+            this.gcv_OrderList.OptionsView.ColumnAutoWidth = false;
+            this.gcv_OrderList.OptionsView.ShowFooter = true;
             this.gcv_OrderList.OptionsView.ShowGroupPanel = false;
             // 
             // colRecId
@@ -314,7 +321,7 @@
             this.colOrderType.Name = "colOrderType";
             this.colOrderType.Visible = true;
             this.colOrderType.VisibleIndex = 1;
-            this.colOrderType.Width = 44;
+            this.colOrderType.Width = 90;
             // 
             // colCompanyId
             // 
@@ -322,7 +329,7 @@
             this.colCompanyId.Name = "colCompanyId";
             this.colCompanyId.Visible = true;
             this.colCompanyId.VisibleIndex = 2;
-            this.colCompanyId.Width = 44;
+            this.colCompanyId.Width = 45;
             // 
             // colSiparisNo
             // 
@@ -330,7 +337,7 @@
             this.colSiparisNo.Name = "colSiparisNo";
             this.colSiparisNo.Visible = true;
             this.colSiparisNo.VisibleIndex = 3;
-            this.colSiparisNo.Width = 44;
+            this.colSiparisNo.Width = 45;
             // 
             // colSiparisDate
             // 
@@ -338,7 +345,7 @@
             this.colSiparisDate.Name = "colSiparisDate";
             this.colSiparisDate.Visible = true;
             this.colSiparisDate.VisibleIndex = 4;
-            this.colSiparisDate.Width = 44;
+            this.colSiparisDate.Width = 45;
             // 
             // colSiparisTime
             // 
@@ -346,7 +353,7 @@
             this.colSiparisTime.Name = "colSiparisTime";
             this.colSiparisTime.Visible = true;
             this.colSiparisTime.VisibleIndex = 5;
-            this.colSiparisTime.Width = 44;
+            this.colSiparisTime.Width = 45;
             // 
             // colOzelKod
             // 
@@ -354,7 +361,7 @@
             this.colOzelKod.Name = "colOzelKod";
             this.colOzelKod.Visible = true;
             this.colOzelKod.VisibleIndex = 6;
-            this.colOzelKod.Width = 44;
+            this.colOzelKod.Width = 45;
             // 
             // colDovizId
             // 
@@ -362,7 +369,7 @@
             this.colDovizId.Name = "colDovizId";
             this.colDovizId.Visible = true;
             this.colDovizId.VisibleIndex = 7;
-            this.colDovizId.Width = 44;
+            this.colDovizId.Width = 45;
             // 
             // colKDVId
             // 
@@ -370,7 +377,7 @@
             this.colKDVId.Name = "colKDVId";
             this.colKDVId.Visible = true;
             this.colKDVId.VisibleIndex = 8;
-            this.colKDVId.Width = 44;
+            this.colKDVId.Width = 45;
             // 
             // colIskonto
             // 
@@ -378,7 +385,7 @@
             this.colIskonto.Name = "colIskonto";
             this.colIskonto.Visible = true;
             this.colIskonto.VisibleIndex = 9;
-            this.colIskonto.Width = 44;
+            this.colIskonto.Width = 45;
             // 
             // colDurum
             // 
@@ -386,7 +393,7 @@
             this.colDurum.Name = "colDurum";
             this.colDurum.Visible = true;
             this.colDurum.VisibleIndex = 10;
-            this.colDurum.Width = 44;
+            this.colDurum.Width = 45;
             // 
             // colTeklifSiparis
             // 
@@ -394,7 +401,7 @@
             this.colTeklifSiparis.Name = "colTeklifSiparis";
             this.colTeklifSiparis.Visible = true;
             this.colTeklifSiparis.VisibleIndex = 11;
-            this.colTeklifSiparis.Width = 44;
+            this.colTeklifSiparis.Width = 45;
             // 
             // colRemark
             // 
@@ -402,7 +409,7 @@
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
             this.colRemark.VisibleIndex = 12;
-            this.colRemark.Width = 44;
+            this.colRemark.Width = 45;
             // 
             // colTotalToplam
             // 
@@ -410,7 +417,7 @@
             this.colTotalToplam.Name = "colTotalToplam";
             this.colTotalToplam.Visible = true;
             this.colTotalToplam.VisibleIndex = 13;
-            this.colTotalToplam.Width = 44;
+            this.colTotalToplam.Width = 45;
             // 
             // colTotalIskonto
             // 
@@ -418,7 +425,7 @@
             this.colTotalIskonto.Name = "colTotalIskonto";
             this.colTotalIskonto.Visible = true;
             this.colTotalIskonto.VisibleIndex = 14;
-            this.colTotalIskonto.Width = 44;
+            this.colTotalIskonto.Width = 45;
             // 
             // colTotalKDV
             // 
@@ -426,7 +433,7 @@
             this.colTotalKDV.Name = "colTotalKDV";
             this.colTotalKDV.Visible = true;
             this.colTotalKDV.VisibleIndex = 15;
-            this.colTotalKDV.Width = 44;
+            this.colTotalKDV.Width = 45;
             // 
             // colTotalSiparis
             // 
@@ -434,7 +441,7 @@
             this.colTotalSiparis.Name = "colTotalSiparis";
             this.colTotalSiparis.Visible = true;
             this.colTotalSiparis.VisibleIndex = 16;
-            this.colTotalSiparis.Width = 44;
+            this.colTotalSiparis.Width = 45;
             // 
             // colDeleted
             // 
@@ -442,7 +449,7 @@
             this.colDeleted.Name = "colDeleted";
             this.colDeleted.Visible = true;
             this.colDeleted.VisibleIndex = 17;
-            this.colDeleted.Width = 57;
+            this.colDeleted.Width = 82;
             // 
             // OrderList
             // 
@@ -480,7 +487,7 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Refresh;
         private DevExpress.XtraBars.BarButtonItem bbi_Document;
         private DevExpress.XtraBars.BarButtonItem bbi_Print;
-        private DevExpress.XtraBars.BarButtonItem btnCurTranClose;
+        private DevExpress.XtraBars.BarButtonItem btnClose;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

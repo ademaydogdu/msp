@@ -94,7 +94,42 @@ namespace Msp.App.CariIslemler
             {
                 this.Close();
             }
-        } 
+        }
         #endregion
+
+        private void btnClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OrderEdit frm = new OrderEdit();
+            frm.MdiParent = this.MdiParent;
+            frm._FormOpenType = FormOpenType.New;
+            frm.RecId = 0;
+            frm.OrderType = orderType;
+            frm.Show();
+
+        }
+
+        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
+            if (oRow != null)
+            {
+                OrderEdit frm = new OrderEdit();
+                frm.MdiParent = this.MdiParent;
+                frm._FormOpenType = FormOpenType.Edit;
+                frm.RecId = oRow.RecId;
+                frm.OrderType = orderType;
+                frm.Show();
+            }
+        }
+
+        private void bbi_Refresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_refresh();
+        }
     }
 }
