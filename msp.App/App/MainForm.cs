@@ -594,5 +594,12 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnBuyingOrder_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OrderList frm = new OrderList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -113,22 +113,38 @@ namespace Msp.App.CariIslemler
                     lytSatisFaturasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_FaturaTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     break;
                 case InvoiceType.SatisFaturasi:
                     this.Text = "Satış Faturası";
                     lytSatisFaturasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_FaturaTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     break;
                 case InvoiceType.AlisIrsaliye:
                     this.Text = "Alış İrsaliyesi";
                     lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_FaturaTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     break;
                 case InvoiceType.SatisIrsaliye:
                     this.Text = "Satış İrsaliyesi";
                     lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    lc_FaturaTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     break;
                 default:
                     break;

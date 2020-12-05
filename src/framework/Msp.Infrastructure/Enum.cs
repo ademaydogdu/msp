@@ -27,5 +27,13 @@ namespace Msp.Infrastructure
         AllIrsaliye = 6,
     }
 
+    public enum OrderType
+    {
+        AlisSiparis = 1,
+        SatisSiparis = 2,
+        AllSiparis = 3,
+        BekleyenSiparis = 4
+    }
+
 
 }

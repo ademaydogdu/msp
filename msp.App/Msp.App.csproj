@@ -164,6 +164,18 @@
     <Compile Include="CariIslemler\InvoiceList.Designer.cs">
       <DependentUpon>InvoiceList.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\OrderEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\OrderEdit.Designer.cs">
+      <DependentUpon>OrderEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CariIslemler\OrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\OrderList.Designer.cs">
+      <DependentUpon>OrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmEnvanterBilgiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,6 +439,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\InvoiceList.resx">
       <DependentUpon>InvoiceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\OrderEdit.resx">
+      <DependentUpon>OrderEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\OrderList.resx">
+      <DependentUpon>OrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmEnvanterBilgiler.resx">
       <DependentUpon>frmEnvanterBilgiler.cs</DependentUpon>
