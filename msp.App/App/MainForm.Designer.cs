@@ -1747,6 +1747,7 @@
             this.img_buton.Add("bo_quote_1", "image://svgimages/business objects/bo_quote.svg");
             this.img_buton.Add("bo_report", "image://svgimages/business objects/bo_report.svg");
             this.img_buton.Add("shortdate", "image://svgimages/spreadsheet/shortdate.svg");
+            this.img_buton.Add("accounting", "image://svgimages/spreadsheet/accounting.svg");
             // 
             // barSatis
             // 
@@ -2066,6 +2067,7 @@
             // 
             this.barSubItem20.Caption = "Kasa Raporları";
             this.barSubItem20.Id = 171;
+            this.barSubItem20.ImageOptions.LargeImageIndex = 59;
             this.barSubItem20.Name = "barSubItem20";
             // 
             // MainForm
