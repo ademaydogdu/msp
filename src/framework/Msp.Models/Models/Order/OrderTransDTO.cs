@@ -11,13 +11,13 @@ namespace Msp.Models.Models.Order
         public int? RecId { get; set; }
         public int? OwnerId { get; set; }
         public int? StockId { get; set; }
-        public int? Miktar { get; set; }
+        public int? Miktar { get; set; } = 0;
         public string Sevk { get; set; }
         public string Bekleyen { get; set; }
         public int? BirimId { get; set; }
-        public decimal? BirimFiyat { get; set; }
+        public decimal? BirimFiyat { get; set; } = 0;
         public int? KDV { get; set; }
-        public decimal? Tutar { get; set; }
+        public decimal? Tutar { get; set; } = 0;
         public string Remark { get; set; }
     }
 }

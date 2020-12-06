@@ -53,13 +53,20 @@
             this.gcv_OrderList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCariRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_CariHesap = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_CariHesap = new System.Windows.Forms.BindingSource(this.components);
             this.colOrderType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_OrderType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_Company = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_company = new System.Windows.Forms.BindingSource(this.components);
             this.colSiparisNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSiparisDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSiparisTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOzelKod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDovizId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_Doviz = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
             this.colKDVId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDurum = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,11 +77,22 @@
             this.colTotalKDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_OrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_CariHesap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_OrderType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Company)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -268,6 +286,11 @@
             this.gc_OrderList.MainView = this.gcv_OrderList;
             this.gc_OrderList.MenuManager = this.barManager1;
             this.gc_OrderList.Name = "gc_OrderList";
+            this.gc_OrderList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rp_CariHesap,
+            this.rp_OrderType,
+            this.rp_Company,
+            this.rp_Doviz});
             this.gc_OrderList.Size = new System.Drawing.Size(872, 534);
             this.gc_OrderList.TabIndex = 4;
             this.gc_OrderList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -309,30 +332,74 @@
             // 
             // colCariRecId
             // 
+            this.colCariRecId.Caption = "Cari Hesap";
+            this.colCariRecId.ColumnEdit = this.rp_CariHesap;
             this.colCariRecId.FieldName = "CariRecId";
             this.colCariRecId.Name = "colCariRecId";
             this.colCariRecId.Visible = true;
             this.colCariRecId.VisibleIndex = 0;
             this.colCariRecId.Width = 86;
             // 
+            // rp_CariHesap
+            // 
+            this.rp_CariHesap.AutoHeight = false;
+            this.rp_CariHesap.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_CariHesap.DataSource = this.bs_CariHesap;
+            this.rp_CariHesap.DisplayMember = "CurAccountName";
+            this.rp_CariHesap.Name = "rp_CariHesap";
+            this.rp_CariHesap.NullText = "";
+            this.rp_CariHesap.ValueMember = "CurID";
+            // 
+            // bs_CariHesap
+            // 
+            this.bs_CariHesap.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
+            // 
             // colOrderType
             // 
+            this.colOrderType.Caption = "Sipariş Tipi";
+            this.colOrderType.ColumnEdit = this.rp_OrderType;
             this.colOrderType.FieldName = "OrderType";
             this.colOrderType.Name = "colOrderType";
             this.colOrderType.Visible = true;
             this.colOrderType.VisibleIndex = 1;
             this.colOrderType.Width = 90;
             // 
+            // rp_OrderType
+            // 
+            this.rp_OrderType.AutoHeight = false;
+            this.rp_OrderType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_OrderType.Name = "rp_OrderType";
+            this.rp_OrderType.NullText = "";
+            // 
             // colCompanyId
             // 
+            this.colCompanyId.Caption = "İşyeri";
+            this.colCompanyId.ColumnEdit = this.rp_Company;
             this.colCompanyId.FieldName = "CompanyId";
             this.colCompanyId.Name = "colCompanyId";
             this.colCompanyId.Visible = true;
             this.colCompanyId.VisibleIndex = 2;
             this.colCompanyId.Width = 45;
             // 
+            // rp_Company
+            // 
+            this.rp_Company.AutoHeight = false;
+            this.rp_Company.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Company.DataSource = this.bs_company;
+            this.rp_Company.DisplayMember = "CompanyName";
+            this.rp_Company.Name = "rp_Company";
+            this.rp_Company.ValueMember = "RecId";
+            // 
+            // bs_company
+            // 
+            this.bs_company.DataSource = typeof(Msp.Models.Models.CompanyDTO);
+            // 
             // colSiparisNo
             // 
+            this.colSiparisNo.Caption = "Sipariş No";
             this.colSiparisNo.FieldName = "SiparisNo";
             this.colSiparisNo.Name = "colSiparisNo";
             this.colSiparisNo.Visible = true;
@@ -341,6 +408,7 @@
             // 
             // colSiparisDate
             // 
+            this.colSiparisDate.Caption = "Sipariş Tarihi";
             this.colSiparisDate.FieldName = "SiparisDate";
             this.colSiparisDate.Name = "colSiparisDate";
             this.colSiparisDate.Visible = true;
@@ -349,6 +417,7 @@
             // 
             // colSiparisTime
             // 
+            this.colSiparisTime.Caption = "Sipariş Saati";
             this.colSiparisTime.FieldName = "SiparisTime";
             this.colSiparisTime.Name = "colSiparisTime";
             this.colSiparisTime.Visible = true;
@@ -357,6 +426,7 @@
             // 
             // colOzelKod
             // 
+            this.colOzelKod.Caption = "Özel Kod";
             this.colOzelKod.FieldName = "OzelKod";
             this.colOzelKod.Name = "colOzelKod";
             this.colOzelKod.Visible = true;
@@ -365,14 +435,32 @@
             // 
             // colDovizId
             // 
+            this.colDovizId.Caption = "Döviz";
+            this.colDovizId.ColumnEdit = this.rp_Doviz;
             this.colDovizId.FieldName = "DovizId";
             this.colDovizId.Name = "colDovizId";
             this.colDovizId.Visible = true;
             this.colDovizId.VisibleIndex = 7;
             this.colDovizId.Width = 45;
             // 
+            // rp_Doviz
+            // 
+            this.rp_Doviz.AutoHeight = false;
+            this.rp_Doviz.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Doviz.DataSource = this.bs_CurrencyType;
+            this.rp_Doviz.DisplayMember = "CurrencyCode";
+            this.rp_Doviz.Name = "rp_Doviz";
+            this.rp_Doviz.NullText = "";
+            this.rp_Doviz.ValueMember = "RecId";
+            // 
+            // bs_CurrencyType
+            // 
+            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
+            // 
             // colKDVId
             // 
+            this.colKDVId.Caption = "KDV";
             this.colKDVId.FieldName = "KDVId";
             this.colKDVId.Name = "colKDVId";
             this.colKDVId.Visible = true;
@@ -397,6 +485,7 @@
             // 
             // colTeklifSiparis
             // 
+            this.colTeklifSiparis.Caption = "Türü";
             this.colTeklifSiparis.FieldName = "TeklifSiparis";
             this.colTeklifSiparis.Name = "colTeklifSiparis";
             this.colTeklifSiparis.Visible = true;
@@ -405,6 +494,7 @@
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "Açıklama";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
@@ -451,6 +541,14 @@
             this.colDeleted.VisibleIndex = 17;
             this.colDeleted.Width = 82;
             // 
+            // bs_Product
+            // 
+            this.bs_Product.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
+            // bs_Unit
+            // 
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
+            // 
             // OrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,6 +570,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_OrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_CariHesap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_OrderType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Company)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +627,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTotalKDV;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalSiparis;
         private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_CariHesap;
+        private System.Windows.Forms.BindingSource bs_CariHesap;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_OrderType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Company;
+        private System.Windows.Forms.BindingSource bs_CurrencyType;
+        private System.Windows.Forms.BindingSource bs_Product;
+        private System.Windows.Forms.BindingSource bs_Unit;
+        private System.Windows.Forms.BindingSource bs_company;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Doviz;
     }
 }

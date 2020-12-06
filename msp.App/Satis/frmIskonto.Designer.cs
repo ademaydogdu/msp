@@ -48,19 +48,19 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblTotalDiscount = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.lblIndirimTutar = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem3 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem4 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.simpleLabelItem5 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.simpleLabelItem6 = new DevExpress.XtraLayout.SimpleLabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
@@ -74,19 +74,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTotalDiscount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblIndirimTutar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -113,7 +113,7 @@
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "%"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "₺")});
-            this.radioGroup1.Size = new System.Drawing.Size(313, 23);
+            this.radioGroup1.Size = new System.Drawing.Size(313, 43);
             this.radioGroup1.StyleController = this.layoutControl1;
             this.radioGroup1.TabIndex = 4;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
@@ -206,7 +206,7 @@
             // txtOranTotalTutar
             // 
             this.txtOranTotalTutar.Enabled = false;
-            this.txtOranTotalTutar.Location = new System.Drawing.Point(180, 74);
+            this.txtOranTotalTutar.Location = new System.Drawing.Point(180, 94);
             this.txtOranTotalTutar.MenuManager = this.barManager1;
             this.txtOranTotalTutar.Name = "txtOranTotalTutar";
             this.txtOranTotalTutar.Size = new System.Drawing.Size(289, 20);
@@ -215,7 +215,7 @@
             // 
             // txtIndirimOrani
             // 
-            this.txtIndirimOrani.Location = new System.Drawing.Point(180, 98);
+            this.txtIndirimOrani.Location = new System.Drawing.Point(180, 118);
             this.txtIndirimOrani.MenuManager = this.barManager1;
             this.txtIndirimOrani.Name = "txtIndirimOrani";
             this.txtIndirimOrani.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -227,7 +227,7 @@
             // 
             // txtTLTotalTutar
             // 
-            this.txtTLTotalTutar.Location = new System.Drawing.Point(180, 74);
+            this.txtTLTotalTutar.Location = new System.Drawing.Point(180, 94);
             this.txtTLTotalTutar.MenuManager = this.barManager1;
             this.txtTLTotalTutar.Name = "txtTLTotalTutar";
             this.txtTLTotalTutar.Size = new System.Drawing.Size(289, 20);
@@ -236,7 +236,7 @@
             // 
             // txtTLIndirimTutar
             // 
-            this.txtTLIndirimTutar.Location = new System.Drawing.Point(180, 98);
+            this.txtTLIndirimTutar.Location = new System.Drawing.Point(180, 118);
             this.txtTLIndirimTutar.MenuManager = this.barManager1;
             this.txtTLIndirimTutar.Name = "txtTLIndirimTutar";
             this.txtTLIndirimTutar.Size = new System.Drawing.Size(289, 20);
@@ -260,17 +260,17 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(150, 17);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(473, 27);
+            this.layoutControlItem1.Size = new System.Drawing.Size(473, 47);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "İskonto Cinsi";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(153, 13);
             // 
             // tabbedControlGroup1
             // 
-            this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 27);
+            this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 47);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(473, 194);
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(473, 174);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
             this.layoutControlGroup2});
@@ -279,26 +279,16 @@
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.lblTotalDiscount,
-            this.emptySpaceItem2,
             this.lblIndirimTutar,
             this.simpleLabelItem3,
             this.simpleLabelItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(449, 147);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(449, 127);
             this.layoutControlGroup1.Text = "% (İndirim Oran)";
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 137);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(449, 10);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
@@ -323,30 +313,55 @@
             this.lblTotalDiscount.AllowHotTrack = false;
             this.lblTotalDiscount.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblTotalDiscount.AppearanceItemCaption.Options.UseFont = true;
-            this.lblTotalDiscount.Location = new System.Drawing.Point(224, 75);
+            this.lblTotalDiscount.Location = new System.Drawing.Point(224, 65);
             this.lblTotalDiscount.Name = "lblTotalDiscount";
             this.lblTotalDiscount.Size = new System.Drawing.Size(225, 62);
             this.lblTotalDiscount.Text = "0.00 ₺";
             this.lblTotalDiscount.TextSize = new System.Drawing.Size(153, 58);
             // 
-            // emptySpaceItem2
+            // lblIndirimTutar
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 48);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(449, 10);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.lblIndirimTutar.AllowHotTrack = false;
+            this.lblIndirimTutar.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.lblIndirimTutar.AppearanceItemCaption.Options.UseFont = true;
+            this.lblIndirimTutar.Location = new System.Drawing.Point(0, 65);
+            this.lblIndirimTutar.MinSize = new System.Drawing.Size(157, 17);
+            this.lblIndirimTutar.Name = "lblIndirimTutar";
+            this.lblIndirimTutar.Size = new System.Drawing.Size(224, 62);
+            this.lblIndirimTutar.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.lblIndirimTutar.Text = "0.00 ₺";
+            this.lblIndirimTutar.TextSize = new System.Drawing.Size(153, 48);
+            // 
+            // simpleLabelItem3
+            // 
+            this.simpleLabelItem3.AllowHotTrack = false;
+            this.simpleLabelItem3.Location = new System.Drawing.Point(0, 48);
+            this.simpleLabelItem3.Name = "simpleLabelItem3";
+            this.simpleLabelItem3.Size = new System.Drawing.Size(224, 17);
+            this.simpleLabelItem3.Text = "İndirim Tutarı";
+            this.simpleLabelItem3.TextSize = new System.Drawing.Size(153, 13);
+            // 
+            // simpleLabelItem4
+            // 
+            this.simpleLabelItem4.AllowHotTrack = false;
+            this.simpleLabelItem4.Location = new System.Drawing.Point(224, 48);
+            this.simpleLabelItem4.Name = "simpleLabelItem4";
+            this.simpleLabelItem4.Size = new System.Drawing.Size(225, 17);
+            this.simpleLabelItem4.Text = "Total Tutar";
+            this.simpleLabelItem4.TextSize = new System.Drawing.Size(153, 13);
             // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem4,
             this.layoutControlItem5,
-            this.emptySpaceItem4,
-            this.simpleLabelItem2});
+            this.simpleLabelItem2,
+            this.simpleLabelItem1,
+            this.simpleLabelItem5,
+            this.simpleLabelItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(449, 147);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(449, 127);
             this.layoutControlGroup2.Text = "₺ (TL)";
             // 
             // layoutControlItem4
@@ -367,55 +382,45 @@
             this.layoutControlItem5.Text = "İndirim Tutarı (₺):";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(153, 13);
             // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 48);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(233, 99);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // simpleLabelItem2
             // 
             this.simpleLabelItem2.AllowHotTrack = false;
             this.simpleLabelItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.simpleLabelItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem2.Location = new System.Drawing.Point(233, 48);
+            this.simpleLabelItem2.Location = new System.Drawing.Point(233, 65);
             this.simpleLabelItem2.Name = "simpleLabelItem2";
-            this.simpleLabelItem2.Size = new System.Drawing.Size(216, 99);
+            this.simpleLabelItem2.Size = new System.Drawing.Size(216, 62);
             this.simpleLabelItem2.Text = "0.00 ₺";
             this.simpleLabelItem2.TextSize = new System.Drawing.Size(153, 58);
             // 
-            // lblIndirimTutar
+            // simpleLabelItem1
             // 
-            this.lblIndirimTutar.AllowHotTrack = false;
-            this.lblIndirimTutar.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
-            this.lblIndirimTutar.AppearanceItemCaption.Options.UseFont = true;
-            this.lblIndirimTutar.Location = new System.Drawing.Point(0, 75);
-            this.lblIndirimTutar.MinSize = new System.Drawing.Size(157, 17);
-            this.lblIndirimTutar.Name = "lblIndirimTutar";
-            this.lblIndirimTutar.Size = new System.Drawing.Size(224, 62);
-            this.lblIndirimTutar.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.lblIndirimTutar.Text = "0.00 ₺";
-            this.lblIndirimTutar.TextSize = new System.Drawing.Size(153, 48);
+            this.simpleLabelItem1.AllowHotTrack = false;
+            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 48);
+            this.simpleLabelItem1.Name = "simpleLabelItem1";
+            this.simpleLabelItem1.Size = new System.Drawing.Size(233, 17);
+            this.simpleLabelItem1.Text = "İndirim Tutarı";
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(153, 13);
             // 
-            // simpleLabelItem3
+            // simpleLabelItem5
             // 
-            this.simpleLabelItem3.AllowHotTrack = false;
-            this.simpleLabelItem3.Location = new System.Drawing.Point(0, 58);
-            this.simpleLabelItem3.Name = "simpleLabelItem3";
-            this.simpleLabelItem3.Size = new System.Drawing.Size(224, 17);
-            this.simpleLabelItem3.Text = "İndirim Tutarı";
-            this.simpleLabelItem3.TextSize = new System.Drawing.Size(153, 13);
+            this.simpleLabelItem5.AllowHotTrack = false;
+            this.simpleLabelItem5.Location = new System.Drawing.Point(233, 48);
+            this.simpleLabelItem5.Name = "simpleLabelItem5";
+            this.simpleLabelItem5.Size = new System.Drawing.Size(216, 17);
+            this.simpleLabelItem5.Text = "Total Tutar";
+            this.simpleLabelItem5.TextSize = new System.Drawing.Size(153, 13);
             // 
-            // simpleLabelItem4
+            // simpleLabelItem6
             // 
-            this.simpleLabelItem4.AllowHotTrack = false;
-            this.simpleLabelItem4.Location = new System.Drawing.Point(224, 58);
-            this.simpleLabelItem4.Name = "simpleLabelItem4";
-            this.simpleLabelItem4.Size = new System.Drawing.Size(225, 17);
-            this.simpleLabelItem4.Text = "Total Tutar";
-            this.simpleLabelItem4.TextSize = new System.Drawing.Size(153, 13);
+            this.simpleLabelItem6.AllowHotTrack = false;
+            this.simpleLabelItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            this.simpleLabelItem6.AppearanceItemCaption.Options.UseFont = true;
+            this.simpleLabelItem6.Location = new System.Drawing.Point(0, 65);
+            this.simpleLabelItem6.Name = "simpleLabelItem6";
+            this.simpleLabelItem6.Size = new System.Drawing.Size(233, 62);
+            this.simpleLabelItem6.Text = "0.00 ₺";
+            this.simpleLabelItem6.TextSize = new System.Drawing.Size(153, 58);
             // 
             // frmIskonto
             // 
@@ -446,19 +451,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTotalDiscount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblIndirimTutar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,22 +486,22 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.TabbedControlGroup tabbedControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraEditors.TextEdit txtOranTotalTutar;
         private DevExpress.XtraEditors.TextEdit txtIndirimOrani;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.SimpleLabelItem lblTotalDiscount;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.TextEdit txtTLTotalTutar;
         private DevExpress.XtraEditors.TextEdit txtTLIndirimTutar;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem2;
         private DevExpress.XtraLayout.SimpleLabelItem lblIndirimTutar;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem3;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem4;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem5;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem6;
     }
 }

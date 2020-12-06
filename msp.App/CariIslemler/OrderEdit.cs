@@ -127,7 +127,8 @@ namespace Msp.App.CariIslemler
                 lc_Company.EditValue = AppMain.Company;
                 orderOwner.CompanyId = AppMain.CompanyRecId;
                 orderOwner.OrderType = (int)OrderType;
-
+                orderOwner.SiparisNo = "0";
+                orderOwner.TeklifSiparis = 0;
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
@@ -183,6 +184,30 @@ namespace Msp.App.CariIslemler
         private void bbi_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void gcv_OrderTrans_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var _orderTrans = gcv_OrderTrans.GetRow(e.RowHandle) as OrderTransDTO;
+            if (_orderTrans != null)
+            {
+                if (_orderTrans.StockId == null) return;
+
+                var product = _productlist.FirstOrDefault(x => x.PID == _orderTrans.StockId);
+                if (e.Column == colStockId)
+                {
+                    _orderTrans.BirimId = product.PUnitId;
+                }
+                if (e.Column == colMiktar)
+                {
+
+                }
+                if (e.Column == colBirimFiyat)
+                {
+                    
+                }
+                _orderTrans.Tutar = _orderTrans.Miktar * _orderTrans.BirimFiyat;
+            }
         }
     }
 }

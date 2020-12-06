@@ -49,26 +49,28 @@
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             this.bs_company = new System.Windows.Forms.BindingSource(this.components);
             this.lc_DovizTuru = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
             this.grp_CariId = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bs_CariHesap = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.colCurAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gc_OrderTrans = new DevExpress.XtraGrid.GridControl();
             this.bs_OrderTrans = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcv_OrderTrans = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colStockId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rp_StockKodu = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rp_StockAdi = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colMiktar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSevk = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBekleyen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBirimId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_Unit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             this.colBirimFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_KDV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rp_KDV = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.txt_OzelKod = new DevExpress.XtraEditors.TextEdit();
             this.txt_SiparisNo = new DevExpress.XtraEditors.TextEdit();
             this.dt_SiparisDate = new DevExpress.XtraEditors.DateEdit();
@@ -96,7 +98,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblDurum = new DevExpress.XtraLayout.SimpleLabelItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -112,9 +113,8 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
-            this.rp_Unit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.lblDurum = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.colCurCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Company.Properties)).BeginInit();
@@ -123,15 +123,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_DovizTuru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grp_CariId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_OrderTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderTrans)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_StockKodu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_StockAdi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_KDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OzelKod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SiparisNo.Properties)).BeginInit();
@@ -161,7 +164,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblDurum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -177,9 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblDurum)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -187,7 +187,7 @@
             this.layoutControl1.Controls.Add(this.lc_Company);
             this.layoutControl1.Controls.Add(this.lc_DovizTuru);
             this.layoutControl1.Controls.Add(this.grp_CariId);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.gc_OrderTrans);
             this.layoutControl1.Controls.Add(this.txt_OzelKod);
             this.layoutControl1.Controls.Add(this.txt_SiparisNo);
             this.layoutControl1.Controls.Add(this.dt_SiparisDate);
@@ -218,6 +218,9 @@
             this.lc_Company.Name = "lc_Company";
             this.lc_Company.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lc_Company.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "İşyeri Kodu"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyName", "İşyeri Adı")});
             this.lc_Company.Properties.DataSource = this.bs_company;
             this.lc_Company.Properties.DisplayMember = "CompanyName";
             this.lc_Company.Properties.NullText = "";
@@ -388,6 +391,7 @@
             // 
             // lc_DovizTuru
             // 
+            this.lc_DovizTuru.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_OrderOwner, "DovizId", true));
             this.lc_DovizTuru.Location = new System.Drawing.Point(777, 45);
             this.lc_DovizTuru.MenuManager = this.barManager1;
             this.lc_DovizTuru.Name = "lc_DovizTuru";
@@ -402,6 +406,10 @@
             this.lc_DovizTuru.StyleController = this.layoutControl1;
             this.lc_DovizTuru.TabIndex = 10;
             // 
+            // bs_CurrencyType
+            // 
+            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
+            // 
             // grp_CariId
             // 
             this.grp_CariId.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_OrderOwner, "CariRecId", true));
@@ -414,6 +422,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
             this.grp_CariId.Properties.DataSource = this.bs_CariHesap;
             this.grp_CariId.Properties.DisplayMember = "CurAccountName";
+            this.grp_CariId.Properties.NullText = "";
             this.grp_CariId.Properties.PopupView = this.gridLookUpEdit1View;
             this.grp_CariId.Properties.ValueMember = "CurID";
             this.grp_CariId.Size = new System.Drawing.Size(343, 20);
@@ -426,50 +435,61 @@
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCurCode,
+            this.colCurAccountName});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // gridControl1
+            // colCurAccountName
             // 
-            this.gridControl1.DataSource = this.bs_OrderTrans;
-            this.gridControl1.Location = new System.Drawing.Point(12, 246);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.colCurAccountName.Caption = "Cari Adı";
+            this.colCurAccountName.FieldName = "CurAccountName";
+            this.colCurAccountName.Name = "colCurAccountName";
+            this.colCurAccountName.Visible = true;
+            this.colCurAccountName.VisibleIndex = 1;
+            // 
+            // gc_OrderTrans
+            // 
+            this.gc_OrderTrans.DataSource = this.bs_OrderTrans;
+            this.gc_OrderTrans.Location = new System.Drawing.Point(12, 246);
+            this.gc_OrderTrans.MainView = this.gcv_OrderTrans;
+            this.gc_OrderTrans.MenuManager = this.barManager1;
+            this.gc_OrderTrans.Name = "gc_OrderTrans";
+            this.gc_OrderTrans.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rp_KDV,
             this.rp_StockKodu,
             this.rp_StockAdi,
             this.rp_Unit});
-            this.gridControl1.Size = new System.Drawing.Size(1091, 365);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gc_OrderTrans.Size = new System.Drawing.Size(1091, 365);
+            this.gc_OrderTrans.TabIndex = 4;
+            this.gc_OrderTrans.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_OrderTrans});
             // 
             // bs_OrderTrans
             // 
             this.bs_OrderTrans.DataSource = typeof(Msp.Models.Models.Order.OrderTransDTO);
             // 
-            // gridView1
+            // gcv_OrderTrans
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gcv_OrderTrans.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colStockId,
             this.gridColumn1,
             this.colMiktar,
-            this.colSevk,
-            this.colBekleyen,
             this.colBirimId,
             this.colBirimFiyat,
             this.colKDV,
             this.colTutar,
             this.colRemark});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gcv_OrderTrans.GridControl = this.gc_OrderTrans;
+            this.gcv_OrderTrans.Name = "gcv_OrderTrans";
+            this.gcv_OrderTrans.OptionsView.ColumnAutoWidth = false;
+            this.gcv_OrderTrans.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gcv_OrderTrans.OptionsView.ShowFooter = true;
+            this.gcv_OrderTrans.OptionsView.ShowGroupPanel = false;
+            this.gcv_OrderTrans.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gcv_OrderTrans_CellValueChanged);
             // 
             // colStockId
             // 
@@ -478,7 +498,7 @@
             this.colStockId.FieldName = "StockId";
             this.colStockId.Name = "colStockId";
             this.colStockId.Visible = true;
-            this.colStockId.VisibleIndex = 1;
+            this.colStockId.VisibleIndex = 0;
             this.colStockId.Width = 120;
             // 
             // rp_StockKodu
@@ -486,8 +506,13 @@
             this.rp_StockKodu.AutoHeight = false;
             this.rp_StockKodu.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_StockKodu.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PCode", "Sok Kodu")});
             this.rp_StockKodu.DataSource = this.bs_Product;
+            this.rp_StockKodu.DisplayMember = "PCode";
             this.rp_StockKodu.Name = "rp_StockKodu";
+            this.rp_StockKodu.NullText = "";
+            this.rp_StockKodu.ValueMember = "PID";
             // 
             // bs_Product
             // 
@@ -500,7 +525,7 @@
             this.gridColumn1.FieldName = "StockId";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 128;
             // 
             // rp_StockAdi
@@ -508,31 +533,22 @@
             this.rp_StockAdi.AutoHeight = false;
             this.rp_StockAdi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_StockAdi.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PName", "Stok Adı")});
             this.rp_StockAdi.DataSource = this.bs_Product;
             this.rp_StockAdi.DisplayMember = "PName";
             this.rp_StockAdi.Name = "rp_StockAdi";
+            this.rp_StockAdi.NullText = "";
             this.rp_StockAdi.ValueMember = "PID";
             // 
             // colMiktar
             // 
+            this.colMiktar.DisplayFormat.FormatString = "n2";
+            this.colMiktar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMiktar.FieldName = "Miktar";
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.Visible = true;
             this.colMiktar.VisibleIndex = 2;
-            // 
-            // colSevk
-            // 
-            this.colSevk.FieldName = "Sevk";
-            this.colSevk.Name = "colSevk";
-            this.colSevk.Visible = true;
-            this.colSevk.VisibleIndex = 3;
-            // 
-            // colBekleyen
-            // 
-            this.colBekleyen.FieldName = "Bekleyen";
-            this.colBekleyen.Name = "colBekleyen";
-            this.colBekleyen.Visible = true;
-            this.colBekleyen.VisibleIndex = 4;
             // 
             // colBirimId
             // 
@@ -541,36 +557,39 @@
             this.colBirimId.FieldName = "BirimId";
             this.colBirimId.Name = "colBirimId";
             this.colBirimId.Visible = true;
-            this.colBirimId.VisibleIndex = 5;
+            this.colBirimId.VisibleIndex = 3;
+            // 
+            // rp_Unit
+            // 
+            this.rp_Unit.AutoHeight = false;
+            this.rp_Unit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Unit.DataSource = this.bs_Unit;
+            this.rp_Unit.DisplayMember = "UName";
+            this.rp_Unit.Name = "rp_Unit";
+            this.rp_Unit.NullText = "";
+            this.rp_Unit.ValueMember = "UID";
+            // 
+            // bs_Unit
+            // 
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
             // colBirimFiyat
             // 
+            this.colBirimFiyat.DisplayFormat.FormatString = "n2";
+            this.colBirimFiyat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colBirimFiyat.FieldName = "BirimFiyat";
             this.colBirimFiyat.Name = "colBirimFiyat";
             this.colBirimFiyat.Visible = true;
-            this.colBirimFiyat.VisibleIndex = 6;
+            this.colBirimFiyat.VisibleIndex = 4;
             // 
             // colKDV
             // 
+            this.colKDV.ColumnEdit = this.rp_KDV;
             this.colKDV.FieldName = "KDV";
             this.colKDV.Name = "colKDV";
             this.colKDV.Visible = true;
-            this.colKDV.VisibleIndex = 7;
-            // 
-            // colTutar
-            // 
-            this.colTutar.FieldName = "Tutar";
-            this.colTutar.Name = "colTutar";
-            this.colTutar.Visible = true;
-            this.colTutar.VisibleIndex = 8;
-            // 
-            // colRemark
-            // 
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 9;
-            this.colRemark.Width = 206;
+            this.colKDV.VisibleIndex = 5;
             // 
             // rp_KDV
             // 
@@ -578,6 +597,24 @@
             this.rp_KDV.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.rp_KDV.Name = "rp_KDV";
+            this.rp_KDV.NullText = "";
+            // 
+            // colTutar
+            // 
+            this.colTutar.DisplayFormat.FormatString = "n2";
+            this.colTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTutar.FieldName = "Tutar";
+            this.colTutar.Name = "colTutar";
+            this.colTutar.Visible = true;
+            this.colTutar.VisibleIndex = 6;
+            // 
+            // colRemark
+            // 
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 7;
+            this.colRemark.Width = 206;
             // 
             // txt_OzelKod
             // 
@@ -620,12 +657,15 @@
             this.txt_SiparisTime.Location = new System.Drawing.Point(547, 93);
             this.txt_SiparisTime.MenuManager = this.barManager1;
             this.txt_SiparisTime.Name = "txt_SiparisTime";
+            this.txt_SiparisTime.Properties.Mask.EditMask = "T";
+            this.txt_SiparisTime.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
             this.txt_SiparisTime.Size = new System.Drawing.Size(126, 20);
             this.txt_SiparisTime.StyleController = this.layoutControl1;
             this.txt_SiparisTime.TabIndex = 9;
             // 
             // txt_Iskonto
             // 
+            this.txt_Iskonto.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_OrderOwner, "Iskonto", true));
             this.txt_Iskonto.Location = new System.Drawing.Point(777, 93);
             this.txt_Iskonto.MenuManager = this.barManager1;
             this.txt_Iskonto.Name = "txt_Iskonto";
@@ -734,6 +774,7 @@
             // 
             // lc_KDV
             // 
+            this.lc_KDV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_OrderOwner, "Kdv", true));
             this.lc_KDV.EditValue = "";
             this.lc_KDV.Location = new System.Drawing.Point(777, 69);
             this.lc_KDV.MenuManager = this.barManager1;
@@ -758,18 +799,18 @@
             this.layoutControlGroup1,
             this.layoutControlGroup2,
             this.layoutControlItem12,
-            this.lblDurum,
             this.emptySpaceItem3,
             this.splitterItem1,
             this.layoutControlGroup3,
-            this.layoutControlGroup4});
+            this.layoutControlGroup4,
+            this.lblDurum});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1115, 623);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Control = this.gc_OrderTrans;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 234);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(1095, 369);
@@ -904,26 +945,10 @@
             this.layoutControlItem12.MaxSize = new System.Drawing.Size(230, 38);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(230, 38);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(230, 83);
+            this.layoutControlItem12.Size = new System.Drawing.Size(434, 38);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
-            // 
-            // lblDurum
-            // 
-            this.lblDurum.AllowHotTrack = false;
-            this.lblDurum.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDurum.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblDurum.AppearanceItemCaption.Options.UseFont = true;
-            this.lblDurum.AppearanceItemCaption.Options.UseForeColor = true;
-            this.lblDurum.CustomizationFormText = "Durumu : ";
-            this.lblDurum.Location = new System.Drawing.Point(677, 141);
-            this.lblDurum.MinSize = new System.Drawing.Size(77, 20);
-            this.lblDurum.Name = "lblDurum";
-            this.lblDurum.Size = new System.Drawing.Size(204, 83);
-            this.lblDurum.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.lblDurum.Text = "Durumu : ";
-            this.lblDurum.TextSize = new System.Drawing.Size(73, 16);
             // 
             // emptySpaceItem3
             // 
@@ -1106,23 +1131,30 @@
             this.layoutControlItem3.Text = "Cari";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 13);
             // 
-            // bs_Unit
+            // lblDurum
             // 
-            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
+            this.lblDurum.AllowHotTrack = false;
+            this.lblDurum.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.lblDurum.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblDurum.AppearanceItemCaption.Options.UseFont = true;
+            this.lblDurum.AppearanceItemCaption.Options.UseForeColor = true;
+            this.lblDurum.CustomizationFormText = "Durumu : ";
+            this.lblDurum.Location = new System.Drawing.Point(447, 179);
+            this.lblDurum.MaxSize = new System.Drawing.Size(434, 45);
+            this.lblDurum.MinSize = new System.Drawing.Size(434, 45);
+            this.lblDurum.Name = "lblDurum";
+            this.lblDurum.Size = new System.Drawing.Size(434, 45);
+            this.lblDurum.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.lblDurum.Text = "Durumu : ";
+            this.lblDurum.TextSize = new System.Drawing.Size(73, 16);
             // 
-            // bs_CurrencyType
+            // colCurCode
             // 
-            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
-            // 
-            // rp_Unit
-            // 
-            this.rp_Unit.AutoHeight = false;
-            this.rp_Unit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_Unit.DataSource = this.bs_Unit;
-            this.rp_Unit.DisplayMember = "UName";
-            this.rp_Unit.Name = "rp_Unit";
-            this.rp_Unit.ValueMember = "UID";
+            this.colCurCode.Caption = "Cari Kod";
+            this.colCurCode.FieldName = "CurCode";
+            this.colCurCode.Name = "colCurCode";
+            this.colCurCode.Visible = true;
+            this.colCurCode.VisibleIndex = 1;
             // 
             // OrderEdit
             // 
@@ -1147,15 +1179,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_DovizTuru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grp_CariId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_OrderTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderTrans)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_StockKodu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_StockAdi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_KDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OzelKod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SiparisNo.Properties)).EndInit();
@@ -1185,7 +1220,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblDurum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -1201,9 +1235,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_Unit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblDurum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1225,8 +1257,8 @@
         private DevExpress.Utils.SvgImageCollection img_bar;
         private DevExpress.XtraBars.BarButtonItem bbi_InternetAl;
         private DevExpress.XtraBars.BarButtonItem bbi_Refresh;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gc_OrderTrans;
+        private DevExpress.XtraGrid.Views.Grid.GridView gcv_OrderTrans;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.SplitterItem splitterItem1;
         private DevExpress.XtraEditors.GridLookUpEdit grp_CariId;
@@ -1265,8 +1297,6 @@
         private System.Windows.Forms.BindingSource bs_OrderTrans;
         private DevExpress.XtraGrid.Columns.GridColumn colStockId;
         private DevExpress.XtraGrid.Columns.GridColumn colMiktar;
-        private DevExpress.XtraGrid.Columns.GridColumn colSevk;
-        private DevExpress.XtraGrid.Columns.GridColumn colBekleyen;
         private DevExpress.XtraGrid.Columns.GridColumn colBirimId;
         private DevExpress.XtraGrid.Columns.GridColumn colBirimFiyat;
         private DevExpress.XtraGrid.Columns.GridColumn colKDV;
@@ -1297,5 +1327,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
         private System.Windows.Forms.BindingSource bs_CurrencyType;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Unit;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurAccountName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurCode;
     }
 }

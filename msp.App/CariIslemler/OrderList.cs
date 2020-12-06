@@ -15,6 +15,10 @@ using Msp.Infrastructure;
 using Msp.Models.Models.Utilities;
 using Msp.Models.Models.Order;
 using Msp.Service.Service.Order;
+using Msp.Service.Service.DepotStock;
+using Msp.Service.Service.CurrentTransactions;
+using Msp.Service.Service.App;
+using Msp.Service.Service.Tanimlar;
 
 namespace Msp.App.CariIslemler
 {
@@ -32,6 +36,19 @@ namespace Msp.App.CariIslemler
         public OrderType orderType;
 
         List<OrderOwnerDTO> List_OrderOwner = new List<OrderOwnerDTO>();
+        List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
+        List<ProductDTO> _productlist = new List<ProductDTO>();
+        List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
+        List<CompanyDTO> _company = new List<CompanyDTO>();
+        List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
+        public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
+        {
+            new KDVTaxDto(1, "%0", 0.00, 0),
+            new KDVTaxDto(2, "%1", 0.01, 1),
+            new KDVTaxDto(3, "%8", 0.08, 8),
+            new KDVTaxDto(4, "%18", 0.18, 18),
+        };
+
 
         List<SelectIdValue> OrdType = new List<SelectIdValue>()
         {
@@ -80,6 +97,34 @@ namespace Msp.App.CariIslemler
                     break;
             }
             MspTool.Get_Layout(this);
+
+
+            _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+            bs_Unit.DataSource = _list_UnitsDTO;
+
+            _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            bs_Product.DataSource = _productlist;
+
+            _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
+            bs_CariHesap.DataSource = _currentTransactionsList;
+
+            _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
+            bs_company.DataSource = _company;
+
+            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyType.DataSource = _currencyTypes;
+
+            rp_OrderType.DataSource = OrdType;
+            rp_OrderType.ValueMember = "Id";
+            rp_OrderType.DisplayMember = "Value";
+
+
+            //rp_.DataSource = KdvOrani;
+            //rp_KDV.ValueMember = "Id";
+            //rp_KDV.DisplayMember = "Value";
+
+
+
             do_refresh();
         }
 

@@ -49,6 +49,8 @@ namespace Msp.Models.Models
         public bool? PKdvIstisna { get; set; } = false;
         public decimal? PKarPrice { get; set; } = 0;
 
+        public string PCode { get; set; }
+
 
     }
 }

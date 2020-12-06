@@ -51,6 +51,7 @@ namespace Msp.Entity.Entities
         public decimal? PPaxAmout { get; set; }
         public bool? PKdvIstisna { get; set; } = false;
         public decimal? PKarPrice { get; set; } = 0;
+        public string PCode { get; set; }
 
 
         //public virtual Categories categories { get; set; }
