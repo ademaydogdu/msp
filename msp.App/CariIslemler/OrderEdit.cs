@@ -19,6 +19,7 @@ using Msp.Service.Service.App;
 using Msp.Service.Service.Tanimlar;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Service.Order;
+using System.Globalization;
 
 namespace Msp.App.CariIslemler
 {
@@ -35,8 +36,8 @@ namespace Msp.App.CariIslemler
         public int RecId;
         public OrderType OrderType;
 
-        public OrderOwnerDTO orderOwner = new OrderOwnerDTO();
-        public List<OrderTransDTO> orderTrans = new List<OrderTransDTO>();
+        public OrderOwnerDTO __orderOwner = new OrderOwnerDTO();
+        public List<OrderTransDTO> __orderTrans = new List<OrderTransDTO>();
 
         List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
         List<ProductDTO> _productlist = new List<ProductDTO>();
@@ -56,7 +57,7 @@ namespace Msp.App.CariIslemler
         public bool do_Validation()
         {
             bool _return = false;
-            if (orderTrans.Count == 0)
+            if (__orderTrans.Count == 0)
             {
                 MessageBox.Show("Boş Satır Kaydedilemez...");
                 _return = true;
@@ -74,8 +75,8 @@ namespace Msp.App.CariIslemler
                 {
                     var req = new OrderRequest()
                     {
-                        OrderOwner = orderOwner,
-                        OrderTrans = orderTrans
+                        OrderOwner = __orderOwner,
+                        OrderTrans = __orderTrans
                     };
                     var response = _repository.Run<OrderService, ActionResponse<OrderRequest>>(x => x.Save_Orders(req));
                     if (response.ResponseType != ResponseType.Ok)
@@ -95,7 +96,41 @@ namespace Msp.App.CariIslemler
             }
         }
 
+        private void TopTotal()
+        {
 
+            decimal AraToplam = 0;
+            decimal BirimFiyatToplam = Math.Round(Convert.ToDecimal(__orderTrans.Sum(x => x.BirimFiyat)), 2);
+            decimal Iskonto = Math.Round((BirimFiyatToplam * Convert.ToDecimal(__orderOwner.Iskonto)) / 100, 2);
+            decimal TotalKDV = 0;
+            if (Iskonto > 0)
+            {
+                AraToplam = BirimFiyatToplam - Iskonto;
+            }
+            else
+            {
+                AraToplam = BirimFiyatToplam;
+            }
+
+            foreach (var item in __orderTrans)
+            {
+                decimal Kdv = Math.Round(item.BirimFiyat.GetValueOrDefault() * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)item.KDV).TaxOrani, 2);
+                TotalKDV += Kdv;
+            }
+
+
+            __orderOwner.TotalToplam = BirimFiyatToplam;
+            __orderOwner.TotalIskonto = Iskonto;
+            __orderOwner.TotalAraToplam = AraToplam;
+            __orderOwner.TotalKDV = TotalKDV;
+            __orderOwner.TotalSiparis = AraToplam + TotalKDV;
+            txtToplam.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", BirimFiyatToplam);
+            txtIndirim.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", Iskonto);
+            txtAraToplam.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", AraToplam);
+            txtToplamKDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", TotalKDV);
+            txtTotal.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", AraToplam + TotalKDV);
+
+        }
 
 
 
@@ -125,14 +160,15 @@ namespace Msp.App.CariIslemler
             if (_FormOpenType == FormOpenType.New)
             {
                 lc_Company.EditValue = AppMain.Company;
-                orderOwner.CompanyId = AppMain.CompanyRecId;
-                orderOwner.OrderType = (int)OrderType;
-                orderOwner.SiparisNo = "0";
-                orderOwner.TeklifSiparis = 0;
+                __orderOwner.CompanyId = AppMain.CompanyRecId;
+                __orderOwner.OrderType = (int)OrderType;
+                __orderOwner.SiparisNo = "0";
+                __orderOwner.TeklifSiparis = 0;
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
-
+                __orderOwner = _repository.Run<OrderService, OrderOwnerDTO>(x => x.Get_OrderOwner(RecId));
+                __orderTrans = _repository.Run<OrderService, List<OrderTransDTO>>(x => x.Get_OrderTrans(RecId));
             }
             if (_FormOpenType == FormOpenType.View)
             {
@@ -157,8 +193,8 @@ namespace Msp.App.CariIslemler
             rp_KDV.ValueMember = "Id";
             rp_KDV.DisplayMember = "Value";
 
-            bs_OrderOwner.DataSource = orderOwner;
-            bs_OrderTrans.DataSource = orderTrans;
+            bs_OrderOwner.DataSource = __orderOwner;
+            bs_OrderTrans.DataSource = __orderTrans;
 
         }
 
@@ -197,6 +233,7 @@ namespace Msp.App.CariIslemler
                 if (e.Column == colStockId)
                 {
                     _orderTrans.BirimId = product.PUnitId;
+                    _orderTrans.KDV = product.PTax;
                 }
                 if (e.Column == colMiktar)
                 {
@@ -204,10 +241,16 @@ namespace Msp.App.CariIslemler
                 }
                 if (e.Column == colBirimFiyat)
                 {
-                    
+
                 }
                 _orderTrans.Tutar = _orderTrans.Miktar * _orderTrans.BirimFiyat;
+                TopTotal();
             }
+        }
+
+        private void txt_Iskonto_EditValueChanged(object sender, EventArgs e)
+        {
+            TopTotal();
         }
     }
 }

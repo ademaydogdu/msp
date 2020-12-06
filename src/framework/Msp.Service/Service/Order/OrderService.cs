@@ -12,6 +12,8 @@ namespace Msp.Service.Service.Order
 {
     public class OrderService : BaseService
     {
+        #region Order
+
         public List<OrderOwnerDTO> GetList_Order(int invoiceType)
         {
             using (var _db = new MspDbContext())
@@ -106,7 +108,23 @@ namespace Msp.Service.Service.Order
             return response;
         }
 
+        public OrderOwnerDTO Get_OrderOwner(int RecId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<OrderOwner, OrderOwnerDTO>(_db.OrderOwner.Where(x => x.RecId == RecId).FirstOrDefault());
+            }
+        }
 
+        public List<OrderTransDTO> Get_OrderTrans(int OwnerRecId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<OrderTrans>, List<OrderTransDTO>>(_db.OrderTrans.Where(x => x.OwnerId == OwnerRecId).ToList());
+            }
+        }
+
+        #endregion
 
 
 

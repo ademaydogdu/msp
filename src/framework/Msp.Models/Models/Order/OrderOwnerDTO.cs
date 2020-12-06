@@ -22,10 +22,11 @@ namespace Msp.Models.Models.Order
         public string Durum { get; set; }
         public int? TeklifSiparis { get; set; }
         public string Remark { get; set; }
-        public decimal? TotalToplam { get; set; }
-        public decimal? TotalIskonto { get; set; }
-        public decimal? TotalKDV { get; set; }
-        public decimal? TotalSiparis { get; set; }
+        public decimal? TotalToplam { get; set; } = 0;
+        public decimal? TotalIskonto { get; set; } = 0;
+        public decimal? TotalKDV { get; set; } = 0;
+        public decimal? TotalSiparis { get; set; } = 0;
+        public decimal? TotalAraToplam { get; set; } = 0;
         public bool? Deleted { get; set; }
         public int? IrsaliyeId { get; set; } = 0;
 

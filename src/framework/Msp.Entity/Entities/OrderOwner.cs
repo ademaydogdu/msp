@@ -30,6 +30,7 @@ namespace Msp.Entity.Entities
         public decimal? TotalIskonto { get; set; }
         public decimal? TotalKDV { get; set; }
         public decimal? TotalSiparis { get; set; }
+        public decimal? TotalAraToplam { get; set; }
         public bool? Deleted { get; set; }
         public int? IrsaliyeId { get; set; }
     }
