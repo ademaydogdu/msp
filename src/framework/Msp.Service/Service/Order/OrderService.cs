@@ -21,6 +21,10 @@ namespace Msp.Service.Service.Order
                 {
                     result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == 1 || x.OrderType == 2).ToList());
                 }
+                else if (invoiceType == 4)
+                {
+                    result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.IrsaliyeId == 0).ToList());
+                }
                 else
                 {
                     result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == invoiceType).ToList());

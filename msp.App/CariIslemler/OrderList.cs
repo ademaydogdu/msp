@@ -57,6 +57,12 @@ namespace Msp.App.CariIslemler
             new SelectIdValue(5, "Bekleyen Sipariş"),
         };
 
+        List<SelectIdValue> teklifSiparis = new List<SelectIdValue>()
+        {
+            new SelectIdValue(0, "Sipariş"),
+            new SelectIdValue(1, "Teklif"),
+        };
+
         #region Record
 
         public void do_refresh()
@@ -118,6 +124,9 @@ namespace Msp.App.CariIslemler
             rp_OrderType.ValueMember = "Id";
             rp_OrderType.DisplayMember = "Value";
 
+            rp_TeklifSiparis.DataSource = teklifSiparis;
+            rp_TeklifSiparis.ValueMember = "Id";
+            rp_TeklifSiparis.DisplayMember = "Value";
 
             //rp_.DataSource = KdvOrani;
             //rp_KDV.ValueMember = "Id";

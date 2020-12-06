@@ -79,6 +79,7 @@
             this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
+            this.rp_TeklifSiparis = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
@@ -93,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -290,7 +292,8 @@
             this.rp_CariHesap,
             this.rp_OrderType,
             this.rp_Company,
-            this.rp_Doviz});
+            this.rp_Doviz,
+            this.rp_TeklifSiparis});
             this.gc_OrderList.Size = new System.Drawing.Size(872, 534);
             this.gc_OrderList.TabIndex = 4;
             this.gc_OrderList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -322,6 +325,7 @@
             this.gcv_OrderList.Name = "gcv_OrderList";
             this.gcv_OrderList.OptionsBehavior.Editable = false;
             this.gcv_OrderList.OptionsView.ColumnAutoWidth = false;
+            this.gcv_OrderList.OptionsView.ShowAutoFilterRow = true;
             this.gcv_OrderList.OptionsView.ShowFooter = true;
             this.gcv_OrderList.OptionsView.ShowGroupPanel = false;
             // 
@@ -486,6 +490,7 @@
             // colTeklifSiparis
             // 
             this.colTeklifSiparis.Caption = "Türü";
+            this.colTeklifSiparis.ColumnEdit = this.rp_TeklifSiparis;
             this.colTeklifSiparis.FieldName = "TeklifSiparis";
             this.colTeklifSiparis.Name = "colTeklifSiparis";
             this.colTeklifSiparis.Visible = true;
@@ -549,6 +554,14 @@
             // 
             this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
+            // rp_TeklifSiparis
+            // 
+            this.rp_TeklifSiparis.AutoHeight = false;
+            this.rp_TeklifSiparis.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_TeklifSiparis.Name = "rp_TeklifSiparis";
+            this.rp_TeklifSiparis.NullText = "";
+            // 
             // OrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,6 +592,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,5 +650,6 @@
         private System.Windows.Forms.BindingSource bs_Unit;
         private System.Windows.Forms.BindingSource bs_company;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Doviz;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_TeklifSiparis;
     }
 }
