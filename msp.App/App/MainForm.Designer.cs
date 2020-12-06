@@ -236,6 +236,13 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barSubItem15 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem16 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem78 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem17 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem18 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem19 = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -414,10 +421,17 @@
             this.barButtonItem91,
             this.bbi_DovizCinsi,
             this.bbi_BekleyenIrsaliye,
-            this.barButtonItem88});
+            this.barButtonItem88,
+            this.barSubItem15,
+            this.barSubItem16,
+            this.barButtonItem78,
+            this.barSubItem17,
+            this.barButtonItem80,
+            this.barSubItem18,
+            this.barSubItem19});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 164;
+            this.ribbon.MaxItemId = 171;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1812,6 +1826,11 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem15);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem16);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem17);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem18);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem19);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPage1
@@ -1992,6 +2011,53 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barSubItem15
+            // 
+            this.barSubItem15.Caption = "Stok Rapoları";
+            this.barSubItem15.Id = 164;
+            this.barSubItem15.ImageOptions.LargeImageIndex = 47;
+            this.barSubItem15.Name = "barSubItem15";
+            // 
+            // barSubItem16
+            // 
+            this.barSubItem16.Caption = "Fatura Raporları";
+            this.barSubItem16.Id = 165;
+            this.barSubItem16.ImageOptions.LargeImageIndex = 30;
+            this.barSubItem16.Name = "barSubItem16";
+            // 
+            // barButtonItem78
+            // 
+            this.barButtonItem78.Caption = "Sipariş Raporları";
+            this.barButtonItem78.Id = 166;
+            this.barButtonItem78.Name = "barButtonItem78";
+            // 
+            // barSubItem17
+            // 
+            this.barSubItem17.Caption = "Sipariş Raporları";
+            this.barSubItem17.Id = 167;
+            this.barSubItem17.ImageOptions.LargeImageIndex = 10;
+            this.barSubItem17.Name = "barSubItem17";
+            // 
+            // barButtonItem80
+            // 
+            this.barButtonItem80.Caption = "barButtonItem80";
+            this.barButtonItem80.Id = 168;
+            this.barButtonItem80.Name = "barButtonItem80";
+            // 
+            // barSubItem18
+            // 
+            this.barSubItem18.Caption = "İrsaliye Raporları";
+            this.barSubItem18.Id = 169;
+            this.barSubItem18.ImageOptions.LargeImageIndex = 46;
+            this.barSubItem18.Name = "barSubItem18";
+            // 
+            // barSubItem19
+            // 
+            this.barSubItem19.Caption = "Cari Hesap Raporları";
+            this.barSubItem19.Id = 170;
+            this.barSubItem19.ImageOptions.LargeImageIndex = 8;
+            this.barSubItem19.Name = "barSubItem19";
             // 
             // MainForm
             // 
@@ -2231,5 +2297,12 @@
         private DevExpress.XtraBars.BarButtonItem bbi_BekleyenIrsaliye;
         private DevExpress.XtraBars.BarButtonItem barButtonItem88;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.BarSubItem barSubItem15;
+        private DevExpress.XtraBars.BarSubItem barSubItem16;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem78;
+        private DevExpress.XtraBars.BarSubItem barSubItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem80;
+        private DevExpress.XtraBars.BarSubItem barSubItem18;
+        private DevExpress.XtraBars.BarSubItem barSubItem19;
     }
 }
