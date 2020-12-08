@@ -85,6 +85,13 @@ namespace Msp.App.CariIslemler
                     }
                     else
                     {
+                        foreach (Form item in Application.OpenForms)
+                        {
+                            if (item.Name == "OrderList")
+                            {
+                                ((OrderList)item).do_refresh();
+                            }
+                        }
                         this.Close();
                     }
                 }

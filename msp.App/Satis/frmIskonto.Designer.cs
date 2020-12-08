@@ -227,6 +227,7 @@
             // 
             // txtTLTotalTutar
             // 
+            this.txtTLTotalTutar.Enabled = false;
             this.txtTLTotalTutar.Location = new System.Drawing.Point(180, 94);
             this.txtTLTotalTutar.MenuManager = this.barManager1;
             this.txtTLTotalTutar.Name = "txtTLTotalTutar";

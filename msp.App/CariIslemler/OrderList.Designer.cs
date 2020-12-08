@@ -71,15 +71,17 @@
             this.colIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDurum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTeklifSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_TeklifSiparis = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalKDV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
-            this.rp_TeklifSiparis = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colIrsaliyeId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
@@ -92,9 +94,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -319,8 +321,10 @@
             this.colTotalToplam,
             this.colTotalIskonto,
             this.colTotalKDV,
+            this.colTotalAraToplam,
             this.colTotalSiparis,
-            this.colDeleted});
+            this.colDeleted,
+            this.colIrsaliyeId});
             this.gcv_OrderList.GridControl = this.gc_OrderList;
             this.gcv_OrderList.Name = "gcv_OrderList";
             this.gcv_OrderList.OptionsBehavior.Editable = false;
@@ -465,7 +469,7 @@
             // colKDVId
             // 
             this.colKDVId.Caption = "KDV";
-            this.colKDVId.FieldName = "KDVId";
+            this.colKDVId.FieldName = "Kdv";
             this.colKDVId.Name = "colKDVId";
             this.colKDVId.Visible = true;
             this.colKDVId.VisibleIndex = 8;
@@ -497,6 +501,14 @@
             this.colTeklifSiparis.VisibleIndex = 11;
             this.colTeklifSiparis.Width = 45;
             // 
+            // rp_TeklifSiparis
+            // 
+            this.rp_TeklifSiparis.AutoHeight = false;
+            this.rp_TeklifSiparis.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_TeklifSiparis.Name = "rp_TeklifSiparis";
+            this.rp_TeklifSiparis.NullText = "";
+            // 
             // colRemark
             // 
             this.colRemark.Caption = "Açıklama";
@@ -508,6 +520,8 @@
             // 
             // colTotalToplam
             // 
+            this.colTotalToplam.DisplayFormat.FormatString = "n2";
+            this.colTotalToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotalToplam.FieldName = "TotalToplam";
             this.colTotalToplam.Name = "colTotalToplam";
             this.colTotalToplam.Visible = true;
@@ -516,6 +530,8 @@
             // 
             // colTotalIskonto
             // 
+            this.colTotalIskonto.DisplayFormat.FormatString = "n2";
+            this.colTotalIskonto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotalIskonto.FieldName = "TotalIskonto";
             this.colTotalIskonto.Name = "colTotalIskonto";
             this.colTotalIskonto.Visible = true;
@@ -524,26 +540,20 @@
             // 
             // colTotalKDV
             // 
+            this.colTotalKDV.DisplayFormat.FormatString = "n2";
+            this.colTotalKDV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotalKDV.FieldName = "TotalKDV";
             this.colTotalKDV.Name = "colTotalKDV";
             this.colTotalKDV.Visible = true;
             this.colTotalKDV.VisibleIndex = 15;
             this.colTotalKDV.Width = 45;
             // 
-            // colTotalSiparis
-            // 
-            this.colTotalSiparis.FieldName = "TotalSiparis";
-            this.colTotalSiparis.Name = "colTotalSiparis";
-            this.colTotalSiparis.Visible = true;
-            this.colTotalSiparis.VisibleIndex = 16;
-            this.colTotalSiparis.Width = 45;
-            // 
             // colDeleted
             // 
             this.colDeleted.FieldName = "Deleted";
             this.colDeleted.Name = "colDeleted";
             this.colDeleted.Visible = true;
-            this.colDeleted.VisibleIndex = 17;
+            this.colDeleted.VisibleIndex = 16;
             this.colDeleted.Width = 82;
             // 
             // bs_Product
@@ -554,13 +564,30 @@
             // 
             this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
-            // rp_TeklifSiparis
+            // colIrsaliyeId
             // 
-            this.rp_TeklifSiparis.AutoHeight = false;
-            this.rp_TeklifSiparis.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_TeklifSiparis.Name = "rp_TeklifSiparis";
-            this.rp_TeklifSiparis.NullText = "";
+            this.colIrsaliyeId.FieldName = "IrsaliyeId";
+            this.colIrsaliyeId.Name = "colIrsaliyeId";
+            this.colIrsaliyeId.Visible = true;
+            this.colIrsaliyeId.VisibleIndex = 17;
+            // 
+            // colTotalAraToplam
+            // 
+            this.colTotalAraToplam.DisplayFormat.FormatString = "n2";
+            this.colTotalAraToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTotalAraToplam.FieldName = "TotalAraToplam";
+            this.colTotalAraToplam.Name = "colTotalAraToplam";
+            this.colTotalAraToplam.Visible = true;
+            this.colTotalAraToplam.VisibleIndex = 18;
+            // 
+            // colTotalSiparis
+            // 
+            this.colTotalSiparis.DisplayFormat.FormatString = "n2";
+            this.colTotalSiparis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTotalSiparis.FieldName = "TotalSiparis";
+            this.colTotalSiparis.Name = "colTotalSiparis";
+            this.colTotalSiparis.Visible = true;
+            this.colTotalSiparis.VisibleIndex = 19;
             // 
             // OrderList
             // 
@@ -590,9 +617,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,7 +666,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTotalToplam;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalIskonto;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalKDV;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalSiparis;
         private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_CariHesap;
         private System.Windows.Forms.BindingSource bs_CariHesap;
@@ -651,5 +677,8 @@
         private System.Windows.Forms.BindingSource bs_company;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Doviz;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_TeklifSiparis;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalAraToplam;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalSiparis;
+        private DevExpress.XtraGrid.Columns.GridColumn colIrsaliyeId;
     }
 }

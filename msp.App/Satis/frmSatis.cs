@@ -426,6 +426,8 @@ namespace msp.App
             __dll_SaleOwner = new SaleOwnerDTO();
             __dl_List_SaleTrans.Clear();
             __dl_List_SaleTrans = new List<SaleTransDTO>();
+            __dll_SaleOwner.AlinanPrice = 0;
+            txtParaUstu.Text = "0";
             txt_CustomerName.Text = "";
             txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
             txt_OdemeTipi.EditValue = "";
@@ -443,6 +445,7 @@ namespace msp.App
             IskontoTutari = _indirimTutari;
             var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
             txt_İndirimTutar.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", IskontoTutari);
+            __dll_SaleOwner.TotalPrice = totalAmount - IskontoTutari;
             txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount- IskontoTutari);
         }
 

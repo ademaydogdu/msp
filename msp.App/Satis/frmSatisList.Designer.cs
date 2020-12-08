@@ -132,6 +132,7 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
@@ -142,6 +143,7 @@
             // 
             // colDate
             // 
+            this.colDate.Caption = "Tarih";
             this.colDate.FieldName = "Date";
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
@@ -149,6 +151,7 @@
             // 
             // colTotalPriceText
             // 
+            this.colTotalPriceText.Caption = "Toplam Fiyat";
             this.colTotalPriceText.FieldName = "TotalPriceText";
             this.colTotalPriceText.Name = "colTotalPriceText";
             this.colTotalPriceText.Visible = true;
@@ -156,6 +159,7 @@
             // 
             // colUserCode
             // 
+            this.colUserCode.Caption = "Kayıt Eden";
             this.colUserCode.FieldName = "UserCode";
             this.colUserCode.Name = "colUserCode";
             this.colUserCode.Visible = true;
@@ -163,6 +167,7 @@
             // 
             // colNetPriceText
             // 
+            this.colNetPriceText.Caption = "Net Fiyat";
             this.colNetPriceText.FieldName = "NetPriceText";
             this.colNetPriceText.Name = "colNetPriceText";
             this.colNetPriceText.Visible = true;
@@ -170,6 +175,7 @@
             // 
             // colCustomerName
             // 
+            this.colCustomerName.Caption = "Müşteri Adı";
             this.colCustomerName.FieldName = "CustomerName";
             this.colCustomerName.Name = "colCustomerName";
             this.colCustomerName.Visible = true;
@@ -177,6 +183,7 @@
             // 
             // colPaymentType
             // 
+            this.colPaymentType.Caption = "Ödeme Tipi";
             this.colPaymentType.FieldName = "PaymentType";
             this.colPaymentType.Name = "colPaymentType";
             this.colPaymentType.Visible = true;
@@ -184,6 +191,8 @@
             // 
             // colNetPrice
             // 
+            this.colNetPrice.DisplayFormat.FormatString = "n2";
+            this.colNetPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colNetPrice.FieldName = "NetPrice";
             this.colNetPrice.Name = "colNetPrice";
             this.colNetPrice.Visible = true;
@@ -198,6 +207,8 @@
             // 
             // colDiscountPrice
             // 
+            this.colDiscountPrice.DisplayFormat.FormatString = "n2";
+            this.colDiscountPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDiscountPrice.FieldName = "DiscountPrice";
             this.colDiscountPrice.Name = "colDiscountPrice";
             this.colDiscountPrice.Visible = true;
@@ -205,6 +216,9 @@
             // 
             // colTotalPrice
             // 
+            this.colTotalPrice.Caption = "Toplam Fiyat";
+            this.colTotalPrice.DisplayFormat.FormatString = "n2";
+            this.colTotalPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotalPrice.FieldName = "TotalPrice";
             this.colTotalPrice.Name = "colTotalPrice";
             this.colTotalPrice.Visible = true;
@@ -212,13 +226,15 @@
             // 
             // colReceivedPrice
             // 
-            this.colReceivedPrice.FieldName = "ReceivedPrice";
+            this.colReceivedPrice.Caption = "Alınan Para";
+            this.colReceivedPrice.FieldName = "AlinanPrice";
             this.colReceivedPrice.Name = "colReceivedPrice";
             this.colReceivedPrice.Visible = true;
             this.colReceivedPrice.VisibleIndex = 10;
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "Açıklama";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
