@@ -213,5 +213,11 @@ namespace Msp.App.CariIslemler
         {
             this.Close();
         }
+
+        private void bbi_SiparisCagir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FindOrderList frm = new FindOrderList();
+            frm.ShowDialog();
+        }
     }
 }

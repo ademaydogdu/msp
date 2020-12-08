@@ -612,6 +612,8 @@
             // 
             // colTutar
             // 
+            this.colTutar.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colTutar.AppearanceCell.Options.UseFont = true;
             this.colTutar.DisplayFormat.FormatString = "n2";
             this.colTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTutar.FieldName = "Tutar";
@@ -668,8 +670,8 @@
             this.txt_SiparisTime.Location = new System.Drawing.Point(538, 93);
             this.txt_SiparisTime.MenuManager = this.barManager1;
             this.txt_SiparisTime.Name = "txt_SiparisTime";
-            this.txt_SiparisTime.Properties.Mask.EditMask = "T";
-            this.txt_SiparisTime.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            this.txt_SiparisTime.Properties.Mask.EditMask = "90:00";
+            this.txt_SiparisTime.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txt_SiparisTime.Size = new System.Drawing.Size(135, 20);
             this.txt_SiparisTime.StyleController = this.layoutControl1;
             this.txt_SiparisTime.TabIndex = 9;

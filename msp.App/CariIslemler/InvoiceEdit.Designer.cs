@@ -36,9 +36,9 @@
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_DeleteRow = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Document = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Tahsilat = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_FaturaAra = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_SiparisCagir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_log = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -138,11 +138,6 @@
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lc_IrsaliyeSaat = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lcgr_FatutaBilgisi = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.simpleLabelItem3 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlGroup8 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -151,6 +146,11 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lcgr_FatutaBilgisi = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.simpleLabelItem3 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -246,11 +246,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_IrsaliyeSaat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgr_FatutaBilgisi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -259,6 +254,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgr_FatutaBilgisi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
@@ -351,9 +351,9 @@
             this.bbi_log,
             this.bbi_DeleteRow,
             this.bbi_FaturaAra,
-            this.barButtonItem1,
+            this.bbi_SiparisCagir,
             this.barButtonItem3,
-            this.barButtonItem4,
+            this.bbi_Tahsilat,
             this.barButtonItem5,
             this.barButtonItem6});
             this.barManager1.LargeImages = this.img_bar;
@@ -371,9 +371,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_save),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_DeleteRow, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Document),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Tahsilat, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_FaturaAra),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SiparisCagir),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_log, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
@@ -409,28 +409,37 @@
             this.bbi_Document.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Document.Name = "bbi_Document";
             // 
-            // barButtonItem4
+            // bbi_Tahsilat
             // 
-            this.barButtonItem4.Caption = "Tahsilat";
-            this.barButtonItem4.Id = 8;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.bbi_Tahsilat.Caption = "Tahsilat";
+            this.bbi_Tahsilat.Id = 8;
+            this.bbi_Tahsilat.ImageOptions.ImageIndex = 9;
+            this.bbi_Tahsilat.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Tahsilat.Name = "bbi_Tahsilat";
             // 
             // bbi_FaturaAra
             // 
             this.bbi_FaturaAra.Caption = "Fatura Ara";
             this.bbi_FaturaAra.Id = 5;
+            this.bbi_FaturaAra.ImageOptions.ImageIndex = 5;
+            this.bbi_FaturaAra.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_FaturaAra.Name = "bbi_FaturaAra";
             // 
-            // barButtonItem1
+            // bbi_SiparisCagir
             // 
-            this.barButtonItem1.Caption = "Sipraiş Çağır";
-            this.barButtonItem1.Id = 6;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.bbi_SiparisCagir.Caption = "Sipraiş Çağır";
+            this.bbi_SiparisCagir.Id = 6;
+            this.bbi_SiparisCagir.ImageOptions.ImageIndex = 10;
+            this.bbi_SiparisCagir.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_SiparisCagir.Name = "bbi_SiparisCagir";
+            this.bbi_SiparisCagir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_SiparisCagir_ItemClick);
             // 
             // barButtonItem3
             // 
             this.barButtonItem3.Caption = "İrsaliye Çağır";
             this.barButtonItem3.Id = 7;
+            this.barButtonItem3.ImageOptions.ImageIndex = 12;
+            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.barButtonItem3.Name = "barButtonItem3";
             // 
             // bbi_log
@@ -462,6 +471,8 @@
             // 
             this.barButtonItem6.Caption = "Gönder";
             this.barButtonItem6.Id = 10;
+            this.barButtonItem6.ImageOptions.ImageIndex = 13;
+            this.barButtonItem6.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.barButtonItem6.Name = "barButtonItem6";
             // 
             // barDockControlTop
@@ -671,6 +682,8 @@
             // colQuentity
             // 
             this.colQuentity.Caption = "Miktar";
+            this.colQuentity.DisplayFormat.FormatString = "n2";
+            this.colQuentity.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colQuentity.FieldName = "Quentity";
             this.colQuentity.Name = "colQuentity";
             this.colQuentity.Visible = true;
@@ -1106,8 +1119,8 @@
             this.txtIrsaliyeSaat.Location = new System.Drawing.Point(978, 128);
             this.txtIrsaliyeSaat.MenuManager = this.barManager1;
             this.txtIrsaliyeSaat.Name = "txtIrsaliyeSaat";
-            this.txtIrsaliyeSaat.Properties.Mask.EditMask = "t";
-            this.txtIrsaliyeSaat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            this.txtIrsaliyeSaat.Properties.Mask.EditMask = "90:00";
+            this.txtIrsaliyeSaat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtIrsaliyeSaat.Size = new System.Drawing.Size(118, 20);
             this.txtIrsaliyeSaat.StyleController = this.layoutControl1;
             this.txtIrsaliyeSaat.TabIndex = 36;
@@ -1507,63 +1520,6 @@
             this.lc_IrsaliyeSaat.TextSize = new System.Drawing.Size(77, 13);
             this.lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(1088, 0);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(256, 215);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // lcgr_FatutaBilgisi
-            // 
-            this.lcgr_FatutaBilgisi.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.lcgr_FatutaBilgisi.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.simpleLabelItem1,
-            this.simpleLabelItem2,
-            this.simpleLabelItem3});
-            this.lcgr_FatutaBilgisi.Location = new System.Drawing.Point(862, 117);
-            this.lcgr_FatutaBilgisi.Name = "lcgr_FatutaBilgisi";
-            this.lcgr_FatutaBilgisi.Size = new System.Drawing.Size(226, 98);
-            this.lcgr_FatutaBilgisi.Text = "Fatura Bilgisi";
-            this.lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
-            // simpleLabelItem1
-            // 
-            this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
-            this.simpleLabelItem1.MaxSize = new System.Drawing.Size(152, 17);
-            this.simpleLabelItem1.MinSize = new System.Drawing.Size(152, 17);
-            this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.Size = new System.Drawing.Size(202, 17);
-            this.simpleLabelItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.simpleLabelItem1.Text = "Durum :";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(77, 13);
-            // 
-            // simpleLabelItem2
-            // 
-            this.simpleLabelItem2.AllowHotTrack = false;
-            this.simpleLabelItem2.Location = new System.Drawing.Point(0, 17);
-            this.simpleLabelItem2.MaxSize = new System.Drawing.Size(152, 17);
-            this.simpleLabelItem2.MinSize = new System.Drawing.Size(152, 17);
-            this.simpleLabelItem2.Name = "simpleLabelItem2";
-            this.simpleLabelItem2.Size = new System.Drawing.Size(202, 17);
-            this.simpleLabelItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.simpleLabelItem2.Text = "Fatura No :";
-            this.simpleLabelItem2.TextSize = new System.Drawing.Size(77, 13);
-            // 
-            // simpleLabelItem3
-            // 
-            this.simpleLabelItem3.AllowHotTrack = false;
-            this.simpleLabelItem3.Location = new System.Drawing.Point(0, 34);
-            this.simpleLabelItem3.MaxSize = new System.Drawing.Size(152, 17);
-            this.simpleLabelItem3.MinSize = new System.Drawing.Size(152, 17);
-            this.simpleLabelItem3.Name = "simpleLabelItem3";
-            this.simpleLabelItem3.Size = new System.Drawing.Size(202, 19);
-            this.simpleLabelItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.simpleLabelItem3.Text = "Fatura Tarihi :";
-            this.simpleLabelItem3.TextSize = new System.Drawing.Size(77, 13);
-            // 
             // layoutControlGroup8
             // 
             this.layoutControlGroup8.GroupStyle = DevExpress.Utils.GroupStyle.Light;
@@ -1661,6 +1617,63 @@
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.Text = "Cari Hesap Adı";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(1088, 0);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(256, 215);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // lcgr_FatutaBilgisi
+            // 
+            this.lcgr_FatutaBilgisi.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.lcgr_FatutaBilgisi.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.simpleLabelItem1,
+            this.simpleLabelItem2,
+            this.simpleLabelItem3});
+            this.lcgr_FatutaBilgisi.Location = new System.Drawing.Point(862, 117);
+            this.lcgr_FatutaBilgisi.Name = "lcgr_FatutaBilgisi";
+            this.lcgr_FatutaBilgisi.Size = new System.Drawing.Size(226, 98);
+            this.lcgr_FatutaBilgisi.Text = "Fatura Bilgisi";
+            this.lcgr_FatutaBilgisi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // simpleLabelItem1
+            // 
+            this.simpleLabelItem1.AllowHotTrack = false;
+            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
+            this.simpleLabelItem1.MaxSize = new System.Drawing.Size(152, 17);
+            this.simpleLabelItem1.MinSize = new System.Drawing.Size(152, 17);
+            this.simpleLabelItem1.Name = "simpleLabelItem1";
+            this.simpleLabelItem1.Size = new System.Drawing.Size(202, 17);
+            this.simpleLabelItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.simpleLabelItem1.Text = "Durum :";
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // simpleLabelItem2
+            // 
+            this.simpleLabelItem2.AllowHotTrack = false;
+            this.simpleLabelItem2.Location = new System.Drawing.Point(0, 17);
+            this.simpleLabelItem2.MaxSize = new System.Drawing.Size(152, 17);
+            this.simpleLabelItem2.MinSize = new System.Drawing.Size(152, 17);
+            this.simpleLabelItem2.Name = "simpleLabelItem2";
+            this.simpleLabelItem2.Size = new System.Drawing.Size(202, 17);
+            this.simpleLabelItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.simpleLabelItem2.Text = "Fatura No :";
+            this.simpleLabelItem2.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // simpleLabelItem3
+            // 
+            this.simpleLabelItem3.AllowHotTrack = false;
+            this.simpleLabelItem3.Location = new System.Drawing.Point(0, 34);
+            this.simpleLabelItem3.MaxSize = new System.Drawing.Size(152, 17);
+            this.simpleLabelItem3.MinSize = new System.Drawing.Size(152, 17);
+            this.simpleLabelItem3.Name = "simpleLabelItem3";
+            this.simpleLabelItem3.Size = new System.Drawing.Size(202, 19);
+            this.simpleLabelItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.simpleLabelItem3.Text = "Fatura Tarihi :";
+            this.simpleLabelItem3.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlGroup2
             // 
@@ -1837,11 +1850,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_IrsaliyeSaat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgr_FatutaBilgisi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -1850,6 +1858,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgr_FatutaBilgisi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
@@ -1973,9 +1986,9 @@
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem bbi_Tahsilat;
         private DevExpress.XtraBars.BarButtonItem bbi_FaturaAra;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem bbi_SiparisCagir;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;

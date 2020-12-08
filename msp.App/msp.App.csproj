@@ -140,6 +140,12 @@
     <Compile Include="App\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\FindOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\FindOrderList.Designer.cs">
+      <DependentUpon>FindOrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CariIslemler\frmCurrentTransactions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,12 +376,6 @@
     <Compile Include="Settings\Parameters.Designer.cs">
       <DependentUpon>Parameters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sipariş\frmReceivedOrders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sipariş\frmReceivedOrders.Designer.cs">
-      <DependentUpon>frmReceivedOrders.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tanimlar\CurrencyTypeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\FindOrderList.resx">
+      <DependentUpon>FindOrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\frmCurrentTransactions.resx">
       <DependentUpon>frmCurrentTransactions.cs</DependentUpon>
@@ -554,9 +557,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\Parameters.resx">
       <DependentUpon>Parameters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sipariş\frmReceivedOrders.resx">
-      <DependentUpon>frmReceivedOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\CurrencyTypeList.resx">
       <DependentUpon>CurrencyTypeList.cs</DependentUpon>

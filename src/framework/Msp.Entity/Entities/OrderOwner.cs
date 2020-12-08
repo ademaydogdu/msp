@@ -18,7 +18,7 @@ namespace Msp.Entity.Entities
         public int? CompanyId { get; set; }
         public string SiparisNo { get; set; }
         public DateTime? SiparisDate { get; set; }
-        public TimeSpan? SiparisTime { get; set; }
+        public string SiparisTime { get; set; }
         public string OzelKod { get; set; }
         public int? DovizId { get; set; }
         public string Kdv { get; set; }
