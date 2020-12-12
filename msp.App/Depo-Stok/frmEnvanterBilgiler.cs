@@ -9,22 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Msp.App.Tool;
+using Msp.Service.Repository;
+using Msp.Models.Models;
+using Msp.Service.Service.DepotStock;
+using Msp.Service.Service.App;
 
 namespace Msp.App.Depo_Stok
 {
     public partial class frmEnvanterBilgiler : DevExpress.XtraEditors.XtraForm
     {
+        Repository _repository;
         public frmEnvanterBilgiler()
         {
             InitializeComponent();
+            _repository = new Repository();
         }
         MspTool MspTool = new MspTool();
-
+        List<ProductDTO> _productlist = new List<ProductDTO>();
+        List<CompanyDTO> _company = new List<CompanyDTO>();
 
         private void frmEnvanterBilgiler_Load(object sender, EventArgs e)
         {
             MspTool.Get_Layout(this);
+            _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            bs_Product.DataSource = _productlist;
 
+            _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
+            bs_company.DataSource = _company;
         }
 
         private void frmEnvanterBilgiler_FormClosing(object sender, FormClosingEventArgs e)
