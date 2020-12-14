@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gc_SiparisList = new DevExpress.XtraGrid.GridControl();
+            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,13 +58,16 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bbi_Export = new DevExpress.XtraBars.BarButtonItem();
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // gc_SiparisList
@@ -77,6 +81,10 @@
             this.gc_SiparisList.TabIndex = 1;
             this.gc_SiparisList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bs_SaleOwner
+            // 
+            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
             // 
             // gridView1
             // 
@@ -197,6 +205,7 @@
             this.img_sig.Add("exporttoxls", "image://svgimages/export/exporttoxls.svg");
             this.img_sig.Add("open2", "image://svgimages/actions/open2.svg");
             this.img_sig.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
+            this.img_sig.Add("bo_security_permission_member", "image://svgimages/business objects/bo_security_permission_member.svg");
             // 
             // barManager1
             // 
@@ -213,8 +222,10 @@
             this.bbi_exp,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.bbi_Report});
-            this.barManager1.MaxItemId = 5;
+            this.bbi_Report,
+            this.barButtonItem3,
+            this.barButtonItem4});
+            this.barManager1.MaxItemId = 7;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -226,7 +237,8 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Report),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_exp, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_exp, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -305,9 +317,26 @@
             this.bbi_Export.Id = 0;
             this.bbi_Export.Name = "bbi_Export";
             // 
-            // bs_SaleOwner
+            // popupMenu1
             // 
-            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Veresiye Kapat";
+            this.barButtonItem3.Id = 5;
+            this.barButtonItem3.ImageOptions.ImageIndex = 5;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Veresiye Kapat";
+            this.barButtonItem4.Id = 6;
+            this.barButtonItem4.ImageOptions.ImageIndex = 5;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // frmVeresiyeSatisList
             // 
@@ -326,11 +355,12 @@
             this.Load += new System.EventHandler(this.frmVeresiyeSatisList_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmVeresiyeSatisList_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +397,8 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Export;
         private System.Windows.Forms.BindingSource bs_SaleTrans;
         private System.Windows.Forms.BindingSource bs_SaleOwner;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
     }
 }

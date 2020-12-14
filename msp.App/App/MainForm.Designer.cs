@@ -200,6 +200,7 @@
             this.barButtonItem80 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem18 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem19 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem20 = new DevExpress.XtraBars.BarSubItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -243,7 +244,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barSubItem20 = new DevExpress.XtraBars.BarSubItem();
+            this.ribbonPageGroup31 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1685,6 +1686,13 @@
             this.barSubItem19.ImageOptions.LargeImageIndex = 8;
             this.barSubItem19.Name = "barSubItem19";
             // 
+            // barSubItem20
+            // 
+            this.barSubItem20.Caption = "Kasa Raporları";
+            this.barSubItem20.Id = 171;
+            this.barSubItem20.ImageOptions.LargeImageIndex = 59;
+            this.barSubItem20.Name = "barSubItem20";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -1869,7 +1877,8 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup31});
             this.ribbonPage3.ImageOptions.ImageIndex = 4;
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Rapor";
@@ -1877,10 +1886,6 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem15);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem16);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem17);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem18);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem19);
             this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem20);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
@@ -2063,12 +2068,14 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // barSubItem20
+            // ribbonPageGroup31
             // 
-            this.barSubItem20.Caption = "Kasa Raporları";
-            this.barSubItem20.Id = 171;
-            this.barSubItem20.ImageOptions.LargeImageIndex = 59;
-            this.barSubItem20.Name = "barSubItem20";
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem19);
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem16);
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem17);
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem18);
+            this.ribbonPageGroup31.Name = "ribbonPageGroup31";
+            this.ribbonPageGroup31.Text = "Cari Raporları";
             // 
             // MainForm
             // 
@@ -2316,5 +2323,6 @@
         private DevExpress.XtraBars.BarSubItem barSubItem18;
         private DevExpress.XtraBars.BarSubItem barSubItem19;
         private DevExpress.XtraBars.BarSubItem barSubItem20;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup31;
     }
 }

@@ -219,7 +219,7 @@
             this.colTotalPrice.Caption = "Toplam Fiyat";
             this.colTotalPrice.DisplayFormat.FormatString = "n2";
             this.colTotalPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTotalPrice.FieldName = "TotalPrice";
+            this.colTotalPrice.FieldName = "TotalPriceText";
             this.colTotalPrice.Name = "colTotalPrice";
             this.colTotalPrice.Visible = true;
             this.colTotalPrice.VisibleIndex = 9;
