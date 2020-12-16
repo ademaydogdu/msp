@@ -136,22 +136,22 @@ namespace Msp.App.App
         private bool do_IsNotValid()
         {
             bool _return = false;
-            if (txt_userCode.EditValue.ToString() == "")
+            if (txt_userCode.EditValue == null || txt_userCode.EditValue.ToString() == "")
             {
                 XtraMessageBox.Show("Lütfen Kullanıcı Kodu Giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
             }
-            if (txt_Password.EditValue.ToString() == "")
+            if (txt_Password.EditValue == null || txt_Password.EditValue.ToString() == "")
             {
                 XtraMessageBox.Show("Lütfen Parolanızı Giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
             }
-            if (lc_serverList.EditValue.ToString() == "")
+            if (lc_serverList.EditValue == null || lc_serverList.EditValue.ToString() == "")
             {
                 XtraMessageBox.Show("Server Seçimi Yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
             }
-            if (lc_Company.EditValue.ToString() == "")
+            if (lc_Company.EditValue == null || lc_Company.EditValue.ToString() == "")
             {
                 XtraMessageBox.Show("Lütfen Şirket Seçimi Yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
