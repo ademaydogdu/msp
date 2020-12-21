@@ -80,7 +80,7 @@ namespace msp.App
                     _varmi.ProductQuantity += 1;
                     var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                     _varmi.ProductAmount = ProductAmount;
-                    _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x=>x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                    _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                 }
                 else
                 {
@@ -175,10 +175,12 @@ namespace msp.App
                 //var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 __dll_SaleOwner.NetPrice = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
                 __dll_SaleOwner.TotalPrice = totalAmount;
+
+                if (IskontoTutari != 0) __dll_SaleOwner.TotalPrice = totalAmount - IskontoTutari;
                 __dll_SaleOwner.KDV = totalKdv;
                 txt_NetFiyat.EditValue = __dll_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
                 txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
-                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", (IskontoTutari != 0 ? totalAmount - IskontoTutari : totalAmount));
 
             }
             else
@@ -271,7 +273,7 @@ namespace msp.App
                     {
                         if (item.ProductDate == DateTime.Now)
                         {
-                            DevExpress.XtraEditors.XtraMessageBox.Show("Son Kullanma Tarihi Geçmiş Ürün " + item.ProductName , "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            DevExpress.XtraEditors.XtraMessageBox.Show("Son Kullanma Tarihi Geçmiş Ürün " + item.ProductName, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
@@ -345,7 +347,7 @@ namespace msp.App
                 oRow.ProductQuantity += 1;
                 var ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
                 oRow.ProductAmount = ProductAmount;
-                oRow.TaxAmount = Math.Round(oRow.TaxAmount.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                oRow.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == oRow.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
 
                 gridControl1.RefreshDataSource();
                 TopTotal();
@@ -361,7 +363,7 @@ namespace msp.App
                 {
                     oRow.ProductQuantity -= 1;
                     oRow.ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
-                    oRow.TaxAmount = Math.Round(oRow.TaxAmount.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                    oRow.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == oRow.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
                     gridControl1.RefreshDataSource();
                     TopTotal();
                 }
@@ -446,7 +448,7 @@ namespace msp.App
             var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
             txt_İndirimTutar.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", IskontoTutari);
             __dll_SaleOwner.TotalPrice = totalAmount - IskontoTutari;
-            txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount- IskontoTutari);
+            txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount - IskontoTutari);
         }
 
 
@@ -518,11 +520,36 @@ namespace msp.App
             }
         }
 
+        private void btn_allClear_Click(object sender, EventArgs e)
+        {
+            if (SelectedTextBox != null)
+            {
+                SelectedTextBox.Text = "";
+            }
+            if (SelectedSpinEdit != null)
+            {
+                SelectedSpinEdit.Text = "0";
+            }
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //Substring(0, sorun.Length - 1);
+            if (SelectedTextBox != null)
+            {
+                string txt = SelectedTextBox.Text;
+                SelectedTextBox.Text = txt.Substring(0, txt.Length - 1);
+            }
+            if (SelectedSpinEdit != null)
+            {
+                string txt = SelectedSpinEdit.Text;
+                SelectedSpinEdit.Text = txt.Substring(0, txt.Length - 1);
+            }
+        }
 
 
 
         #endregion
 
-      
+
     }
 }
