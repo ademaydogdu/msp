@@ -91,6 +91,8 @@
             this.btnIskontoIptal = new DevExpress.XtraEditors.SimpleButton();
             this.txtParaUstu = new DevExpress.XtraEditors.SpinEdit();
             this.btnDeleteRow = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
+            this.layoutControlItem38 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -144,8 +146,6 @@
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem37 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
-            this.layoutControlItem38 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -173,6 +173,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtParaUstu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -226,8 +228,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             this.SuspendLayout();
             // 
@@ -346,6 +346,7 @@
             this.txt_Barcode.Size = new System.Drawing.Size(386, 34);
             this.txt_Barcode.StyleController = this.layoutControl1;
             this.txt_Barcode.TabIndex = 28;
+            this.txt_Barcode.Click += new System.EventHandler(this.txt_Barcode_Click);
             // 
             // txt_OdemeTipi
             // 
@@ -602,6 +603,7 @@
             this.btn_N3.StyleController = this.layoutControl1;
             this.btn_N3.TabIndex = 9;
             this.btn_N3.Text = "3";
+            this.btn_N3.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N6
             // 
@@ -613,6 +615,7 @@
             this.btn_N6.StyleController = this.layoutControl1;
             this.btn_N6.TabIndex = 10;
             this.btn_N6.Text = "6";
+            this.btn_N6.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N1
             // 
@@ -624,6 +627,7 @@
             this.btn_N1.StyleController = this.layoutControl1;
             this.btn_N1.TabIndex = 11;
             this.btn_N1.Text = "1";
+            this.btn_N1.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N2
             // 
@@ -635,6 +639,7 @@
             this.btn_N2.StyleController = this.layoutControl1;
             this.btn_N2.TabIndex = 12;
             this.btn_N2.Text = "2";
+            this.btn_N2.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N5
             // 
@@ -646,6 +651,7 @@
             this.btn_N5.StyleController = this.layoutControl1;
             this.btn_N5.TabIndex = 13;
             this.btn_N5.Text = "5";
+            this.btn_N5.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N4
             // 
@@ -657,6 +663,7 @@
             this.btn_N4.StyleController = this.layoutControl1;
             this.btn_N4.TabIndex = 14;
             this.btn_N4.Text = "4";
+            this.btn_N4.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N7
             // 
@@ -668,6 +675,7 @@
             this.btn_N7.StyleController = this.layoutControl1;
             this.btn_N7.TabIndex = 15;
             this.btn_N7.Text = "7";
+            this.btn_N7.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N8
             // 
@@ -679,6 +687,7 @@
             this.btn_N8.StyleController = this.layoutControl1;
             this.btn_N8.TabIndex = 16;
             this.btn_N8.Text = "8";
+            this.btn_N8.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N9
             // 
@@ -690,6 +699,7 @@
             this.btn_N9.StyleController = this.layoutControl1;
             this.btn_N9.TabIndex = 17;
             this.btn_N9.Text = "9";
+            this.btn_N9.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_N0
             // 
@@ -701,6 +711,7 @@
             this.btn_N0.StyleController = this.layoutControl1;
             this.btn_N0.TabIndex = 18;
             this.btn_N0.Text = "0";
+            this.btn_N0.Click += new System.EventHandler(this.btn_N1_Click);
             // 
             // btn_QuantityAdd
             // 
@@ -965,6 +976,7 @@
             this.txtParaUstu.StyleController = this.layoutControl1;
             this.txtParaUstu.TabIndex = 37;
             this.txtParaUstu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtParaUstu_ButtonClick);
+            this.txtParaUstu.Click += new System.EventHandler(this.txtParaUstu_Click);
             // 
             // btnDeleteRow
             // 
@@ -977,6 +989,24 @@
             this.btnDeleteRow.StyleController = this.layoutControl1;
             this.btnDeleteRow.TabIndex = 42;
             this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            // 
+            // buttonEdit1
+            // 
+            this.buttonEdit1.Location = new System.Drawing.Point(671, 28);
+            this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.buttonEdit1.Size = new System.Drawing.Size(281, 20);
+            this.buttonEdit1.StyleController = this.layoutControl1;
+            this.buttonEdit1.TabIndex = 43;
+            // 
+            // layoutControlItem38
+            // 
+            this.layoutControlItem38.Control = this.buttonEdit1;
+            this.layoutControlItem38.Location = new System.Drawing.Point(557, 16);
+            this.layoutControlItem38.Name = "layoutControlItem38";
+            this.layoutControlItem38.Size = new System.Drawing.Size(387, 24);
+            this.layoutControlItem38.TextSize = new System.Drawing.Size(50, 20);
             // 
             // Root
             // 
@@ -1612,24 +1642,6 @@
             this.layoutControlItem37.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem37.TextVisible = false;
             // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.Location = new System.Drawing.Point(671, 28);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Size = new System.Drawing.Size(281, 20);
-            this.buttonEdit1.StyleController = this.layoutControl1;
-            this.buttonEdit1.TabIndex = 43;
-            // 
-            // layoutControlItem38
-            // 
-            this.layoutControlItem38.Control = this.buttonEdit1;
-            this.layoutControlItem38.Location = new System.Drawing.Point(557, 16);
-            this.layoutControlItem38.Name = "layoutControlItem38";
-            this.layoutControlItem38.Size = new System.Drawing.Size(387, 24);
-            this.layoutControlItem38.TextSize = new System.Drawing.Size(50, 20);
-            // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
@@ -1678,6 +1690,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtParaUstu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -1731,8 +1745,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             this.ResumeLayout(false);
 

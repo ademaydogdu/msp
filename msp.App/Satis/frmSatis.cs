@@ -492,5 +492,37 @@ namespace msp.App
                 txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
             }
         }
+
+        #region Numarator
+        SimpleButton clickbutton = null;
+        MemoEdit SelectedTextBox = null;
+        SpinEdit SelectedSpinEdit = null;
+        private void txt_Barcode_Click(object sender, EventArgs e)
+        {
+            SelectedTextBox = sender as MemoEdit;
+        }
+        private void txtParaUstu_Click(object sender, EventArgs e)
+        {
+            SelectedSpinEdit = sender as SpinEdit;
+        }
+        private void btn_N1_Click(object sender, EventArgs e)
+        {
+            clickbutton = sender as SimpleButton;
+            if (SelectedTextBox != null)
+            {
+                SelectedTextBox.Text += clickbutton.Text;
+            }
+            if (SelectedSpinEdit != null)
+            {
+                SelectedSpinEdit.Text += clickbutton.Text;
+            }
+        }
+
+
+
+
+        #endregion
+
+      
     }
 }
