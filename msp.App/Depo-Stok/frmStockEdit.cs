@@ -135,6 +135,9 @@ namespace Msp.App.Depo_Stok
                 {
                     XtraMessageBox.Show(ex.Message);
                 }
+                finally
+                {
+                }
             }
         }
 
@@ -242,27 +245,27 @@ namespace Msp.App.Depo_Stok
                     ////textMalBedeli = Math.Round((price - KarTutar - kdvTutar), 2);
                     ////SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
                     ///
-                    kdvTutar = Math.Round(price * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
+                    kdvTutar = Math.Round(KarTutar * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
                     MalBedeli = Math.Round(price, 2);
-                    textMalBedeli = Math.Round((price - KarTutar - kdvTutar), 2);
-                    SatisFiyati = Math.Round(MalBedeli + KarTutar + kdvTutar, 2);
+                    textMalBedeli = Math.Round((KarTutar - kdvTutar), 2);
+                    SatisFiyati = Math.Round(KarTutar + kdvTutar, 2);
                 }
                 else //Hariç
                 {
 
-                    kdvTutar = Math.Round(price * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
+                    kdvTutar = Math.Round(KarTutar * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
                     MalBedeli = Math.Round(price, 2);
                     SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
                 }
             }
             else
             {
-                SatisFiyati = price;
+                SatisFiyati = KarTutar;
             }
             lblKDVTutar.Text = Convert.ToString(kdvTutar);
             lblMalBedeli.Text = Convert.ToString(textMalBedeli);
             lblSatisFiyati.Text = Convert.ToString(SatisFiyati);
-            lblKar.Text = Convert.ToString(KarTutar);
+            lblKar.Text = Convert.ToString(KarTutar - price);
             txtSalePrice.EditValue = Convert.ToString(SatisFiyati);
 
             //__product.PTaxType = (int)rdgDahilHaric.SelectedIndex;
@@ -298,7 +301,7 @@ namespace Msp.App.Depo_Stok
                 lyControlKDVOrani.Enabled = false;
                 lytDahilHaric.Enabled = false;
                 taxTextEdit.EditValue = 1;
-                __product.PTaxType = -1;
+                __product.PTaxType = 1;
                 do_hesapla();
             }
             else

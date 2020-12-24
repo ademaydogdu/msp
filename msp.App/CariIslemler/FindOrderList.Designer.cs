@@ -31,15 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_select = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.gc_OrderList = new DevExpress.XtraGrid.GridControl();
+            this.bs_OrderList = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_OrderList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCariRecId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,17 +68,24 @@
             this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIrsaliyeId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bs_OrderList = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_company = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_CariHesap = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_OrderList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_CariHesap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_OrderType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -91,7 +99,7 @@
             this.barManager1.Form = this;
             this.barManager1.Images = this.img_bar;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bbi_save,
+            this.bbi_select,
             this.barButtonItem2,
             this.bbi_Delete});
             this.barManager1.LargeImages = this.img_bar;
@@ -106,28 +114,21 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_save),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_select),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // bbi_save
+            // bbi_select
             // 
-            this.bbi_save.Caption = "Kaydet";
-            this.bbi_save.Id = 0;
-            this.bbi_save.ImageOptions.ImageIndex = 5;
-            this.bbi_save.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.bbi_save.Name = "bbi_save";
-            // 
-            // bbi_Delete
-            // 
-            this.bbi_Delete.Caption = "Delete";
-            this.bbi_Delete.Id = 2;
-            this.bbi_Delete.ImageOptions.ImageIndex = 3;
-            this.bbi_Delete.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.bbi_Delete.Name = "bbi_Delete";
+            this.bbi_select.Caption = "Kaydet";
+            this.bbi_select.Id = 0;
+            this.bbi_select.ImageOptions.ImageIndex = 5;
+            this.bbi_select.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_select.Name = "bbi_select";
+            this.bbi_select.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_select_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -136,6 +137,7 @@
             this.barButtonItem2.ImageOptions.ImageIndex = 0;
             this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -178,6 +180,14 @@
             this.img_bar.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
             this.img_bar.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
             // 
+            // bbi_Delete
+            // 
+            this.bbi_Delete.Caption = "Delete";
+            this.bbi_Delete.Id = 2;
+            this.bbi_Delete.ImageOptions.ImageIndex = 3;
+            this.bbi_Delete.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Delete.Name = "bbi_Delete";
+            // 
             // gc_OrderList
             // 
             this.gc_OrderList.DataSource = this.bs_OrderList;
@@ -196,6 +206,10 @@
             this.gc_OrderList.TabIndex = 5;
             this.gc_OrderList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_OrderList});
+            // 
+            // bs_OrderList
+            // 
+            this.bs_OrderList.DataSource = typeof(Msp.Models.Models.Order.OrderOwnerDTO);
             // 
             // gcv_OrderList
             // 
@@ -228,6 +242,7 @@
             this.gcv_OrderList.OptionsView.ShowAutoFilterRow = true;
             this.gcv_OrderList.OptionsView.ShowFooter = true;
             this.gcv_OrderList.OptionsView.ShowGroupPanel = false;
+            this.gcv_OrderList.DoubleClick += new System.EventHandler(this.gcv_OrderList_DoubleClick);
             // 
             // colRecId
             // 
@@ -249,6 +264,7 @@
             this.rp_CariHesap.AutoHeight = false;
             this.rp_CariHesap.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_CariHesap.DataSource = this.bs_CariHesap;
             this.rp_CariHesap.DisplayMember = "CurAccountName";
             this.rp_CariHesap.Name = "rp_CariHesap";
             this.rp_CariHesap.NullText = "";
@@ -287,6 +303,7 @@
             this.rp_Company.AutoHeight = false;
             this.rp_Company.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Company.DataSource = this.bs_company;
             this.rp_Company.DisplayMember = "CompanyName";
             this.rp_Company.Name = "rp_Company";
             this.rp_Company.ValueMember = "RecId";
@@ -342,6 +359,7 @@
             this.rp_Doviz.AutoHeight = false;
             this.rp_Doviz.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Doviz.DataSource = this.bs_CurrencyType;
             this.rp_Doviz.DisplayMember = "CurrencyCode";
             this.rp_Doviz.Name = "rp_Doviz";
             this.rp_Doviz.NullText = "";
@@ -462,9 +480,21 @@
             this.colIrsaliyeId.Visible = true;
             this.colIrsaliyeId.VisibleIndex = 17;
             // 
-            // bs_OrderList
+            // bs_company
             // 
-            this.bs_OrderList.DataSource = typeof(Msp.Models.Models.Order.OrderOwnerDTO);
+            this.bs_company.DataSource = typeof(Msp.Models.Models.CompanyDTO);
+            // 
+            // bs_CariHesap
+            // 
+            this.bs_CariHesap.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
+            // 
+            // bs_CurrencyType
+            // 
+            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
+            // 
+            // bs_Unit
+            // 
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
             // FindOrderList
             // 
@@ -485,13 +515,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_OrderList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_OrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_CariHesap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_OrderType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_TeklifSiparis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,7 +535,7 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.BarButtonItem bbi_save;
+        private DevExpress.XtraBars.BarButtonItem bbi_select;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -538,5 +572,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
         private DevExpress.XtraGrid.Columns.GridColumn colIrsaliyeId;
         private System.Windows.Forms.BindingSource bs_OrderList;
+        private System.Windows.Forms.BindingSource bs_CariHesap;
+        private System.Windows.Forms.BindingSource bs_company;
+        private System.Windows.Forms.BindingSource bs_CurrencyType;
+        private System.Windows.Forms.BindingSource bs_Unit;
     }
 }

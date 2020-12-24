@@ -38,6 +38,7 @@
             this.colPBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPCategoryId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPSalePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPFirstPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPlastPrice = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,7 +49,6 @@
             this.colPBrandName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPBrandCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPGroup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPImages = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPTax = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -81,7 +81,7 @@
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colPSalePrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -130,6 +130,7 @@
             // 
             this.gcvProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colPID,
+            this.colPCode,
             this.colPName,
             this.colPBarcode,
             this.colPCategoryId,
@@ -144,7 +145,6 @@
             this.colPBrandName,
             this.colPBrandCode,
             this.colPGroup,
-            this.colPImages,
             this.colPTax});
             this.gcvProducts.GridControl = this.gcProducts;
             this.gcvProducts.Name = "gcvProducts";
@@ -164,7 +164,7 @@
             this.colPName.FieldName = "PName";
             this.colPName.Name = "colPName";
             this.colPName.Visible = true;
-            this.colPName.VisibleIndex = 0;
+            this.colPName.VisibleIndex = 1;
             // 
             // colPBarcode
             // 
@@ -172,7 +172,7 @@
             this.colPBarcode.FieldName = "PBarcode";
             this.colPBarcode.Name = "colPBarcode";
             this.colPBarcode.Visible = true;
-            this.colPBarcode.VisibleIndex = 1;
+            this.colPBarcode.VisibleIndex = 2;
             // 
             // colPCategoryId
             // 
@@ -180,7 +180,7 @@
             this.colPCategoryId.FieldName = "PCategoryId";
             this.colPCategoryId.Name = "colPCategoryId";
             this.colPCategoryId.Visible = true;
-            this.colPCategoryId.VisibleIndex = 2;
+            this.colPCategoryId.VisibleIndex = 3;
             // 
             // colPDate
             // 
@@ -188,7 +188,17 @@
             this.colPDate.FieldName = "PDate";
             this.colPDate.Name = "colPDate";
             this.colPDate.Visible = true;
-            this.colPDate.VisibleIndex = 3;
+            this.colPDate.VisibleIndex = 4;
+            // 
+            // colPSalePrice
+            // 
+            this.colPSalePrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colPSalePrice.AppearanceCell.Options.UseFont = true;
+            this.colPSalePrice.Caption = "Satış Fiyatı";
+            this.colPSalePrice.FieldName = "PSalePrice";
+            this.colPSalePrice.Name = "colPSalePrice";
+            this.colPSalePrice.Visible = true;
+            this.colPSalePrice.VisibleIndex = 15;
             // 
             // colPFirstPrice
             // 
@@ -198,7 +208,7 @@
             this.colPFirstPrice.FieldName = "PFirstPrice";
             this.colPFirstPrice.Name = "colPFirstPrice";
             this.colPFirstPrice.Visible = true;
-            this.colPFirstPrice.VisibleIndex = 4;
+            this.colPFirstPrice.VisibleIndex = 5;
             // 
             // colPTotal
             // 
@@ -206,7 +216,7 @@
             this.colPTotal.FieldName = "PTotal";
             this.colPTotal.Name = "colPTotal";
             this.colPTotal.Visible = true;
-            this.colPTotal.VisibleIndex = 5;
+            this.colPTotal.VisibleIndex = 6;
             // 
             // colPlastPrice
             // 
@@ -216,7 +226,7 @@
             this.colPlastPrice.FieldName = "PlastPrice";
             this.colPlastPrice.Name = "colPlastPrice";
             this.colPlastPrice.Visible = true;
-            this.colPlastPrice.VisibleIndex = 6;
+            this.colPlastPrice.VisibleIndex = 7;
             // 
             // colPUnitId
             // 
@@ -224,7 +234,7 @@
             this.colPUnitId.FieldName = "PUnitId";
             this.colPUnitId.Name = "colPUnitId";
             this.colPUnitId.Visible = true;
-            this.colPUnitId.VisibleIndex = 7;
+            this.colPUnitId.VisibleIndex = 8;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -239,7 +249,7 @@
             this.colPVarDescription.FieldName = "PVarDescription";
             this.colPVarDescription.Name = "colPVarDescription";
             this.colPVarDescription.Visible = true;
-            this.colPVarDescription.VisibleIndex = 8;
+            this.colPVarDescription.VisibleIndex = 9;
             // 
             // colPSpecCode
             // 
@@ -247,7 +257,7 @@
             this.colPSpecCode.FieldName = "PSpecCode";
             this.colPSpecCode.Name = "colPSpecCode";
             this.colPSpecCode.Visible = true;
-            this.colPSpecCode.VisibleIndex = 9;
+            this.colPSpecCode.VisibleIndex = 10;
             // 
             // colPBrandName
             // 
@@ -255,7 +265,7 @@
             this.colPBrandName.FieldName = "PBrandName";
             this.colPBrandName.Name = "colPBrandName";
             this.colPBrandName.Visible = true;
-            this.colPBrandName.VisibleIndex = 10;
+            this.colPBrandName.VisibleIndex = 11;
             // 
             // colPBrandCode
             // 
@@ -263,7 +273,7 @@
             this.colPBrandCode.FieldName = "PBrandCode";
             this.colPBrandCode.Name = "colPBrandCode";
             this.colPBrandCode.Visible = true;
-            this.colPBrandCode.VisibleIndex = 11;
+            this.colPBrandCode.VisibleIndex = 12;
             // 
             // colPGroup
             // 
@@ -271,21 +281,14 @@
             this.colPGroup.FieldName = "PGroup";
             this.colPGroup.Name = "colPGroup";
             this.colPGroup.Visible = true;
-            this.colPGroup.VisibleIndex = 12;
-            // 
-            // colPImages
-            // 
-            this.colPImages.FieldName = "Fotoğraf";
-            this.colPImages.Name = "colPImages";
-            this.colPImages.Visible = true;
-            this.colPImages.VisibleIndex = 14;
+            this.colPGroup.VisibleIndex = 13;
             // 
             // colPTax
             // 
             this.colPTax.Caption = "KDV";
             this.colPTax.Name = "colPTax";
             this.colPTax.Visible = true;
-            this.colPTax.VisibleIndex = 13;
+            this.colPTax.VisibleIndex = 14;
             // 
             // barManager1
             // 
@@ -625,15 +628,13 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // colPSalePrice
+            // colPCode
             // 
-            this.colPSalePrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colPSalePrice.AppearanceCell.Options.UseFont = true;
-            this.colPSalePrice.Caption = "Satış Fiyatı";
-            this.colPSalePrice.FieldName = "PSalePrice";
-            this.colPSalePrice.Name = "colPSalePrice";
-            this.colPSalePrice.Visible = true;
-            this.colPSalePrice.VisibleIndex = 15;
+            this.colPCode.Caption = "Ürün Kodu";
+            this.colPCode.FieldName = "PCode";
+            this.colPCode.Name = "colPCode";
+            this.colPCode.Visible = true;
+            this.colPCode.VisibleIndex = 0;
             // 
             // frmStok
             // 
@@ -717,11 +718,11 @@
         public DevExpress.XtraBars.BarButtonItem btnProQuickChange;
         public DevExpress.XtraBars.BarButtonItem btnProBarcodeLabel;
         public DevExpress.XtraBars.BarButtonItem btnProClose;
-        private DevExpress.XtraGrid.Columns.GridColumn colPImages;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private DevExpress.XtraBars.BarButtonItem bbi_Print;
         private DevExpress.XtraBars.BarButtonItem bbi_EnvanterGiris;
         private DevExpress.XtraGrid.Columns.GridColumn colPSalePrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colPCode;
     }
 }

@@ -219,6 +219,7 @@
             this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup31 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -244,7 +245,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.ribbonPageGroup31 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1354,6 +1354,7 @@
             this.barButtonItem4.Caption = "Excel\'den Ürün Aktarımı";
             this.barButtonItem4.Id = 121;
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_1);
             // 
             // barButtonItem5
             // 
@@ -1889,6 +1890,15 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem20);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
+            // ribbonPageGroup31
+            // 
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem19);
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem16);
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem17);
+            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem18);
+            this.ribbonPageGroup31.Name = "ribbonPageGroup31";
+            this.ribbonPageGroup31.Text = "Cari Raporları";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -2067,15 +2077,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // ribbonPageGroup31
-            // 
-            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem19);
-            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem16);
-            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem17);
-            this.ribbonPageGroup31.ItemLinks.Add(this.barSubItem18);
-            this.ribbonPageGroup31.Name = "ribbonPageGroup31";
-            this.ribbonPageGroup31.Text = "Cari Raporları";
             // 
             // MainForm
             // 

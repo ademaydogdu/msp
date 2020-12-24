@@ -76,6 +76,9 @@ namespace Msp.App.CariIslemler
             {
                 XtraMessageBox.Show(ex.Message, "HATA" ,MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally
+            {
+            }
         }
 
 

@@ -1,7 +1,9 @@
 ﻿using DevExpress.XtraGrid;
+using DevExpress.XtraSplashScreen;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using Microsoft.Win32;
+using Msp.App.Waiting;
 using Msp.Infrastructure;
 using Msp.Infrastructure.DbConectionModel;
 using Msp.Models.Models;
@@ -646,6 +648,24 @@ namespace Msp.App.Tool
         }
 
         #endregion
+
+
+        public static void wclose()
+        {
+            if (SplashScreenManager.Default != null)
+            {
+
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+        public static void wshow()
+        {
+            if (SplashScreenManager.Default == null)
+            {
+                SplashScreenManager.ShowForm(typeof(Wait));
+            }
+        }
+
 
     }
 

@@ -40,5 +40,6 @@ namespace Msp.Entity.Entities
         public int? Iskonto { get; set; }
         public string PaymentType { get; set; }
         public bool? Deleted { get; set; }
+        public int? OrderId { get; set; }
     }
 }

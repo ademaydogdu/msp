@@ -79,6 +79,7 @@
             this.txtKarPrice = new DevExpress.XtraEditors.TextEdit();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.txtIskonto = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -113,6 +114,7 @@
             this.ItemForcategoryId = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemFordate1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem23 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -144,8 +146,6 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -186,6 +186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKarPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -220,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForcategoryId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemFordate1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem23)).BeginInit();
@@ -249,8 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             this.SuspendLayout();
             // 
             // bs_StockEdit
@@ -359,9 +359,9 @@
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(19, 13);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(56, 13);
+            this.labelControl4.Size = new System.Drawing.Size(50, 13);
             this.labelControl4.TabIndex = 4;
-            this.labelControl4.Text = "Kâr Tutarı";
+            this.labelControl4.Text = "Kâr Farkı";
             // 
             // panelControl4
             // 
@@ -909,6 +909,16 @@
             this.txtIskonto.StyleController = this.dataLayoutControl1;
             this.txtIskonto.TabIndex = 36;
             // 
+            // textEdit3
+            // 
+            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PCode", true));
+            this.textEdit3.Location = new System.Drawing.Point(154, 213);
+            this.textEdit3.MenuManager = this.barManager2;
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(175, 20);
+            this.textEdit3.StyleController = this.dataLayoutControl1;
+            this.textEdit3.TabIndex = 37;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -1321,6 +1331,15 @@
             this.ItemFordate1.Text = "Son Kullanma Tarih";
             this.ItemFordate1.TextSize = new System.Drawing.Size(127, 32);
             // 
+            // layoutControlItem27
+            // 
+            this.layoutControlItem27.Control = this.textEdit3;
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem27.Name = "layoutControlItem27";
+            this.layoutControlItem27.Size = new System.Drawing.Size(309, 24);
+            this.layoutControlItem27.Text = "Ürün Kodu";
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(127, 13);
+            // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
@@ -1649,25 +1668,6 @@
             this.layoutControlItem26.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem26.TextVisible = false;
             // 
-            // textEdit3
-            // 
-            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PCode", true));
-            this.textEdit3.Location = new System.Drawing.Point(154, 213);
-            this.textEdit3.MenuManager = this.barManager2;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(175, 20);
-            this.textEdit3.StyleController = this.dataLayoutControl1;
-            this.textEdit3.TabIndex = 37;
-            // 
-            // layoutControlItem27
-            // 
-            this.layoutControlItem27.Control = this.textEdit3;
-            this.layoutControlItem27.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem27.Name = "layoutControlItem27";
-            this.layoutControlItem27.Size = new System.Drawing.Size(309, 24);
-            this.layoutControlItem27.Text = "Ürün Kodu";
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(127, 13);
-            // 
             // frmStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1730,6 +1730,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKarPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -1764,6 +1765,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForcategoryId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemFordate1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem23)).EndInit();
@@ -1793,8 +1795,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

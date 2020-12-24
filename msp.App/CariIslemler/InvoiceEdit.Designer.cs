@@ -39,7 +39,7 @@
             this.bbi_Tahsilat = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_FaturaAra = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_SiparisCagir = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_İrsaliyeCagir = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_log = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
@@ -352,7 +352,7 @@
             this.bbi_DeleteRow,
             this.bbi_FaturaAra,
             this.bbi_SiparisCagir,
-            this.barButtonItem3,
+            this.bbi_İrsaliyeCagir,
             this.bbi_Tahsilat,
             this.barButtonItem5,
             this.barButtonItem6});
@@ -374,7 +374,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Tahsilat, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_FaturaAra),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SiparisCagir),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_İrsaliyeCagir),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_log, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
@@ -434,13 +434,13 @@
             this.bbi_SiparisCagir.Name = "bbi_SiparisCagir";
             this.bbi_SiparisCagir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_SiparisCagir_ItemClick);
             // 
-            // barButtonItem3
+            // bbi_İrsaliyeCagir
             // 
-            this.barButtonItem3.Caption = "İrsaliye Çağır";
-            this.barButtonItem3.Id = 7;
-            this.barButtonItem3.ImageOptions.ImageIndex = 12;
-            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.bbi_İrsaliyeCagir.Caption = "İrsaliye Çağır";
+            this.bbi_İrsaliyeCagir.Id = 7;
+            this.bbi_İrsaliyeCagir.ImageOptions.ImageIndex = 12;
+            this.bbi_İrsaliyeCagir.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_İrsaliyeCagir.Name = "bbi_İrsaliyeCagir";
             // 
             // bbi_log
             // 
@@ -1989,7 +1989,7 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Tahsilat;
         private DevExpress.XtraBars.BarButtonItem bbi_FaturaAra;
         private DevExpress.XtraBars.BarButtonItem bbi_SiparisCagir;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem bbi_İrsaliyeCagir;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;

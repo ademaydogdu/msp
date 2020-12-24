@@ -10,5 +10,6 @@ namespace Msp.Models.Models.Invoice
     {
         public InvoiceOwnerDTO InvoiceOwner { get; set; }
         public List<InvoiceTransDTO> InvoiceTrans { get; set; }
+        public bool IsOrder { get; set; }
     }
 }

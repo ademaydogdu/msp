@@ -136,6 +136,13 @@ namespace Msp.Service.Service.DepotStock
             return response;
         }
 
+        public ProductDTO GetProduct_Code(string PCode)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<Products, ProductDTO>(_db.products.FirstOrDefault(x => x.PCode.Trim() == PCode.Trim()));
+            }
+        }
 
         #endregion
 

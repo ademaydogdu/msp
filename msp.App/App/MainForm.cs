@@ -26,6 +26,10 @@ using DevExpress.LookAndFeel;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
 using Msp.App.CariIslemler;
+using DevExpress.Spreadsheet.Export;
+using DevExpress.XtraSpreadsheet;
+using DevExpress.Spreadsheet;
+using Msp.Models.Models;
 
 namespace msp.App
 {
@@ -625,5 +629,100 @@ namespace msp.App
             frm.orderType = OrderType.BekleyenSiparis;
             frm.Show();
         }
+
+
+        #region Excel
+
+        public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
+        {
+            new KDVTaxDto(1, "%0", 0.00, 0),
+            new KDVTaxDto(2, "%1", 0.01, 1),
+            new KDVTaxDto(3, "%8", 0.08, 8),
+            new KDVTaxDto(4, "%18", 0.18, 18),
+        };
+
+        private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            OpenFileDialog odialog = new OpenFileDialog();
+            odialog.Filter = "Excel Dosyaları .xls|*.xls;*.xlsx";
+            odialog.FileName = "";
+            odialog.ShowDialog();
+            if (odialog.FileName != "")
+            {
+                MspTool.wshow();
+                try
+                {
+                    SpreadsheetControl sp = new SpreadsheetControl();
+                    sp.LoadDocument(odialog.FileName);
+
+                    Worksheet worksheet = sp.Document.Worksheets[0];
+                    var range = worksheet[0, 0].CurrentRegion;
+                    DataTable dataTable = worksheet.CreateDataTable(range, true);
+                    for (int col = 0; col < range.ColumnCount; col++)
+                    {
+                        CellValueType cellType = range[0, col].Value.Type;
+                        for (int row = 1; row < range.RowCount; row++)
+                        {
+                            if (cellType != range[row, col].Value.Type)
+                            {
+                                dataTable.Columns[col].DataType = typeof(string);
+                                break;
+                            }
+                        }
+                    }
+
+                    DataTableExporter exporter = worksheet.CreateDataTableExporter(range, dataTable, true);
+                    exporter.CellValueConversionError += exporter_CellValueConversionError;
+
+                    exporter.Export();
+                    foreach (DataRow oRow in dataTable.Rows)
+                    {
+
+                        //GetProduct_Code
+
+                        string productCode = oRow[0].ToString();
+                        string productName = oRow[1].ToString();
+                        int Adet = Convert.ToInt32(oRow[2]);
+                        decimal GirisFiyat = Convert.ToDecimal(oRow[3]);
+                        decimal KarPrice = Convert.ToDecimal(oRow[4]);
+                        int KDV = Convert.ToInt32(oRow[5]);
+                        decimal kdvTutar = Math.Round(KarPrice * (decimal)KdvOrani.FirstOrDefault(x => x.Tax == (int)KDV).TaxOrani, 2);
+
+                        var row = new Msp.Models.Models.ProductDTO
+                        {
+                            PID = 0,
+                            PCode = productCode,
+                            PName = productName,
+                            PTotal = Adet,
+                            PFirstPrice = GirisFiyat,
+                            PKarPrice = KarPrice,
+                            PTax = KdvOrani.Where(x => x.Tax == KDV).FirstOrDefault().Id,
+                            PSalePrice = KarPrice + kdvTutar
+                        };
+                        var response = _repository.Run<Msp.Service.Service.DepotStock.DepotStockService, ActionResponse<Msp.Models.Models.ProductDTO>>(x => x.SaveProduct(row));
+                        if (response.ResponseType != ResponseType.Ok)
+                        {
+                            DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MspTool.wclose();
+                    DevExpress.XtraEditors.XtraMessageBox.Show("İşlem Tamamlandı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        void exporter_CellValueConversionError(object sender, CellValueConversionErrorEventArgs e)
+        {
+            MessageBox.Show("Error in cell " + e.Cell.GetReferenceA1());
+            e.DataTableValue = null;
+            e.Action = DataTableExporterAction.Continue;
+        }
+        #endregion
     }
 }

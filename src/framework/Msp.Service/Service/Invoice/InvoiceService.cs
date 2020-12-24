@@ -1,5 +1,6 @@
 ﻿using Msp.Entity.Entities;
 using Msp.Models.Models.Invoice;
+using Msp.Models.Models.Order;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
@@ -95,6 +96,18 @@ namespace Msp.Service.Service.Invoice
                                 }
                             }
                         }
+
+                        if (model.IsOrder)
+                        {
+                            var order = _db.OrderOwner.FirstOrDefault(x=>x.RecId == response.Response.InvoiceOwner.OrderId);
+                            if (order != null)
+                            {
+                                order.IrsaliyeId = InvoiceOwnerRecId;
+                                _db.Entry(order).CurrentValues.SetValues(order);
+                                _db.Entry(order).State = EntityState.Modified;
+                            }
+                        }
+
                         _db.SaveChanges();
                         transaction.Commit();
 
@@ -110,8 +123,35 @@ namespace Msp.Service.Service.Invoice
             return response;
         }
 
+
+
+
+
+
         #endregion
 
+        #region OrderList
+
+        public List<OrderOwnerDTO> GetList_OrderWait()
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<OrderOwnerDTO> result = new List<OrderOwnerDTO>();
+                result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.IrsaliyeId == 0).ToList());
+                return result;
+            }
+        }
+
+        public List<OrderTransDTO> Get_orderTrans_Invoice(int OwnerId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<OrderTrans>, List<OrderTransDTO>>(_db.OrderTrans.Where(x => x.OwnerId == OwnerId).ToList());
+            }
+        }
+
+
+        #endregion
 
 
     }

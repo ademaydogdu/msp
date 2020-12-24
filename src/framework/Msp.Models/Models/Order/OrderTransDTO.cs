@@ -8,7 +8,7 @@ namespace Msp.Models.Models.Order
 {
     public class OrderTransDTO
     {
-        public int? RecId { get; set; }
+        public int? RecId { get; set; } = 0;
         public int? OwnerId { get; set; }
         public int? StockId { get; set; }
         public int? Miktar { get; set; } = 0;

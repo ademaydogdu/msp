@@ -18,6 +18,7 @@ using Msp.Service.Service.Invoice;
 using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.CurrentTransactions;
 using Msp.Service.Service.App;
+using Msp.Models.Models.Order;
 
 namespace Msp.App.CariIslemler
 {
@@ -34,6 +35,7 @@ namespace Msp.App.CariIslemler
         public InvoiceType invoice;
         public FormOpenType _FormOpenType;
         public int RecId;
+        private bool _IsOrders = false;
         MspTool MspTool = new MspTool();
         InvoiceOwnerDTO __dll_InvoiceOwner = new InvoiceOwnerDTO();
         List<InvoiceTransDTO> __dll_List_InoviceTrans = new List<InvoiceTransDTO>();
@@ -41,6 +43,7 @@ namespace Msp.App.CariIslemler
         List<ProductDTO> _productlist = new List<ProductDTO>();
         List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
         List<CompanyDTO> _company = new List<CompanyDTO>();
+
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -60,7 +63,7 @@ namespace Msp.App.CariIslemler
                 MessageBox.Show("Boş Satır Kaydedilemez...");
                 _return = true;
             }
- 
+
             return _return;
         }
 
@@ -74,7 +77,8 @@ namespace Msp.App.CariIslemler
                     var req = new InvoiceSaveRequest()
                     {
                         InvoiceOwner = __dll_InvoiceOwner,
-                        InvoiceTrans = __dll_List_InoviceTrans
+                        InvoiceTrans = __dll_List_InoviceTrans,
+                        IsOrder = _IsOrders
                     };
                     var response = _repository.Run<InvoiceService, ActionResponse<InvoiceSaveRequest>>(x => x.Save_Inovice(req));
                     if (response.ResponseType != ResponseType.Ok)
@@ -96,6 +100,35 @@ namespace Msp.App.CariIslemler
 
         }
 
+        public void do_SiparisSec(int orderOwnerId)
+        {
+            try
+            {
+                if (orderOwnerId != 0)
+                {
+                    var _orderTrans = _repository.Run<InvoiceService, List<OrderTransDTO>>(x => x.Get_orderTrans_Invoice(orderOwnerId));
+                    if (_orderTrans.Count > 0)
+                    {
+                        __dll_InvoiceOwner.OrderId = orderOwnerId;
+                        foreach (var item in _orderTrans)
+                        {
+                            InvoiceTransDTO newTrans = new InvoiceTransDTO();
+                            newTrans.ProductId = item.StockId;
+                            newTrans.UnitID = item.BirimId;
+                            newTrans.BirimFiyat = item.BirimFiyat;
+
+                            __dll_List_InoviceTrans.Add(newTrans);
+                        }
+                        bs_InvoiceTrans.DataSource = __dll_List_InoviceTrans;
+                        gc_invoiceTrans.RefreshDataSource();
+                        _IsOrders = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
 
         #endregion
 
@@ -127,6 +160,8 @@ namespace Msp.App.CariIslemler
                     lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+
+
                     break;
                 case InvoiceType.AlisIrsaliye:
                     this.Text = "Alış İrsaliyesi";
@@ -136,6 +171,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+
                     break;
                 case InvoiceType.SatisIrsaliye:
                     this.Text = "Satış İrsaliyesi";
@@ -145,6 +181,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+
                     break;
                 default:
                     break;

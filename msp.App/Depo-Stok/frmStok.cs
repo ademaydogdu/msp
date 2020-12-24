@@ -34,8 +34,19 @@ namespace Msp.App.Depo_Stok
 
         public void do_refresh()
         {
-            _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
-            bs_products.DataSource = _productlist;
+            try
+            {
+                _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+                bs_products.DataSource = _productlist;
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+            finally
+            {
+            }
         }
 
         private void frmStok_Load(object sender, EventArgs e)
@@ -44,9 +55,8 @@ namespace Msp.App.Depo_Stok
             repositoryItemLookUpEdit1.DataSource = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             repositoryItemLookUpEdit1.ValueMember = "UID";
             repositoryItemLookUpEdit1.DisplayMember = "UName";
-            _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
-            bs_products.DataSource = _productlist;
 
+            do_refresh();
             mspTool.Get_GridControl(this.Name, gcProducts);
         }
 
