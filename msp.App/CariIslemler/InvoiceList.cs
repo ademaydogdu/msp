@@ -71,6 +71,10 @@ namespace Msp.App.CariIslemler
             }
             MspTool.Get_Layout(this);
             do_refresh();
+
+            rp_InvoiceType.DataSource = IceType;
+            rp_InvoiceType.ValueMember = "Id";
+            rp_InvoiceType.DisplayMember = "Value";
         }
 
         private void InvoiceList_KeyDown(object sender, KeyEventArgs e)

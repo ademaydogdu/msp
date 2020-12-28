@@ -13,6 +13,7 @@ using Msp.Models.Models.Sale;
 using Msp.Service.Service.Sale;
 using Msp.App.Tool;
 using msp.App;
+using Msp.App.Report;
 
 namespace Msp.App.Satis
 {
@@ -79,7 +80,12 @@ namespace Msp.App.Satis
 
         private void bbi_Report_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (__dll_SaleOwner.Count > 0)
+            {
+                frmPrint frm = new frmPrint();
+                frm.DailySaleOwner(__dll_SaleOwner);
+                frm.ShowDialog();
+            }
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)

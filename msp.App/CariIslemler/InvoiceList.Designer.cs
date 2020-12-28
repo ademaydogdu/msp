@@ -64,11 +64,14 @@
             this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiğerMasraflar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_InvoiceType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -257,6 +260,8 @@
             this.gc_Invoice.MainView = this.gcv_Invoice;
             this.gc_Invoice.MenuManager = this.barManager1;
             this.gc_Invoice.Name = "gc_Invoice";
+            this.gc_Invoice.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rp_InvoiceType});
             this.gc_Invoice.Size = new System.Drawing.Size(950, 536);
             this.gc_Invoice.TabIndex = 5;
             this.gc_Invoice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -270,6 +275,7 @@
             // 
             this.gcv_Invoice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colFicDate,
+            this.colInvoiceType,
             this.colFichTime,
             this.colFicheType,
             this.colFicheDocumentNo,
@@ -388,6 +394,21 @@
             this.colGenelToplam.Visible = true;
             this.colGenelToplam.VisibleIndex = 12;
             // 
+            // colInvoiceType
+            // 
+            this.colInvoiceType.ColumnEdit = this.rp_InvoiceType;
+            this.colInvoiceType.FieldName = "InvoiceType";
+            this.colInvoiceType.Name = "colInvoiceType";
+            this.colInvoiceType.Visible = true;
+            this.colInvoiceType.VisibleIndex = 13;
+            // 
+            // rp_InvoiceType
+            // 
+            this.rp_InvoiceType.AutoHeight = false;
+            this.rp_InvoiceType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_InvoiceType.Name = "rp_InvoiceType";
+            // 
             // InvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +429,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +472,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colToplamKDV;
         private DevExpress.XtraGrid.Columns.GridColumn colDiğerMasraflar;
         private DevExpress.XtraGrid.Columns.GridColumn colGenelToplam;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_InvoiceType;
     }
 }

@@ -114,7 +114,8 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblDurum = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.lbDurumBaslik = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.lbl_Durum = new DevExpress.XtraLayout.SimpleLabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Company.Properties)).BeginInit();
@@ -179,7 +180,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblDurum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -828,7 +830,8 @@
             this.splitterItem1,
             this.layoutControlGroup3,
             this.layoutControlGroup4,
-            this.lblDurum});
+            this.lbDurumBaslik,
+            this.lbl_Durum});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1115, 623);
             this.Root.TextVisible = false;
@@ -1068,6 +1071,7 @@
             this.layoutControlItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem17.Text = "Toplam";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(64, 13);
+            this.layoutControlItem17.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem15
             // 
@@ -1156,22 +1160,40 @@
             this.layoutControlItem3.Text = "Cari";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(64, 13);
             // 
-            // lblDurum
+            // lbDurumBaslik
             // 
-            this.lblDurum.AllowHotTrack = false;
-            this.lblDurum.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDurum.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblDurum.AppearanceItemCaption.Options.UseFont = true;
-            this.lblDurum.AppearanceItemCaption.Options.UseForeColor = true;
-            this.lblDurum.CustomizationFormText = "Durumu : ";
-            this.lblDurum.Location = new System.Drawing.Point(447, 179);
-            this.lblDurum.MaxSize = new System.Drawing.Size(434, 45);
-            this.lblDurum.MinSize = new System.Drawing.Size(434, 45);
-            this.lblDurum.Name = "lblDurum";
-            this.lblDurum.Size = new System.Drawing.Size(434, 45);
-            this.lblDurum.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.lblDurum.Text = "Durumu : ";
-            this.lblDurum.TextSize = new System.Drawing.Size(64, 16);
+            this.lbDurumBaslik.AllowHotTrack = false;
+            this.lbDurumBaslik.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.lbDurumBaslik.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbDurumBaslik.AppearanceItemCaption.Options.UseFont = true;
+            this.lbDurumBaslik.AppearanceItemCaption.Options.UseForeColor = true;
+            this.lbDurumBaslik.CustomizationFormText = "Durumu : ";
+            this.lbDurumBaslik.Location = new System.Drawing.Point(447, 179);
+            this.lbDurumBaslik.MaxSize = new System.Drawing.Size(68, 45);
+            this.lbDurumBaslik.MinSize = new System.Drawing.Size(68, 45);
+            this.lbDurumBaslik.Name = "lbDurumBaslik";
+            this.lbDurumBaslik.Size = new System.Drawing.Size(68, 45);
+            this.lbDurumBaslik.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.lbDurumBaslik.Text = "Durumu : ";
+            this.lbDurumBaslik.TextSize = new System.Drawing.Size(64, 16);
+            // 
+            // lbl_Durum
+            // 
+            this.lbl_Durum.AllowHotTrack = false;
+            this.lbl_Durum.AppearanceItemCaption.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Durum.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Durum.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_Durum.AppearanceItemCaption.Options.UseBackColor = true;
+            this.lbl_Durum.AppearanceItemCaption.Options.UseFont = true;
+            this.lbl_Durum.AppearanceItemCaption.Options.UseForeColor = true;
+            this.lbl_Durum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_OrderOwner, "Durum", true));
+            this.lbl_Durum.Location = new System.Drawing.Point(515, 179);
+            this.lbl_Durum.MaxSize = new System.Drawing.Size(366, 45);
+            this.lbl_Durum.MinSize = new System.Drawing.Size(366, 45);
+            this.lbl_Durum.Name = "lbl_Durum";
+            this.lbl_Durum.Size = new System.Drawing.Size(366, 45);
+            this.lbl_Durum.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.lbl_Durum.TextSize = new System.Drawing.Size(64, 19);
             // 
             // OrderEdit
             // 
@@ -1252,7 +1274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblDurum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1304,7 +1327,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.RadioGroup rg_TeklifSiparis;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-        private DevExpress.XtraLayout.SimpleLabelItem lblDurum;
+        private DevExpress.XtraLayout.SimpleLabelItem lbDurumBaslik;
         private DevExpress.XtraEditors.TextEdit txtAdres;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
@@ -1346,5 +1369,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Unit;
         private DevExpress.XtraGrid.Columns.GridColumn colCurAccountName;
         private DevExpress.XtraGrid.Columns.GridColumn colCurCode;
+        private DevExpress.XtraLayout.SimpleLabelItem lbl_Durum;
     }
 }

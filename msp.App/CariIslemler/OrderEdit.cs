@@ -171,6 +171,8 @@ namespace Msp.App.CariIslemler
                 __orderOwner.OrderType = (int)OrderType;
                 __orderOwner.SiparisNo = "0";
                 __orderOwner.TeklifSiparis = 0;
+                lbl_Durum.Text = __orderOwner.Durum = "Bekliyor";
+
             }
             if (_FormOpenType == FormOpenType.Edit)
             {

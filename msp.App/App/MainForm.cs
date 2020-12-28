@@ -30,6 +30,7 @@ using DevExpress.Spreadsheet.Export;
 using DevExpress.XtraSpreadsheet;
 using DevExpress.Spreadsheet;
 using Msp.Models.Models;
+using Msp.App.Report;
 
 namespace msp.App
 {
@@ -723,6 +724,20 @@ namespace msp.App
             e.DataTableValue = null;
             e.Action = DataTableExporterAction.Continue;
         }
+        #endregion
+
+        #region Report
+
+     
+        private void bbi_CariHesapListesi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmPrint frm = new frmPrint();
+            var data = _repository.Run<Msp.Service.Service.CurrentTransactions.CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
+            frm.CariHesapListesi(data);
+            frm.ShowDialog();
+        }
+
+
         #endregion
     }
 }

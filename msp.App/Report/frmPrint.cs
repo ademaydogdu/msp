@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Msp.Models.Models;
+using Msp.Models.Models.Sale;
+using Msp.App.Report.Satis;
+using Msp.App.Report.CariHesap;
 
 namespace Msp.App.Report
 {
@@ -17,6 +20,8 @@ namespace Msp.App.Report
         public frmPrint()
         {
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
         }
 
         public void PrintProduct(List<ProductDTO> data)
@@ -28,5 +33,30 @@ namespace Msp.App.Report
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }
+
+        public void DailySaleOwner(List<SaleOwnerDTO> data)
+        {
+            GunlukSatisReport report = new GunlukSatisReport();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+        public void CariHesapListesi(List<CTransactionsDTO> data)
+        {
+            CariHesapListesi report = new CariHesapListesi();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+
+
+
+
     }
 }

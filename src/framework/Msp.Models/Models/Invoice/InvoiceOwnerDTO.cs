@@ -37,6 +37,7 @@ namespace Msp.Models.Models.Invoice
         public string PaymentType { get; set; }
         public bool? Deleted { get; set; } = false;
         public int? OrderId { get; set; } = 0;
+        public int? IrsaliyeId { get; set; } = 0;
 
     }
 }

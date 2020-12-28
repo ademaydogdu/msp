@@ -19,6 +19,7 @@ using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.CurrentTransactions;
 using Msp.Service.Service.App;
 using Msp.Models.Models.Order;
+using System.Globalization;
 
 namespace Msp.App.CariIslemler
 {
@@ -63,7 +64,23 @@ namespace Msp.App.CariIslemler
                 MessageBox.Show("Boş Satır Kaydedilemez...");
                 _return = true;
             }
+            if (invoice == InvoiceType.AlisIrsaliye)
+            {
+                if (__dll_InvoiceOwner.IrsaliyeNo == null || __dll_InvoiceOwner.IrsaliyeNo == "")
+                {
+                    XtraMessageBox.Show("İrsaliye No Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _return = true;
+                } 
+            }
+            if (invoice == InvoiceType.AlımFaturası)
+            {
+                if (__dll_InvoiceOwner.EFaturaNo == null || __dll_InvoiceOwner.EFaturaNo == "")
+                {
+                    XtraMessageBox.Show("Fatura No Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _return = true;
 
+                }
+            }
             return _return;
         }
 
@@ -122,6 +139,36 @@ namespace Msp.App.CariIslemler
                         bs_InvoiceTrans.DataSource = __dll_List_InoviceTrans;
                         gc_invoiceTrans.RefreshDataSource();
                         _IsOrders = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+
+        public void do_IrsaliyeSec(int InvoiceId, string _irsaliyeNo)
+        {
+            try
+            {
+                if (InvoiceId != 0)
+                {
+                    var _irsaliyeTrans = _repository.Run<InvoiceService, List<InvoiceTransDTO>>(x => x.Get_InovicerTranse(InvoiceId));
+                    if (_irsaliyeTrans.Count > 0)
+                    {
+                        __dll_InvoiceOwner.IrsaliyeId = InvoiceId;
+                        __dll_InvoiceOwner.IrsaliyeNo = _irsaliyeNo;
+                        foreach (var item in _irsaliyeTrans)
+                        {
+                            InvoiceTransDTO newTrans = new InvoiceTransDTO();
+                            newTrans.ProductId = item.ProductId;
+                            newTrans.UnitID = item.UnitID;
+                            newTrans.BirimFiyat = item.BirimFiyat;
+                            __dll_List_InoviceTrans.Add(newTrans);
+                        }
+                        bs_InvoiceTrans.DataSource = __dll_List_InoviceTrans;
+                        gc_invoiceTrans.RefreshDataSource();
                     }
                 }
             }
@@ -254,6 +301,73 @@ namespace Msp.App.CariIslemler
         private void bbi_SiparisCagir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FindOrderList frm = new FindOrderList();
+            frm.ShowDialog();
+        }
+
+        private void gcv_invoiceTrans_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+            var oRow = (InvoiceTransDTO)gcv_invoiceTrans.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (oRow.ProductId == null) return;
+                var product = _productlist.FirstOrDefault(x => x.PID == oRow.ProductId);
+
+                if (e.Column == colProductId)
+                {
+                    oRow.UnitID = product.PUnitId;
+                    oRow.KDV = product.PTax;
+                    oRow.BirimFiyat = product.PFirstPrice;
+                }
+                oRow.Tutar = oRow.Quentity * oRow.BirimFiyat;
+                TopTotal();
+            }
+
+
+
+        }
+
+
+        private void TopTotal()
+        {
+
+            decimal AraToplam = 0;
+            decimal BirimFiyatToplam = Math.Round(Convert.ToDecimal(__dll_List_InoviceTrans.Sum(x => x.BirimFiyat)), 2);
+            decimal Iskonto = Math.Round((BirimFiyatToplam * Convert.ToDecimal(__dll_InvoiceOwner.Iskonto)) / 100, 2);
+            decimal TotalKDV = 0;
+            if (Iskonto > 0)
+            {
+                AraToplam = BirimFiyatToplam - Iskonto;
+            }
+            else
+            {
+                AraToplam = BirimFiyatToplam;
+            }
+
+            foreach (var item in __dll_List_InoviceTrans)
+            {
+                decimal Kdv = Math.Round(item.BirimFiyat.GetValueOrDefault() * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)item.KDV).TaxOrani, 2);
+                TotalKDV += Kdv;
+            }
+
+
+            //__dll_InvoiceOwner.topl = BirimFiyatToplam;
+            __dll_InvoiceOwner.Indirim = Iskonto;
+            __dll_InvoiceOwner.AraToplam = AraToplam;
+            __dll_InvoiceOwner.ToplamKDV = TotalKDV;
+            __dll_InvoiceOwner.GenelToplam = AraToplam + TotalKDV;
+            txtToplam.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", BirimFiyatToplam);
+            txtIndirim.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", Iskonto);
+            txtAraToplam.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", AraToplam);
+            txtToplamKDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", TotalKDV);
+            txtTotal.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", AraToplam + TotalKDV);
+
+        }
+
+        private void bbi_İrsaliyeCagir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FindIrsaliyeList frm = new FindIrsaliyeList();
+            frm.invoice = InvoiceType.AlisIrsaliye;
             frm.ShowDialog();
         }
     }

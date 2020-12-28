@@ -143,6 +143,12 @@
     <Compile Include="App\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\FindIrsaliyeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\FindIrsaliyeList.Designer.cs">
+      <DependentUpon>FindIrsaliyeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CariIslemler\FindOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,12 @@
     <Compile Include="Islemler\frmDovizKurlari.Designer.cs">
       <DependentUpon>frmDovizKurlari.cs</DependentUpon>
     </Compile>
+    <Compile Include="Islemler\frmKasaHareketi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Islemler\frmKasaHareketi.Designer.cs">
+      <DependentUpon>frmKasaHareketi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Islemler\Hatirlatici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +287,12 @@
     <Compile Include="Musteri-Islemleri\frmCustomerOrder.Designer.cs">
       <DependentUpon>frmCustomerOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\CariHesap\CariHesapListesi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CariHesap\CariHesapListesi.Designer.cs">
+      <DependentUpon>CariHesapListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +304,12 @@
     </Compile>
     <Compile Include="Report\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Satis\GunlukSatisReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Satis\GunlukSatisReport.Designer.cs">
+      <DependentUpon>GunlukSatisReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Satis\frmChangeMoney.cs">
       <SubType>Form</SubType>
@@ -437,6 +461,9 @@
     <EmbeddedResource Include="App\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\FindIrsaliyeList.resx">
+      <DependentUpon>FindIrsaliyeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\FindOrderList.resx">
       <DependentUpon>FindOrderList.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,6 +519,9 @@
     <EmbeddedResource Include="Islemler\frmDovizKurlari.resx">
       <DependentUpon>frmDovizKurlari.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\frmKasaHareketi.resx">
+      <DependentUpon>frmKasaHareketi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Islemler\Hatirlatici.resx">
       <DependentUpon>Hatirlatici.cs</DependentUpon>
     </EmbeddedResource>
@@ -504,11 +534,17 @@
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomerOrder.resx">
       <DependentUpon>frmCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\CariHesap\CariHesapListesi.resx">
+      <DependentUpon>CariHesapListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Satis\GunlukSatisReport.resx">
+      <DependentUpon>GunlukSatisReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmChangeMoney.resx">
       <DependentUpon>frmChangeMoney.cs</DependentUpon>

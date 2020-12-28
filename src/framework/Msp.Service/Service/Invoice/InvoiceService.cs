@@ -23,7 +23,7 @@ namespace Msp.Service.Service.Invoice
                 List<InvoiceOwnerDTO> result = new List<InvoiceOwnerDTO>();
                 if (invoiceType == 3)
                 {
-                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 1 || x.InvoiceType == 2).ToList()); 
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 1 || x.InvoiceType == 2).ToList());
                 }
                 if (invoiceType == 6)
                 {
@@ -99,7 +99,7 @@ namespace Msp.Service.Service.Invoice
 
                         if (model.IsOrder)
                         {
-                            var order = _db.OrderOwner.FirstOrDefault(x=>x.RecId == response.Response.InvoiceOwner.OrderId);
+                            var order = _db.OrderOwner.FirstOrDefault(x => x.RecId == response.Response.InvoiceOwner.OrderId);
                             if (order != null)
                             {
                                 order.IrsaliyeId = InvoiceOwnerRecId;
@@ -153,6 +153,26 @@ namespace Msp.Service.Service.Invoice
 
         #endregion
 
+        #region Findİrsaliye
+        public List<InvoiceOwnerDTO> GetList_FindIrsaliye(int invoiceType)
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<InvoiceOwnerDTO> result = new List<InvoiceOwnerDTO>();
+                result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 && x.IrsaliyeId == 0).ToList());
+                return result;
+            }
+        }
+
+        public List<InvoiceTransDTO> Get_InovicerTranse(int OwnerId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<InvoiceTrans>, List<InvoiceTransDTO>>(_db.InvoiceTrans.Where(x => x.InvoiceOwnerId == OwnerId).ToList());
+            }
+        }
+
+        #endregion
 
     }
 }
