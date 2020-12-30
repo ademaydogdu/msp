@@ -13,6 +13,7 @@ using Msp.Service.Repository;
 using Msp.Models.Models;
 using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.App;
+using Msp.Service.Service.Depot;
 
 namespace Msp.App.Depo_Stok
 {
@@ -27,6 +28,7 @@ namespace Msp.App.Depo_Stok
         MspTool MspTool = new MspTool();
         List<ProductDTO> _productlist = new List<ProductDTO>();
         List<CompanyDTO> _company = new List<CompanyDTO>();
+        List<DepotDTO> _depotList = new List<DepotDTO>();
 
         private void frmEnvanterBilgiler_Load(object sender, EventArgs e)
         {
@@ -36,6 +38,12 @@ namespace Msp.App.Depo_Stok
 
             _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
             bs_company.DataSource = _company;
+
+            _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+            bs_Depot.DataSource = _depotList;
+
+
+
         }
 
         private void frmEnvanterBilgiler_FormClosing(object sender, FormClosingEventArgs e)
@@ -50,6 +58,11 @@ namespace Msp.App.Depo_Stok
             {
                 this.Close();
             }
+        }
+
+        private void bbi_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

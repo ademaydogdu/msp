@@ -92,7 +92,15 @@ namespace Msp.App.Depo_Stok
                     }
                     else
                     {
+                        foreach (Form item in Application.OpenForms)
+                        {
+                            if (item.Name == "frmDepo")
+                            {
+                                ((frmDepo)item).do_refresh();
+                            }
+                        }
                         this.Close();
+
                     }
                 }
                 catch (Exception ex)

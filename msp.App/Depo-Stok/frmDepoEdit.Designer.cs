@@ -218,7 +218,6 @@
             // svgImageCollection1
             // 
             this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection1.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
             this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
             this.svgImageCollection1.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
             this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
@@ -268,6 +267,7 @@
             this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
             this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
             this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            this.svgImageCollection1.Add("save", "image://svgimages/save/save.svg");
             // 
             // Root
             // 
@@ -459,7 +459,7 @@
             // 
             this.barButtonItem1.Caption = "Kaydet";
             this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.ImageIndex = 0;
+            this.barButtonItem1.ImageOptions.ImageIndex = 49;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
@@ -467,7 +467,7 @@
             // 
             this.barButtonItem2.Caption = "Kapat";
             this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.ImageIndex = 1;
+            this.barButtonItem2.ImageOptions.ImageIndex = 0;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 

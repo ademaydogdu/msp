@@ -51,7 +51,7 @@ namespace msp.App
             CTransactionsDTO Orow = (CTransactionsDTO)gcv_CurTrans.GetFocusedRow();
             if (Orow != null)
             {
-                frmCurTranEdit frm = new frmCurTranEdit();
+                frmCariEdit frm = new frmCariEdit();
                 frm._FormOpenType = Msp.Infrastructure.FormOpenType.Edit;
                 frm.Show(Orow.CurID);
             }
@@ -86,7 +86,7 @@ namespace msp.App
 
         private void btnNewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmCurTranEdit frm = new frmCurTranEdit();
+            frmCariEdit frm = new frmCariEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
             frm.Show(0);
         }

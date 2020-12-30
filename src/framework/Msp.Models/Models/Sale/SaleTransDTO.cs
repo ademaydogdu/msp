@@ -21,7 +21,7 @@ namespace Msp.Models.Models.Sale
         public int? UnitId { get; set; }
         public int? Tax { get; set; }
         public decimal? TaxAmount { get; set; }
-        public DateTime ProductDate { get; set; }
+        public DateTime? ProductDate { get; set; }
 
     }
 }

@@ -676,6 +676,8 @@ namespace msp.App
                     exporter.CellValueConversionError += exporter_CellValueConversionError;
 
                     exporter.Export();
+
+                    var units = _repository.Run<Msp.Service.Service.DepotStock.DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
                     foreach (DataRow oRow in dataTable.Rows)
                     {
 
@@ -683,10 +685,11 @@ namespace msp.App
 
                         string productCode = oRow[0].ToString();
                         string productName = oRow[1].ToString();
-                        int Adet = Convert.ToInt32(oRow[2]);
-                        decimal GirisFiyat = Convert.ToDecimal(oRow[3]);
-                        decimal KarPrice = Convert.ToDecimal(oRow[4]);
-                        int KDV = Convert.ToInt32(oRow[5]);
+                        int miltar = Convert.ToInt32(oRow[2]);
+                        string Birim = oRow[3].ToString();
+                        decimal GirisFiyat = Convert.ToDecimal(oRow[4]);
+                        decimal KarPrice = Convert.ToDecimal(oRow[5]);
+                        int KDV = Convert.ToInt32(oRow[6]);
                         decimal kdvTutar = Math.Round(KarPrice * (decimal)KdvOrani.FirstOrDefault(x => x.Tax == (int)KDV).TaxOrani, 2);
 
                         var row = new Msp.Models.Models.ProductDTO
@@ -694,7 +697,8 @@ namespace msp.App
                             PID = 0,
                             PCode = productCode,
                             PName = productName,
-                            PTotal = Adet,
+                            PTotal = miltar,
+                            PUnitId = units.Where(x => x.UName == Birim.Trim()).FirstOrDefault().UID,
                             PFirstPrice = GirisFiyat,
                             PKarPrice = KarPrice,
                             PTax = KdvOrani.Where(x => x.Tax == KDV).FirstOrDefault().Id,

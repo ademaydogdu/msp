@@ -95,7 +95,7 @@ namespace msp.App
                     saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
                     saleTrans.Tax = _product.PTax;
                     saleTrans.TaxAmount = _product.PPaxAmout;
-                    saleTrans.ProductDate = _product.PExpDate.GetValueOrDefault();
+                    saleTrans.ProductDate = _product.PExpDate == null ? new DateTime(1900,1,1) : _product.PExpDate.GetValueOrDefault();
                     __dl_List_SaleTrans.Add(saleTrans);
                 }
                 TopTotal();
@@ -295,6 +295,7 @@ namespace msp.App
                     if (_parameters.SaleNewRecord.GetValueOrDefault())
                     {
                         __dll_SaleOwner = new SaleOwnerDTO();
+                        __dll_SaleOwner.Date = DateTime.Now;
                         __dl_List_SaleTrans.Clear();
                         __dl_List_SaleTrans = new List<SaleTransDTO>();
                         txt_CustomerName.Text = "";

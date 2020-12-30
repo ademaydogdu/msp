@@ -115,91 +115,103 @@
             this.colDepActive});
             this.gcv_Depot.GridControl = this.gridControl1;
             this.gcv_Depot.Name = "gcv_Depot";
+            this.gcv_Depot.OptionsBehavior.Editable = false;
+            this.gcv_Depot.OptionsView.ColumnAutoWidth = false;
             this.gcv_Depot.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_Depot.OptionsView.ShowGroupPanel = false;
             // 
             // colDID
             // 
-            this.colDID.FieldName = "ID";
+            this.colDID.FieldName = "DID";
             this.colDID.Name = "colDID";
-            this.colDID.Visible = true;
-            this.colDID.VisibleIndex = 0;
             // 
             // colDepName
             // 
-            this.colDepName.FieldName = "Depo Adı";
+            this.colDepName.Caption = "Depo Adı";
+            this.colDepName.FieldName = "DepName";
             this.colDepName.Name = "colDepName";
             this.colDepName.Visible = true;
-            this.colDepName.VisibleIndex = 1;
+            this.colDepName.VisibleIndex = 0;
             // 
             // colDepAuthPerson
             // 
-            this.colDepAuthPerson.FieldName = "Yetkili Kişi";
+            this.colDepAuthPerson.Caption = "Yetkili Kişi";
+            this.colDepAuthPerson.FieldName = "DepAuthPerson";
             this.colDepAuthPerson.Name = "colDepAuthPerson";
             this.colDepAuthPerson.Visible = true;
-            this.colDepAuthPerson.VisibleIndex = 2;
+            this.colDepAuthPerson.VisibleIndex = 1;
             // 
             // colDepAddress
             // 
-            this.colDepAddress.FieldName = "Adres";
+            this.colDepAddress.Caption = "Adres";
+            this.colDepAddress.FieldName = "DepAddress";
             this.colDepAddress.Name = "colDepAddress";
             this.colDepAddress.Visible = true;
-            this.colDepAddress.VisibleIndex = 3;
+            this.colDepAddress.VisibleIndex = 2;
             // 
             // colDepCity
             // 
-            this.colDepCity.FieldName = "İl";
+            this.colDepCity.Caption = "İl";
+            this.colDepCity.FieldName = "DepCity";
             this.colDepCity.Name = "colDepCity";
             this.colDepCity.Visible = true;
-            this.colDepCity.VisibleIndex = 4;
+            this.colDepCity.VisibleIndex = 3;
             // 
             // colDepDistrict
             // 
-            this.colDepDistrict.FieldName = "İlçe";
+            this.colDepDistrict.Caption = "İlçe";
+            this.colDepDistrict.FieldName = "DepDistrict";
             this.colDepDistrict.Name = "colDepDistrict";
             this.colDepDistrict.Visible = true;
-            this.colDepDistrict.VisibleIndex = 5;
+            this.colDepDistrict.VisibleIndex = 4;
             // 
             // colDepPhoneOne
             // 
-            this.colDepPhoneOne.FieldName = "Telefon";
+            this.colDepPhoneOne.Caption = "Telefon";
+            this.colDepPhoneOne.FieldName = "DepPhoneOne";
             this.colDepPhoneOne.Name = "colDepPhoneOne";
             this.colDepPhoneOne.Visible = true;
-            this.colDepPhoneOne.VisibleIndex = 6;
+            this.colDepPhoneOne.VisibleIndex = 5;
             // 
             // colDepPhoneTwo
             // 
-            this.colDepPhoneTwo.FieldName = "Telefon 2";
+            this.colDepPhoneTwo.Caption = "Telefon 2";
+            this.colDepPhoneTwo.FieldName = "DepPhoneTwo";
             this.colDepPhoneTwo.Name = "colDepPhoneTwo";
             this.colDepPhoneTwo.Visible = true;
-            this.colDepPhoneTwo.VisibleIndex = 7;
+            this.colDepPhoneTwo.VisibleIndex = 6;
             // 
             // colDepTaxAdministration
             // 
-            this.colDepTaxAdministration.FieldName = "Vergi Dairesi";
+            this.colDepTaxAdministration.Caption = "Vergi Dairesi";
+            this.colDepTaxAdministration.FieldName = "DepTaxAdministration";
             this.colDepTaxAdministration.Name = "colDepTaxAdministration";
             this.colDepTaxAdministration.Visible = true;
-            this.colDepTaxAdministration.VisibleIndex = 8;
+            this.colDepTaxAdministration.VisibleIndex = 7;
             // 
             // colDepTaxNo
             // 
-            this.colDepTaxNo.FieldName = "Vergi No";
+            this.colDepTaxNo.Caption = "Vergi No";
+            this.colDepTaxNo.FieldName = "DepTaxNo";
             this.colDepTaxNo.Name = "colDepTaxNo";
             this.colDepTaxNo.Visible = true;
-            this.colDepTaxNo.VisibleIndex = 9;
+            this.colDepTaxNo.VisibleIndex = 8;
             // 
             // colDepDate
             // 
-            this.colDepDate.FieldName = "Tarih";
+            this.colDepDate.Caption = "Tarih";
+            this.colDepDate.FieldName = "DepDate";
             this.colDepDate.Name = "colDepDate";
             this.colDepDate.Visible = true;
-            this.colDepDate.VisibleIndex = 10;
+            this.colDepDate.VisibleIndex = 9;
             // 
             // colDepActive
             // 
-            this.colDepActive.FieldName = "Aktiflik Durumu";
+            this.colDepActive.Caption = "Aktiflik Durumu";
+            this.colDepActive.FieldName = "DepActive";
             this.colDepActive.Name = "colDepActive";
             this.colDepActive.Visible = true;
-            this.colDepActive.VisibleIndex = 11;
+            this.colDepActive.VisibleIndex = 10;
             // 
             // Root
             // 

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,7 +45,7 @@ namespace Msp.Service.Service.Sale
                                 _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                             }
                         }
-                        
+
 
                         foreach (var item in model.List_SaleTrans)
                         {
@@ -58,8 +59,14 @@ namespace Msp.Service.Service.Sale
                                     Products updatePro = new Products();
                                     updatePro = product;
                                     updatePro.PTotal = updatePro.PTotal - item.ProductQuantity;
-                                    _db.Entry(product).CurrentValues.SetValues(updatePro);
-                                    _db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                                    var sqlUpdate = $"Update products set PTotal =@PTotal where PID ={item.ProductId}";
+                                    var _param = new SqlParameter[]
+                                    {
+                                        new SqlParameter{ParameterName = "PTotal", Value = updatePro.PTotal}
+                                    };
+                                    _db.Database.ExecuteSqlCommand(sqlUpdate, _param.ToArray());
+                                    //_db.Entry(product).CurrentValues.SetValues(updatePro);
+                                    //_db.Entry(product).State = System.Data.Entity.EntityState.Modified;
                                 }
                             }
                             else
@@ -81,7 +88,7 @@ namespace Msp.Service.Service.Sale
                         transaction.Rollback();
                         response.Message = e.ToString();
                         response.ResponseType = ResponseType.Error;
-                    } 
+                    }
                 }
             }
             return response;
@@ -91,7 +98,7 @@ namespace Msp.Service.Service.Sale
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<SaleOwner, SaleOwnerDTO>(_db.SaleOwner.FirstOrDefault(x=>x.RecId == RecId));
+                return base.Map<SaleOwner, SaleOwnerDTO>(_db.SaleOwner.FirstOrDefault(x => x.RecId == RecId));
             }
         }
 

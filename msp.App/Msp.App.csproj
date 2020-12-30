@@ -155,17 +155,17 @@
     <Compile Include="CariIslemler\FindOrderList.Designer.cs">
       <DependentUpon>FindOrderList.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\frmCariEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\frmCariEdit.Designer.cs">
+      <DependentUpon>frmCariEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="CariIslemler\frmCurrentTransactions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CariIslemler\frmCurrentTransactions.Designer.cs">
       <DependentUpon>frmCurrentTransactions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CariIslemler\frmCurTranEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CariIslemler\frmCurTranEdit.Designer.cs">
-      <DependentUpon>frmCurTranEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="CariIslemler\InvoiceEdit.cs">
       <SubType>Form</SubType>
@@ -467,11 +467,11 @@
     <EmbeddedResource Include="CariIslemler\FindOrderList.resx">
       <DependentUpon>FindOrderList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\frmCariEdit.resx">
+      <DependentUpon>frmCariEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\frmCurrentTransactions.resx">
       <DependentUpon>frmCurrentTransactions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CariIslemler\frmCurTranEdit.resx">
-      <DependentUpon>frmCurTranEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\InvoiceEdit.resx">
       <DependentUpon>InvoiceEdit.cs</DependentUpon>

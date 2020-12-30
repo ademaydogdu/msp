@@ -44,7 +44,9 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lookUpEdit4 = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_company = new System.Windows.Forms.BindingSource(this.components);
             this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -54,15 +56,15 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bs_Depot = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_company = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -72,8 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -126,6 +126,7 @@
             this.bbi_Close.ImageOptions.ImageIndex = 0;
             this.bbi_Close.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Close.Name = "bbi_Close";
+            this.bbi_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Close_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -214,6 +215,12 @@
             this.lookUpEdit4.Name = "lookUpEdit4";
             this.lookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit4.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DepName", "Depo Adı")});
+            this.lookUpEdit4.Properties.DataSource = this.bs_Depot;
+            this.lookUpEdit4.Properties.DisplayMember = "DepName";
+            this.lookUpEdit4.Properties.NullText = "";
+            this.lookUpEdit4.Properties.ValueMember = "DID";
             this.lookUpEdit4.Size = new System.Drawing.Size(237, 20);
             this.lookUpEdit4.StyleController = this.layoutControl1;
             this.lookUpEdit4.TabIndex = 7;
@@ -225,6 +232,9 @@
             this.lookUpEdit3.Name = "lookUpEdit3";
             this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit3.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "CompanyCode"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyName", "CompanyName")});
             this.lookUpEdit3.Properties.DataSource = this.bs_company;
             this.lookUpEdit3.Properties.DisplayMember = "CompanyName";
             this.lookUpEdit3.Properties.NullText = "";
@@ -233,6 +243,10 @@
             this.lookUpEdit3.StyleController = this.layoutControl1;
             this.lookUpEdit3.TabIndex = 6;
             // 
+            // bs_company
+            // 
+            this.bs_company.DataSource = typeof(Msp.Models.Models.CompanyDTO);
+            // 
             // lookUpEdit2
             // 
             this.lookUpEdit2.Location = new System.Drawing.Point(162, 29);
@@ -240,6 +254,9 @@
             this.lookUpEdit2.Name = "lookUpEdit2";
             this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit2.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PCode", "Code"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PName", "Name")});
             this.lookUpEdit2.Properties.DataSource = this.bs_Product;
             this.lookUpEdit2.Properties.DisplayMember = "PName";
             this.lookUpEdit2.Properties.NullText = "";
@@ -248,6 +265,10 @@
             this.lookUpEdit2.StyleController = this.layoutControl1;
             this.lookUpEdit2.TabIndex = 5;
             // 
+            // bs_Product
+            // 
+            this.bs_Product.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
             // lookUpEdit1
             // 
             this.lookUpEdit1.Location = new System.Drawing.Point(12, 29);
@@ -255,6 +276,9 @@
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PCode", "PCode"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PName", "Name")});
             this.lookUpEdit1.Properties.DataSource = this.bs_Product;
             this.lookUpEdit1.Properties.DisplayMember = "PName";
             this.lookUpEdit1.Properties.NullText = "";
@@ -335,14 +359,6 @@
             // 
             this.bs_Depot.DataSource = typeof(Msp.Models.Models.DepotDTO);
             // 
-            // bs_Product
-            // 
-            this.bs_Product.DataSource = typeof(Msp.Models.Models.ProductDTO);
-            // 
-            // bs_company
-            // 
-            this.bs_company.DataSource = typeof(Msp.Models.Models.CompanyDTO);
-            // 
             // frmEnvanterBilgiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,7 +383,9 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -377,8 +395,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Product)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
