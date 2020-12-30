@@ -54,6 +54,7 @@
     <Compile Include="Entities\BankEntry.cs" />
     <Compile Include="Entities\Banks.cs" />
     <Compile Include="Entities\Cashiers.cs" />
+    <Compile Include="Entities\CashPayGroupDef.cs" />
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\CTransactions.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Entities\Depots.cs" />
     <Compile Include="Entities\ExchangeRate.cs" />
     <Compile Include="Entities\FormLayouts.cs" />
+    <Compile Include="Entities\ProductGroup.cs" />
     <Compile Include="Entities\InvoiceOwner.cs" />
     <Compile Include="Entities\InvoiceTrans.cs" />
     <Compile Include="Entities\OrderManagement.cs" />
@@ -81,7 +83,6 @@
     <Compile Include="Entities\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

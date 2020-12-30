@@ -26,6 +26,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Cayments> payments { get; set; }
         public virtual DbSet<Products> products { get; set; }
         public virtual DbSet<ProductMark> ProductMark { get; set; }
+        public virtual DbSet<ProductGroup> ProductGroup { get; set; }
         public virtual DbSet<ProductMovement> ProductMovement { get; set; }
         public virtual DbSet<Users> users { get; set; }
         public virtual DbSet<Company> Company { get; set; }
@@ -49,7 +50,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<CurrencyType> CurrencyType { get; set; }
         public virtual DbSet<OrderOwner> OrderOwner { get; set; }
         public virtual DbSet<OrderTrans> OrderTrans { get; set; }
-
+        public virtual DbSet<CashPayGroupDef> CashPayGroupDef { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Categories>()

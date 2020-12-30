@@ -46,6 +46,7 @@
     <Compile Include="Models\App\ProgramsControlsDTO.cs" />
     <Compile Include="Models\BankEntryDTO.cs" />
     <Compile Include="Models\BanksDTO.cs" />
+    <Compile Include="Models\CashPayGroupDefDTO.cs" />
     <Compile Include="Models\CompanyDTO.cs" />
     <Compile Include="Models\CTransactionsDTO.cs" />
     <Compile Include="Models\CurrencyTypeDTO.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Models\ParametersDTO.cs" />
     <Compile Include="Models\PaymentTypeDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
+    <Compile Include="Models\ProductGroupDTO.cs" />
     <Compile Include="Models\ProductMarkDTO.cs" />
     <Compile Include="Models\ProductMovementDTO.cs" />
     <Compile Include="Models\Sale\SaleOwnerDTO.cs" />

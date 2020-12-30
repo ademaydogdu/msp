@@ -34,6 +34,7 @@
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -42,7 +43,6 @@
             this.gc_ProductMarks = new DevExpress.XtraGrid.GridControl();
             this.gcv_ProductMarks = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bs_ProductMarks = new System.Windows.Forms.BindingSource(this.components);
-            this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_ProductMarks)).BeginInit();
@@ -113,6 +113,15 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
+            // bbi_Refresh
+            // 
+            this.bbi_Refresh.Caption = "Yenile";
+            this.bbi_Refresh.Id = 3;
+            this.bbi_Refresh.ImageOptions.ImageIndex = 4;
+            this.bbi_Refresh.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Refresh.Name = "bbi_Refresh";
+            this.bbi_Refresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Refresh_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -170,15 +179,6 @@
             this.gcv_ProductMarks.GridControl = this.gc_ProductMarks;
             this.gcv_ProductMarks.Name = "gcv_ProductMarks";
             this.gcv_ProductMarks.OptionsView.ShowGroupPanel = false;
-            // 
-            // bbi_Refresh
-            // 
-            this.bbi_Refresh.Caption = "Yenile";
-            this.bbi_Refresh.Id = 3;
-            this.bbi_Refresh.ImageOptions.ImageIndex = 4;
-            this.bbi_Refresh.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.bbi_Refresh.Name = "bbi_Refresh";
-            this.bbi_Refresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Refresh_ItemClick);
             // 
             // frmUrunTanimlari
             // 
