@@ -230,6 +230,9 @@
             this.barButtonItem117 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem118 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem119 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem120 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem21 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem121 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -276,9 +279,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem120 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem21 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem121 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1966,6 +1966,30 @@
             this.barButtonItem119.Id = 200;
             this.barButtonItem119.ImageOptions.LargeImageIndex = 63;
             this.barButtonItem119.Name = "barButtonItem119";
+            this.barButtonItem119.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem119_ItemClick);
+            // 
+            // barButtonItem120
+            // 
+            this.barButtonItem120.Caption = "Ürün Grup Tanımları";
+            this.barButtonItem120.Id = 201;
+            this.barButtonItem120.ImageOptions.LargeImageIndex = 62;
+            this.barButtonItem120.Name = "barButtonItem120";
+            this.barButtonItem120.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem120_ItemClick);
+            // 
+            // barSubItem21
+            // 
+            this.barSubItem21.Caption = "XML";
+            this.barSubItem21.Id = 202;
+            this.barSubItem21.ImageOptions.LargeImageIndex = 64;
+            this.barSubItem21.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem121)});
+            this.barSubItem21.Name = "barSubItem21";
+            // 
+            // barButtonItem121
+            // 
+            this.barButtonItem121.Caption = "XML\'den Ürün Aktarımı";
+            this.barButtonItem121.Id = 203;
+            this.barButtonItem121.Name = "barButtonItem121";
             // 
             // img_buton
             // 
@@ -2370,28 +2394,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem120
-            // 
-            this.barButtonItem120.Caption = "Ürün Grup Tanımları";
-            this.barButtonItem120.Id = 201;
-            this.barButtonItem120.ImageOptions.LargeImageIndex = 62;
-            this.barButtonItem120.Name = "barButtonItem120";
-            // 
-            // barSubItem21
-            // 
-            this.barSubItem21.Caption = "XML";
-            this.barSubItem21.Id = 202;
-            this.barSubItem21.ImageOptions.LargeImageIndex = 64;
-            this.barSubItem21.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem121)});
-            this.barSubItem21.Name = "barSubItem21";
-            // 
-            // barButtonItem121
-            // 
-            this.barButtonItem121.Caption = "XML\'den Ürün Aktarımı";
-            this.barButtonItem121.Id = 203;
-            this.barButtonItem121.Name = "barButtonItem121";
             // 
             // MainForm
             // 

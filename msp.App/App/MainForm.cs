@@ -743,5 +743,19 @@ namespace msp.App
 
 
         #endregion
+
+        private void barButtonItem119_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            CashPayGroupDef frm = new CashPayGroupDef();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem120_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmGroupDefinition frm = new frmGroupDefinition();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
