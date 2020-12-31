@@ -311,6 +311,12 @@
     <Compile Include="Report\Satis\GunlukSatisReport.Designer.cs">
       <DependentUpon>GunlukSatisReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Satis\HaftalikSatisChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Satis\HaftalikSatisChart.Designer.cs">
+      <DependentUpon>HaftalikSatisChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satis\frmChangeMoney.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -557,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Satis\GunlukSatisReport.resx">
       <DependentUpon>GunlukSatisReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Satis\HaftalikSatisChart.resx">
+      <DependentUpon>HaftalikSatisChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmChangeMoney.resx">
       <DependentUpon>frmChangeMoney.cs</DependentUpon>

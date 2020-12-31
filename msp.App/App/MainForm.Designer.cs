@@ -279,6 +279,10 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem122 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem22 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem123 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem124 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -497,10 +501,14 @@
             this.barButtonItem119,
             this.barButtonItem120,
             this.barSubItem21,
-            this.barButtonItem121});
+            this.barButtonItem121,
+            this.barButtonItem122,
+            this.barSubItem22,
+            this.barButtonItem123,
+            this.barButtonItem124});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 204;
+            this.ribbon.MaxItemId = 208;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -2059,6 +2067,7 @@
             this.img_buton.Add("group", "image://svgimages/dashboards/group.svg");
             this.img_buton.Add("autoexpand", "image://svgimages/dashboards/autoexpand.svg");
             this.img_buton.Add("exporttoxml", "image://svgimages/export/exporttoxml.svg");
+            this.img_buton.Add("bo_invoice", "image://svgimages/business objects/bo_invoice.svg");
             // 
             // barSatis
             // 
@@ -2191,6 +2200,7 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem15);
             this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem20);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barSubItem22);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPageGroup31
@@ -2394,6 +2404,34 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barButtonItem122
+            // 
+            this.barButtonItem122.Caption = "Satış ";
+            this.barButtonItem122.Id = 204;
+            this.barButtonItem122.Name = "barButtonItem122";
+            // 
+            // barSubItem22
+            // 
+            this.barSubItem22.Caption = "Satış Raporları";
+            this.barSubItem22.Id = 205;
+            this.barSubItem22.ImageOptions.LargeImageIndex = 65;
+            this.barSubItem22.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem123),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem124)});
+            this.barSubItem22.Name = "barSubItem22";
+            // 
+            // barButtonItem123
+            // 
+            this.barButtonItem123.Caption = "Günlük Satış Raporu (Bugün)";
+            this.barButtonItem123.Id = 206;
+            this.barButtonItem123.Name = "barButtonItem123";
+            // 
+            // barButtonItem124
+            // 
+            this.barButtonItem124.Caption = "Haftalık Satış Çizelgesi";
+            this.barButtonItem124.Id = 207;
+            this.barButtonItem124.Name = "barButtonItem124";
             // 
             // MainForm
             // 
@@ -2676,5 +2714,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem120;
         private DevExpress.XtraBars.BarSubItem barSubItem21;
         private DevExpress.XtraBars.BarButtonItem barButtonItem121;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem122;
+        private DevExpress.XtraBars.BarSubItem barSubItem22;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem123;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem124;
     }
 }
