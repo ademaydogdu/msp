@@ -90,7 +90,7 @@ namespace Msp.Service.Service.DepotStock
                             {
                                 response.Message = "Aynı Barkod Ürününden Mevcuttur.";
                                 response.ResponseType = ResponseType.Error;
-                            } 
+                            }
                         }
                         _db.products.Add(base.Map<ProductDTO, Products>(model));
                         _db.SaveChanges();
@@ -150,17 +150,15 @@ namespace Msp.Service.Service.DepotStock
 
         public List<ProductDTO> GetListExpDateProducts()
         {
-            
+
             DateTime endDate = DateTime.Now;
             using (var _db = new MspDbContext())
-            {               
-               return base.Map<List<Products>,  List<ProductDTO>>(_db.products.Where(x => EntityFunctions.TruncateTime(x.PExpDate) <= endDate).ToList());  
+            {
+                return base.Map<List<Products>, List<ProductDTO>>(_db.products.Where(x => EntityFunctions.TruncateTime(x.PExpDate) <= endDate).ToList());
             }
         }
 
         #endregion
-
-
 
         #region Unit
 
@@ -331,6 +329,41 @@ namespace Msp.Service.Service.DepotStock
 
 
         #endregion
+
+        #region frmProductEnvanter
+
+        public ActionResponse<ProductDTO> SaveProduct_EnvanterEkle(ProductDTO model)
+        {
+            ActionResponse<ProductDTO> response = new ActionResponse<ProductDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    var entity = _db.products.FirstOrDefault(x => x.PID == response.Response.PID);
+                    if (entity != null)
+                    {
+                        _db.Entry(entity).CurrentValues.SetValues(model);
+                        _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
+
+
+        #endregion
+
 
     }
 }

@@ -56,6 +56,7 @@
     <Reference Include="DevExpress.Map.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.1.Core" />
@@ -103,6 +104,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
@@ -292,6 +294,12 @@
     </Compile>
     <Compile Include="Report\CariHesap\CariHesapListesi.Designer.cs">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Fatura\InvoiceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Fatura\InvoiceReport.Designer.cs">
+      <DependentUpon>InvoiceReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\frmPrint.cs">
       <SubType>Form</SubType>
@@ -555,6 +563,9 @@
     <EmbeddedResource Include="Report\CariHesap\CariHesapListesi.resx">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Fatura\InvoiceReport.resx">
+      <DependentUpon>InvoiceReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -685,7 +696,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Report\Depo-Stock\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\framework\Msp.Entity\Msp.Entity.csproj">
       <Project>{C5D3FE87-7F84-4C33-BFD6-3A3B789F1C09}</Project>

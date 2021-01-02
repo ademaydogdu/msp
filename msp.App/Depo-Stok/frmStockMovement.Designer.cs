@@ -179,6 +179,7 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // frmStockMovement
             // 
@@ -193,6 +194,8 @@
             this.Name = "frmStockMovement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürün Hareket Listesi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmStockMovement_FormClosing);
+            this.Load += new System.EventHandler(this.frmStockMovement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_sig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
