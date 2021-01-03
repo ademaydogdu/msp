@@ -67,6 +67,7 @@
     <Compile Include="Models\ProductGroupDTO.cs" />
     <Compile Include="Models\ProductMarkDTO.cs" />
     <Compile Include="Models\ProductMovementDTO.cs" />
+    <Compile Include="Models\Product\ProductPrintRequest.cs" />
     <Compile Include="Models\Sale\SaleOwnerDTO.cs" />
     <Compile Include="Models\Sale\SaleRequest.cs" />
     <Compile Include="Models\Sale\SaleTransDTO.cs" />

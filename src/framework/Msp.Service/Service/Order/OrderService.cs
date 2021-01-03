@@ -21,15 +21,15 @@ namespace Msp.Service.Service.Order
                 List<OrderOwnerDTO> result = new List<OrderOwnerDTO>();
                 if (invoiceType == 3)
                 {
-                    result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == 1 || x.OrderType == 2).ToList());
+                    result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == 1 || x.OrderType == 2 && x.Deleted == false).ToList());
                 }
                 else if (invoiceType == 4)
                 {
-                    result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.IrsaliyeId == 0).ToList());
+                    result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.IrsaliyeId == 0 && x.Deleted == false).ToList());
                 }
                 else
                 {
-                    result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == invoiceType).ToList());
+                    result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == invoiceType && x.Deleted == false).ToList());
                 }
                 return result;
             }
@@ -48,6 +48,15 @@ namespace Msp.Service.Service.Order
                 {
                     try
                     {
+
+                        if (_db.OrderOwner.Any(x => x.SiparisNo == model.OrderOwner.SiparisNo))
+                        {
+                            response.Message = "Aynı Sipariş No'dan vardır.";
+                            response.ResponseType = ResponseType.Error;
+                            return response;
+                        }
+
+
                         int OrderOwnerId = 0;
                         if (response.Response.OrderOwner.RecId == 0)
                         {
@@ -123,6 +132,45 @@ namespace Msp.Service.Service.Order
                 return base.Map<List<OrderTrans>, List<OrderTransDTO>>(_db.OrderTrans.Where(x => x.OwnerId == OwnerRecId).ToList());
             }
         }
+
+        public ActionResponse<OrderOwnerDTO> Deleted_Order(int orderId)
+        {
+            ActionResponse<OrderOwnerDTO> response = new ActionResponse<OrderOwnerDTO>()
+            {
+                ResponseType = ResponseType.Ok
+            };
+
+            using (MspDbContext _db = new MspDbContext())
+            {
+                using (DbContextTransaction transaction = _db.Database.BeginTransaction())
+                {
+
+                    try
+                    {
+                        var record = _db.OrderOwner.FirstOrDefault(x => x.RecId == orderId);
+                        if (record != null)
+                        {
+                            record.Deleted = true;
+                            _db.Entry(record).CurrentValues.SetValues(record);
+                            _db.Entry(record).State = System.Data.Entity.EntityState.Modified;
+
+                        }
+                        _db.SaveChanges();
+                        transaction.Commit();
+                    }
+                    catch (Exception e)
+                    {
+                        transaction.Rollback();
+                        response.Message = e.ToString();
+                        response.ResponseType = ResponseType.Error;
+                    }
+                }
+            }
+
+            return response;
+
+        }
+
 
         #endregion
 

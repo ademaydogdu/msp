@@ -188,5 +188,22 @@ namespace Msp.App.CariIslemler
         {
             do_refresh();
         }
+
+        private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
+            if (oRow != null)
+            {
+                var response = _repository.Run<OrderService, ActionResponse<OrderOwnerDTO>>(x => x.Deleted_Order(oRow.RecId));
+                if (response.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    do_refresh();
+                }
+            }
+        }
     }
 }

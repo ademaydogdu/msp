@@ -295,6 +295,12 @@
     <Compile Include="Report\CariHesap\CariHesapListesi.Designer.cs">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Depo-Stock\EnvanterBilgileri.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Depo-Stock\EnvanterBilgileri.Designer.cs">
+      <DependentUpon>EnvanterBilgileri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Fatura\InvoiceReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -563,6 +569,9 @@
     <EmbeddedResource Include="Report\CariHesap\CariHesapListesi.resx">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Depo-Stock\EnvanterBilgileri.resx">
+      <DependentUpon>EnvanterBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Fatura\InvoiceReport.resx">
       <DependentUpon>InvoiceReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -681,6 +690,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.CustomersDTO1.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.PaymentTypeDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.ProductMovementDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SpeedSaleProductDTO.datasource" />
@@ -696,9 +706,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Report\Depo-Stock\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\src\framework\Msp.Entity\Msp.Entity.csproj">
       <Project>{C5D3FE87-7F84-4C33-BFD6-3A3B789F1C09}</Project>

@@ -78,6 +78,7 @@
     <Compile Include="Service\Invoice\InvoiceService.cs" />
     <Compile Include="Service\Operations\BankEntryServices.cs" />
     <Compile Include="Service\Order\OrderService.cs" />
+    <Compile Include="Service\Report\ReportService.cs" />
     <Compile Include="Service\Sale\SaleService.cs" />
     <Compile Include="Service\Settings\SettingsService.cs" />
     <Compile Include="Service\Definitions\DefinitionsService.cs" />

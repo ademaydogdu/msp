@@ -50,6 +50,9 @@
             this.colPBrandCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPTax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPKarPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPMalBedeli = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPPaxAmout = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnProductsRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -78,12 +81,12 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colPKarPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPMalBedeli = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPPaxAmout = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -96,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -292,6 +296,30 @@
             this.colPTax.Visible = true;
             this.colPTax.VisibleIndex = 13;
             // 
+            // colPKarPrice
+            // 
+            this.colPKarPrice.Caption = "Kar Fiyatı";
+            this.colPKarPrice.FieldName = "PKarPrice";
+            this.colPKarPrice.Name = "colPKarPrice";
+            this.colPKarPrice.Visible = true;
+            this.colPKarPrice.VisibleIndex = 15;
+            // 
+            // colPMalBedeli
+            // 
+            this.colPMalBedeli.Caption = "Mal Bedeli";
+            this.colPMalBedeli.FieldName = "PMalBedeli";
+            this.colPMalBedeli.Name = "colPMalBedeli";
+            this.colPMalBedeli.Visible = true;
+            this.colPMalBedeli.VisibleIndex = 16;
+            // 
+            // colPPaxAmout
+            // 
+            this.colPPaxAmout.Caption = "KDV Tutarı";
+            this.colPPaxAmout.FieldName = "PPaxAmout";
+            this.colPPaxAmout.Name = "colPPaxAmout";
+            this.colPPaxAmout.Visible = true;
+            this.colPPaxAmout.VisibleIndex = 17;
+            // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
@@ -322,8 +350,10 @@
             this.barEditItem1,
             this.btnORderAdd,
             this.bbi_Print,
-            this.bbi_EnvanterGiris});
-            this.barManager1.MaxItemId = 20;
+            this.bbi_EnvanterGiris,
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 22;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMarqueeProgressBar1});
             this.barManager1.SharedImageCollectionImageSizeMode = DevExpress.Utils.SharedImageCollectionImageSizeMode.UseImageSize;
@@ -420,7 +450,7 @@
             this.btnORderAdd.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.btnORderAdd.Caption = "Ürün Satış Ekle";
             this.btnORderAdd.Id = 17;
-            this.btnORderAdd.ImageOptions.ImageIndex = 12;
+            this.btnORderAdd.ImageOptions.ImageIndex = 56;
             this.btnORderAdd.Name = "btnORderAdd";
             this.btnORderAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnORderAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnORderAdd_ItemClick);
@@ -604,6 +634,14 @@
             // 
             this.repositoryItemMarqueeProgressBar1.Name = "repositoryItemMarqueeProgressBar1";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Ürün Envanter Bilgisi";
+            this.barButtonItem1.Id = 20;
+            this.barButtonItem1.ImageOptions.ImageIndex = 63;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // repositoryItemLookUpEdit2
             // 
             this.repositoryItemLookUpEdit2.AutoHeight = false;
@@ -630,29 +668,20 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // colPKarPrice
+            // popupMenu1
             // 
-            this.colPKarPrice.Caption = "Kar Fiyatı";
-            this.colPKarPrice.FieldName = "PKarPrice";
-            this.colPKarPrice.Name = "colPKarPrice";
-            this.colPKarPrice.Visible = true;
-            this.colPKarPrice.VisibleIndex = 15;
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEditProduct),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
             // 
-            // colPMalBedeli
+            // barButtonItem2
             // 
-            this.colPMalBedeli.Caption = "Mal Bedeli";
-            this.colPMalBedeli.FieldName = "PMalBedeli";
-            this.colPMalBedeli.Name = "colPMalBedeli";
-            this.colPMalBedeli.Visible = true;
-            this.colPMalBedeli.VisibleIndex = 16;
-            // 
-            // colPPaxAmout
-            // 
-            this.colPPaxAmout.Caption = "KDV Tutarı";
-            this.colPPaxAmout.FieldName = "PPaxAmout";
-            this.colPPaxAmout.Name = "colPPaxAmout";
-            this.colPPaxAmout.Visible = true;
-            this.colPPaxAmout.VisibleIndex = 17;
+            this.barButtonItem2.Caption = "Ürün Harketleri";
+            this.barButtonItem2.Id = 21;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmStok
             // 
@@ -682,6 +711,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -744,5 +774,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPKarPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colPMalBedeli;
         private DevExpress.XtraGrid.Columns.GridColumn colPPaxAmout;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

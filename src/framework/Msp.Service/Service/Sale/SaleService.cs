@@ -1,4 +1,5 @@
 ﻿using Msp.Entity.Entities;
+using Msp.Models.Models;
 using Msp.Models.Models.Sale;
 using Msp.Models.Models.Utilities;
 using System;
@@ -67,7 +68,22 @@ namespace Msp.Service.Service.Sale
                                     _db.Database.ExecuteSqlCommand(sqlUpdate, _param.ToArray());
                                     //_db.Entry(product).CurrentValues.SetValues(updatePro);
                                     //_db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+
+                                    ProductMovementDTO productMovement = new ProductMovementDTO
+                                    {
+                                        ProductId = item.ProductId,
+                                        Date = DateTime.Now,
+                                        Quantity = Convert.ToInt32(item.ProductQuantity),
+                                        Durum = "Satış",
+                                        Deleted = false,
+                                        Amount = item.ProductQuantity * item.ProductPrice,
+                                    };
+                                    _db.ProductMovement.Add(base.Map<ProductMovementDTO, ProductMovement>(productMovement));
+                                    _db.SaveChanges();
+
                                 }
+
+       
                             }
                             else
                             {

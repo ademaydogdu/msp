@@ -209,6 +209,7 @@ namespace Msp.App.Depo_Stok
             if (Orow != null)
             {
                 frmStockMovement frm = new frmStockMovement();
+                frm.PId = Orow.PID;
                 frm.ShowDialog();
             }
         }
@@ -220,6 +221,12 @@ namespace Msp.App.Depo_Stok
                 frmProductEnvanter frm = new frmProductEnvanter();
                 frm.ShowDialog();
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
+            frm.ShowDialog();
         }
     }
 }

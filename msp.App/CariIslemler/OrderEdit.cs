@@ -20,6 +20,8 @@ using Msp.Service.Service.Tanimlar;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Service.Order;
 using System.Globalization;
+using msp.App;
+using Msp.App.Tanimlar;
 
 namespace Msp.App.CariIslemler
 {
@@ -62,7 +64,21 @@ namespace Msp.App.CariIslemler
                 MessageBox.Show("Boş Satır Kaydedilemez...");
                 _return = true;
             }
-
+            if (__orderOwner.SiparisNo == "")
+            {
+                XtraMessageBox.Show("Sipariş No Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = false;
+            }
+            if (__orderOwner.CariRecId == 0)
+            {
+                XtraMessageBox.Show("Cari Hesap Seçimi yapmadınız.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = false;
+            }
+            if (__orderOwner.CompanyId == 0 || Convert.ToString(lc_Company.EditValue) == "")
+            {
+                XtraMessageBox.Show("İşyeri Seöimi yapmadınız..", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = false;
+            }
             return _return;
         }
 
@@ -107,7 +123,7 @@ namespace Msp.App.CariIslemler
         {
 
             decimal AraToplam = 0;
-            decimal BirimFiyatToplam = Math.Round(Convert.ToDecimal(__orderTrans.Sum(x => x.BirimFiyat)), 2);
+            decimal BirimFiyatToplam = Math.Round(Convert.ToDecimal(__orderTrans.Sum(x => x.Tutar)), 2);
             decimal Iskonto = Math.Round((BirimFiyatToplam * Convert.ToDecimal(__orderOwner.Iskonto)) / 100, 2);
             decimal TotalKDV = 0;
             if (Iskonto > 0)
@@ -121,11 +137,9 @@ namespace Msp.App.CariIslemler
 
             foreach (var item in __orderTrans)
             {
-                decimal Kdv = Math.Round(item.BirimFiyat.GetValueOrDefault() * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)item.KDV).TaxOrani, 2);
+                decimal Kdv = Math.Round(item.Tutar.GetValueOrDefault() * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)item.KDV).TaxOrani, 2);
                 TotalKDV += Kdv;
             }
-
-
             __orderOwner.TotalToplam = BirimFiyatToplam;
             __orderOwner.TotalIskonto = Iskonto;
             __orderOwner.TotalAraToplam = AraToplam;
@@ -260,6 +274,46 @@ namespace Msp.App.CariIslemler
         private void txt_Iskonto_EditValueChanged(object sender, EventArgs e)
         {
             TopTotal();
+        }
+
+        private void grp_CariId_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    frmCurrentTransactions frm = new frmCurrentTransactions();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
+                    bs_CariHesap.DataSource = _currentTransactionsList;
+                }
+            }
+        }
+
+        private void lc_DovizTuru_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    CurrencyTypeList frm = new CurrencyTypeList();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+                    bs_CurrencyType.DataSource = _currencyTypes;
+                }
+            }
         }
     }
 }

@@ -14,6 +14,9 @@ using Msp.Models.Models;
 using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.App;
 using Msp.Service.Service.Depot;
+using Msp.Models.Models.Product;
+using Msp.Service.Service.Report;
+using Msp.App.Report;
 
 namespace Msp.App.Depo_Stok
 {
@@ -63,6 +66,59 @@ namespace Msp.App.Depo_Stok
         private void bbi_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+
+        private bool do_Validation()
+        {
+            bool _return = false;
+            if (Convert.ToString(lp_PRoductBegin.EditValue) == "")
+            {
+                XtraMessageBox.Show("Ürün Başlangış Kodunu Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(lp_PRoductEnd.EditValue) == "")
+            {
+                XtraMessageBox.Show("Ürün Bitiş Kodunu Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+
+            return _return;
+        }
+
+        public void do_Print()
+        {
+            if (do_Validation()) return;
+            try
+            {
+                var req = new ProductPrintRequest
+                {
+                    ProductBegin = Convert.ToInt32(lp_PRoductBegin.EditValue),
+                    ProductEnd = Convert.ToInt32(lp_PRoductEnd.EditValue),
+                    companyId = lc_Company.EditValue == null ? 0 : (int)lc_Company.EditValue,
+                    DepotId = lc_Depot.EditValue == null ? 0 : (int)lc_Depot.EditValue
+                };
+                List<ProductDTO> data = new List<ProductDTO>();
+                data = _repository.Run<ReportService, List<ProductDTO>>(x => x.Get_List_EnvanterBilgisi(req));
+
+                if (data.Count > 0)
+                {
+                    frmPrint frm = new frmPrint();
+                    frm.PrintEnvanterBilgisi(data);
+                    frm.ShowDialog();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+        private void bbi_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_Print();
         }
     }
 }

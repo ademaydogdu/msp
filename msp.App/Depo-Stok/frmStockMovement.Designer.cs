@@ -34,19 +34,31 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_Report = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_exp = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_excel = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Pdf = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bbi_Export = new DevExpress.XtraBars.BarButtonItem();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gc_ProductMovement = new DevExpress.XtraGrid.GridControl();
+            this.bs_ProductMovent = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProductId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_Product = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_products = new System.Windows.Forms.BindingSource(this.components);
+            this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDurum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.img_sig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_ProductMovement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_ProductMovent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).BeginInit();
             this.SuspendLayout();
             // 
             // img_sig
@@ -71,8 +83,8 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbi_Export,
             this.bbi_exp,
-            this.barButtonItem1,
-            this.barButtonItem2,
+            this.bbi_excel,
+            this.bbi_Pdf,
             this.bbi_Report});
             this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
@@ -105,23 +117,26 @@
             this.bbi_exp.Id = 1;
             this.bbi_exp.ImageOptions.ImageIndex = 3;
             this.bbi_exp.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_excel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Pdf)});
             this.bbi_exp.Name = "bbi_exp";
+            this.bbi_exp.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barButtonItem1
+            // bbi_excel
             // 
-            this.barButtonItem1.Caption = "Excel";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageOptions.ImageIndex = 2;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.bbi_excel.Caption = "Excel";
+            this.bbi_excel.Id = 2;
+            this.bbi_excel.ImageOptions.ImageIndex = 2;
+            this.bbi_excel.Name = "bbi_excel";
+            this.bbi_excel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_excel_ItemClick);
             // 
-            // barButtonItem2
+            // bbi_Pdf
             // 
-            this.barButtonItem2.Caption = "PDF";
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.ImageOptions.ImageIndex = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.bbi_Pdf.Caption = "PDF";
+            this.bbi_Pdf.Id = 3;
+            this.bbi_Pdf.ImageOptions.ImageIndex = 1;
+            this.bbi_Pdf.Name = "bbi_Pdf";
+            this.bbi_Pdf.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Pdf_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -163,30 +178,115 @@
             this.bbi_Export.Id = 0;
             this.bbi_Export.Name = "bbi_Export";
             // 
-            // gridControl1
+            // gc_ProductMovement
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(512, 523);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gc_ProductMovement.DataSource = this.bs_ProductMovent;
+            this.gc_ProductMovement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_ProductMovement.Location = new System.Drawing.Point(0, 0);
+            this.gc_ProductMovement.MainView = this.gridView1;
+            this.gc_ProductMovement.MenuManager = this.barManager1;
+            this.gc_ProductMovement.Name = "gc_ProductMovement";
+            this.gc_ProductMovement.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rp_Product});
+            this.gc_ProductMovement.Size = new System.Drawing.Size(512, 523);
+            this.gc_ProductMovement.TabIndex = 4;
+            this.gc_ProductMovement.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bs_ProductMovent
+            // 
+            this.bs_ProductMovent.DataSource = typeof(Msp.Models.Models.ProductMovementDTO);
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProductId,
+            this.colQuantity,
+            this.colAmount,
+            this.colDurum,
+            this.colDate,
+            this.colDeleted});
+            this.gridView1.GridControl = this.gc_ProductMovement;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colProductId
+            // 
+            this.colProductId.Caption = "Ürün";
+            this.colProductId.ColumnEdit = this.rp_Product;
+            this.colProductId.FieldName = "ProductId";
+            this.colProductId.Name = "colProductId";
+            this.colProductId.Visible = true;
+            this.colProductId.VisibleIndex = 0;
+            // 
+            // rp_Product
+            // 
+            this.rp_Product.AutoHeight = false;
+            this.rp_Product.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Product.DataSource = this.bs_products;
+            this.rp_Product.DisplayMember = "PName";
+            this.rp_Product.Name = "rp_Product";
+            this.rp_Product.NullText = "";
+            this.rp_Product.ValueMember = "PID";
+            // 
+            // bs_products
+            // 
+            this.bs_products.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.colQuantity.AppearanceCell.Options.UseFont = true;
+            this.colQuantity.Caption = "Miktar";
+            this.colQuantity.FieldName = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.Visible = true;
+            this.colQuantity.VisibleIndex = 1;
+            // 
+            // colAmount
+            // 
+            this.colAmount.Caption = "Satış Fiyatı";
+            this.colAmount.DisplayFormat.FormatString = "n2";
+            this.colAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAmount.FieldName = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.Visible = true;
+            this.colAmount.VisibleIndex = 2;
+            // 
+            // colDurum
+            // 
+            this.colDurum.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.colDurum.AppearanceCell.Options.UseFont = true;
+            this.colDurum.Caption = "İşlem";
+            this.colDurum.FieldName = "Durum";
+            this.colDurum.Name = "colDurum";
+            this.colDurum.Visible = true;
+            this.colDurum.VisibleIndex = 4;
+            // 
+            // colDate
+            // 
+            this.colDate.Caption = "Tarih";
+            this.colDate.FieldName = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Visible = true;
+            this.colDate.VisibleIndex = 3;
+            // 
+            // colDeleted
+            // 
+            this.colDeleted.FieldName = "Deleted";
+            this.colDeleted.Name = "colDeleted";
             // 
             // frmStockMovement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 557);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gc_ProductMovement);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -198,8 +298,11 @@
             this.Load += new System.EventHandler(this.frmStockMovement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_sig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_ProductMovement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_ProductMovent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,14 +315,23 @@
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarButtonItem bbi_Report;
         private DevExpress.XtraBars.BarSubItem bbi_exp;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem bbi_excel;
+        private DevExpress.XtraBars.BarButtonItem bbi_Pdf;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem bbi_Export;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gc_ProductMovement;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource bs_ProductMovent;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Product;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
+        private System.Windows.Forms.BindingSource bs_products;
+        private DevExpress.XtraGrid.Columns.GridColumn colDurum;
     }
 }

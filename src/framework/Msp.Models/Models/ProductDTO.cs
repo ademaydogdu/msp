@@ -48,8 +48,11 @@ namespace Msp.Models.Models
         public decimal? PPaxAmout { get; set; } = 0;
         public bool? PKdvIstisna { get; set; } = false;
         public decimal? PKarPrice { get; set; } = 0;
-
         public string PCode { get; set; }
+        public int? PCompanyId { get; set; }
+        public int? PDepotId { get; set; }
+        public bool? Deleted { get; set; } = false;
+
 
 
     }

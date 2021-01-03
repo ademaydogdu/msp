@@ -76,12 +76,12 @@
             this.colTotalToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalKDV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
-            this.colIrsaliyeId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIrsaliyeId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
@@ -167,6 +167,7 @@
             this.btnDelete.Id = 4;
             this.btnDelete.ImageOptions.ImageIndex = 5;
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // bbi_Refresh
             // 
@@ -548,29 +549,6 @@
             this.colTotalKDV.VisibleIndex = 15;
             this.colTotalKDV.Width = 45;
             // 
-            // colDeleted
-            // 
-            this.colDeleted.FieldName = "Deleted";
-            this.colDeleted.Name = "colDeleted";
-            this.colDeleted.Visible = true;
-            this.colDeleted.VisibleIndex = 16;
-            this.colDeleted.Width = 82;
-            // 
-            // bs_Product
-            // 
-            this.bs_Product.DataSource = typeof(Msp.Models.Models.ProductDTO);
-            // 
-            // bs_Unit
-            // 
-            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
-            // 
-            // colIrsaliyeId
-            // 
-            this.colIrsaliyeId.FieldName = "IrsaliyeId";
-            this.colIrsaliyeId.Name = "colIrsaliyeId";
-            this.colIrsaliyeId.Visible = true;
-            this.colIrsaliyeId.VisibleIndex = 17;
-            // 
             // colTotalAraToplam
             // 
             this.colTotalAraToplam.DisplayFormat.FormatString = "n2";
@@ -588,6 +566,29 @@
             this.colTotalSiparis.Name = "colTotalSiparis";
             this.colTotalSiparis.Visible = true;
             this.colTotalSiparis.VisibleIndex = 19;
+            // 
+            // colDeleted
+            // 
+            this.colDeleted.FieldName = "Deleted";
+            this.colDeleted.Name = "colDeleted";
+            this.colDeleted.Visible = true;
+            this.colDeleted.VisibleIndex = 16;
+            this.colDeleted.Width = 82;
+            // 
+            // colIrsaliyeId
+            // 
+            this.colIrsaliyeId.FieldName = "IrsaliyeId";
+            this.colIrsaliyeId.Name = "colIrsaliyeId";
+            this.colIrsaliyeId.Visible = true;
+            this.colIrsaliyeId.VisibleIndex = 17;
+            // 
+            // bs_Product
+            // 
+            this.bs_Product.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
+            // bs_Unit
+            // 
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
             // OrderList
             // 

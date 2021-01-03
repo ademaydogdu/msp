@@ -757,5 +757,11 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void bbi_KasaHareketi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmKasaHareketi frm = new frmKasaHareketi();
+            frm.ShowDialog();
+        }
     }
 }

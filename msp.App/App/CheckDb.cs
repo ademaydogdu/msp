@@ -606,7 +606,20 @@ namespace Msp.App.App
             progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
-            //PCode
+
+            #region Product
+
+            sCommand.CommandText = "Select top 1 * from Products  WITH (nolock) ";
+            DataTable tblPRoduct = ExecuteSelectCommand(sCommand);
+            if (tblPRoduct.Columns.Contains("PCompanyId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Products ADD PCompanyId bit";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
+
+            #endregion
 
             #endregion
 

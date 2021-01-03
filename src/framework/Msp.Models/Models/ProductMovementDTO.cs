@@ -13,6 +13,7 @@ namespace Msp.Models.Models
         public int? Quantity { get; set; }
         public decimal? Amount { get; set; }
         public DateTime? Date { get; set; }
-        public bool? Deleted { get; set; }
+        public string Durum { get; set; }
+        public bool? Deleted { get; set; } = false;
     }
 }

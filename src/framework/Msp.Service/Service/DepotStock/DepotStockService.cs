@@ -19,7 +19,7 @@ namespace Msp.Service.Service.DepotStock
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<List<Products>, List<ProductDTO>>(_db.products.ToList());
+                return base.Map<List<Products>, List<ProductDTO>>(_db.products.Where(x=>x.Deleted == false || x.Deleted == null).ToList());
             }
         }
         public ProductDTO GetProduct(int id)
@@ -82,7 +82,6 @@ namespace Msp.Service.Service.DepotStock
                 {
                     if (response.Response.PID == 0)
                     {
-
                         if (model.PBarcode.Length > 0)
                         {
                             var barcodControl = _db.products.Where(x => x.PBarcode == model.PBarcode).Any();
@@ -94,6 +93,19 @@ namespace Msp.Service.Service.DepotStock
                         }
                         _db.products.Add(base.Map<ProductDTO, Products>(model));
                         _db.SaveChanges();
+
+                        ProductMovementDTO productMovement = new ProductMovementDTO
+                        {
+                            ProductId = model.PID,
+                            Date = DateTime.Now,
+                            Quantity = Convert.ToInt32(model.PTotal.GetValueOrDefault()),
+                            Durum = "Stok Giriş",
+                            Deleted = false,
+                            Amount = model.PSalePrice,
+                        };
+                        _db.ProductMovement.Add(base.Map<ProductMovementDTO, ProductMovement>(productMovement));
+                        _db.SaveChanges();
+
                     }
                     else
                     {
@@ -364,6 +376,17 @@ namespace Msp.Service.Service.DepotStock
 
         #endregion
 
+        #region ProductMovemnet
+        public List<ProductMovementDTO> GetListProduct_Movement(int Id)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<ProductMovement>, List<ProductMovementDTO>>(_db.ProductMovement.Where(x=>x.ProductId == Id && x.Deleted == false).ToList());
+            }
+        }
+
+
+        #endregion
 
     }
 }

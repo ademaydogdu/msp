@@ -12,6 +12,7 @@ using Msp.Models.Models;
 using Msp.Models.Models.Sale;
 using Msp.App.Report.Satis;
 using Msp.App.Report.CariHesap;
+using Msp.App.Report.Depo_Stock;
 
 namespace Msp.App.Report
 {
@@ -55,7 +56,15 @@ namespace Msp.App.Report
         }
 
 
-
+        public void PrintEnvanterBilgisi(List<ProductDTO> data)
+        {
+            EnvanterBilgileri report = new EnvanterBilgileri();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
 
 
     }
