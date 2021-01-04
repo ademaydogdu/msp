@@ -109,31 +109,35 @@
             this.colbDate});
             this.gcv_BankEntry.GridControl = this.gridControl1;
             this.gcv_BankEntry.Name = "gcv_BankEntry";
+            this.gcv_BankEntry.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_BankEntry.OptionsView.ShowGroupPanel = false;
             // 
             // colbid
             // 
-            this.colbid.FieldName = "ID";
+            this.colbid.FieldName = "bid";
             this.colbid.Name = "colbid";
             this.colbid.Visible = true;
             this.colbid.VisibleIndex = 0;
             // 
             // coldocNo
             // 
-            this.coldocNo.FieldName = "Fiş No";
+            this.coldocNo.Caption = "Fiş No";
+            this.coldocNo.FieldName = "docNo";
             this.coldocNo.Name = "coldocNo";
             this.coldocNo.Visible = true;
             this.coldocNo.VisibleIndex = 1;
             // 
             // colbankName
             // 
-            this.colbankName.FieldName = "Banka Adı";
+            this.colbankName.FieldName = "bankID";
             this.colbankName.Name = "colbankName";
             this.colbankName.Visible = true;
             this.colbankName.VisibleIndex = 2;
             // 
             // coldescription
             // 
-            this.coldescription.FieldName = "Açıklama";
+            this.coldescription.Caption = "Açıklama";
+            this.coldescription.FieldName = "description";
             this.coldescription.Name = "coldescription";
             this.coldescription.Visible = true;
             this.coldescription.VisibleIndex = 3;
@@ -154,7 +158,7 @@
             // 
             // colbDate
             // 
-            this.colbDate.FieldName = "Tarih";
+            this.colbDate.FieldName = "bDate";
             this.colbDate.Name = "colbDate";
             this.colbDate.Visible = true;
             this.colbDate.VisibleIndex = 6;

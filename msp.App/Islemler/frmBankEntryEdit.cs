@@ -60,16 +60,16 @@ namespace Msp.App.Islemler
                 XtraMessageBox.Show("KDV Oranı Bilgisi Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _return = true;
             }
-            if ((int)amountTE.EditValue == 0 || (int)withdrawTE.EditValue == 0)
-            {
-                XtraMessageBox.Show("Yatan Tutar Veya Çekilen Tutar Bilgisi Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _return = true;
-            }
-            if ((decimal)docNoTE.EditValue == 0)
-            {
-                XtraMessageBox.Show("Fiş No İle Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _return = true;
-            }
+            //if ((int)amountTE.EditValue == 0 || (int)withdrawTE.EditValue == 0)
+            //{
+            //    XtraMessageBox.Show("Yatan Tutar Veya Çekilen Tutar Bilgisi Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    _return = true;
+            //}
+            //if ((decimal)docNoTE.EditValue == 0)
+            //{
+            //    XtraMessageBox.Show("Fiş No İle Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    _return = true;
+            //}
 
             return _return;
         }
@@ -144,6 +144,17 @@ namespace Msp.App.Islemler
                 //units = _repository.Run<BankEntryServices, List<BankEntryDTO>>(x => x.GetListBankEntries());
                 //bs_Unit.DataSource = units;
             }
+        }
+
+
+        private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_save();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

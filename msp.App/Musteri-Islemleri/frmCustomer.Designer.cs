@@ -67,6 +67,8 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).BeginInit();
@@ -119,7 +121,9 @@
             this.gcvCustomers.GridControl = this.grdCustomers;
             this.gcvCustomers.Name = "gcvCustomers";
             this.gcvCustomers.OptionsBehavior.Editable = false;
+            this.gcvCustomers.OptionsView.ColumnAutoWidth = false;
             this.gcvCustomers.OptionsView.ShowAutoFilterRow = true;
+            this.gcvCustomers.OptionsView.ShowGroupPanel = false;
             this.gcvCustomers.DoubleClick += new System.EventHandler(this.gcvCustomers_DoubleClick);
             // 
             // colid
@@ -246,6 +250,7 @@
             this.svgImageCollection2.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
             this.svgImageCollection2.Add("delete", "image://svgimages/scheduling/delete.svg");
             this.svgImageCollection2.Add("delete_1", "image://svgimages/scheduling/delete.svg");
+            this.svgImageCollection2.Add("text", "image://svgimages/spreadsheet/text.svg");
             // 
             // Root
             // 
@@ -293,8 +298,10 @@
             this.barDockingMenuItem1,
             this.barToolbarsListItem1,
             this.barSubItem1,
-            this.barEditItem1});
-            this.barManager1.MaxItemId = 17;
+            this.barEditItem1,
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 19;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMarqueeProgressBar1});
             this.barManager1.SharedImageCollectionImageSizeMode = DevExpress.Utils.SharedImageCollectionImageSizeMode.UseImageSize;
@@ -312,7 +319,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddNewCustomer),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemCustomer),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditCustomer),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnCustomerClose)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnCustomerClose),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -472,6 +481,20 @@
             // 
             this.repositoryItemMarqueeProgressBar1.Name = "repositoryItemMarqueeProgressBar1";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Müşteri Veresiye Defteri";
+            this.barButtonItem1.Id = 17;
+            this.barButtonItem1.ImageOptions.ImageIndex = 67;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Yazdır";
+            this.barButtonItem2.Id = 18;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -543,5 +566,7 @@
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar repositoryItemMarqueeProgressBar1;
         private DevExpress.Utils.SvgImageCollection svgImageCollection2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
