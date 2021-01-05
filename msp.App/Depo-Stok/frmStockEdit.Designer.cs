@@ -56,7 +56,6 @@
             this.totalTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.productGroupTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.SpecialCodetextEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.BrandCodetextEdit = new DevExpress.XtraEditors.TextEdit();
             this.UnittextEdit = new DevExpress.XtraEditors.LookUpEdit();
@@ -146,6 +145,11 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.productGroupTextEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_UrunGrup = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_Depot = new System.Windows.Forms.BindingSource(this.components);
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -169,7 +173,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.totalTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialCodetextEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrandCodetextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).BeginInit();
@@ -251,6 +254,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             this.SuspendLayout();
             // 
             // bs_StockEdit
@@ -259,6 +267,7 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.lookUpEdit1);
             this.dataLayoutControl1.Controls.Add(this.panelControl6);
             this.dataLayoutControl1.Controls.Add(this.panelControl5);
             this.dataLayoutControl1.Controls.Add(this.panelControl4);
@@ -272,7 +281,6 @@
             this.dataLayoutControl1.Controls.Add(this.totalTextEdit);
             this.dataLayoutControl1.Controls.Add(this.textEdit2);
             this.dataLayoutControl1.Controls.Add(this.textEdit1);
-            this.dataLayoutControl1.Controls.Add(this.productGroupTextEdit);
             this.dataLayoutControl1.Controls.Add(this.SpecialCodetextEdit3);
             this.dataLayoutControl1.Controls.Add(this.BrandCodetextEdit);
             this.dataLayoutControl1.Controls.Add(this.UnittextEdit);
@@ -286,6 +294,7 @@
             this.dataLayoutControl1.Controls.Add(this.buttonEdit1);
             this.dataLayoutControl1.Controls.Add(this.txtIskonto);
             this.dataLayoutControl1.Controls.Add(this.textEdit3);
+            this.dataLayoutControl1.Controls.Add(this.productGroupTextEdit);
             this.dataLayoutControl1.DataSource = this.bs_StockEdit;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Images = this.svgImageCollection1;
@@ -500,7 +509,7 @@
             // nameTextEdit
             // 
             this.nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PName", true));
-            this.nameTextEdit.Location = new System.Drawing.Point(154, 237);
+            this.nameTextEdit.Location = new System.Drawing.Point(154, 285);
             this.nameTextEdit.Name = "nameTextEdit";
             this.nameTextEdit.Size = new System.Drawing.Size(175, 20);
             this.nameTextEdit.StyleController = this.dataLayoutControl1;
@@ -509,7 +518,7 @@
             // categoryIdTextEdit
             // 
             this.categoryIdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PCategoryId", true));
-            this.categoryIdTextEdit.Location = new System.Drawing.Point(154, 494);
+            this.categoryIdTextEdit.Location = new System.Drawing.Point(154, 542);
             this.categoryIdTextEdit.Name = "categoryIdTextEdit";
             this.categoryIdTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.categoryIdTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -525,7 +534,7 @@
             // 
             this.dateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PDate", true));
             this.dateDateEdit.EditValue = null;
-            this.dateDateEdit.Location = new System.Drawing.Point(154, 278);
+            this.dateDateEdit.Location = new System.Drawing.Point(154, 326);
             this.dateDateEdit.Name = "dateDateEdit";
             this.dateDateEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.dateDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -571,7 +580,7 @@
             // textEdit2
             // 
             this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PBrandName", true));
-            this.textEdit2.Location = new System.Drawing.Point(154, 386);
+            this.textEdit2.Location = new System.Drawing.Point(154, 434);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(175, 20);
             this.textEdit2.StyleController = this.dataLayoutControl1;
@@ -580,25 +589,16 @@
             // textEdit1
             // 
             this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PVarDescription", true));
-            this.textEdit1.Location = new System.Drawing.Point(154, 314);
+            this.textEdit1.Location = new System.Drawing.Point(154, 362);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(175, 20);
             this.textEdit1.StyleController = this.dataLayoutControl1;
             this.textEdit1.TabIndex = 14;
             // 
-            // productGroupTextEdit
-            // 
-            this.productGroupTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PGroup", true));
-            this.productGroupTextEdit.Location = new System.Drawing.Point(154, 458);
-            this.productGroupTextEdit.Name = "productGroupTextEdit";
-            this.productGroupTextEdit.Size = new System.Drawing.Size(175, 20);
-            this.productGroupTextEdit.StyleController = this.dataLayoutControl1;
-            this.productGroupTextEdit.TabIndex = 15;
-            // 
             // SpecialCodetextEdit3
             // 
             this.SpecialCodetextEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PSpecCode", true));
-            this.SpecialCodetextEdit3.Location = new System.Drawing.Point(154, 350);
+            this.SpecialCodetextEdit3.Location = new System.Drawing.Point(154, 398);
             this.SpecialCodetextEdit3.Name = "SpecialCodetextEdit3";
             this.SpecialCodetextEdit3.Size = new System.Drawing.Size(175, 20);
             this.SpecialCodetextEdit3.StyleController = this.dataLayoutControl1;
@@ -607,7 +607,7 @@
             // BrandCodetextEdit
             // 
             this.BrandCodetextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PBrandCode", true));
-            this.BrandCodetextEdit.Location = new System.Drawing.Point(154, 422);
+            this.BrandCodetextEdit.Location = new System.Drawing.Point(154, 470);
             this.BrandCodetextEdit.Name = "BrandCodetextEdit";
             this.BrandCodetextEdit.Size = new System.Drawing.Size(175, 20);
             this.BrandCodetextEdit.StyleController = this.dataLayoutControl1;
@@ -798,6 +798,8 @@
             this.svgImageCollection1.Add("top10percent", "image://svgimages/spreadsheet/top10percent.svg");
             this.svgImageCollection1.Add("print", "image://svgimages/dashboards/print.svg");
             this.svgImageCollection1.Add("paymentrefund", "image://svgimages/outlook inspired/paymentrefund.svg");
+            this.svgImageCollection1.Add("title", "image://svgimages/dashboards/title.svg");
+            this.svgImageCollection1.Add("bo_quote_1", "image://svgimages/business objects/bo_quote.svg");
             // 
             // taxTextEdit
             // 
@@ -818,7 +820,7 @@
             // 
             this.dateDateEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PExpDate", true));
             this.dateDateEdit1.EditValue = null;
-            this.dateDateEdit1.Location = new System.Drawing.Point(154, 530);
+            this.dateDateEdit1.Location = new System.Drawing.Point(154, 578);
             this.dateDateEdit1.Name = "dateDateEdit1";
             this.dateDateEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.dateDateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -912,7 +914,7 @@
             // textEdit3
             // 
             this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PCode", true));
-            this.textEdit3.Location = new System.Drawing.Point(154, 213);
+            this.textEdit3.Location = new System.Drawing.Point(154, 249);
             this.textEdit3.MenuManager = this.barManager2;
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(175, 20);
@@ -1196,7 +1198,8 @@
             this.ItemForcategoryId,
             this.emptySpaceItem1,
             this.ItemFordate1,
-            this.layoutControlItem27});
+            this.layoutControlItem27,
+            this.layoutControlItem28});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 168);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(333, 468);
@@ -1206,7 +1209,7 @@
             // 
             this.ItemForname.Control = this.nameTextEdit;
             this.ItemForname.ImageOptions.ImageIndex = 26;
-            this.ItemForname.Location = new System.Drawing.Point(0, 24);
+            this.ItemForname.Location = new System.Drawing.Point(0, 72);
             this.ItemForname.MaxSize = new System.Drawing.Size(309, 41);
             this.ItemForname.MinSize = new System.Drawing.Size(309, 41);
             this.ItemForname.Name = "ItemForname";
@@ -1220,7 +1223,7 @@
             this.ItemFordate.Control = this.dateDateEdit;
             this.ItemFordate.ImageOptions.ImageIndex = 64;
             this.ItemFordate.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
-            this.ItemFordate.Location = new System.Drawing.Point(0, 65);
+            this.ItemFordate.Location = new System.Drawing.Point(0, 113);
             this.ItemFordate.MaxSize = new System.Drawing.Size(309, 36);
             this.ItemFordate.MinSize = new System.Drawing.Size(309, 36);
             this.ItemFordate.Name = "ItemFordate";
@@ -1233,7 +1236,7 @@
             // 
             this.layoutControlItem4.Control = this.textEdit1;
             this.layoutControlItem4.ImageOptions.ImageIndex = 63;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 101);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 149);
             this.layoutControlItem4.MaxSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -1246,7 +1249,7 @@
             // 
             this.layoutControlItem6.Control = this.SpecialCodetextEdit3;
             this.layoutControlItem6.ImageOptions.ImageIndex = 14;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 137);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 185);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -1259,7 +1262,7 @@
             // 
             this.layoutControlItem2.Control = this.textEdit2;
             this.layoutControlItem2.ImageOptions.ImageIndex = 52;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 173);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 221);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -1272,7 +1275,7 @@
             // 
             this.layoutControlItem7.Control = this.BrandCodetextEdit;
             this.layoutControlItem7.ImageOptions.ImageIndex = 51;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 209);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 257);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(309, 36);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -1285,12 +1288,9 @@
             // 
             this.layoutControlItem5.Control = this.productGroupTextEdit;
             this.layoutControlItem5.ImageOptions.ImageIndex = 55;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 245);
-            this.layoutControlItem5.MaxSize = new System.Drawing.Size(309, 36);
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(309, 36);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 293);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(309, 36);
-            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.Text = "Ürün Grubu";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(127, 32);
             // 
@@ -1298,7 +1298,7 @@
             // 
             this.ItemForcategoryId.Control = this.categoryIdTextEdit;
             this.ItemForcategoryId.ImageOptions.ImageIndex = 54;
-            this.ItemForcategoryId.Location = new System.Drawing.Point(0, 281);
+            this.ItemForcategoryId.Location = new System.Drawing.Point(0, 329);
             this.ItemForcategoryId.MaxSize = new System.Drawing.Size(309, 36);
             this.ItemForcategoryId.MinSize = new System.Drawing.Size(309, 36);
             this.ItemForcategoryId.Name = "ItemForcategoryId";
@@ -1310,9 +1310,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 353);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 401);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(309, 70);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(309, 22);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ItemFordate1
@@ -1322,7 +1322,7 @@
             this.ItemFordate1.CustomizationFormText = "Tarih";
             this.ItemFordate1.ImageOptions.ImageIndex = 64;
             this.ItemFordate1.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
-            this.ItemFordate1.Location = new System.Drawing.Point(0, 317);
+            this.ItemFordate1.Location = new System.Drawing.Point(0, 365);
             this.ItemFordate1.MaxSize = new System.Drawing.Size(309, 36);
             this.ItemFordate1.MinSize = new System.Drawing.Size(309, 36);
             this.ItemFordate1.Name = "ItemFordate1";
@@ -1334,11 +1334,12 @@
             // layoutControlItem27
             // 
             this.layoutControlItem27.Control = this.textEdit3;
-            this.layoutControlItem27.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem27.ImageOptions.ImageIndex = 68;
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem27.Name = "layoutControlItem27";
-            this.layoutControlItem27.Size = new System.Drawing.Size(309, 24);
+            this.layoutControlItem27.Size = new System.Drawing.Size(309, 36);
             this.layoutControlItem27.Text = "Ürün Kodu";
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(127, 13);
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(127, 32);
             // 
             // emptySpaceItem3
             // 
@@ -1668,6 +1669,55 @@
             this.layoutControlItem26.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem26.TextVisible = false;
             // 
+            // productGroupTextEdit
+            // 
+            this.productGroupTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PGroup", true));
+            this.productGroupTextEdit.Location = new System.Drawing.Point(154, 506);
+            this.productGroupTextEdit.Name = "productGroupTextEdit";
+            this.productGroupTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.productGroupTextEdit.Properties.DataSource = this.bs_UrunGrup;
+            this.productGroupTextEdit.Properties.DisplayMember = "ReGroup";
+            this.productGroupTextEdit.Properties.NullText = "";
+            this.productGroupTextEdit.Properties.ValueMember = "RecId";
+            this.productGroupTextEdit.Size = new System.Drawing.Size(175, 20);
+            this.productGroupTextEdit.StyleController = this.dataLayoutControl1;
+            this.productGroupTextEdit.TabIndex = 15;
+            // 
+            // bs_UrunGrup
+            // 
+            this.bs_UrunGrup.DataSource = typeof(Msp.Models.Models.ProductGroupDTO);
+            // 
+            // bs_Depot
+            // 
+            this.bs_Depot.DataSource = typeof(Msp.Models.Models.DepotDTO);
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PDepotId", true));
+            this.lookUpEdit1.Location = new System.Drawing.Point(154, 213);
+            this.lookUpEdit1.MenuManager = this.barManager2;
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DataSource = this.bs_Depot;
+            this.lookUpEdit1.Properties.DisplayMember = "DepName";
+            this.lookUpEdit1.Properties.NullText = "";
+            this.lookUpEdit1.Properties.ValueMember = "DID";
+            this.lookUpEdit1.Size = new System.Drawing.Size(175, 20);
+            this.lookUpEdit1.StyleController = this.dataLayoutControl1;
+            this.lookUpEdit1.TabIndex = 38;
+            // 
+            // layoutControlItem28
+            // 
+            this.layoutControlItem28.Control = this.lookUpEdit1;
+            this.layoutControlItem28.ImageOptions.ImageIndex = 2;
+            this.layoutControlItem28.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem28.Name = "layoutControlItem28";
+            this.layoutControlItem28.Size = new System.Drawing.Size(309, 36);
+            this.layoutControlItem28.Text = "Depo";
+            this.layoutControlItem28.TextSize = new System.Drawing.Size(127, 32);
+            // 
             // frmStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1713,7 +1763,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.totalTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialCodetextEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrandCodetextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).EndInit();
@@ -1795,6 +1844,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1821,7 +1875,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit productGroupTextEdit;
         private DevExpress.XtraEditors.TextEdit SpecialCodetextEdit3;
         private DevExpress.XtraEditors.TextEdit BrandCodetextEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
@@ -1919,5 +1972,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem27;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private System.Windows.Forms.BindingSource bs_Depot;
+        private DevExpress.XtraEditors.LookUpEdit productGroupTextEdit;
+        private System.Windows.Forms.BindingSource bs_UrunGrup;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem28;
     }
 }

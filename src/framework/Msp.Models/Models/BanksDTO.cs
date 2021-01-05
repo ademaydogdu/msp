@@ -10,7 +10,7 @@ namespace Msp.Models.Models
     public class BanksDTO
     {
 
-        public int? Bid { get; set; }
+        public int Bid { get; set; }
 
         public string BankName { get; set; }
 

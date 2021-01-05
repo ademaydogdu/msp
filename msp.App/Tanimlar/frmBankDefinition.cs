@@ -26,7 +26,7 @@ namespace Msp.App.Tanimlar
         }
 
         List<BanksDTO> _bankDetailsList = new List<BanksDTO>();
-        private BanksDTO _bankDetails = new BanksDTO();
+
 
         public void do_refresh()
         {
@@ -48,16 +48,16 @@ namespace Msp.App.Tanimlar
         private bool do_Validation()
         {
             bool _return = false;
-            if (Convert.ToString(bankDefBankNameTE.EditValue) == "")
-            {
-                XtraMessageBox.Show("Banka Adı Bilgisi Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _return = true;
-            }
-            if (bankDefBranchName.EditValue == "")
-            {
-                XtraMessageBox.Show("Şube Bilgisi Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _return = true;
-            }
+            //if (Convert.ToString(bankDefBankNameTE.EditValue) == "")
+            //{
+            //    XtraMessageBox.Show("Banka Adı Bilgisi Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    _return = true;
+            //}
+            //if (bankDefBranchName.EditValue == "")
+            //{
+            //    XtraMessageBox.Show("Şube Bilgisi Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    _return = true;
+            //}
 
             return _return;
         }
@@ -68,8 +68,7 @@ namespace Msp.App.Tanimlar
             {
                 try
                 {
-
-                    var response = _repository.Run<BankEntryServices, ActionResponse<BanksDTO>>(x => x.SaveBank(_bankDetails));
+                    var response = _repository.Run<BankEntryServices, ActionResponse<List<BanksDTO>>>(x => x.SaveBank(_bankDetailsList));
                     if (response.ResponseType != ResponseType.Ok)
                     {
                         DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -89,54 +88,52 @@ namespace Msp.App.Tanimlar
             if (Orow != null)
             {
 
-                bankDefBranchName.EditValue = _bankDetails.BankBranch;
-                bankDefBranchCode.EditValue = _bankDetails.BankBranchCode;
-                bankDefBankNameTE.EditValue = _bankDetails.BankName;
-                bankDefAccNo.EditValue = _bankDetails.BankAccountNumber;
-                bankDefAccName.EditValue = _bankDetails.BankAccountName;
-
-               
-
+                //bankDefBranchName.EditValue = _bankDetails.BankBranch;
+                //bankDefBranchCode.EditValue = _bankDetails.BankBranchCode;
+                //bankDefBankNameTE.EditValue = _bankDetails.BankName;
+                //bankDefAccNo.EditValue = _bankDetails.BankAccountNumber;
+                //bankDefAccName.EditValue = _bankDetails.BankAccountName;
             }
 
         }
 
-        private void btnBankDefSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            do_save();
-        }
 
-        private void btnBankDefRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            do_refresh();
-        }
-
-        private void btnBankDefRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            BanksDTO oRow = (BanksDTO)gcv_BankDetails.GetFocusedRow();
-
-            if (oRow != null)
-            {
-                if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
-                {
-                    var result = _repository.Run<BankEntryServices, ActionResponse<BanksDTO>>(x => x.DeleteBank(oRow.Bid));
-                    do_refresh();
-                }
-            }
-        }
-
-        private void btnBankDefAddNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            bankDefBranchName.EditValue = "";
-            bankDefBranchCode.EditValue = "";
-            bankDefBankNameTE.EditValue = "";
-            bankDefAccNo.EditValue = "";
-            bankDefAccName.EditValue = "";
-        }
 
         private void frmBankDefinition_Load(object sender, EventArgs e)
         {
             do_refresh();
+        }
+
+        private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_save();
+        }
+
+        private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            BanksDTO oRow = (BanksDTO)gcv_BankDetails.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                {
+                    if (oRow.Bid == 0)
+                    {
+                        _bankDetailsList.Remove(oRow);
+                        gridControl1.RefreshDataSource();
+                    }
+                    else
+                    {
+                        var result = _repository.Run<BankEntryServices, ActionResponse<BanksDTO>>(x => x.DeleteBank(oRow.Bid));
+                        do_refresh();
+                    }
+              
+                }
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

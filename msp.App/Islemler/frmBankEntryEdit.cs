@@ -27,13 +27,16 @@ namespace Msp.App.Islemler
         public FormOpenType _FormOpenType;
 
         private BankEntryDTO __bankEntries = new BankEntryDTO();
-        List<BanksDTO> banks = new List<BanksDTO>();
+
+
+        List<BanksDTO> _bankDetailsList = new List<BanksDTO>();
 
 
         public void Show(int id)
         {
-            banks = _repository.Run<BankEntryServices, List<BanksDTO>>(x => x.GetListBanks());
-            bs_BankEntries.DataSource = banks;
+
+            _bankDetailsList = _repository.Run<BankEntryServices, List<BanksDTO>>(x => x.GetListBanks());
+            bs_BankDetails.DataSource = _bankDetailsList;
 
             if (_FormOpenType == FormOpenType.Edit)
             {
@@ -138,11 +141,20 @@ namespace Msp.App.Islemler
         {
             if (e.Button.Index == 1)
             {
-                frmBankDefinition frm = new frmBankDefinition();
-                frm.ShowDialog();
+                try
+                {
+                    frmBankDefinition frm = new frmBankDefinition();
+                    frm.ShowDialog();
+                }
+                catch (Exception)
+                {
+                }
+                finally
+                {
 
-                //units = _repository.Run<BankEntryServices, List<BankEntryDTO>>(x => x.GetListBankEntries());
-                //bs_Unit.DataSource = units;
+                    _bankDetailsList = _repository.Run<BankEntryServices, List<BanksDTO>>(x => x.GetListBanks());
+                    bs_BankDetails.DataSource = _bankDetailsList;
+                }
             }
         }
 

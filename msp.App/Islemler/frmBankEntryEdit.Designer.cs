@@ -59,6 +59,7 @@
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
+            this.bs_BankDetails = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bankNameTE.Properties)).BeginInit();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_BankEntries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_BankDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -108,9 +110,10 @@
             this.bankNameTE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
-            this.bankNameTE.Properties.DisplayMember = "UName";
+            this.bankNameTE.Properties.DataSource = this.bs_BankDetails;
+            this.bankNameTE.Properties.DisplayMember = "BankName";
             this.bankNameTE.Properties.NullText = "";
-            this.bankNameTE.Properties.ValueMember = "UID";
+            this.bankNameTE.Properties.ValueMember = "Bid";
             this.bankNameTE.Size = new System.Drawing.Size(453, 20);
             this.bankNameTE.StyleController = this.layoutControl1;
             this.bankNameTE.TabIndex = 14;
@@ -450,6 +453,10 @@
             this.bbi_Refresh.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Refresh.Name = "bbi_Refresh";
             // 
+            // bs_BankDetails
+            // 
+            this.bs_BankDetails.DataSource = typeof(Msp.Models.Models.BanksDTO);
+            // 
             // frmBankEntryEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_BankEntries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_BankDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,5 +531,6 @@
         private DevExpress.Utils.SvgImageCollection img_bar;
         private DevExpress.XtraBars.BarButtonItem bbi_Delete;
         private DevExpress.XtraBars.BarButtonItem bbi_Refresh;
+        private System.Windows.Forms.BindingSource bs_BankDetails;
     }
 }

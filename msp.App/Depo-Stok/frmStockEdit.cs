@@ -9,7 +9,9 @@ using Msp.Infrastructure;
 using Msp.Models.Models;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Repository;
+using Msp.Service.Service.Depot;
 using Msp.Service.Service.DepotStock;
+using Msp.Service.Service.Tanimlar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +59,7 @@ namespace Msp.App.Depo_Stok
                 __product = new ProductDTO();
                 __product.PDate = DateTime.Now;
                 __product.PExpDate = DateTime.Now;
+                __product.PCompanyId = AppMain.CompanyRecId;
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
@@ -194,6 +197,8 @@ namespace Msp.App.Depo_Stok
         private void frmStockEdit_Load(object sender, EventArgs e)
         {
             // StockEditPE.DataBindings.Add("EditValue", bs_StockEdit, "image");
+            bs_Depot.DataSource = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+            bs_UrunGrup.DataSource = _repository.Run<DefinitionsService, List<ProductGroupDTO>>(x => x.Get_List_ProductGroup());
         }
 
         private void buttonEdit1_EditValueChanged(object sender, EventArgs e)

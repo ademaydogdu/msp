@@ -39,7 +39,7 @@ namespace Msp.Entity.Entities
 
         public string PBrandCode { get; set; }
 
-        public string PGroup { get; set; }
+        public int? PGroup { get; set; }
 
         public byte[] PImages { get; set; }
 

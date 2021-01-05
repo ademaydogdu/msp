@@ -10,7 +10,7 @@ namespace Msp.Entity.Entities
    public class Banks
     {
         [Key]
-        public int? Bid { get; set; }
+        public int Bid { get; set; }
 
         [StringLength(50)]
         public string BankName { get; set; }

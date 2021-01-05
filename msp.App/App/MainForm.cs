@@ -763,5 +763,12 @@ namespace msp.App
             frmKasaHareketi frm = new frmKasaHareketi();
             frm.ShowDialog();
         }
+
+        private void barButtonItem126_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmBankDefinition frm = new frmBankDefinition();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

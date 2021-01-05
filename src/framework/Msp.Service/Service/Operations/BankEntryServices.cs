@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Msp.Service.Service.Operations
 {
-   public class BankEntryServices : BaseService
+    public class BankEntryServices : BaseService
     {
         public List<BankEntryDTO> GetListBankEntries()
         {
@@ -164,9 +164,9 @@ namespace Msp.Service.Service.Operations
             return response;
         }
 
-        public ActionResponse<BanksDTO> SaveBank(BanksDTO model)
+        public ActionResponse<List<BanksDTO>> SaveBank(List<BanksDTO> model)
         {
-            ActionResponse<BanksDTO> response = new ActionResponse<BanksDTO>()
+            ActionResponse<List<BanksDTO>> response = new ActionResponse<List<BanksDTO>>()
             {
                 Response = model,
                 ResponseType = ResponseType.Ok
@@ -175,19 +175,22 @@ namespace Msp.Service.Service.Operations
             {
                 try
                 {
-                    if (response.Response.Bid == 0)
+                    foreach (var item in model)
                     {
-                        _db.Banks.Add(base.Map<BanksDTO, Banks>(model));
-                        _db.SaveChanges();
-                    }
-                    else
-                    {
-                        var entity = _db.Banks.FirstOrDefault(x => x.Bid == response.Response.Bid);
-                        if (entity != null)
+                        if (item.Bid == 0)
                         {
-                            _db.Entry(entity).CurrentValues.SetValues(model);
-                            _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            _db.Banks.Add(base.Map<BanksDTO, Banks>(item));
+                            _db.SaveChanges();
                         }
+                        else
+                        {
+                            var entity = _db.Banks.FirstOrDefault(x => x.Bid == item.Bid);
+                            if (entity != null)
+                            {
+                                _db.Entry(entity).CurrentValues.SetValues(model);
+                                _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            }
+                        } 
                     }
                     _db.SaveChanges();
                 }
