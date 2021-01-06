@@ -5,6 +5,7 @@ using Msp.Models.Models.App;
 using Msp.Models.Models.Invoice;
 using Msp.Models.Models.Order;
 using Msp.Models.Models.Sale;
+using Msp.Models.Models.SecRights;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<OrderOwnerDTO, OrderOwner>();
             cfg.CreateMap<OrderTrans, OrderTransDTO>();
             cfg.CreateMap<OrderTransDTO, OrderTrans>();
+            cfg.CreateMap<SecRights, SecRightsDTO>();
+            cfg.CreateMap<SecRightsDTO, SecRights>();
         }
 
 

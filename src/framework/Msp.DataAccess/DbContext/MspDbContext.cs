@@ -51,6 +51,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<OrderOwner> OrderOwner { get; set; }
         public virtual DbSet<OrderTrans> OrderTrans { get; set; }
         public virtual DbSet<CashPayGroupDef> CashPayGroupDef { get; set; }
+        public virtual DbSet<SecRights> SecRights { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Categories>()

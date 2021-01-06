@@ -6,8 +6,10 @@ using Microsoft.Win32;
 using Msp.App.Waiting;
 using Msp.Infrastructure;
 using Msp.Infrastructure.DbConectionModel;
+using Msp.Infrastructure.Extensions;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
+using Msp.Models.Models.SecRights;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,9 @@ namespace Msp.App.Tool
     {
         public static TreeView ActiveView = new TreeView();
         private static ListView lstUsers = new ListView();
+
+        private static Dictionary<SecRightType, string> permissionField;
+        private static Dictionary<SecRightType, string> permissionFieldDesc;
 
         public static bool sqlKontrol(string server, string database, string username, string password)
         {
@@ -649,6 +654,81 @@ namespace Msp.App.Tool
 
         #endregion
 
+        #region Yetki
+
+        public static bool PermissionControl(string UserCode, SecRightType secRightType, int documentType, int company = 0)
+        {
+
+
+            //return true;
+
+            bool x = string.Equals(AppMain.User.username, "Admin", StringComparison.CurrentCultureIgnoreCase);
+            if (x)
+            {
+                return x;
+            }
+
+            Service.Repository.Repository _repository = new Service.Repository.Repository();
+            var __SecRight = _repository.Run<Service.Service.Settings.SettingsService, List<SecRightsDTO>>(r => r.GetList_SecRight());
+
+            //var rightQuery = blvalue.SecRightsAccounting.Where(r => r.Code == code
+            //                                                  && r.AppType == (int)apptype
+            //                                                  && r.DocumentType == documentType);
+            var rightQuery = __SecRight.Where(y => y.UserCode == UserCode && y.DocumentType == documentType);
+
+            if (company != 0)
+            {
+                rightQuery = rightQuery.Where(r => r.CompanyRecId == company);
+            }
+            var right = rightQuery.FirstOrDefault();
+
+
+            x = (right != null && (int)right.GetValue(PermissinField[secRightType]) == 1);
+            if (!x)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show($"{UserCode} İçin {PermissinFieldDesc[secRightType]} Yetkiniz Yok...");
+            }
+
+            return x;
+
+        }
+
+
+
+        private static Dictionary<SecRightType, string> PermissinField
+        {
+            get
+            {
+                if (permissionField == null)
+                {
+                    permissionField = new Dictionary<SecRightType, string>();
+                    permissionField.Add(SecRightType.Update, "SecUpdate");
+                    permissionField.Add(SecRightType.Insert, "SecInsert");
+                    permissionField.Add(SecRightType.Delete, "SecDelete");
+                    permissionField.Add(SecRightType.Preview, "SecPreview");
+                }
+                return permissionField;
+            }
+        }
+
+        private static Dictionary<SecRightType, string> PermissinFieldDesc
+        {
+            get
+            {
+                if (permissionFieldDesc == null)
+                {
+                    permissionFieldDesc = new Dictionary<SecRightType, string>();
+                    permissionFieldDesc.Add(SecRightType.Update, "Düzenleme");
+                    permissionFieldDesc.Add(SecRightType.Insert, "Yeni Kayıt");
+                    permissionFieldDesc.Add(SecRightType.Delete, "Silme");
+                    permissionFieldDesc.Add(SecRightType.Preview, "İzleme");
+                }
+                return permissionFieldDesc;
+            }
+        }
+
+
+        #endregion
 
         public static void wclose()
         {
@@ -669,6 +749,7 @@ namespace Msp.App.Tool
 
     }
 
+    #region ModRegistry
     class ModRegistry
     {
         //   [StandardModule]
@@ -1892,5 +1973,6 @@ namespace Msp.App.Tool
 
     }
 
+    #endregion
 
 }

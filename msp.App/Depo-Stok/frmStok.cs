@@ -15,6 +15,7 @@ using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
 using msp.App;
 using Msp.App.Report;
+using Msp.Infrastructure;
 
 namespace Msp.App.Depo_Stok
 {
@@ -97,6 +98,10 @@ namespace Msp.App.Depo_Stok
         #region Add
         private void btnAddNewProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.StockList, AppMain.CompanyRecId))
+            {
+                return;
+            }
             frmStockEdit frm = new frmStockEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
             frm.Show(0);

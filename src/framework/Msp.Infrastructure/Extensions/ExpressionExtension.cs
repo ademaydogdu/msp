@@ -20,5 +20,39 @@ namespace Msp.Infrastructure.Extensions
             return list;
 
         }
+
+        public static object GetValue<S>(this S source, string name) where S : class
+        {
+            //we will see what happend when we use it (OUZ)
+            object value = default;
+            Type reservation = source.GetType();
+            var properties = reservation.GetProperty(name);
+            if (properties != null)
+            {
+                value = properties.GetValue(source, null);
+                if (value == null)
+                {
+                    if (value is decimal)
+                    {
+                        value = 0;
+                    }
+                    if (value is string)
+                    {
+                        value = "";
+                    }
+                    if (value is int)
+                    {
+                        value = 0;
+                    }
+                    if (value is double)
+                    {
+                        value = 0;
+                    }
+                }
+            }
+            return value;
+
+        }
+
     }
 }

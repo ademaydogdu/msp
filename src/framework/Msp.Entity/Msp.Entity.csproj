@@ -78,6 +78,7 @@
     <Compile Include="Entities\ProgramsControl.cs" />
     <Compile Include="Entities\SaleOwner.cs" />
     <Compile Include="Entities\SaleTrans.cs" />
+    <Compile Include="Entities\SecRights.cs" />
     <Compile Include="Entities\SpeedSaleProduct.cs" />
     <Compile Include="Entities\Units.cs" />
     <Compile Include="Entities\Users.cs" />

@@ -35,5 +35,18 @@ namespace Msp.Infrastructure
         BekleyenSiparis = 4
     }
 
+    public enum SecRightType
+    {
+        Insert,
+        Update,
+        Delete,
+        Preview
+    }
+
+    public enum DocumentType
+    {
+        StockList = 1
+    }
+
 
 }

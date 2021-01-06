@@ -1,6 +1,7 @@
 ﻿using Msp.Entity.Entities;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
+using Msp.Models.Models.SecRights;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
@@ -218,6 +219,18 @@ namespace Msp.Service.Service.Settings
             return response;
         }
 
+
+        #endregion
+
+        #region SecRight
+
+        public List<SecRightsDTO> GetList_SecRight()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<SecRights>, List<SecRightsDTO>>(_db.SecRights.ToList());
+            }
+        }
 
         #endregion
 
