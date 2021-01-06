@@ -29,6 +29,11 @@ namespace Msp.App.Settings
         public FormOpenType _FormOpenType;
         private UsersDTO _user = new UsersDTO();
 
+        List<SelectIdValue> tblForm = new List<SelectIdValue>() 
+        {
+            new SelectIdValue(1, "Ürün Kartı")
+        };
+
         public void Show(string _UserCode)
         {
             if (_FormOpenType == FormOpenType.New)
@@ -87,6 +92,24 @@ namespace Msp.App.Settings
         private void frmKullaniciTanimEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPage == xtrFormYetki)
+            {
+                repositoryItemLookUpEdit1.DataSource = tblForm;
+                repositoryItemLookUpEdit1.ValueMember = "Id";
+                repositoryItemLookUpEdit1.DisplayMember = "Value";
+
+                if (_FormOpenType != FormOpenType.New)
+                {
+
+                    
+
+                }
+
+            }
         }
     }
 }
