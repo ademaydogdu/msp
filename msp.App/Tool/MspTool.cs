@@ -658,10 +658,7 @@ namespace Msp.App.Tool
 
         public static bool PermissionControl(string UserCode, SecRightType secRightType, int documentType, int company = 0)
         {
-
-
             //return true;
-
             bool x = string.Equals(AppMain.User.username, "Admin", StringComparison.CurrentCultureIgnoreCase);
             if (x)
             {
@@ -670,25 +667,20 @@ namespace Msp.App.Tool
 
             Service.Repository.Repository _repository = new Service.Repository.Repository();
             var __SecRight = _repository.Run<Service.Service.Settings.SettingsService, List<SecRightsDTO>>(r => r.GetList_SecRight());
-
             //var rightQuery = blvalue.SecRightsAccounting.Where(r => r.Code == code
             //                                                  && r.AppType == (int)apptype
             //                                                  && r.DocumentType == documentType);
             var rightQuery = __SecRight.Where(y => y.UserCode == UserCode && y.DocumentType == documentType);
-
             if (company != 0)
             {
                 rightQuery = rightQuery.Where(r => r.CompanyRecId == company);
             }
             var right = rightQuery.FirstOrDefault();
-
-
             x = (right != null && (int)right.GetValue(PermissinField[secRightType]) == 1);
             if (!x)
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show($"{UserCode} İçin {PermissinFieldDesc[secRightType]} Yetkiniz Yok...");
             }
-
             return x;
 
         }
