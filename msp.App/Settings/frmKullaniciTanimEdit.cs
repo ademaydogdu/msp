@@ -13,7 +13,7 @@ using Msp.Models.Models;
 using Msp.Infrastructure;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
-
+using Msp.Infrastructure.Extensions;
 namespace Msp.App.Settings
 {
     public partial class frmKullaniciTanimEdit : DevExpress.XtraEditors.XtraForm
@@ -49,6 +49,9 @@ namespace Msp.App.Settings
             {
                 try
                 {
+
+                    _user.password = SecurityExtension.Sifrele(txt_Parola.Text);
+                    _user.HaspPassword = SecurityExtension.ConvertStringToMD5(txt_Parola.Text);
                     var response = _repository.Run<SettingsService, ActionResponse<UsersDTO>>(x => x.Save_Users(_user));
                     if (response.ResponseType != ResponseType.Ok)
                     {

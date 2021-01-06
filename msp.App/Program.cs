@@ -1,5 +1,6 @@
 ﻿using Msp.Infrastructure;
 using Msp.Service.Mapping;
+using Msp.Service.Service.App;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,9 @@ namespace msp.App
             NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
 
             AutoMapper.Mapper.Initialize(x => Mappings.Configure(x));
+
+            StartUp _startup = new StartUp();
+            _startup.Start();
 
             Application.Run(new MainForm());
         }

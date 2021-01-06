@@ -96,6 +96,7 @@ namespace msp.App
                     saleTrans.Tax = _product.PTax;
                     saleTrans.TaxAmount = _product.PPaxAmout;
                     saleTrans.ProductDate = _product.PExpDate == null ? new DateTime(1900,1,1) : _product.PExpDate.GetValueOrDefault();
+                    saleTrans.CompanyId = AppMain.CompanyRecId;
                     __dl_List_SaleTrans.Add(saleTrans);
                 }
                 TopTotal();

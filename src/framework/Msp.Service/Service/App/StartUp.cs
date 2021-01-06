@@ -1,4 +1,5 @@
 ﻿using Msp.Entity.Entities;
+using Msp.Infrastructure;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
 using Msp.Models.Models.Utilities;
@@ -12,6 +13,14 @@ namespace Msp.Service.Service.App
 {
     public class StartUp : BaseService
     {
+
+        public void Start()
+        {
+            LoadStatics();
+        }
+
+
+
         public ProgramsControlsDTO CheckVersion()
         {
             ProgramsControlsDTO dataVersion = new ProgramsControlsDTO()
@@ -52,7 +61,7 @@ namespace Msp.Service.Service.App
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<Users, UsersDTO>(_db.users.FirstOrDefault(x=>x.username == UserCode));
+                return base.Map<Users, UsersDTO>(_db.users.FirstOrDefault(x => x.username == UserCode));
             }
         }
 
@@ -100,6 +109,19 @@ namespace Msp.Service.Service.App
             }
         }
 
+        public void LoadStatics()
+        {
+            RegisterForms();
+        }
+
+        private void RegisterForms()
+        {
+            AppMain.Forms = new Dictionary<string, string>()
+            {
+                { "Satış","btnQuickSell"},
+                { "Hızlı Satış","btnSpeedSale"},
+            };
+        }
 
     }
 }

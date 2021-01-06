@@ -89,5 +89,22 @@ namespace Msp.Service.Service
             //}
 
         }
+
+        public void Insert_ProductMovement(string Durum, int ProductId, int Quantity, decimal ProductPrice, Entity.Entities.MspDbContext _db)
+        {
+            Models.Models.ProductMovementDTO productMovement = new Models.Models.ProductMovementDTO
+            {
+                ProductId = ProductId,
+                Date = DateTime.Now,
+                Quantity = Convert.ToInt32(Quantity),
+                Durum = Durum,
+                Deleted = false,
+                Amount = Quantity * ProductPrice,
+            };
+            _db.ProductMovement.Add(Map<Models.Models.ProductMovementDTO, Entity.Entities.ProductMovement>(productMovement));
+            _db.SaveChanges();
+        }
+
+
     }
 }

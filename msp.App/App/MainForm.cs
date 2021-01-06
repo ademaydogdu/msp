@@ -770,5 +770,12 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem88_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Hatirlatici frm = new Hatirlatici();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

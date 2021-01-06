@@ -91,6 +91,7 @@
     <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -156,6 +157,12 @@
     </Compile>
     <Compile Include="App\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Wizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
     </Compile>
     <Compile Include="CariIslemler\FindIrsaliyeList.cs">
       <SubType>Form</SubType>
@@ -504,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\FindIrsaliyeList.resx">
       <DependentUpon>FindIrsaliyeList.cs</DependentUpon>

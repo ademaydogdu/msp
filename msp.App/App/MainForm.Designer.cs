@@ -284,12 +284,14 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup35 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup35 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem127 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem128 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -516,10 +518,12 @@
             this.barButtonItem118,
             this.barButtonItem125,
             this.barSubItem23,
-            this.barButtonItem126});
+            this.barButtonItem126,
+            this.barButtonItem127,
+            this.barButtonItem128});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 212;
+            this.ribbon.MaxItemId = 214;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1396,7 +1400,6 @@
             // btnDashboard
             // 
             this.btnDashboard.Caption = "Kontrol Paneli";
-            this.btnDashboard.Enabled = false;
             this.btnDashboard.Id = 116;
             this.btnDashboard.ImageOptions.LargeImageIndex = 15;
             this.btnDashboard.Name = "btnDashboard";
@@ -1724,6 +1727,7 @@
             this.barButtonItem88.Id = 163;
             this.barButtonItem88.ImageOptions.LargeImageIndex = 58;
             this.barButtonItem88.Name = "barButtonItem88";
+            this.barButtonItem88.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem88_ItemClick);
             // 
             // barSubItem15
             // 
@@ -2055,6 +2059,9 @@
             this.barSubItem23.Caption = "Silinen Kayıt";
             this.barSubItem23.Id = 210;
             this.barSubItem23.ImageOptions.LargeImageIndex = 66;
+            this.barSubItem23.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem127),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem128)});
             this.barSubItem23.Name = "barSubItem23";
             // 
             // barButtonItem126
@@ -2446,6 +2453,18 @@
             this.ribbonPageGroup22.ItemLinks.Add(this.btnLog);
             this.ribbonPageGroup22.Name = "ribbonPageGroup22";
             // 
+            // ribbonPage9
+            // 
+            this.ribbonPage9.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup35});
+            this.ribbonPage9.ImageOptions.ImageIndex = 18;
+            this.ribbonPage9.Name = "ribbonPage9";
+            this.ribbonPage9.Text = "Bize Ulaşın";
+            // 
+            // ribbonPageGroup35
+            // 
+            this.ribbonPageGroup35.Name = "ribbonPageGroup35";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
@@ -2479,17 +2498,17 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // ribbonPage9
+            // barButtonItem127
             // 
-            this.ribbonPage9.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup35});
-            this.ribbonPage9.ImageOptions.ImageIndex = 18;
-            this.ribbonPage9.Name = "ribbonPage9";
-            this.ribbonPage9.Text = "Bize Ulaşın";
+            this.barButtonItem127.Caption = "Satoş İşlemlerinde Silinen Kayıtlar";
+            this.barButtonItem127.Id = 212;
+            this.barButtonItem127.Name = "barButtonItem127";
             // 
-            // ribbonPageGroup35
+            // barButtonItem128
             // 
-            this.ribbonPageGroup35.Name = "ribbonPageGroup35";
+            this.barButtonItem128.Caption = "Silinen Ürün Kartları";
+            this.barButtonItem128.Id = 213;
+            this.barButtonItem128.Name = "barButtonItem128";
             // 
             // MainForm
             // 
@@ -2783,5 +2802,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem126;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup35;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem127;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem128;
     }
 }

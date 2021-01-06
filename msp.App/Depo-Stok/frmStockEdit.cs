@@ -40,6 +40,9 @@ namespace Msp.App.Depo_Stok
         private ProductDTO __product = new ProductDTO();
         List<UnitsDTO> units = new List<UnitsDTO>();
         byte[] imgbyte;
+        List<DepotDTO> _depotList = new List<DepotDTO>();
+        List<ProductGroupDTO> productGroup = new List<ProductGroupDTO>();
+
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -53,6 +56,12 @@ namespace Msp.App.Depo_Stok
         {
             units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             bs_Unit.DataSource = units;
+
+            _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+            bs_Depot.DataSource = _depotList;
+
+            productGroup = _repository.Run<DefinitionsService, List<ProductGroupDTO>>(x => x.Get_List_ProductGroup());
+            bs_UrunGrup.DataSource = productGroup;
 
             if (_FormOpenType == FormOpenType.New)
             {

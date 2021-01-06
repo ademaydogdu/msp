@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.bs_StockEdit = new System.Windows.Forms.BindingSource(this.components);
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bbi_Save = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.bs_Depot = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -61,15 +72,6 @@
             this.UnittextEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             this.StockEditPE = new DevExpress.XtraEditors.PictureEdit();
-            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bbi_Save = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.taxTextEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.dateDateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.rdgDahilHaric = new DevExpress.XtraEditors.RadioGroup();
@@ -79,6 +81,8 @@
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.txtIskonto = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.productGroupTextEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_UrunGrup = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -114,6 +118,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemFordate1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem23 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -145,14 +150,13 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.productGroupTextEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.bs_UrunGrup = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_Depot = new System.Windows.Forms.BindingSource(this.components);
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -178,8 +182,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockEditPE.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateEdit1.Properties)).BeginInit();
@@ -190,6 +192,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -225,6 +229,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemFordate1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem23)).BeginInit();
@@ -254,11 +259,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             this.SuspendLayout();
             // 
             // bs_StockEdit
@@ -305,6 +305,183 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(809, 656);
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PDepotId", true));
+            this.lookUpEdit1.Location = new System.Drawing.Point(154, 213);
+            this.lookUpEdit1.MenuManager = this.barManager2;
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DepName", "Depo Adı")});
+            this.lookUpEdit1.Properties.DataSource = this.bs_Depot;
+            this.lookUpEdit1.Properties.DisplayMember = "DepName";
+            this.lookUpEdit1.Properties.NullText = "";
+            this.lookUpEdit1.Properties.ValueMember = "DID";
+            this.lookUpEdit1.Size = new System.Drawing.Size(175, 20);
+            this.lookUpEdit1.StyleController = this.dataLayoutControl1;
+            this.lookUpEdit1.TabIndex = 38;
+            // 
+            // barManager2
+            // 
+            this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManager2.DockControls.Add(this.barDockControl1);
+            this.barManager2.DockControls.Add(this.barDockControl2);
+            this.barManager2.DockControls.Add(this.barDockControl3);
+            this.barManager2.DockControls.Add(this.barDockControl4);
+            this.barManager2.Form = this;
+            this.barManager2.Images = this.svgImageCollection1;
+            this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.bbi_Save,
+            this.barButtonItem3});
+            this.barManager2.MaxItemId = 2;
+            this.barManager2.StatusBar = this.bar1;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Status bar";
+            this.bar1.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Save),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            this.bar1.OptionsBar.AllowQuickCustomization = false;
+            this.bar1.OptionsBar.DrawDragBorder = false;
+            this.bar1.OptionsBar.UseWholeRow = true;
+            this.bar1.Text = "Status bar";
+            // 
+            // bbi_Save
+            // 
+            this.bbi_Save.Caption = "Kaydet";
+            this.bbi_Save.Id = 0;
+            this.bbi_Save.ImageOptions.ImageIndex = 0;
+            this.bbi_Save.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Save.Name = "bbi_Save";
+            this.bbi_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Save_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Vazgeç";
+            this.barButtonItem3.Id = 1;
+            this.barButtonItem3.ImageOptions.ImageIndex = 1;
+            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(809, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 685);
+            this.barDockControl2.Manager = this.barManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(809, 40);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.barManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 685);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(809, 0);
+            this.barDockControl4.Manager = this.barManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 685);
+            // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
+            this.svgImageCollection1.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
+            this.svgImageCollection1.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
+            this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
+            this.svgImageCollection1.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
+            this.svgImageCollection1.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
+            this.svgImageCollection1.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
+            this.svgImageCollection1.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
+            this.svgImageCollection1.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
+            this.svgImageCollection1.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
+            this.svgImageCollection1.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
+            this.svgImageCollection1.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
+            this.svgImageCollection1.Add("about", "image://svgimages/outlook inspired/about.svg");
+            this.svgImageCollection1.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
+            this.svgImageCollection1.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.svgImageCollection1.Add("fax", "image://svgimages/outlook inspired/fax.svg");
+            this.svgImageCollection1.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
+            this.svgImageCollection1.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
+            this.svgImageCollection1.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
+            this.svgImageCollection1.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
+            this.svgImageCollection1.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
+            this.svgImageCollection1.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
+            this.svgImageCollection1.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
+            this.svgImageCollection1.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
+            this.svgImageCollection1.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
+            this.svgImageCollection1.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
+            this.svgImageCollection1.Add("general", "image://svgimages/spreadsheet/general.svg");
+            this.svgImageCollection1.Add("warning", "image://svgimages/status/warning.svg");
+            this.svgImageCollection1.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
+            this.svgImageCollection1.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
+            this.svgImageCollection1.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
+            this.svgImageCollection1.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
+            this.svgImageCollection1.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
+            this.svgImageCollection1.Add("timezones", "image://svgimages/scheduling/timezones.svg");
+            this.svgImageCollection1.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
+            this.svgImageCollection1.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
+            this.svgImageCollection1.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
+            this.svgImageCollection1.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
+            this.svgImageCollection1.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
+            this.svgImageCollection1.Add("card", "image://svgimages/outlook inspired/card.svg");
+            this.svgImageCollection1.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
+            this.svgImageCollection1.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
+            this.svgImageCollection1.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
+            this.svgImageCollection1.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            this.svgImageCollection1.Add("newdatasource", "image://svgimages/dashboards/newdatasource.svg");
+            this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
+            this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
+            this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            this.svgImageCollection1.Add("bo_attention_1", "image://svgimages/business objects/bo_attention.svg");
+            this.svgImageCollection1.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
+            this.svgImageCollection1.Add("bo_price_item", "image://svgimages/business objects/bo_price_item.svg");
+            this.svgImageCollection1.Add("buynow", "image://svgimages/outlook inspired/buynow.svg");
+            this.svgImageCollection1.Add("categorize", "image://svgimages/outlook inspired/categorize.svg");
+            this.svgImageCollection1.Add("group", "image://svgimages/dashboards/group.svg");
+            this.svgImageCollection1.Add("bo_sale", "image://svgimages/business objects/bo_sale.svg");
+            this.svgImageCollection1.Add("sales", "image://svgimages/outlook inspired/sales.svg");
+            this.svgImageCollection1.Add("bo_sale_item", "image://svgimages/business objects/bo_sale_item.svg");
+            this.svgImageCollection1.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
+            this.svgImageCollection1.Add("bo_product", "image://svgimages/business objects/bo_product.svg");
+            this.svgImageCollection1.Add("bo_product_group", "image://svgimages/business objects/bo_product_group.svg");
+            this.svgImageCollection1.Add("shipmentreceived", "image://svgimages/outlook inspired/shipmentreceived.svg");
+            this.svgImageCollection1.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
+            this.svgImageCollection1.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
+            this.svgImageCollection1.Add("top10percent", "image://svgimages/spreadsheet/top10percent.svg");
+            this.svgImageCollection1.Add("print", "image://svgimages/dashboards/print.svg");
+            this.svgImageCollection1.Add("paymentrefund", "image://svgimages/outlook inspired/paymentrefund.svg");
+            this.svgImageCollection1.Add("title", "image://svgimages/dashboards/title.svg");
+            this.svgImageCollection1.Add("bo_quote_1", "image://svgimages/business objects/bo_quote.svg");
+            // 
+            // bs_Depot
+            // 
+            this.bs_Depot.DataSource = typeof(Msp.Models.Models.DepotDTO);
             // 
             // panelControl6
             // 
@@ -646,161 +823,6 @@
             this.StockEditPE.StyleController = this.dataLayoutControl1;
             this.StockEditPE.TabIndex = 18;
             // 
-            // barManager2
-            // 
-            this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1});
-            this.barManager2.DockControls.Add(this.barDockControl1);
-            this.barManager2.DockControls.Add(this.barDockControl2);
-            this.barManager2.DockControls.Add(this.barDockControl3);
-            this.barManager2.DockControls.Add(this.barDockControl4);
-            this.barManager2.Form = this;
-            this.barManager2.Images = this.svgImageCollection1;
-            this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bbi_Save,
-            this.barButtonItem3});
-            this.barManager2.MaxItemId = 2;
-            this.barManager2.StatusBar = this.bar1;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Status bar";
-            this.bar1.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Save),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
-            this.bar1.OptionsBar.AllowQuickCustomization = false;
-            this.bar1.OptionsBar.DrawDragBorder = false;
-            this.bar1.OptionsBar.UseWholeRow = true;
-            this.bar1.Text = "Status bar";
-            // 
-            // bbi_Save
-            // 
-            this.bbi_Save.Caption = "Kaydet";
-            this.bbi_Save.Id = 0;
-            this.bbi_Save.ImageOptions.ImageIndex = 0;
-            this.bbi_Save.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.bbi_Save.Name = "bbi_Save";
-            this.bbi_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Save_ItemClick);
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Vazgeç";
-            this.barButtonItem3.Id = 1;
-            this.barButtonItem3.ImageOptions.ImageIndex = 1;
-            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
-            // 
-            // barDockControl1
-            // 
-            this.barDockControl1.CausesValidation = false;
-            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(809, 0);
-            // 
-            // barDockControl2
-            // 
-            this.barDockControl2.CausesValidation = false;
-            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 685);
-            this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(809, 40);
-            // 
-            // barDockControl3
-            // 
-            this.barDockControl3.CausesValidation = false;
-            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 685);
-            // 
-            // barDockControl4
-            // 
-            this.barDockControl4.CausesValidation = false;
-            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(809, 0);
-            this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 685);
-            // 
-            // svgImageCollection1
-            // 
-            this.svgImageCollection1.ImageSize = new System.Drawing.Size(32, 32);
-            this.svgImageCollection1.Add("bo_validation", "image://svgimages/business objects/bo_validation.svg");
-            this.svgImageCollection1.Add("cancel", "image://svgimages/outlook inspired/cancel.svg");
-            this.svgImageCollection1.Add("bo_address", "image://svgimages/business objects/bo_address.svg");
-            this.svgImageCollection1.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
-            this.svgImageCollection1.Add("bo_customer", "image://svgimages/business objects/bo_customer.svg");
-            this.svgImageCollection1.Add("bo_department", "image://svgimages/business objects/bo_department.svg");
-            this.svgImageCollection1.Add("bo_lead", "image://svgimages/business objects/bo_lead.svg");
-            this.svgImageCollection1.Add("bo_mydetails", "image://svgimages/business objects/bo_mydetails.svg");
-            this.svgImageCollection1.Add("bo_phone", "image://svgimages/business objects/bo_phone.svg");
-            this.svgImageCollection1.Add("bo_position_v92", "image://svgimages/business objects/bo_position_v92.svg");
-            this.svgImageCollection1.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
-            this.svgImageCollection1.Add("bo_validation_1", "image://svgimages/business objects/bo_validation.svg");
-            this.svgImageCollection1.Add("shapelabels", "image://svgimages/dashboards/shapelabels.svg");
-            this.svgImageCollection1.Add("about", "image://svgimages/outlook inspired/about.svg");
-            this.svgImageCollection1.Add("clearformatting", "image://svgimages/outlook inspired/clearformatting.svg");
-            this.svgImageCollection1.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
-            this.svgImageCollection1.Add("fax", "image://svgimages/outlook inspired/fax.svg");
-            this.svgImageCollection1.Add("glyph_phone", "image://svgimages/outlook inspired/glyph_phone.svg");
-            this.svgImageCollection1.Add("highimportance", "image://svgimages/outlook inspired/highimportance.svg");
-            this.svgImageCollection1.Add("mapit", "image://svgimages/outlook inspired/mapit.svg");
-            this.svgImageCollection1.Add("markcomplete", "image://svgimages/outlook inspired/markcomplete.svg");
-            this.svgImageCollection1.Add("newcustomer", "image://svgimages/outlook inspired/newcustomer.svg");
-            this.svgImageCollection1.Add("newemployee", "image://svgimages/outlook inspired/newemployee.svg");
-            this.svgImageCollection1.Add("tabletoffice", "image://svgimages/outlook inspired/tabletoffice.svg");
-            this.svgImageCollection1.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
-            this.svgImageCollection1.Add("barcodeshowtext", "image://svgimages/reports/barcodeshowtext.svg");
-            this.svgImageCollection1.Add("changetextcase", "image://svgimages/richedit/changetextcase.svg");
-            this.svgImageCollection1.Add("general", "image://svgimages/spreadsheet/general.svg");
-            this.svgImageCollection1.Add("warning", "image://svgimages/status/warning.svg");
-            this.svgImageCollection1.Add("customerquicklocations", "image://svgimages/outlook inspired/customerquicklocations.svg");
-            this.svgImageCollection1.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
-            this.svgImageCollection1.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
-            this.svgImageCollection1.Add("insertpiemap", "image://svgimages/dashboards/insertpiemap.svg");
-            this.svgImageCollection1.Add("highimportance_1", "image://svgimages/scheduling/highimportance.svg");
-            this.svgImageCollection1.Add("timezones", "image://svgimages/scheduling/timezones.svg");
-            this.svgImageCollection1.Add("glyph_mail", "image://svgimages/outlook inspired/glyph_mail.svg");
-            this.svgImageCollection1.Add("bo_document", "image://svgimages/business objects/bo_document.svg");
-            this.svgImageCollection1.Add("bo_attention", "image://svgimages/business objects/bo_attention.svg");
-            this.svgImageCollection1.Add("percentstyle", "image://svgimages/spreadsheet/percentstyle.svg");
-            this.svgImageCollection1.Add("bo_audit_changehistory", "image://svgimages/business objects/bo_audit_changehistory.svg");
-            this.svgImageCollection1.Add("bottom10percent", "image://svgimages/spreadsheet/bottom10percent.svg");
-            this.svgImageCollection1.Add("card", "image://svgimages/outlook inspired/card.svg");
-            this.svgImageCollection1.Add("bo_contact_1", "image://svgimages/business objects/bo_contact.svg");
-            this.svgImageCollection1.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
-            this.svgImageCollection1.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
-            this.svgImageCollection1.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
-            this.svgImageCollection1.Add("newdatasource", "image://svgimages/dashboards/newdatasource.svg");
-            this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
-            this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
-            this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
-            this.svgImageCollection1.Add("bo_attention_1", "image://svgimages/business objects/bo_attention.svg");
-            this.svgImageCollection1.Add("bo_price", "image://svgimages/business objects/bo_price.svg");
-            this.svgImageCollection1.Add("bo_price_item", "image://svgimages/business objects/bo_price_item.svg");
-            this.svgImageCollection1.Add("buynow", "image://svgimages/outlook inspired/buynow.svg");
-            this.svgImageCollection1.Add("categorize", "image://svgimages/outlook inspired/categorize.svg");
-            this.svgImageCollection1.Add("group", "image://svgimages/dashboards/group.svg");
-            this.svgImageCollection1.Add("bo_sale", "image://svgimages/business objects/bo_sale.svg");
-            this.svgImageCollection1.Add("sales", "image://svgimages/outlook inspired/sales.svg");
-            this.svgImageCollection1.Add("bo_sale_item", "image://svgimages/business objects/bo_sale_item.svg");
-            this.svgImageCollection1.Add("weightedpies", "image://svgimages/dashboards/weightedpies.svg");
-            this.svgImageCollection1.Add("bo_product", "image://svgimages/business objects/bo_product.svg");
-            this.svgImageCollection1.Add("bo_product_group", "image://svgimages/business objects/bo_product_group.svg");
-            this.svgImageCollection1.Add("shipmentreceived", "image://svgimages/outlook inspired/shipmentreceived.svg");
-            this.svgImageCollection1.Add("bo_quote", "image://svgimages/business objects/bo_quote.svg");
-            this.svgImageCollection1.Add("longdate", "image://svgimages/spreadsheet/longdate.svg");
-            this.svgImageCollection1.Add("top10percent", "image://svgimages/spreadsheet/top10percent.svg");
-            this.svgImageCollection1.Add("print", "image://svgimages/dashboards/print.svg");
-            this.svgImageCollection1.Add("paymentrefund", "image://svgimages/outlook inspired/paymentrefund.svg");
-            this.svgImageCollection1.Add("title", "image://svgimages/dashboards/title.svg");
-            this.svgImageCollection1.Add("bo_quote_1", "image://svgimages/business objects/bo_quote.svg");
-            // 
             // taxTextEdit
             // 
             this.taxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PTax", true));
@@ -920,6 +942,27 @@
             this.textEdit3.Size = new System.Drawing.Size(175, 20);
             this.textEdit3.StyleController = this.dataLayoutControl1;
             this.textEdit3.TabIndex = 37;
+            // 
+            // productGroupTextEdit
+            // 
+            this.productGroupTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PGroup", true));
+            this.productGroupTextEdit.Location = new System.Drawing.Point(154, 506);
+            this.productGroupTextEdit.Name = "productGroupTextEdit";
+            this.productGroupTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.productGroupTextEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ReGroup", "Adı")});
+            this.productGroupTextEdit.Properties.DataSource = this.bs_UrunGrup;
+            this.productGroupTextEdit.Properties.DisplayMember = "ReGroup";
+            this.productGroupTextEdit.Properties.NullText = "";
+            this.productGroupTextEdit.Properties.ValueMember = "RecId";
+            this.productGroupTextEdit.Size = new System.Drawing.Size(175, 20);
+            this.productGroupTextEdit.StyleController = this.dataLayoutControl1;
+            this.productGroupTextEdit.TabIndex = 15;
+            // 
+            // bs_UrunGrup
+            // 
+            this.bs_UrunGrup.DataSource = typeof(Msp.Models.Models.ProductGroupDTO);
             // 
             // Root
             // 
@@ -1341,6 +1384,16 @@
             this.layoutControlItem27.Text = "Ürün Kodu";
             this.layoutControlItem27.TextSize = new System.Drawing.Size(127, 32);
             // 
+            // layoutControlItem28
+            // 
+            this.layoutControlItem28.Control = this.lookUpEdit1;
+            this.layoutControlItem28.ImageOptions.ImageIndex = 2;
+            this.layoutControlItem28.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem28.Name = "layoutControlItem28";
+            this.layoutControlItem28.Size = new System.Drawing.Size(309, 36);
+            this.layoutControlItem28.Text = "Depo";
+            this.layoutControlItem28.TextSize = new System.Drawing.Size(127, 32);
+            // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
@@ -1669,55 +1722,6 @@
             this.layoutControlItem26.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem26.TextVisible = false;
             // 
-            // productGroupTextEdit
-            // 
-            this.productGroupTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PGroup", true));
-            this.productGroupTextEdit.Location = new System.Drawing.Point(154, 506);
-            this.productGroupTextEdit.Name = "productGroupTextEdit";
-            this.productGroupTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.productGroupTextEdit.Properties.DataSource = this.bs_UrunGrup;
-            this.productGroupTextEdit.Properties.DisplayMember = "ReGroup";
-            this.productGroupTextEdit.Properties.NullText = "";
-            this.productGroupTextEdit.Properties.ValueMember = "RecId";
-            this.productGroupTextEdit.Size = new System.Drawing.Size(175, 20);
-            this.productGroupTextEdit.StyleController = this.dataLayoutControl1;
-            this.productGroupTextEdit.TabIndex = 15;
-            // 
-            // bs_UrunGrup
-            // 
-            this.bs_UrunGrup.DataSource = typeof(Msp.Models.Models.ProductGroupDTO);
-            // 
-            // bs_Depot
-            // 
-            this.bs_Depot.DataSource = typeof(Msp.Models.Models.DepotDTO);
-            // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PDepotId", true));
-            this.lookUpEdit1.Location = new System.Drawing.Point(154, 213);
-            this.lookUpEdit1.MenuManager = this.barManager2;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Properties.DataSource = this.bs_Depot;
-            this.lookUpEdit1.Properties.DisplayMember = "DepName";
-            this.lookUpEdit1.Properties.NullText = "";
-            this.lookUpEdit1.Properties.ValueMember = "DID";
-            this.lookUpEdit1.Size = new System.Drawing.Size(175, 20);
-            this.lookUpEdit1.StyleController = this.dataLayoutControl1;
-            this.lookUpEdit1.TabIndex = 38;
-            // 
-            // layoutControlItem28
-            // 
-            this.layoutControlItem28.Control = this.lookUpEdit1;
-            this.layoutControlItem28.ImageOptions.ImageIndex = 2;
-            this.layoutControlItem28.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem28.Name = "layoutControlItem28";
-            this.layoutControlItem28.Size = new System.Drawing.Size(309, 36);
-            this.layoutControlItem28.Text = "Depo";
-            this.layoutControlItem28.TextSize = new System.Drawing.Size(127, 32);
-            // 
             // frmStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1737,6 +1741,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
@@ -1768,8 +1776,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UnittextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockEditPE.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateEdit1.Properties)).EndInit();
@@ -1780,6 +1786,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -1815,6 +1823,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemFordate1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem23)).EndInit();
@@ -1844,11 +1853,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Depot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
