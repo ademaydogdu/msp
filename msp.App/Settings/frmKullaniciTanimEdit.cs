@@ -14,6 +14,8 @@ using Msp.Infrastructure;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
 using Msp.Infrastructure.Extensions;
+using Msp.Models.Models.SecRights;
+
 namespace Msp.App.Settings
 {
     public partial class frmKullaniciTanimEdit : DevExpress.XtraEditors.XtraForm
@@ -104,9 +106,8 @@ namespace Msp.App.Settings
 
                 if (_FormOpenType != FormOpenType.New)
                 {
-
-                    
-
+                    var secRight = _repository.Run<SettingsService, List<SecRightsDTO>>(x=>x.GetList_SecRightUserCode(_user.username));
+                    bs_SecRight.DataSource = secRight;
                 }
 
             }

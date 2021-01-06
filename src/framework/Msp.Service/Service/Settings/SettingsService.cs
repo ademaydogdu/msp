@@ -232,6 +232,14 @@ namespace Msp.Service.Service.Settings
             }
         }
 
+        public List<SecRightsDTO> GetList_SecRightUserCode(string UserCode)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<SecRights>, List<SecRightsDTO>>(_db.SecRights.Where(x=>x.UserCode == UserCode).ToList());
+            }
+        }
+
         #endregion
 
     }
