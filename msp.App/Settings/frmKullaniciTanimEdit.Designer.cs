@@ -67,39 +67,39 @@
             this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit4 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit5 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit6 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit7 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit8 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit9 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit10 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit11 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit12 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.xtrFormYetki = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.checkEdit6 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.checkEdit7 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkEdit8 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkEdit9 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkEdit10 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkEdit11 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkEdit12 = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.xtrFormYetki = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bs_SecRight = new System.Windows.Forms.BindingSource(this.components);
-            this.colSecPreview = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSecUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSecInsert = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSecDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDocumentType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repositoryItemCheckEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repositoryItemCheckEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colSecPreview = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colSecUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colSecInsert = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colSecDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -134,34 +134,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit12.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            this.xtrFormYetki.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit9.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit10.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit11.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit12.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            this.xtrFormYetki.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SecRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -428,7 +428,7 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(551, 22);
-            this.layoutControlItem5.Text = "Aktif";
+            this.layoutControlItem5.Text = "Aktif/Pasif";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(64, 13);
             // 
             // layoutControlItem6
@@ -544,6 +544,76 @@
             this.checkEdit5.StyleController = this.layoutControl3;
             this.checkEdit5.TabIndex = 6;
             // 
+            // checkEdit6
+            // 
+            this.checkEdit6.Location = new System.Drawing.Point(12, 84);
+            this.checkEdit6.MenuManager = this.barManager1;
+            this.checkEdit6.Name = "checkEdit6";
+            this.checkEdit6.Properties.Caption = "Rapor";
+            this.checkEdit6.Size = new System.Drawing.Size(547, 20);
+            this.checkEdit6.StyleController = this.layoutControl3;
+            this.checkEdit6.TabIndex = 7;
+            // 
+            // checkEdit7
+            // 
+            this.checkEdit7.Location = new System.Drawing.Point(12, 108);
+            this.checkEdit7.MenuManager = this.barManager1;
+            this.checkEdit7.Name = "checkEdit7";
+            this.checkEdit7.Properties.Caption = "Modüller";
+            this.checkEdit7.Size = new System.Drawing.Size(547, 20);
+            this.checkEdit7.StyleController = this.layoutControl3;
+            this.checkEdit7.TabIndex = 8;
+            // 
+            // checkEdit8
+            // 
+            this.checkEdit8.Location = new System.Drawing.Point(12, 132);
+            this.checkEdit8.MenuManager = this.barManager1;
+            this.checkEdit8.Name = "checkEdit8";
+            this.checkEdit8.Properties.Caption = "İşlemler";
+            this.checkEdit8.Size = new System.Drawing.Size(547, 20);
+            this.checkEdit8.StyleController = this.layoutControl3;
+            this.checkEdit8.TabIndex = 9;
+            // 
+            // checkEdit9
+            // 
+            this.checkEdit9.Location = new System.Drawing.Point(12, 156);
+            this.checkEdit9.MenuManager = this.barManager1;
+            this.checkEdit9.Name = "checkEdit9";
+            this.checkEdit9.Properties.Caption = "Müşteri";
+            this.checkEdit9.Size = new System.Drawing.Size(547, 20);
+            this.checkEdit9.StyleController = this.layoutControl3;
+            this.checkEdit9.TabIndex = 10;
+            // 
+            // checkEdit10
+            // 
+            this.checkEdit10.Location = new System.Drawing.Point(12, 180);
+            this.checkEdit10.MenuManager = this.barManager1;
+            this.checkEdit10.Name = "checkEdit10";
+            this.checkEdit10.Properties.Caption = "Tanımlar";
+            this.checkEdit10.Size = new System.Drawing.Size(547, 20);
+            this.checkEdit10.StyleController = this.layoutControl3;
+            this.checkEdit10.TabIndex = 11;
+            // 
+            // checkEdit11
+            // 
+            this.checkEdit11.Location = new System.Drawing.Point(12, 204);
+            this.checkEdit11.MenuManager = this.barManager1;
+            this.checkEdit11.Name = "checkEdit11";
+            this.checkEdit11.Properties.Caption = "Ayarlar";
+            this.checkEdit11.Size = new System.Drawing.Size(547, 20);
+            this.checkEdit11.StyleController = this.layoutControl3;
+            this.checkEdit11.TabIndex = 12;
+            // 
+            // checkEdit12
+            // 
+            this.checkEdit12.Location = new System.Drawing.Point(12, 228);
+            this.checkEdit12.MenuManager = this.barManager1;
+            this.checkEdit12.Name = "checkEdit12";
+            this.checkEdit12.Properties.Caption = "Bize Ulaşın";
+            this.checkEdit12.Size = new System.Drawing.Size(547, 20);
+            this.checkEdit12.StyleController = this.layoutControl3;
+            this.checkEdit12.TabIndex = 13;
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -591,6 +661,77 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.checkEdit6;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // emptySpaceItem5
+            // 
+            this.emptySpaceItem5.AllowHotTrack = false;
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 240);
+            this.emptySpaceItem5.Name = "emptySpaceItem5";
+            this.emptySpaceItem5.Size = new System.Drawing.Size(551, 124);
+            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.checkEdit7;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.checkEdit8;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.checkEdit9;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.checkEdit10;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.checkEdit11;
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 192);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.checkEdit12;
+            this.layoutControlItem16.Location = new System.Drawing.Point(0, 216);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
+            // 
             // xtrFormYetki
             // 
             this.xtrFormYetki.Controls.Add(this.gridControl1);
@@ -617,6 +758,10 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // bs_SecRight
+            // 
+            this.bs_SecRight.DataSource = typeof(Msp.Models.Models.SecRights.SecRightsDTO);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -629,187 +774,6 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // checkEdit6
-            // 
-            this.checkEdit6.Location = new System.Drawing.Point(12, 84);
-            this.checkEdit6.MenuManager = this.barManager1;
-            this.checkEdit6.Name = "checkEdit6";
-            this.checkEdit6.Properties.Caption = "Rapor";
-            this.checkEdit6.Size = new System.Drawing.Size(547, 20);
-            this.checkEdit6.StyleController = this.layoutControl3;
-            this.checkEdit6.TabIndex = 7;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.checkEdit6;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(551, 24);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // emptySpaceItem5
-            // 
-            this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 240);
-            this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(551, 124);
-            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // checkEdit7
-            // 
-            this.checkEdit7.Location = new System.Drawing.Point(12, 108);
-            this.checkEdit7.MenuManager = this.barManager1;
-            this.checkEdit7.Name = "checkEdit7";
-            this.checkEdit7.Properties.Caption = "Modüller";
-            this.checkEdit7.Size = new System.Drawing.Size(547, 20);
-            this.checkEdit7.StyleController = this.layoutControl3;
-            this.checkEdit7.TabIndex = 8;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.checkEdit7;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(551, 24);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
-            // 
-            // checkEdit8
-            // 
-            this.checkEdit8.Location = new System.Drawing.Point(12, 132);
-            this.checkEdit8.MenuManager = this.barManager1;
-            this.checkEdit8.Name = "checkEdit8";
-            this.checkEdit8.Properties.Caption = "İşlemler";
-            this.checkEdit8.Size = new System.Drawing.Size(547, 20);
-            this.checkEdit8.StyleController = this.layoutControl3;
-            this.checkEdit8.TabIndex = 9;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.checkEdit8;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 120);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(551, 24);
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
-            // 
-            // checkEdit9
-            // 
-            this.checkEdit9.Location = new System.Drawing.Point(12, 156);
-            this.checkEdit9.MenuManager = this.barManager1;
-            this.checkEdit9.Name = "checkEdit9";
-            this.checkEdit9.Properties.Caption = "Müşteri";
-            this.checkEdit9.Size = new System.Drawing.Size(547, 20);
-            this.checkEdit9.StyleController = this.layoutControl3;
-            this.checkEdit9.TabIndex = 10;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.checkEdit9;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 144);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(551, 24);
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem13.TextVisible = false;
-            // 
-            // checkEdit10
-            // 
-            this.checkEdit10.Location = new System.Drawing.Point(12, 180);
-            this.checkEdit10.MenuManager = this.barManager1;
-            this.checkEdit10.Name = "checkEdit10";
-            this.checkEdit10.Properties.Caption = "Tanımlar";
-            this.checkEdit10.Size = new System.Drawing.Size(547, 20);
-            this.checkEdit10.StyleController = this.layoutControl3;
-            this.checkEdit10.TabIndex = 11;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.checkEdit10;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 168);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(551, 24);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
-            // 
-            // checkEdit11
-            // 
-            this.checkEdit11.Location = new System.Drawing.Point(12, 204);
-            this.checkEdit11.MenuManager = this.barManager1;
-            this.checkEdit11.Name = "checkEdit11";
-            this.checkEdit11.Properties.Caption = "Ayarlar";
-            this.checkEdit11.Size = new System.Drawing.Size(547, 20);
-            this.checkEdit11.StyleController = this.layoutControl3;
-            this.checkEdit11.TabIndex = 12;
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.Control = this.checkEdit11;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 192);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(551, 24);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
-            // 
-            // checkEdit12
-            // 
-            this.checkEdit12.Location = new System.Drawing.Point(12, 228);
-            this.checkEdit12.MenuManager = this.barManager1;
-            this.checkEdit12.Name = "checkEdit12";
-            this.checkEdit12.Properties.Caption = "Bize Ulaşın";
-            this.checkEdit12.Size = new System.Drawing.Size(547, 20);
-            this.checkEdit12.StyleController = this.layoutControl3;
-            this.checkEdit12.TabIndex = 13;
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.Control = this.checkEdit12;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 216);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(551, 24);
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextVisible = false;
-            // 
-            // bs_SecRight
-            // 
-            this.bs_SecRight.DataSource = typeof(Msp.Models.Models.SecRights.SecRightsDTO);
-            // 
-            // colSecPreview
-            // 
-            this.colSecPreview.Caption = "İzleme";
-            this.colSecPreview.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.colSecPreview.FieldName = "SecPreview";
-            this.colSecPreview.Name = "colSecPreview";
-            this.colSecPreview.Visible = true;
-            this.colSecPreview.VisibleIndex = 1;
-            // 
-            // colSecUpdate
-            // 
-            this.colSecUpdate.Caption = "Güncelleme";
-            this.colSecUpdate.ColumnEdit = this.repositoryItemCheckEdit2;
-            this.colSecUpdate.FieldName = "SecUpdate";
-            this.colSecUpdate.Name = "colSecUpdate";
-            this.colSecUpdate.Visible = true;
-            this.colSecUpdate.VisibleIndex = 2;
-            // 
-            // colSecInsert
-            // 
-            this.colSecInsert.Caption = "Yeni Kayıt";
-            this.colSecInsert.ColumnEdit = this.repositoryItemCheckEdit3;
-            this.colSecInsert.FieldName = "SecInsert";
-            this.colSecInsert.Name = "colSecInsert";
-            this.colSecInsert.Visible = true;
-            this.colSecInsert.VisibleIndex = 3;
-            // 
-            // colSecDelete
-            // 
-            this.colSecDelete.Caption = "Silme";
-            this.colSecDelete.ColumnEdit = this.repositoryItemCheckEdit4;
-            this.colSecDelete.FieldName = "SecDelete";
-            this.colSecDelete.Name = "colSecDelete";
-            this.colSecDelete.Visible = true;
-            this.colSecDelete.VisibleIndex = 4;
-            // 
             // colDocumentType
             // 
             this.colDocumentType.Caption = "Ekran";
@@ -820,6 +784,23 @@
             this.colDocumentType.Visible = true;
             this.colDocumentType.VisibleIndex = 0;
             // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.NullText = "";
+            // 
+            // colSecPreview
+            // 
+            this.colSecPreview.Caption = "İzleme";
+            this.colSecPreview.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colSecPreview.FieldName = "SecPreview";
+            this.colSecPreview.Name = "colSecPreview";
+            this.colSecPreview.Visible = true;
+            this.colSecPreview.VisibleIndex = 1;
+            // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
@@ -827,6 +808,15 @@
             this.repositoryItemCheckEdit1.ValueChecked = 1;
             this.repositoryItemCheckEdit1.ValueGrayed = 0;
             this.repositoryItemCheckEdit1.ValueUnchecked = 0;
+            // 
+            // colSecUpdate
+            // 
+            this.colSecUpdate.Caption = "Güncelleme";
+            this.colSecUpdate.ColumnEdit = this.repositoryItemCheckEdit2;
+            this.colSecUpdate.FieldName = "SecUpdate";
+            this.colSecUpdate.Name = "colSecUpdate";
+            this.colSecUpdate.Visible = true;
+            this.colSecUpdate.VisibleIndex = 2;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -836,6 +826,15 @@
             this.repositoryItemCheckEdit2.ValueGrayed = ((long)(0));
             this.repositoryItemCheckEdit2.ValueUnchecked = 0;
             // 
+            // colSecInsert
+            // 
+            this.colSecInsert.Caption = "Yeni Kayıt";
+            this.colSecInsert.ColumnEdit = this.repositoryItemCheckEdit3;
+            this.colSecInsert.FieldName = "SecInsert";
+            this.colSecInsert.Name = "colSecInsert";
+            this.colSecInsert.Visible = true;
+            this.colSecInsert.VisibleIndex = 3;
+            // 
             // repositoryItemCheckEdit3
             // 
             this.repositoryItemCheckEdit3.AutoHeight = false;
@@ -844,6 +843,15 @@
             this.repositoryItemCheckEdit3.ValueGrayed = 0;
             this.repositoryItemCheckEdit3.ValueUnchecked = 0;
             // 
+            // colSecDelete
+            // 
+            this.colSecDelete.Caption = "Silme";
+            this.colSecDelete.ColumnEdit = this.repositoryItemCheckEdit4;
+            this.colSecDelete.FieldName = "SecDelete";
+            this.colSecDelete.Name = "colSecDelete";
+            this.colSecDelete.Visible = true;
+            this.colSecDelete.VisibleIndex = 4;
+            // 
             // repositoryItemCheckEdit4
             // 
             this.repositoryItemCheckEdit4.AutoHeight = false;
@@ -851,14 +859,6 @@
             this.repositoryItemCheckEdit4.ValueChecked = 1;
             this.repositoryItemCheckEdit4.ValueGrayed = 0;
             this.repositoryItemCheckEdit4.ValueUnchecked = 0;
-            // 
-            // repositoryItemLookUpEdit1
-            // 
-            this.repositoryItemLookUpEdit1.AutoHeight = false;
-            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
-            this.repositoryItemLookUpEdit1.NullText = "";
             // 
             // frmKullaniciTanimEdit
             // 
@@ -908,34 +908,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit12.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            this.xtrFormYetki.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit9.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit10.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit11.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit12.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            this.xtrFormYetki.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SecRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

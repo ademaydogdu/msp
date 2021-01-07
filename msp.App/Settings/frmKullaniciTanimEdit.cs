@@ -45,6 +45,7 @@ namespace Msp.App.Settings
             if (_FormOpenType == FormOpenType.Edit)
             {
                  _user = _repository.Run<Service.Service.App.StartUp, UsersDTO>(r => r.GetUser(_UserCode));
+                _user.password = txt_Parola.Text = SecurityExtension.Sifre_Coz(_user.password);
             }
             bs_usersEdit.DataSource = _user;
             this.Show();
@@ -52,6 +53,7 @@ namespace Msp.App.Settings
 
         private void do_save()
         {
+            bs_usersEdit.EndEdit();
             if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
                 try
@@ -66,6 +68,13 @@ namespace Msp.App.Settings
                     }
                     else
                     {
+                        foreach (Form item in Application.OpenForms)
+                        {
+                            if (item.Name == "frmKullaniciTanim")
+                            {
+                                ((frmKullaniciTanim)item).do_refresh();
+                            }
+                        }
                         this.Close();
                     }
                 }
