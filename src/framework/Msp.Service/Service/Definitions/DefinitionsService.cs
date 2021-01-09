@@ -281,5 +281,73 @@ namespace Msp.Service.Service.Tanimlar
 
         #endregion
 
+        #region CaseDef
+
+        public List<CaseDefinitionDTO> Get_List_CaseDef(int _companyRecId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<CaseDefinition>, List<CaseDefinitionDTO>>(_db.CaseDefinition.Where(x=>x.CompanyRecId == _companyRecId).ToList());
+            }
+        }
+
+        public ActionResponse<List<CaseDefinitionDTO>> SaveCaseDefinition(List<CaseDefinitionDTO> model)
+        {
+            ActionResponse<List<CaseDefinitionDTO>> response = new ActionResponse<List<CaseDefinitionDTO>>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    foreach (var item in model)
+                    {
+                        if (item.RecId == 0)
+                        {
+                            _db.CaseDefinition.Add(base.Map<CaseDefinitionDTO, CaseDefinition>(item));
+                            _db.SaveChanges();
+                        }
+                        else
+                        {
+                            var entity = _db.CaseDefinition.FirstOrDefault(x => x.RecId == item.RecId);
+                            if (entity != null)
+                            {
+                                base.SetLog(entity, item, _db, item.RecId);
+                                _db.Entry(entity).CurrentValues.SetValues(item);
+                                _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            }
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
+
+        public ActionResponse<CaseDefinitionDTO> DeleteCaseDefinition(int? id)
+        {
+            ActionResponse<CaseDefinitionDTO> response = new ActionResponse<CaseDefinitionDTO>();
+            using (MspDbContext _db = new MspDbContext())
+            {
+                var record = _db.CaseDefinition.Where(x => x.RecId == id).FirstOrDefault();
+                if (record != null)
+                {
+                    _db.CaseDefinition.Remove(record);
+                }
+                _db.SaveChanges();
+            }
+            return response;
+        }
+
+        #endregion
+
     }
 }

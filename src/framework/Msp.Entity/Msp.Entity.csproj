@@ -53,6 +53,7 @@
     <Compile Include="Entities\ApplicationServer.cs" />
     <Compile Include="Entities\BankEntry.cs" />
     <Compile Include="Entities\Banks.cs" />
+    <Compile Include="Entities\CaseDefinition.cs" />
     <Compile Include="Entities\Cashiers.cs" />
     <Compile Include="Entities\CashPayGroupDef.cs" />
     <Compile Include="Entities\Categories.cs" />

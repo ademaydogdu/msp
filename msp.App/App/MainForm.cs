@@ -333,7 +333,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(2, 1, 1, 5);
+            Version oVersionFB = new Version(2, 1, 1, 6);
             AppMain.MspVersion = oVersionFB;
 
             string AppPath = @"C:\Msp";
@@ -882,6 +882,13 @@ namespace msp.App
         {
             frmMailSend frm = new frmMailSend();
             frm.ShowDialog();
+        }
+
+        private void barButtonItem67_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmCaseDefinition frm = new frmCaseDefinition();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

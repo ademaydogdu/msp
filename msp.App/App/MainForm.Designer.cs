@@ -243,6 +243,8 @@
             this.barButtonItem127 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem128 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem126 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -292,8 +294,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1206,6 +1206,7 @@
             this.barButtonItem67.Caption = "Kasa Kartları";
             this.barButtonItem67.Id = 87;
             this.barButtonItem67.Name = "barButtonItem67";
+            this.barButtonItem67.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem67_ItemClick);
             // 
             // barButtonItem68
             // 
@@ -2089,6 +2090,22 @@
             this.barButtonItem126.Name = "barButtonItem126";
             this.barButtonItem126.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem126_ItemClick);
             // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "İletişim Bilgileri";
+            this.barButtonItem8.Id = 214;
+            this.barButtonItem8.ImageOptions.LargeImageIndex = 67;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
+            // barButtonItem74
+            // 
+            this.barButtonItem74.Caption = "Mail Gönder";
+            this.barButtonItem74.Id = 215;
+            this.barButtonItem74.ImageOptions.LargeImageIndex = 68;
+            this.barButtonItem74.Name = "barButtonItem74";
+            this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick_1);
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -2517,22 +2534,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "İletişim Bilgileri";
-            this.barButtonItem8.Id = 214;
-            this.barButtonItem8.ImageOptions.LargeImageIndex = 67;
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
-            // 
-            // barButtonItem74
-            // 
-            this.barButtonItem74.Caption = "Mail Gönder";
-            this.barButtonItem74.Id = 215;
-            this.barButtonItem74.ImageOptions.LargeImageIndex = 68;
-            this.barButtonItem74.Name = "barButtonItem74";
-            this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick_1);
             // 
             // MainForm
             // 

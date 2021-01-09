@@ -60,6 +60,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<OpenFormRightsDTO, OpenFormRights>();
             cfg.CreateMap<Logs, LogsDTO>();
             cfg.CreateMap<LogsDTO, Logs>();
+            cfg.CreateMap<CaseDefinition, CaseDefinitionDTO>();
+            cfg.CreateMap<CaseDefinitionDTO, CaseDefinition>();
         }
 
 

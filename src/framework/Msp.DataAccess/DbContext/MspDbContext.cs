@@ -54,6 +54,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<SecRights> SecRights { get; set; }
         public virtual DbSet<OpenFormRights> OpenFormRights { get; set; }
         public virtual DbSet<Logs> LOGS { get; set; }
+        public virtual DbSet<CaseDefinition> CaseDefinition { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Categories>()

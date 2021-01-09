@@ -490,6 +490,12 @@
     <Compile Include="Tanimlar\frmBirimTanim.Designer.cs">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\frmCaseDefinition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\frmCaseDefinition.Designer.cs">
+      <DependentUpon>frmCaseDefinition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tanimlar\frmGroupDefinition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -708,6 +714,9 @@
     <EmbeddedResource Include="Tanimlar\frmBirimTanim.resx">
       <DependentUpon>frmBirimTanim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\frmCaseDefinition.resx">
+      <DependentUpon>frmCaseDefinition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\frmGroupDefinition.resx">
       <DependentUpon>frmGroupDefinition.cs</DependentUpon>
     </EmbeddedResource>
@@ -734,6 +743,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.App.LogsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.BankEntryDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.BanksDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CaseDefinitionDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrencyTypeDTO.datasource" />

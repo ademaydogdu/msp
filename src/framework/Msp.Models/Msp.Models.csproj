@@ -47,6 +47,7 @@
     <Compile Include="Models\App\ProgramsControlsDTO.cs" />
     <Compile Include="Models\BankEntryDTO.cs" />
     <Compile Include="Models\BanksDTO.cs" />
+    <Compile Include="Models\CaseDefinitionDTO.cs" />
     <Compile Include="Models\CashPayGroupDefDTO.cs" />
     <Compile Include="Models\CompanyDTO.cs" />
     <Compile Include="Models\CTransactionsDTO.cs" />

@@ -650,6 +650,28 @@ namespace Msp.App.App
             Application.DoEvents();
             #endregion
 
+            #region CaseDefinition
+
+            if (tblTableList.Rows.Contains("CaseDefinition") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[CaseDefinition]( "
+                        + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                        + "     [CaseName] [nvarchar] (50) NULL, "
+                        + " 	[CompanyRecId] [int] NULL, "
+                        + "  CONSTRAINT[PK_CaseDefinition] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [RecId] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
+
             #endregion
 
             #region CreateColumn
