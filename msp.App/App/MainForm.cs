@@ -34,6 +34,7 @@ using Msp.App.Report;
 using Msp.Models.Models.SecRights;
 using Msp.Service.Service.Admin;
 using Msp.App.Contact;
+using System.IO;
 
 namespace msp.App
 {
@@ -335,11 +336,13 @@ namespace msp.App
             Version oVersionFB = new Version(2, 1, 1, 5);
             AppMain.MspVersion = oVersionFB;
 
-            //if (Global.RunningLocal && (string.IsNullOrEmpty(Global.AppPath) || !Directory.Exists(Global.AppPath)))
-            //{
-            //    SednaFBMain.KodAdmin.OpenWizard();
-            //    Global.AppPath = SednaFBMain.KodAdmin.Service.AppPath;
-            //}
+            string AppPath = @"C:\Msp";
+            if (!Directory.Exists(AppPath))
+            {
+                Wizard frm = new Wizard();
+                frm.ShowDialog();
+                //Global.AppPath = SednaFBMain.KodAdmin.Service.AppPath;
+            }
 
             Login loForm = new Login();
             loForm.TopMost = true;
@@ -764,7 +767,7 @@ namespace msp.App
                             PCode = productCode,
                             PName = productName,
                             PTotal = miltar,
-                            PUnitId = units.Where(x => x.UName == Birim.Trim()).FirstOrDefault().UID,
+                            PUnitId = units.Where(x => x.UName == Birim.Trim()).FirstOrDefault() != null ? units.Where(x => x.UName == Birim.Trim()).FirstOrDefault().UID : 0,
                             PFirstPrice = GirisFiyat,
                             PKarPrice = KarPrice,
                             PTax = KdvOrani.Where(x => x.Tax == KDV).FirstOrDefault().Id,

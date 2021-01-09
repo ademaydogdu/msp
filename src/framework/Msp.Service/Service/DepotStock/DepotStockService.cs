@@ -89,14 +89,16 @@ namespace Msp.Service.Service.DepotStock
                             {
                                 response.Message = "Aynı Barkod Ürününden Mevcuttur.";
                                 response.ResponseType = ResponseType.Error;
+                                return response;
                             }
                         }
-                        _db.products.Add(base.Map<ProductDTO, Products>(model));
+                        var product = base.Map<ProductDTO, Products>(response.Response);
+                        _db.products.Add(product);
                         _db.SaveChanges();
 
                         ProductMovementDTO productMovement = new ProductMovementDTO
                         {
-                            ProductId = model.PID,
+                            ProductId = product.PID,
                             Date = DateTime.Now,
                             Quantity = Convert.ToInt32(model.PTotal.GetValueOrDefault()),
                             Durum = "Stok Giriş",
