@@ -30,10 +30,11 @@ namespace Msp.App.Settings
         }
         public FormOpenType _FormOpenType;
         private UsersDTO _user = new UsersDTO();
-
-        List<SelectIdValue> tblForm = new List<SelectIdValue>() 
+        List<SecRightsDTO> SecRights = new List<SecRightsDTO>();
+        List<SelectIdValue> tblForm = new List<SelectIdValue>()
         {
-            new SelectIdValue(1, "Ürün Kartı")
+            new SelectIdValue(1, "Ürün Kartı"),
+            new SelectIdValue(2, "Satış")
         };
 
         public void Show(string _UserCode)
@@ -41,23 +42,71 @@ namespace Msp.App.Settings
             if (_FormOpenType == FormOpenType.New)
             {
                 _user = new UsersDTO();
+                xtrFormYetki.PageEnabled = false;
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
-                 _user = _repository.Run<Service.Service.App.StartUp, UsersDTO>(r => r.GetUser(_UserCode));
+                _user = _repository.Run<Service.Service.App.StartUp, UsersDTO>(r => r.GetUser(_UserCode));
                 _user.password = txt_Parola.Text = SecurityExtension.Sifre_Coz(_user.password);
+                xtrFormYetki.PageEnabled = true;
+
             }
             bs_usersEdit.DataSource = _user;
             this.Show();
         }
 
+        private bool do_Validation()
+        {
+            bool _return = false;
+            if (_user.password == null || Convert.ToString(txt_Parola.EditValue) == "")
+            {
+                XtraMessageBox.Show("Parola Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (_user.username == null || Convert.ToString(txt_KullanıcıKodu.EditValue) == "")
+            {
+                XtraMessageBox.Show("Kullanıcı Kodu Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            return _return;
+        }
+
         private void do_save()
         {
             bs_usersEdit.EndEdit();
+            if (do_Validation()) return;
+
             if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
                 try
                 {
+                    if (SecRights.Count == 0)
+                    {
+                        foreach (DocumentType item in (DocumentType[])Enum.GetValues(typeof(DocumentType)))
+                        {
+                            var secRighdt = AppMain.secRights.Where(x => x.UserCode == AppMain.User.username && x.DocumentType == (int)item).FirstOrDefault();
+                            if (secRighdt == null)
+                            {
+                                SecRights.Add(new SecRightsDTO
+                                {
+                                    UserCode = _user.username,
+                                    SecCode = _user.username,
+                                    DocumentType = (int)item,
+                                    SecDelete = 1,
+                                    SecInsert = 1,
+                                    SecPreview = 1,
+                                    SecUpdate = 1,
+                                    CompanyCode = AppMain.Company,
+                                    CompanyRecId = AppMain.CompanyRecId
+                                });
+                            }
+                        }                   
+                    }
+                    var secRight = _repository.Run<SettingsService, ActionResponse<List<SecRightsDTO>>>(x => x.SaveSecRights(SecRights));
+                    if (secRight.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show(secRight.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
 
                     _user.password = SecurityExtension.Sifrele(txt_Parola.Text);
                     _user.HaspPassword = SecurityExtension.ConvertStringToMD5(txt_Parola.Text);
@@ -102,7 +151,7 @@ namespace Msp.App.Settings
 
         private void frmKullaniciTanimEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
@@ -115,8 +164,8 @@ namespace Msp.App.Settings
 
                 if (_FormOpenType != FormOpenType.New)
                 {
-                    var secRight = _repository.Run<SettingsService, List<SecRightsDTO>>(x=>x.GetList_SecRightUserCode(_user.username));
-                    bs_SecRight.DataSource = secRight;
+                    SecRights = _repository.Run<SettingsService, List<SecRightsDTO>>(x => x.GetList_SecRightUserCode(_user.username));
+                    bs_SecRight.DataSource = SecRights;
                 }
 
             }

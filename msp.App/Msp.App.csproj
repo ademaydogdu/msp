@@ -436,6 +436,12 @@
     <Compile Include="Settings\frmKullaniciTanimEdit.Designer.cs">
       <DependentUpon>frmKullaniciTanimEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings\frmOpenFormRights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmOpenFormRights.Designer.cs">
+      <DependentUpon>frmOpenFormRights.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings\Parameters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -657,6 +663,9 @@
     <EmbeddedResource Include="Settings\frmKullaniciTanimEdit.resx">
       <DependentUpon>frmKullaniciTanimEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmOpenFormRights.resx">
+      <DependentUpon>frmOpenFormRights.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings\Parameters.resx">
       <DependentUpon>Parameters.cs</DependentUpon>
     </EmbeddedResource>
@@ -717,6 +726,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SpeedSaleProductDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.SecRights.OpenFormRightsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.SecRights.SecRightsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UnitsDTO1.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UsersDTO.datasource" />

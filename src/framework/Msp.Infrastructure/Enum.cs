@@ -45,7 +45,8 @@ namespace Msp.Infrastructure
 
     public enum DocumentType
     {
-        StockList = 1
+        StockList = 1,
+        Satis = 2
     }
 
 

@@ -2,6 +2,7 @@
 using Msp.Infrastructure.DbConectionModel;
 using Msp.Infrastructure.Extensions;
 using Msp.Models.Models;
+using Msp.Models.Models.SecRights;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
@@ -65,8 +66,44 @@ namespace Msp.Service.Service.Admin
             return response;
         }
 
+        public List<OpenFormRightsDTO> OpenFormRights(string userCode, int CompanyRecId)
+        {
+            using (var db = new MspDbContext())
+            {
+                return base.Map<List<OpenFormRights>, List<OpenFormRightsDTO>>(db.OpenFormRights.Where(x => x.UserCode == userCode && x.CompanyRecId == CompanyRecId).ToList());
+            }
+        }
 
+        public void SaveOpenFormRights(List<OpenFormRightsDTO> openFormRights)
+        {
+            using (var db = new MspDbContext())
+            {
+                if (openFormRights.Count > 0)
+                {
+                    db.OpenFormRights.AddRange(base.Map<List<OpenFormRightsDTO>, List<OpenFormRights>>(openFormRights));
+                    db.SaveChanges();
+                }
+            }
+        }
 
+        public List<SecRightsDTO> get_SecRights(string userCode, int CompanyRecId)
+        {
+            using (var db = new MspDbContext())
+            {
+                return base.Map<List<SecRights>, List<SecRightsDTO>>(db.SecRights.Where(x => x.UserCode == userCode && x.CompanyRecId == CompanyRecId).ToList());
+            }
+        }
+        public void SaveSecRights(List<SecRightsDTO> SecRights)
+        {
+            using (var db = new MspDbContext())
+            {
+                if (SecRights.Count > 0)
+                {
+                    db.SecRights.AddRange(base.Map<List<SecRightsDTO>, List<SecRights>>(SecRights));
+                    db.SaveChanges();
+                }
+            }
+        }
 
     }
 }

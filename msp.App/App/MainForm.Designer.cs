@@ -47,7 +47,7 @@
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.btnUserSettings = new DevExpress.XtraBars.BarSubItem();
             this.btn_KuallaniciTanim = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_SayfaYetkileri = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
@@ -165,7 +165,7 @@
             this.btnFatura = new DevExpress.XtraBars.BarButtonItem();
             this.bntfatura = new DevExpress.XtraBars.BarSubItem();
             this.bbi_FisEntegra = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_SatisAnindaBarkod = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem75 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem76 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem77 = new DevExpress.XtraBars.BarButtonItem();
@@ -194,7 +194,7 @@
             this.bbi_BekleyenIrsaliye = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem88 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem15 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem92 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_ReportStockList = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem93 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem96 = new DevExpress.XtraBars.BarButtonItem();
@@ -240,6 +240,8 @@
             this.barButtonItem118 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem125 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem23 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem127 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem128 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem126 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -290,8 +292,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem127 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem128 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -322,7 +322,7 @@
             this.skinDropDownButtonItem1,
             this.btnUserSettings,
             this.btn_KuallaniciTanim,
-            this.barButtonItem8,
+            this.bbi_SayfaYetkileri,
             this.skinRibbonGalleryBarItem1,
             this.skinPaletteDropDownButtonItem1,
             this.barButtonGroup1,
@@ -440,7 +440,7 @@
             this.btnFatura,
             this.bntfatura,
             this.bbi_FisEntegra,
-            this.barButtonItem74,
+            this.bbi_SatisAnindaBarkod,
             this.barButtonItem75,
             this.barButtonItem76,
             this.barButtonItem77,
@@ -480,7 +480,7 @@
             this.barSubItem19,
             this.barSubItem20,
             this.bbi_CariHesapListesi,
-            this.barButtonItem92,
+            this.bbi_ReportStockList,
             this.barButtonItem93,
             this.barButtonItem94,
             this.barButtonItem95,
@@ -669,7 +669,7 @@
             this.btnUserSettings.ImageOptions.SvgImageSize = new System.Drawing.Size(50, 50);
             this.btnUserSettings.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_KuallaniciTanim),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SayfaYetkileri)});
             this.btnUserSettings.Name = "btnUserSettings";
             // 
             // btn_KuallaniciTanim
@@ -679,12 +679,12 @@
             this.btn_KuallaniciTanim.Name = "btn_KuallaniciTanim";
             this.btn_KuallaniciTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_KuallaniciTanim_ItemClick);
             // 
-            // barButtonItem8
+            // bbi_SayfaYetkileri
             // 
-            this.barButtonItem8.Caption = "Kullanıcı Yetkileri";
-            this.barButtonItem8.Enabled = false;
-            this.barButtonItem8.Id = 10;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.bbi_SayfaYetkileri.Caption = "Kullanıcı Sayfa Yetkileri";
+            this.bbi_SayfaYetkileri.Id = 10;
+            this.bbi_SayfaYetkileri.Name = "bbi_SayfaYetkileri";
+            this.bbi_SayfaYetkileri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_SayfaYetkileri_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -1516,14 +1516,14 @@
             this.bbi_FisEntegra.ImageOptions.LargeImageIndex = 31;
             this.bbi_FisEntegra.Name = "bbi_FisEntegra";
             // 
-            // barButtonItem74
+            // bbi_SatisAnindaBarkod
             // 
-            this.barButtonItem74.Caption = "Satış Anında Barkod İşlemleri";
-            this.barButtonItem74.Enabled = false;
-            this.barButtonItem74.Id = 132;
-            this.barButtonItem74.ImageOptions.LargeImageIndex = 32;
-            this.barButtonItem74.Name = "barButtonItem74";
-            this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick);
+            this.bbi_SatisAnindaBarkod.Caption = "Satış Anında Barkod İşlemleri";
+            this.bbi_SatisAnindaBarkod.Enabled = false;
+            this.bbi_SatisAnindaBarkod.Id = 132;
+            this.bbi_SatisAnindaBarkod.ImageOptions.LargeImageIndex = 32;
+            this.bbi_SatisAnindaBarkod.Name = "bbi_SatisAnindaBarkod";
+            this.bbi_SatisAnindaBarkod.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick);
             // 
             // barButtonItem75
             // 
@@ -1735,7 +1735,7 @@
             this.barSubItem15.Id = 164;
             this.barSubItem15.ImageOptions.LargeImageIndex = 47;
             this.barSubItem15.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem92),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_ReportStockList),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem93),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem95),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem96),
@@ -1745,11 +1745,12 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem100)});
             this.barSubItem15.Name = "barSubItem15";
             // 
-            // barButtonItem92
+            // bbi_ReportStockList
             // 
-            this.barButtonItem92.Caption = "Stok Kartları Listesi";
-            this.barButtonItem92.Id = 173;
-            this.barButtonItem92.Name = "barButtonItem92";
+            this.bbi_ReportStockList.Caption = "Stok Kartları Listesi";
+            this.bbi_ReportStockList.Id = 173;
+            this.bbi_ReportStockList.Name = "bbi_ReportStockList";
+            this.bbi_ReportStockList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_ReportStockList_ItemClick);
             // 
             // barButtonItem93
             // 
@@ -2064,6 +2065,18 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem128)});
             this.barSubItem23.Name = "barSubItem23";
             // 
+            // barButtonItem127
+            // 
+            this.barButtonItem127.Caption = "Satoş İşlemlerinde Silinen Kayıtlar";
+            this.barButtonItem127.Id = 212;
+            this.barButtonItem127.Name = "barButtonItem127";
+            // 
+            // barButtonItem128
+            // 
+            this.barButtonItem128.Caption = "Silinen Ürün Kartları";
+            this.barButtonItem128.Id = 213;
+            this.barButtonItem128.Name = "barButtonItem128";
+            // 
             // barButtonItem126
             // 
             this.barButtonItem126.Caption = "Banka Tanımları";
@@ -2167,7 +2180,6 @@
             this.ribbonPageGroup10.AllowTextClipping = false;
             this.ribbonPageGroup10.ItemLinks.Add(this.btnSatisListesi);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Satış Sonrası";
             // 
             // ribbonPageGroup15
             // 
@@ -2176,7 +2188,7 @@
             // 
             // ribbonPageGroup25
             // 
-            this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem74);
+            this.ribbonPageGroup25.ItemLinks.Add(this.bbi_SatisAnindaBarkod);
             this.ribbonPageGroup25.Name = "ribbonPageGroup25";
             // 
             // ribbonPageGroup26
@@ -2498,18 +2510,6 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // barButtonItem127
-            // 
-            this.barButtonItem127.Caption = "Satoş İşlemlerinde Silinen Kayıtlar";
-            this.barButtonItem127.Id = 212;
-            this.barButtonItem127.Name = "barButtonItem127";
-            // 
-            // barButtonItem128
-            // 
-            this.barButtonItem128.Caption = "Silinen Ürün Kartları";
-            this.barButtonItem128.Id = 213;
-            this.barButtonItem128.Name = "barButtonItem128";
-            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -2566,7 +2566,7 @@
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
         private DevExpress.XtraBars.BarSubItem btnUserSettings;
         private DevExpress.XtraBars.BarButtonItem btn_KuallaniciTanim;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem bbi_SayfaYetkileri;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
@@ -2707,7 +2707,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup23;
         private DevExpress.XtraBars.BarButtonItem bbi_FisEntegra;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem74;
+        private DevExpress.XtraBars.BarButtonItem bbi_SatisAnindaBarkod;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup25;
         private DevExpress.XtraBars.BarButtonItem barButtonItem75;
         private DevExpress.XtraBars.BarButtonItem barButtonItem76;
@@ -2758,7 +2758,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem20;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup31;
         private DevExpress.XtraBars.BarButtonItem bbi_CariHesapListesi;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem92;
+        private DevExpress.XtraBars.BarButtonItem bbi_ReportStockList;
         private DevExpress.XtraBars.BarButtonItem barButtonItem93;
         private DevExpress.XtraBars.BarButtonItem barButtonItem94;
         private DevExpress.XtraBars.BarButtonItem barButtonItem95;

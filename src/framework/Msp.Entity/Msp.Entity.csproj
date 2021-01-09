@@ -64,6 +64,7 @@
     <Compile Include="Entities\Depots.cs" />
     <Compile Include="Entities\ExchangeRate.cs" />
     <Compile Include="Entities\FormLayouts.cs" />
+    <Compile Include="Entities\OpenFormRights.cs" />
     <Compile Include="Entities\ProductGroup.cs" />
     <Compile Include="Entities\InvoiceOwner.cs" />
     <Compile Include="Entities\InvoiceTrans.cs" />

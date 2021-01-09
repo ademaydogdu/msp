@@ -41,7 +41,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.bs_usersEdit = new System.Windows.Forms.BindingSource(this.components);
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_KullanıcıKodu = new DevExpress.XtraEditors.TextEdit();
             this.txt_Parola = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
@@ -106,7 +106,7 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_usersEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_KullanıcıKodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Parola.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
@@ -254,7 +254,7 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.toggleSwitch1);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.txt_KullanıcıKodu);
             this.layoutControl1.Controls.Add(this.txt_Parola);
             this.layoutControl1.Controls.Add(this.textEdit3);
             this.layoutControl1.Controls.Add(this.checkEdit1);
@@ -283,15 +283,15 @@
             // 
             this.bs_usersEdit.DataSource = typeof(Msp.Models.Models.UsersDTO);
             // 
-            // textEdit1
+            // txt_KullanıcıKodu
             // 
-            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "username", true));
-            this.textEdit1.Location = new System.Drawing.Point(79, 58);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(204, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 4;
+            this.txt_KullanıcıKodu.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "username", true));
+            this.txt_KullanıcıKodu.Location = new System.Drawing.Point(79, 58);
+            this.txt_KullanıcıKodu.MenuManager = this.barManager1;
+            this.txt_KullanıcıKodu.Name = "txt_KullanıcıKodu";
+            this.txt_KullanıcıKodu.Size = new System.Drawing.Size(204, 20);
+            this.txt_KullanıcıKodu.StyleController = this.layoutControl1;
+            this.txt_KullanıcıKodu.TabIndex = 4;
             // 
             // txt_Parola
             // 
@@ -327,6 +327,7 @@
             // 
             // checkEdit2
             // 
+            this.checkEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "AdminAuthority", true));
             this.checkEdit2.Location = new System.Drawing.Point(12, 130);
             this.checkEdit2.MenuManager = this.barManager1;
             this.checkEdit2.Name = "checkEdit2";
@@ -356,7 +357,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.textEdit1;
+            this.layoutControlItem1.Control = this.txt_KullanıcıKodu;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 46);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(275, 24);
@@ -880,7 +881,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_usersEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_KullanıcıKodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Parola.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
@@ -955,7 +956,7 @@
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txt_KullanıcıKodu;
         private DevExpress.XtraEditors.TextEdit txt_Parola;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraLayout.LayoutControlGroup Root;

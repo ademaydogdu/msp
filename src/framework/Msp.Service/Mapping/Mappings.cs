@@ -56,6 +56,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<OrderTransDTO, OrderTrans>();
             cfg.CreateMap<SecRights, SecRightsDTO>();
             cfg.CreateMap<SecRightsDTO, SecRights>();
+            cfg.CreateMap<OpenFormRights, OpenFormRightsDTO>();
+            cfg.CreateMap<OpenFormRightsDTO, OpenFormRights>();
         }
 
 

@@ -31,6 +31,8 @@ using DevExpress.XtraSpreadsheet;
 using DevExpress.Spreadsheet;
 using Msp.Models.Models;
 using Msp.App.Report;
+using Msp.Models.Models.SecRights;
+using Msp.Service.Service.Admin;
 
 namespace msp.App
 {
@@ -99,6 +101,68 @@ namespace msp.App
         {
             CheckDb oForm = new CheckDb();
             oForm.UpdateFromStart();
+
+        }
+
+        private void do_OpenFormAyarlari()
+        {
+            AppMain.OpenFormRights = _repository.Run<AuthorizationService, List<OpenFormRightsDTO>>(x => x.OpenFormRights(AppMain.User.username, AppMain.CompanyRecId));
+            List<OpenFormRightsDTO> newFormRights = new List<OpenFormRightsDTO>();
+            foreach (var form in AppMain.Forms)
+            {
+                var openFormRight = AppMain.OpenFormRights.Where(x => x.UserCode == AppMain.User.username && x.ActionName == form.Key).FirstOrDefault();
+                if (openFormRight == null)
+                {
+                    newFormRights.Add(new OpenFormRightsDTO
+                    {
+                        UserCode = AppMain.User.username,
+                        ActionName = form.Key,
+                        OpenForm = true,
+                        CompanyRecId = AppMain.CompanyRecId
+                    });
+                }
+            }
+            _repository.Run<AuthorizationService>(x => x.SaveOpenFormRights(newFormRights));
+
+        }
+
+        private void do_MenuyuControl()
+        {
+            foreach (var form in AppMain.Forms)
+            {
+                OpenFormRightsDTO openFormRight = AppMain.OpenFormRights.Where(x => x.UserCode == AppMain.User.username && x.ActionName == form.Key).FirstOrDefault();
+                if (AppMain.User.username != "Admin" && openFormRight != null && form.Value != "X")
+                {
+                    ribbon.Items[form.Value].Visibility = openFormRight.OpenForm.GetValueOrDefault(true) == true ? BarItemVisibility.Always : BarItemVisibility.Never;
+                }
+            }
+
+        }
+
+        public void do_FormSecRight()
+        {
+            AppMain.secRights = _repository.Run<AuthorizationService, List<SecRightsDTO>>(x => x.get_SecRights(AppMain.User.username, AppMain.CompanyRecId));
+            List<SecRightsDTO> newSecRights = new List<SecRightsDTO>();
+            foreach (DocumentType item in (DocumentType[])Enum.GetValues(typeof(DocumentType)))
+            {
+                var secRighdt = AppMain.secRights.Where(x => x.UserCode == AppMain.User.username && x.DocumentType == (int)item).FirstOrDefault();
+                if (secRighdt == null)
+                {
+                    newSecRights.Add(new SecRightsDTO
+                    {
+                        UserCode = AppMain.User.username,
+                        SecCode = AppMain.User.username,
+                        DocumentType = (int)item,
+                        SecDelete = 1,
+                        SecInsert = 1,
+                        SecPreview = 1,
+                        SecUpdate = 1,
+                        CompanyCode = AppMain.Company,
+                        CompanyRecId = AppMain.CompanyRecId
+                    });
+                }
+            }
+            _repository.Run<AuthorizationService>(x => x.SaveSecRights(newSecRights));
 
         }
 
@@ -285,6 +349,10 @@ namespace msp.App
                 do_versionControl();
                 do_barDoldur();
 
+                do_OpenFormAyarlari();
+                do_MenuyuControl();
+                do_FormSecRight();
+
                 UserLookAndFeel.Default.SetSkinStyle(AppMain.User.DefaultTheme, AppMain.User.DefaultTheme2);
             }
             else
@@ -293,10 +361,7 @@ namespace msp.App
             }
         }
 
-        public void do_FormSecRight()
-        {
-
-        }
+    
 
 
         #endregion
@@ -776,6 +841,24 @@ namespace msp.App
             Hatirlatici frm = new Hatirlatici();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void bbi_SayfaYetkileri_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmOpenFormRights frm = new frmOpenFormRights();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void bbi_ReportStockList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var _productlist = _repository.Run<Msp.Service.Service.DepotStock.DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            if (_productlist.Count > 0)
+            {
+                frmPrint frm = new frmPrint();
+                frm.PrintProduct(_productlist);
+                frm.ShowDialog();
+            }
         }
     }
 }

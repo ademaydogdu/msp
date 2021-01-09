@@ -1,5 +1,6 @@
 ﻿using Msp.Infrastructure.DbConectionModel;
 using Msp.Models.Models;
+using Msp.Models.Models.SecRights;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,9 @@ namespace Msp.Infrastructure
     public class AppMain
     {
         public static Dictionary<string, string> Forms { get; set; }
+        public static List<OpenFormRightsDTO> OpenFormRights { get; set; }
+        public static List<SecRightsDTO> secRights { get; set; }
         public static ConnectionDTO SqlConnection { get; set; }
-       // public static ParametersDTO Parameters { get; set; }
         public static UsersDTO User { get; set; }
         public static Version MspVersion { get; set; }
         public static string LcConnectionString { get; set; }

@@ -223,7 +223,6 @@ namespace Msp.Service.Service.Settings
         #endregion
 
         #region SecRight
-
         public List<SecRightsDTO> GetList_SecRight()
         {
             using (var _db = new MspDbContext())
@@ -231,7 +230,6 @@ namespace Msp.Service.Service.Settings
                 return base.Map<List<SecRights>, List<SecRightsDTO>>(_db.SecRights.ToList());
             }
         }
-
         public List<SecRightsDTO> GetList_SecRightUserCode(string UserCode)
         {
             using (var _db = new MspDbContext())
@@ -239,8 +237,89 @@ namespace Msp.Service.Service.Settings
                 return base.Map<List<SecRights>, List<SecRightsDTO>>(_db.SecRights.Where(x=>x.UserCode == UserCode).ToList());
             }
         }
-
+        public ActionResponse<List<SecRightsDTO>> SaveSecRights(List<SecRightsDTO> model)
+        {
+            ActionResponse<List<SecRightsDTO>> response = new ActionResponse<List<SecRightsDTO>>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    foreach (var item in model)
+                    {
+                        if (item.RecId == 0)
+                        {
+                            _db.SecRights.Add(base.Map<SecRightsDTO, SecRights>(item));
+                            _db.SaveChanges();
+                        }
+                        else
+                        {
+                            var entity = _db.SecRights.FirstOrDefault(x => x.RecId == item.RecId);
+                            if (entity != null)
+                            {
+                                _db.Entry(entity).CurrentValues.SetValues(item);
+                                _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            }
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
         #endregion
+
+
+        #region OpenFormSecRight
+        public ActionResponse<List<OpenFormRightsDTO>> SaveOpenFormRights(List<OpenFormRightsDTO> model)
+        {
+            ActionResponse<List<OpenFormRightsDTO>> response = new ActionResponse<List<OpenFormRightsDTO>>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    foreach (var item in model)
+                    {
+                        if (item.RecId == 0)
+                        {
+                            _db.OpenFormRights.Add(base.Map<OpenFormRightsDTO, OpenFormRights>(item));
+                            _db.SaveChanges();
+                        }
+                        else
+                        {
+                            var entity = _db.OpenFormRights.FirstOrDefault(x => x.RecId == item.RecId);
+                            if (entity != null)
+                            {
+                                _db.Entry(entity).CurrentValues.SetValues(item);
+                                _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            }
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+        #endregion
+
+
 
     }
 }
