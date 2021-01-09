@@ -33,40 +33,15 @@
             this.gcvCurTransaction = new DevExpress.XtraGrid.GridControl();
             this.CurTranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_CurTrans = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCurID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurSoleProp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurAuthPersonName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurOnCredit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurRiskLimit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurCity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurDistrict = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurBalance = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurCompanyType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurAdress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurAdressTwo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurCountryCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurCountryName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurZipCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurPhoneOne = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurPhoneTwo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurFax = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurTaxNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurTaxOffice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurCardNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurIdentNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurTitle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -86,6 +61,7 @@
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).BeginInit();
@@ -127,56 +103,26 @@
             // gcv_CurTrans
             // 
             this.gcv_CurTrans.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCurID,
             this.colCurType,
             this.colCurCode,
-            this.colCurSoleProp,
             this.colCurAccountName,
             this.colCurAuthPersonName,
-            this.colCurDiscount,
-            this.colCurOnCredit,
-            this.colCurRiskLimit,
-            this.colCurCity,
-            this.colCurDistrict,
-            this.colCurBalance,
-            this.colCurCompanyType,
             this.colCurCreatedDate,
             this.colCurAdress,
             this.colCurAdressTwo,
-            this.colCurCountryCode,
-            this.colCurCountryName,
-            this.colCurZipCode,
             this.colCurPhoneOne,
             this.colCurPhoneTwo,
-            this.colCurFax,
-            this.colCurEmail,
-            this.colCurDescription,
-            this.colCurTaxNo,
-            this.colCurTaxOffice,
-            this.colCurCardNo,
-            this.colCurIdentNo,
-            this.colCurTitle,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
+            this.colCurEmail});
             this.gcv_CurTrans.GridControl = this.gcvCurTransaction;
             this.gcv_CurTrans.Name = "gcv_CurTrans";
             this.gcv_CurTrans.OptionsBehavior.Editable = false;
             this.gcv_CurTrans.OptionsView.ShowAutoFilterRow = true;
-            // 
-            // colCurID
-            // 
-            this.colCurID.FieldName = "ID";
-            this.colCurID.Name = "colCurID";
-            this.colCurID.Visible = true;
-            this.colCurID.VisibleIndex = 0;
-            this.colCurID.Width = 54;
+            this.gcv_CurTrans.OptionsView.ShowGroupPanel = false;
             // 
             // colCurType
             // 
-            this.colCurType.FieldName = "C.Tipi";
+            this.colCurType.Caption = "C.Tipi";
+            this.colCurType.FieldName = "CurType";
             this.colCurType.Name = "colCurType";
             this.colCurType.Visible = true;
             this.colCurType.VisibleIndex = 1;
@@ -184,259 +130,75 @@
             // 
             // colCurCode
             // 
-            this.colCurCode.FieldName = "C.Kodu";
+            this.colCurCode.Caption = "C.Kodu";
+            this.colCurCode.FieldName = "CurCode";
             this.colCurCode.Name = "colCurCode";
             this.colCurCode.Visible = true;
             this.colCurCode.VisibleIndex = 2;
             this.colCurCode.Width = 20;
             // 
-            // colCurSoleProp
-            // 
-            this.colCurSoleProp.FieldName = "Şahıs Şirketi";
-            this.colCurSoleProp.Name = "colCurSoleProp";
-            this.colCurSoleProp.Visible = true;
-            this.colCurSoleProp.VisibleIndex = 3;
-            this.colCurSoleProp.Width = 20;
-            // 
             // colCurAccountName
             // 
-            this.colCurAccountName.FieldName = "C.Adı";
+            this.colCurAccountName.Caption = "C.Adı";
+            this.colCurAccountName.FieldName = "CurAccountName";
             this.colCurAccountName.Name = "colCurAccountName";
             this.colCurAccountName.Visible = true;
-            this.colCurAccountName.VisibleIndex = 4;
+            this.colCurAccountName.VisibleIndex = 3;
             this.colCurAccountName.Width = 55;
             // 
             // colCurAuthPersonName
             // 
-            this.colCurAuthPersonName.FieldName = "C.Yetk.Adı";
+            this.colCurAuthPersonName.Caption = "C.Yetk.Adı";
+            this.colCurAuthPersonName.FieldName = "CurAuthPersonName";
             this.colCurAuthPersonName.Name = "colCurAuthPersonName";
             this.colCurAuthPersonName.Visible = true;
-            this.colCurAuthPersonName.VisibleIndex = 5;
+            this.colCurAuthPersonName.VisibleIndex = 4;
             this.colCurAuthPersonName.Width = 40;
-            // 
-            // colCurDiscount
-            // 
-            this.colCurDiscount.FieldName = "C.İskonto";
-            this.colCurDiscount.Name = "colCurDiscount";
-            this.colCurDiscount.Visible = true;
-            this.colCurDiscount.VisibleIndex = 6;
-            this.colCurDiscount.Width = 20;
-            // 
-            // colCurOnCredit
-            // 
-            this.colCurOnCredit.FieldName = "C.Veresiye";
-            this.colCurOnCredit.Name = "colCurOnCredit";
-            this.colCurOnCredit.Visible = true;
-            this.colCurOnCredit.VisibleIndex = 7;
-            this.colCurOnCredit.Width = 20;
-            // 
-            // colCurRiskLimit
-            // 
-            this.colCurRiskLimit.FieldName = "C.Risk Limit";
-            this.colCurRiskLimit.Name = "colCurRiskLimit";
-            this.colCurRiskLimit.Visible = true;
-            this.colCurRiskLimit.VisibleIndex = 8;
-            this.colCurRiskLimit.Width = 20;
-            // 
-            // colCurCity
-            // 
-            this.colCurCity.FieldName = "C.Şehir";
-            this.colCurCity.Name = "colCurCity";
-            this.colCurCity.Visible = true;
-            this.colCurCity.VisibleIndex = 9;
-            this.colCurCity.Width = 20;
-            // 
-            // colCurDistrict
-            // 
-            this.colCurDistrict.FieldName = "İl";
-            this.colCurDistrict.Name = "colCurDistrict";
-            this.colCurDistrict.Visible = true;
-            this.colCurDistrict.VisibleIndex = 10;
-            this.colCurDistrict.Width = 20;
-            // 
-            // colCurBalance
-            // 
-            this.colCurBalance.FieldName = "C.Bakiye";
-            this.colCurBalance.Name = "colCurBalance";
-            this.colCurBalance.Visible = true;
-            this.colCurBalance.VisibleIndex = 11;
-            this.colCurBalance.Width = 20;
-            // 
-            // colCurCompanyType
-            // 
-            this.colCurCompanyType.FieldName = "Şirket Tipi";
-            this.colCurCompanyType.Name = "colCurCompanyType";
-            this.colCurCompanyType.Visible = true;
-            this.colCurCompanyType.VisibleIndex = 12;
-            this.colCurCompanyType.Width = 20;
             // 
             // colCurCreatedDate
             // 
-            this.colCurCreatedDate.FieldName = "Oluşt.Tarihi";
+            this.colCurCreatedDate.Caption = "Oluşt.Tarihi";
+            this.colCurCreatedDate.FieldName = "CurCreatedDate";
             this.colCurCreatedDate.Name = "colCurCreatedDate";
             this.colCurCreatedDate.Visible = true;
-            this.colCurCreatedDate.VisibleIndex = 13;
+            this.colCurCreatedDate.VisibleIndex = 5;
             this.colCurCreatedDate.Width = 20;
             // 
             // colCurAdress
             // 
-            this.colCurAdress.FieldName = "Adres";
+            this.colCurAdress.Caption = "Adres";
+            this.colCurAdress.FieldName = "CurAdress";
             this.colCurAdress.Name = "colCurAdress";
             this.colCurAdress.Visible = true;
-            this.colCurAdress.VisibleIndex = 14;
+            this.colCurAdress.VisibleIndex = 6;
             this.colCurAdress.Width = 20;
             // 
             // colCurAdressTwo
             // 
-            this.colCurAdressTwo.FieldName = "Adres2";
+            this.colCurAdressTwo.Caption = "Adres2";
+            this.colCurAdressTwo.FieldName = "CurAdressTwo";
             this.colCurAdressTwo.Name = "colCurAdressTwo";
             this.colCurAdressTwo.Visible = true;
-            this.colCurAdressTwo.VisibleIndex = 15;
+            this.colCurAdressTwo.VisibleIndex = 7;
             this.colCurAdressTwo.Width = 20;
-            // 
-            // colCurCountryCode
-            // 
-            this.colCurCountryCode.FieldName = "Ülke Kodu";
-            this.colCurCountryCode.Name = "colCurCountryCode";
-            this.colCurCountryCode.Visible = true;
-            this.colCurCountryCode.VisibleIndex = 16;
-            this.colCurCountryCode.Width = 20;
-            // 
-            // colCurCountryName
-            // 
-            this.colCurCountryName.FieldName = "Ülke Adı";
-            this.colCurCountryName.Name = "colCurCountryName";
-            this.colCurCountryName.Visible = true;
-            this.colCurCountryName.VisibleIndex = 17;
-            this.colCurCountryName.Width = 20;
-            // 
-            // colCurZipCode
-            // 
-            this.colCurZipCode.FieldName = "Posta Kodu";
-            this.colCurZipCode.Name = "colCurZipCode";
-            this.colCurZipCode.Visible = true;
-            this.colCurZipCode.VisibleIndex = 18;
-            this.colCurZipCode.Width = 20;
             // 
             // colCurPhoneOne
             // 
-            this.colCurPhoneOne.FieldName = "Telefon";
+            this.colCurPhoneOne.Caption = "Telefon";
+            this.colCurPhoneOne.FieldName = "CurPhoneOne";
             this.colCurPhoneOne.Name = "colCurPhoneOne";
             this.colCurPhoneOne.Visible = true;
-            this.colCurPhoneOne.VisibleIndex = 19;
+            this.colCurPhoneOne.VisibleIndex = 8;
             this.colCurPhoneOne.Width = 20;
             // 
             // colCurPhoneTwo
             // 
-            this.colCurPhoneTwo.FieldName = "Telefon2";
+            this.colCurPhoneTwo.Caption = "Telefon2";
+            this.colCurPhoneTwo.FieldName = "CurPhoneTwo";
             this.colCurPhoneTwo.Name = "colCurPhoneTwo";
             this.colCurPhoneTwo.Visible = true;
-            this.colCurPhoneTwo.VisibleIndex = 20;
+            this.colCurPhoneTwo.VisibleIndex = 9;
             this.colCurPhoneTwo.Width = 20;
-            // 
-            // colCurFax
-            // 
-            this.colCurFax.FieldName = "Faks";
-            this.colCurFax.Name = "colCurFax";
-            this.colCurFax.Visible = true;
-            this.colCurFax.VisibleIndex = 21;
-            this.colCurFax.Width = 20;
-            // 
-            // colCurEmail
-            // 
-            this.colCurEmail.FieldName = "Email";
-            this.colCurEmail.Name = "colCurEmail";
-            this.colCurEmail.Visible = true;
-            this.colCurEmail.VisibleIndex = 22;
-            this.colCurEmail.Width = 20;
-            // 
-            // colCurDescription
-            // 
-            this.colCurDescription.FieldName = "Not";
-            this.colCurDescription.Name = "colCurDescription";
-            this.colCurDescription.Visible = true;
-            this.colCurDescription.VisibleIndex = 23;
-            this.colCurDescription.Width = 20;
-            // 
-            // colCurTaxNo
-            // 
-            this.colCurTaxNo.FieldName = "Vergi No";
-            this.colCurTaxNo.Name = "colCurTaxNo";
-            this.colCurTaxNo.Visible = true;
-            this.colCurTaxNo.VisibleIndex = 24;
-            this.colCurTaxNo.Width = 20;
-            // 
-            // colCurTaxOffice
-            // 
-            this.colCurTaxOffice.FieldName = "Vergi D.";
-            this.colCurTaxOffice.Name = "colCurTaxOffice";
-            this.colCurTaxOffice.Visible = true;
-            this.colCurTaxOffice.VisibleIndex = 25;
-            this.colCurTaxOffice.Width = 20;
-            // 
-            // colCurCardNo
-            // 
-            this.colCurCardNo.FieldName = "K.Kart No";
-            this.colCurCardNo.Name = "colCurCardNo";
-            this.colCurCardNo.Visible = true;
-            this.colCurCardNo.VisibleIndex = 26;
-            this.colCurCardNo.Width = 20;
-            // 
-            // colCurIdentNo
-            // 
-            this.colCurIdentNo.FieldName = "TC No";
-            this.colCurIdentNo.Name = "colCurIdentNo";
-            this.colCurIdentNo.Visible = true;
-            this.colCurIdentNo.VisibleIndex = 27;
-            this.colCurIdentNo.Width = 20;
-            // 
-            // colCurTitle
-            // 
-            this.colCurTitle.FieldName = "C.Başlık";
-            this.colCurTitle.Name = "colCurTitle";
-            this.colCurTitle.Visible = true;
-            this.colCurTitle.VisibleIndex = 28;
-            this.colCurTitle.Width = 20;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "Hes.Türü";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 29;
-            this.gridColumn1.Width = 55;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.FieldName = "Hes.Kodu";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 30;
-            this.gridColumn2.Width = 20;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.FieldName = "Hes.Adı";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 31;
-            this.gridColumn3.Width = 52;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.FieldName = "Yetk.Kişi";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 32;
-            this.gridColumn4.Width = 20;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.FieldName = "Oluşt.Tarih";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 33;
-            this.gridColumn5.Width = 20;
             // 
             // barManager1
             // 
@@ -658,6 +420,14 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // colCurEmail
+            // 
+            this.colCurEmail.Caption = "E-Mail";
+            this.colCurEmail.FieldName = "CurEmail";
+            this.colCurEmail.Name = "colCurEmail";
+            this.colCurEmail.Visible = true;
+            this.colCurEmail.VisibleIndex = 10;
+            // 
             // frmCurrentTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -710,40 +480,16 @@
         private DevExpress.XtraBars.BarButtonItem btnRegInfo;
         private System.Windows.Forms.BindingSource CurTranBindingSource;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurID;
         private DevExpress.XtraGrid.Columns.GridColumn colCurType;
         private DevExpress.XtraGrid.Columns.GridColumn colCurCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurSoleProp;
         private DevExpress.XtraGrid.Columns.GridColumn colCurAccountName;
         private DevExpress.XtraGrid.Columns.GridColumn colCurAuthPersonName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurDiscount;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurOnCredit;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurRiskLimit;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurCity;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurDistrict;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurBalance;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurCompanyType;
         private DevExpress.XtraGrid.Columns.GridColumn colCurCreatedDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCurAdress;
         private DevExpress.XtraGrid.Columns.GridColumn colCurAdressTwo;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurCountryCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurCountryName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurZipCode;
         private DevExpress.XtraGrid.Columns.GridColumn colCurPhoneOne;
         private DevExpress.XtraGrid.Columns.GridColumn colCurPhoneTwo;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurFax;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurEmail;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurDescription;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurTaxNo;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurTaxOffice;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurCardNo;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurIdentNo;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurTitle;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraBars.BarButtonItem btnRefresh;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurEmail;
     }
 }

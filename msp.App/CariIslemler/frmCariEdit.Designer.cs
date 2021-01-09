@@ -327,7 +327,7 @@
             // CurTypeTextEdit
             // 
             this.CurTypeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurType", true));
-            this.CurTypeTextEdit.Location = new System.Drawing.Point(91, -196);
+            this.CurTypeTextEdit.Location = new System.Drawing.Point(91, 12);
             this.CurTypeTextEdit.MenuManager = this.barManager1;
             this.CurTypeTextEdit.Name = "CurTypeTextEdit";
             this.CurTypeTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -341,7 +341,7 @@
             // CurCodeTextEdit
             // 
             this.CurCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCode", true));
-            this.CurCodeTextEdit.Location = new System.Drawing.Point(91, -172);
+            this.CurCodeTextEdit.Location = new System.Drawing.Point(91, 36);
             this.CurCodeTextEdit.MenuManager = this.barManager1;
             this.CurCodeTextEdit.Name = "CurCodeTextEdit";
             this.CurCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -357,7 +357,7 @@
             // CurSolePropTextEdit
             // 
             this.CurSolePropTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurSoleProp", true));
-            this.CurSolePropTextEdit.Location = new System.Drawing.Point(91, -148);
+            this.CurSolePropTextEdit.Location = new System.Drawing.Point(91, 60);
             this.CurSolePropTextEdit.MenuManager = this.barManager1;
             this.CurSolePropTextEdit.Name = "CurSolePropTextEdit";
             this.CurSolePropTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -367,7 +367,7 @@
             // CurAccountNameTextEdit
             // 
             this.CurAccountNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAccountName", true));
-            this.CurAccountNameTextEdit.Location = new System.Drawing.Point(91, -124);
+            this.CurAccountNameTextEdit.Location = new System.Drawing.Point(91, 84);
             this.CurAccountNameTextEdit.MenuManager = this.barManager1;
             this.CurAccountNameTextEdit.Name = "CurAccountNameTextEdit";
             this.CurAccountNameTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -377,7 +377,7 @@
             // CurAuthPersonNameTextEdit
             // 
             this.CurAuthPersonNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAuthPersonName", true));
-            this.CurAuthPersonNameTextEdit.Location = new System.Drawing.Point(91, -100);
+            this.CurAuthPersonNameTextEdit.Location = new System.Drawing.Point(91, 108);
             this.CurAuthPersonNameTextEdit.MenuManager = this.barManager1;
             this.CurAuthPersonNameTextEdit.Name = "CurAuthPersonNameTextEdit";
             this.CurAuthPersonNameTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -387,7 +387,7 @@
             // CurDiscountTextEdit
             // 
             this.CurDiscountTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDiscount", true));
-            this.CurDiscountTextEdit.Location = new System.Drawing.Point(91, -76);
+            this.CurDiscountTextEdit.Location = new System.Drawing.Point(91, 132);
             this.CurDiscountTextEdit.MenuManager = this.barManager1;
             this.CurDiscountTextEdit.Name = "CurDiscountTextEdit";
             this.CurDiscountTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -403,7 +403,7 @@
             // CurOnCreditTextEdit
             // 
             this.CurOnCreditTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurOnCredit", true));
-            this.CurOnCreditTextEdit.Location = new System.Drawing.Point(91, -52);
+            this.CurOnCreditTextEdit.Location = new System.Drawing.Point(91, 156);
             this.CurOnCreditTextEdit.MenuManager = this.barManager1;
             this.CurOnCreditTextEdit.Name = "CurOnCreditTextEdit";
             this.CurOnCreditTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -413,7 +413,7 @@
             // CurRiskLimitTextEdit
             // 
             this.CurRiskLimitTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurRiskLimit", true));
-            this.CurRiskLimitTextEdit.Location = new System.Drawing.Point(91, -28);
+            this.CurRiskLimitTextEdit.Location = new System.Drawing.Point(91, 180);
             this.CurRiskLimitTextEdit.MenuManager = this.barManager1;
             this.CurRiskLimitTextEdit.Name = "CurRiskLimitTextEdit";
             this.CurRiskLimitTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -423,7 +423,7 @@
             // CurCityTextEdit
             // 
             this.CurCityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCity", true));
-            this.CurCityTextEdit.Location = new System.Drawing.Point(91, -4);
+            this.CurCityTextEdit.Location = new System.Drawing.Point(91, 204);
             this.CurCityTextEdit.MenuManager = this.barManager1;
             this.CurCityTextEdit.Name = "CurCityTextEdit";
             this.CurCityTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -433,7 +433,7 @@
             // CurDistrictTextEdit
             // 
             this.CurDistrictTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDistrict", true));
-            this.CurDistrictTextEdit.Location = new System.Drawing.Point(91, 20);
+            this.CurDistrictTextEdit.Location = new System.Drawing.Point(91, 228);
             this.CurDistrictTextEdit.MenuManager = this.barManager1;
             this.CurDistrictTextEdit.Name = "CurDistrictTextEdit";
             this.CurDistrictTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -443,7 +443,7 @@
             // CurBalanceTextEdit
             // 
             this.CurBalanceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurBalance", true));
-            this.CurBalanceTextEdit.Location = new System.Drawing.Point(91, 44);
+            this.CurBalanceTextEdit.Location = new System.Drawing.Point(91, 252);
             this.CurBalanceTextEdit.MenuManager = this.barManager1;
             this.CurBalanceTextEdit.Name = "CurBalanceTextEdit";
             this.CurBalanceTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -459,7 +459,7 @@
             // CurCompanyTypeTextEdit
             // 
             this.CurCompanyTypeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCompanyType", true));
-            this.CurCompanyTypeTextEdit.Location = new System.Drawing.Point(91, 68);
+            this.CurCompanyTypeTextEdit.Location = new System.Drawing.Point(91, 276);
             this.CurCompanyTypeTextEdit.MenuManager = this.barManager1;
             this.CurCompanyTypeTextEdit.Name = "CurCompanyTypeTextEdit";
             this.CurCompanyTypeTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -470,7 +470,7 @@
             // 
             this.CurCreatedDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCreatedDate", true));
             this.CurCreatedDateDateEdit.EditValue = null;
-            this.CurCreatedDateDateEdit.Location = new System.Drawing.Point(91, 92);
+            this.CurCreatedDateDateEdit.Location = new System.Drawing.Point(91, 300);
             this.CurCreatedDateDateEdit.MenuManager = this.barManager1;
             this.CurCreatedDateDateEdit.Name = "CurCreatedDateDateEdit";
             this.CurCreatedDateDateEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -485,7 +485,7 @@
             // CurAdressTextEdit
             // 
             this.CurAdressTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAdress", true));
-            this.CurAdressTextEdit.Location = new System.Drawing.Point(91, 116);
+            this.CurAdressTextEdit.Location = new System.Drawing.Point(91, 324);
             this.CurAdressTextEdit.MenuManager = this.barManager1;
             this.CurAdressTextEdit.Name = "CurAdressTextEdit";
             this.CurAdressTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -495,7 +495,7 @@
             // CurAdressTwoTextEdit
             // 
             this.CurAdressTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAdressTwo", true));
-            this.CurAdressTwoTextEdit.Location = new System.Drawing.Point(91, 140);
+            this.CurAdressTwoTextEdit.Location = new System.Drawing.Point(91, 348);
             this.CurAdressTwoTextEdit.MenuManager = this.barManager1;
             this.CurAdressTwoTextEdit.Name = "CurAdressTwoTextEdit";
             this.CurAdressTwoTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -505,7 +505,7 @@
             // CurCountryCodeTextEdit
             // 
             this.CurCountryCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCountryCode", true));
-            this.CurCountryCodeTextEdit.Location = new System.Drawing.Point(91, 164);
+            this.CurCountryCodeTextEdit.Location = new System.Drawing.Point(91, 372);
             this.CurCountryCodeTextEdit.MenuManager = this.barManager1;
             this.CurCountryCodeTextEdit.Name = "CurCountryCodeTextEdit";
             this.CurCountryCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -521,7 +521,7 @@
             // CurCountryNameTextEdit
             // 
             this.CurCountryNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCountryName", true));
-            this.CurCountryNameTextEdit.Location = new System.Drawing.Point(91, 188);
+            this.CurCountryNameTextEdit.Location = new System.Drawing.Point(91, 396);
             this.CurCountryNameTextEdit.MenuManager = this.barManager1;
             this.CurCountryNameTextEdit.Name = "CurCountryNameTextEdit";
             this.CurCountryNameTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -531,7 +531,7 @@
             // CurZipCodeTextEdit
             // 
             this.CurZipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurZipCode", true));
-            this.CurZipCodeTextEdit.Location = new System.Drawing.Point(91, 212);
+            this.CurZipCodeTextEdit.Location = new System.Drawing.Point(91, 420);
             this.CurZipCodeTextEdit.MenuManager = this.barManager1;
             this.CurZipCodeTextEdit.Name = "CurZipCodeTextEdit";
             this.CurZipCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -547,7 +547,7 @@
             // CurPhoneOneTextEdit
             // 
             this.CurPhoneOneTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurPhoneOne", true));
-            this.CurPhoneOneTextEdit.Location = new System.Drawing.Point(91, 236);
+            this.CurPhoneOneTextEdit.Location = new System.Drawing.Point(91, 444);
             this.CurPhoneOneTextEdit.MenuManager = this.barManager1;
             this.CurPhoneOneTextEdit.Name = "CurPhoneOneTextEdit";
             this.CurPhoneOneTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -557,7 +557,7 @@
             // CurPhoneTwoTextEdit
             // 
             this.CurPhoneTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurPhoneTwo", true));
-            this.CurPhoneTwoTextEdit.Location = new System.Drawing.Point(91, 260);
+            this.CurPhoneTwoTextEdit.Location = new System.Drawing.Point(91, 468);
             this.CurPhoneTwoTextEdit.MenuManager = this.barManager1;
             this.CurPhoneTwoTextEdit.Name = "CurPhoneTwoTextEdit";
             this.CurPhoneTwoTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -567,7 +567,7 @@
             // CurFaxTextEdit
             // 
             this.CurFaxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurFax", true));
-            this.CurFaxTextEdit.Location = new System.Drawing.Point(91, 284);
+            this.CurFaxTextEdit.Location = new System.Drawing.Point(91, 492);
             this.CurFaxTextEdit.MenuManager = this.barManager1;
             this.CurFaxTextEdit.Name = "CurFaxTextEdit";
             this.CurFaxTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -577,7 +577,7 @@
             // CurEmailTextEdit
             // 
             this.CurEmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurEmail", true));
-            this.CurEmailTextEdit.Location = new System.Drawing.Point(91, 308);
+            this.CurEmailTextEdit.Location = new System.Drawing.Point(91, 516);
             this.CurEmailTextEdit.MenuManager = this.barManager1;
             this.CurEmailTextEdit.Name = "CurEmailTextEdit";
             this.CurEmailTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -587,7 +587,7 @@
             // CurDescriptionTextEdit
             // 
             this.CurDescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDescription", true));
-            this.CurDescriptionTextEdit.Location = new System.Drawing.Point(91, 332);
+            this.CurDescriptionTextEdit.Location = new System.Drawing.Point(91, 540);
             this.CurDescriptionTextEdit.MenuManager = this.barManager1;
             this.CurDescriptionTextEdit.Name = "CurDescriptionTextEdit";
             this.CurDescriptionTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -597,7 +597,7 @@
             // CurTaxNoTextEdit
             // 
             this.CurTaxNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTaxNo", true));
-            this.CurTaxNoTextEdit.Location = new System.Drawing.Point(91, 356);
+            this.CurTaxNoTextEdit.Location = new System.Drawing.Point(91, 564);
             this.CurTaxNoTextEdit.MenuManager = this.barManager1;
             this.CurTaxNoTextEdit.Name = "CurTaxNoTextEdit";
             this.CurTaxNoTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -607,7 +607,7 @@
             // CurTaxOfficeTextEdit
             // 
             this.CurTaxOfficeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTaxOffice", true));
-            this.CurTaxOfficeTextEdit.Location = new System.Drawing.Point(91, 380);
+            this.CurTaxOfficeTextEdit.Location = new System.Drawing.Point(91, 588);
             this.CurTaxOfficeTextEdit.MenuManager = this.barManager1;
             this.CurTaxOfficeTextEdit.Name = "CurTaxOfficeTextEdit";
             this.CurTaxOfficeTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -617,7 +617,7 @@
             // CurCardNoTextEdit
             // 
             this.CurCardNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCardNo", true));
-            this.CurCardNoTextEdit.Location = new System.Drawing.Point(91, 404);
+            this.CurCardNoTextEdit.Location = new System.Drawing.Point(91, 612);
             this.CurCardNoTextEdit.MenuManager = this.barManager1;
             this.CurCardNoTextEdit.Name = "CurCardNoTextEdit";
             this.CurCardNoTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -627,7 +627,7 @@
             // CurIdentNoTextEdit
             // 
             this.CurIdentNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurIdentNo", true));
-            this.CurIdentNoTextEdit.Location = new System.Drawing.Point(91, 428);
+            this.CurIdentNoTextEdit.Location = new System.Drawing.Point(91, 636);
             this.CurIdentNoTextEdit.MenuManager = this.barManager1;
             this.CurIdentNoTextEdit.Name = "CurIdentNoTextEdit";
             this.CurIdentNoTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -637,7 +637,7 @@
             // CurTitleTextEdit
             // 
             this.CurTitleTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTitle", true));
-            this.CurTitleTextEdit.Location = new System.Drawing.Point(91, 452);
+            this.CurTitleTextEdit.Location = new System.Drawing.Point(91, 660);
             this.CurTitleTextEdit.MenuManager = this.barManager1;
             this.CurTitleTextEdit.Name = "CurTitleTextEdit";
             this.CurTitleTextEdit.Size = new System.Drawing.Size(612, 20);
@@ -954,6 +954,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmCariEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cari Kartı";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCariEdit_FormClosing);
             this.Load += new System.EventHandler(this.frmCariEdit_Load);
