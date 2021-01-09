@@ -88,7 +88,7 @@ namespace msp.App
         {
             frmCariEdit frm = new frmCariEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
-            //frm.Show(0);
+            frm.Show();
         }
 
         private void btnEditAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -99,6 +99,11 @@ namespace msp.App
         private void frmCurrentTransactions_FormClosing(object sender, FormClosingEventArgs e)
         {
             mspTool.Save_GridControl(this.Name, gcvCurTransaction);
+        }
+
+        private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            do_refresh();
         }
     }
 }
