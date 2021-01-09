@@ -212,6 +212,18 @@
     <Compile Include="CariIslemler\OrderList.Designer.cs">
       <DependentUpon>OrderList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contact\frmContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact\frmContact.Designer.cs">
+      <DependentUpon>frmContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\frmMailSend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact\frmMailSend.Designer.cs">
+      <DependentUpon>frmMailSend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmEnvanterBilgiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -550,6 +562,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\frmContact.resx">
+      <DependentUpon>frmContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\frmMailSend.resx">
+      <DependentUpon>frmMailSend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmEnvanterBilgiler.resx">
       <DependentUpon>frmEnvanterBilgiler.cs</DependentUpon>

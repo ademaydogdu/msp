@@ -292,6 +292,8 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -520,10 +522,12 @@
             this.barSubItem23,
             this.barButtonItem126,
             this.barButtonItem127,
-            this.barButtonItem128});
+            this.barButtonItem128,
+            this.barButtonItem8,
+            this.barButtonItem74});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 214;
+            this.ribbon.MaxItemId = 216;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1494,6 +1498,7 @@
             this.btnLog.Id = 128;
             this.btnLog.ImageOptions.LargeImageIndex = 29;
             this.btnLog.Name = "btnLog";
+            this.btnLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLog_ItemClick);
             // 
             // btnFatura
             // 
@@ -2154,6 +2159,8 @@
             this.img_buton.Add("exporttoxml", "image://svgimages/export/exporttoxml.svg");
             this.img_buton.Add("bo_invoice", "image://svgimages/business objects/bo_invoice.svg");
             this.img_buton.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
+            this.img_buton.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
+            this.img_buton.Add("outlookexport", "image://svgimages/scheduling/outlookexport.svg");
             // 
             // barSatis
             // 
@@ -2474,6 +2481,8 @@
             // 
             // ribbonPageGroup35
             // 
+            this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem74);
             this.ribbonPageGroup35.Name = "ribbonPageGroup35";
             // 
             // ribbonStatusBar1
@@ -2508,6 +2517,22 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "İletişim Bilgileri";
+            this.barButtonItem8.Id = 214;
+            this.barButtonItem8.ImageOptions.LargeImageIndex = 67;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
+            // barButtonItem74
+            // 
+            this.barButtonItem74.Caption = "Mail Gönder";
+            this.barButtonItem74.Id = 215;
+            this.barButtonItem74.ImageOptions.LargeImageIndex = 68;
+            this.barButtonItem74.Name = "barButtonItem74";
+            this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick_1);
             // 
             // MainForm
             // 
@@ -2803,5 +2828,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup35;
         private DevExpress.XtraBars.BarButtonItem barButtonItem127;
         private DevExpress.XtraBars.BarButtonItem barButtonItem128;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem74;
     }
 }

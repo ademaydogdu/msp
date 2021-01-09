@@ -33,6 +33,7 @@ using Msp.Models.Models;
 using Msp.App.Report;
 using Msp.Models.Models.SecRights;
 using Msp.Service.Service.Admin;
+using Msp.App.Contact;
 
 namespace msp.App
 {
@@ -859,6 +860,25 @@ namespace msp.App
                 frm.PrintProduct(_productlist);
                 frm.ShowDialog();
             }
+        }
+
+        private void btnLog_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            LogList frm = new LogList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmContact frm = new frmContact();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem74_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            frmMailSend frm = new frmMailSend();
+            frm.ShowDialog();
         }
     }
 }
