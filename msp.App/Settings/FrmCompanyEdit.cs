@@ -52,6 +52,7 @@ namespace Msp.App.Settings
 
         private void do_save()
         {
+            bs_CompanyEdit.EndEdit();
             if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
             {
                 try
@@ -67,6 +68,13 @@ namespace Msp.App.Settings
                     }
                     else
                     {
+                        foreach (Form item in Application.OpenForms)
+                        {
+                            if (item.Name == "FrmCompany")
+                            {
+                                ((FrmCompany)item).do_refresh();
+                            }
+                        }
                         this.Close();
                     }
                 }

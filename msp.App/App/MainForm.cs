@@ -331,7 +331,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(2, 1, 1, 4);
+            Version oVersionFB = new Version(2, 1, 1, 5);
             AppMain.MspVersion = oVersionFB;
 
             //if (Global.RunningLocal && (string.IsNullOrEmpty(Global.AppPath) || !Directory.Exists(Global.AppPath)))

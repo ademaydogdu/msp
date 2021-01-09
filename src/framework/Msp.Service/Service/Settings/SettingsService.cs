@@ -114,6 +114,7 @@ namespace Msp.Service.Service.Settings
                         var entity = _db.Company.FirstOrDefault(x => x.RecId == response.Response.RecId);
                         if (entity != null)
                         {
+                            base.SetLog<Company, CompanyDTO>(entity, model, _db, response.Response.RecId);
                             _db.Entry(entity).CurrentValues.SetValues(model);
                             _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                         }

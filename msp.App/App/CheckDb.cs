@@ -117,6 +117,7 @@ namespace Msp.App.App
             tblTableList.PrimaryKey = KeysTableList;
 
 
+            #region Users
             if (tblTableList.Rows.Contains("Users") == false)
             {
                 sCommand.CommandText = " CREATE TABLE [dbo].[Users]( "
@@ -140,7 +141,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Cashiers
             if (tblTableList.Rows.Contains("Cashiers") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Cashiers]( "
@@ -165,7 +168,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Categories
             if (tblTableList.Rows.Contains("Categories") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Categories]( "
@@ -183,7 +188,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Company
             if (tblTableList.Rows.Contains("Company") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Company]( "
@@ -202,7 +209,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Customers
             if (tblTableList.Rows.Contains("Customers") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Customers]( "
@@ -224,7 +233,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Parameters
             if (tblTableList.Rows.Contains("Parameters") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Parameters]( "
@@ -237,7 +248,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Products
             if (tblTableList.Rows.Contains("Products") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[products]( "
@@ -276,7 +289,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region BankEntry
             if (tblTableList.Rows.Contains("BankEntry") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[BankEntry]( "
@@ -298,7 +313,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Banks
             if (tblTableList.Rows.Contains("Banks") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Banks]( "
@@ -319,7 +336,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region OrderManagement
             if (tblTableList.Rows.Contains("OrderManagement") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[OrderManagement]( "
@@ -343,7 +362,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region CTransactions
             if (tblTableList.Rows.Contains("CTransactions") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[CTransactions]( "
@@ -385,7 +406,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region FormLayouts
             if (tblTableList.Rows.Contains("FormLayouts") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[FormLayouts](  "
@@ -410,7 +433,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region InvoiceOwner
             if (tblTableList.Rows.Contains("InvoiceOwner") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[InvoiceOwner]( "
@@ -423,7 +448,7 @@ namespace Msp.App.App
                     + "         [nvarchar] "
                     + "         (max) NULL, "
                     + "     [FicheRemark] [nvarchar] (max) NULL, "
-                    + "     [CariRecId] [int] NULL, " 
+                    + "     [CariRecId] [int] NULL, "
                     + " 	[VadeTarih] [datetime] NULL, "
                     + " 	[DepoName] [int] NULL, "
                     + " 	[Indirim] [decimal](18, 0) NULL, "
@@ -442,8 +467,10 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
 
+            #region InvoiceTrans
             if (tblTableList.Rows.Contains("InvoiceTrans") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[InvoiceTrans]( "
@@ -470,42 +497,46 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region OrderOwner
             if (tblTableList.Rows.Contains("OrderOwner") == false)
             {
                 sCommand.CommandText = "CREATE TABLE[dbo].[OrderOwner]( "
-                +"     [RecId][int] IDENTITY(1, 1) NOT NULL, "
-                +"     [CariRecId] [int] NULL, "
-                +" 	[OrderType] [int] NULL, "
-                +" 	[CompanyId] [int] NULL, "
-                +" 	[SiparisNo] [nvarchar] (50) NULL, "
-                +" 	[SiparisDate] [datetime] NULL, "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [CariRecId] [int] NULL, "
+                + " 	[OrderType] [int] NULL, "
+                + " 	[CompanyId] [int] NULL, "
+                + " 	[SiparisNo] [nvarchar] (50) NULL, "
+                + " 	[SiparisDate] [datetime] NULL, "
                 + " [SiparisTime] [varchar](15) NULL,"
                 + " [OzelKod] [nvarchar] (50) NULL, "
-                +" 	[DovizId] [int] NULL, "
-                +" 	[Kdv] [nvarchar] (50) NULL, "
-                +" 	[Iskonto] [int] NULL, "
-                +" 	[Durum] [nvarchar] (50) NULL, "
-                +" 	[TeklifSiparis] [int] NULL, "
-                +" 	[Remark] [nvarchar](max) NULL, "
-                +"  [TotalToplam] [decimal](18, 0) NULL, "
-                +" 	[TotalIskonto] [decimal](18, 0) NULL, "
-                +" 	[TotalKDV] [decimal](18, 0) NULL, "
-                +" 	[TotalSiparis] [decimal](18, 0) NULL, "
-                +" 	[Deleted] [bit] NULL, "
-                +"  [IrsaliyeId] [int] NULL, "
+                + " 	[DovizId] [int] NULL, "
+                + " 	[Kdv] [nvarchar] (50) NULL, "
+                + " 	[Iskonto] [int] NULL, "
+                + " 	[Durum] [nvarchar] (50) NULL, "
+                + " 	[TeklifSiparis] [int] NULL, "
+                + " 	[Remark] [nvarchar](max) NULL, "
+                + "  [TotalToplam] [decimal](18, 0) NULL, "
+                + " 	[TotalIskonto] [decimal](18, 0) NULL, "
+                + " 	[TotalKDV] [decimal](18, 0) NULL, "
+                + " 	[TotalSiparis] [decimal](18, 0) NULL, "
+                + " 	[Deleted] [bit] NULL, "
+                + "  [IrsaliyeId] [int] NULL, "
                 + "  CONSTRAINT[PK_OrderOwner] PRIMARY KEY CLUSTERED "
-                +" ( "
-                +"    [RecId] ASC "
-                +" )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
-                +" ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
 
             }
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region OrderTrans
             if (tblTableList.Rows.Contains("OrderTrans") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[OrderTrans]( "
@@ -533,7 +564,9 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
 
+            #region Depot
             if (tblTableList.Rows.Contains("Depot") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Depot]( "
@@ -560,6 +593,62 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
+
+            #region LOG
+            if (tblTableList.Rows.Contains("LOG") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[LOG]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [UserCode] [varchar] (10) NULL, "
+                    + " 	[CompanyCode] [varchar] (10) NULL, "
+                    + " 	[FieldName] [varchar] (30) NULL, "
+                    + " 	[TableName] [varchar] (30) NULL, "
+                    + " 	[Old] [varchar] (50) NULL, "
+                    + " 	[New] [varchar] (50) NULL, "
+                    + " 	[PCName] [varchar] (30) NULL, "
+                    + " 	[FormName] [varchar] (30) NULL, "
+                    + " 	[CompanyRecId] [int] NULL, "
+                    + "  CONSTRAINT[PK_LOG] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
+            #region SecRights
+            if (tblTableList.Rows.Contains("SecRights") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SecRights]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [UserCode] [varchar] (10) NULL, "
+                    + " 	[SecCode] [char](10) NULL, "
+                    + " 	[SecPreview] [int] NULL, "
+                    + " 	[SecUpdate] [int] NULL, "
+                    + " 	[SecInsert] [int] NULL, "
+                    + " 	[SecDelete] [int] NULL, "
+                    + " 	[DocumentType] [int] NULL, "
+                    + " 	[CompanyCode] [varchar] (10) NULL, "
+                    + " 	[CompanyRecId] [int] NULL, "
+                    + "  CONSTRAINT[PK_SecRights] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+            #endregion
 
             #endregion
 

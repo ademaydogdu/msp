@@ -1491,7 +1491,6 @@
             // btnLog
             // 
             this.btnLog.Caption = "Log";
-            this.btnLog.Enabled = false;
             this.btnLog.Id = 128;
             this.btnLog.ImageOptions.LargeImageIndex = 29;
             this.btnLog.Name = "btnLog";

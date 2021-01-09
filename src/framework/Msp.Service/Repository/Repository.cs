@@ -26,6 +26,20 @@ namespace Msp.Service.Repository
         public G Run<T, G>(Expression<Func<T, G>> expression) where T : BaseService where G : class
         {
             var instance = Activator.CreateInstance<T>();
+            //foreach (Form item in Application.OpenForms)
+            //{
+            //    Control.CheckForIllegalCrossThreadCalls = false;
+            //    if (item.IsMdiContainer)
+            //    {
+            //        var activeForm = item.ActiveMdiChild;
+            //        if (activeForm == null)
+            //            break;
+
+            //        instance.FormName = activeForm.Name;
+            //        break;
+            //    }
+            //    //break;
+            //}
             if (_localApp)
             {
                 var action = expression.Compile();

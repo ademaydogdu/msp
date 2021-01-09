@@ -53,7 +53,7 @@ namespace msp.App
             {
                 frmCariEdit frm = new frmCariEdit();
                 frm._FormOpenType = Msp.Infrastructure.FormOpenType.Edit;
-                frm.Show(Orow.CurID);
+                //frm.Show(Orow.CurID);
             }
         }
 
@@ -88,7 +88,7 @@ namespace msp.App
         {
             frmCariEdit frm = new frmCariEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
-            frm.Show(0);
+            //frm.Show(0);
         }
 
         private void btnEditAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

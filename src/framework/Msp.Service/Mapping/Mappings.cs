@@ -58,6 +58,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<SecRightsDTO, SecRights>();
             cfg.CreateMap<OpenFormRights, OpenFormRightsDTO>();
             cfg.CreateMap<OpenFormRightsDTO, OpenFormRights>();
+            cfg.CreateMap<Logs, LogsDTO>();
+            cfg.CreateMap<LogsDTO, Logs>();
         }
 
 
