@@ -196,7 +196,7 @@
             this.barSubItem15 = new DevExpress.XtraBars.BarSubItem();
             this.bbi_ReportStockList = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem93 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_StockEnvanterRapor = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem96 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem97 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem98 = new DevExpress.XtraBars.BarButtonItem();
@@ -485,7 +485,7 @@
             this.bbi_ReportStockList,
             this.barButtonItem93,
             this.barButtonItem94,
-            this.barButtonItem95,
+            this.bbi_StockEnvanterRapor,
             this.barButtonItem96,
             this.barButtonItem97,
             this.barButtonItem98,
@@ -1742,7 +1742,7 @@
             this.barSubItem15.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_ReportStockList),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem93),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem95),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_StockEnvanterRapor),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem96),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem97),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem98),
@@ -1759,15 +1759,16 @@
             // 
             // barButtonItem93
             // 
-            this.barButtonItem93.Caption = "Stok Bakiye Raporı";
+            this.barButtonItem93.Caption = "Stok Bakiye Raporu";
             this.barButtonItem93.Id = 174;
             this.barButtonItem93.Name = "barButtonItem93";
             // 
-            // barButtonItem95
+            // bbi_StockEnvanterRapor
             // 
-            this.barButtonItem95.Caption = "Stok Envanter Raporu";
-            this.barButtonItem95.Id = 176;
-            this.barButtonItem95.Name = "barButtonItem95";
+            this.bbi_StockEnvanterRapor.Caption = "Stok Envanter Raporu";
+            this.bbi_StockEnvanterRapor.Id = 176;
+            this.bbi_StockEnvanterRapor.Name = "bbi_StockEnvanterRapor";
+            this.bbi_StockEnvanterRapor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_StockEnvanterRapor_ItemClick);
             // 
             // barButtonItem96
             // 
@@ -1953,7 +1954,7 @@
             // 
             // barButtonItem106
             // 
-            this.barButtonItem106.Caption = "Versiye Raporu";
+            this.barButtonItem106.Caption = "Veresiye Raporu";
             this.barButtonItem106.Id = 187;
             this.barButtonItem106.Name = "barButtonItem106";
             // 
@@ -2786,7 +2787,7 @@
         private DevExpress.XtraBars.BarButtonItem bbi_ReportStockList;
         private DevExpress.XtraBars.BarButtonItem barButtonItem93;
         private DevExpress.XtraBars.BarButtonItem barButtonItem94;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem95;
+        private DevExpress.XtraBars.BarButtonItem bbi_StockEnvanterRapor;
         private DevExpress.XtraBars.BarButtonItem barButtonItem96;
         private DevExpress.XtraBars.BarButtonItem barButtonItem97;
         private DevExpress.XtraBars.BarButtonItem barButtonItem98;

@@ -52,15 +52,15 @@
             this.bbi_exp = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_VeresiyeKapat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bbi_Export = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -224,7 +224,7 @@
             this.barButtonItem2,
             this.bbi_Report,
             this.barButtonItem3,
-            this.barButtonItem4});
+            this.bbi_VeresiyeKapat});
             this.barManager1.MaxItemId = 7;
             this.barManager1.StatusBar = this.bar3;
             // 
@@ -238,7 +238,7 @@
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Report),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_exp, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_VeresiyeKapat, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -276,6 +276,14 @@
             this.barButtonItem2.ImageOptions.ImageIndex = 1;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // bbi_VeresiyeKapat
+            // 
+            this.bbi_VeresiyeKapat.Caption = "Veresiye Kapat";
+            this.bbi_VeresiyeKapat.Id = 6;
+            this.bbi_VeresiyeKapat.ImageOptions.ImageIndex = 5;
+            this.bbi_VeresiyeKapat.Name = "bbi_VeresiyeKapat";
+            this.bbi_VeresiyeKapat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_VeresiyeKapat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -317,13 +325,6 @@
             this.bbi_Export.Id = 0;
             this.bbi_Export.Name = "bbi_Export";
             // 
-            // popupMenu1
-            // 
-            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
-            // 
             // barButtonItem3
             // 
             this.barButtonItem3.Caption = "Veresiye Kapat";
@@ -331,12 +332,12 @@
             this.barButtonItem3.ImageOptions.ImageIndex = 5;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // barButtonItem4
+            // popupMenu1
             // 
-            this.barButtonItem4.Caption = "Veresiye Kapat";
-            this.barButtonItem4.Id = 6;
-            this.barButtonItem4.ImageOptions.ImageIndex = 5;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
             // 
             // frmVeresiyeSatisList
             // 
@@ -397,7 +398,7 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Export;
         private System.Windows.Forms.BindingSource bs_SaleTrans;
         private System.Windows.Forms.BindingSource bs_SaleOwner;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem bbi_VeresiyeKapat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
     }

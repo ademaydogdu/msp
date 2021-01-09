@@ -890,5 +890,11 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void bbi_StockEnvanterRapor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
+            frm.ShowDialog();
+        }
     }
 }

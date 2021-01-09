@@ -45,7 +45,10 @@ namespace Msp.App.Satis
 
         private void frmVeresiyeSatisList_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -56,6 +59,11 @@ namespace Msp.App.Satis
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             mspTool.Export2AnyDocument("pdf", gc_SiparisList);
+        }
+
+        private void bbi_VeresiyeKapat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
