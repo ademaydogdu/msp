@@ -327,10 +327,10 @@
             // CurTypeTextEdit
             // 
             this.CurTypeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurType", true));
-            this.CurTypeTextEdit.Location = new System.Drawing.Point(81, -196);
+            this.CurTypeTextEdit.Location = new System.Drawing.Point(91, -196);
             this.CurTypeTextEdit.MenuManager = this.barManager1;
             this.CurTypeTextEdit.Name = "CurTypeTextEdit";
-            this.CurTypeTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurTypeTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurTypeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurTypeTextEdit.TabIndex = 4;
             // 
@@ -341,7 +341,7 @@
             // CurCodeTextEdit
             // 
             this.CurCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCode", true));
-            this.CurCodeTextEdit.Location = new System.Drawing.Point(81, -172);
+            this.CurCodeTextEdit.Location = new System.Drawing.Point(91, -172);
             this.CurCodeTextEdit.MenuManager = this.barManager1;
             this.CurCodeTextEdit.Name = "CurCodeTextEdit";
             this.CurCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -350,44 +350,44 @@
             this.CurCodeTextEdit.Properties.Mask.EditMask = "N0";
             this.CurCodeTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.CurCodeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.CurCodeTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurCodeTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurCodeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCodeTextEdit.TabIndex = 5;
             // 
             // CurSolePropTextEdit
             // 
             this.CurSolePropTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurSoleProp", true));
-            this.CurSolePropTextEdit.Location = new System.Drawing.Point(81, -148);
+            this.CurSolePropTextEdit.Location = new System.Drawing.Point(91, -148);
             this.CurSolePropTextEdit.MenuManager = this.barManager1;
             this.CurSolePropTextEdit.Name = "CurSolePropTextEdit";
-            this.CurSolePropTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurSolePropTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurSolePropTextEdit.StyleController = this.dataLayoutControl1;
             this.CurSolePropTextEdit.TabIndex = 6;
             // 
             // CurAccountNameTextEdit
             // 
             this.CurAccountNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAccountName", true));
-            this.CurAccountNameTextEdit.Location = new System.Drawing.Point(81, -124);
+            this.CurAccountNameTextEdit.Location = new System.Drawing.Point(91, -124);
             this.CurAccountNameTextEdit.MenuManager = this.barManager1;
             this.CurAccountNameTextEdit.Name = "CurAccountNameTextEdit";
-            this.CurAccountNameTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurAccountNameTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurAccountNameTextEdit.StyleController = this.dataLayoutControl1;
             this.CurAccountNameTextEdit.TabIndex = 7;
             // 
             // CurAuthPersonNameTextEdit
             // 
             this.CurAuthPersonNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAuthPersonName", true));
-            this.CurAuthPersonNameTextEdit.Location = new System.Drawing.Point(81, -100);
+            this.CurAuthPersonNameTextEdit.Location = new System.Drawing.Point(91, -100);
             this.CurAuthPersonNameTextEdit.MenuManager = this.barManager1;
             this.CurAuthPersonNameTextEdit.Name = "CurAuthPersonNameTextEdit";
-            this.CurAuthPersonNameTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurAuthPersonNameTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurAuthPersonNameTextEdit.StyleController = this.dataLayoutControl1;
             this.CurAuthPersonNameTextEdit.TabIndex = 8;
             // 
             // CurDiscountTextEdit
             // 
             this.CurDiscountTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDiscount", true));
-            this.CurDiscountTextEdit.Location = new System.Drawing.Point(81, -76);
+            this.CurDiscountTextEdit.Location = new System.Drawing.Point(91, -76);
             this.CurDiscountTextEdit.MenuManager = this.barManager1;
             this.CurDiscountTextEdit.Name = "CurDiscountTextEdit";
             this.CurDiscountTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -396,54 +396,54 @@
             this.CurDiscountTextEdit.Properties.Mask.EditMask = "N0";
             this.CurDiscountTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.CurDiscountTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.CurDiscountTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurDiscountTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurDiscountTextEdit.StyleController = this.dataLayoutControl1;
             this.CurDiscountTextEdit.TabIndex = 9;
             // 
             // CurOnCreditTextEdit
             // 
             this.CurOnCreditTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurOnCredit", true));
-            this.CurOnCreditTextEdit.Location = new System.Drawing.Point(81, -52);
+            this.CurOnCreditTextEdit.Location = new System.Drawing.Point(91, -52);
             this.CurOnCreditTextEdit.MenuManager = this.barManager1;
             this.CurOnCreditTextEdit.Name = "CurOnCreditTextEdit";
-            this.CurOnCreditTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurOnCreditTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurOnCreditTextEdit.StyleController = this.dataLayoutControl1;
             this.CurOnCreditTextEdit.TabIndex = 10;
             // 
             // CurRiskLimitTextEdit
             // 
             this.CurRiskLimitTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurRiskLimit", true));
-            this.CurRiskLimitTextEdit.Location = new System.Drawing.Point(81, -28);
+            this.CurRiskLimitTextEdit.Location = new System.Drawing.Point(91, -28);
             this.CurRiskLimitTextEdit.MenuManager = this.barManager1;
             this.CurRiskLimitTextEdit.Name = "CurRiskLimitTextEdit";
-            this.CurRiskLimitTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurRiskLimitTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurRiskLimitTextEdit.StyleController = this.dataLayoutControl1;
             this.CurRiskLimitTextEdit.TabIndex = 11;
             // 
             // CurCityTextEdit
             // 
             this.CurCityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCity", true));
-            this.CurCityTextEdit.Location = new System.Drawing.Point(81, -4);
+            this.CurCityTextEdit.Location = new System.Drawing.Point(91, -4);
             this.CurCityTextEdit.MenuManager = this.barManager1;
             this.CurCityTextEdit.Name = "CurCityTextEdit";
-            this.CurCityTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurCityTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurCityTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCityTextEdit.TabIndex = 12;
             // 
             // CurDistrictTextEdit
             // 
             this.CurDistrictTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDistrict", true));
-            this.CurDistrictTextEdit.Location = new System.Drawing.Point(81, 20);
+            this.CurDistrictTextEdit.Location = new System.Drawing.Point(91, 20);
             this.CurDistrictTextEdit.MenuManager = this.barManager1;
             this.CurDistrictTextEdit.Name = "CurDistrictTextEdit";
-            this.CurDistrictTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurDistrictTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurDistrictTextEdit.StyleController = this.dataLayoutControl1;
             this.CurDistrictTextEdit.TabIndex = 13;
             // 
             // CurBalanceTextEdit
             // 
             this.CurBalanceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurBalance", true));
-            this.CurBalanceTextEdit.Location = new System.Drawing.Point(81, 44);
+            this.CurBalanceTextEdit.Location = new System.Drawing.Point(91, 44);
             this.CurBalanceTextEdit.MenuManager = this.barManager1;
             this.CurBalanceTextEdit.Name = "CurBalanceTextEdit";
             this.CurBalanceTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -452,17 +452,17 @@
             this.CurBalanceTextEdit.Properties.Mask.EditMask = "N0";
             this.CurBalanceTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.CurBalanceTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.CurBalanceTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurBalanceTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurBalanceTextEdit.StyleController = this.dataLayoutControl1;
             this.CurBalanceTextEdit.TabIndex = 14;
             // 
             // CurCompanyTypeTextEdit
             // 
             this.CurCompanyTypeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCompanyType", true));
-            this.CurCompanyTypeTextEdit.Location = new System.Drawing.Point(81, 68);
+            this.CurCompanyTypeTextEdit.Location = new System.Drawing.Point(91, 68);
             this.CurCompanyTypeTextEdit.MenuManager = this.barManager1;
             this.CurCompanyTypeTextEdit.Name = "CurCompanyTypeTextEdit";
-            this.CurCompanyTypeTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurCompanyTypeTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurCompanyTypeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCompanyTypeTextEdit.TabIndex = 15;
             // 
@@ -470,7 +470,7 @@
             // 
             this.CurCreatedDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCreatedDate", true));
             this.CurCreatedDateDateEdit.EditValue = null;
-            this.CurCreatedDateDateEdit.Location = new System.Drawing.Point(81, 92);
+            this.CurCreatedDateDateEdit.Location = new System.Drawing.Point(91, 92);
             this.CurCreatedDateDateEdit.MenuManager = this.barManager1;
             this.CurCreatedDateDateEdit.Name = "CurCreatedDateDateEdit";
             this.CurCreatedDateDateEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -478,34 +478,34 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CurCreatedDateDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CurCreatedDateDateEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurCreatedDateDateEdit.Size = new System.Drawing.Size(612, 20);
             this.CurCreatedDateDateEdit.StyleController = this.dataLayoutControl1;
             this.CurCreatedDateDateEdit.TabIndex = 16;
             // 
             // CurAdressTextEdit
             // 
             this.CurAdressTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAdress", true));
-            this.CurAdressTextEdit.Location = new System.Drawing.Point(81, 116);
+            this.CurAdressTextEdit.Location = new System.Drawing.Point(91, 116);
             this.CurAdressTextEdit.MenuManager = this.barManager1;
             this.CurAdressTextEdit.Name = "CurAdressTextEdit";
-            this.CurAdressTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurAdressTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurAdressTextEdit.StyleController = this.dataLayoutControl1;
             this.CurAdressTextEdit.TabIndex = 17;
             // 
             // CurAdressTwoTextEdit
             // 
             this.CurAdressTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAdressTwo", true));
-            this.CurAdressTwoTextEdit.Location = new System.Drawing.Point(81, 140);
+            this.CurAdressTwoTextEdit.Location = new System.Drawing.Point(91, 140);
             this.CurAdressTwoTextEdit.MenuManager = this.barManager1;
             this.CurAdressTwoTextEdit.Name = "CurAdressTwoTextEdit";
-            this.CurAdressTwoTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurAdressTwoTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurAdressTwoTextEdit.StyleController = this.dataLayoutControl1;
             this.CurAdressTwoTextEdit.TabIndex = 18;
             // 
             // CurCountryCodeTextEdit
             // 
             this.CurCountryCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCountryCode", true));
-            this.CurCountryCodeTextEdit.Location = new System.Drawing.Point(81, 164);
+            this.CurCountryCodeTextEdit.Location = new System.Drawing.Point(91, 164);
             this.CurCountryCodeTextEdit.MenuManager = this.barManager1;
             this.CurCountryCodeTextEdit.Name = "CurCountryCodeTextEdit";
             this.CurCountryCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -514,24 +514,24 @@
             this.CurCountryCodeTextEdit.Properties.Mask.EditMask = "N0";
             this.CurCountryCodeTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.CurCountryCodeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.CurCountryCodeTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurCountryCodeTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurCountryCodeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCountryCodeTextEdit.TabIndex = 19;
             // 
             // CurCountryNameTextEdit
             // 
             this.CurCountryNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCountryName", true));
-            this.CurCountryNameTextEdit.Location = new System.Drawing.Point(81, 188);
+            this.CurCountryNameTextEdit.Location = new System.Drawing.Point(91, 188);
             this.CurCountryNameTextEdit.MenuManager = this.barManager1;
             this.CurCountryNameTextEdit.Name = "CurCountryNameTextEdit";
-            this.CurCountryNameTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurCountryNameTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurCountryNameTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCountryNameTextEdit.TabIndex = 20;
             // 
             // CurZipCodeTextEdit
             // 
             this.CurZipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurZipCode", true));
-            this.CurZipCodeTextEdit.Location = new System.Drawing.Point(81, 212);
+            this.CurZipCodeTextEdit.Location = new System.Drawing.Point(91, 212);
             this.CurZipCodeTextEdit.MenuManager = this.barManager1;
             this.CurZipCodeTextEdit.Name = "CurZipCodeTextEdit";
             this.CurZipCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -540,107 +540,107 @@
             this.CurZipCodeTextEdit.Properties.Mask.EditMask = "N0";
             this.CurZipCodeTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.CurZipCodeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.CurZipCodeTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurZipCodeTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurZipCodeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurZipCodeTextEdit.TabIndex = 21;
             // 
             // CurPhoneOneTextEdit
             // 
             this.CurPhoneOneTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurPhoneOne", true));
-            this.CurPhoneOneTextEdit.Location = new System.Drawing.Point(81, 236);
+            this.CurPhoneOneTextEdit.Location = new System.Drawing.Point(91, 236);
             this.CurPhoneOneTextEdit.MenuManager = this.barManager1;
             this.CurPhoneOneTextEdit.Name = "CurPhoneOneTextEdit";
-            this.CurPhoneOneTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurPhoneOneTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurPhoneOneTextEdit.StyleController = this.dataLayoutControl1;
             this.CurPhoneOneTextEdit.TabIndex = 22;
             // 
             // CurPhoneTwoTextEdit
             // 
             this.CurPhoneTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurPhoneTwo", true));
-            this.CurPhoneTwoTextEdit.Location = new System.Drawing.Point(81, 260);
+            this.CurPhoneTwoTextEdit.Location = new System.Drawing.Point(91, 260);
             this.CurPhoneTwoTextEdit.MenuManager = this.barManager1;
             this.CurPhoneTwoTextEdit.Name = "CurPhoneTwoTextEdit";
-            this.CurPhoneTwoTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurPhoneTwoTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurPhoneTwoTextEdit.StyleController = this.dataLayoutControl1;
             this.CurPhoneTwoTextEdit.TabIndex = 23;
             // 
             // CurFaxTextEdit
             // 
             this.CurFaxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurFax", true));
-            this.CurFaxTextEdit.Location = new System.Drawing.Point(81, 284);
+            this.CurFaxTextEdit.Location = new System.Drawing.Point(91, 284);
             this.CurFaxTextEdit.MenuManager = this.barManager1;
             this.CurFaxTextEdit.Name = "CurFaxTextEdit";
-            this.CurFaxTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurFaxTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurFaxTextEdit.StyleController = this.dataLayoutControl1;
             this.CurFaxTextEdit.TabIndex = 24;
             // 
             // CurEmailTextEdit
             // 
             this.CurEmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurEmail", true));
-            this.CurEmailTextEdit.Location = new System.Drawing.Point(81, 308);
+            this.CurEmailTextEdit.Location = new System.Drawing.Point(91, 308);
             this.CurEmailTextEdit.MenuManager = this.barManager1;
             this.CurEmailTextEdit.Name = "CurEmailTextEdit";
-            this.CurEmailTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurEmailTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurEmailTextEdit.StyleController = this.dataLayoutControl1;
             this.CurEmailTextEdit.TabIndex = 25;
             // 
             // CurDescriptionTextEdit
             // 
             this.CurDescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDescription", true));
-            this.CurDescriptionTextEdit.Location = new System.Drawing.Point(81, 332);
+            this.CurDescriptionTextEdit.Location = new System.Drawing.Point(91, 332);
             this.CurDescriptionTextEdit.MenuManager = this.barManager1;
             this.CurDescriptionTextEdit.Name = "CurDescriptionTextEdit";
-            this.CurDescriptionTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurDescriptionTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurDescriptionTextEdit.StyleController = this.dataLayoutControl1;
             this.CurDescriptionTextEdit.TabIndex = 26;
             // 
             // CurTaxNoTextEdit
             // 
             this.CurTaxNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTaxNo", true));
-            this.CurTaxNoTextEdit.Location = new System.Drawing.Point(81, 356);
+            this.CurTaxNoTextEdit.Location = new System.Drawing.Point(91, 356);
             this.CurTaxNoTextEdit.MenuManager = this.barManager1;
             this.CurTaxNoTextEdit.Name = "CurTaxNoTextEdit";
-            this.CurTaxNoTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurTaxNoTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurTaxNoTextEdit.StyleController = this.dataLayoutControl1;
             this.CurTaxNoTextEdit.TabIndex = 27;
             // 
             // CurTaxOfficeTextEdit
             // 
             this.CurTaxOfficeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTaxOffice", true));
-            this.CurTaxOfficeTextEdit.Location = new System.Drawing.Point(81, 380);
+            this.CurTaxOfficeTextEdit.Location = new System.Drawing.Point(91, 380);
             this.CurTaxOfficeTextEdit.MenuManager = this.barManager1;
             this.CurTaxOfficeTextEdit.Name = "CurTaxOfficeTextEdit";
-            this.CurTaxOfficeTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurTaxOfficeTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurTaxOfficeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurTaxOfficeTextEdit.TabIndex = 28;
             // 
             // CurCardNoTextEdit
             // 
             this.CurCardNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCardNo", true));
-            this.CurCardNoTextEdit.Location = new System.Drawing.Point(81, 404);
+            this.CurCardNoTextEdit.Location = new System.Drawing.Point(91, 404);
             this.CurCardNoTextEdit.MenuManager = this.barManager1;
             this.CurCardNoTextEdit.Name = "CurCardNoTextEdit";
-            this.CurCardNoTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurCardNoTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurCardNoTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCardNoTextEdit.TabIndex = 29;
             // 
             // CurIdentNoTextEdit
             // 
             this.CurIdentNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurIdentNo", true));
-            this.CurIdentNoTextEdit.Location = new System.Drawing.Point(81, 428);
+            this.CurIdentNoTextEdit.Location = new System.Drawing.Point(91, 428);
             this.CurIdentNoTextEdit.MenuManager = this.barManager1;
             this.CurIdentNoTextEdit.Name = "CurIdentNoTextEdit";
-            this.CurIdentNoTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurIdentNoTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurIdentNoTextEdit.StyleController = this.dataLayoutControl1;
             this.CurIdentNoTextEdit.TabIndex = 30;
             // 
             // CurTitleTextEdit
             // 
             this.CurTitleTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTitle", true));
-            this.CurTitleTextEdit.Location = new System.Drawing.Point(81, 452);
+            this.CurTitleTextEdit.Location = new System.Drawing.Point(91, 452);
             this.CurTitleTextEdit.MenuManager = this.barManager1;
             this.CurTitleTextEdit.Name = "CurTitleTextEdit";
-            this.CurTitleTextEdit.Size = new System.Drawing.Size(622, 20);
+            this.CurTitleTextEdit.Size = new System.Drawing.Size(612, 20);
             this.CurTitleTextEdit.StyleController = this.dataLayoutControl1;
             this.CurTitleTextEdit.TabIndex = 31;
             // 
@@ -698,7 +698,7 @@
             this.ItemForCurType.Name = "ItemForCurType";
             this.ItemForCurType.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurType.Text = "Cari Tipi";
-            this.ItemForCurType.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurType.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurCode
             // 
@@ -707,7 +707,7 @@
             this.ItemForCurCode.Name = "ItemForCurCode";
             this.ItemForCurCode.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurCode.Text = "Cari Kodu";
-            this.ItemForCurCode.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurCode.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurSoleProp
             // 
@@ -716,7 +716,7 @@
             this.ItemForCurSoleProp.Name = "ItemForCurSoleProp";
             this.ItemForCurSoleProp.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurSoleProp.Text = "Şahıs Şirketi";
-            this.ItemForCurSoleProp.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurSoleProp.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurAccountName
             // 
@@ -725,7 +725,7 @@
             this.ItemForCurAccountName.Name = "ItemForCurAccountName";
             this.ItemForCurAccountName.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurAccountName.Text = "Cari Adı";
-            this.ItemForCurAccountName.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurAccountName.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurAuthPersonName
             // 
@@ -734,7 +734,7 @@
             this.ItemForCurAuthPersonName.Name = "ItemForCurAuthPersonName";
             this.ItemForCurAuthPersonName.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurAuthPersonName.Text = "Cari Yetkili";
-            this.ItemForCurAuthPersonName.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurAuthPersonName.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurDiscount
             // 
@@ -743,7 +743,7 @@
             this.ItemForCurDiscount.Name = "ItemForCurDiscount";
             this.ItemForCurDiscount.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurDiscount.Text = "C.İskonto";
-            this.ItemForCurDiscount.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurDiscount.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurOnCredit
             // 
@@ -752,7 +752,7 @@
             this.ItemForCurOnCredit.Name = "ItemForCurOnCredit";
             this.ItemForCurOnCredit.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurOnCredit.Text = "C.Veresiye";
-            this.ItemForCurOnCredit.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurOnCredit.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurRiskLimit
             // 
@@ -761,7 +761,7 @@
             this.ItemForCurRiskLimit.Name = "ItemForCurRiskLimit";
             this.ItemForCurRiskLimit.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurRiskLimit.Text = "C.Risk Limit";
-            this.ItemForCurRiskLimit.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurRiskLimit.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurCity
             // 
@@ -770,7 +770,7 @@
             this.ItemForCurCity.Name = "ItemForCurCity";
             this.ItemForCurCity.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurCity.Text = "İl";
-            this.ItemForCurCity.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurCity.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurDistrict
             // 
@@ -779,7 +779,7 @@
             this.ItemForCurDistrict.Name = "ItemForCurDistrict";
             this.ItemForCurDistrict.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurDistrict.Text = "İlçe";
-            this.ItemForCurDistrict.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurDistrict.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurBalance
             // 
@@ -788,7 +788,7 @@
             this.ItemForCurBalance.Name = "ItemForCurBalance";
             this.ItemForCurBalance.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurBalance.Text = "C.Bakiye";
-            this.ItemForCurBalance.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurBalance.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurCompanyType
             // 
@@ -797,7 +797,7 @@
             this.ItemForCurCompanyType.Name = "ItemForCurCompanyType";
             this.ItemForCurCompanyType.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurCompanyType.Text = "C.Şirket Tipi";
-            this.ItemForCurCompanyType.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurCompanyType.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurCreatedDate
             // 
@@ -806,7 +806,7 @@
             this.ItemForCurCreatedDate.Name = "ItemForCurCreatedDate";
             this.ItemForCurCreatedDate.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurCreatedDate.Text = "C.Oluşt.Tarihi";
-            this.ItemForCurCreatedDate.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurCreatedDate.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurAdress
             // 
@@ -815,7 +815,7 @@
             this.ItemForCurAdress.Name = "ItemForCurAdress";
             this.ItemForCurAdress.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurAdress.Text = "Adres";
-            this.ItemForCurAdress.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurAdress.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurAdressTwo
             // 
@@ -824,7 +824,7 @@
             this.ItemForCurAdressTwo.Name = "ItemForCurAdressTwo";
             this.ItemForCurAdressTwo.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurAdressTwo.Text = "Adres2";
-            this.ItemForCurAdressTwo.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurAdressTwo.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurCountryCode
             // 
@@ -833,7 +833,7 @@
             this.ItemForCurCountryCode.Name = "ItemForCurCountryCode";
             this.ItemForCurCountryCode.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurCountryCode.Text = "Ülke Kodu";
-            this.ItemForCurCountryCode.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurCountryCode.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurCountryName
             // 
@@ -842,7 +842,7 @@
             this.ItemForCurCountryName.Name = "ItemForCurCountryName";
             this.ItemForCurCountryName.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurCountryName.Text = "Ülke";
-            this.ItemForCurCountryName.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurCountryName.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurZipCode
             // 
@@ -851,7 +851,7 @@
             this.ItemForCurZipCode.Name = "ItemForCurZipCode";
             this.ItemForCurZipCode.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurZipCode.Text = "Posta Kodu";
-            this.ItemForCurZipCode.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurZipCode.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurPhoneOne
             // 
@@ -860,7 +860,7 @@
             this.ItemForCurPhoneOne.Name = "ItemForCurPhoneOne";
             this.ItemForCurPhoneOne.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurPhoneOne.Text = "Telefon";
-            this.ItemForCurPhoneOne.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurPhoneOne.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurPhoneTwo
             // 
@@ -869,7 +869,7 @@
             this.ItemForCurPhoneTwo.Name = "ItemForCurPhoneTwo";
             this.ItemForCurPhoneTwo.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurPhoneTwo.Text = "Telefon2";
-            this.ItemForCurPhoneTwo.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurPhoneTwo.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurFax
             // 
@@ -878,7 +878,7 @@
             this.ItemForCurFax.Name = "ItemForCurFax";
             this.ItemForCurFax.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurFax.Text = "Faks";
-            this.ItemForCurFax.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurFax.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurEmail
             // 
@@ -887,7 +887,7 @@
             this.ItemForCurEmail.Name = "ItemForCurEmail";
             this.ItemForCurEmail.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurEmail.Text = "Email";
-            this.ItemForCurEmail.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurEmail.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurDescription
             // 
@@ -896,7 +896,7 @@
             this.ItemForCurDescription.Name = "ItemForCurDescription";
             this.ItemForCurDescription.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurDescription.Text = "Not";
-            this.ItemForCurDescription.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurDescription.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurTaxNo
             // 
@@ -905,7 +905,7 @@
             this.ItemForCurTaxNo.Name = "ItemForCurTaxNo";
             this.ItemForCurTaxNo.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurTaxNo.Text = "Vergi No";
-            this.ItemForCurTaxNo.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurTaxNo.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurTaxOffice
             // 
@@ -914,7 +914,7 @@
             this.ItemForCurTaxOffice.Name = "ItemForCurTaxOffice";
             this.ItemForCurTaxOffice.Size = new System.Drawing.Size(695, 24);
             this.ItemForCurTaxOffice.Text = "Vergi Dairesi";
-            this.ItemForCurTaxOffice.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurTaxOffice.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurCardNo
             // 
@@ -922,8 +922,8 @@
             this.ItemForCurCardNo.Location = new System.Drawing.Point(0, 600);
             this.ItemForCurCardNo.Name = "ItemForCurCardNo";
             this.ItemForCurCardNo.Size = new System.Drawing.Size(695, 24);
-            this.ItemForCurCardNo.Text = "Cur Card No";
-            this.ItemForCurCardNo.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurCardNo.Text = "C.Kredi Kartı No";
+            this.ItemForCurCardNo.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurIdentNo
             // 
@@ -931,8 +931,8 @@
             this.ItemForCurIdentNo.Location = new System.Drawing.Point(0, 624);
             this.ItemForCurIdentNo.Name = "ItemForCurIdentNo";
             this.ItemForCurIdentNo.Size = new System.Drawing.Size(695, 24);
-            this.ItemForCurIdentNo.Text = "Cur Ident No";
-            this.ItemForCurIdentNo.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurIdentNo.Text = "TC No";
+            this.ItemForCurIdentNo.TextSize = new System.Drawing.Size(76, 13);
             // 
             // ItemForCurTitle
             // 
@@ -940,8 +940,8 @@
             this.ItemForCurTitle.Location = new System.Drawing.Point(0, 648);
             this.ItemForCurTitle.Name = "ItemForCurTitle";
             this.ItemForCurTitle.Size = new System.Drawing.Size(695, 24);
-            this.ItemForCurTitle.Text = "Cur Title";
-            this.ItemForCurTitle.TextSize = new System.Drawing.Size(66, 13);
+            this.ItemForCurTitle.Text = "C.Başlık";
+            this.ItemForCurTitle.TextSize = new System.Drawing.Size(76, 13);
             // 
             // frmCariEdit
             // 
