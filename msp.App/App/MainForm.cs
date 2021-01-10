@@ -35,6 +35,9 @@ using Msp.Models.Models.SecRights;
 using Msp.Service.Service.Admin;
 using Msp.App.Contact;
 using System.IO;
+using System.Net.NetworkInformation;
+using System.Net;
+using System.Net.Sockets;
 
 namespace msp.App
 {
@@ -175,13 +178,68 @@ namespace msp.App
                 }
             }
         }
+
+        public string MACAdresiAl()
+        {
+            NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+            String sMacAddress = string.Empty;
+            foreach (NetworkInterface adapter in nics)
+            {
+                if (sMacAddress == String.Empty) sMacAddress = adapter.GetPhysicalAddress().ToString();
+                AppMain.MAcAdress = (sMacAddress);
+            }
+            return sMacAddress;
+
+        }
+        static string getIP()
+        {
+            String address = "";
+            WebRequest request = WebRequest.Create("http://checkip.dyndns.org/");
+            using (WebResponse response = request.GetResponse())
+            using (StreamReader stream = new StreamReader(response.GetResponseStream()))
+            {
+                address = stream.ReadToEnd();
+            }
+            int first = address.IndexOf("Address: ") + 9;
+            int last = address.LastIndexOf("</body>");
+            address = address.Substring(first, last - first);
+            AppMain.IpAdress = address;
+            return address;
+        }
+        private string GetLocalIPAddress()
+        {
+            string _LocalIP = "";
+            var ni = NetworkInterface.GetAllNetworkInterfaces();
+            foreach (NetworkInterface item in ni)
+            {
+                if (item.OperationalStatus == OperationalStatus.Up) //&& item.NetworkInterfaceType == ?
+                {
+                    foreach (UnicastIPAddressInformation ip in item.GetIPProperties().UnicastAddresses)
+                    {
+                        if (ip.Address.AddressFamily == AddressFamily.InterNetwork & !IPAddress.IsLoopback(ip.Address))
+                        {
+                            _LocalIP = ip.Address.ToString();
+                            AppMain.IpAdress = _LocalIP;
+                        }
+                    }
+                }
+            }
+            return _LocalIP;
+        }
+
+
         #endregion
 
         #region Form
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            MACAdresiAl();
+            if (IsConnected())
+            {
+                getIP();
+            }
+            GetLocalIPAddress();
 
             #region Güncelleme Kontrol
             ApplicationDeployment ad;
@@ -208,7 +266,6 @@ namespace msp.App
             }
 
             #endregion
-
 
             #region Regedit
             //string message = Msp.App.Tool.MspTool.CreateNewRegistry();
@@ -325,8 +382,6 @@ namespace msp.App
             { OurKey.SetValue("ParaUstu", "True"); }
 
             #endregion
-
-
 
             //if (Global.RegistryDbSettings.Count > 0)
             //{

@@ -23,6 +23,10 @@ namespace Msp.Infrastructure
         public static int CompanyRecId { get; set; }
 
 
+        public static string MAcAdress { get; set; }
+        public static string IpAdress { get; set; }
+        public static string LocalIpAdress { get; set; }
+
 
     }
 }
