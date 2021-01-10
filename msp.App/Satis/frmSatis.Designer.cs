@@ -150,6 +150,9 @@
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem37 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -233,6 +236,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
             this.SuspendLayout();
             // 
             // img_svg
@@ -263,6 +269,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lookUpEdit1);
             this.layoutControl1.Controls.Add(this.toggleSwitch1);
             this.layoutControl1.Controls.Add(this.txt_İndirimTutar);
             this.layoutControl1.Controls.Add(this.txt_Barcode);
@@ -894,9 +901,9 @@
             // txt_CustomerName
             // 
             this.txt_CustomerName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "CustomerName", true));
-            this.txt_CustomerName.Location = new System.Drawing.Point(1037, 651);
+            this.txt_CustomerName.Location = new System.Drawing.Point(1260, 651);
             this.txt_CustomerName.Name = "txt_CustomerName";
-            this.txt_CustomerName.Size = new System.Drawing.Size(361, 20);
+            this.txt_CustomerName.Size = new System.Drawing.Size(138, 20);
             this.txt_CustomerName.StyleController = this.layoutControl1;
             this.txt_CustomerName.TabIndex = 35;
             // 
@@ -1081,7 +1088,8 @@
             this.layoutControlGroup1,
             this.layoutControlGroup2,
             this.layoutControlItem37,
-            this.emptySpaceItem8});
+            this.emptySpaceItem8,
+            this.layoutControlItem41});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1410, 857);
             this.Root.TextVisible = false;
@@ -1468,9 +1476,9 @@
             // layoutControlItem30
             // 
             this.layoutControlItem30.Control = this.txt_CustomerName;
-            this.layoutControlItem30.Location = new System.Drawing.Point(944, 716);
+            this.layoutControlItem30.Location = new System.Drawing.Point(1167, 716);
             this.layoutControlItem30.Name = "layoutControlItem30";
-            this.layoutControlItem30.Size = new System.Drawing.Size(446, 24);
+            this.layoutControlItem30.Size = new System.Drawing.Size(223, 24);
             this.layoutControlItem30.Text = "Müşteri Adı :";
             this.layoutControlItem30.TextSize = new System.Drawing.Size(78, 13);
             // 
@@ -1697,6 +1705,36 @@
             this.emptySpaceItem8.Size = new System.Drawing.Size(285, 38);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(1037, 651);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DataSource = this.bs_CaseList;
+            this.lookUpEdit1.Properties.DisplayMember = "CaseName";
+            this.lookUpEdit1.Properties.NullText = "";
+            this.lookUpEdit1.Properties.ValueMember = "RecId";
+            this.lookUpEdit1.Size = new System.Drawing.Size(138, 20);
+            this.lookUpEdit1.StyleController = this.layoutControl1;
+            this.lookUpEdit1.TabIndex = 46;
+            // 
+            // layoutControlItem41
+            // 
+            this.layoutControlItem41.Control = this.lookUpEdit1;
+            this.layoutControlItem41.Location = new System.Drawing.Point(944, 716);
+            this.layoutControlItem41.MaxSize = new System.Drawing.Size(223, 24);
+            this.layoutControlItem41.MinSize = new System.Drawing.Size(223, 24);
+            this.layoutControlItem41.Name = "layoutControlItem41";
+            this.layoutControlItem41.Size = new System.Drawing.Size(223, 24);
+            this.layoutControlItem41.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem41.Text = "Kasa";
+            this.layoutControlItem41.TextSize = new System.Drawing.Size(78, 13);
+            // 
+            // bs_CaseList
+            // 
+            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
+            // 
             // frmSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1794,6 +1832,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1915,5 +1956,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem39;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem40;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem41;
+        private System.Windows.Forms.BindingSource bs_CaseList;
     }
 }
