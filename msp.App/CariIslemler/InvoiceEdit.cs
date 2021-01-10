@@ -20,6 +20,10 @@ using Msp.Service.Service.CurrentTransactions;
 using Msp.Service.Service.App;
 using Msp.Models.Models.Order;
 using System.Globalization;
+using Msp.App.Tanimlar;
+using Msp.Service.Service.Tanimlar;
+using Msp.Service.Service.Depot;
+using Msp.App.Depo_Stok;
 
 namespace Msp.App.CariIslemler
 {
@@ -44,6 +48,8 @@ namespace Msp.App.CariIslemler
         List<ProductDTO> _productlist = new List<ProductDTO>();
         List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
         List<CompanyDTO> _company = new List<CompanyDTO>();
+        List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
+        List<DepotDTO> _depotList = new List<DepotDTO>();
 
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
@@ -264,6 +270,12 @@ namespace Msp.App.CariIslemler
             _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
             bs_company.DataSource = _company;
 
+            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyType.DataSource = _currencyTypes;
+
+            _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+            bs_Depot.DataSource = _depotList;
+
             rp_KDV.DataSource = KdvOrani;
             rp_KDV.ValueMember = "Id";
             rp_KDV.DisplayMember = "Value";
@@ -369,6 +381,66 @@ namespace Msp.App.CariIslemler
             FindIrsaliyeList frm = new FindIrsaliyeList();
             frm.invoice = InvoiceType.AlisIrsaliye;
             frm.ShowDialog();
+        }
+
+        private void txtCariHesapAdi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    msp.App.frmCurrentTransactions frm = new msp.App.frmCurrentTransactions();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
+                    bs_CariHesap.DataSource = _currentTransactionsList;
+                }
+            }
+        }
+
+        private void lc_DovizTuru_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    CurrencyTypeList frm = new CurrencyTypeList();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+                    bs_CurrencyType.DataSource = _currencyTypes;
+                }
+            }
+        }
+
+        private void txtDepo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    frmDepo frm = new frmDepo();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+                    bs_Depot.DataSource = _depotList;
+                }
+            }
         }
     }
 }

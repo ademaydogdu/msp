@@ -421,6 +421,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmDepo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Depo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDepo_FormClosing);
             this.Load += new System.EventHandler(this.frmDepo_Load);

@@ -42,6 +42,7 @@
             this.colCurAdressTwo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurPhoneOne = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurPhoneTwo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -61,7 +62,6 @@
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).BeginInit();
@@ -125,7 +125,7 @@
             this.colCurType.FieldName = "CurType";
             this.colCurType.Name = "colCurType";
             this.colCurType.Visible = true;
-            this.colCurType.VisibleIndex = 1;
+            this.colCurType.VisibleIndex = 0;
             this.colCurType.Width = 41;
             // 
             // colCurCode
@@ -134,7 +134,7 @@
             this.colCurCode.FieldName = "CurCode";
             this.colCurCode.Name = "colCurCode";
             this.colCurCode.Visible = true;
-            this.colCurCode.VisibleIndex = 2;
+            this.colCurCode.VisibleIndex = 1;
             this.colCurCode.Width = 20;
             // 
             // colCurAccountName
@@ -143,7 +143,7 @@
             this.colCurAccountName.FieldName = "CurAccountName";
             this.colCurAccountName.Name = "colCurAccountName";
             this.colCurAccountName.Visible = true;
-            this.colCurAccountName.VisibleIndex = 3;
+            this.colCurAccountName.VisibleIndex = 2;
             this.colCurAccountName.Width = 55;
             // 
             // colCurAuthPersonName
@@ -152,7 +152,7 @@
             this.colCurAuthPersonName.FieldName = "CurAuthPersonName";
             this.colCurAuthPersonName.Name = "colCurAuthPersonName";
             this.colCurAuthPersonName.Visible = true;
-            this.colCurAuthPersonName.VisibleIndex = 4;
+            this.colCurAuthPersonName.VisibleIndex = 3;
             this.colCurAuthPersonName.Width = 40;
             // 
             // colCurCreatedDate
@@ -161,7 +161,7 @@
             this.colCurCreatedDate.FieldName = "CurCreatedDate";
             this.colCurCreatedDate.Name = "colCurCreatedDate";
             this.colCurCreatedDate.Visible = true;
-            this.colCurCreatedDate.VisibleIndex = 5;
+            this.colCurCreatedDate.VisibleIndex = 4;
             this.colCurCreatedDate.Width = 20;
             // 
             // colCurAdress
@@ -170,7 +170,7 @@
             this.colCurAdress.FieldName = "CurAdress";
             this.colCurAdress.Name = "colCurAdress";
             this.colCurAdress.Visible = true;
-            this.colCurAdress.VisibleIndex = 6;
+            this.colCurAdress.VisibleIndex = 5;
             this.colCurAdress.Width = 20;
             // 
             // colCurAdressTwo
@@ -179,7 +179,7 @@
             this.colCurAdressTwo.FieldName = "CurAdressTwo";
             this.colCurAdressTwo.Name = "colCurAdressTwo";
             this.colCurAdressTwo.Visible = true;
-            this.colCurAdressTwo.VisibleIndex = 7;
+            this.colCurAdressTwo.VisibleIndex = 6;
             this.colCurAdressTwo.Width = 20;
             // 
             // colCurPhoneOne
@@ -188,7 +188,7 @@
             this.colCurPhoneOne.FieldName = "CurPhoneOne";
             this.colCurPhoneOne.Name = "colCurPhoneOne";
             this.colCurPhoneOne.Visible = true;
-            this.colCurPhoneOne.VisibleIndex = 8;
+            this.colCurPhoneOne.VisibleIndex = 7;
             this.colCurPhoneOne.Width = 20;
             // 
             // colCurPhoneTwo
@@ -197,8 +197,16 @@
             this.colCurPhoneTwo.FieldName = "CurPhoneTwo";
             this.colCurPhoneTwo.Name = "colCurPhoneTwo";
             this.colCurPhoneTwo.Visible = true;
-            this.colCurPhoneTwo.VisibleIndex = 9;
+            this.colCurPhoneTwo.VisibleIndex = 8;
             this.colCurPhoneTwo.Width = 20;
+            // 
+            // colCurEmail
+            // 
+            this.colCurEmail.Caption = "E-Mail";
+            this.colCurEmail.FieldName = "CurEmail";
+            this.colCurEmail.Name = "colCurEmail";
+            this.colCurEmail.Visible = true;
+            this.colCurEmail.VisibleIndex = 9;
             // 
             // barManager1
             // 
@@ -420,14 +428,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // colCurEmail
-            // 
-            this.colCurEmail.Caption = "E-Mail";
-            this.colCurEmail.FieldName = "CurEmail";
-            this.colCurEmail.Name = "colCurEmail";
-            this.colCurEmail.Visible = true;
-            this.colCurEmail.VisibleIndex = 10;
-            // 
             // frmCurrentTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,6 +439,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmCurrentTransactions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cari İşlemler";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCurrentTransactions_FormClosing);
             this.Load += new System.EventHandler(this.CurrentTransactions_Load);

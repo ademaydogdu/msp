@@ -27,7 +27,7 @@ namespace Msp.Models.Models.Order
         public decimal? TotalKDV { get; set; } = 0;
         public decimal? TotalSiparis { get; set; } = 0;
         public decimal? TotalAraToplam { get; set; } = 0;
-        public bool? Deleted { get; set; }
+        public bool? Deleted { get; set; } = false;
         public int? IrsaliyeId { get; set; } = 0;
 
     }

@@ -123,7 +123,43 @@ namespace Msp.Service.Service.Invoice
             return response;
         }
 
+        public ActionResponse<InvoiceOwnerDTO> Deleted_InvoiceOwner(int invoiceId)
+        {
+            ActionResponse<InvoiceOwnerDTO> response = new ActionResponse<InvoiceOwnerDTO>()
+            {
+                ResponseType = ResponseType.Ok
+            };
 
+            using (MspDbContext _db = new MspDbContext())
+            {
+                using (DbContextTransaction transaction = _db.Database.BeginTransaction())
+                {
+
+                    try
+                    {
+                        var record = _db.InvoiceOwner.FirstOrDefault(x => x.RecId == invoiceId);
+                        if (record != null)
+                        {
+                            record.Deleted = true;
+                            _db.Entry(record).CurrentValues.SetValues(record);
+                            _db.Entry(record).State = System.Data.Entity.EntityState.Modified;
+
+                        }
+                        _db.SaveChanges();
+                        transaction.Commit();
+                    }
+                    catch (Exception e)
+                    {
+                        transaction.Rollback();
+                        response.Message = e.ToString();
+                        response.ResponseType = ResponseType.Error;
+                    }
+                }
+            }
+
+            return response;
+
+        }
 
 
 

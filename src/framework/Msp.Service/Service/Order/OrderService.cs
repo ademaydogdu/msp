@@ -151,6 +151,7 @@ namespace Msp.Service.Service.Order
                         if (record != null)
                         {
                             record.Deleted = true;
+                            record.SiparisNo = "";
                             _db.Entry(record).CurrentValues.SetValues(record);
                             _db.Entry(record).State = System.Data.Entity.EntityState.Modified;
 

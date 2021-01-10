@@ -131,5 +131,27 @@ namespace Msp.App.CariIslemler
                 frm.Show();
             }
         }
+
+        private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
+            if (oRow != null)
+            {
+                var response = _repository.Run<InvoiceService, ActionResponse<InvoiceOwnerDTO>>(x => x.Deleted_InvoiceOwner(oRow.RecId));
+                if (response.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    do_refresh();
+                }
+            }
+        }
+
+        private void btnCurTranClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

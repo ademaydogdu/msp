@@ -52,6 +52,8 @@
             this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_Invoice = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFicDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_InvoiceType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colFichTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFicheType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFicheDocumentNo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,8 +66,6 @@
             this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiğerMasraflar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colInvoiceType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rp_InvoiceType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).BeginInit();
@@ -142,6 +142,7 @@
             this.btnDelete.Id = 4;
             this.btnDelete.ImageOptions.ImageIndex = 5;
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // bbi_Refresh
             // 
@@ -171,6 +172,7 @@
             this.btnCurTranClose.Id = 7;
             this.btnCurTranClose.ImageOptions.ImageIndex = 0;
             this.btnCurTranClose.Name = "btnCurTranClose";
+            this.btnCurTranClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCurTranClose_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -303,6 +305,21 @@
             this.colFicDate.Visible = true;
             this.colFicDate.VisibleIndex = 0;
             // 
+            // colInvoiceType
+            // 
+            this.colInvoiceType.ColumnEdit = this.rp_InvoiceType;
+            this.colInvoiceType.FieldName = "InvoiceType";
+            this.colInvoiceType.Name = "colInvoiceType";
+            this.colInvoiceType.Visible = true;
+            this.colInvoiceType.VisibleIndex = 13;
+            // 
+            // rp_InvoiceType
+            // 
+            this.rp_InvoiceType.AutoHeight = false;
+            this.rp_InvoiceType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_InvoiceType.Name = "rp_InvoiceType";
+            // 
             // colFichTime
             // 
             this.colFichTime.Caption = "Fatura Saat";
@@ -393,21 +410,6 @@
             this.colGenelToplam.Name = "colGenelToplam";
             this.colGenelToplam.Visible = true;
             this.colGenelToplam.VisibleIndex = 12;
-            // 
-            // colInvoiceType
-            // 
-            this.colInvoiceType.ColumnEdit = this.rp_InvoiceType;
-            this.colInvoiceType.FieldName = "InvoiceType";
-            this.colInvoiceType.Name = "colInvoiceType";
-            this.colInvoiceType.Visible = true;
-            this.colInvoiceType.VisibleIndex = 13;
-            // 
-            // rp_InvoiceType
-            // 
-            this.rp_InvoiceType.AutoHeight = false;
-            this.rp_InvoiceType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_InvoiceType.Name = "rp_InvoiceType";
             // 
             // InvoiceList
             // 

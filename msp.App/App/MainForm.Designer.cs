@@ -2073,7 +2073,7 @@
             // 
             // barButtonItem127
             // 
-            this.barButtonItem127.Caption = "Satoş İşlemlerinde Silinen Kayıtlar";
+            this.barButtonItem127.Caption = "Satış İşlemlerinde Silinen Kayıtlar";
             this.barButtonItem127.Id = 212;
             this.barButtonItem127.Name = "barButtonItem127";
             // 
