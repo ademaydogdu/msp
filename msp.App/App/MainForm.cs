@@ -70,7 +70,6 @@ namespace msp.App
                 return false;
             }
         }
-
         public void do_barDoldur()
         {
             bbi_UserName.Caption = AppMain.User.username;
@@ -79,7 +78,6 @@ namespace msp.App
             bbi_Version.Caption = Convert.ToString(AppMain.MspVersion);
 
         }
-
         private void do_versionControl()
         {
             var dataVersion = _repository.Run<StartUp, ProgramsControlsDTO>(x => x.CheckVersion());
@@ -105,7 +103,6 @@ namespace msp.App
             oForm.UpdateFromStart();
 
         }
-
         private void do_OpenFormAyarlari()
         {
             AppMain.OpenFormRights = _repository.Run<AuthorizationService, List<OpenFormRightsDTO>>(x => x.OpenFormRights(AppMain.User.username, AppMain.CompanyRecId));
@@ -127,7 +124,6 @@ namespace msp.App
             _repository.Run<AuthorizationService>(x => x.SaveOpenFormRights(newFormRights));
 
         }
-
         private void do_MenuyuControl()
         {
             foreach (var form in AppMain.Forms)
@@ -140,7 +136,6 @@ namespace msp.App
             }
 
         }
-
         public void do_FormSecRight()
         {
             AppMain.secRights = _repository.Run<AuthorizationService, List<SecRightsDTO>>(x => x.get_SecRights(AppMain.User.username, AppMain.CompanyRecId));
@@ -167,7 +162,19 @@ namespace msp.App
             _repository.Run<AuthorizationService>(x => x.SaveSecRights(newSecRights));
 
         }
-
+        private void do_OpenFormSale()
+        {
+            var param = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
+            if (param != null)
+            {
+                if (param.MainSaleForm.GetValueOrDefault())
+                {
+                    frmSatis frm = new frmSatis();
+                    frm.MdiParent = this;
+                    frm.Show();
+                }
+            }
+        }
         #endregion
 
         #region Form
@@ -356,7 +363,7 @@ namespace msp.App
                 do_OpenFormAyarlari();
                 do_MenuyuControl();
                 do_FormSecRight();
-
+                do_OpenFormSale();
                 UserLookAndFeel.Default.SetSkinStyle(AppMain.User.DefaultTheme, AppMain.User.DefaultTheme2);
             }
             else
@@ -365,7 +372,7 @@ namespace msp.App
             }
         }
 
-    
+
 
 
         #endregion
@@ -801,7 +808,7 @@ namespace msp.App
 
         #region Report
 
-     
+
         private void bbi_CariHesapListesi_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmPrint frm = new frmPrint();

@@ -242,7 +242,7 @@ namespace msp.App
             }
             if (_parameters.PaymentyForced.GetValueOrDefault())
             {
-                if (txt_OdemeTipi.EditValue == "")
+                if (Convert.ToString(txt_OdemeTipi.EditValue) == "")
                 {
                     MessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
                     _return = true;
