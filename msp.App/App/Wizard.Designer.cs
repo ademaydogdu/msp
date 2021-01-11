@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.wizardControl1 = new DevExpress.XtraWizard.WizardControl();
             this.welcomeWizardPage1 = new DevExpress.XtraWizard.WelcomeWizardPage();
             this.pageSqlSettings = new DevExpress.XtraWizard.WizardPage();
@@ -95,6 +96,7 @@
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.lytLocalString = new DevExpress.XtraLayout.LayoutControlItem();
+            this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.pageSqlSettings.SuspendLayout();
@@ -163,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             this.SuspendLayout();
             // 
             // wizardControl1
@@ -279,9 +282,11 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(460, 213);
+            this.simpleButton1.ImageOptions.ImageIndex = 0;
+            this.simpleButton1.ImageOptions.ImageList = this.img_bar;
+            this.simpleButton1.Location = new System.Drawing.Point(481, 213);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(167, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(146, 41);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 9;
             this.simpleButton1.Text = "Bağlantı Kontrol";
@@ -331,9 +336,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 239);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 258);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(631, 109);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(631, 90);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // grpServer
@@ -348,7 +353,7 @@
             this.emptySpaceItem2});
             this.grpServer.Location = new System.Drawing.Point(0, 72);
             this.grpServer.Name = "grpServer";
-            this.grpServer.Size = new System.Drawing.Size(631, 167);
+            this.grpServer.Size = new System.Drawing.Size(631, 186);
             this.grpServer.Text = "Server Bilgileri";
             this.grpServer.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
@@ -391,9 +396,11 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButton1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(436, 96);
+            this.layoutControlItem6.Location = new System.Drawing.Point(457, 96);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(86, 26);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(171, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(150, 45);
+            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -402,7 +409,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 96);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(436, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(457, 45);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // chSunucu
@@ -839,6 +846,11 @@
             this.lytLocalString.TextSize = new System.Drawing.Size(112, 13);
             this.lytLocalString.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
+            // img_bar
+            // 
+            this.img_bar.ImageSize = new System.Drawing.Size(24, 24);
+            this.img_bar.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            // 
             // Wizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -923,6 +935,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -996,5 +1009,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraLayout.LayoutControlItem lytLocalString;
+        private DevExpress.Utils.SvgImageCollection img_bar;
     }
 }
