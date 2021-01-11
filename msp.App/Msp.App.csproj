@@ -69,7 +69,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Msp.App_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
@@ -563,6 +563,12 @@
       <DependentUpon>SpeedSaleProductTanim.cs</DependentUpon>
     </Compile>
     <Compile Include="Tool\MspTool.cs" />
+    <Compile Include="Waiting\SplashScreenWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Waiting\SplashScreenWaiting.Designer.cs">
+      <DependentUpon>SplashScreenWaiting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Waiting\Wait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -768,6 +774,9 @@
     <EmbeddedResource Include="Tanimlar\SpeedSaleProductTanim.resx">
       <DependentUpon>SpeedSaleProductTanim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Waiting\SplashScreenWaiting.resx">
+      <DependentUpon>SplashScreenWaiting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Waiting\Wait.resx">
       <DependentUpon>Wait.cs</DependentUpon>
     </EmbeddedResource>
@@ -958,6 +967,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\view-refresh1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\mspTableCreate.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

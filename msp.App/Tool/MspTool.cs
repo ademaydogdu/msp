@@ -58,6 +58,26 @@ namespace Msp.App.Tool
             }
             return donus;
         }
+        public static bool sqlKontrol(string connectionString)
+        {
+            bool donus = true;
+            SqlConnection sConn = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = sConn;
+            try
+            {
+                cmd.Connection.Open();
+            }
+            catch
+            {
+                donus = false;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return donus;
+        }
         public static Form get_OpenForm(string _FormName)
         {
             Form _FormHave = null;

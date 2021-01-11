@@ -39,8 +39,10 @@
             this.txtSunucuAdi = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.chcSunucu = new DevExpress.XtraEditors.CheckEdit();
             this.chLocalDB = new DevExpress.XtraEditors.CheckEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -53,6 +55,7 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.chSunucu = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lytLocalString = new DevExpress.XtraLayout.LayoutControlItem();
             this.completionWizardPage1 = new DevExpress.XtraWizard.CompletionWizardPage();
             this.pageRecordPage = new DevExpress.XtraWizard.WizardPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -92,11 +95,7 @@
             this.rpDeneme = new System.Windows.Forms.RadioButton();
             this.rpLisans = new System.Windows.Forms.RadioButton();
             this.pageCreateDatabase = new DevExpress.XtraWizard.WizardPage();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.lytLocalString = new DevExpress.XtraLayout.LayoutControlItem();
-            this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.lblSqlDurumText = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.pageSqlSettings.SuspendLayout();
@@ -107,8 +106,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSunucuName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSunucuAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chcSunucu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chLocalDB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -121,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSunucu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).BeginInit();
             this.pageRecordPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -162,10 +164,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             this.pageCreateDatabase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             this.SuspendLayout();
             // 
             // wizardControl1
@@ -192,6 +190,7 @@
             this.completionWizardPage1});
             this.wizardControl1.PreviousText = "< &Geri";
             this.wizardControl1.Size = new System.Drawing.Size(683, 511);
+            this.wizardControl1.SelectedPageChanged += new DevExpress.XtraWizard.WizardPageChangedEventHandler(this.wizardControl1_SelectedPageChanged);
             this.wizardControl1.SelectedPageChanging += new DevExpress.XtraWizard.WizardPageChangingEventHandler(this.wizardControl1_SelectedPageChanging);
             this.wizardControl1.NextClick += new DevExpress.XtraWizard.WizardCommandButtonClickEventHandler(this.wizardControl1_NextClick);
             // 
@@ -291,6 +290,11 @@
             this.simpleButton1.TabIndex = 9;
             this.simpleButton1.Text = "Bağlantı Kontrol";
             // 
+            // img_bar
+            // 
+            this.img_bar.ImageSize = new System.Drawing.Size(24, 24);
+            this.img_bar.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            // 
             // chcSunucu
             // 
             this.chcSunucu.Location = new System.Drawing.Point(12, 60);
@@ -310,6 +314,15 @@
             this.chLocalDB.StyleController = this.layoutControl1;
             this.chLocalDB.TabIndex = 11;
             this.chLocalDB.CheckedChanged += new System.EventHandler(this.chLocalDB_CheckedChanged);
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Enabled = false;
+            this.textEdit2.Location = new System.Drawing.Point(127, 36);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(512, 20);
+            this.textEdit2.StyleController = this.layoutControl1;
+            this.textEdit2.TabIndex = 12;
             // 
             // layoutControlItem1
             // 
@@ -429,6 +442,16 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(631, 24);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
+            // 
+            // lytLocalString
+            // 
+            this.lytLocalString.Control = this.textEdit2;
+            this.lytLocalString.Location = new System.Drawing.Point(0, 24);
+            this.lytLocalString.Name = "lytLocalString";
+            this.lytLocalString.Size = new System.Drawing.Size(631, 24);
+            this.lytLocalString.Text = "Local Connection String";
+            this.lytLocalString.TextSize = new System.Drawing.Size(112, 13);
+            this.lytLocalString.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // completionWizardPage1
             // 
@@ -805,51 +828,19 @@
             // 
             // pageCreateDatabase
             // 
-            this.pageCreateDatabase.Controls.Add(this.labelControl2);
-            this.pageCreateDatabase.Controls.Add(this.progressBarControl1);
+            this.pageCreateDatabase.Controls.Add(this.lblSqlDurumText);
             this.pageCreateDatabase.DescriptionText = "";
             this.pageCreateDatabase.Name = "pageCreateDatabase";
             this.pageCreateDatabase.Size = new System.Drawing.Size(651, 368);
             this.pageCreateDatabase.Text = "Veri Tabanı Oluşturulması";
             // 
-            // labelControl2
+            // lblSqlDurumText
             // 
-            this.labelControl2.Location = new System.Drawing.Point(247, 66);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(137, 13);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Veri Tabanı Oluşturuluyor....";
-            // 
-            // progressBarControl1
-            // 
-            this.progressBarControl1.Location = new System.Drawing.Point(24, 30);
-            this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Size = new System.Drawing.Size(605, 30);
-            this.progressBarControl1.TabIndex = 0;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Enabled = false;
-            this.textEdit2.Location = new System.Drawing.Point(127, 36);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(512, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 12;
-            // 
-            // lytLocalString
-            // 
-            this.lytLocalString.Control = this.textEdit2;
-            this.lytLocalString.Location = new System.Drawing.Point(0, 24);
-            this.lytLocalString.Name = "lytLocalString";
-            this.lytLocalString.Size = new System.Drawing.Size(631, 24);
-            this.lytLocalString.Text = "Local Connection String";
-            this.lytLocalString.TextSize = new System.Drawing.Size(112, 13);
-            this.lytLocalString.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
-            // img_bar
-            // 
-            this.img_bar.ImageSize = new System.Drawing.Size(24, 24);
-            this.img_bar.Add("updatedataextract", "image://svgimages/dashboards/updatedataextract.svg");
+            this.lblSqlDurumText.Location = new System.Drawing.Point(231, 18);
+            this.lblSqlDurumText.Name = "lblSqlDurumText";
+            this.lblSqlDurumText.Size = new System.Drawing.Size(137, 13);
+            this.lblSqlDurumText.TabIndex = 1;
+            this.lblSqlDurumText.Text = "Veri Tabanı Oluşturuluyor....";
             // 
             // Wizard
             // 
@@ -874,8 +865,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSunucuName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSunucuAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chcSunucu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chLocalDB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -888,6 +881,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSunucu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).EndInit();
             this.pageRecordPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
@@ -932,10 +926,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             this.pageCreateDatabase.ResumeLayout(false);
             this.pageCreateDatabase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1005,8 +995,7 @@
         private DevExpress.XtraEditors.TextEdit txtUrunAnahtar;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraWizard.WizardPage pageCreateDatabase;
-        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblSqlDurumText;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraLayout.LayoutControlItem lytLocalString;
         private DevExpress.Utils.SvgImageCollection img_bar;
