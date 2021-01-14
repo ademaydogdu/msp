@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraWizard;
 using System.IO;
+using System.Data.SqlClient;
+using System.Data.Common;
 
 namespace Msp.App.App
 {
@@ -30,6 +32,7 @@ namespace Msp.App.App
         private bool SqlLocal;
 
         #endregion
+
         public DevExpress.XtraSplashScreen.SplashScreenManager Splash { get; set; }
         public System.Reflection.Assembly assembly { get; set; }
         public string Script { get; set; } = "";
@@ -37,16 +40,24 @@ namespace Msp.App.App
 
         private void do_LisansDemo()
         {
-            dt_RecordDate.EditValue = DateTime.Now;
             if (rpLisans.Checked)
             {
 
             }
             if (rpDeneme.Checked)
             {
-
+                if (Convert.ToString(txtPhone.EditValue) == "")
+                {
+                    XtraMessageBox.Show("Telefon Numarası Giriniz.");
+                    return;
+                }
+                if (Convert.ToString(txtEPosta.EditValue) == "")
+                {
+                    XtraMessageBox.Show("E-Posta Adresi Giriniz.");
+                    return;
+                }
+                //AdminDatabase Kayıt yapılacak
             }
-
         }
 
         private void do_SqlConnect()
@@ -56,10 +67,106 @@ namespace Msp.App.App
 
         private void do_FirstRecord()
         {
-            if (true)
+            if (Convert.ToString(txtKullaniciAdi.EditValue) == "")
             {
+                XtraMessageBox.Show("Kullanıcı Adı Giriniz.");
+                return;
+            }
+            if (Convert.ToString(txtUserParola.EditValue) == "")
+            {
+                XtraMessageBox.Show("Parola Giriniz.");
+                return;
+            }
+            if (Convert.ToString(txtSirketAdi.EditValue) == "")
+            {
+                XtraMessageBox.Show("Şirket Adı Giriniz.");
+                return;
+            }
+            if (Convert.ToString(txtDepotAdi.EditValue) == "")
+            {
+                XtraMessageBox.Show("Depo Adı Giriniz.");
+                return;
+            }
+
+
+     
+
+            try
+            {
+                Splash = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(Waiting.Wait), true, true);
+                Splash.WaitForSplashFormClose();
+                if (!Splash.IsSplashFormVisible)
+                {
+                    Splash.ShowWaitForm();
+                }
+                SqlCommand sCommand = SqlCreateCommandFront();
+                #region Users
+                sCommand.CommandText = "INSERT INTO [dbo].[Users] "
+    + "         ([username] "
+    + "         ,[password] "
+    + "         ,[date] "
+    + "         ,[Active] "
+    + "         ,[HaspPassword]) "
+    + "   VALUES "
+    + "         ('Admin' "
+    + "         ,@Password "
+    + "         ,@date "
+    + "         ,True "
+    + "         ,@HashPassword)";
+                sCommand.Parameters.Clear();
+                sCommand.Parameters.Add("Password", SqlDbType.NVarChar).Value = "";
+                sCommand.Parameters.Add("date", SqlDbType.DateTime).Value = DateTime.Now;
+                sCommand.Parameters.Add("HashPassword", SqlDbType.NVarChar).Value = "";
+                ExecuteNonQuery(sCommand);
+
+                sCommand.CommandText = "INSERT INTO [dbo].[Users] "
+       + "         ([username] "
+       + "         ,[password] "
+       + "         ,[date] "
+       + "         ,[Active] "
+       + "         ,[HaspPassword]) "
+       + "   VALUES "
+       + "         (@userName "
+       + "         ,@Password "
+       + "         ,@date "
+       + "         ,True "
+       + "         ,@HashPassword)";
+                sCommand.Parameters.Clear();
+                sCommand.Parameters.Add("userName", SqlDbType.NVarChar).Value = txtKullaniciAdi.EditValue;
+                sCommand.Parameters.Add("Password", SqlDbType.NVarChar).Value = "";
+                sCommand.Parameters.Add("date", SqlDbType.DateTime).Value = DateTime.Now;
+                sCommand.Parameters.Add("HashPassword", SqlDbType.NVarChar).Value = "";
+                ExecuteNonQuery(sCommand);
+                #endregion
+
+                #region Company
+
+                sCommand.CommandText = "INSERT INTO [dbo].[Company] ([CompanyCode], [CompanyName]) VALUES ('001', @companyName)";
+                sCommand.Parameters.Clear();
+                sCommand.Parameters.Add("companyName", SqlDbType.NVarChar).Value = txtSirketAdi.EditValue;
+                ExecuteNonQuery(sCommand);
+                #endregion
+
+                #region Depo
+                sCommand.CommandText = "INSERT INTO [dbo].[Depot] ([DepName])  VALUES (@DepName)";
+                sCommand.Parameters.Clear();
+                sCommand.Parameters.Add("DepName", SqlDbType.NVarChar).Value = txtDepotAdi.EditValue;
+                ExecuteNonQuery(sCommand);
+                #endregion
 
             }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                if (Splash.IsSplashFormVisible)
+                {
+                    Splash.CloseWaitForm();
+                }
+                pageLisansDemo.AllowNext = true;
+            }
+         
         }
 
         private void do_SQLSettings()
@@ -67,7 +174,7 @@ namespace Msp.App.App
             if (chLocalDB.Checked)
             {
                 SqlLocal = true;
-                SqlConnectionString = "data source=.;initial catalog=msp2;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=120";
+                SqlConnectionString = "data source=.;initial catalog=msp2;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
                 //SqlConnectionString = "data source = DG; initial catalog = msp2; user id = sa; password = 123D654!; ";
                 if (sqlKontrol(SqlConnectionString) == false)
                 {
@@ -111,7 +218,10 @@ namespace Msp.App.App
                 }
             }
             if (x)
+            {
                 do_CreateTable();
+
+            }
         }
         static string GetDbCreationQuery()
         {
@@ -155,6 +265,8 @@ namespace Msp.App.App
                     Script = lastDim[lastDim.Length - 2];
                 }
             }
+            SqlCommand sCommand = SqlCreateCommandFront();
+
             foreach (var item in resources)
             {
                 StringBuilder strBuilder = new StringBuilder();
@@ -171,12 +283,10 @@ namespace Msp.App.App
                             }
                             if (line.Trim() == "GO")
                             {
-                                var conn = new System.Data.SqlClient.SqlConnection(SqlConnectionString);
-                                var command = new System.Data.SqlClient.SqlCommand(strBuilder.ToString(), conn);
+                                sCommand.CommandText = strBuilder.ToString();
                                 try
                                 {
-                                    conn.Open();
-                                    command.ExecuteNonQuery();
+                                    ExecuteNonQuery(sCommand);
                                 }
                                 catch (Exception ex)
                                 {
@@ -184,10 +294,7 @@ namespace Msp.App.App
                                 }
                                 finally
                                 {
-                                    if ((conn.State == ConnectionState.Open))
-                                    {
-                                        conn.Close();
-                                    }
+
                                 }
                                 strBuilder = new StringBuilder();
                                 x = true;
@@ -250,17 +357,19 @@ namespace Msp.App.App
         private void rpLisans_CheckedChanged(object sender, EventArgs e)
         {
             rpLisans.Visible = true;
-            rpDeneme.Visible = false;
+            //rpDeneme.Visible = false;
             gc_Lisans.Visible = true;
             gc_Denme.Visible = false;
+            pageLisansDemo.AllowNext = true;
         }
 
         private void rpDeneme_CheckedChanged(object sender, EventArgs e)
         {
-            rpLisans.Visible = false;
+            //rpLisans.Visible = false;
             rpDeneme.Visible = true;
             gc_Lisans.Visible = false;
             gc_Denme.Visible = true;
+            pageLisansDemo.AllowNext = true;
         }
 
         private void wizardControl1_SelectedPageChanging(object sender, DevExpress.XtraWizard.WizardPageChangingEventArgs e)
@@ -278,10 +387,10 @@ namespace Msp.App.App
 
             if (e.Page == pageLisansDemo)
             {
-                //e.Page.AllowNext = false;
+                e.Page.AllowBack = false;
+                e.Page.AllowNext = false;
             }
         }
-
 
         private void cb_LisansControl_CheckedChanged(object sender, EventArgs e)
         {
@@ -352,8 +461,6 @@ namespace Msp.App.App
             return donus;
         }
 
-
-
         private void wizardControl1_SelectedPageChanged(object sender, WizardPageChangedEventArgs e)
         {
             if (e.Page == pageCreateDatabase)
@@ -386,6 +493,52 @@ namespace Msp.App.App
                 }
 
             }
+            if (e.Page == pageLisansDemo)
+            {
+                dt_RecordDate.EditValue = DateTime.Now;
+            }
         }
+
+
+        public static System.Data.SqlClient.SqlCommand SqlCreateCommandFront()
+        {
+            string connectionString = "initial catalog=msp2"
+                + ";data source=."
+                //+ ";user id=sa" 
+                //+ ";password=123D654!" 
+                + ";Packet Size=8000;Connect Timeout=120";
+            ////if (SednaFBMain.user != null)
+            ////{
+            ////    connectionString += ";WSID=SEDNAFB|" + SednaFBMain.user;
+            ////    connectionString += "|" + System.Environment.MachineName.ToString().Trim();
+            ////}
+            //AppMain.LcConnectionString = connectionString;
+            SqlConnection sConn = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Connection = sConn;
+            cmd.CommandTimeout = 0;
+            return cmd;
+        }
+
+        public static int ExecuteNonQuery(DbCommand command)
+        {
+            int affectRows = -1;
+            try
+            {
+                command.Connection.Open();
+                affectRows = command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+            return affectRows;
+        }
+
     }
 }

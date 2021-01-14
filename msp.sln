@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSP.MongoDB.Admin", "src\fr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msp.EInvoice", "src\Modules\Msp.EInvoice\Msp.EInvoice.csproj", "{1BD8A1DA-B505-4974-AC84-5E05B923D825}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{4C70C9B9-4853-48C6-8A68-98E29E646A94}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MSP.Setup", "src\Setup\MSP.Setup\MSP.Setup.vdproj", "{9B3307C5-D733-4B06-B089-09C3A5F1B7D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +93,8 @@ Global
 		{1BD8A1DA-B505-4974-AC84-5E05B923D825}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BD8A1DA-B505-4974-AC84-5E05B923D825}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BD8A1DA-B505-4974-AC84-5E05B923D825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3307C5-D733-4B06-B089-09C3A5F1B7D5}.Debug|Any CPU.ActiveCfg = Debug
+		{9B3307C5-D733-4B06-B089-09C3A5F1B7D5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +111,7 @@ Global
 		{910D9DB8-E353-40E1-869F-17B021D3FF56} = {CD36A3DD-FCBC-4D9E-8FE0-DB8CDEE0BD59}
 		{F1B0B1A0-61B7-491D-A8C2-4ECD353711A7} = {CD36A3DD-FCBC-4D9E-8FE0-DB8CDEE0BD59}
 		{1BD8A1DA-B505-4974-AC84-5E05B923D825} = {141F8460-BB09-4943-9604-82BF077C5DE6}
+		{9B3307C5-D733-4B06-B089-09C3A5F1B7D5} = {4C70C9B9-4853-48C6-8A68-98E29E646A94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BA19DA5-6EBC-45CC-8440-5167568437AA}

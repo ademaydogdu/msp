@@ -717,7 +717,6 @@ namespace Msp.App.App
             progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
-
             #region Product
 
             sCommand.CommandText = "Select top 1 * from Products  WITH (nolock) ";
@@ -730,6 +729,30 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update(); Application.DoEvents();
 
+            #endregion
+
+            #region SaleOwner
+            sCommand.CommandText = "Select top 1 * from SaleOwner  WITH (nolock) ";
+            DataTable tblSaleOwner = ExecuteSelectCommand(sCommand);
+            if (tblSaleOwner.Columns.Contains("CaseId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE SaleOwner ADD CaseId int";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
+            #endregion
+
+            #region SaleTrans
+            sCommand.CommandText = "Select top 1 * from SaleTrans  WITH (nolock) ";
+            DataTable tblSaleTrans = ExecuteSelectCommand(sCommand);
+            if (tblSaleTrans.Columns.Contains("CaseId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE SaleTrans ADD CaseId int";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
             #endregion

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Msp.Service.Repository;
 using Msp.Service.Service.CustomerTransactions;
 using Msp.Models.Models;
+using Msp.Service.Service.DepotStock;
 
 namespace Msp.App.App
 {
@@ -33,6 +34,10 @@ namespace Msp.App.App
         {
             var customerCount = _repository.Run<CustomerTransactionsService, List<CustomersDTO>>(x => x.GetListCustomer());
             lblCustomerCount.Text = Convert.ToString(customerCount.Count());
+
+            var Product = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            lblProductCount.Text = Convert.ToString(Product.Count());
+
         }
     }
 }

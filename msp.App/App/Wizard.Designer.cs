@@ -667,6 +667,7 @@
             // dt_RecordDate
             // 
             this.dt_RecordDate.EditValue = null;
+            this.dt_RecordDate.Enabled = false;
             this.dt_RecordDate.Location = new System.Drawing.Point(52, 12);
             this.dt_RecordDate.Name = "dt_RecordDate";
             this.dt_RecordDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -817,6 +818,7 @@
             // rpLisans
             // 
             this.rpLisans.AutoSize = true;
+            this.rpLisans.Enabled = false;
             this.rpLisans.Location = new System.Drawing.Point(37, 27);
             this.rpLisans.Name = "rpLisans";
             this.rpLisans.Size = new System.Drawing.Size(125, 17);

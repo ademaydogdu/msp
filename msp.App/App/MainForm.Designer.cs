@@ -294,6 +294,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem92 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -524,10 +525,11 @@
             this.barButtonItem127,
             this.barButtonItem128,
             this.barButtonItem8,
-            this.barButtonItem74});
+            this.barButtonItem74,
+            this.barButtonItem92});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 216;
+            this.ribbon.MaxItemId = 217;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -2179,6 +2181,7 @@
             this.img_buton.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
             this.img_buton.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
             this.img_buton.Add("outlookexport", "image://svgimages/scheduling/outlookexport.svg");
+            this.img_buton.Add("customerquicksales", "image://svgimages/outlook inspired/customerquicksales.svg");
             // 
             // barSatis
             // 
@@ -2197,6 +2200,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQuickSell);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnSpeedSale);
             this.ribbonPageGroup1.ItemLinks.Add(this.tbnPriceInquiry);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem92);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup10
@@ -2536,6 +2540,14 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
+            // barButtonItem92
+            // 
+            this.barButtonItem92.Caption = "Satış - Ürün Hareket";
+            this.barButtonItem92.Id = 216;
+            this.barButtonItem92.ImageOptions.LargeImageIndex = 69;
+            this.barButtonItem92.Name = "barButtonItem92";
+            this.barButtonItem92.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem92_ItemClick);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -2832,5 +2844,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem128;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem74;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem92;
     }
 }

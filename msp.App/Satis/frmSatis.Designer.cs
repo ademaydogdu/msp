@@ -37,11 +37,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSatis));
             this.img_svg = new DevExpress.Utils.SvgImageCollection(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lc_CaseDef = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.txt_İndirimTutar = new DevExpress.XtraEditors.TextEdit();
             this.txt_Barcode = new DevExpress.XtraEditors.MemoEdit();
             this.txt_OdemeTipi = new DevExpress.XtraEditors.LookUpEdit();
-            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
@@ -150,17 +152,17 @@
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem37 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lc_CaseDef.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
@@ -236,9 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
             this.SuspendLayout();
             // 
             // img_svg
@@ -269,7 +269,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.lookUpEdit1);
+            this.layoutControl1.Controls.Add(this.lc_CaseDef);
             this.layoutControl1.Controls.Add(this.toggleSwitch1);
             this.layoutControl1.Controls.Add(this.txt_İndirimTutar);
             this.layoutControl1.Controls.Add(this.txt_Barcode);
@@ -321,6 +321,29 @@
             this.layoutControl1.Size = new System.Drawing.Size(1427, 780);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lc_CaseDef
+            // 
+            this.lc_CaseDef.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "CaseId", true));
+            this.lc_CaseDef.Location = new System.Drawing.Point(1037, 651);
+            this.lc_CaseDef.Name = "lc_CaseDef";
+            this.lc_CaseDef.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lc_CaseDef.Properties.DataSource = this.bs_CaseList;
+            this.lc_CaseDef.Properties.DisplayMember = "CaseName";
+            this.lc_CaseDef.Properties.NullText = "";
+            this.lc_CaseDef.Properties.ValueMember = "RecId";
+            this.lc_CaseDef.Size = new System.Drawing.Size(138, 20);
+            this.lc_CaseDef.StyleController = this.layoutControl1;
+            this.lc_CaseDef.TabIndex = 46;
+            // 
+            // bs_SaleOwner
+            // 
+            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
+            // 
+            // bs_CaseList
+            // 
+            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
             // 
             // toggleSwitch1
             // 
@@ -377,10 +400,6 @@
             this.txt_OdemeTipi.StyleController = this.layoutControl1;
             this.txt_OdemeTipi.TabIndex = 26;
             this.txt_OdemeTipi.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txt_OdemeTipi_ButtonClick);
-            // 
-            // bs_SaleOwner
-            // 
-            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
             // 
             // bs_PaymentType
             // 
@@ -1705,23 +1724,9 @@
             this.emptySpaceItem8.Size = new System.Drawing.Size(285, 38);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(1037, 651);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Properties.DataSource = this.bs_CaseList;
-            this.lookUpEdit1.Properties.DisplayMember = "CaseName";
-            this.lookUpEdit1.Properties.NullText = "";
-            this.lookUpEdit1.Properties.ValueMember = "RecId";
-            this.lookUpEdit1.Size = new System.Drawing.Size(138, 20);
-            this.lookUpEdit1.StyleController = this.layoutControl1;
-            this.lookUpEdit1.TabIndex = 46;
-            // 
             // layoutControlItem41
             // 
-            this.layoutControlItem41.Control = this.lookUpEdit1;
+            this.layoutControlItem41.Control = this.lc_CaseDef;
             this.layoutControlItem41.Location = new System.Drawing.Point(944, 716);
             this.layoutControlItem41.MaxSize = new System.Drawing.Size(223, 24);
             this.layoutControlItem41.MinSize = new System.Drawing.Size(223, 24);
@@ -1730,10 +1735,6 @@
             this.layoutControlItem41.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem41.Text = "Kasa";
             this.layoutControlItem41.TextSize = new System.Drawing.Size(78, 13);
-            // 
-            // bs_CaseList
-            // 
-            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
             // 
             // frmSatis
             // 
@@ -1752,11 +1753,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lc_CaseDef.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Barcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
@@ -1832,9 +1835,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1956,7 +1957,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem39;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem40;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LookUpEdit lc_CaseDef;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem41;
         private System.Windows.Forms.BindingSource bs_CaseList;
     }

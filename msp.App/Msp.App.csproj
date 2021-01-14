@@ -30,12 +30,15 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>tr-TR</TargetCulture>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ProductName>Market Satış</ProductName>
+    <PublisherName>PC- LAB</PublisherName>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>21.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsUrl>D:\Dogan\Project\Publish\ProgramsSetup</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -332,6 +335,12 @@
     <Compile Include="Islemler\frmKasaHareketi.Designer.cs">
       <DependentUpon>frmKasaHareketi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Islemler\frmKasaHareketList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Islemler\frmKasaHareketList.Designer.cs">
+      <DependentUpon>frmKasaHareketList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Islemler\Hatirlatici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +424,12 @@
     </Compile>
     <Compile Include="Satis\frmPriceInquiry.Designer.cs">
       <DependentUpon>frmPriceInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\frmSaleProductMovemnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmSaleProductMovemnet.Designer.cs">
+      <DependentUpon>frmSaleProductMovemnet.cs</DependentUpon>
     </Compile>
     <Compile Include="Satis\frmSatis.cs">
       <SubType>Form</SubType>
@@ -654,6 +669,9 @@
     <EmbeddedResource Include="Islemler\frmKasaHareketi.resx">
       <DependentUpon>frmKasaHareketi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\frmKasaHareketList.resx">
+      <DependentUpon>frmKasaHareketList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Islemler\Hatirlatici.resx">
       <DependentUpon>Hatirlatici.cs</DependentUpon>
     </EmbeddedResource>
@@ -695,6 +713,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmPriceInquiry.resx">
       <DependentUpon>frmPriceInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\frmSaleProductMovemnet.resx">
+      <DependentUpon>frmSaleProductMovemnet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmSatis.resx">
       <DependentUpon>frmSatis.cs</DependentUpon>
@@ -838,6 +859,11 @@
     <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
       <Visible>False</Visible>
       <ProductName>SQL Server 2012 Express LocalDB</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Visual.C++.14.0.x64">
+      <Visible>False</Visible>
+      <ProductName>Visual C++ "14" Runtime Libraries %28x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>

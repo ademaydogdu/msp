@@ -44,6 +44,8 @@ namespace msp.App
 
         #region Descriptons
 
+        private bool IsPosSale = false;
+
         ProductDTO _product = new ProductDTO();
         SaleOwnerDTO __dll_SaleOwner = new SaleOwnerDTO();
         List<SaleTransDTO> __dl_List_SaleTrans = new List<SaleTransDTO>();
@@ -52,6 +54,7 @@ namespace msp.App
         List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
         List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
         List<CustomersDTO> _customerList = new List<CustomersDTO>();
+        List<CaseDefinitionDTO> __List_CaseDef = new List<CaseDefinitionDTO>();
 
         decimal IskontoTutari = 0;
 
@@ -139,7 +142,12 @@ namespace msp.App
 
             _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
-
+            __List_CaseDef = _repository.Run<DefinitionsService, List<CaseDefinitionDTO>>(x => x.Get_List_CaseDef(AppMain.CompanyRecId));
+            bs_CaseList.DataSource = __List_CaseDef;
+            if (__List_CaseDef.Count > 0)
+            {
+                lc_CaseDef.EditValue = __List_CaseDef.FirstOrDefault().RecId;
+            }
             rp_KdvOran.DataSource = KdvOrani;
             rp_KdvOran.DisplayMember = "Value";
             rp_KdvOran.ValueMember = "Id";
@@ -219,6 +227,7 @@ namespace msp.App
             if (_list_PaymnetType.Count > 0)
             {
                 //__dll_SaleOwner.PaymentType = 2;
+
                 txt_OdemeTipi.EditValue = 2;
             }
         }
@@ -237,16 +246,21 @@ namespace msp.App
             bool _return = false;
             if (__dl_List_SaleTrans.Count == 0)
             {
-                MessageBox.Show("Ürün Kaydı olması gerekmektedir.");
+                XtraMessageBox.Show("Ürün Kaydı olması gerekmektedir.");
                 _return = true;
             }
             if (_parameters.PaymentyForced.GetValueOrDefault())
             {
                 if (Convert.ToString(txt_OdemeTipi.EditValue) == "")
                 {
-                    MessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
+                    XtraMessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
                     _return = true;
                 }
+            }
+            if (__dll_SaleOwner.CaseId == 0)
+            {
+                XtraMessageBox.Show("Kasa Girilmesi Zorunludur.");
+                _return = true;
             }
 
 
@@ -279,6 +293,8 @@ namespace msp.App
                         }
                     }
                 }
+                __dl_List_SaleTrans.ForEach(x => x.CaseId = Convert.ToInt32(lc_CaseDef.EditValue));
+
                 __dll_SaleOwner.UserCode = AppMain.User.username;
                 __dll_SaleOwner.CompanyRecId = AppMain.CompanyRecId;
                 var req = new SaleRequest

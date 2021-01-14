@@ -891,7 +891,8 @@ namespace msp.App
 
         private void bbi_KasaHareketi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmKasaHareketi frm = new frmKasaHareketi();
+            frmKasaHareketList frm = new frmKasaHareketList();
+            frm.MdiParent = this;
             frm.ShowDialog();
         }
 
@@ -957,6 +958,13 @@ namespace msp.App
         {
             frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
             frm.ShowDialog();
+        }
+
+        private void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmSaleProductMovemnet frm = new frmSaleProductMovemnet();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
