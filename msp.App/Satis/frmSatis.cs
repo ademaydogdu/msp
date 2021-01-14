@@ -227,7 +227,8 @@ namespace msp.App
             if (_list_PaymnetType.Count > 0)
             {
                 //__dll_SaleOwner.PaymentType = 2;
-
+                //btnSatis.Enabled = false;
+                //btnVeresiyeSatis.Enabled = false;
                 txt_OdemeTipi.EditValue = 2;
             }
         }
@@ -451,6 +452,8 @@ namespace msp.App
             txt_CustomerName.Text = "";
             txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
             txt_OdemeTipi.EditValue = "";
+            btnSatis.Enabled = true;
+            btnVeresiyeSatis.Enabled = true;
             gridControl1.RefreshDataSource();
         }
 

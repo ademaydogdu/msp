@@ -216,5 +216,37 @@ namespace Msp.Service.Service.Sale
         }
 
         #endregion
+
+        #region Veresiye
+
+        public ActionResponse<SaleOwnerDTO> Update_Veresiye(SaleOwnerDTO model)
+        {
+            ActionResponse<SaleOwnerDTO> response = new ActionResponse<SaleOwnerDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    var entity = _db.SaleOwner.FirstOrDefault(x => x.RecId == response.Response.RecId);
+                    if (entity != null)
+                    {
+                        _db.Entry(entity).CurrentValues.SetValues(model);
+                        _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
+        #endregion
     }
 }

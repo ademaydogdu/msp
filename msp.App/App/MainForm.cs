@@ -893,7 +893,7 @@ namespace msp.App
         {
             frmKasaHareketList frm = new frmKasaHareketList();
             frm.MdiParent = this;
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void barButtonItem126_ItemClick(object sender, ItemClickEventArgs e)

@@ -29,6 +29,7 @@ namespace Msp.Entity.Entities
         public string UserCode { get; set; }
         public decimal? AlinanPrice { get; set; }
         public int? CaseId { get; set; }
+        public DateTime? VeresiyeClosedDate { get; set; }
 
 
     }

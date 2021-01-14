@@ -12,6 +12,7 @@ using Msp.Models.Models.Sale;
 using Msp.App.Tool;
 using Msp.Service.Repository;
 using Msp.Service.Service.Sale;
+using Msp.Models.Models.Utilities;
 
 namespace Msp.App.Satis
 {
@@ -26,12 +27,16 @@ namespace Msp.App.Satis
         MspTool mspTool = new MspTool();
         List<SaleOwnerDTO> __dll_SaleOwner = new List<SaleOwnerDTO>();
 
+        private void do_refresh()
+        {
+            __dll_SaleOwner = _repository.Run<SaleService, List<SaleOwnerDTO>>(x => x.GetList_VeresiyeSale());
+            bs_SaleOwner.DataSource = __dll_SaleOwner;
+        }
 
         private void frmVeresiyeSatisList_Load(object sender, EventArgs e)
         {
 
-            __dll_SaleOwner = _repository.Run<SaleService, List<SaleOwnerDTO>>(x => x.GetList_VeresiyeSale());
-            bs_SaleOwner.DataSource = __dll_SaleOwner;
+            do_refresh();
 
             mspTool.Get_GridControl(this.Name, gc_SiparisList);
 
@@ -63,7 +68,21 @@ namespace Msp.App.Satis
 
         private void bbi_VeresiyeKapat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            var oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                oRow.Veresiye = false;
+                oRow.VeresiyeClosedDate = DateTime.Now;
+                var response = _repository.Run<SaleService, ActionResponse<SaleOwnerDTO>>(x => x.Update_Veresiye(oRow));
+                if (response.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    do_refresh();
+                }
+            }
         }
     }
 }

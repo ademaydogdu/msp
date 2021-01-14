@@ -50,6 +50,8 @@
             this.btnRemCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.btnCustomerClose = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_VeresiyeDefter = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -67,8 +69,6 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).BeginInit();
@@ -251,6 +251,7 @@
             this.svgImageCollection2.Add("delete", "image://svgimages/scheduling/delete.svg");
             this.svgImageCollection2.Add("delete_1", "image://svgimages/scheduling/delete.svg");
             this.svgImageCollection2.Add("text", "image://svgimages/spreadsheet/text.svg");
+            this.svgImageCollection2.Add("print", "image://svgimages/dashboards/print.svg");
             // 
             // Root
             // 
@@ -299,7 +300,7 @@
             this.barToolbarsListItem1,
             this.barSubItem1,
             this.barEditItem1,
-            this.barButtonItem1,
+            this.bbi_VeresiyeDefter,
             this.barButtonItem2});
             this.barManager1.MaxItemId = 19;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -315,13 +316,13 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnCustomerRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddNewCustomer),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemCustomer),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditCustomer),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnCustomerClose),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemCustomer),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnCustomerRefresh, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnCustomerClose, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_VeresiyeDefter, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -366,6 +367,22 @@
             this.btnCustomerClose.ImageOptions.ImageIndex = 1;
             this.btnCustomerClose.Name = "btnCustomerClose";
             this.btnCustomerClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomerClose_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Yazdır";
+            this.barButtonItem2.Id = 18;
+            this.barButtonItem2.ImageOptions.ImageIndex = 68;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // bbi_VeresiyeDefter
+            // 
+            this.bbi_VeresiyeDefter.Caption = "Müşteri Veresiye Defteri";
+            this.bbi_VeresiyeDefter.Id = 17;
+            this.bbi_VeresiyeDefter.ImageOptions.ImageIndex = 67;
+            this.bbi_VeresiyeDefter.Name = "bbi_VeresiyeDefter";
+            this.bbi_VeresiyeDefter.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_VeresiyeDefter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_VeresiyeDefter_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -481,20 +498,6 @@
             // 
             this.repositoryItemMarqueeProgressBar1.Name = "repositoryItemMarqueeProgressBar1";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Müşteri Veresiye Defteri";
-            this.barButtonItem1.Id = 17;
-            this.barButtonItem1.ImageOptions.ImageIndex = 67;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Yazdır";
-            this.barButtonItem2.Id = 18;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,7 +569,7 @@
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar repositoryItemMarqueeProgressBar1;
         private DevExpress.Utils.SvgImageCollection svgImageCollection2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem bbi_VeresiyeDefter;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

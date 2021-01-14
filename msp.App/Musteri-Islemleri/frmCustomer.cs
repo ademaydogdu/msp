@@ -173,5 +173,10 @@ namespace Msp.App.Musteri_Islemleri
             }
             
         }
+
+        private void bbi_VeresiyeDefter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

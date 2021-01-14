@@ -26,6 +26,7 @@ namespace Msp.Models.Models.Sale
         public string UserCode { get; set; }
         public decimal? AlinanPrice { get; set; } = 0;
         public int? CaseId { get; set; }
+        public DateTime? VeresiyeClosedDate { get; set; }
 
 
 

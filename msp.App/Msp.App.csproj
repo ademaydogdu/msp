@@ -365,6 +365,12 @@
     <Compile Include="Musteri-Islemleri\frmCustomerOrder.Designer.cs">
       <DependentUpon>frmCustomerOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Musteri-Islemleri\frmMusterVeresiyeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri-Islemleri\frmMusterVeresiyeDetail.Designer.cs">
+      <DependentUpon>frmMusterVeresiyeDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\CariHesap\CariHesapListesi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -684,6 +690,9 @@
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomerOrder.resx">
       <DependentUpon>frmCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Musteri-Islemleri\frmMusterVeresiyeDetail.resx">
+      <DependentUpon>frmMusterVeresiyeDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\CariHesap\CariHesapListesi.resx">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
     </EmbeddedResource>
@@ -859,11 +868,6 @@
     <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
       <Visible>False</Visible>
       <ProductName>SQL Server 2012 Express LocalDB</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Visual.C++.14.0.x64">
-      <Visible>False</Visible>
-      <ProductName>Visual C++ "14" Runtime Libraries %28x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>

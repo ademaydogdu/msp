@@ -174,8 +174,8 @@ namespace Msp.App.App
             if (chLocalDB.Checked)
             {
                 SqlLocal = true;
-                SqlConnectionString = "data source=.;initial catalog=msp2;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
-                //SqlConnectionString = "data source = DG; initial catalog = msp2; user id = sa; password = 123D654!; ";
+                //SqlConnectionString = "data source=.;initial catalog=msp2;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
+                SqlConnectionString = "data source = DG; initial catalog = msp2; user id = sa; password = 123D654!; ";
                 if (sqlKontrol(SqlConnectionString) == false)
                 {
                     DataBaseControl = false;
@@ -504,8 +504,8 @@ namespace Msp.App.App
         {
             string connectionString = "initial catalog=msp2"
                 + ";data source=."
-                //+ ";user id=sa" 
-                //+ ";password=123D654!" 
+                + ";user id=sa"
+                + ";password=123D654!"
                 + ";Packet Size=8000;Connect Timeout=120";
             ////if (SednaFBMain.user != null)
             ////{

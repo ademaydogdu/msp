@@ -8,17 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using Msp.Service.Repository;
 
-namespace Msp.App.Satis
+namespace Msp.App.Musteri_Islemleri
 {
-    public partial class frmSaleProductMovemnet : DevExpress.XtraEditors.XtraForm
+    public partial class frmMusterVeresiyeDetail : DevExpress.XtraEditors.XtraForm
     {
-        Repository _repository;
-        public frmSaleProductMovemnet()
+        public frmMusterVeresiyeDetail()
         {
             InitializeComponent();
-            _repository = new Repository();
         }
     }
 }
