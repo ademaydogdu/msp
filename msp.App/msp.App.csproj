@@ -425,6 +425,18 @@
     <Compile Include="Satis\frmIskonto.Designer.cs">
       <DependentUpon>frmIskonto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Satis\frmPosAndNakitSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmPosAndNakitSale.Designer.cs">
+      <DependentUpon>frmPosAndNakitSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\frmPosSend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmPosSend.Designer.cs">
+      <DependentUpon>frmPosSend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satis\frmPriceInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -719,6 +731,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmIskonto.resx">
       <DependentUpon>frmIskonto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\frmPosAndNakitSale.resx">
+      <DependentUpon>frmPosAndNakitSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\frmPosSend.resx">
+      <DependentUpon>frmPosSend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmPriceInquiry.resx">
       <DependentUpon>frmPriceInquiry.cs</DependentUpon>
