@@ -20,6 +20,7 @@ using Msp.App.Tool;
 using Msp.Service.Service.App;
 using Microsoft.Win32;
 using Msp.App.Settings;
+using Msp.Infrastructure.Extensions;
 
 namespace Msp.App.App
 {
@@ -58,13 +59,14 @@ namespace Msp.App.App
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine("data source=DG;initial catalog=msp;user id=sa;password=123D654!;");
+                    string sifrele = SecurityExtension.Sifrele("data source=DG;initial catalog=msp;user id=sa;password=123D654!;");
+                    sw.WriteLine(sifrele);
                 }
             }
             string[] conArry;
             using (StreamReader sr = File.OpenText(path))
             {
-                string str = sr.ReadLine();
+                string str = SecurityExtension.Sifre_Coz(sr.ReadLine());
                 conArry = str.Split(';');
             }
             List<string> conn = new List<string>();
@@ -162,7 +164,7 @@ namespace Msp.App.App
         private void do_login()
         {
             if (do_IsNotValid()) return;
-  
+
             AppMain.User = new Models.Models.UsersDTO();
             AppMain.User.password = txt_Password.Text;
             AppMain.User.username = txt_userCode.EditValue.ToString();
@@ -194,7 +196,7 @@ namespace Msp.App.App
                 oForm.ShowDialog();
             }
             AppMain.User = loginResponse.Response;
-            AppMain.CompanyRecId = _company.Where(x=>x.CompanyCode.Trim() == lc_Company.EditValue.ToString().Trim()).FirstOrDefault().RecId;
+            AppMain.CompanyRecId = _company.Where(x => x.CompanyCode.Trim() == lc_Company.EditValue.ToString().Trim()).FirstOrDefault().RecId;
             AppMain.Company = lc_Company.Text;
 
             Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("LastUser", txt_userCode.Text.ToString());
@@ -247,9 +249,9 @@ namespace Msp.App.App
                 if (lcSonkullanici.Trim() != "")
                 {
                     txt_userCode.Text = lcSonkullanici;
-                } 
+                }
             }
-            
+
 
 
 
