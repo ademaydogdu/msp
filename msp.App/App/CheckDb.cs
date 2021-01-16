@@ -691,6 +691,7 @@ namespace Msp.App.App
                 + " 	[Deleted] [bit] NULL, "
                 + " 	[CompanyRecId] [int] NULL, "
                 + " 	[RecordUser] [nvarchar] (50) NULL, "
+                + "     [SaleOwnerId] [int] NULL, "
                 + "  CONSTRAINT[PK_CaseMovement] PRIMARY KEY CLUSTERED "
                 + " ( "
                 + "    [RecId] ASC "
@@ -770,6 +771,14 @@ namespace Msp.App.App
             if (tblSaleOwner.Columns.Contains("CaseId") == false)
             {
                 sCommand.CommandText = "ALTER TABLE SaleOwner ADD CaseId int";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
+
+            if (tblSaleOwner.Columns.Contains("DovizId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE SaleOwner ADD DovizId int";
                 ExecuteNonQuery(sCommand);
             }
             progressBarControl1.PerformStep();
