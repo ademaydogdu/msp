@@ -73,6 +73,7 @@ namespace Msp.App.Islemler
                 _CaseMovement = new CaseMovementDTO();
                 _CaseMovement.RecordDate = DateTime.Now;
                 _CaseMovement.RecordUser = AppMain.User.username;
+                _CaseMovement.CompanyRecId = AppMain.CompanyRecId;
 
             }
             if (_FormOpenType == FormOpenType.Edit)

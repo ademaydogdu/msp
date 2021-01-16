@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lc_CaseDef = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CaseMov = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
@@ -44,16 +45,22 @@
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_InternetAl = new DevExpress.XtraBars.BarButtonItem();
+            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
             this.lc_Cari = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CariHesap = new System.Windows.Forms.BindingSource(this.components);
             this.lc_OdemeGrubu = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CashPayGroupDef = new System.Windows.Forms.BindingSource(this.components);
             this.lc_OdemeTuru = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
             this.lc_Doviz = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
             this.dt_recorDate = new DevExpress.XtraEditors.DateEdit();
             this.dt_vadeDate = new DevExpress.XtraEditors.DateEdit();
             this.txtTutar = new DevExpress.XtraEditors.TextEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtCariUnvan = new DevExpress.XtraEditors.TextEdit();
             this.txtEvrakNo = new DevExpress.XtraEditors.TextEdit();
+            this.cbb_IslemTuru = new DevExpress.XtraEditors.LookUpEdit();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -71,22 +78,21 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_CaseMov = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
-            this.cbb_IslemTuru = new DevExpress.XtraEditors.LookUpEdit();
-            this.bs_CashPayGroupDef = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_CariHesap = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_CaseDef.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Cari.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_OdemeGrubu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CashPayGroupDef)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_OdemeTuru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Doviz.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_recorDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_recorDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_vadeDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -95,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCariUnvan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEvrakNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_IslemTuru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -112,13 +119,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbb_IslemTuru.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CashPayGroupDef)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -162,6 +162,10 @@
             this.lc_CaseDef.StyleController = this.layoutControl1;
             this.lc_CaseDef.TabIndex = 15;
             this.lc_CaseDef.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_CaseDef_ButtonClick);
+            // 
+            // bs_CaseMov
+            // 
+            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
             // 
             // barManager1
             // 
@@ -293,6 +297,10 @@
             this.bbi_InternetAl.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_InternetAl.Name = "bbi_InternetAl";
             // 
+            // bs_CaseList
+            // 
+            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
+            // 
             // lc_Cari
             // 
             this.lc_Cari.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CaseMov, "CariId", true));
@@ -309,6 +317,10 @@
             this.lc_Cari.Size = new System.Drawing.Size(318, 20);
             this.lc_Cari.StyleController = this.layoutControl1;
             this.lc_Cari.TabIndex = 14;
+            // 
+            // bs_CariHesap
+            // 
+            this.bs_CariHesap.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
             // 
             // lc_OdemeGrubu
             // 
@@ -328,6 +340,10 @@
             this.lc_OdemeGrubu.TabIndex = 10;
             this.lc_OdemeGrubu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_OdemeGrubu_ButtonClick);
             // 
+            // bs_CashPayGroupDef
+            // 
+            this.bs_CashPayGroupDef.DataSource = typeof(Msp.Models.Models.CashPayGroupDefDTO);
+            // 
             // lc_OdemeTuru
             // 
             this.lc_OdemeTuru.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CaseMov, "OdemeTuru", true));
@@ -346,6 +362,10 @@
             this.lc_OdemeTuru.TabIndex = 9;
             this.lc_OdemeTuru.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_OdemeTuru_ButtonClick);
             // 
+            // bs_PaymentType
+            // 
+            this.bs_PaymentType.DataSource = typeof(Msp.Models.Models.PaymentTypeDTO);
+            // 
             // lc_Doviz
             // 
             this.lc_Doviz.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CaseMov, "Doviz", true));
@@ -362,6 +382,10 @@
             this.lc_Doviz.Size = new System.Drawing.Size(342, 20);
             this.lc_Doviz.StyleController = this.layoutControl1;
             this.lc_Doviz.TabIndex = 6;
+            // 
+            // bs_CurrencyType
+            // 
+            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
             // 
             // dt_recorDate
             // 
@@ -399,7 +423,7 @@
             this.txtTutar.Location = new System.Drawing.Point(81, 156);
             this.txtTutar.MenuManager = this.barManager1;
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Properties.Mask.EditMask = "c";
+            this.txtTutar.Properties.Mask.EditMask = "n2";
             this.txtTutar.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTutar.Size = new System.Drawing.Size(342, 20);
             this.txtTutar.StyleController = this.layoutControl1;
@@ -433,6 +457,20 @@
             this.txtEvrakNo.Size = new System.Drawing.Size(342, 20);
             this.txtEvrakNo.StyleController = this.layoutControl1;
             this.txtEvrakNo.TabIndex = 13;
+            // 
+            // cbb_IslemTuru
+            // 
+            this.cbb_IslemTuru.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CaseMov, "IslemTuru", true));
+            this.cbb_IslemTuru.Location = new System.Drawing.Point(81, 132);
+            this.cbb_IslemTuru.MenuManager = this.barManager1;
+            this.cbb_IslemTuru.Name = "cbb_IslemTuru";
+            this.cbb_IslemTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbb_IslemTuru.Properties.NullText = "";
+            this.cbb_IslemTuru.Properties.PopupSizeable = false;
+            this.cbb_IslemTuru.Size = new System.Drawing.Size(342, 20);
+            this.cbb_IslemTuru.StyleController = this.layoutControl1;
+            this.cbb_IslemTuru.TabIndex = 16;
             // 
             // tabbedControlGroup1
             // 
@@ -598,44 +636,6 @@
             this.layoutControlItem10.Text = "Evrak No";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(66, 13);
             // 
-            // bs_CaseMov
-            // 
-            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
-            // 
-            // bs_CaseList
-            // 
-            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
-            // 
-            // bs_PaymentType
-            // 
-            this.bs_PaymentType.DataSource = typeof(Msp.Models.Models.PaymentTypeDTO);
-            // 
-            // bs_CurrencyType
-            // 
-            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
-            // 
-            // cbb_IslemTuru
-            // 
-            this.cbb_IslemTuru.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CaseMov, "IslemTuru", true));
-            this.cbb_IslemTuru.Location = new System.Drawing.Point(81, 132);
-            this.cbb_IslemTuru.MenuManager = this.barManager1;
-            this.cbb_IslemTuru.Name = "cbb_IslemTuru";
-            this.cbb_IslemTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_IslemTuru.Properties.NullText = "";
-            this.cbb_IslemTuru.Properties.PopupSizeable = false;
-            this.cbb_IslemTuru.Size = new System.Drawing.Size(342, 20);
-            this.cbb_IslemTuru.StyleController = this.layoutControl1;
-            this.cbb_IslemTuru.TabIndex = 16;
-            // 
-            // bs_CashPayGroupDef
-            // 
-            this.bs_CashPayGroupDef.DataSource = typeof(Msp.Models.Models.CashPayGroupDefDTO);
-            // 
-            // bs_CariHesap
-            // 
-            this.bs_CariHesap.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
-            // 
             // frmKasaHareketi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,12 +655,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lc_CaseDef.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Cari.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_OdemeGrubu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CashPayGroupDef)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_OdemeTuru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Doviz.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_recorDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_recorDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_vadeDate.Properties.CalendarTimeProperties)).EndInit();
@@ -669,6 +675,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCariUnvan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEvrakNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_IslemTuru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -686,13 +693,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbb_IslemTuru.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CashPayGroupDef)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
