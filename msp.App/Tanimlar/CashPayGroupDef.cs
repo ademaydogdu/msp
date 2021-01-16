@@ -51,7 +51,7 @@ namespace Msp.App.Tanimlar
             {
                 foreach (var item in cashGroup)
                 {
-                    if (cashGroup.Where(x => x.CashPayGroup == item.CashPayGroup).Count() > 1)
+                    if (cashGroup.Where(x => x.ReCashPayGroupDef == item.ReCashPayGroupDef).Count() > 1)
                     {
                         XtraMessageBox.Show("Mükerrer Kayıt var. Lütfen Kontrol Ediniz.");
                         return;
@@ -83,7 +83,7 @@ namespace Msp.App.Tanimlar
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            gcv_CashPayGroupDef.CloseEditor();
             do_Save();
         }
 

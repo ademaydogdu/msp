@@ -57,8 +57,8 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bs_CaseMov = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCaseId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVadeDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,14 +71,34 @@
             this.colOdemeGrubu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCariId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCompanyRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_case = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_CariHesap = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_CashPayGroupDef = new System.Windows.Forms.BindingSource(this.components);
+            this.rp_Doviz = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.rp_IslemTuru = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.rp_OdemeTuru = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.rp_OdemeGrubu = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.rp_CariHesap = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_case)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CashPayGroupDef)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_IslemTuru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_OdemeTuru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_OdemeGrubu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_CariHesap)).BeginInit();
             this.SuspendLayout();
             // 
             // img_bar
@@ -229,6 +249,7 @@
             this.btnRemCustomer.Id = 4;
             this.btnRemCustomer.ImageOptions.ImageIndex = 44;
             this.btnRemCustomer.Name = "btnRemCustomer";
+            this.btnRemCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemCustomer_ItemClick);
             // 
             // btnCustomerRefresh
             // 
@@ -382,10 +403,21 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rp_case,
+            this.rp_Doviz,
+            this.rp_IslemTuru,
+            this.rp_OdemeTuru,
+            this.rp_OdemeGrubu,
+            this.rp_CariHesap});
             this.gridControl1.Size = new System.Drawing.Size(713, 454);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bs_CaseMov
+            // 
+            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
             // 
             // gridView1
             // 
@@ -401,9 +433,7 @@
             this.colOdemeTuru,
             this.colOdemeGrubu,
             this.colRemark,
-            this.colCariId,
-            this.colDeleted,
-            this.colCompanyRecId});
+            this.colCariId});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -411,12 +441,10 @@
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // bs_CaseMov
-            // 
-            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
-            // 
             // colCaseId
             // 
+            this.colCaseId.Caption = "Kasa";
+            this.colCaseId.ColumnEdit = this.rp_case;
             this.colCaseId.FieldName = "CaseId";
             this.colCaseId.Name = "colCaseId";
             this.colCaseId.Visible = true;
@@ -424,6 +452,7 @@
             // 
             // colRecordDate
             // 
+            this.colRecordDate.Caption = "Kayıt Tarihi";
             this.colRecordDate.FieldName = "RecordDate";
             this.colRecordDate.Name = "colRecordDate";
             this.colRecordDate.Visible = true;
@@ -431,6 +460,7 @@
             // 
             // colVadeDate
             // 
+            this.colVadeDate.Caption = "Vade Tarihi";
             this.colVadeDate.FieldName = "VadeDate";
             this.colVadeDate.Name = "colVadeDate";
             this.colVadeDate.Visible = true;
@@ -438,6 +468,7 @@
             // 
             // colVadeMonth
             // 
+            this.colVadeMonth.Caption = "Vade Ayı";
             this.colVadeMonth.FieldName = "VadeMonth";
             this.colVadeMonth.Name = "colVadeMonth";
             this.colVadeMonth.Visible = true;
@@ -452,6 +483,7 @@
             // 
             // colDoviz
             // 
+            this.colDoviz.ColumnEdit = this.rp_Doviz;
             this.colDoviz.FieldName = "Doviz";
             this.colDoviz.Name = "colDoviz";
             this.colDoviz.Visible = true;
@@ -459,6 +491,8 @@
             // 
             // colIslemTuru
             // 
+            this.colIslemTuru.Caption = "İşlem Türü";
+            this.colIslemTuru.ColumnEdit = this.rp_IslemTuru;
             this.colIslemTuru.FieldName = "IslemTuru";
             this.colIslemTuru.Name = "colIslemTuru";
             this.colIslemTuru.Visible = true;
@@ -473,6 +507,8 @@
             // 
             // colOdemeTuru
             // 
+            this.colOdemeTuru.Caption = "Ödeme Türü";
+            this.colOdemeTuru.ColumnEdit = this.rp_OdemeTuru;
             this.colOdemeTuru.FieldName = "OdemeTuru";
             this.colOdemeTuru.Name = "colOdemeTuru";
             this.colOdemeTuru.Visible = true;
@@ -480,6 +516,8 @@
             // 
             // colOdemeGrubu
             // 
+            this.colOdemeGrubu.Caption = "Ödeme Grubu";
+            this.colOdemeGrubu.ColumnEdit = this.rp_OdemeGrubu;
             this.colOdemeGrubu.FieldName = "OdemeGrubu";
             this.colOdemeGrubu.Name = "colOdemeGrubu";
             this.colOdemeGrubu.Visible = true;
@@ -487,6 +525,7 @@
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "Açıklama";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
@@ -494,24 +533,95 @@
             // 
             // colCariId
             // 
+            this.colCariId.Caption = "Cari Hesap";
+            this.colCariId.ColumnEdit = this.rp_CariHesap;
             this.colCariId.FieldName = "CariId";
             this.colCariId.Name = "colCariId";
             this.colCariId.Visible = true;
             this.colCariId.VisibleIndex = 11;
             // 
-            // colDeleted
+            // rp_case
             // 
-            this.colDeleted.FieldName = "Deleted";
-            this.colDeleted.Name = "colDeleted";
-            this.colDeleted.Visible = true;
-            this.colDeleted.VisibleIndex = 12;
+            this.rp_case.AutoHeight = false;
+            this.rp_case.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_case.DataSource = this.bs_CaseList;
+            this.rp_case.DisplayMember = "CaseName";
+            this.rp_case.Name = "rp_case";
+            this.rp_case.NullText = "";
+            this.rp_case.ValueMember = "RecId";
             // 
-            // colCompanyRecId
+            // bs_CaseList
             // 
-            this.colCompanyRecId.FieldName = "CompanyRecId";
-            this.colCompanyRecId.Name = "colCompanyRecId";
-            this.colCompanyRecId.Visible = true;
-            this.colCompanyRecId.VisibleIndex = 13;
+            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
+            // 
+            // bs_PaymentType
+            // 
+            this.bs_PaymentType.DataSource = typeof(Msp.Models.Models.PaymentTypeDTO);
+            // 
+            // bs_CurrencyType
+            // 
+            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
+            // 
+            // bs_CariHesap
+            // 
+            this.bs_CariHesap.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
+            // 
+            // bs_CashPayGroupDef
+            // 
+            this.bs_CashPayGroupDef.DataSource = typeof(Msp.Models.Models.CashPayGroupDefDTO);
+            // 
+            // rp_Doviz
+            // 
+            this.rp_Doviz.AutoHeight = false;
+            this.rp_Doviz.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Doviz.DataSource = this.bs_CurrencyType;
+            this.rp_Doviz.DisplayMember = "CurrencyCode";
+            this.rp_Doviz.Name = "rp_Doviz";
+            this.rp_Doviz.NullText = "";
+            this.rp_Doviz.ValueMember = "RecId";
+            // 
+            // rp_IslemTuru
+            // 
+            this.rp_IslemTuru.AutoHeight = false;
+            this.rp_IslemTuru.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_IslemTuru.Name = "rp_IslemTuru";
+            this.rp_IslemTuru.NullText = "";
+            // 
+            // rp_OdemeTuru
+            // 
+            this.rp_OdemeTuru.AutoHeight = false;
+            this.rp_OdemeTuru.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_OdemeTuru.DataSource = this.bs_PaymentType;
+            this.rp_OdemeTuru.DisplayMember = "Remark";
+            this.rp_OdemeTuru.Name = "rp_OdemeTuru";
+            this.rp_OdemeTuru.NullText = "";
+            this.rp_OdemeTuru.ValueMember = "RecId";
+            // 
+            // rp_OdemeGrubu
+            // 
+            this.rp_OdemeGrubu.AutoHeight = false;
+            this.rp_OdemeGrubu.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_OdemeGrubu.DataSource = this.bs_CashPayGroupDef;
+            this.rp_OdemeGrubu.DisplayMember = "ReCashPayGroupDef";
+            this.rp_OdemeGrubu.Name = "rp_OdemeGrubu";
+            this.rp_OdemeGrubu.NullText = "";
+            this.rp_OdemeGrubu.ValueMember = "RecId";
+            // 
+            // rp_CariHesap
+            // 
+            this.rp_CariHesap.AutoHeight = false;
+            this.rp_CariHesap.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_CariHesap.DataSource = this.bs_CariHesap;
+            this.rp_CariHesap.DisplayMember = "CurAccountName";
+            this.rp_CariHesap.Name = "rp_CariHesap";
+            this.rp_CariHesap.NullText = "";
+            this.rp_CariHesap.ValueMember = "CurID";
             // 
             // frmKasaHareketList
             // 
@@ -532,8 +642,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_case)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CariHesap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CashPayGroupDef)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Doviz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_IslemTuru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_OdemeTuru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_OdemeGrubu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_CariHesap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,7 +704,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn colOdemeGrubu;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colCariId;
-        private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
-        private DevExpress.XtraGrid.Columns.GridColumn colCompanyRecId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_case;
+        private System.Windows.Forms.BindingSource bs_CaseList;
+        private System.Windows.Forms.BindingSource bs_PaymentType;
+        private System.Windows.Forms.BindingSource bs_CurrencyType;
+        private System.Windows.Forms.BindingSource bs_CariHesap;
+        private System.Windows.Forms.BindingSource bs_CashPayGroupDef;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Doviz;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_IslemTuru;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_OdemeTuru;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_OdemeGrubu;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_CariHesap;
     }
 }

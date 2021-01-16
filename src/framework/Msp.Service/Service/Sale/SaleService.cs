@@ -1,5 +1,6 @@
 ﻿using Msp.Entity.Entities;
 using Msp.Models.Models;
+using Msp.Models.Models.Case;
 using Msp.Models.Models.Sale;
 using Msp.Models.Models.Utilities;
 using System;
@@ -36,6 +37,22 @@ namespace Msp.Service.Service.Sale
                             _db.SaleOwner.Add(saleOwner);
                             _db.SaveChanges();
                             saleOwnerId = saleOwner.RecId;
+
+                            CaseMovementDTO caseMovement = new CaseMovementDTO()
+                            {
+                                CaseId = model.SaleOwnerDTO.CaseId,
+                                Doviz = model.SaleOwnerDTO.DovizId,
+                                RecordDate = model.SaleOwnerDTO.Date,
+                                Tutar = model.SaleOwnerDTO.TotalPrice,
+                                OdemeTuru = model.SaleOwnerDTO.PaymentType,
+                                CompanyRecId = model.SaleOwnerDTO.CompanyRecId,
+                                EvrakNo = "Parakende Satış",
+                                IslemTuru = 1,
+                                SaleOwnerId = saleOwnerId
+
+                            };
+                            _db.CaseMovement.Add(base.Map<CaseMovementDTO, CaseMovement>(caseMovement));
+                            _db.SaveChanges();
                         }
                         else
                         {
@@ -77,14 +94,18 @@ namespace Msp.Service.Service.Sale
                                         Durum = "Satış",
                                         Deleted = false,
                                         Amount = item.ProductQuantity * item.ProductPrice,
-                                        DurumType = 1
+                                        DurumType = 1,
+                                        SaleOwnerId = saleOwnerId
                                     };
                                     _db.ProductMovement.Add(base.Map<ProductMovementDTO, ProductMovement>(productMovement));
                                     _db.SaveChanges();
 
+
+
+
                                 }
 
-       
+
                             }
                             else
                             {
@@ -136,7 +157,7 @@ namespace Msp.Service.Service.Sale
         {
             using (var _db = new MspDbContext())
             {
-                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => EntityFunctions.TruncateTime(x.Date) == date).ToList());
+                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => EntityFunctions.TruncateTime(x.Date) == date && x.Deleted == false).ToList());
                 return result;
             }
         }
@@ -145,9 +166,56 @@ namespace Msp.Service.Service.Sale
         {
             using (var _db = new MspDbContext())
             {
-                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Veresiye == true).ToList());
+                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Veresiye == true && x.Deleted == false).ToList());
                 return result;
             }
+        }
+
+
+        public ActionResponse<SaleOwnerDTO> Delete_Sale(SaleOwnerDTO model)
+        {
+            ActionResponse<SaleOwnerDTO> response = new ActionResponse<SaleOwnerDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+
+                try
+                {
+                    var entity_ProductMov = _db.ProductMovement.Where(x => x.SaleOwnerId == response.Response.RecId).FirstOrDefault();
+                    if (entity_ProductMov != null)
+                    {
+                        entity_ProductMov.Deleted = true;
+                        _db.Entry(entity_ProductMov).CurrentValues.SetValues(entity_ProductMov);
+                        _db.Entry(entity_ProductMov).State = System.Data.Entity.EntityState.Modified;
+                    }
+
+                    var entity_CaseMov = _db.CaseMovement.Where(x => x.SaleOwnerId == response.Response.RecId).FirstOrDefault();
+                    if (entity_CaseMov != null)
+                    {
+                        entity_CaseMov.Deleted = true;
+                        _db.Entry(entity_CaseMov).CurrentValues.SetValues(entity_CaseMov);
+                        _db.Entry(entity_CaseMov).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    var entity = _db.SaleOwner.Where(x => x.RecId == response.Response.RecId).FirstOrDefault();
+                    if (entity != null)
+                    {
+                        entity.Deleted = true;
+                        _db.Entry(entity).CurrentValues.SetValues(entity);
+                        _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    response.ResponseType = ResponseType.Error;
+                    response.Message = ex.Message;
+                }
+
+            }
+            return response;
         }
 
         #endregion
@@ -224,7 +292,7 @@ namespace Msp.Service.Service.Sale
         {
             using (var _db = new MspDbContext())
             {
-                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Veresiye == true && x.CustomerName.Trim() == musteriAdi.Trim()).ToList());
+                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Veresiye == true && x.CustomerName.Trim() == musteriAdi.Trim() && x.Deleted == false).ToList());
                 return result;
             }
         }

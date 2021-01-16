@@ -66,6 +66,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bbi_Export = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).BeginInit();
@@ -268,6 +269,7 @@
             this.img_sig.Add("exporttoxls", "image://svgimages/export/exporttoxls.svg");
             this.img_sig.Add("open2", "image://svgimages/actions/open2.svg");
             this.img_sig.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
+            this.img_sig.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
             // 
             // dt_Date
             // 
@@ -328,8 +330,9 @@
             this.bbi_exp,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.bbi_Report});
-            this.barManager1.MaxItemId = 5;
+            this.bbi_Report,
+            this.bbi_Delete});
+            this.barManager1.MaxItemId = 6;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -341,7 +344,8 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Report),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_exp, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_exp, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Delete, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -428,6 +432,14 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // bbi_Delete
+            // 
+            this.bbi_Delete.Caption = "Sil";
+            this.bbi_Delete.Id = 5;
+            this.bbi_Delete.ImageOptions.ImageIndex = 5;
+            this.bbi_Delete.Name = "bbi_Delete";
+            this.bbi_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Delete_ItemClick);
+            // 
             // frmSatisList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,5 +514,6 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Export;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem bbi_Report;
+        private DevExpress.XtraBars.BarButtonItem bbi_Delete;
     }
 }

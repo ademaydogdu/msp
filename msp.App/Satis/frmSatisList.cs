@@ -14,6 +14,7 @@ using Msp.Service.Service.Sale;
 using Msp.App.Tool;
 using msp.App;
 using Msp.App.Report;
+using Msp.Models.Models.Utilities;
 
 namespace Msp.App.Satis
 {
@@ -98,6 +99,26 @@ namespace Msp.App.Satis
                 frm._FormOpenType = Infrastructure.FormOpenType.Edit;
                 frm.Show(oRow.RecId);
 
+            }
+        }
+
+        private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaleOwnerDTO oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (mspTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                {
+                    var result = _repository.Run<SaleService, ActionResponse<SaleOwnerDTO>>(x => x.Delete_Sale(oRow));
+                    if (result.ResponseType != ResponseType.Ok)
+                    {
+                        XtraMessageBox.Show(result.Message);
+                    }
+                    else
+                    {
+                        do_refresh(dt_Date.DateTime);
+                    }
+                }
             }
         }
     }

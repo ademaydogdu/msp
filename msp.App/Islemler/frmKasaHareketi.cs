@@ -93,6 +93,7 @@ namespace Msp.App.Islemler
 
             do_CaseRefresh();
             do_OdemeTuru();
+            do_cashGroup();
 
             _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
             bs_CurrencyType.DataSource = _currencyTypes;

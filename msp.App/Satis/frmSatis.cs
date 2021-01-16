@@ -55,6 +55,7 @@ namespace msp.App
         List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
         List<CustomersDTO> _customerList = new List<CustomersDTO>();
         List<CaseDefinitionDTO> __List_CaseDef = new List<CaseDefinitionDTO>();
+        List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
 
         decimal IskontoTutari = 0;
 
@@ -155,6 +156,10 @@ namespace msp.App
             bs_PaymentType.DataSource = _list_PaymnetType;
             bs_SaleOwner.DataSource = __dll_SaleOwner;
             bs_SaleTrans.DataSource = __dl_List_SaleTrans;
+
+            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyType.DataSource = _currencyTypes;
+
             this.Show();
         }
 
@@ -314,11 +319,18 @@ namespace msp.App
                     {
                         __dll_SaleOwner = new SaleOwnerDTO();
                         __dll_SaleOwner.Date = DateTime.Now;
+                        if (__List_CaseDef.Count > 0)
+                        {
+                            lc_CaseDef.EditValue = __dll_SaleOwner.CaseId = __List_CaseDef.FirstOrDefault().RecId;
+                        }
+
                         __dl_List_SaleTrans.Clear();
                         __dl_List_SaleTrans = new List<SaleTransDTO>();
                         txt_CustomerName.Text = "";
                         txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
                         txt_OdemeTipi.EditValue = "";
+                        __dll_SaleOwner.PaymentType = 0;
+
                         gridControl1.RefreshDataSource();
                         TopTotal();
                     }

@@ -23,16 +23,15 @@ namespace Msp.Service.Service.Invoice
                 List<InvoiceOwnerDTO> result = new List<InvoiceOwnerDTO>();
                 if (invoiceType == 3)
                 {
-                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 1 || x.InvoiceType == 2).ToList());
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 1 || x.InvoiceType == 2 && x.Deleted == false).ToList());
                 }
                 if (invoiceType == 6)
                 {
-                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 || x.InvoiceType == 5).ToList());
-
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 || x.InvoiceType == 5 && x.Deleted == false).ToList());
                 }
                 else
                 {
-                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == invoiceType).ToList());
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == invoiceType && x.Deleted == false).ToList());
                 }
                 return result;
             }
@@ -173,7 +172,7 @@ namespace Msp.Service.Service.Invoice
             using (var _db = new MspDbContext())
             {
                 List<OrderOwnerDTO> result = new List<OrderOwnerDTO>();
-                result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.IrsaliyeId == 0).ToList());
+                result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.IrsaliyeId == 0 && x.Deleted == false).ToList());
                 return result;
             }
         }
@@ -195,7 +194,7 @@ namespace Msp.Service.Service.Invoice
             using (var _db = new MspDbContext())
             {
                 List<InvoiceOwnerDTO> result = new List<InvoiceOwnerDTO>();
-                result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 && x.IrsaliyeId == 0).ToList());
+                result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 && x.IrsaliyeId == 0 && x.Deleted == false).ToList());
                 return result;
             }
         }

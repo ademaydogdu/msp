@@ -78,6 +78,8 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_CaseDef.Properties)).BeginInit();
@@ -119,6 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -160,7 +164,7 @@
             this.lc_CaseDef.Properties.DisplayMember = "CaseName";
             this.lc_CaseDef.Properties.NullText = "";
             this.lc_CaseDef.Properties.ValueMember = "RecId";
-            this.lc_CaseDef.Size = new System.Drawing.Size(342, 20);
+            this.lc_CaseDef.Size = new System.Drawing.Size(134, 20);
             this.lc_CaseDef.StyleController = this.layoutControl1;
             this.lc_CaseDef.TabIndex = 15;
             this.lc_CaseDef.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_CaseDef_ButtonClick);
@@ -336,8 +340,10 @@
             this.lc_OdemeGrubu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.lc_OdemeGrubu.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ReCashPayGroupDef", "Adı")});
             this.lc_OdemeGrubu.Properties.DataSource = this.bs_CashPayGroupDef;
-            this.lc_OdemeGrubu.Properties.DisplayMember = "ReCashPayGroup";
+            this.lc_OdemeGrubu.Properties.DisplayMember = "ReCashPayGroupDef";
             this.lc_OdemeGrubu.Properties.NullText = "";
             this.lc_OdemeGrubu.Properties.ValueMember = "RecId";
             this.lc_OdemeGrubu.Size = new System.Drawing.Size(342, 20);
@@ -432,6 +438,8 @@
             this.txtTutar.Location = new System.Drawing.Point(81, 156);
             this.txtTutar.MenuManager = this.barManager1;
             this.txtTutar.Name = "txtTutar";
+            this.txtTutar.Properties.DisplayFormat.FormatString = "n2";
+            this.txtTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtTutar.Properties.Mask.EditMask = "n2";
             this.txtTutar.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTutar.Size = new System.Drawing.Size(342, 20);
@@ -479,7 +487,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Türü")});
             this.cbb_IslemTuru.Properties.NullText = "";
             this.cbb_IslemTuru.Properties.PopupSizeable = false;
-            this.cbb_IslemTuru.Size = new System.Drawing.Size(342, 20);
+            this.cbb_IslemTuru.Size = new System.Drawing.Size(134, 20);
             this.cbb_IslemTuru.StyleController = this.layoutControl1;
             this.cbb_IslemTuru.TabIndex = 16;
             // 
@@ -523,7 +531,9 @@
             this.layoutControlGroup2,
             this.layoutControlItem12,
             this.layoutControlItem5,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.emptySpaceItem2,
+            this.emptySpaceItem3});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(435, 433);
             this.Root.TextVisible = false;
@@ -625,7 +635,7 @@
             this.layoutControlItem12.Control = this.lc_CaseDef;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(415, 24);
+            this.layoutControlItem12.Size = new System.Drawing.Size(207, 24);
             this.layoutControlItem12.Text = "Kasa";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(66, 13);
             // 
@@ -634,7 +644,7 @@
             this.layoutControlItem5.Control = this.cbb_IslemTuru;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(415, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(207, 24);
             this.layoutControlItem5.Text = "İşlem Türü";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(66, 13);
             // 
@@ -646,6 +656,22 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(415, 24);
             this.layoutControlItem10.Text = "Evrak No";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(66, 13);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(207, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(208, 24);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(207, 120);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(208, 24);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmKasaHareketi
             // 
@@ -704,6 +730,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,5 +788,7 @@
         private DevExpress.XtraEditors.LookUpEdit cbb_IslemTuru;
         private System.Windows.Forms.BindingSource bs_CashPayGroupDef;
         private System.Windows.Forms.BindingSource bs_CariHesap;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
     }
 }

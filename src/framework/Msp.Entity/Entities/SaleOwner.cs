@@ -30,6 +30,7 @@ namespace Msp.Entity.Entities
         public decimal? AlinanPrice { get; set; }
         public int? CaseId { get; set; }
         public DateTime? VeresiyeClosedDate { get; set; }
+        public int? DovizId { get; set; }
 
 
     }

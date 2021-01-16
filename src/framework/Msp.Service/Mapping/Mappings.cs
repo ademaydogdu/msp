@@ -65,6 +65,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<CaseDefinitionDTO, CaseDefinition>();
             cfg.CreateMap<CaseMovement, CaseMovementDTO>();
             cfg.CreateMap<CaseMovementDTO, CaseMovement>();
+            cfg.CreateMap<CashPayGroupDef, CashPayGroupDefDTO>();
+            cfg.CreateMap<CashPayGroupDefDTO, CashPayGroupDef>();
         }
 
 

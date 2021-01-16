@@ -28,6 +28,8 @@ namespace Msp.Entity.Entities
         public bool? Deleted { get; set; }
         public int? CompanyRecId { get; set; }
         public string RecordUser { get; set; }
+        public int? SaleOwnerId { get; set; }
+
 
     }
 }

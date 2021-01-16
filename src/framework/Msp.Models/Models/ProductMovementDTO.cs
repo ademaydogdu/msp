@@ -16,5 +16,6 @@ namespace Msp.Models.Models
         public string Durum { get; set; }
         public bool? Deleted { get; set; } = false;
         public int? DurumType { get; set; }
+        public int? SaleOwnerId { get; set; }
     }
 }

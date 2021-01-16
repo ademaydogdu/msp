@@ -20,5 +20,7 @@ namespace Msp.Entity.Entities
         public bool? Deleted { get; set; } = false;
         public string Durum { get; set; }
         public int? DurumType { get; set; }
+        public int? SaleOwnerId { get; set; }
+
     }
 }

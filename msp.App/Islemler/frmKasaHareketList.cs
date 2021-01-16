@@ -13,6 +13,10 @@ using Msp.App.Tool;
 using Msp.Models.Models.Case;
 using Msp.Service.Service.Case;
 using Msp.Infrastructure;
+using Msp.Models.Models;
+using Msp.Models.Models.Utilities;
+using Msp.Service.Service.Tanimlar;
+using Msp.Service.Service.CurrentTransactions;
 
 namespace Msp.App.Islemler
 {
@@ -27,6 +31,17 @@ namespace Msp.App.Islemler
         }
         MspTool mspTool = new MspTool();
         List<CaseMovementDTO> _List_CaseMov = new List<CaseMovementDTO>();
+        List<CaseDefinitionDTO> __List_CaseDef = new List<CaseDefinitionDTO>();
+        List<PaymentTypeDTO> _list_PaymnetType = new List<PaymentTypeDTO>();
+        List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
+        List<CashPayGroupDefDTO> cashGroup = new List<CashPayGroupDefDTO>();
+        List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
+
+        List<SelectIdValue> IslemTuru = new List<SelectIdValue>()
+        {
+            new SelectIdValue(1, "Gider"),
+            new SelectIdValue(2, "Gelir")
+        };
 
         #region Record
 
@@ -42,6 +57,20 @@ namespace Msp.App.Islemler
 
         private void frmKasaHareketList_Load(object sender, EventArgs e)
         {
+            __List_CaseDef = _repository.Run<DefinitionsService, List<CaseDefinitionDTO>>(x => x.Get_List_CaseDef(AppMain.CompanyRecId));
+            bs_CaseList.DataSource = __List_CaseDef;
+            _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
+            bs_PaymentType.DataSource = _list_PaymnetType;
+            cashGroup = _repository.Run<DefinitionsService, List<CashPayGroupDefDTO>>(x => x.Get_List_CashPayGroup());
+            bs_CashPayGroupDef.DataSource = cashGroup;
+            rp_IslemTuru.DataSource = IslemTuru;
+            rp_IslemTuru.ValueMember = "Id";
+            rp_IslemTuru.DisplayMember = "Value";
+            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyType.DataSource = _currencyTypes;
+            _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
+            bs_CariHesap.DataSource = _currentTransactionsList;
+
             do_refresh();
             mspTool.Get_Layout(this);
         }
@@ -79,5 +108,21 @@ namespace Msp.App.Islemler
             }
   
         }
+
+        private void btnRemCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var oRow = (CaseMovementDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (mspTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                {
+                    var result = _repository.Run<CaseService, ActionResponse<CaseMovementDTO>>(x => x.Delete_Case(oRow));
+                    do_refresh();
+                }
+            }
+        }
+
+
+
     }
 }

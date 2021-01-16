@@ -24,5 +24,6 @@ namespace Msp.Models.Models.Case
         public bool? Deleted { get; set; } = false;
         public int? CompanyRecId { get; set; }
         public string RecordUser { get; set; }
+        public int? SaleOwnerId { get; set; }
     }
 }
