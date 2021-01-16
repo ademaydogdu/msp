@@ -2077,12 +2077,14 @@
             this.barButtonItem127.Caption = "Satış İşlemlerinde Silinen Kayıtlar";
             this.barButtonItem127.Id = 212;
             this.barButtonItem127.Name = "barButtonItem127";
+            this.barButtonItem127.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem127_ItemClick);
             // 
             // barButtonItem128
             // 
             this.barButtonItem128.Caption = "Silinen Ürün Kartları";
             this.barButtonItem128.Id = 213;
             this.barButtonItem128.Name = "barButtonItem128";
+            this.barButtonItem128.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem128_ItemClick);
             // 
             // barButtonItem126
             // 

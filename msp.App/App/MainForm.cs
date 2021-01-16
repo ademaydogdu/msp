@@ -969,5 +969,21 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem127_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDeleteRecords frm = new frmDeleteRecords();
+            frm.MdiParent = this;
+            frm.Text = "Satış İşlemlerinde Silinen Kayıtlar";
+            frm.Show();
+        }
+
+        private void barButtonItem128_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDeleteRecords frm = new frmDeleteRecords();
+            frm.MdiParent = this;
+            frm.Text = "Silinen Ürün Kartları";
+            frm.Show();
+        }
     }
 }
