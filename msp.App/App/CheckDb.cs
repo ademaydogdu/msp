@@ -671,6 +671,39 @@ namespace Msp.App.App
 
             #endregion
 
+            #region CaseMovement
+            if (tblTableList.Rows.Contains("CaseMovement") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[CaseMovement]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [CaseId] [int] NULL, "
+                + " 	[RecordDate] [datetime] NULL, "
+                + " 	[VadeDate] [datetime] NULL, "
+                + " 	[VadeMonth] [nchar] (10) NULL, "
+                + " 	[EvrakNo] [nvarchar] (50) NULL, "
+                + " 	[Doviz] [int] NULL, "
+                + " 	[IslemTuru] [int] NULL, "
+                + " 	[Tutar] [decimal](18, 0) NULL, "
+                + " 	[OdemeTuru] [int] NULL, "
+                + " 	[OdemeGrubu] [int] NULL, "
+                + " 	[Remark] [nvarchar] (max) NULL, "
+                + "     [CariId] [nchar] (10) NULL, "
+                + " 	[Deleted] [bit] NULL, "
+                + " 	[CompanyRecId] [int] NULL, "
+                + " 	[RecordUser] [nvarchar] (50) NULL, "
+                + "  CONSTRAINT[PK_CaseMovement] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+            #endregion
+
 
             #endregion
 

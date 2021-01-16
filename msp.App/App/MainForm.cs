@@ -395,7 +395,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(2, 1, 1, 6);
+            Version oVersionFB = new Version(21, 1, 1, 7);
             AppMain.MspVersion = oVersionFB;
 
             string AppPath = @"C:\Msp";
