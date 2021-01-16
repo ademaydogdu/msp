@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,7 @@
     <Compile Include="Models\BankEntryDTO.cs" />
     <Compile Include="Models\BanksDTO.cs" />
     <Compile Include="Models\CaseDefinitionDTO.cs" />
+    <Compile Include="Models\Case\CaseMovementDTO.cs" />
     <Compile Include="Models\CashPayGroupDefDTO.cs" />
     <Compile Include="Models\CompanyDTO.cs" />
     <Compile Include="Models\CTransactionsDTO.cs" />

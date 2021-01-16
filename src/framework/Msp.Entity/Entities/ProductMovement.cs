@@ -19,5 +19,6 @@ namespace Msp.Entity.Entities
         public DateTime? Date { get; set; }
         public bool? Deleted { get; set; } = false;
         public string Durum { get; set; }
+        public int? DurumType { get; set; }
     }
 }

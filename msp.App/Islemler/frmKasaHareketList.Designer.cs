@@ -58,11 +58,27 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bs_CaseMov = new System.Windows.Forms.BindingSource(this.components);
+            this.colCaseId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVadeDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVadeMonth = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEvrakNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDoviz = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIslemTuru = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdemeTuru = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdemeGrubu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompanyRecId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).BeginInit();
             this.SuspendLayout();
             // 
             // img_bar
@@ -205,6 +221,7 @@
             this.btnEditCustomer.Id = 2;
             this.btnEditCustomer.ImageOptions.ImageIndex = 48;
             this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditCustomer_ItemClick);
             // 
             // btnRemCustomer
             // 
@@ -359,6 +376,7 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = this.bs_CaseMov;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
@@ -371,9 +389,129 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCaseId,
+            this.colRecordDate,
+            this.colVadeDate,
+            this.colVadeMonth,
+            this.colEvrakNo,
+            this.colDoviz,
+            this.colIslemTuru,
+            this.colTutar,
+            this.colOdemeTuru,
+            this.colOdemeGrubu,
+            this.colRemark,
+            this.colCariId,
+            this.colDeleted,
+            this.colCompanyRecId});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // bs_CaseMov
+            // 
+            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
+            // 
+            // colCaseId
+            // 
+            this.colCaseId.FieldName = "CaseId";
+            this.colCaseId.Name = "colCaseId";
+            this.colCaseId.Visible = true;
+            this.colCaseId.VisibleIndex = 0;
+            // 
+            // colRecordDate
+            // 
+            this.colRecordDate.FieldName = "RecordDate";
+            this.colRecordDate.Name = "colRecordDate";
+            this.colRecordDate.Visible = true;
+            this.colRecordDate.VisibleIndex = 1;
+            // 
+            // colVadeDate
+            // 
+            this.colVadeDate.FieldName = "VadeDate";
+            this.colVadeDate.Name = "colVadeDate";
+            this.colVadeDate.Visible = true;
+            this.colVadeDate.VisibleIndex = 2;
+            // 
+            // colVadeMonth
+            // 
+            this.colVadeMonth.FieldName = "VadeMonth";
+            this.colVadeMonth.Name = "colVadeMonth";
+            this.colVadeMonth.Visible = true;
+            this.colVadeMonth.VisibleIndex = 3;
+            // 
+            // colEvrakNo
+            // 
+            this.colEvrakNo.FieldName = "EvrakNo";
+            this.colEvrakNo.Name = "colEvrakNo";
+            this.colEvrakNo.Visible = true;
+            this.colEvrakNo.VisibleIndex = 4;
+            // 
+            // colDoviz
+            // 
+            this.colDoviz.FieldName = "Doviz";
+            this.colDoviz.Name = "colDoviz";
+            this.colDoviz.Visible = true;
+            this.colDoviz.VisibleIndex = 5;
+            // 
+            // colIslemTuru
+            // 
+            this.colIslemTuru.FieldName = "IslemTuru";
+            this.colIslemTuru.Name = "colIslemTuru";
+            this.colIslemTuru.Visible = true;
+            this.colIslemTuru.VisibleIndex = 6;
+            // 
+            // colTutar
+            // 
+            this.colTutar.FieldName = "Tutar";
+            this.colTutar.Name = "colTutar";
+            this.colTutar.Visible = true;
+            this.colTutar.VisibleIndex = 7;
+            // 
+            // colOdemeTuru
+            // 
+            this.colOdemeTuru.FieldName = "OdemeTuru";
+            this.colOdemeTuru.Name = "colOdemeTuru";
+            this.colOdemeTuru.Visible = true;
+            this.colOdemeTuru.VisibleIndex = 8;
+            // 
+            // colOdemeGrubu
+            // 
+            this.colOdemeGrubu.FieldName = "OdemeGrubu";
+            this.colOdemeGrubu.Name = "colOdemeGrubu";
+            this.colOdemeGrubu.Visible = true;
+            this.colOdemeGrubu.VisibleIndex = 9;
+            // 
+            // colRemark
+            // 
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 10;
+            // 
+            // colCariId
+            // 
+            this.colCariId.FieldName = "CariId";
+            this.colCariId.Name = "colCariId";
+            this.colCariId.Visible = true;
+            this.colCariId.VisibleIndex = 11;
+            // 
+            // colDeleted
+            // 
+            this.colDeleted.FieldName = "Deleted";
+            this.colDeleted.Name = "colDeleted";
+            this.colDeleted.Visible = true;
+            this.colDeleted.VisibleIndex = 12;
+            // 
+            // colCompanyRecId
+            // 
+            this.colCompanyRecId.FieldName = "CompanyRecId";
+            this.colCompanyRecId.Name = "colCompanyRecId";
+            this.colCompanyRecId.Visible = true;
+            this.colCompanyRecId.VisibleIndex = 13;
             // 
             // frmKasaHareketList
             // 
@@ -395,6 +533,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,5 +570,20 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource bs_CaseMov;
+        private DevExpress.XtraGrid.Columns.GridColumn colCaseId;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecordDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colVadeDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colVadeMonth;
+        private DevExpress.XtraGrid.Columns.GridColumn colEvrakNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colDoviz;
+        private DevExpress.XtraGrid.Columns.GridColumn colIslemTuru;
+        private DevExpress.XtraGrid.Columns.GridColumn colTutar;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdemeTuru;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdemeGrubu;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariId;
+        private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyRecId;
     }
 }

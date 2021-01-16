@@ -12,6 +12,7 @@ using DevExpress.XtraWizard;
 using System.IO;
 using System.Data.SqlClient;
 using System.Data.Common;
+using Msp.Infrastructure.Extensions;
 
 namespace Msp.App.App
 {
@@ -89,7 +90,6 @@ namespace Msp.App.App
             }
 
 
-     
 
             try
             {
@@ -111,12 +111,12 @@ namespace Msp.App.App
     + "         ('Admin' "
     + "         ,@Password "
     + "         ,@date "
-    + "         ,True "
+    + "         ,'True' "
     + "         ,@HashPassword)";
                 sCommand.Parameters.Clear();
-                sCommand.Parameters.Add("Password", SqlDbType.NVarChar).Value = "";
+                sCommand.Parameters.Add("Password", SqlDbType.NVarChar).Value = SecurityExtension.Sifrele("c4e128b141aFb");
                 sCommand.Parameters.Add("date", SqlDbType.DateTime).Value = DateTime.Now;
-                sCommand.Parameters.Add("HashPassword", SqlDbType.NVarChar).Value = "";
+                sCommand.Parameters.Add("HashPassword", SqlDbType.NVarChar).Value = SecurityExtension.ConvertStringToMD5("c4e128b141aFb");
                 ExecuteNonQuery(sCommand);
 
                 sCommand.CommandText = "INSERT INTO [dbo].[Users] "
@@ -129,18 +129,17 @@ namespace Msp.App.App
        + "         (@userName "
        + "         ,@Password "
        + "         ,@date "
-       + "         ,True "
+       + "         ,'True' "
        + "         ,@HashPassword)";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("userName", SqlDbType.NVarChar).Value = txtKullaniciAdi.EditValue;
-                sCommand.Parameters.Add("Password", SqlDbType.NVarChar).Value = "";
+                sCommand.Parameters.Add("Password", SqlDbType.NVarChar).Value = SecurityExtension.Sifrele(txtUserParola.EditValue.ToString());
                 sCommand.Parameters.Add("date", SqlDbType.DateTime).Value = DateTime.Now;
-                sCommand.Parameters.Add("HashPassword", SqlDbType.NVarChar).Value = "";
+                sCommand.Parameters.Add("HashPassword", SqlDbType.NVarChar).Value = SecurityExtension.ConvertStringToMD5(txtUserParola.EditValue.ToString());
                 ExecuteNonQuery(sCommand);
                 #endregion
 
                 #region Company
-
                 sCommand.CommandText = "INSERT INTO [dbo].[Company] ([CompanyCode], [CompanyName]) VALUES ('001', @companyName)";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("companyName", SqlDbType.NVarChar).Value = txtSirketAdi.EditValue;
@@ -154,6 +153,34 @@ namespace Msp.App.App
                 ExecuteNonQuery(sCommand);
                 #endregion
 
+                #region ApplicatonServer
+
+                string[] conArry;
+                conArry = SqlConnectionString.Split(';');
+                List<string> conn = new List<string>();
+                foreach (var item in conArry)
+                {
+                    int position = item.IndexOf("=");
+                    if (position < 0)
+                        continue;
+                    conn.Add(item.Substring(position + 1));
+                }
+
+
+                sCommand.CommandText = "INSERT INTO [dbo].[ApplicationServer] "
+                + "        ([Server] "
+                + "        ,[ServerName] "
+                + "        ,[UserName] "
+                + "        ,[Password]) "
+                + "  VALUES "
+                + "        ('' "
+                + "        ,'' "
+                + "        ,'' "
+                + "        ,'' )";
+                sCommand.Parameters.Clear();
+
+                #endregion
+
             }
             catch (Exception ex)
             {
@@ -164,9 +191,18 @@ namespace Msp.App.App
                 {
                     Splash.CloseWaitForm();
                 }
+                string path = @"C:\Msp\ConnectString.txt";
+                if (!File.Exists(path))
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        string sifrele = SecurityExtension.Sifrele(SqlConnectionString);
+                        sw.WriteLine(sifrele);
+                    }
+                }
                 pageLisansDemo.AllowNext = true;
             }
-         
+
         }
 
         private void do_SQLSettings()
@@ -189,6 +225,8 @@ namespace Msp.App.App
             }
             if (chcSunucu.Checked)
             {
+                SqlLocal = false;
+
 
             }
         }
@@ -540,5 +578,9 @@ namespace Msp.App.App
             return affectRows;
         }
 
+        private void wizardControl1_CancelClick(object sender, CancelEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

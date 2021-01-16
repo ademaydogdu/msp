@@ -2,6 +2,7 @@
 using Msp.Entity.Entities;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
+using Msp.Models.Models.Case;
 using Msp.Models.Models.Invoice;
 using Msp.Models.Models.Order;
 using Msp.Models.Models.Sale;
@@ -62,6 +63,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<LogsDTO, Logs>();
             cfg.CreateMap<CaseDefinition, CaseDefinitionDTO>();
             cfg.CreateMap<CaseDefinitionDTO, CaseDefinition>();
+            cfg.CreateMap<CaseMovement, CaseMovementDTO>();
+            cfg.CreateMap<CaseMovementDTO, CaseMovement>();
         }
 
 

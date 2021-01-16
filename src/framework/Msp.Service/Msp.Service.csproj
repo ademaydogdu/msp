@@ -70,8 +70,10 @@
     <Compile Include="Service\App\StartUp.cs" />
     <Compile Include="Service\Authorization\AuthorizationService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="Service\Case\CaseService.cs" />
     <Compile Include="Service\CurrentTransactions\CurrentTransactionsService.cs" />
     <Compile Include="Service\CustomerTransactions\CustomerTransactionsService.cs" />
+    <Compile Include="Service\Dashboard\DashboardService.cs" />
     <Compile Include="Service\DepotStock\DepotStockService.cs" />
     <Compile Include="Service\DepotStock\OrderManagementService.cs" />
     <Compile Include="Service\Depot\DepotService.cs" />

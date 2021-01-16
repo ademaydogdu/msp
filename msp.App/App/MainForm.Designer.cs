@@ -245,6 +245,7 @@
             this.barButtonItem126 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem92 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -294,7 +295,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem92 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1526,7 +1526,6 @@
             // bbi_SatisAnindaBarkod
             // 
             this.bbi_SatisAnindaBarkod.Caption = "Satış Anında Barkod İşlemleri";
-            this.bbi_SatisAnindaBarkod.Enabled = false;
             this.bbi_SatisAnindaBarkod.Id = 132;
             this.bbi_SatisAnindaBarkod.ImageOptions.LargeImageIndex = 32;
             this.bbi_SatisAnindaBarkod.Name = "bbi_SatisAnindaBarkod";
@@ -2109,6 +2108,14 @@
             this.barButtonItem74.Name = "barButtonItem74";
             this.barButtonItem74.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem74_ItemClick_1);
             // 
+            // barButtonItem92
+            // 
+            this.barButtonItem92.Caption = "Satış - Ürün Hareket";
+            this.barButtonItem92.Id = 216;
+            this.barButtonItem92.ImageOptions.LargeImageIndex = 69;
+            this.barButtonItem92.Name = "barButtonItem92";
+            this.barButtonItem92.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem92_ItemClick);
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -2199,8 +2206,8 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnQuickSell);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnSpeedSale);
-            this.ribbonPageGroup1.ItemLinks.Add(this.tbnPriceInquiry);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem92);
+            this.ribbonPageGroup1.ItemLinks.Add(this.tbnPriceInquiry);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup10
@@ -2223,9 +2230,7 @@
             // 
             this.ribbonPageGroup26.AllowTextClipping = false;
             this.ribbonPageGroup26.ItemLinks.Add(this.bbi_veresiye);
-            this.ribbonPageGroup26.ItemLinks.Add(this.barButtonItem79);
             this.ribbonPageGroup26.Name = "ribbonPageGroup26";
-            this.ribbonPageGroup26.Text = "Veresiye Satış";
             // 
             // ribbonPage2
             // 
@@ -2539,14 +2544,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem92
-            // 
-            this.barButtonItem92.Caption = "Satış - Ürün Hareket";
-            this.barButtonItem92.Id = 216;
-            this.barButtonItem92.ImageOptions.LargeImageIndex = 69;
-            this.barButtonItem92.Name = "barButtonItem92";
-            this.barButtonItem92.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem92_ItemClick);
             // 
             // MainForm
             // 

@@ -580,6 +580,9 @@ namespace msp.App
         private void barButtonItem74_ItemClick(object sender, ItemClickEventArgs e)
         {
             //radialMenu1.ShowPopup(new Point(100, 100));
+            frmSatisBarkodIslem frm = new frmSatisBarkodIslem();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void btnSKTGecenUrun_ItemClick(object sender, ItemClickEventArgs e)

@@ -15,5 +15,6 @@ namespace Msp.Models.Models
         public DateTime? Date { get; set; }
         public string Durum { get; set; }
         public bool? Deleted { get; set; } = false;
+        public int? DurumType { get; set; }
     }
 }

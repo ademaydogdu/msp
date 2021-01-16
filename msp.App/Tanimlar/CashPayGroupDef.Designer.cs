@@ -47,6 +47,9 @@ namespace Msp.App.Tanimlar
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bs_CashPayGroupDef = new System.Windows.Forms.BindingSource(this.components);
+            this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCashPayGroup = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReCashPayGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_CashPayGroup)).BeginInit();
@@ -71,6 +74,7 @@ namespace Msp.App.Tanimlar
             // 
             // gc_CashPayGroup
             // 
+            this.gc_CashPayGroup.DataSource = this.bs_CashPayGroupDef;
             this.gc_CashPayGroup.Location = new System.Drawing.Point(12, 12);
             this.gc_CashPayGroup.MainView = this.gcv_CashPayGroupDef;
             this.gc_CashPayGroup.MenuManager = this.barManager1;
@@ -82,8 +86,13 @@ namespace Msp.App.Tanimlar
             // 
             // gcv_CashPayGroupDef
             // 
+            this.gcv_CashPayGroupDef.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRecId,
+            this.colCashPayGroup,
+            this.colReCashPayGroup});
             this.gcv_CashPayGroupDef.GridControl = this.gc_CashPayGroup;
             this.gcv_CashPayGroupDef.Name = "gcv_CashPayGroupDef";
+            this.gcv_CashPayGroupDef.OptionsView.ShowGroupPanel = false;
             // 
             // barManager1
             // 
@@ -218,7 +227,28 @@ namespace Msp.App.Tanimlar
             // 
             // bs_CashPayGroupDef
             // 
-            this.bs_CashPayGroupDef.DataSource = typeof(Msp.App.Tanimlar.CashPayGroupDef);
+            this.bs_CashPayGroupDef.DataSource = typeof(Msp.Models.Models.CashPayGroupDefDTO);
+            // 
+            // colRecId
+            // 
+            this.colRecId.FieldName = "RecId";
+            this.colRecId.Name = "colRecId";
+            this.colRecId.Visible = true;
+            this.colRecId.VisibleIndex = 0;
+            // 
+            // colCashPayGroup
+            // 
+            this.colCashPayGroup.FieldName = "CashPayGroup";
+            this.colCashPayGroup.Name = "colCashPayGroup";
+            this.colCashPayGroup.Visible = true;
+            this.colCashPayGroup.VisibleIndex = 1;
+            // 
+            // colReCashPayGroup
+            // 
+            this.colReCashPayGroup.FieldName = "ReCashPayGroup";
+            this.colReCashPayGroup.Name = "colReCashPayGroup";
+            this.colReCashPayGroup.Visible = true;
+            this.colReCashPayGroup.VisibleIndex = 2;
             // 
             // CashPayGroupDef
             // 
@@ -267,5 +297,8 @@ namespace Msp.App.Tanimlar
         private DevExpress.XtraGrid.GridControl gc_CashPayGroup;
         private DevExpress.XtraGrid.Views.Grid.GridView gcv_CashPayGroupDef;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCashPayGroup;
+        private DevExpress.XtraGrid.Columns.GridColumn colReCashPayGroup;
     }
 }

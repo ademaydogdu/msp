@@ -347,6 +347,12 @@
     <Compile Include="Islemler\Hatirlatici.Designer.cs">
       <DependentUpon>Hatirlatici.cs</DependentUpon>
     </Compile>
+    <Compile Include="Musteri-Islemleri\frmBakidenDus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri-Islemleri\frmBakidenDus.Designer.cs">
+      <DependentUpon>frmBakidenDus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri-Islemleri\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,6 +475,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Satis\frmSatisBarkodIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis\frmSatisBarkodIslem.Designer.cs">
+      <DependentUpon>frmSatisBarkodIslem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satis\frmSatisList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -693,6 +705,9 @@
     <EmbeddedResource Include="Islemler\Hatirlatici.resx">
       <DependentUpon>Hatirlatici.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Musteri-Islemleri\frmBakidenDus.resx">
+      <DependentUpon>frmBakidenDus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -758,6 +773,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis\frmSatisBarkodIslem.resx">
+      <DependentUpon>frmSatisBarkodIslem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmSatisList.resx">
       <DependentUpon>frmSatisList.cs</DependentUpon>
@@ -837,7 +855,9 @@
     <None Include="Properties\DataSources\Msp.Models.Models.App.LogsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.BankEntryDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.BanksDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Case.CaseMovementDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CaseDefinitionDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CashPayGroupDefDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrencyTypeDTO.datasource" />
@@ -1018,6 +1038,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Scripts\mspTableCreate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\Case\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -387,6 +387,13 @@ namespace Msp.Service.Service.DepotStock
             }
         }
 
+        public List<ProductMovementDTO> GetListProduct_Movement_Daily()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<ProductMovement>, List<ProductMovementDTO>>(_db.ProductMovement.Where(x => x.Date == DateTime.Now && x.DurumType == 1 && x.Deleted == false).ToList());
+            }
+        }
 
         #endregion
 

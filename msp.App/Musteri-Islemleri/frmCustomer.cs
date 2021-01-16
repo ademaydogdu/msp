@@ -176,6 +176,13 @@ namespace Msp.App.Musteri_Islemleri
 
         private void bbi_VeresiyeDefter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            CustomersDTO Orow = (CustomersDTO)gcvCustomers.GetFocusedRow();
+            if (Orow != null)
+            {
+                frmMusterVeresiyeDetail frm = new frmMusterVeresiyeDetail();
+                frm.musteriAdi = Orow.name;
+                frm.ShowDialog();
+            }
 
         }
     }

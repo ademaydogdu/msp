@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Msp.Service.Repository;
 using Msp.App.Tool;
+using Msp.Models.Models.Case;
+using Msp.Service.Service.Case;
+using Msp.Infrastructure;
 
 namespace Msp.App.Islemler
 {
@@ -23,13 +26,14 @@ namespace Msp.App.Islemler
 
         }
         MspTool mspTool = new MspTool();
-
+        List<CaseMovementDTO> _List_CaseMov = new List<CaseMovementDTO>();
 
         #region Record
 
-        public void do_Refresh()
+        public void do_refresh()
         {
-
+            _List_CaseMov = _repository.Run<CaseService, List<CaseMovementDTO>>(x => x.Get_List_CaseMovement(AppMain.CompanyRecId));
+            bs_CaseMov.DataSource = _List_CaseMov;
         }
 
 
@@ -38,6 +42,7 @@ namespace Msp.App.Islemler
 
         private void frmKasaHareketList_Load(object sender, EventArgs e)
         {
+            do_refresh();
             mspTool.Get_Layout(this);
         }
 
@@ -54,12 +59,25 @@ namespace Msp.App.Islemler
         private void btnAddNewCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmKasaHareketi frm = new frmKasaHareketi();
-            frm.Show();
+            frm._FormOpenType = Infrastructure.FormOpenType.New;
+            frm.Show(0);
         }
 
         private void btnCustomerRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            do_Refresh();
+            do_refresh();
+        }
+
+        private void btnEditCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var oRow = (CaseMovementDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                frmKasaHareketi frm = new frmKasaHareketi();
+                frm._FormOpenType = FormOpenType.Edit;
+                frm.Show(oRow.RecId);
+            }
+  
         }
     }
 }

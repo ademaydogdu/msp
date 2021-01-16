@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,8 @@ namespace Msp.Models.Models.Sale
         public int? CaseId { get; set; }
         public DateTime? VeresiyeClosedDate { get; set; }
 
-
-
+        [NotMapped]
+        public List<SaleTransDTO> _SaleTrans { get; set; }
 
     }
 }

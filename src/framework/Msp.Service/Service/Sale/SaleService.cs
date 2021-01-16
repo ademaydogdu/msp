@@ -77,6 +77,7 @@ namespace Msp.Service.Service.Sale
                                         Durum = "Satış",
                                         Deleted = false,
                                         Amount = item.ProductQuantity * item.ProductPrice,
+                                        DurumType = 1
                                     };
                                     _db.ProductMovement.Add(base.Map<ProductMovementDTO, ProductMovement>(productMovement));
                                     _db.SaveChanges();
@@ -218,6 +219,15 @@ namespace Msp.Service.Service.Sale
         #endregion
 
         #region Veresiye
+
+        public List<SaleOwnerDTO> GetList_VeresiyeSale_Musteri(string musteriAdi)
+        {
+            using (var _db = new MspDbContext())
+            {
+                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Veresiye == true && x.CustomerName.Trim() == musteriAdi.Trim()).ToList());
+                return result;
+            }
+        }
 
         public ActionResponse<SaleOwnerDTO> Update_Veresiye(SaleOwnerDTO model)
         {
