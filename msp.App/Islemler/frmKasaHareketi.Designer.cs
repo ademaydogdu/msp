@@ -154,6 +154,8 @@
             this.lc_CaseDef.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.lc_CaseDef.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CaseName", "Kasa Adı")});
             this.lc_CaseDef.Properties.DataSource = this.bs_CaseList;
             this.lc_CaseDef.Properties.DisplayMember = "CaseName";
             this.lc_CaseDef.Properties.NullText = "";
@@ -310,6 +312,9 @@
             this.lc_Cari.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.lc_Cari.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CurCode", "Kod"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CurAccountName", "Cari Adı")});
             this.lc_Cari.Properties.DataSource = this.bs_CariHesap;
             this.lc_Cari.Properties.DisplayMember = "CurAccountName";
             this.lc_Cari.Properties.NullText = "";
@@ -353,6 +358,8 @@
             this.lc_OdemeTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.lc_OdemeTuru.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "Ödeme Türü")});
             this.lc_OdemeTuru.Properties.DataSource = this.bs_PaymentType;
             this.lc_OdemeTuru.Properties.DisplayMember = "Remark";
             this.lc_OdemeTuru.Properties.NullText = "";
@@ -375,6 +382,8 @@
             this.lc_Doviz.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.lc_Doviz.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "Doviz")});
             this.lc_Doviz.Properties.DataSource = this.bs_CurrencyType;
             this.lc_Doviz.Properties.DisplayMember = "CurrencyCode";
             this.lc_Doviz.Properties.NullText = "";
@@ -466,6 +475,8 @@
             this.cbb_IslemTuru.Name = "cbb_IslemTuru";
             this.cbb_IslemTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbb_IslemTuru.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Türü")});
             this.cbb_IslemTuru.Properties.NullText = "";
             this.cbb_IslemTuru.Properties.PopupSizeable = false;
             this.cbb_IslemTuru.Size = new System.Drawing.Size(342, 20);
