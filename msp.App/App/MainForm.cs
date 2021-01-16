@@ -38,6 +38,8 @@ using System.IO;
 using System.Net.NetworkInformation;
 using System.Net;
 using System.Net.Sockets;
+using Msp.Service.Service.Sale;
+using Msp.Models.Models.Sale;
 
 namespace msp.App
 {
@@ -984,6 +986,18 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Text = "Silinen Ürün Kartları";
             frm.Show();
+        }
+
+        private void barButtonItem106_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var _saleOwner = _repository.Run<SaleService, List<SaleOwnerDTO>>(x => x.GetList_VeresiyeSale());
+            if (_saleOwner.Count > 0)
+            {
+                frmPrint frm = new frmPrint();
+                frm.PrintSaleOwnersVeresiye(_saleOwner);
+                frm.ShowDialog();
+            }
+
         }
     }
 }

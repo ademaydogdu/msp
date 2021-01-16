@@ -1958,6 +1958,7 @@
             this.barButtonItem106.Caption = "Veresiye Raporu";
             this.barButtonItem106.Id = 187;
             this.barButtonItem106.Name = "barButtonItem106";
+            this.barButtonItem106.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem106_ItemClick);
             // 
             // barButtonItem94
             // 

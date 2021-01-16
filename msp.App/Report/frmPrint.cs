@@ -13,6 +13,7 @@ using Msp.Models.Models.Sale;
 using Msp.App.Report.Satis;
 using Msp.App.Report.CariHesap;
 using Msp.App.Report.Depo_Stock;
+using Msp.App.Report.Case;
 
 namespace Msp.App.Report
 {
@@ -66,6 +67,15 @@ namespace Msp.App.Report
             report.CreateDocument();
         }
 
+        public void PrintSaleOwnersVeresiye(List<SaleOwnerDTO> data)
+        {
+            VeresiyeDefter report = new VeresiyeDefter();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
 
     }
 }

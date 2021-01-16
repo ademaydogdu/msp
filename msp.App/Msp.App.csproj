@@ -389,6 +389,12 @@
     <Compile Include="Report\CariHesap\CariHesapListesi.Designer.cs">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Case\VeresiyeDefter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Case\VeresiyeDefter.Designer.cs">
+      <DependentUpon>VeresiyeDefter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Depo-Stock\EnvanterBilgileri.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -732,6 +738,9 @@
     <EmbeddedResource Include="Report\CariHesap\CariHesapListesi.resx">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Case\VeresiyeDefter.resx">
+      <DependentUpon>VeresiyeDefter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Depo-Stock\EnvanterBilgileri.resx">
       <DependentUpon>EnvanterBilgileri.cs</DependentUpon>
     </EmbeddedResource>
@@ -1048,9 +1057,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Scripts\mspTableCreate.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Report\Case\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
