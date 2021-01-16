@@ -39,8 +39,8 @@ namespace Msp.App.Islemler
 
         List<SelectIdValue> IslemTuru = new List<SelectIdValue>()
         {
-            new SelectIdValue(1, "Gider"),
-            new SelectIdValue(2, "Gelir")
+              new SelectIdValue(1, "Gelir"),
+              new SelectIdValue(2, "Gider")
         };
 
         #region Record
@@ -106,7 +106,7 @@ namespace Msp.App.Islemler
                 frm._FormOpenType = FormOpenType.Edit;
                 frm.Show(oRow.RecId);
             }
-  
+
         }
 
         private void btnRemCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

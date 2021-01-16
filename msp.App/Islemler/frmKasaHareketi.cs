@@ -41,8 +41,8 @@ namespace Msp.App.Islemler
 
         List<SelectIdValue> IslemTuru = new List<SelectIdValue>()
         {
-            new SelectIdValue(1, "Gider"),
-            new SelectIdValue(2, "Gelir")
+            new SelectIdValue(1, "Gelir"),
+            new SelectIdValue(2, "Gider")
         };
 
         CaseMovementDTO _CaseMovement;
