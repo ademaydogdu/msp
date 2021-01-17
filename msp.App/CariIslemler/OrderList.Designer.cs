@@ -478,6 +478,8 @@
             // 
             // colIskonto
             // 
+            this.colIskonto.DisplayFormat.FormatString = "n2";
+            this.colIskonto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colIskonto.FieldName = "Iskonto";
             this.colIskonto.Name = "colIskonto";
             this.colIskonto.Visible = true;

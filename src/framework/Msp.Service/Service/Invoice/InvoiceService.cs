@@ -102,6 +102,7 @@ namespace Msp.Service.Service.Invoice
                             if (order != null)
                             {
                                 order.IrsaliyeId = InvoiceOwnerRecId;
+                                order.Durum = "İrsaliye Tarafında";
                                 _db.Entry(order).CurrentValues.SetValues(order);
                                 _db.Entry(order).State = EntityState.Modified;
                             }

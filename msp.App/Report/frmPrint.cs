@@ -14,6 +14,7 @@ using Msp.App.Report.Satis;
 using Msp.App.Report.CariHesap;
 using Msp.App.Report.Depo_Stock;
 using Msp.App.Report.Case;
+using Msp.Models.Models.Case;
 
 namespace Msp.App.Report
 {
@@ -76,6 +77,17 @@ namespace Msp.App.Report
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }
+
+        public void PrintKasaHareketRaporu(List<CaseMovementDTO> data)
+        {
+            KasaHareketRapor report = new KasaHareketRapor();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
 
     }
 }

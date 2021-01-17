@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.bbi_ProgramKilitle = new DevExpress.XtraBars.BarButtonItem();
@@ -1946,12 +1947,14 @@
             this.barButtonItem104.Caption = "Kasa Bakiye Raporu";
             this.barButtonItem104.Id = 185;
             this.barButtonItem104.Name = "barButtonItem104";
+            this.barButtonItem104.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem104_ItemClick);
             // 
             // barButtonItem105
             // 
             this.barButtonItem105.Caption = "Kasa Hareket Raporu";
             this.barButtonItem105.Id = 186;
             this.barButtonItem105.Name = "barButtonItem105";
+            this.barButtonItem105.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem105_ItemClick);
             // 
             // barButtonItem106
             // 
@@ -2556,6 +2559,7 @@
             this.ClientSize = new System.Drawing.Size(1226, 606);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbon);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainForm.IconOptions.Icon")));
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Ribbon = this.ribbon;

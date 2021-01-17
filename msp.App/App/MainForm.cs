@@ -40,6 +40,7 @@ using System.Net;
 using System.Net.Sockets;
 using Msp.Service.Service.Sale;
 using Msp.Models.Models.Sale;
+using Msp.App.Report.Case;
 
 namespace msp.App
 {
@@ -998,6 +999,22 @@ namespace msp.App
                 frm.ShowDialog();
             }
 
+        }
+
+        private void barButtonItem104_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmKasaReportFilter frm = new frmKasaReportFilter();
+            frm.FormType = 1;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem105_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmKasaReportFilter frm = new frmKasaReportFilter();
+            frm.FormType = 2;
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

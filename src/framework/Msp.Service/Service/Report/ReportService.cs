@@ -1,6 +1,8 @@
 ﻿using Msp.Entity.Entities;
 using Msp.Models.Models;
+using Msp.Models.Models.Case;
 using Msp.Models.Models.Product;
+using Msp.Models.Models.Report;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +37,20 @@ namespace Msp.Service.Service.Report
         #region Sale
 
 
+
+
+        #endregion
+
+        #region CaseReport
+
+        public List<CaseMovementDTO> Get_List_CaseMovement(CaseReportFilter filter)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<CaseMovement>, List<CaseMovementDTO>>(_db.CaseMovement.Where(x => x.Deleted == false && 
+                x.CompanyRecId == filter.companyId && x.RecordDate >= filter.BeginDate && x.RecordDate <= filter.EndDate && x.CaseId == filter.CaseId ).ToList());
+            }
+        }
 
 
         #endregion

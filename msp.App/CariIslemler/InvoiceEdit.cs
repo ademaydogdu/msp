@@ -139,6 +139,7 @@ namespace Msp.App.CariIslemler
                             newTrans.ProductId = item.StockId;
                             newTrans.UnitID = item.BirimId;
                             newTrans.BirimFiyat = item.BirimFiyat;
+                            newTrans.Tutar = item.Tutar;
 
                             __dll_List_InoviceTrans.Add(newTrans);
                         }

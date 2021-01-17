@@ -86,6 +86,9 @@ namespace Msp.App.CariIslemler
         {
             try
             {
+                bs_OrderOwner.EndEdit();
+                bs_OrderTrans.EndEdit();
+
                 if (do_Validation()) return;
                 if (MspTool.get_Question("Kaydedilecektir Onaylıyor musunuz?"))
                 {
@@ -237,6 +240,7 @@ namespace Msp.App.CariIslemler
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            gcv_OrderTrans.CloseEditor();
             do_save();
         }
 
