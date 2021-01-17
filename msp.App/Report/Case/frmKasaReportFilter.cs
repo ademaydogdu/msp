@@ -36,6 +36,8 @@ namespace Msp.App.Report.Case
 
         private void frmKasaReportFilter_Load(object sender, EventArgs e)
         {
+            mspTool.Get_Layout(this);
+
             switch (FormType)
             {
                 case 1:
@@ -55,7 +57,6 @@ namespace Msp.App.Report.Case
             dt_BaslangicDate.EditValue = DateTime.Today;
             dt_BitisDate.EditValue = DateTime.Today;
 
-            mspTool.Get_Layout(this);
         }
 
         private void frmKasaReportFilter_FormClosing(object sender, FormClosingEventArgs e)
