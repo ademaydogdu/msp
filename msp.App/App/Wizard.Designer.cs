@@ -34,10 +34,10 @@
             this.pageSqlSettings = new DevExpress.XtraWizard.WizardPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.txtSunucuName = new DevExpress.XtraEditors.TextEdit();
-            this.txtSunucuAdi = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtServer = new DevExpress.XtraEditors.TextEdit();
+            this.txtdatabase = new DevExpress.XtraEditors.TextEdit();
+            this.txtServerUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtServerPas = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.chcSunucu = new DevExpress.XtraEditors.CheckEdit();
@@ -102,10 +102,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSunucuName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSunucuAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtdatabase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerPas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chcSunucu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chLocalDB.Properties)).BeginInit();
@@ -215,10 +215,10 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.spinEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.txtSunucuName);
-            this.layoutControl1.Controls.Add(this.txtSunucuAdi);
-            this.layoutControl1.Controls.Add(this.textEdit4);
+            this.layoutControl1.Controls.Add(this.txtServer);
+            this.layoutControl1.Controls.Add(this.txtdatabase);
+            this.layoutControl1.Controls.Add(this.txtServerUser);
+            this.layoutControl1.Controls.Add(this.txtServerPas);
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.chcSunucu);
             this.layoutControl1.Controls.Add(this.chLocalDB);
@@ -248,37 +248,38 @@
             this.spinEdit1.StyleController = this.layoutControl1;
             this.spinEdit1.TabIndex = 4;
             // 
-            // textEdit1
+            // txtServer
             // 
-            this.textEdit1.Location = new System.Drawing.Point(139, 165);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(488, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 5;
+            this.txtServer.Location = new System.Drawing.Point(139, 117);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(488, 20);
+            this.txtServer.StyleController = this.layoutControl1;
+            this.txtServer.TabIndex = 5;
             // 
-            // txtSunucuName
+            // txtdatabase
             // 
-            this.txtSunucuName.Location = new System.Drawing.Point(139, 141);
-            this.txtSunucuName.Name = "txtSunucuName";
-            this.txtSunucuName.Size = new System.Drawing.Size(488, 20);
-            this.txtSunucuName.StyleController = this.layoutControl1;
-            this.txtSunucuName.TabIndex = 6;
+            this.txtdatabase.Location = new System.Drawing.Point(139, 141);
+            this.txtdatabase.Name = "txtdatabase";
+            this.txtdatabase.Size = new System.Drawing.Size(488, 20);
+            this.txtdatabase.StyleController = this.layoutControl1;
+            this.txtdatabase.TabIndex = 6;
             // 
-            // txtSunucuAdi
+            // txtServerUser
             // 
-            this.txtSunucuAdi.Location = new System.Drawing.Point(139, 117);
-            this.txtSunucuAdi.Name = "txtSunucuAdi";
-            this.txtSunucuAdi.Size = new System.Drawing.Size(488, 20);
-            this.txtSunucuAdi.StyleController = this.layoutControl1;
-            this.txtSunucuAdi.TabIndex = 7;
+            this.txtServerUser.Location = new System.Drawing.Point(139, 165);
+            this.txtServerUser.Name = "txtServerUser";
+            this.txtServerUser.Size = new System.Drawing.Size(488, 20);
+            this.txtServerUser.StyleController = this.layoutControl1;
+            this.txtServerUser.TabIndex = 7;
             // 
-            // textEdit4
+            // txtServerPas
             // 
-            this.textEdit4.Location = new System.Drawing.Point(139, 189);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(488, 20);
-            this.textEdit4.StyleController = this.layoutControl1;
-            this.textEdit4.TabIndex = 8;
+            this.txtServerPas.Location = new System.Drawing.Point(139, 189);
+            this.txtServerPas.Name = "txtServerPas";
+            this.txtServerPas.Properties.PasswordChar = '*';
+            this.txtServerPas.Size = new System.Drawing.Size(488, 20);
+            this.txtServerPas.StyleController = this.layoutControl1;
+            this.txtServerPas.TabIndex = 8;
             // 
             // simpleButton1
             // 
@@ -361,10 +362,10 @@
             this.grpServer.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem5,
             this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
             this.layoutControlItem6,
-            this.emptySpaceItem2});
+            this.emptySpaceItem2,
+            this.layoutControlItem4,
+            this.layoutControlItem3});
             this.grpServer.Location = new System.Drawing.Point(0, 72);
             this.grpServer.Name = "grpServer";
             this.grpServer.Size = new System.Drawing.Size(631, 186);
@@ -373,7 +374,7 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.textEdit4;
+            this.layoutControlItem5.Control = this.txtServerPas;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(607, 24);
@@ -382,8 +383,8 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.textEdit1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem2.Control = this.txtServer;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(607, 24);
             this.layoutControlItem2.Text = "Server";
@@ -391,17 +392,17 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.txtSunucuName;
+            this.layoutControlItem3.Control = this.txtdatabase;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(607, 24);
-            this.layoutControlItem3.Text = "Server Name";
+            this.layoutControlItem3.Text = "DataBase";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(112, 13);
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.txtSunucuAdi;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Control = this.txtServerUser;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(607, 24);
             this.layoutControlItem4.Text = "Server Kullanıcı Adı";
@@ -864,10 +865,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSunucuName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSunucuAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtdatabase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerPas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chcSunucu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chLocalDB.Properties)).EndInit();
@@ -942,10 +943,10 @@
         private DevExpress.XtraWizard.WizardPage pageRecordPage;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SpinEdit spinEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit txtSunucuName;
-        private DevExpress.XtraEditors.TextEdit txtSunucuAdi;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtServer;
+        private DevExpress.XtraEditors.TextEdit txtdatabase;
+        private DevExpress.XtraEditors.TextEdit txtServerUser;
+        private DevExpress.XtraEditors.TextEdit txtServerPas;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;

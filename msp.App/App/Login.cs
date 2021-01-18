@@ -62,35 +62,70 @@ namespace Msp.App.App
                     string sifrele = SecurityExtension.Sifrele("data source=DG;initial catalog=msp;user id=sa;password=123D654!;");
                     sw.WriteLine(sifrele);
                 }
+                AppMain.LocalConnect = false;
             }
-            string[] conArry;
-            using (StreamReader sr = File.OpenText(path))
-            {
-                string str = SecurityExtension.Sifre_Coz(sr.ReadLine());
-                conArry = str.Split(';');
-            }
-            List<string> conn = new List<string>();
-            foreach (var item in conArry)
-            {
-                int position = item.IndexOf("=");
-                if (position < 0)
-                    continue;
-                conn.Add(item.Substring(position + 1));
-            }
-            AppMain.SqlConnection = new ConnectionDTO
-            {
-                Database = conn[1], //Global.SqlConnection.Database,
-                Server = conn[0], //"R00T\\SQLEXPRESS", //Global.SqlConnection.Server,
-                Password = conn[3], //Global.SqlConnection.Password,
-                UserId = conn[2] //Global.SqlConnection.UserId
-            };
             #endregion
 
-            if (MspTool.sqlKontrol(AppMain.SqlConnection.Server, AppMain.SqlConnection.Database, AppMain.SqlConnection.UserId, AppMain.SqlConnection.Password) == false)
+            if (!AppMain.LocalConnect)
             {
-                XtraMessageBox.Show("Bağlantı hatası.Veritabanı ayarlarınızı kontrol ediniz...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+
+                string[] conArry;
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    string str = SecurityExtension.Sifre_Coz(sr.ReadLine());
+                    conArry = str.Split(';');
+                }
+                List<string> conn = new List<string>();
+                foreach (var item in conArry)
+                {
+                    int position = item.IndexOf("=");
+                    if (position < 0)
+                        continue;
+                    conn.Add(item.Substring(position + 1));
+                }
+                AppMain.SqlConnection = new ConnectionDTO
+                {
+                    Database = conn[1], //Global.SqlConnection.Database,
+                    Server = conn[0], //"R00T\\SQLEXPRESS", //Global.SqlConnection.Server,
+                    Password = conn[3], //Global.SqlConnection.Password,
+                    UserId = conn[2] //Global.SqlConnection.UserId
+                };
+
+                if (MspTool.sqlKontrol(AppMain.SqlConnection.Server, AppMain.SqlConnection.Database, AppMain.SqlConnection.UserId, AppMain.SqlConnection.Password) == false)
+                {
+                    XtraMessageBox.Show("Bağlantı hatası.Veritabanı ayarlarınızı kontrol ediniz...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
+            else
+            {
+                string[] conArry;
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    string str = SecurityExtension.Sifre_Coz(sr.ReadLine());
+                    conArry = str.Split(';');
+                }
+                List<string> conn = new List<string>();
+                foreach (var item in conArry)
+                {
+                    int position = item.IndexOf("=");
+                    if (position < 0)
+                        continue;
+                    conn.Add(item.Substring(position + 1));
+                }
+                AppMain.SqlConnection = new ConnectionDTO
+                {
+                    Database = conn[1],
+                    Server = conn[0]
+                };
+                if (MspTool.sqlKontrol(AppMain.SqlConnection.Server, AppMain.SqlConnection.Database) == false)
+                {
+                    XtraMessageBox.Show("Bağlantı hatası.Veritabanı ayarlarınızı kontrol ediniz...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
             LoadDatabase();
 
         }
@@ -172,10 +207,11 @@ namespace Msp.App.App
             var connection = applicationServers.FirstOrDefault(x => x.Id == (int)lc_serverList.EditValue);
             var config = new ConnectionDTO
             {
-                Database = "msp",
+                Database = connection.DataBase,
                 Server = connection.Server,
                 Password = connection.Password,
-                UserId = connection.UserName
+                UserId = connection.UserName,
+                localSql = AppMain.LocalConnect
             };
             UserAuthDto model = new UserAuthDto
             {

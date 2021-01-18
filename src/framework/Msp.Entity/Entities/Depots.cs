@@ -46,5 +46,7 @@ namespace Msp.Entity.Entities
 
         public bool? DepActive { get; set; }
 
+        public int? CompanyRecId { get; set; }
+
     }
 }

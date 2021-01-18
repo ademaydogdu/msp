@@ -24,9 +24,7 @@ namespace Msp.App.App
         public static SqlCommand SqlCreateCommandFront()
         {
             string connectionString = "initial catalog=" + AppMain.SqlConnection.Database
-                + ";data source=" + AppMain.SqlConnection.Server
-                + ";user id=" + AppMain.SqlConnection.UserId
-                + ";password=" + AppMain.SqlConnection.Password
+                + ";data source=" + AppMain.SqlConnection.Server + (AppMain.LocalConnect == false ? ";user id=" + AppMain.SqlConnection.UserId + ";password=" + AppMain.SqlConnection.Password : "")
                 + ";Packet Size=8000;Connect Timeout=120";
             //if (SednaFBMain.user != null)
             //{
@@ -115,6 +113,39 @@ namespace Msp.App.App
             DataColumn[] KeysTableList = new DataColumn[1];
             KeysTableList[0] = tblTableList.Columns["TableName"];
             tblTableList.PrimaryKey = KeysTableList;
+
+            #region ApplicationServer
+            if (tblTableList.Rows.Contains("ApplicationServer") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[ApplicationServer]( "
+                        + "     [Id][int] IDENTITY(1, 1) NOT NULL, "
+                        + "  "
+                        + "     [Server] [nvarchar] "
+                        + "         (max) NULL, "
+                        + "  "
+                        + "     [ServerName] [nvarchar] "
+                        + "         (max) NULL, "
+                        + "  "
+                        + "     [UserName] [nvarchar] (200) NULL, "
+                        + " 	[Password] "
+                        + "         [nvarchar] "
+                        + "         (max) NULL, "
+                        + "  "
+                        + "     [DataBase] [nvarchar] (50) NULL, "
+                        + "  CONSTRAINT[PK_ApplicationServer] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [Id] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]"; 
+                ExecuteNonQuery(sCommand);
+                //sCommand.CommandText = "INSERT INTO FBAccIntParameter (IntType,DocumentTypeCode,PayType)  VALUES(5,1,'0')";
+                //ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
 
 
             #region Users

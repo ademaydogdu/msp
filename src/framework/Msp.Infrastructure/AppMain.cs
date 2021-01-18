@@ -22,6 +22,8 @@ namespace Msp.Infrastructure
         public static string Company { get; set; }
         public static int CompanyRecId { get; set; }
 
+        public static bool LocalConnect { get; set; }
+
 
         public static string MAcAdress { get; set; }
         public static string IpAdress { get; set; }

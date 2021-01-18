@@ -384,6 +384,18 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("ParaUstu", "True"); }
 
+            varmi = false;
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "SqlLocal")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("SqlLocal", "False"); }
+
             #endregion
 
             //if (Global.RegistryDbSettings.Count > 0)
@@ -407,6 +419,10 @@ namespace msp.App
                 Wizard frm = new Wizard();
                 frm.ShowDialog();
                 //Global.AppPath = SednaFBMain.KodAdmin.Service.AppPath;
+            }
+            else
+            {
+               AppMain.LocalConnect = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("SqlLocal").ToString());
             }
 
             Login loForm = new Login();

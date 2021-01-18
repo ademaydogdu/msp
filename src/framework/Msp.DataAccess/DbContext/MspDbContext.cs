@@ -9,10 +9,7 @@ namespace Msp.Entity.Entities
     public partial class MspDbContext : DbContext
     {
         public MspDbContext()
-            : base("initial catalog=" + AppMain.SqlConnection.Database
-            + ";data source=" + AppMain.SqlConnection.Server
-            + ";user id=" + AppMain.SqlConnection.UserId
-            + ";password=" + AppMain.SqlConnection.Password )
+            : base( "initial catalog=" + AppMain.SqlConnection.Database + ";data source=" + AppMain.SqlConnection.Server +  (AppMain.LocalConnect == false ?  ";user id=" + AppMain.SqlConnection.UserId + ";password=" + AppMain.SqlConnection.Password : ";"))
         {
         }
 

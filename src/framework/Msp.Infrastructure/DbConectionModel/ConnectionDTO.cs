@@ -21,10 +21,11 @@ namespace Msp.Infrastructure.DbConectionModel
         public string Database { get; set; }
         public string UserId { get; set; }
         public string Password { get; set; }
+        public bool localSql { get; set; } = false;
 
         public string Connection()
         {
-            return $"initial catalog={Database};data source={Server};user id={UserId};password={Password};Packet Size=8000;Connect Timeout=120";
+            return $"initial catalog={Database};data source={Server} " + (localSql == false ? $";user id={UserId};password={Password}; Packet Size=8000;Connect Timeout=120" : "; Packet Size=8000;Connect Timeout=120");
         }
     }
 

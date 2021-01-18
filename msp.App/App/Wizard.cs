@@ -13,6 +13,7 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Data.Common;
 using Msp.Infrastructure.Extensions;
+using Msp.Infrastructure;
 
 namespace Msp.App.App
 {
@@ -93,6 +94,7 @@ namespace Msp.App.App
 
             try
             {
+
                 Splash = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(Waiting.Wait), true, true);
                 Splash.WaitForSplashFormClose();
                 if (!Splash.IsSplashFormVisible)
@@ -100,6 +102,7 @@ namespace Msp.App.App
                     Splash.ShowWaitForm();
                 }
                 SqlCommand sCommand = SqlCreateCommandFront();
+
                 #region Users
                 sCommand.CommandText = "INSERT INTO [dbo].[Users] "
     + "         ([username] "
@@ -140,16 +143,18 @@ namespace Msp.App.App
                 #endregion
 
                 #region Company
-                sCommand.CommandText = "INSERT INTO [dbo].[Company] ([CompanyCode], [CompanyName]) VALUES ('001', @companyName)";
+                sCommand.CommandText = "INSERT INTO [dbo].[Company] ([CompanyCode], [CompanyName]) VALUES ('001', @companyName);SELECT SCOPE_IDENTITY();";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("companyName", SqlDbType.NVarChar).Value = txtSirketAdi.EditValue;
-                ExecuteNonQuery(sCommand);
+                int CompanyRecId = Convert.ToInt32(sCommand.ExecuteScalar());
+                //ExecuteNonQuery(sCommand);
                 #endregion
 
                 #region Depo
-                sCommand.CommandText = "INSERT INTO [dbo].[Depot] ([DepName])  VALUES (@DepName)";
+                sCommand.CommandText = "INSERT INTO [dbo].[Depot] ([DepName],[CompanyRecId])  VALUES (@DepName, @CompanyRecId)";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("DepName", SqlDbType.NVarChar).Value = txtDepotAdi.EditValue;
+                sCommand.Parameters.Add("CompanyRecId", SqlDbType.Int).Value = CompanyRecId;
                 ExecuteNonQuery(sCommand);
                 #endregion
 
@@ -171,15 +176,74 @@ namespace Msp.App.App
                 + "        ([Server] "
                 + "        ,[ServerName] "
                 + "        ,[UserName] "
-                + "        ,[Password]) "
+                + "        ,[Password] "
+                + "        ,[DataBase])"
                 + "  VALUES "
-                + "        ('' "
+                + "        (@server "
+                + "        ,@serverName "
                 + "        ,'' "
-                + "        ,'' "
-                + "        ,'' )";
+                + "        ,'' , '@DataBase')";
                 sCommand.Parameters.Clear();
+                sCommand.Parameters.Add("server", SqlDbType.NVarChar).Value = "(localdb)\\MSSQLLocalDB";
+                sCommand.Parameters.Add("serverName", SqlDbType.NVarChar).Value = "SQLLocal";
+                sCommand.Parameters.Add("DataBase", SqlDbType.NVarChar).Value = "msp4";
+                ExecuteNonQuery(sCommand);
 
                 #endregion
+
+                #region Parameter
+
+                sCommand.CommandText = "INSERT INTO [dbo].[Parameters] "
+                    + "           ([NumaratorShow] "
+                    + "           ,[SaleApproval] "
+                    + "           ,[SaleOutOfStock] "
+                    + "           ,[SaleCahnge] "
+                    + "           ,[SaleInformationSlip] "
+                    + "           ,[MainSaleForm] "
+                    + "           ,[AutoCurrency] "
+                    + "           ,[UserRecordMy] "
+                    + "           ,[PaymentLock] "
+                    + "           ,[PaymentyForced] "
+                    + "           ,[SaleNewRecord] "
+                    + "           ,[SaleProductEndDate] "
+                    + "           ,[ProductEndDateDay]) "
+                    + "     VALUES "
+                    + "           ('True' "
+                    + "           ,'False' "
+                    + "           ,'False' "
+                    + "           ,'False' "
+                    + "           ,'False' "
+                    + "           ,'False' "
+                    + "           ,'False' "
+                    + "           ,'False' "
+                    + "           ,'False' "
+                    + "           ,'True' "
+                    + "           ,'True' "
+                    + "           ,'False' "
+                    + "           ,10)";
+                sCommand.Parameters.Clear();
+                ExecuteNonQuery(sCommand);
+                #endregion
+
+                #region Currency
+
+                sCommand.CommandText = "INSERT INTO [dbo].[CurrencyType] ([CurrencyCode],[Remark],[CompanyRecId]) VALUES ('TL','TL',@CompanyRecId) ";
+                sCommand.Parameters.Add("CompanyRecId", SqlDbType.Int).Value = CompanyRecId;
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[CurrencyType] ([CurrencyCode],[Remark],[CompanyRecId]) VALUES ('USD','USD',@CompanyRecId) ";
+                sCommand.Parameters.Add("CompanyRecId", SqlDbType.Int).Value = CompanyRecId;
+                ExecuteNonQuery(sCommand);
+
+                #endregion
+
+                #region ProgramsControl
+
+                sCommand.CommandText = "INSERT INTO [dbo].[ProgramsControl]([MspVersion],[Licence],[FirstDate],[MacAdress],[IpAdress],[LocalIpAdress]) VALUES ('1.0.0.0','',Null,'','','')";
+                ExecuteNonQuery(sCommand);
+
+
+                #endregion
+
 
             }
             catch (Exception ex)
@@ -209,9 +273,10 @@ namespace Msp.App.App
         {
             if (chLocalDB.Checked)
             {
+                AppMain.LocalConnect = true;
                 SqlLocal = true;
-                //SqlConnectionString = "data source=.;initial catalog=msp2;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
-                SqlConnectionString = "data source = DG; initial catalog = msp2; user id = sa; password = 123D654!; ";
+                SqlConnectionString = @"data source=(localdb)\MSSQLLocalDB;initial catalog=msp4;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
+                //SqlConnectionString = "data source = DG; initial catalog = msp2; user id = sa; password = 123D654!; ";
                 if (sqlKontrol(SqlConnectionString) == false)
                 {
                     DataBaseControl = false;
@@ -221,13 +286,24 @@ namespace Msp.App.App
                     lblSqlDurumText.Text = "Veri Tabanı Mevcuttur.";
                     DataBaseControl = true;
                 }
+                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("SqlLocal", true);
 
             }
             if (chcSunucu.Checked)
             {
                 SqlLocal = false;
-
-
+                AppMain.LocalConnect = false;
+                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("SqlLocal", false);
+                SqlConnectionString = $"data source={txtServer.Text.Trim().ToString()};initial catalog={txtdatabase.Text.Trim().ToString()};user id = {txtServerUser.Text.Trim().ToString()}; password = {txtServerPas.Text.Trim().ToString()}; ";
+                if (sqlKontrol(SqlConnectionString) == false)
+                {
+                    DataBaseControl = false;
+                }
+                else
+                {
+                    lblSqlDurumText.Text = "Veri Tabanı Mevcuttur.";
+                    DataBaseControl = true;
+                }
             }
         }
 
@@ -235,7 +311,7 @@ namespace Msp.App.App
         {
             bool x = false;
             var query = GetDbCreationQuery();
-            var conn = new System.Data.SqlClient.SqlConnection("Server=.;Integrated security=SSPI;database=master");
+            var conn = new System.Data.SqlClient.SqlConnection(@"Server=(localdb)\MSSQLLocalDB;Integrated security=SSPI;");
             var command = new System.Data.SqlClient.SqlCommand(query, conn);
             try
             {
@@ -263,7 +339,7 @@ namespace Msp.App.App
         }
         static string GetDbCreationQuery()
         {
-            string dbName = "msp2";
+            string dbName = "msp4";
             string[] files = { System.IO.Path.Combine(@"C:\Msp\Database", dbName + ".mdf"),
                        System.IO.Path.Combine(@"C:\Msp\Database", dbName + ".ldf") };
             string query = "CREATE DATABASE " + dbName +
@@ -540,11 +616,12 @@ namespace Msp.App.App
 
         public static System.Data.SqlClient.SqlCommand SqlCreateCommandFront()
         {
-            string connectionString = "initial catalog=msp2"
-                + ";data source=."
-                + ";user id=sa"
-                + ";password=123D654!"
+            string connectionString = "initial catalog=msp4"
+                + ";data source=(localdb)\\MSSQLLocalDB"
+                //+ ";user id=sa"
+                //+ ";password=123D654!"
                 + ";Packet Size=8000;Connect Timeout=120";
+
             ////if (SednaFBMain.user != null)
             ////{
             ////    connectionString += ";WSID=SEDNAFB|" + SednaFBMain.user;

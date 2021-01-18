@@ -13,5 +13,6 @@ namespace Msp.Models.Models.App
         public string ServerName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public string DataBase { get; set; }
     }
 }

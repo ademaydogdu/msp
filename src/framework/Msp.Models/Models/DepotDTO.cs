@@ -32,6 +32,8 @@ namespace Msp.Models.Models
 
         public bool? DepActive { get; set; }
 
-        
+        public int? CompanyRecId { get; set; }
+
+
     }
 }

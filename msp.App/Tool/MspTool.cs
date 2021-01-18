@@ -58,9 +58,12 @@ namespace Msp.App.Tool
             }
             return donus;
         }
-        public static bool sqlKontrol(string connectionString)
+        public static bool sqlKontrol(string server, string database)
         {
             bool donus = true;
+            string connectionString = "initial catalog=" + database
+    + ";data source=" + server
+    + ";Packet Size=8000";
             SqlConnection sConn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = sConn;

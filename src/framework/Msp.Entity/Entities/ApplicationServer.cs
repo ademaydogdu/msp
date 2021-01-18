@@ -22,6 +22,8 @@ namespace Msp.Entity.Entities
         public string UserName { get; set; }
         [MaxLength]
         public string Password { get; set; }
+        public string DataBase { get; set; }
+
 
     }
 }
