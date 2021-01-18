@@ -101,21 +101,55 @@ namespace Msp.App.App
                 {
                     Splash.ShowWaitForm();
                 }
-                SqlCommand sCommand = SqlCreateCommandFront();
+                SqlCommand sCommand = SqlCreateCommandFront(SqlConnectionString);
+
+
+                sCommand.CommandText = "SELECT  [TableName] = so.name FROM sysobjects so WHERE so.xtype = 'U' GROUP BY so.name ";
+                DataTable tblTableList = ExecuteSelectCommand(sCommand);
+                DataColumn[] KeysTableList = new DataColumn[1];
+                KeysTableList[0] = tblTableList.Columns["TableName"];
+                tblTableList.PrimaryKey = KeysTableList;
+
 
                 #region Users
+
+                if (tblTableList.Rows.Contains("Users") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[Users]( "
+                        + "     [id][int] IDENTITY(1, 1) NOT NULL, "
+                        + "     [username] [nvarchar] (50) NOT NULL, "
+                        + "     [password] [nvarchar] (50) NULL, "
+                        + " 	[note] [text] NULL, "
+                        + " 	[date] [datetime] NULL, "
+                        + " 	[Active] [bit] NULL, "
+                        + " 	[HaspPassword] [nvarchar] (50) NULL, "
+                        + " 	[Email] [nvarchar] (50) NULL, "
+                        + " 	[DefaultTheme] "
+                        + "         [nvarchar] "
+                        + "         (max) NULL, "
+                        + "     [DefaultTheme2] [nvarchar] "
+                        + "         (max) NULL, "
+                        + "     [AdminAuthority] [bit] NULL, "
+                        + "  CONSTRAINT[PK_users] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [username] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+                }
+
                 sCommand.CommandText = "INSERT INTO [dbo].[Users] "
-    + "         ([username] "
-    + "         ,[password] "
-    + "         ,[date] "
-    + "         ,[Active] "
-    + "         ,[HaspPassword]) "
-    + "   VALUES "
-    + "         ('Admin' "
-    + "         ,@Password "
-    + "         ,@date "
-    + "         ,'True' "
-    + "         ,@HashPassword)";
++ "         ([username] "
++ "         ,[password] "
++ "         ,[date] "
++ "         ,[Active] "
++ "         ,[HaspPassword]) "
++ "   VALUES "
++ "         ('Admin' "
++ "         ,@Password "
++ "         ,@date "
++ "         ,'True' "
++ "         ,@HashPassword)";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("Password", SqlDbType.NVarChar).Value = SecurityExtension.Sifrele("c4e128b141aFb");
                 sCommand.Parameters.Add("date", SqlDbType.DateTime).Value = DateTime.Now;
@@ -143,14 +177,68 @@ namespace Msp.App.App
                 #endregion
 
                 #region Company
+
+                if (tblTableList.Rows.Contains("Company") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[Company]( "
+                            + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                            + "     [CompanyCode] [nvarchar] (50) NULL, "
+                            + " 	[CompanyName] [nvarchar] (50) NULL, "
+                            + " 	[Logo] [image] NULL, "
+                            + " 	[Adress1] [nvarchar] (50) NULL, "
+                            + " 	[Adress2] [nvarchar] (50) NULL, "
+                            + " 	[BulvarCadde] [nvarchar] (50) NULL, "
+                            + " 	[TelNo] [int] NULL, "
+                            + " 	[BinaAdi] [nvarchar] (50) NULL, "
+                            + " 	[BinaNo] [nvarchar] (50) NULL, "
+                            + " 	[MahalleSemt] [nvarchar] (50) NULL, "
+                            + " 	[Sehir] [nvarchar] (50) NULL, "
+                            + " 	[PostaKodu] [int] NULL, "
+                            + " 	[Ulke] [nvarchar] (50) NULL, "
+                            + "  CONSTRAINT[PK_Company] PRIMARY KEY CLUSTERED "
+                            + " ( "
+                            + "    [RecId] ASC "
+                            + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                            + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+
+                }
+
                 sCommand.CommandText = "INSERT INTO [dbo].[Company] ([CompanyCode], [CompanyName]) VALUES ('001', @companyName);SELECT SCOPE_IDENTITY();";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("companyName", SqlDbType.NVarChar).Value = txtSirketAdi.EditValue;
-                int CompanyRecId = Convert.ToInt32(sCommand.ExecuteScalar());
+                int CompanyRecId = Convert.ToInt32(ExecuteScalar(sCommand));
                 //ExecuteNonQuery(sCommand);
                 #endregion
 
                 #region Depo
+
+                if (tblTableList.Rows.Contains("Depot") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[Depot]( "
+                            + "     [DID][int] IDENTITY(1, 1) NOT NULL, "
+                            + "     [DepName] [nvarchar] (50) NULL, "
+                            + " 	[DepAddress] [nvarchar] (50) NULL, "
+                            + " 	[DepDistrict] [nvarchar] (50) NULL, "
+                            + " 	[DepCity] [nvarchar] (50) NULL, "
+                            + " 	[DepAuthPerson] [nvarchar] (50) NULL, "
+                            + " 	[DepPhoneOne] [nvarchar] (50) NULL, "
+                            + " 	[DepPhoneTwo] [nvarchar] (50) NULL, "
+                            + " 	[DepTaxAdministration] [nvarchar] (50) NULL, "
+                            + " 	[DepTaxNo] [nvarchar] (50) NULL, "
+                            + " 	[DepActive] [bit] NULL, "
+                            + " 	[DepDate] [datetime] NULL, "
+                            + " 	[CompanyRecId] [int] NULL, "
+                            + "  CONSTRAINT[PK_Depot] PRIMARY KEY CLUSTERED "
+                            + " ( "
+                            + "    [DID] ASC "
+                            + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                            + " ) ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+
+
+                }
+
                 sCommand.CommandText = "INSERT INTO [dbo].[Depot] ([DepName],[CompanyRecId])  VALUES (@DepName, @CompanyRecId)";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("DepName", SqlDbType.NVarChar).Value = txtDepotAdi.EditValue;
@@ -159,6 +247,33 @@ namespace Msp.App.App
                 #endregion
 
                 #region ApplicatonServer
+
+                if (tblTableList.Rows.Contains("ApplicationServer") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[ApplicationServer]( "
+                      + "     [Id][int] IDENTITY(1, 1) NOT NULL, "
+                      + "  "
+                      + "     [Server] [nvarchar] "
+                      + "         (max) NULL, "
+                      + "  "
+                      + "     [ServerName] [nvarchar] "
+                      + "         (max) NULL, "
+                      + "  "
+                      + "     [UserName] [nvarchar] (200) NULL, "
+                      + " 	[Password] "
+                      + "         [nvarchar] "
+                      + "         (max) NULL, "
+                      + "  "
+                      + "     [DataBase] [nvarchar] (50) NULL, "
+                      + "  CONSTRAINT[PK_ApplicationServer] PRIMARY KEY CLUSTERED "
+                      + " ( "
+                      + "    [Id] ASC "
+                      + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                      + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+                }
+
+
 
                 string[] conArry;
                 conArry = SqlConnectionString.Split(';');
@@ -186,51 +301,96 @@ namespace Msp.App.App
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("server", SqlDbType.NVarChar).Value = "(localdb)\\MSSQLLocalDB";
                 sCommand.Parameters.Add("serverName", SqlDbType.NVarChar).Value = "SQLLocal";
-                sCommand.Parameters.Add("DataBase", SqlDbType.NVarChar).Value = "msp4";
+                sCommand.Parameters.Add("DataBase", SqlDbType.NVarChar).Value = "msp7";
                 ExecuteNonQuery(sCommand);
 
                 #endregion
 
                 #region Parameter
 
+                if (tblTableList.Rows.Contains("Parameters") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[Parameters]( "
+                            + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                            + "     [NumaratorShow] [bit] NULL, "
+                            + " 	[SaleApproval] [bit] NULL, "
+                            + " 	[SaleOutOfStock] [bit] NULL, "
+                            + " 	[SaleCahnge] [bit] NULL, "
+                            + " 	[SaleInformationSlip] [bit] NULL, "
+                            + " 	[MainSaleForm] [bit] NULL, "
+                            + " 	[AutoCurrency] [bit] NULL, "
+                            + " 	[UserRecordMy] [bit] NULL, "
+                            + " 	[PaymentLock] [bit] NULL, "
+                            + " 	[PaymentyForced] [bit] NULL, "
+                            + " 	[SaleNewRecord] [bit] NULL, "
+                            + " 	[SaleProductEndDate] [bit] NULL, "
+                            + " 	[ProductEndDateDay] [int] NULL, "
+                            + "  CONSTRAINT[PK_Parameters] PRIMARY KEY CLUSTERED "
+                            + " ( "
+                            + "    [RecId] ASC "
+                            + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                            + " ) ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+
+                }
+
                 sCommand.CommandText = "INSERT INTO [dbo].[Parameters] "
-                    + "           ([NumaratorShow] "
-                    + "           ,[SaleApproval] "
-                    + "           ,[SaleOutOfStock] "
-                    + "           ,[SaleCahnge] "
-                    + "           ,[SaleInformationSlip] "
-                    + "           ,[MainSaleForm] "
-                    + "           ,[AutoCurrency] "
-                    + "           ,[UserRecordMy] "
-                    + "           ,[PaymentLock] "
-                    + "           ,[PaymentyForced] "
-                    + "           ,[SaleNewRecord] "
-                    + "           ,[SaleProductEndDate] "
-                    + "           ,[ProductEndDateDay]) "
-                    + "     VALUES "
-                    + "           ('True' "
-                    + "           ,'False' "
-                    + "           ,'False' "
-                    + "           ,'False' "
-                    + "           ,'False' "
-                    + "           ,'False' "
-                    + "           ,'False' "
-                    + "           ,'False' "
-                    + "           ,'False' "
-                    + "           ,'True' "
-                    + "           ,'True' "
-                    + "           ,'False' "
-                    + "           ,10)";
+                + "           ([NumaratorShow] "
+                + "           ,[SaleApproval] "
+                + "           ,[SaleOutOfStock] "
+                + "           ,[SaleCahnge] "
+                + "           ,[SaleInformationSlip] "
+                + "           ,[MainSaleForm] "
+                + "           ,[AutoCurrency] "
+                + "           ,[UserRecordMy] "
+                + "           ,[PaymentLock] "
+                + "           ,[PaymentyForced] "
+                + "           ,[SaleNewRecord] "
+                + "           ,[SaleProductEndDate] "
+                + "           ,[ProductEndDateDay]) "
+                + "     VALUES "
+                + "           ('True' "
+                + "           ,'False' "
+                + "           ,'False' "
+                + "           ,'False' "
+                + "           ,'False' "
+                + "           ,'False' "
+                + "           ,'False' "
+                + "           ,'False' "
+                + "           ,'False' "
+                + "           ,'True' "
+                + "           ,'True' "
+                + "           ,'False' "
+                + "           ,10)";
                 sCommand.Parameters.Clear();
                 ExecuteNonQuery(sCommand);
                 #endregion
 
                 #region Currency
 
+                if (tblTableList.Rows.Contains("CurrencyType") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[CurrencyType]( "
+                    + "    [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "    [CurrencyCode] [varchar] (3) NOT NULL, "
+                    + "     [Remark] [varchar] (50) NULL, "
+                    + "	[CompanyRecId] [int] NULL, "
+                    + " CONSTRAINT[PK_CurrencyType] PRIMARY KEY CLUSTERED "
+                    + "( "
+                    + "   [CurrencyCode] ASC "
+                    + ")WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + ") ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+
+                }
+
                 sCommand.CommandText = "INSERT INTO [dbo].[CurrencyType] ([CurrencyCode],[Remark],[CompanyRecId]) VALUES ('TL','TL',@CompanyRecId) ";
+                sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("CompanyRecId", SqlDbType.Int).Value = CompanyRecId;
                 ExecuteNonQuery(sCommand);
+
                 sCommand.CommandText = "INSERT INTO [dbo].[CurrencyType] ([CurrencyCode],[Remark],[CompanyRecId]) VALUES ('USD','USD',@CompanyRecId) ";
+                sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("CompanyRecId", SqlDbType.Int).Value = CompanyRecId;
                 ExecuteNonQuery(sCommand);
 
@@ -238,7 +398,57 @@ namespace Msp.App.App
 
                 #region ProgramsControl
 
+                if (tblTableList.Rows.Contains("ProgramsControl") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[ProgramsControl]( "
+                                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                                + "     [MspVersion] [nvarchar] (50) NULL, "
+                                + " 	[Licence] [nvarchar] (50) NULL, "
+                                + " 	[FirstDate] [datetime] NULL, "
+                                + " 	[MacAdress] [nvarchar] (50) NULL, "
+                                + " 	[IpAdress] [nvarchar] (50) NULL, "
+                                + " 	[LocalIpAdress] [nvarchar] (50) NULL, "
+                                + "  CONSTRAINT[PK_ProgramsControl] PRIMARY KEY CLUSTERED "
+                                + " ( "
+                                + "    [RecId] ASC "
+                                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                                + " ) ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+
+                }
+
+
                 sCommand.CommandText = "INSERT INTO [dbo].[ProgramsControl]([MspVersion],[Licence],[FirstDate],[MacAdress],[IpAdress],[LocalIpAdress]) VALUES ('1.0.0.0','',Null,'','','')";
+                sCommand.Parameters.Clear();
+                ExecuteNonQuery(sCommand);
+
+
+                #endregion
+
+                #region PaymentType
+
+                if (tblTableList.Rows.Contains("PaymentType") == false)
+                {
+                    sCommand.CommandText = "CREATE TABLE [dbo].[PaymentType]( "
+                        + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                        + "     [Remark] [nvarchar] (50) NULL, "
+                        + "  CONSTRAINT[PK_PaymentType] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [RecId] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY]";
+                    ExecuteNonQuery(sCommand);
+
+                }
+
+                sCommand.CommandText = "INSERT INTO [dbo].[PaymentType] ([Remark]) VALUES ('Nakit')";
+                sCommand.Parameters.Clear();
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[PaymentType] ([Remark]) VALUES ('Pos')";
+                sCommand.Parameters.Clear();
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[PaymentType] ([Remark]) VALUES ('Pos & Nakit')";
+                sCommand.Parameters.Clear();
                 ExecuteNonQuery(sCommand);
 
 
@@ -248,6 +458,7 @@ namespace Msp.App.App
             }
             catch (Exception ex)
             {
+                XtraMessageBox.Show(ex.Message);
             }
             finally
             {
@@ -275,8 +486,8 @@ namespace Msp.App.App
             {
                 AppMain.LocalConnect = true;
                 SqlLocal = true;
-                SqlConnectionString = @"data source=(localdb)\MSSQLLocalDB;initial catalog=msp4;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
-                //SqlConnectionString = "data source = DG; initial catalog = msp2; user id = sa; password = 123D654!; ";
+                SqlConnectionString = @"data source=(localdb)\MSSQLLocalDB;initial catalog=msp7;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
+                //SqlConnectionString = "data source = DG; initial catalog = msp7; user id = sa; password = 123D654!; ";
                 if (sqlKontrol(SqlConnectionString) == false)
                 {
                     DataBaseControl = false;
@@ -312,6 +523,7 @@ namespace Msp.App.App
             bool x = false;
             var query = GetDbCreationQuery();
             var conn = new System.Data.SqlClient.SqlConnection(@"Server=(localdb)\MSSQLLocalDB;Integrated security=SSPI;");
+            //var conn = new System.Data.SqlClient.SqlConnection(@"Server=.;Integrated security=SSPI;");
             var command = new System.Data.SqlClient.SqlCommand(query, conn);
             try
             {
@@ -337,9 +549,10 @@ namespace Msp.App.App
 
             }
         }
+
         static string GetDbCreationQuery()
         {
-            string dbName = "msp4";
+            string dbName = "msp7";
             string[] files = { System.IO.Path.Combine(@"C:\Msp\Database", dbName + ".mdf"),
                        System.IO.Path.Combine(@"C:\Msp\Database", dbName + ".ldf") };
             string query = "CREATE DATABASE " + dbName +
@@ -379,7 +592,7 @@ namespace Msp.App.App
                     Script = lastDim[lastDim.Length - 2];
                 }
             }
-            SqlCommand sCommand = SqlCreateCommandFront();
+            SqlCommand sCommand = SqlCreateCommandFront(SqlConnectionString);
 
             foreach (var item in resources)
             {
@@ -614,13 +827,13 @@ namespace Msp.App.App
         }
 
 
-        public static System.Data.SqlClient.SqlCommand SqlCreateCommandFront()
+        public static System.Data.SqlClient.SqlCommand SqlCreateCommandFront(string connectionString)
         {
-            string connectionString = "initial catalog=msp4"
-                + ";data source=(localdb)\\MSSQLLocalDB"
-                //+ ";user id=sa"
-                //+ ";password=123D654!"
-                + ";Packet Size=8000;Connect Timeout=120";
+            //string connectionString = "initial catalog=msp7"
+            //    + ";data source=(localdb)\\MSSQLLocalDB"
+            //    //+ ";user id=sa"
+            //    //+ ";password=123D654!"
+            //    + ";Packet Size=8000;Connect Timeout=120";
 
             ////if (SednaFBMain.user != null)
             ////{
@@ -653,6 +866,45 @@ namespace Msp.App.App
                 command.Connection.Close();
             }
             return affectRows;
+        }
+        public static string ExecuteScalar(DbCommand command)
+        {
+            string value = string.Empty;
+            try
+            {
+                command.Connection.Open();
+                value = command.ExecuteScalar().ToString();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+            return value;
+        }
+
+        public static DataTable ExecuteSelectCommand(DbCommand command)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                command.Connection.Open();
+                DbDataReader reader = command.ExecuteReader();
+                table.Load(reader);
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+            return table;
         }
 
         private void wizardControl1_CancelClick(object sender, CancelEventArgs e)

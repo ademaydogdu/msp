@@ -136,7 +136,7 @@ namespace Msp.App.App
                         + " ( "
                         + "    [Id] ASC "
                         + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
-                        + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]"; 
+                        + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
                 //sCommand.CommandText = "INSERT INTO FBAccIntParameter (IntType,DocumentTypeCode,PayType)  VALUES(5,1,'0')";
                 //ExecuteNonQuery(sCommand);
@@ -147,11 +147,10 @@ namespace Msp.App.App
 
             #endregion
 
-
             #region Users
             if (tblTableList.Rows.Contains("Users") == false)
             {
-                sCommand.CommandText = " CREATE TABLE [dbo].[Users]( "
+                sCommand.CommandText = "CREATE TABLE [dbo].[Users]( "
                         + "     [id][int] IDENTITY(1, 1) NOT NULL, "
                         + "     [username] [nvarchar] (50) NOT NULL, "
                         + "     [password] [nvarchar] (50) NULL, "
@@ -160,6 +159,12 @@ namespace Msp.App.App
                         + " 	[Active] [bit] NULL, "
                         + " 	[HaspPassword] [nvarchar] (50) NULL, "
                         + " 	[Email] [nvarchar] (50) NULL, "
+                        + " 	[DefaultTheme] "
+                        + "         [nvarchar] "
+                        + "         (max) NULL, "
+                        + "     [DefaultTheme2] [nvarchar] "
+                        + "         (max) NULL, "
+                        + "     [AdminAuthority] [bit] NULL, "
                         + "  CONSTRAINT[PK_users] PRIMARY KEY CLUSTERED "
                         + " ( "
                         + "    [username] ASC "
@@ -225,15 +230,25 @@ namespace Msp.App.App
             if (tblTableList.Rows.Contains("Company") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Company]( "
-                    + "     [RecId][int] NOT NULL, "
-
-                    + "    [CompanyCode] [nchar] (10) NULL, "
-                    + " 	[CompanyName] [nchar] (10) NULL, "
-                    + "  CONSTRAINT[PK_Company] PRIMARY KEY CLUSTERED "
-                    + " ( "
-                    + "    [RecId] ASC "
-                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
-                    + " ) ON[PRIMARY]";
+                            + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                            + "     [CompanyCode] [nvarchar] (50) NULL, "
+                            + " 	[CompanyName] [nvarchar] (50) NULL, "
+                            + " 	[Logo] [image] NULL, "
+                            + " 	[Adress1] [nvarchar] (50) NULL, "
+                            + " 	[Adress2] [nvarchar] (50) NULL, "
+                            + " 	[BulvarCadde] [nvarchar] (50) NULL, "
+                            + " 	[TelNo] [int] NULL, "
+                            + " 	[BinaAdi] [nvarchar] (50) NULL, "
+                            + " 	[BinaNo] [nvarchar] (50) NULL, "
+                            + " 	[MahalleSemt] [nvarchar] (50) NULL, "
+                            + " 	[Sehir] [nvarchar] (50) NULL, "
+                            + " 	[PostaKodu] [int] NULL, "
+                            + " 	[Ulke] [nvarchar] (50) NULL, "
+                            + "  CONSTRAINT[PK_Company] PRIMARY KEY CLUSTERED "
+                            + " ( "
+                            + "    [RecId] ASC "
+                            + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                            + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
 
             }
@@ -270,9 +285,25 @@ namespace Msp.App.App
             if (tblTableList.Rows.Contains("Parameters") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Parameters]( "
-                    + "     [RecId][int] NULL, "
-                    + "     [NumaratorShow] [bit] NULL "
-                    + " ) ON[PRIMARY]";
+                            + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                            + "     [NumaratorShow] [bit] NULL, "
+                            + " 	[SaleApproval] [bit] NULL, "
+                            + " 	[SaleOutOfStock] [bit] NULL, "
+                            + " 	[SaleCahnge] [bit] NULL, "
+                            + " 	[SaleInformationSlip] [bit] NULL, "
+                            + " 	[MainSaleForm] [bit] NULL, "
+                            + " 	[AutoCurrency] [bit] NULL, "
+                            + " 	[UserRecordMy] [bit] NULL, "
+                            + " 	[PaymentLock] [bit] NULL, "
+                            + " 	[PaymentyForced] [bit] NULL, "
+                            + " 	[SaleNewRecord] [bit] NULL, "
+                            + " 	[SaleProductEndDate] [bit] NULL, "
+                            + " 	[ProductEndDateDay] [int] NULL, "
+                            + "  CONSTRAINT[PK_Parameters] PRIMARY KEY CLUSTERED "
+                            + " ( "
+                            + "    [RecId] ASC "
+                            + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                            + " ) ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
 
             }
@@ -500,7 +531,6 @@ namespace Msp.App.App
             Application.DoEvents();
             #endregion
 
-
             #region InvoiceTrans
             if (tblTableList.Rows.Contains("InvoiceTrans") == false)
             {
@@ -601,23 +631,24 @@ namespace Msp.App.App
             if (tblTableList.Rows.Contains("Depot") == false)
             {
                 sCommand.CommandText = "CREATE TABLE [dbo].[Depot]( "
-                + "     [DID][int] IDENTITY(1, 1) NOT NULL, "
-                + "     [DepName] [nvarchar] (50) NULL, "
-                + " 	[DepAddress] [nvarchar] (50) NULL, "
-                + " 	[DepDistrict] [nvarchar] (50) NULL, "
-                + " 	[DepCity] [nvarchar] (50) NULL, "
-                + " 	[DepAuthPerson] [nvarchar] (50) NULL, "
-                + " 	[DepPhoneOne] [nvarchar] (50) NULL, "
-                + " 	[DepPhoneTwo] [nvarchar] (50) NULL, "
-                + " 	[DepTaxAdministration] [nvarchar] (50) NULL, "
-                + " 	[DepTaxNo] [nvarchar] (50) NULL, "
-                + " 	[DepActive] [bit] NULL, "
-                + " 	[DepDate] [datetime] NULL, "
-                + "  CONSTRAINT[PK_Depot] PRIMARY KEY CLUSTERED "
-                + " ( "
-                + "    [DID] ASC "
-                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
-                + " ) ON[PRIMARY]";
+                            + "     [DID][int] IDENTITY(1, 1) NOT NULL, "
+                            + "     [DepName] [nvarchar] (50) NULL, "
+                            + " 	[DepAddress] [nvarchar] (50) NULL, "
+                            + " 	[DepDistrict] [nvarchar] (50) NULL, "
+                            + " 	[DepCity] [nvarchar] (50) NULL, "
+                            + " 	[DepAuthPerson] [nvarchar] (50) NULL, "
+                            + " 	[DepPhoneOne] [nvarchar] (50) NULL, "
+                            + " 	[DepPhoneTwo] [nvarchar] (50) NULL, "
+                            + " 	[DepTaxAdministration] [nvarchar] (50) NULL, "
+                            + " 	[DepTaxNo] [nvarchar] (50) NULL, "
+                            + " 	[DepActive] [bit] NULL, "
+                            + " 	[DepDate] [datetime] NULL, "
+                            + " 	[CompanyRecId] [int] NULL, "
+                            + "  CONSTRAINT[PK_Depot] PRIMARY KEY CLUSTERED "
+                            + " ( "
+                            + "    [DID] ASC "
+                            + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                            + " ) ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
 
             }
@@ -734,6 +765,156 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update();
             Application.DoEvents();
+            #endregion
+
+            #region CashPayGroupDef
+
+            if (tblTableList.Rows.Contains("CashPayGroupDef") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[CashPayGroupDef]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [ReCashPayGroupDef] [nvarchar] "
+                    + "         (max) NULL, "
+                    + "  CONSTRAINT[PK_CashPayGroupDef] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
+            #region CurrencyType
+
+            if (tblTableList.Rows.Contains("CurrencyType") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[CurrencyType]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [CurrencyCode] [varchar] (3) NOT NULL, "
+                    + "      [Remark] [varchar] (50) NULL, "
+                    + " 	[CompanyRecId] [int] NULL, "
+                    + "  CONSTRAINT[PK_CurrencyType] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [CurrencyCode] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
+            #region ExchangeRate
+
+
+            #endregion
+
+            #region OpenFormRights
+
+            #endregion
+
+            #region PaymentType
+
+            #endregion
+
+            #region ProductGroup
+
+            #endregion
+
+            #region ProductMark
+
+            #endregion
+
+            #region ProductMovement
+
+            #endregion
+
+            #region SaleOwner
+            if (tblTableList.Rows.Contains("SaleOwner") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SaleOwner]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [Date] [datetime] NULL, "
+                + " 	[CustomerName] [nvarchar] (50) NULL, "
+                + " 	[PaymentType] [int] NULL, "
+                + " 	[NetPrice] [decimal](18, 0) NULL, "
+                + " 	[NetPriceText] [nvarchar] (50) NULL,        "
+                + " 	[KDV] [decimal](18, 0) NULL,                "
+                + " 	[DiscountPrice] [decimal](18, 0) NULL,      "
+                + " 	[TotalPriceText] [nvarchar] (50) NULL,      "
+                + " 	[TotalPrice] [decimal](18, 0) NULL,         "
+                + " 	[ReceivedPrice] [decimal](18, 0) NULL,      "
+                + " 	[Remark]                                    "
+                + "         [nvarchar]                              "
+                + "         (max) NULL,                             "
+                + "                                                 "
+                + "     [Veresiye] [bit] NULL,                      "
+                + " 	[CompanyRecId] [int] NULL,                  "
+                + " 	[Deleted] [bit] NULL,                       "
+                + " 	[UserCode] [nvarchar] (50) NULL,            "
+                + " 	[AlinanPrice] [decimal](18, 0) NULL,        "
+                + " 	[CaseId] [int] NULL,                        "
+                + " 	[VeresiyeClosedDate] [datetime] NULL,       "
+                + " 	[DovizId] [int] NULL,                       "
+                + "  CONSTRAINT[PK_SaleOwner] PRIMARY KEY CLUSTERED "
+                + " (                                               "
+                + "    [RecId] ASC                                  "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+            #endregion
+
+            #region SaleTrans
+
+            if (tblTableList.Rows.Contains("SaleTrans") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SaleTrans]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL,  "
+                    + "     [SaleOwnerId] [int] NULL, "
+                    + " 	[ProductId] [int] NULL, "
+                    + " 	[ProductBarcode] [nvarchar] (50) NULL, "
+                    + " 	[ProductName] [nvarchar] (50) NULL, "
+                    + " 	[ProductQuantity] [int] NULL, "
+                    + " 	[ProductPrice] [decimal](18, 0) NULL, "
+                    + " 	[ProductAmount] [decimal](18, 0) NULL, "
+                    + " 	[CompanyId] [int] NULL, "
+                    + " 	[Deleted] [bit] NULL, "
+                    + " 	[UnitId] [int] NULL, "
+                    + " 	[Tax] [int] NULL, "
+                    + " 	[TaxAmount] [decimal](18, 0) NULL, "
+                    + " 	[ProductDate] [datetime] NULL, "
+                    + " 	[CaseId] [int] NULL, "
+                    + "  CONSTRAINT[PK_SaleTrans] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
+            #region SpeedSaleProduct
+
+            #endregion
+
+            #region Units
+
             #endregion
 
 
