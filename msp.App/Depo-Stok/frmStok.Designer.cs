@@ -82,11 +82,11 @@
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMarqueeProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -369,8 +369,8 @@
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProductsRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddNewProduct),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditProduct),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_EnvanterGiris),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProBarcodeLabel),
@@ -642,6 +642,12 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Ürün Harketleri";
+            this.barButtonItem2.Id = 21;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // repositoryItemLookUpEdit2
             // 
             this.repositoryItemLookUpEdit2.AutoHeight = false;
@@ -676,12 +682,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Ürün Harketleri";
-            this.barButtonItem2.Id = 21;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmStok
             // 

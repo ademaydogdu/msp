@@ -21,13 +21,17 @@ namespace Msp.Infrastructure
         public static bool NetworkConnected = true;
         public static string Company { get; set; }
         public static int CompanyRecId { get; set; }
-
         public static bool LocalConnect { get; set; }
 
 
         public static string MAcAdress { get; set; }
         public static string IpAdress { get; set; }
         public static string LocalIpAdress { get; set; }
+
+
+
+        public static Task<List<ProductDTO>> _productsTask { get; set; }
+
 
 
     }

@@ -16,6 +16,7 @@ using Msp.App.Tool;
 using msp.App;
 using Msp.App.Report;
 using Msp.Infrastructure;
+using Msp.App.Satis;
 
 namespace Msp.App.Depo_Stok
 {
@@ -140,12 +141,20 @@ namespace Msp.App.Depo_Stok
         #region Sale
         private void do_Form(int RecId)
         {
-            Form _Form = MspTool.get_OpenForm("frmSatis");
-            if (_Form != null)
+            Form _Form_Satis = MspTool.get_OpenForm("frmSatis");
+            if (_Form_Satis != null)
             {
-                ((frmSatis)_Form).Insert_Product(RecId);
+                ((frmSatis)_Form_Satis).Insert_Product(RecId);
             }
-            _Form = null;
+
+            Form _Form_Satis_ProducM = MspTool.get_OpenForm("frmSaleProductMovemnet");
+            if (_Form_Satis_ProducM != null)
+            {
+                ((frmSaleProductMovemnet)_Form_Satis_ProducM).Insert_Product(RecId);
+            }
+
+            _Form_Satis_ProducM = null;
+            _Form_Satis = null;
         }
         public void SaleInsert()
         {

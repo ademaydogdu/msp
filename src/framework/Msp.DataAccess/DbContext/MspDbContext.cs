@@ -53,6 +53,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<Logs> LOGS { get; set; }
         public virtual DbSet<CaseDefinition> CaseDefinition { get; set; }
         public virtual DbSet<CaseMovement> CaseMovement { get; set; }
+        public virtual DbSet<ProductBarCode> ProductBarCode { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

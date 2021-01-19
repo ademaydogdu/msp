@@ -67,6 +67,7 @@
     <Compile Include="Models\Order\OrderTransDTO.cs" />
     <Compile Include="Models\ParametersDTO.cs" />
     <Compile Include="Models\PaymentTypeDTO.cs" />
+    <Compile Include="Models\ProductBarCodeDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\ProductGroupDTO.cs" />
     <Compile Include="Models\ProductMarkDTO.cs" />

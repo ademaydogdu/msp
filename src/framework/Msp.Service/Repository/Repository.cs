@@ -82,6 +82,47 @@ namespace Msp.Service.Repository
             }
         }
 
+        public async Task<G> RunAsync<T, G>(Expression<Func<T, G>> expression) where T : BaseService where G : class
+        {
+            var instance = Activator.CreateInstance<T>();
+
+            //instance.FormName = "" ;
+            //foreach (Form item in Application.OpenForms)
+            //{
+            //    Control.CheckForIllegalCrossThreadCalls = false;
+            //    if (item.IsMdiContainer)
+            //    {
+            //        var activeForm = item.ActiveMdiChild;
+            //        if (activeForm == null)
+            //            break;
+
+            //        instance.FormName = activeForm.Name;
+            //        break;
+            //    }
+            //    //break;
+            //}
+
+
+            if (_localApp)
+            {
+                var action = expression.Compile();
+                return action(instance);
+            }
+            else
+            {
+                _httpService.SetRouteMap(((MethodCallExpression)expression.Body).Method.Name);
+                var parameterList = instance.GetType().GetMethod(((MethodCallExpression)expression.Body).Method.Name).GetParameters().Select(c => c.Name).ToList();
+
+                var objects = expression.GetParamsFromExpression();
+                Dictionary<string, object> dictionary = new Dictionary<string, object>();
+                for (int i = 0; i < parameterList.Count; i++)
+                {
+                    dictionary.Add(parameterList[i], objects[i]);
+                }
+
+                return await _httpService.SendAsync<G>(dictionary);
+            }
+        }
 
 
     }

@@ -1066,6 +1066,29 @@ namespace Msp.App.App
 
             #endregion
 
+            #region ProductBarCode
+
+            if (tblTableList.Rows.Contains("ProductBarCode") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[ProductBarCode]( "
+               + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+               + "     [ProductId] [int] NULL, "
+               + " 	[Barcode] [varchar] (50) NULL, "
+               + " 	[Remark] [varchar] (255) NULL, "
+               + " 	[CompanyRecId] [int] NULL, "
+               + "  CONSTRAINT[PK_ProductBarCode] PRIMARY KEY CLUSTERED "
+               + " ( "
+               + "    [RecId] ASC "
+               + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON[PRIMARY] "
+               + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+
+            #endregion
 
             #endregion
 

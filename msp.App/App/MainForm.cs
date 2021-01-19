@@ -230,6 +230,25 @@ namespace msp.App
             return _LocalIP;
         }
 
+        private bool formAcikmi(string formAdi)
+        {
+            bool formBulundu = false;
+            foreach (Form ofrom in Application.OpenForms)
+                if (ofrom.Name == formAdi)
+                {
+
+                    formBulundu = true;
+                    ofrom.Activate();
+                    break;
+                }
+            return formBulundu;
+        }
+
+        public void do_RefreshDefault()
+        {
+            AppMain._productsTask = _repository.RunAsync<Msp.Service.Service.DepotStock.DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+        }
+
 
         #endregion
 
@@ -410,7 +429,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(21, 1, 1, 8);
+            Version oVersionFB = new Version(21, 1, 1, 10);
             AppMain.MspVersion = oVersionFB;
 
             string AppPath = @"C:\Msp";
@@ -436,6 +455,7 @@ namespace msp.App
 
                 do_OpenFormAyarlari();
                 do_MenuyuControl();
+                do_RefreshDefault();
                 do_FormSecRight();
                 do_OpenFormSale();
                 UserLookAndFeel.Default.SetSkinStyle(AppMain.User.DefaultTheme, AppMain.User.DefaultTheme2);
@@ -453,13 +473,19 @@ namespace msp.App
 
         #region Bar_Buton
 
-
-
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmSatis frm = new frmSatis();
-            frm.MdiParent = this;
-            frm.Show(0);
+            if (formAcikmi("frmSaleProductMovemnet"))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Satış - Ürün Hareket Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!formAcikmi("frmSatis"))
+            {
+                frmSatis frm = new frmSatis();
+                frm.MdiParent = this;
+                frm.Show(0); 
+            }
 
         }
 
@@ -899,16 +925,22 @@ namespace msp.App
 
         private void barButtonItem119_ItemClick(object sender, ItemClickEventArgs e)
         {
-            CashPayGroupDef frm = new CashPayGroupDef();
-            frm.MdiParent = this;
-            frm.Show();
+            if (!formAcikmi("CashPayGroupDef"))
+            {
+                CashPayGroupDef frm = new CashPayGroupDef();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
         }
 
         private void barButtonItem120_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmGroupDefinition frm = new frmGroupDefinition();
-            frm.MdiParent = this;
-            frm.Show();
+            if (!formAcikmi("frmGroupDefinition"))
+            {
+                frmGroupDefinition frm = new frmGroupDefinition();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
         }
 
         private void bbi_KasaHareketi_ItemClick(object sender, ItemClickEventArgs e)
@@ -984,6 +1016,11 @@ namespace msp.App
 
         private void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (formAcikmi("frmSatis"))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Satış Ekranı açık Lütfen Kapatınız...", "Uyarı",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             frmSaleProductMovemnet frm = new frmSaleProductMovemnet();
             frm.MdiParent = this;
             frm.Show();

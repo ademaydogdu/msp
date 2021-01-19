@@ -96,6 +96,19 @@ namespace Msp.Service.Service.DepotStock
                         _db.products.Add(product);
                         _db.SaveChanges();
 
+                        if (model.PBarcode.Length > 0)
+                        {
+                            ProductBarCodeDTO productBarCode = new ProductBarCodeDTO
+                            {
+                                Barcode = model.PBarcode,
+                                ProductId = product.PID,
+                                CompanyRecId = product.PCompanyId,
+                                Remark = product.PName
+                            };
+                            _db.ProductBarCode.Add(base.Map<ProductBarCodeDTO, ProductBarCode>(productBarCode));
+                            _db.SaveChanges();
+                        }
+
                         ProductMovementDTO productMovement = new ProductMovementDTO
                         {
                             ProductId = product.PID,
@@ -117,6 +130,15 @@ namespace Msp.Service.Service.DepotStock
                             _db.Entry(entity).CurrentValues.SetValues(model);
                             _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                         }
+
+                        var _ProductBarcode = _db.ProductBarCode.FirstOrDefault(x => x.ProductId == response.Response.PID);
+                        if (_ProductBarcode != null)
+                        {
+                            _ProductBarcode.Barcode = response.Response.PBarcode;
+                            _db.Entry(_ProductBarcode).CurrentValues.SetValues(_ProductBarcode);
+                            _db.Entry(_ProductBarcode).State = System.Data.Entity.EntityState.Modified;
+                        }
+
                     }
                     _db.SaveChanges();
                 }
@@ -143,6 +165,12 @@ namespace Msp.Service.Service.DepotStock
                 if (speedRecord.Count > 0)
                 {
                     _db.SpeedSaleProduct.RemoveRange(speedRecord);
+                }
+
+                var ProductBarcod = _db.ProductBarCode.FirstOrDefault(x => x.ProductId == PID);
+                if (ProductBarcod != null)
+                {
+                    _db.ProductBarCode.Remove(ProductBarcod);
                 }
 
                 _db.SaveChanges();

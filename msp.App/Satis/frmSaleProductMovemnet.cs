@@ -53,6 +53,7 @@ namespace Msp.App.Satis
         };
         List<ProductMovementDTO> __List_ProductMocemenet = new List<ProductMovementDTO>();
         List<ProductDTO> _productlist = new List<ProductDTO>();
+        List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
 
 
 
@@ -214,8 +215,6 @@ namespace Msp.App.Satis
         {
             __List_ProductMocemenet = _repository.Run<DepotStockService, List<ProductMovementDTO>>(x => x.GetListProduct_Movement_Daily());
             bs_ProductMovent.DataSource = __List_ProductMocemenet;
-
-
         }
 
 
@@ -229,8 +228,14 @@ namespace Msp.App.Satis
                 lc_CaseDef.EditValue = __List_CaseDef.FirstOrDefault().RecId;
             }
 
+            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyType.DataSource = _currencyTypes;
+
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_products.DataSource = _productlist;
+
+            __dll_SaleOwner = new SaleOwnerDTO();
+            __dll_SaleOwner.Date = DateTime.Now;
 
             daily_SaleProduct();
             mspTool.Get_Layout(this);
@@ -267,5 +272,62 @@ namespace Msp.App.Satis
             gridView1.CloseEditor();
             do_save();
         }
+
+        private void bbi_MiktarAzalt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                oRow.ProductQuantity += 1;
+                var ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                oRow.ProductAmount = ProductAmount;
+                oRow.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == oRow.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
+
+                gridControl1.RefreshDataSource();
+                TopTotal();
+
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (oRow.ProductQuantity >= 1)
+                {
+                    oRow.ProductQuantity -= 1;
+                    oRow.ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                    oRow.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == oRow.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                    gridControl1.RefreshDataSource();
+                    TopTotal();
+                }
+            }
+        }
+
+        private void bbi_SatırSil_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaleTransDTO oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                __dl_List_SaleTrans.Remove(oRow);
+                gridControl1.RefreshDataSource();
+                TopTotal();
+            }
+        }
+
+        private void bbi_TopluSil_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (__dl_List_SaleTrans.Count > 0)
+            {
+                __dl_List_SaleTrans.Clear();
+                __dll_SaleOwner.TotalPrice = 0;
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
+                gridControl1.RefreshDataSource();
+            }
+        }
+
+
+
     }
 }
