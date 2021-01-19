@@ -811,28 +811,142 @@ namespace Msp.App.App
             #endregion
 
             #region ExchangeRate
-
+            if (tblTableList.Rows.Contains("ExchangeRate") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[ExchangeRate]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [CurrDate] [datetime] "
+                + "         NOT NULL, "
+                + "     [CurrencyCode] [varchar] (3) NOT NULL, "
+                + "      [Invoice] [numeric] (18, 5) NULL, "
+                + " 	[Exchange] [numeric] (18, 5) NULL, "
+                + " 	[Pos] [numeric] (18, 5) NULL, "
+                + " 	[Buying] [numeric] (18, 5) NULL, "
+                + " 	[Selling] [numeric] (18, 5) NULL, "
+                + " 	[EffectiveBuying] [numeric] (18, 5) NULL, "
+                + " 	[EffectiveSelling] [numeric] (18, 5) NULL, "
+                + " 	[RecordUser] [varchar] (10) NULL, "
+                + " 	[RecordDate] [datetime] NULL, "
+                + "  CONSTRAINT[PK_ExchangeRate] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [CurrDate] ASC, "
+                + "    [CurrencyCode] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
 
             #endregion
 
             #region OpenFormRights
-
+            if (tblTableList.Rows.Contains("OpenFormRights") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[OpenFormRights]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [UserCode] [varchar] (10) NULL, "
+                + " 	[ActionName] [varchar] (50) NULL, "
+                + " 	[OpenForm] [bit] NULL, "
+                + " 	[CompanyRecId] [int] NULL, "
+                + "  CONSTRAINT[PK_OpenFormRights] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
             #endregion
 
             #region PaymentType
-
+            if (tblTableList.Rows.Contains("PaymentType") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[PaymentType]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [Remark] [nvarchar] (50) NULL, "
+                    + "  CONSTRAINT[PK_PaymentType] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
             #endregion
 
             #region ProductGroup
 
+            if (tblTableList.Rows.Contains("ProductGroup") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[ProductGroup]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [Grouup] [nvarchar] (50) NULL, "
+                + " 	[ReGroup] "
+                + "         [nvarchar] "
+                + "         (max) NULL, "
+                + "  CONSTRAINT[PK_ProductGroup] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
             #endregion
 
             #region ProductMark
-
+            if (tblTableList.Rows.Contains("ProductMark") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[ProductMark]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [Mark] [nvarchar] (50) NULL, "
+                + " 	[Remark] "
+                + "         [nvarchar] "
+                + "         (max) NULL, "
+                + "  CONSTRAINT[PK_ProductMark] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
             #endregion
 
             #region ProductMovement
-
+            if (tblTableList.Rows.Contains("ProductMovement") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[ProductMovement]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [ProductId] [int] NULL, "
+                    + " 	[Durum] [nvarchar] (50) NULL, "
+                    + " 	[Quantity] [int] NULL, "
+                    + " 	[Amount] [decimal](18, 2) NULL, "
+                    + " 	[Date] [datetime] NULL, "
+                    + " 	[Deleted] [bit] NULL, "
+                    + " 	[DurumType] [int] NULL, "
+                    + " 	[SaleOwnerId] [int] NULL, "
+                    + "  CONSTRAINT[PK_ProductMovement] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
             #endregion
 
             #region SaleOwner
@@ -911,9 +1025,44 @@ namespace Msp.App.App
 
             #region SpeedSaleProduct
 
+            if (tblTableList.Rows.Contains("SpeedSaleProduct") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SpeedSaleProduct]( "
+                        + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                        + "     [ProductId] [int] NULL, "
+                        + " 	[İmage] [nchar] (10) NULL, "
+                        + " 	[ButtonType] [int] NULL, "
+                        + "  CONSTRAINT[PK_SpeedSaleProduct] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [RecId] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+
             #endregion
 
             #region Units
+
+            if (tblTableList.Rows.Contains("Units") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[Units]( "
+                    + "     [UID][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [UName] [nvarchar] (50) NULL, "
+                    + "  CONSTRAINT[PK_Units] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [UID] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
 
             #endregion
 
