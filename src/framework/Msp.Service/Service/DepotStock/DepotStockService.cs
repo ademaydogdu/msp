@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity.Core.Objects;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -417,9 +418,19 @@ namespace Msp.Service.Service.DepotStock
 
         public List<ProductMovementDTO> GetListProduct_Movement_Daily()
         {
+            DateTime date = DateTime.Now;
             using (var _db = new MspDbContext())
             {
-                return base.Map<List<ProductMovement>, List<ProductMovementDTO>>(_db.ProductMovement.Where(x => x.Date == DateTime.Now && x.DurumType == 1 && x.Deleted == false).ToList());
+
+                //List<ProductMovementDTO> _List_productMovement = new List<ProductMovementDTO>();
+                //string sql = "Select * from ProductMovement where Deleted = 0 and DurumType = 1 and Date = @Date";
+                //var _param = new SqlParameter[]
+                //{
+                //    new SqlParameter{ParameterName = "Date", Value = date }
+                //};
+                //_List_productMovement = _db.Database.SqlQuery<ProductMovementDTO>(sql, _param.ToArray()).ToList();
+                //return _List_productMovement;
+                return base.Map<List<ProductMovement>, List<ProductMovementDTO>>(_db.ProductMovement.Where(x => EntityFunctions.TruncateTime(x.Date) == date.Date && x.DurumType == 1 && x.Deleted == false).ToList());
             }
         }
 

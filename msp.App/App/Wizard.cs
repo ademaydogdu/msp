@@ -33,6 +33,7 @@ namespace Msp.App.App
         private string SqlConnectionString;
         private bool SqlLocal;
 
+        private bool IsDemo;
         #endregion
 
         public DevExpress.XtraSplashScreen.SplashScreenManager Splash { get; set; }
@@ -44,10 +45,14 @@ namespace Msp.App.App
         {
             if (rpLisans.Checked)
             {
+                IsDemo = false;
+
+
 
             }
             if (rpDeneme.Checked)
             {
+                IsDemo = true;
                 if (Convert.ToString(txtPhone.EditValue) == "")
                 {
                     XtraMessageBox.Show("Telefon Numarası Giriniz.");
@@ -408,6 +413,7 @@ namespace Msp.App.App
                                 + " 	[MacAdress] [nvarchar] (50) NULL, "
                                 + " 	[IpAdress] [nvarchar] (50) NULL, "
                                 + " 	[LocalIpAdress] [nvarchar] (50) NULL, "
+                                + "     [IsDemo] [bit] NULL, "
                                 + "  CONSTRAINT[PK_ProgramsControl] PRIMARY KEY CLUSTERED "
                                 + " ( "
                                 + "    [RecId] ASC "
@@ -418,8 +424,13 @@ namespace Msp.App.App
                 }
 
 
-                sCommand.CommandText = "INSERT INTO [dbo].[ProgramsControl]([MspVersion],[Licence],[FirstDate],[MacAdress],[IpAdress],[LocalIpAdress]) VALUES ('1.0.0.0','',Null,'','','')";
+                sCommand.CommandText = "INSERT INTO [dbo].[ProgramsControl]([MspVersion],[Licence],[FirstDate],[MacAdress],[IpAdress],[LocalIpAdress],[IsDemo]) VALUES ('1.0.0.0','',@date,@MacAdress,@IpAdress,@LocalIp,@Demo)";
                 sCommand.Parameters.Clear();
+                sCommand.Parameters.Add("Demo", SqlDbType.Bit).Value = IsDemo;
+                sCommand.Parameters.Add("date", SqlDbType.DateTime).Value = dt_RecordDate.DateTime;
+                sCommand.Parameters.Add("MacAdress", SqlDbType.NVarChar).Value = AppMain.MAcAdress;
+                sCommand.Parameters.Add("IpAdress", SqlDbType.NVarChar).Value = AppMain.IpAdress;
+                sCommand.Parameters.Add("LocalIp", SqlDbType.NVarChar).Value = AppMain.LocalIpAdress;
                 ExecuteNonQuery(sCommand);
 
 

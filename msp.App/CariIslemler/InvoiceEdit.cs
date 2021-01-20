@@ -110,6 +110,13 @@ namespace Msp.App.CariIslemler
                     }
                     else
                     {
+                        foreach (Form item in Application.OpenForms)
+                        {
+                            if (item.Name == "InvoiceList")
+                            {
+                                ((InvoiceList)item).do_refresh();
+                            }
+                        }
                         this.Close();
                     }
                 }
@@ -140,7 +147,8 @@ namespace Msp.App.CariIslemler
                             newTrans.UnitID = item.BirimId;
                             newTrans.BirimFiyat = item.BirimFiyat;
                             newTrans.Tutar = item.Tutar;
-
+                            newTrans.KDV = item.KDV;
+                            newTrans.Quentity = item.Miktar;
                             __dll_List_InoviceTrans.Add(newTrans);
                         }
                         bs_InvoiceTrans.DataSource = __dll_List_InoviceTrans;
@@ -204,6 +212,8 @@ namespace Msp.App.CariIslemler
                     lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    bbi_İrsaliyeCagir.Enabled = true;
+
                     break;
                 case InvoiceType.SatisFaturasi:
                     this.Text = "Satış Faturası";
@@ -214,7 +224,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-
+                    bbi_İrsaliyeCagir.Enabled = true;
 
                     break;
                 case InvoiceType.AlisIrsaliye:
@@ -225,7 +235,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-
+                    bbi_İrsaliyeCagir.Enabled = false;
                     break;
                 case InvoiceType.SatisIrsaliye:
                     this.Text = "Satış İrsaliyesi";
@@ -235,7 +245,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeGun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-
+                    bbi_İrsaliyeCagir.Enabled = false;
                     break;
                 default:
                     break;
@@ -252,7 +262,8 @@ namespace Msp.App.CariIslemler
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
-
+                __dll_InvoiceOwner = _repository.Run<InvoiceService, InvoiceOwnerDTO>(x => x.Get_Invoice(RecId));
+                __dll_List_InoviceTrans = _repository.Run<InvoiceService, List<InvoiceTransDTO>>(x => x.Get_Edit_List_Trans(RecId));
             }
             if (_FormOpenType == FormOpenType.View)
             {
@@ -442,6 +453,12 @@ namespace Msp.App.CariIslemler
                     bs_Depot.DataSource = _depotList;
                 }
             }
+        }
+
+        private void bbi_FaturaAra_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FindInvoiceList frm = new FindInvoiceList();
+            frm.ShowDialog();
         }
     }
 }

@@ -161,7 +161,21 @@ namespace Msp.Service.Service.Invoice
 
         }
 
+        public InvoiceOwnerDTO Get_Invoice(int RecId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<InvoiceOwner, InvoiceOwnerDTO>(_db.InvoiceOwner.FirstOrDefault(x => x.RecId == RecId));
+            }
+        }
 
+        public List<InvoiceTransDTO> Get_Edit_List_Trans(int InvoiceOwnerId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<InvoiceTrans>, List<InvoiceTransDTO>>(_db.InvoiceTrans.Where(x => x.InvoiceOwnerId == InvoiceOwnerId).ToList());
+            }
+        }
 
 
         #endregion

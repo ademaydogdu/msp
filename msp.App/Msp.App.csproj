@@ -206,6 +206,12 @@
     <Compile Include="App\Wizard.Designer.cs">
       <DependentUpon>Wizard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\FindInvoiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\FindInvoiceList.Designer.cs">
+      <DependentUpon>FindInvoiceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CariIslemler\FindIrsaliyeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +421,12 @@
     </Compile>
     <Compile Include="Report\Depo-Stock\EnvanterBilgileri.Designer.cs">
       <DependentUpon>EnvanterBilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Depo-Stock\frmStockHareketFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Depo-Stock\frmStockHareketFilter.Designer.cs">
+      <DependentUpon>frmStockHareketFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\Fatura\InvoiceReport.cs">
       <SubType>Component</SubType>
@@ -659,6 +671,9 @@
     <EmbeddedResource Include="App\Wizard.resx">
       <DependentUpon>Wizard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\FindInvoiceList.resx">
+      <DependentUpon>FindInvoiceList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\FindIrsaliyeList.resx">
       <DependentUpon>FindIrsaliyeList.cs</DependentUpon>
     </EmbeddedResource>
@@ -764,6 +779,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Depo-Stock\EnvanterBilgileri.resx">
       <DependentUpon>EnvanterBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Depo-Stock\frmStockHareketFilter.resx">
+      <DependentUpon>frmStockHareketFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Fatura\InvoiceReport.resx">
       <DependentUpon>InvoiceReport.cs</DependentUpon>

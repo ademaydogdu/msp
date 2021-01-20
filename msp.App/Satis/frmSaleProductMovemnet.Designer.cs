@@ -72,9 +72,12 @@
             this.btnUrunEkle = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.txt_Total = new DevExpress.XtraEditors.MemoEdit();
+            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.lc_CaseDef = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
             this.txt_Date = new DevExpress.XtraEditors.DateEdit();
             this.lc_Doviz = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
             this.txt_NetFiyat = new DevExpress.XtraEditors.TextEdit();
             this.txt_İndirimTutar = new DevExpress.XtraEditors.TextEdit();
             this.txt_KDV = new DevExpress.XtraEditors.TextEdit();
@@ -97,11 +100,8 @@
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_CaseList = new System.Windows.Forms.BindingSource(this.components);
             this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -120,10 +120,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_CaseDef.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Doviz.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).BeginInit();
@@ -146,11 +149,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -208,6 +208,7 @@
             // 
             // colProductId
             // 
+            this.colProductId.Caption = "Ürün Adı";
             this.colProductId.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.colProductId.FieldName = "ProductId";
             this.colProductId.Name = "colProductId";
@@ -231,6 +232,7 @@
             // 
             // colQuantity
             // 
+            this.colQuantity.Caption = "Miktar";
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
@@ -238,6 +240,7 @@
             // 
             // colAmount
             // 
+            this.colAmount.Caption = "Tutar";
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Visible = true;
@@ -299,6 +302,7 @@
             this.bbi_Close.ImageOptions.ImageIndex = 4;
             this.bbi_Close.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
             this.bbi_Close.Name = "bbi_Close";
+            this.bbi_Close.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbi_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Close_ItemClick);
             // 
             // bbi_Save
@@ -309,6 +313,7 @@
             this.bbi_Save.ImageOptions.ImageIndex = 3;
             this.bbi_Save.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
             this.bbi_Save.Name = "bbi_Save";
+            this.bbi_Save.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbi_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Save_ItemClick);
             // 
             // bbi_Print
@@ -603,7 +608,7 @@
             // 
             this.txt_Total.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "TotalPriceText", true));
             this.txt_Total.EditValue = "₺ 0.00";
-            this.txt_Total.Location = new System.Drawing.Point(630, 487);
+            this.txt_Total.Location = new System.Drawing.Point(599, 487);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 38F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_Total.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
@@ -617,9 +622,13 @@
             this.txt_Total.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_Total.Properties.WordWrap = false;
             this.txt_Total.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_Total.Size = new System.Drawing.Size(233, 78);
+            this.txt_Total.Size = new System.Drawing.Size(264, 78);
             this.txt_Total.StyleController = this.layoutControl1;
             this.txt_Total.TabIndex = 24;
+            // 
+            // bs_SaleOwner
+            // 
+            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
             // 
             // lc_CaseDef
             // 
@@ -635,6 +644,10 @@
             this.lc_CaseDef.Size = new System.Drawing.Size(149, 20);
             this.lc_CaseDef.StyleController = this.layoutControl1;
             this.lc_CaseDef.TabIndex = 46;
+            // 
+            // bs_CaseList
+            // 
+            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
             // 
             // txt_Date
             // 
@@ -670,11 +683,15 @@
             this.lc_Doviz.StyleController = this.layoutControl1;
             this.lc_Doviz.TabIndex = 47;
             // 
+            // bs_CurrencyType
+            // 
+            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
+            // 
             // txt_NetFiyat
             // 
             this.txt_NetFiyat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "NetPriceText", true));
             this.txt_NetFiyat.EditValue = "0.00 ";
-            this.txt_NetFiyat.Location = new System.Drawing.Point(560, 487);
+            this.txt_NetFiyat.Location = new System.Drawing.Point(529, 487);
             this.txt_NetFiyat.Name = "txt_NetFiyat";
             this.txt_NetFiyat.Properties.ReadOnly = true;
             this.txt_NetFiyat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -685,7 +702,7 @@
             // txt_İndirimTutar
             // 
             this.txt_İndirimTutar.EditValue = "0.00 ";
-            this.txt_İndirimTutar.Location = new System.Drawing.Point(560, 535);
+            this.txt_İndirimTutar.Location = new System.Drawing.Point(529, 535);
             this.txt_İndirimTutar.Name = "txt_İndirimTutar";
             this.txt_İndirimTutar.Properties.ReadOnly = true;
             this.txt_İndirimTutar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -696,7 +713,7 @@
             // txt_KDV
             // 
             this.txt_KDV.EditValue = "0.00";
-            this.txt_KDV.Location = new System.Drawing.Point(560, 511);
+            this.txt_KDV.Location = new System.Drawing.Point(529, 511);
             this.txt_KDV.Name = "txt_KDV";
             this.txt_KDV.Properties.ReadOnly = true;
             this.txt_KDV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -803,11 +820,11 @@
             this.layoutControlItem21.Control = this.txt_Total;
             this.layoutControlItem21.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem21.CustomizationFormText = "Toplam : ";
-            this.layoutControlItem21.Location = new System.Drawing.Point(618, 475);
-            this.layoutControlItem21.MaxSize = new System.Drawing.Size(237, 82);
-            this.layoutControlItem21.MinSize = new System.Drawing.Size(237, 82);
+            this.layoutControlItem21.Location = new System.Drawing.Point(587, 475);
+            this.layoutControlItem21.MaxSize = new System.Drawing.Size(268, 82);
+            this.layoutControlItem21.MinSize = new System.Drawing.Size(268, 82);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(237, 82);
+            this.layoutControlItem21.Size = new System.Drawing.Size(268, 82);
             this.layoutControlItem21.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem21.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
@@ -882,7 +899,7 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(463, 547);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(432, 547);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(155, 10);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -908,7 +925,7 @@
             this.layoutControlItem19.Control = this.txt_NetFiyat;
             this.layoutControlItem19.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem19.CustomizationFormText = "Net Fiyat : ";
-            this.layoutControlItem19.Location = new System.Drawing.Point(463, 475);
+            this.layoutControlItem19.Location = new System.Drawing.Point(432, 475);
             this.layoutControlItem19.MaxSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem19.MinSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem19.Name = "layoutControlItem19";
@@ -922,7 +939,7 @@
             this.layoutControlItem20.Control = this.txt_KDV;
             this.layoutControlItem20.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem20.CustomizationFormText = "KDV : ";
-            this.layoutControlItem20.Location = new System.Drawing.Point(463, 499);
+            this.layoutControlItem20.Location = new System.Drawing.Point(432, 499);
             this.layoutControlItem20.MaxSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem20.MinSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem20.Name = "layoutControlItem20";
@@ -936,7 +953,7 @@
             this.layoutControlItem27.Control = this.txt_İndirimTutar;
             this.layoutControlItem27.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem27.CustomizationFormText = "İndirim Tutarı";
-            this.layoutControlItem27.Location = new System.Drawing.Point(463, 523);
+            this.layoutControlItem27.Location = new System.Drawing.Point(432, 523);
             this.layoutControlItem27.MaxSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem27.MinSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem27.Name = "layoutControlItem27";
@@ -950,16 +967,8 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(324, 475);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(139, 82);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(108, 82);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // bs_SaleOwner
-            // 
-            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
-            // 
-            // bs_CaseList
-            // 
-            this.bs_CaseList.DataSource = typeof(Msp.Models.Models.CaseDefinitionDTO);
             // 
             // bs_PaymentType
             // 
@@ -968,10 +977,6 @@
             // bs_Unit
             // 
             this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
-            // 
-            // bs_CurrencyType
-            // 
-            this.bs_CurrencyType.DataSource = typeof(Msp.Models.Models.CurrencyTypeDTO);
             // 
             // frmSaleProductMovemnet
             // 
@@ -1007,10 +1012,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_CaseDef.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Doviz.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).EndInit();
@@ -1033,11 +1041,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

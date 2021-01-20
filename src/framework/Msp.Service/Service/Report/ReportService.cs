@@ -42,13 +42,39 @@ namespace Msp.Service.Service.Report
         #endregion
 
         #region CaseReport
-
         public List<CaseMovementDTO> Get_List_CaseMovement(CaseReportFilter filter)
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<List<CaseMovement>, List<CaseMovementDTO>>(_db.CaseMovement.Where(x => x.Deleted == false && 
-                x.CompanyRecId == filter.companyId && x.RecordDate >= filter.BeginDate && x.RecordDate <= filter.EndDate && x.CaseId == filter.CaseId ).ToList());
+                return base.Map<List<CaseMovement>, List<CaseMovementDTO>>(_db.CaseMovement.Where(x => x.Deleted == false &&
+                x.CompanyRecId == filter.companyId && x.RecordDate >= filter.BeginDate && x.RecordDate <= filter.EndDate && x.CaseId == filter.CaseId).ToList());
+            }
+        }
+        #endregion
+
+        #region StockHareketRaporu
+        public List<ProductMovementDTO> Get_List_StokHareketListesi(CaseReportFilter filter)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<ProductMovement>, List<ProductMovementDTO>>(_db.ProductMovement.Where(x => x.Deleted == false && x.Date >= filter.BeginDate && x.Date <= filter.EndDate && x.ProductId >= filter.BeginProduct && x.ProductId <= filter.EndProduct).ToList());
+            }
+        }
+        #endregion
+
+
+        #region EncokSatilanStok
+
+        public List<SumSaleStockDTO> Get_List_SumSaleStock()
+        {
+            using (var _db = new MspDbContext())
+            {
+                string _sql = "Select Top 10 P.PCode, P.PName, SUM(sl.ProductQuantity) as SatilanMiktar, SUM(sl.ProductAmount) as ToplamTutar "
+                    + " from SaleTrans sl "
+                    + " Inner Join products P on sl.ProductId = P.PID "
+                    + " group by sl.ProductId, P.PName, P.PCode "
+                    + " order by SatilanMiktar desc";
+                return _db.Database.SqlQuery<SumSaleStockDTO>(_sql).ToList();
             }
         }
 

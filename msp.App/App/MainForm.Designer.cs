@@ -1777,6 +1777,7 @@
             this.barButtonItem96.Caption = "Stok Hareket Raporları";
             this.barButtonItem96.Id = 177;
             this.barButtonItem96.Name = "barButtonItem96";
+            this.barButtonItem96.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem96_ItemClick);
             // 
             // barButtonItem97
             // 

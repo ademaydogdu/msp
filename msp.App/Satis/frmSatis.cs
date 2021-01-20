@@ -263,7 +263,7 @@ namespace msp.App
                     _return = true;
                 }
             }
-            if (__dll_SaleOwner.CaseId == 0)
+            if (__dll_SaleOwner.CaseId == null || __dll_SaleOwner.CaseId == 0)
             {
                 XtraMessageBox.Show("Kasa Girilmesi Zorunludur.");
                 _return = true;
@@ -338,9 +338,9 @@ namespace msp.App
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                XtraMessageBox.Show(ex.Message);
             }
         }
 

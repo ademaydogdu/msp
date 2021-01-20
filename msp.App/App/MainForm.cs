@@ -444,6 +444,10 @@ namespace msp.App
                AppMain.LocalConnect = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("SqlLocal").ToString());
             }
 
+
+
+
+
             Login loForm = new Login();
             loForm.TopMost = true;
             loForm.ShowDialog();
@@ -1068,6 +1072,15 @@ namespace msp.App
             frm.FormType = 2;
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void barButtonItem96_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!formAcikmi("frmStockMovement"))
+            {
+                frmStockMovement frm = new frmStockMovement();
+                frm.ShowDialog(); 
+            }
         }
     }
 }
