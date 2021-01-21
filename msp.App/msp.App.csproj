@@ -416,6 +416,12 @@
     <Compile Include="Report\Case\VeresiyeDefter.Designer.cs">
       <DependentUpon>VeresiyeDefter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Depo-Stock\EnCokSatanUrunler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Depo-Stock\EnCokSatanUrunler.Designer.cs">
+      <DependentUpon>EnCokSatanUrunler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Depo-Stock\EnvanterBilgileri.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -776,6 +782,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Case\VeresiyeDefter.resx">
       <DependentUpon>VeresiyeDefter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Depo-Stock\EnCokSatanUrunler.resx">
+      <DependentUpon>EnCokSatanUrunler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Depo-Stock\EnvanterBilgileri.resx">
       <DependentUpon>EnvanterBilgileri.cs</DependentUpon>

@@ -52,9 +52,9 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.bs_company = new System.Windows.Forms.BindingSource(this.components);
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.lc_DovizTuru = new DevExpress.XtraEditors.LookUpEdit();
             this.bs_InvoiceOwner = new System.Windows.Forms.BindingSource(this.components);
             this.bs_CurrencyType = new System.Windows.Forms.BindingSource(this.components);
@@ -168,9 +168,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_DovizTuru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).BeginInit();
@@ -315,7 +315,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(864, 473, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1605, 734);
+            this.layoutControl1.Size = new System.Drawing.Size(1618, 637);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -338,7 +338,7 @@
             // 
             // lc_Company
             // 
-            this.lc_Company.Location = new System.Drawing.Point(116, 104);
+            this.lc_Company.Location = new System.Drawing.Point(125, 104);
             this.lc_Company.MenuManager = this.barManager1;
             this.lc_Company.Name = "lc_Company";
             this.lc_Company.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -350,7 +350,7 @@
             this.lc_Company.Properties.DisplayMember = "CompanyName";
             this.lc_Company.Properties.NullText = "";
             this.lc_Company.Properties.ValueMember = "RecId";
-            this.lc_Company.Size = new System.Drawing.Size(176, 20);
+            this.lc_Company.Size = new System.Drawing.Size(167, 20);
             this.lc_Company.StyleController = this.layoutControl1;
             this.lc_Company.TabIndex = 28;
             // 
@@ -420,6 +420,7 @@
             this.bbi_DeleteRow.ImageOptions.ImageIndex = 4;
             this.bbi_DeleteRow.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_DeleteRow.Name = "bbi_DeleteRow";
+            this.bbi_DeleteRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_DeleteRow_ItemClick);
             // 
             // bbi_Document
             // 
@@ -505,15 +506,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1605, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1618, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 734);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 637);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1605, 40);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1618, 40);
             // 
             // barDockControlLeft
             // 
@@ -521,15 +522,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 734);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 637);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1605, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1618, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 734);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 637);
             // 
             // img_bar
             // 
@@ -552,15 +553,6 @@
             // 
             this.bs_company.DataSource = typeof(Msp.Models.Models.CompanyDTO);
             // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(104, 47);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(696, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 24;
-            // 
             // gridControl2
             // 
             this.gridControl2.Location = new System.Drawing.Point(24, 613);
@@ -578,10 +570,19 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(113, 47);
+            this.textEdit2.MenuManager = this.barManager1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(693, 20);
+            this.textEdit2.StyleController = this.layoutControl1;
+            this.textEdit2.TabIndex = 24;
+            // 
             // lc_DovizTuru
             // 
             this.lc_DovizTuru.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "DovizTuru", true));
-            this.lc_DovizTuru.Location = new System.Drawing.Point(644, 128);
+            this.lc_DovizTuru.Location = new System.Drawing.Point(653, 128);
             this.lc_DovizTuru.MenuManager = this.barManager1;
             this.lc_DovizTuru.Name = "lc_DovizTuru";
             this.lc_DovizTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -593,7 +594,7 @@
             this.lc_DovizTuru.Properties.DisplayMember = "CurrencyCode";
             this.lc_DovizTuru.Properties.NullText = "";
             this.lc_DovizTuru.Properties.ValueMember = "RecId";
-            this.lc_DovizTuru.Size = new System.Drawing.Size(226, 20);
+            this.lc_DovizTuru.Size = new System.Drawing.Size(217, 20);
             this.lc_DovizTuru.StyleController = this.layoutControl1;
             this.lc_DovizTuru.TabIndex = 21;
             this.lc_DovizTuru.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_DovizTuru_ButtonClick);
@@ -617,7 +618,7 @@
             this.rp_Unit,
             this.rp_ProductBarcode,
             this.rp_KDV});
-            this.gc_invoiceTrans.Size = new System.Drawing.Size(1581, 438);
+            this.gc_invoiceTrans.Size = new System.Drawing.Size(1594, 341);
             this.gc_invoiceTrans.TabIndex = 12;
             this.gc_invoiceTrans.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_invoiceTrans});
@@ -824,7 +825,7 @@
             // txtCariHesapAdi
             // 
             this.txtCariHesapAdi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "CariRecId", true));
-            this.txtCariHesapAdi.Location = new System.Drawing.Point(116, 80);
+            this.txtCariHesapAdi.Location = new System.Drawing.Point(125, 80);
             this.txtCariHesapAdi.Name = "txtCariHesapAdi";
             this.txtCariHesapAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
@@ -836,7 +837,7 @@
             this.txtCariHesapAdi.Properties.DisplayMember = "CurAccountName";
             this.txtCariHesapAdi.Properties.NullText = "";
             this.txtCariHesapAdi.Properties.ValueMember = "CurID";
-            this.txtCariHesapAdi.Size = new System.Drawing.Size(176, 20);
+            this.txtCariHesapAdi.Size = new System.Drawing.Size(167, 20);
             this.txtCariHesapAdi.StyleController = this.layoutControl1;
             this.txtCariHesapAdi.TabIndex = 10;
             this.txtCariHesapAdi.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCariHesapAdi_ButtonClick);
@@ -848,7 +849,7 @@
             // txtDepo
             // 
             this.txtDepo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "DepoName", true));
-            this.txtDepo.Location = new System.Drawing.Point(116, 176);
+            this.txtDepo.Location = new System.Drawing.Point(125, 176);
             this.txtDepo.Name = "txtDepo";
             this.txtDepo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
@@ -859,7 +860,7 @@
             this.txtDepo.Properties.DisplayMember = "DepName";
             this.txtDepo.Properties.NullText = "";
             this.txtDepo.Properties.ValueMember = "DID";
-            this.txtDepo.Size = new System.Drawing.Size(176, 20);
+            this.txtDepo.Size = new System.Drawing.Size(167, 20);
             this.txtDepo.StyleController = this.layoutControl1;
             this.txtDepo.TabIndex = 9;
             this.txtDepo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtDepo_ButtonClick);
@@ -871,13 +872,13 @@
             // txtFaturaTipi
             // 
             this.txtFaturaTipi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "FicheType", true));
-            this.txtFaturaTipi.Location = new System.Drawing.Point(644, 80);
+            this.txtFaturaTipi.Location = new System.Drawing.Point(653, 80);
             this.txtFaturaTipi.Name = "txtFaturaTipi";
             this.txtFaturaTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
             this.txtFaturaTipi.Properties.NullText = "";
-            this.txtFaturaTipi.Size = new System.Drawing.Size(226, 20);
+            this.txtFaturaTipi.Size = new System.Drawing.Size(217, 20);
             this.txtFaturaTipi.StyleController = this.layoutControl1;
             this.txtFaturaTipi.TabIndex = 8;
             // 
@@ -885,24 +886,24 @@
             // 
             this.txtFisTarihi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "FicDate", true));
             this.txtFisTarihi.EditValue = null;
-            this.txtFisTarihi.Location = new System.Drawing.Point(116, 152);
+            this.txtFisTarihi.Location = new System.Drawing.Point(125, 152);
             this.txtFisTarihi.Name = "txtFisTarihi";
             this.txtFisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtFisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtFisTarihi.Size = new System.Drawing.Size(176, 20);
+            this.txtFisTarihi.Size = new System.Drawing.Size(167, 20);
             this.txtFisTarihi.StyleController = this.layoutControl1;
             this.txtFisTarihi.TabIndex = 4;
             // 
             // txtBelgeNo
             // 
             this.txtBelgeNo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "FicheDocumentNo", true));
-            this.txtBelgeNo.Location = new System.Drawing.Point(116, 128);
+            this.txtBelgeNo.Location = new System.Drawing.Point(125, 128);
             this.txtBelgeNo.Name = "txtBelgeNo";
             this.txtBelgeNo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtBelgeNo.Properties.Appearance.Options.UseFont = true;
-            this.txtBelgeNo.Size = new System.Drawing.Size(176, 20);
+            this.txtBelgeNo.Size = new System.Drawing.Size(167, 20);
             this.txtBelgeNo.StyleController = this.layoutControl1;
             this.txtBelgeNo.TabIndex = 6;
             // 
@@ -910,39 +911,41 @@
             // 
             this.txtVadeTarihi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "VadeTarih", true));
             this.txtVadeTarihi.EditValue = null;
-            this.txtVadeTarihi.Location = new System.Drawing.Point(778, 104);
+            this.txtVadeTarihi.Location = new System.Drawing.Point(787, 104);
             this.txtVadeTarihi.Name = "txtVadeTarihi";
             this.txtVadeTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtVadeTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtVadeTarihi.Size = new System.Drawing.Size(92, 20);
+            this.txtVadeTarihi.Size = new System.Drawing.Size(83, 20);
             this.txtVadeTarihi.StyleController = this.layoutControl1;
             this.txtVadeTarihi.TabIndex = 11;
             // 
             // txtAraToplam
             // 
+            this.txtAraToplam.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "AraToplam", true));
             this.txtAraToplam.EditValue = "0.00";
-            this.txtAraToplam.Location = new System.Drawing.Point(1460, 107);
+            this.txtAraToplam.Location = new System.Drawing.Point(1482, 107);
             this.txtAraToplam.MenuManager = this.barManager1;
             this.txtAraToplam.Name = "txtAraToplam";
             this.txtAraToplam.Properties.Mask.EditMask = "n2";
             this.txtAraToplam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtAraToplam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtAraToplam.Size = new System.Drawing.Size(109, 20);
+            this.txtAraToplam.Size = new System.Drawing.Size(100, 20);
             this.txtAraToplam.StyleController = this.layoutControl1;
             this.txtAraToplam.TabIndex = 13;
             // 
             // txtIndirim
             // 
+            this.txtIndirim.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "Indirim", true));
             this.txtIndirim.EditValue = "0.00";
-            this.txtIndirim.Location = new System.Drawing.Point(1460, 83);
+            this.txtIndirim.Location = new System.Drawing.Point(1482, 83);
             this.txtIndirim.MenuManager = this.barManager1;
             this.txtIndirim.Name = "txtIndirim";
             this.txtIndirim.Properties.Mask.EditMask = "n2";
             this.txtIndirim.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtIndirim.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtIndirim.Size = new System.Drawing.Size(109, 20);
+            this.txtIndirim.Size = new System.Drawing.Size(100, 20);
             this.txtIndirim.StyleController = this.layoutControl1;
             this.txtIndirim.TabIndex = 14;
             // 
@@ -950,33 +953,34 @@
             // 
             this.txtToplamKDV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "ToplamKDV", true));
             this.txtToplamKDV.EditValue = "0.00";
-            this.txtToplamKDV.Location = new System.Drawing.Point(1460, 131);
+            this.txtToplamKDV.Location = new System.Drawing.Point(1482, 131);
             this.txtToplamKDV.MenuManager = this.barManager1;
             this.txtToplamKDV.Name = "txtToplamKDV";
             this.txtToplamKDV.Properties.Mask.EditMask = "n2";
             this.txtToplamKDV.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtToplamKDV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtToplamKDV.Size = new System.Drawing.Size(109, 20);
+            this.txtToplamKDV.Size = new System.Drawing.Size(100, 20);
             this.txtToplamKDV.StyleController = this.layoutControl1;
             this.txtToplamKDV.TabIndex = 15;
             // 
             // txtToplam
             // 
             this.txtToplam.EditValue = "0.00";
-            this.txtToplam.Location = new System.Drawing.Point(1460, 59);
+            this.txtToplam.Location = new System.Drawing.Point(1482, 59);
             this.txtToplam.MenuManager = this.barManager1;
             this.txtToplam.Name = "txtToplam";
             this.txtToplam.Properties.Mask.EditMask = "n2";
             this.txtToplam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtToplam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtToplam.Size = new System.Drawing.Size(109, 20);
+            this.txtToplam.Size = new System.Drawing.Size(100, 20);
             this.txtToplam.StyleController = this.layoutControl1;
             this.txtToplam.TabIndex = 16;
             // 
             // txtTotal
             // 
+            this.txtTotal.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "GenelToplam", true));
             this.txtTotal.EditValue = "0.00";
-            this.txtTotal.Location = new System.Drawing.Point(1460, 155);
+            this.txtTotal.Location = new System.Drawing.Point(1482, 155);
             this.txtTotal.MenuManager = this.barManager1;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -984,17 +988,17 @@
             this.txtTotal.Properties.Mask.EditMask = "n2";
             this.txtTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotal.Size = new System.Drawing.Size(109, 22);
+            this.txtTotal.Size = new System.Drawing.Size(100, 22);
             this.txtTotal.StyleController = this.layoutControl1;
             this.txtTotal.TabIndex = 17;
             // 
             // textEdit1
             // 
             this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "VadeGun", true));
-            this.textEdit1.Location = new System.Drawing.Point(644, 104);
+            this.textEdit1.Location = new System.Drawing.Point(653, 104);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(50, 20);
+            this.textEdit1.Size = new System.Drawing.Size(41, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 19;
             // 
@@ -1002,72 +1006,72 @@
             // 
             this.dateIrsaliyeDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "IrsaliyeDate", true));
             this.dateIrsaliyeDate.EditValue = null;
-            this.dateIrsaliyeDate.Location = new System.Drawing.Point(978, 104);
+            this.dateIrsaliyeDate.Location = new System.Drawing.Point(987, 104);
             this.dateIrsaliyeDate.MenuManager = this.barManager1;
             this.dateIrsaliyeDate.Name = "dateIrsaliyeDate";
             this.dateIrsaliyeDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateIrsaliyeDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateIrsaliyeDate.Size = new System.Drawing.Size(118, 20);
+            this.dateIrsaliyeDate.Size = new System.Drawing.Size(109, 20);
             this.dateIrsaliyeDate.StyleController = this.layoutControl1;
             this.dateIrsaliyeDate.TabIndex = 20;
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(1194, 47);
+            this.textEdit3.Location = new System.Drawing.Point(1203, 47);
             this.textEdit3.MenuManager = this.barManager1;
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(387, 20);
+            this.textEdit3.Size = new System.Drawing.Size(391, 20);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 25;
             // 
             // textEdit4
             // 
-            this.textEdit4.Location = new System.Drawing.Point(804, 47);
+            this.textEdit4.Location = new System.Drawing.Point(810, 47);
             this.textEdit4.MenuManager = this.barManager1;
             this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(386, 20);
+            this.textEdit4.Size = new System.Drawing.Size(389, 20);
             this.textEdit4.StyleController = this.layoutControl1;
             this.textEdit4.TabIndex = 26;
             // 
             // txtIrsaliyeNo
             // 
             this.txtIrsaliyeNo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "IrsaliyeNo", true));
-            this.txtIrsaliyeNo.Location = new System.Drawing.Point(978, 80);
+            this.txtIrsaliyeNo.Location = new System.Drawing.Point(987, 80);
             this.txtIrsaliyeNo.MenuManager = this.barManager1;
             this.txtIrsaliyeNo.Name = "txtIrsaliyeNo";
-            this.txtIrsaliyeNo.Size = new System.Drawing.Size(118, 20);
+            this.txtIrsaliyeNo.Size = new System.Drawing.Size(109, 20);
             this.txtIrsaliyeNo.StyleController = this.layoutControl1;
             this.txtIrsaliyeNo.TabIndex = 29;
             // 
             // txtEFaturaNo
             // 
             this.txtEFaturaNo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "EFaturaNo", true));
-            this.txtEFaturaNo.Location = new System.Drawing.Point(400, 80);
+            this.txtEFaturaNo.Location = new System.Drawing.Point(409, 80);
             this.txtEFaturaNo.MenuManager = this.barManager1;
             this.txtEFaturaNo.Name = "txtEFaturaNo";
-            this.txtEFaturaNo.Size = new System.Drawing.Size(136, 20);
+            this.txtEFaturaNo.Size = new System.Drawing.Size(127, 20);
             this.txtEFaturaNo.StyleController = this.layoutControl1;
             this.txtEFaturaNo.TabIndex = 30;
             // 
             // textEdit7
             // 
             this.textEdit7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "EIrsaliyeNo", true));
-            this.textEdit7.Location = new System.Drawing.Point(400, 104);
+            this.textEdit7.Location = new System.Drawing.Point(409, 104);
             this.textEdit7.MenuManager = this.barManager1;
             this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(136, 20);
+            this.textEdit7.Size = new System.Drawing.Size(127, 20);
             this.textEdit7.StyleController = this.layoutControl1;
             this.textEdit7.TabIndex = 31;
             // 
             // textEdit9
             // 
             this.textEdit9.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "Iskonto", true));
-            this.textEdit9.Location = new System.Drawing.Point(644, 177);
+            this.textEdit9.Location = new System.Drawing.Point(653, 177);
             this.textEdit9.MenuManager = this.barManager1;
             this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(226, 20);
+            this.textEdit9.Size = new System.Drawing.Size(217, 20);
             this.textEdit9.StyleController = this.layoutControl1;
             this.textEdit9.TabIndex = 33;
             // 
@@ -1096,7 +1100,7 @@
             // lookUpEdit2
             // 
             this.lookUpEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "KDV", true));
-            this.lookUpEdit2.Location = new System.Drawing.Point(644, 152);
+            this.lookUpEdit2.Location = new System.Drawing.Point(653, 152);
             this.lookUpEdit2.MenuManager = this.barManager1;
             this.lookUpEdit2.Name = "lookUpEdit2";
             this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1105,7 +1109,7 @@
             "Dahil",
             "Hariç"});
             this.lookUpEdit2.Properties.PopupSizeable = true;
-            this.lookUpEdit2.Size = new System.Drawing.Size(226, 20);
+            this.lookUpEdit2.Size = new System.Drawing.Size(217, 20);
             this.lookUpEdit2.StyleController = this.layoutControl1;
             this.lookUpEdit2.TabIndex = 22;
             // 
@@ -1113,7 +1117,7 @@
             // 
             this.lookUpEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "PaymentType", true));
             this.lookUpEdit3.EditValue = "";
-            this.lookUpEdit3.Location = new System.Drawing.Point(644, 201);
+            this.lookUpEdit3.Location = new System.Drawing.Point(653, 201);
             this.lookUpEdit3.MenuManager = this.barManager1;
             this.lookUpEdit3.Name = "lookUpEdit3";
             this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1122,36 +1126,36 @@
             "Açık",
             "Kapalı"});
             this.lookUpEdit3.Properties.PopupSizeable = true;
-            this.lookUpEdit3.Size = new System.Drawing.Size(226, 20);
+            this.lookUpEdit3.Size = new System.Drawing.Size(217, 20);
             this.lookUpEdit3.StyleController = this.layoutControl1;
             this.lookUpEdit3.TabIndex = 27;
             // 
             // txtIrsaliyeSaat
             // 
-            this.txtIrsaliyeSaat.Location = new System.Drawing.Point(978, 128);
+            this.txtIrsaliyeSaat.Location = new System.Drawing.Point(987, 128);
             this.txtIrsaliyeSaat.MenuManager = this.barManager1;
             this.txtIrsaliyeSaat.Name = "txtIrsaliyeSaat";
             this.txtIrsaliyeSaat.Properties.Mask.EditMask = "90:00";
             this.txtIrsaliyeSaat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.txtIrsaliyeSaat.Size = new System.Drawing.Size(118, 20);
+            this.txtIrsaliyeSaat.Size = new System.Drawing.Size(109, 20);
             this.txtIrsaliyeSaat.StyleController = this.layoutControl1;
             this.txtIrsaliyeSaat.TabIndex = 36;
             // 
             // txtFisAciklama
             // 
             this.txtFisAciklama.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InvoiceOwner, "FicheRemark", true));
-            this.txtFisAciklama.Location = new System.Drawing.Point(116, 200);
+            this.txtFisAciklama.Location = new System.Drawing.Point(125, 200);
             this.txtFisAciklama.Name = "txtFisAciklama";
-            this.txtFisAciklama.Size = new System.Drawing.Size(176, 46);
+            this.txtFisAciklama.Size = new System.Drawing.Size(167, 46);
             this.txtFisAciklama.StyleController = this.layoutControl1;
             this.txtFisAciklama.TabIndex = 7;
             // 
             // textEdit8
             // 
-            this.textEdit8.Location = new System.Drawing.Point(104, 71);
+            this.textEdit8.Location = new System.Drawing.Point(113, 71);
             this.textEdit8.MenuManager = this.barManager1;
             this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(1477, 113);
+            this.textEdit8.Size = new System.Drawing.Size(1481, 113);
             this.textEdit8.StyleController = this.layoutControl1;
             this.textEdit8.TabIndex = 32;
             // 
@@ -1204,7 +1208,7 @@
             this.layoutControlItem9,
             this.splitterItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1605, 734);
+            this.Root.Size = new System.Drawing.Size(1618, 637);
             this.Root.TextVisible = false;
             // 
             // tabbedControlGroup1
@@ -1212,7 +1216,7 @@
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(1585, 262);
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(1598, 262);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
             this.layoutControlGroup2});
@@ -1229,7 +1233,7 @@
             this.lcgr_FatutaBilgisi});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1561, 215);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1574, 215);
             this.layoutControlGroup1.Text = "Fatura Başlık";
             // 
             // layoutControlGroup5
@@ -1259,7 +1263,7 @@
             this.lc_FaturaTuru.Size = new System.Drawing.Size(310, 24);
             this.lc_FaturaTuru.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lc_FaturaTuru.Text = "Fatura Türü";
-            this.lc_FaturaTuru.TextSize = new System.Drawing.Size(77, 13);
+            this.lc_FaturaTuru.TextSize = new System.Drawing.Size(86, 13);
             // 
             // lc_VadeGun
             // 
@@ -1271,7 +1275,7 @@
             this.lc_VadeGun.Size = new System.Drawing.Size(134, 24);
             this.lc_VadeGun.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lc_VadeGun.Text = "Vade Gün";
-            this.lc_VadeGun.TextSize = new System.Drawing.Size(77, 13);
+            this.lc_VadeGun.TextSize = new System.Drawing.Size(86, 13);
             // 
             // lc_VadeTarih
             // 
@@ -1283,7 +1287,7 @@
             this.lc_VadeTarih.Size = new System.Drawing.Size(176, 24);
             this.lc_VadeTarih.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lc_VadeTarih.Text = "Vade Tarihi";
-            this.lc_VadeTarih.TextSize = new System.Drawing.Size(77, 13);
+            this.lc_VadeTarih.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem18
             // 
@@ -1295,7 +1299,7 @@
             this.layoutControlItem18.Size = new System.Drawing.Size(310, 24);
             this.layoutControlItem18.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem18.Text = "Döviz Türü";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem19
             // 
@@ -1307,7 +1311,7 @@
             this.layoutControlItem19.Size = new System.Drawing.Size(310, 25);
             this.layoutControlItem19.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem19.Text = "KDV";
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(86, 13);
             // 
             // lc_OdemeTuru
             // 
@@ -1319,7 +1323,7 @@
             this.lc_OdemeTuru.Size = new System.Drawing.Size(310, 25);
             this.lc_OdemeTuru.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lc_OdemeTuru.Text = "Ödeme Türü";
-            this.lc_OdemeTuru.TextSize = new System.Drawing.Size(77, 13);
+            this.lc_OdemeTuru.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem30
             // 
@@ -1331,7 +1335,7 @@
             this.layoutControlItem30.Size = new System.Drawing.Size(310, 24);
             this.layoutControlItem30.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem30.Text = "İskonto (%)";
-            this.layoutControlItem30.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(86, 13);
             // 
             // emptySpaceItem6
             // 
@@ -1376,7 +1380,7 @@
             this.layoutControlItem27.Size = new System.Drawing.Size(220, 24);
             this.layoutControlItem27.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem27.Text = "E-Fatura No";
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem28
             // 
@@ -1388,7 +1392,7 @@
             this.layoutControlItem28.Size = new System.Drawing.Size(220, 24);
             this.layoutControlItem28.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem28.Text = "E-İrsaliye No";
-            this.layoutControlItem28.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem28.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem31
             // 
@@ -1424,7 +1428,7 @@
             this.layoutControlItem14,
             this.emptySpaceItem5,
             this.layoutControlItem13});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(1344, 0);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(1357, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(217, 215);
             this.layoutControlGroup3.TextVisible = false;
@@ -1439,7 +1443,7 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(193, 24);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.Text = "İndirimler";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem10
             // 
@@ -1451,7 +1455,7 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(193, 24);
             this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem10.Text = "Ara Toplam";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem12
             // 
@@ -1463,7 +1467,7 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(193, 24);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.Text = "Toplam KDV";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem14
             // 
@@ -1477,7 +1481,7 @@
             this.layoutControlItem14.Size = new System.Drawing.Size(193, 26);
             this.layoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem14.Text = "Genel Toplam";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(86, 13);
             // 
             // emptySpaceItem5
             // 
@@ -1498,8 +1502,8 @@
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(193, 24);
             this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem13.Text = "Toplam";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem13.Text = "Birim Fiyat Toplam";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlGroup7
             // 
@@ -1523,7 +1527,7 @@
             this.layoutControlItem26.Size = new System.Drawing.Size(202, 24);
             this.layoutControlItem26.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem26.Text = "İrsaliye No";
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem17
             // 
@@ -1535,7 +1539,7 @@
             this.layoutControlItem17.Size = new System.Drawing.Size(202, 24);
             this.layoutControlItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem17.Text = "İrsaliye Tarihi";
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(86, 13);
             // 
             // lc_IrsaliyeSaat
             // 
@@ -1547,7 +1551,7 @@
             this.lc_IrsaliyeSaat.Size = new System.Drawing.Size(202, 24);
             this.lc_IrsaliyeSaat.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lc_IrsaliyeSaat.Text = "İrsaliye Saat";
-            this.lc_IrsaliyeSaat.TextSize = new System.Drawing.Size(77, 13);
+            this.lc_IrsaliyeSaat.TextSize = new System.Drawing.Size(86, 13);
             this.lc_IrsaliyeSaat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlGroup8
@@ -1574,7 +1578,7 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(260, 50);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "Fiş Açıklama";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem6
             // 
@@ -1586,7 +1590,7 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(260, 24);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.Text = "Depo";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem1
             // 
@@ -1598,7 +1602,7 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(260, 24);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Fiş Tarihi";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem3
             // 
@@ -1610,7 +1614,7 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(260, 24);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "Fatura No";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem25
             // 
@@ -1622,7 +1626,7 @@
             this.layoutControlItem25.Size = new System.Drawing.Size(260, 24);
             this.layoutControlItem25.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem25.Text = "İşyeri";
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem7
             // 
@@ -1634,14 +1638,14 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(260, 24);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.Text = "Cari Hesap Adı";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(86, 13);
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
             this.emptySpaceItem7.Location = new System.Drawing.Point(1088, 0);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(256, 215);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(269, 215);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lcgr_FatutaBilgisi
@@ -1667,7 +1671,7 @@
             this.simpleLabelItem1.Size = new System.Drawing.Size(202, 17);
             this.simpleLabelItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.simpleLabelItem1.Text = "Durum :";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(77, 13);
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(86, 13);
             // 
             // simpleLabelItem2
             // 
@@ -1679,7 +1683,7 @@
             this.simpleLabelItem2.Size = new System.Drawing.Size(202, 17);
             this.simpleLabelItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.simpleLabelItem2.Text = "Fatura No :";
-            this.simpleLabelItem2.TextSize = new System.Drawing.Size(77, 13);
+            this.simpleLabelItem2.TextSize = new System.Drawing.Size(86, 13);
             // 
             // simpleLabelItem3
             // 
@@ -1691,7 +1695,7 @@
             this.simpleLabelItem3.Size = new System.Drawing.Size(202, 19);
             this.simpleLabelItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.simpleLabelItem3.Text = "Fatura Tarihi :";
-            this.simpleLabelItem3.TextSize = new System.Drawing.Size(77, 13);
+            this.simpleLabelItem3.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlGroup2
             // 
@@ -1703,7 +1707,7 @@
             this.layoutControlItem29});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1561, 215);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1574, 215);
             this.layoutControlGroup2.Text = "Adres";
             // 
             // layoutControlItem21
@@ -1711,33 +1715,33 @@
             this.layoutControlItem21.Control = this.textEdit2;
             this.layoutControlItem21.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(780, 24);
+            this.layoutControlItem21.Size = new System.Drawing.Size(786, 24);
             this.layoutControlItem21.Text = "İlçe / İl / Ülke";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(86, 13);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 141);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(1561, 74);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(1574, 74);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem23
             // 
             this.layoutControlItem23.Control = this.textEdit4;
-            this.layoutControlItem23.Location = new System.Drawing.Point(780, 0);
+            this.layoutControlItem23.Location = new System.Drawing.Point(786, 0);
             this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(390, 24);
+            this.layoutControlItem23.Size = new System.Drawing.Size(393, 24);
             this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem23.TextVisible = false;
             // 
             // layoutControlItem22
             // 
             this.layoutControlItem22.Control = this.textEdit3;
-            this.layoutControlItem22.Location = new System.Drawing.Point(1170, 0);
+            this.layoutControlItem22.Location = new System.Drawing.Point(1179, 0);
             this.layoutControlItem22.Name = "layoutControlItem22";
-            this.layoutControlItem22.Size = new System.Drawing.Size(391, 24);
+            this.layoutControlItem22.Size = new System.Drawing.Size(395, 24);
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem22.TextVisible = false;
             // 
@@ -1748,17 +1752,17 @@
             this.layoutControlItem29.MaxSize = new System.Drawing.Size(1561, 117);
             this.layoutControlItem29.MinSize = new System.Drawing.Size(1561, 117);
             this.layoutControlItem29.Name = "layoutControlItem29";
-            this.layoutControlItem29.Size = new System.Drawing.Size(1561, 117);
+            this.layoutControlItem29.Size = new System.Drawing.Size(1574, 117);
             this.layoutControlItem29.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem29.Text = "Adres";
-            this.layoutControlItem29.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem29.TextSize = new System.Drawing.Size(86, 13);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.gc_invoiceTrans;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 272);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(1585, 442);
+            this.layoutControlItem9.Size = new System.Drawing.Size(1598, 345);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -1767,13 +1771,13 @@
             this.splitterItem1.AllowHotTrack = true;
             this.splitterItem1.Location = new System.Drawing.Point(0, 262);
             this.splitterItem1.Name = "splitterItem1";
-            this.splitterItem1.Size = new System.Drawing.Size(1585, 10);
+            this.splitterItem1.Size = new System.Drawing.Size(1598, 10);
             // 
             // InvoiceEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1605, 774);
+            this.ClientSize = new System.Drawing.Size(1618, 677);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1792,9 +1796,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_company)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_DovizTuru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrencyType)).EndInit();

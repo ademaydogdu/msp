@@ -1762,6 +1762,7 @@
             // barButtonItem93
             // 
             this.barButtonItem93.Caption = "Stok Bakiye Raporu";
+            this.barButtonItem93.Enabled = false;
             this.barButtonItem93.Id = 174;
             this.barButtonItem93.Name = "barButtonItem93";
             // 
@@ -1782,12 +1783,14 @@
             // barButtonItem97
             // 
             this.barButtonItem97.Caption = "Stok Kar Raporu";
+            this.barButtonItem97.Enabled = false;
             this.barButtonItem97.Id = 178;
             this.barButtonItem97.Name = "barButtonItem97";
             // 
             // barButtonItem98
             // 
             this.barButtonItem98.Caption = "Hareket Görmeyen Stok Hareketleri";
+            this.barButtonItem98.Enabled = false;
             this.barButtonItem98.Id = 179;
             this.barButtonItem98.Name = "barButtonItem98";
             // 
@@ -1796,10 +1799,12 @@
             this.barButtonItem99.Caption = "En çok Satanlar";
             this.barButtonItem99.Id = 180;
             this.barButtonItem99.Name = "barButtonItem99";
+            this.barButtonItem99.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem99_ItemClick);
             // 
             // barButtonItem100
             // 
             this.barButtonItem100.Caption = "Stok Sayım Raporları";
+            this.barButtonItem100.Enabled = false;
             this.barButtonItem100.Id = 181;
             this.barButtonItem100.Name = "barButtonItem100";
             // 
@@ -2052,6 +2057,7 @@
             // barButtonItem124
             // 
             this.barButtonItem124.Caption = "Haftalık Satış Çizelgesi";
+            this.barButtonItem124.Enabled = false;
             this.barButtonItem124.Id = 207;
             this.barButtonItem124.Name = "barButtonItem124";
             // 

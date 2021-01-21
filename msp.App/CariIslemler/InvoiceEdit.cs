@@ -51,6 +51,7 @@ namespace Msp.App.CariIslemler
         List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
         List<DepotDTO> _depotList = new List<DepotDTO>();
 
+        List<int> _deleteRow = new List<int>();
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -459,6 +460,26 @@ namespace Msp.App.CariIslemler
         {
             FindInvoiceList frm = new FindInvoiceList();
             frm.ShowDialog();
+        }
+
+        private void bbi_DeleteRow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var oRow = (InvoiceTransDTO)gcv_invoiceTrans.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (oRow.RecId == 0)
+                {
+                    __dll_List_InoviceTrans.Remove(oRow);
+                    gc_invoiceTrans.RefreshDataSource();
+                }
+                else
+                {
+                    _deleteRow.Add(oRow.RecId);
+                    __dll_List_InoviceTrans.Remove(oRow);
+                    gc_invoiceTrans.RefreshDataSource();
+                }
+                TopTotal();
+            }
         }
     }
 }

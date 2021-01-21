@@ -41,6 +41,8 @@ using System.Net.Sockets;
 using Msp.Service.Service.Sale;
 using Msp.Models.Models.Sale;
 using Msp.App.Report.Case;
+using Msp.Service.Service.Report;
+using Msp.Models.Models.Report;
 
 namespace msp.App
 {
@@ -1080,6 +1082,17 @@ namespace msp.App
             {
                 frmStockMovement frm = new frmStockMovement();
                 frm.ShowDialog(); 
+            }
+        }
+
+        private void barButtonItem99_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var _SumSaleProduct = _repository.Run<ReportService, List<SumSaleStockDTO>>(x => x.Get_List_SumSaleStock());
+            if (_SumSaleProduct.Count > 0)
+            {
+                frmPrint frm = new frmPrint();
+                frm.PrintSumSaleStock(_SumSaleProduct);
+                frm.ShowDialog();
             }
         }
     }
