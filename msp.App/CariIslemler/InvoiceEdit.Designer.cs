@@ -61,7 +61,7 @@
             this.gc_invoiceTrans = new DevExpress.XtraGrid.GridControl();
             this.bs_InvoiceTrans = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_invoiceTrans = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rp_ProductBarcode = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
             this.colProductId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -630,7 +630,7 @@
             // gcv_invoiceTrans
             // 
             this.gcv_invoiceTrans.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
+            this.colProductBarcode,
             this.colProductId,
             this.colQuentity,
             this.colUnitID,
@@ -648,15 +648,15 @@
             this.gcv_invoiceTrans.OptionsView.ShowGroupPanel = false;
             this.gcv_invoiceTrans.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gcv_invoiceTrans_CellValueChanged);
             // 
-            // gridColumn1
+            // colProductBarcode
             // 
-            this.gridColumn1.Caption = "Ürün Barkod";
-            this.gridColumn1.ColumnEdit = this.rp_ProductBarcode;
-            this.gridColumn1.FieldName = "ProductId";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 150;
+            this.colProductBarcode.Caption = "Ürün Barkod";
+            this.colProductBarcode.ColumnEdit = this.rp_ProductBarcode;
+            this.colProductBarcode.FieldName = "ProductId";
+            this.colProductBarcode.Name = "colProductBarcode";
+            this.colProductBarcode.Visible = true;
+            this.colProductBarcode.VisibleIndex = 0;
+            this.colProductBarcode.Width = 150;
             // 
             // rp_ProductBarcode
             // 
@@ -664,7 +664,7 @@
             this.rp_ProductBarcode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.rp_ProductBarcode.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PBarcode", "Ürün Barkod")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PCode", "Ürün Barkod")});
             this.rp_ProductBarcode.DataSource = this.bs_Product;
             this.rp_ProductBarcode.DisplayMember = "PBarcode";
             this.rp_ProductBarcode.Name = "rp_ProductBarcode";
@@ -1964,7 +1964,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSKT;
         private DevExpress.XtraGrid.Columns.GridColumn colAlisFiyati;
         private DevExpress.XtraGrid.Columns.GridColumn colKarOrani;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductBarcode;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Product;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Unit;
         private System.Windows.Forms.BindingSource bs_Product;

@@ -46,6 +46,8 @@ namespace Msp.App.CariIslemler
         List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
         List<CompanyDTO> _company = new List<CompanyDTO>();
         List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
+        List<int> _deleteRow = new List<int>();
+
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -317,6 +319,26 @@ namespace Msp.App.CariIslemler
                     _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
                     bs_CurrencyType.DataSource = _currencyTypes;
                 }
+            }
+        }
+
+        private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var oRow = (OrderTransDTO)gcv_OrderTrans.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (oRow.RecId == 0)
+                {
+                    __orderTrans.Remove(oRow);
+                    gc_OrderTrans.RefreshDataSource();
+                }
+                else
+                {
+                    _deleteRow.Add(oRow.RecId.GetValueOrDefault());
+                    __orderTrans.Remove(oRow);
+                    gc_OrderTrans.RefreshDataSource();
+                }
+                TopTotal();
             }
         }
     }

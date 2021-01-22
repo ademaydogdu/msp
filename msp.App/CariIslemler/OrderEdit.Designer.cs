@@ -84,6 +84,8 @@
             this.txtToplam = new DevExpress.XtraEditors.TextEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.lc_KDV = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtAdres = new DevExpress.XtraEditors.MemoEdit();
+            this.txt_Remark = new DevExpress.XtraEditors.MemoEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -114,8 +116,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lbDurumBaslik = new DevExpress.XtraLayout.SimpleLabelItem();
             this.lbl_Durum = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.txtAdres = new DevExpress.XtraEditors.MemoEdit();
-            this.txt_Remark = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Company.Properties)).BeginInit();
@@ -150,6 +150,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtToplam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_KDV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -180,8 +182,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -293,6 +293,7 @@
             this.bbi_Delete.ImageOptions.ImageIndex = 3;
             this.bbi_Delete.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Delete.Name = "bbi_Delete";
+            this.bbi_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Delete_ItemClick);
             // 
             // bbi_Close
             // 
@@ -800,6 +801,25 @@
             this.lc_KDV.StyleController = this.layoutControl1;
             this.lc_KDV.TabIndex = 11;
             // 
+            // txtAdres
+            // 
+            this.txtAdres.Location = new System.Drawing.Point(100, 93);
+            this.txtAdres.MenuManager = this.barManager1;
+            this.txtAdres.Name = "txtAdres";
+            this.txtAdres.Size = new System.Drawing.Size(343, 50);
+            this.txtAdres.StyleController = this.layoutControl1;
+            this.txtAdres.TabIndex = 16;
+            // 
+            // txt_Remark
+            // 
+            this.txt_Remark.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_OrderOwner, "Remark", true));
+            this.txt_Remark.Location = new System.Drawing.Point(100, 147);
+            this.txt_Remark.MenuManager = this.barManager1;
+            this.txt_Remark.Name = "txt_Remark";
+            this.txt_Remark.Size = new System.Drawing.Size(343, 42);
+            this.txt_Remark.StyleController = this.layoutControl1;
+            this.txt_Remark.TabIndex = 14;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -1164,7 +1184,7 @@
             this.lbDurumBaslik.Size = new System.Drawing.Size(68, 45);
             this.lbDurumBaslik.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lbDurumBaslik.Text = "Durumu : ";
-            this.lbDurumBaslik.TextSize = new System.Drawing.Size(64, 16);
+            this.lbDurumBaslik.TextSize = new System.Drawing.Size(73, 16);
             // 
             // lbl_Durum
             // 
@@ -1182,26 +1202,7 @@
             this.lbl_Durum.Name = "lbl_Durum";
             this.lbl_Durum.Size = new System.Drawing.Size(366, 45);
             this.lbl_Durum.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.lbl_Durum.TextSize = new System.Drawing.Size(64, 19);
-            // 
-            // txtAdres
-            // 
-            this.txtAdres.Location = new System.Drawing.Point(100, 93);
-            this.txtAdres.MenuManager = this.barManager1;
-            this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(343, 50);
-            this.txtAdres.StyleController = this.layoutControl1;
-            this.txtAdres.TabIndex = 16;
-            // 
-            // txt_Remark
-            // 
-            this.txt_Remark.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_OrderOwner, "Remark", true));
-            this.txt_Remark.Location = new System.Drawing.Point(100, 147);
-            this.txt_Remark.MenuManager = this.barManager1;
-            this.txt_Remark.Name = "txt_Remark";
-            this.txt_Remark.Size = new System.Drawing.Size(343, 42);
-            this.txt_Remark.StyleController = this.layoutControl1;
-            this.txt_Remark.TabIndex = 14;
+            this.lbl_Durum.TextSize = new System.Drawing.Size(73, 19);
             // 
             // OrderEdit
             // 
@@ -1252,6 +1253,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtToplam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_KDV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -1282,8 +1285,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

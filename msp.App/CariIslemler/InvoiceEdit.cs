@@ -336,9 +336,10 @@ namespace Msp.App.CariIslemler
             if (oRow != null)
             {
                 if (oRow.ProductId == null) return;
+
                 var product = _productlist.FirstOrDefault(x => x.PID == oRow.ProductId);
 
-                if (e.Column == colProductId)
+                if (e.Column == colProductId || e.Column == colProductBarcode)
                 {
                     oRow.UnitID = product.PUnitId;
                     oRow.KDV = product.PTax;
@@ -358,20 +359,21 @@ namespace Msp.App.CariIslemler
 
             decimal AraToplam = 0;
             decimal BirimFiyatToplam = Math.Round(Convert.ToDecimal(__dll_List_InoviceTrans.Sum(x => x.BirimFiyat)), 2);
-            decimal Iskonto = Math.Round((BirimFiyatToplam * Convert.ToDecimal(__dll_InvoiceOwner.Iskonto)) / 100, 2);
+            decimal tutar = Math.Round(Convert.ToDecimal(__dll_List_InoviceTrans.Sum(x => x.Tutar)), 2);
+            decimal Iskonto = Math.Round((tutar * Convert.ToDecimal(__dll_InvoiceOwner.Iskonto)) / 100, 2);
             decimal TotalKDV = 0;
             if (Iskonto > 0)
             {
-                AraToplam = BirimFiyatToplam - Iskonto;
+                AraToplam = tutar - Iskonto;
             }
             else
             {
-                AraToplam = BirimFiyatToplam;
+                AraToplam = tutar;
             }
 
             foreach (var item in __dll_List_InoviceTrans)
             {
-                decimal Kdv = Math.Round(item.BirimFiyat.GetValueOrDefault() * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)item.KDV).TaxOrani, 2);
+                decimal Kdv = Math.Round(item.Tutar.GetValueOrDefault() * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)item.KDV).TaxOrani, 2);
                 TotalKDV += Kdv;
             }
 
