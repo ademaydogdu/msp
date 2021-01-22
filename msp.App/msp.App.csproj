@@ -272,6 +272,12 @@
     <Compile Include="Contact\frmMailSend.Designer.cs">
       <DependentUpon>frmMailSend.cs</DependentUpon>
     </Compile>
+    <Compile Include="DailyEndOpertions\frmDailyEndOpeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEndOpertions\frmDailyEndOpeList.Designer.cs">
+      <DependentUpon>frmDailyEndOpeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmEnvanterBilgiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -710,6 +716,9 @@
     <EmbeddedResource Include="Contact\frmMailSend.resx">
       <DependentUpon>frmMailSend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DailyEndOpertions\frmDailyEndOpeList.resx">
+      <DependentUpon>frmDailyEndOpeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmEnvanterBilgiler.resx">
       <DependentUpon>frmEnvanterBilgiler.cs</DependentUpon>
     </EmbeddedResource>
@@ -1108,9 +1117,7 @@
   <ItemGroup>
     <Content Include="logos.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DailyEndOpertions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
