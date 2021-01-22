@@ -272,8 +272,6 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup34 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -296,6 +294,13 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem129 = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.bi_Licence = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem6 = new DevExpress.XtraBars.BarStaticItem();
+            this.bbi_LicenceDay = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -527,10 +532,16 @@
             this.barButtonItem128,
             this.barButtonItem8,
             this.barButtonItem74,
-            this.barButtonItem92});
+            this.barButtonItem92,
+            this.barButtonItem95,
+            this.barButtonItem129,
+            this.barStaticItem5,
+            this.bi_Licence,
+            this.barStaticItem6,
+            this.bbi_LicenceDay});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 217;
+            this.ribbon.MaxItemId = 223;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1479,6 +1490,7 @@
             this.barButtonItem73.Id = 125;
             this.barButtonItem73.ImageOptions.LargeImageIndex = 22;
             this.barButtonItem73.Name = "barButtonItem73";
+            this.barButtonItem73.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem73_ItemClick);
             // 
             // btnSKTGecenUrun
             // 
@@ -2202,6 +2214,8 @@
             this.img_buton.Add("bo_contact", "image://svgimages/business objects/bo_contact.svg");
             this.img_buton.Add("outlookexport", "image://svgimages/scheduling/outlookexport.svg");
             this.img_buton.Add("customerquicksales", "image://svgimages/outlook inspired/customerquicksales.svg");
+            this.img_buton.Add("calcdate", "image://svgimages/snap/calcdate.svg");
+            this.img_buton.Add("replace", "image://svgimages/spreadsheet/replace.svg");
             // 
             // barSatis
             // 
@@ -2227,6 +2241,7 @@
             // 
             this.ribbonPageGroup10.AllowTextClipping = false;
             this.ribbonPageGroup10.ItemLinks.Add(this.btnSatisListesi);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem95);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // ribbonPageGroup15
@@ -2367,9 +2382,8 @@
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6,
             this.ribbonPageGroup33,
-            this.ribbonPageGroup27,
-            this.ribbonPageGroup13,
-            this.ribbonPageGroup34});
+            this.ribbonPageGroup34,
+            this.ribbonPageGroup13});
             this.ribbonPage5.ImageOptions.ImageIndex = 6;
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "İşlemler";
@@ -2382,20 +2396,11 @@
             // 
             // ribbonPageGroup33
             // 
+            this.ribbonPageGroup33.ItemLinks.Add(this.bbi_DovizKurlari);
             this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem70);
             this.ribbonPageGroup33.ItemLinks.Add(this.bbi_cekler);
+            this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem88);
             this.ribbonPageGroup33.Name = "ribbonPageGroup33";
-            // 
-            // ribbonPageGroup27
-            // 
-            this.ribbonPageGroup27.ItemLinks.Add(this.bbi_DovizKurlari);
-            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
-            this.ribbonPageGroup27.Text = "Kur";
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem88);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             // 
             // ribbonPageGroup34
             // 
@@ -2529,12 +2534,16 @@
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.bbi_Version);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem5);
+            this.ribbonStatusBar1.ItemLinks.Add(this.bi_Licence);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.bbi_UserName);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem3);
             this.ribbonStatusBar1.ItemLinks.Add(this.bbi_Connect);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem4);
             this.ribbonStatusBar1.ItemLinks.Add(this.bbi_Company);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem6);
+            this.ribbonStatusBar1.ItemLinks.Add(this.bbi_LicenceDay);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 582);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbon;
@@ -2557,6 +2566,48 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barButtonItem95
+            // 
+            this.barButtonItem95.Caption = "Gün Sonu İşlemleri";
+            this.barButtonItem95.Id = 217;
+            this.barButtonItem95.ImageOptions.LargeImageIndex = 70;
+            this.barButtonItem95.Name = "barButtonItem95";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem129);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            // 
+            // barButtonItem129
+            // 
+            this.barButtonItem129.Caption = "Dönem Sonu İşlemini Başlat";
+            this.barButtonItem129.Id = 218;
+            this.barButtonItem129.ImageOptions.LargeImageIndex = 71;
+            this.barButtonItem129.Name = "barButtonItem129";
+            // 
+            // barStaticItem5
+            // 
+            this.barStaticItem5.Caption = "Licence:";
+            this.barStaticItem5.Enabled = false;
+            this.barStaticItem5.Id = 219;
+            this.barStaticItem5.Name = "barStaticItem5";
+            // 
+            // bi_Licence
+            // 
+            this.bi_Licence.Id = 220;
+            this.bi_Licence.Name = "bi_Licence";
+            // 
+            // barStaticItem6
+            // 
+            this.barStaticItem6.Caption = "Licence Kullanım Süresi Dolmasına:";
+            this.barStaticItem6.Id = 221;
+            this.barStaticItem6.Name = "barStaticItem6";
+            // 
+            // bbi_LicenceDay
+            // 
+            this.bbi_LicenceDay.Id = 222;
+            this.bbi_LicenceDay.Name = "bbi_LicenceDay";
             // 
             // MainForm
             // 
@@ -2775,7 +2826,6 @@
         private DevExpress.XtraBars.BarSubItem barSubItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem79;
         private DevExpress.XtraBars.BarButtonItem bbi_DovizKurlari;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup27;
         private DevExpress.XtraBars.BarButtonItem barButtonItem81;
         private DevExpress.XtraBars.BarButtonItem barButtonItem82;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup28;
@@ -2796,7 +2846,6 @@
         private DevExpress.XtraBars.BarButtonItem bbi_DovizCinsi;
         private DevExpress.XtraBars.BarButtonItem bbi_BekleyenIrsaliye;
         private DevExpress.XtraBars.BarButtonItem barButtonItem88;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.BarSubItem barSubItem15;
         private DevExpress.XtraBars.BarSubItem barSubItem16;
         private DevExpress.XtraBars.BarButtonItem barButtonItem78;
@@ -2856,5 +2905,12 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem74;
         private DevExpress.XtraBars.BarButtonItem barButtonItem92;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem95;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem129;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem5;
+        private DevExpress.XtraBars.BarStaticItem bi_Licence;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem6;
+        private DevExpress.XtraBars.BarStaticItem bbi_LicenceDay;
     }
 }

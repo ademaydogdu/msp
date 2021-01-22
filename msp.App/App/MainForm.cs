@@ -1097,5 +1097,10 @@ namespace msp.App
                 frm.ShowDialog();
             }
         }
+
+        private void barButtonItem73_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

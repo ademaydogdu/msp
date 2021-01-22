@@ -1108,6 +1108,9 @@
   <ItemGroup>
     <Content Include="logos.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DailyEndOpertions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
