@@ -2581,7 +2581,7 @@
             // 
             // barButtonItem129
             // 
-            this.barButtonItem129.Caption = "Dönem Sonu İşlemini Başlat";
+            this.barButtonItem129.Caption = "Gün Sonu İşlemini Başlat";
             this.barButtonItem129.Id = 218;
             this.barButtonItem129.ImageOptions.LargeImageIndex = 71;
             this.barButtonItem129.Name = "barButtonItem129";
