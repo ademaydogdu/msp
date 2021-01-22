@@ -112,8 +112,8 @@ namespace Msp.App.Satis
 
                 if (IskontoTutari != 0) __dll_SaleOwner.TotalPrice = totalAmount - IskontoTutari;
                 __dll_SaleOwner.KDV = totalKdv;
-                //txt_NetFiyat.EditValue = __dll_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
-                //txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
+                txt_NetFiyat.EditValue = __dll_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
+                txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
                 txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", (IskontoTutari != 0 ? totalAmount - IskontoTutari : totalAmount));
 
             }
@@ -124,8 +124,8 @@ namespace Msp.App.Satis
                 __dll_SaleOwner.NetPrice = 0;
                 __dll_SaleOwner.TotalPrice = 0;
                 __dll_SaleOwner.KDV = 0;
-                //txt_NetFiyat.EditValue = __dll_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
-                //txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
+                txt_NetFiyat.EditValue = __dll_SaleOwner.NetPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", __dl_List_SaleTrans.Sum(x => x.ProductAmount));
+                txt_KDV.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalKdv);
                 txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", totalAmount);
             }
         }
@@ -138,14 +138,6 @@ namespace Msp.App.Satis
                 XtraMessageBox.Show("Ürün Kaydı olması gerekmektedir.");
                 _return = true;
             }
-            //if (_parameters.PaymentyForced.GetValueOrDefault())
-            //{
-            //    if (Convert.ToString(txt_OdemeTipi.EditValue) == "")
-            //    {
-            //        XtraMessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
-            //        _return = true;
-            //    }
-            //}
             if (__dll_SaleOwner.CaseId == 0)
             {
                 XtraMessageBox.Show("Kasa Girilmesi Zorunludur.");
@@ -160,17 +152,9 @@ namespace Msp.App.Satis
             try
             {
                 if (do_Validation()) return;
-                //if (_parameters.SaleProductEndDate.GetValueOrDefault())
-                //{
-                //    foreach (var item in __dl_List_SaleTrans)
-                //    {
-                //        if (item.ProductDate == DateTime.Now)
-                //        {
-                //            DevExpress.XtraEditors.XtraMessageBox.Show("Son Kullanma Tarihi Geçmiş Ürün " + item.ProductName, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //            return;
-                //        }
-                //    }
-                //}
+
+                bs_SaleOwner.EndEdit();
+                bs_SaleTrans.EndEdit();
                 __dl_List_SaleTrans.ForEach(x => x.CaseId = Convert.ToInt32(lc_CaseDef.EditValue));
 
                 __dll_SaleOwner.UserCode = AppMain.User.username;
@@ -199,6 +183,7 @@ namespace Msp.App.Satis
                         gridControl1.RefreshDataSource();
                         TopTotal();
                     }
+                    daily_SaleProduct();
 
                 }
 
@@ -234,8 +219,16 @@ namespace Msp.App.Satis
             _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_products.DataSource = _productlist;
 
+            _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+            bs_Unit.DataSource = _list_UnitsDTO;
+
+            rp_KdvOran.DataSource = KdvOrani;
+            rp_KdvOran.DisplayMember = "Value";
+            rp_KdvOran.ValueMember = "Id";
+
             __dll_SaleOwner = new SaleOwnerDTO();
             __dll_SaleOwner.Date = DateTime.Now;
+            txt_Date.EditValue = DateTime.Now;
 
             daily_SaleProduct();
             mspTool.Get_Layout(this);
@@ -270,6 +263,10 @@ namespace Msp.App.Satis
         private void bbi_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gridView1.CloseEditor();
+            if (_parameters.SaleApproval.GetValueOrDefault())
+            {
+                if (!mspTool.get_Question("Satış Sonlnadırılactır. Onaylıyor musunuz?")) return;
+            }
             do_save();
         }
 

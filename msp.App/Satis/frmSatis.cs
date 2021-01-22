@@ -299,6 +299,9 @@ namespace msp.App
                         }
                     }
                 }
+                bs_SaleOwner.EndEdit();
+                bs_SaleTrans.EndEdit();
+
                 __dl_List_SaleTrans.ForEach(x => x.CaseId = Convert.ToInt32(lc_CaseDef.EditValue));
 
                 __dll_SaleOwner.UserCode = AppMain.User.username;

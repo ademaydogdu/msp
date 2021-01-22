@@ -94,7 +94,7 @@ namespace Msp.App.Depo_Stok
                 XtraMessageBox.Show("Ürün Adı Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _return = true;
             }
-            if (chkKDVIstisna.Checked = false || Convert.ToString(taxTextEdit.EditValue) == "")
+            if (Convert.ToString(taxTextEdit.EditValue) == "")
             {
                 XtraMessageBox.Show("KDV Oranı Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _return = true;
@@ -323,7 +323,7 @@ namespace Msp.App.Depo_Stok
                 lyControlKDVOrani.Enabled = true;
                 lytDahilHaric.Enabled = true;
                 __product.PTaxType = 1;
-                taxTextEdit.EditValue = 2;
+                taxTextEdit.EditValue = 1;
                 do_hesapla();
             }
         }

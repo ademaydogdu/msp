@@ -31,6 +31,13 @@ namespace Msp.Service.Service.DepotStock
             }
         }
 
+        public List<ProductDTO> GetListProduct_Deleted()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<Products>, List<ProductDTO>>(_db.products.Where(x => x.Deleted == true).ToList());
+            }
+        }
 
 
 
@@ -138,6 +145,22 @@ namespace Msp.Service.Service.DepotStock
                             _ProductBarcode.Barcode = response.Response.PBarcode;
                             _db.Entry(_ProductBarcode).CurrentValues.SetValues(_ProductBarcode);
                             _db.Entry(_ProductBarcode).State = System.Data.Entity.EntityState.Modified;
+                        }
+                        else
+                        {
+                            if (model.PBarcode.Length > 0)
+                            {
+
+                                ProductBarCodeDTO productBarCode = new ProductBarCodeDTO
+                                {
+                                    Barcode = model.PBarcode,
+                                    ProductId = entity.PID,
+                                    CompanyRecId = entity.PCompanyId,
+                                    Remark = entity.PName
+                                };
+                                _db.ProductBarCode.Add(base.Map<ProductBarCodeDTO, ProductBarCode>(productBarCode));
+                                _db.SaveChanges(); 
+                            }
                         }
 
                     }

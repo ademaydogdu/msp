@@ -1037,6 +1037,7 @@ namespace msp.App
             frmDeleteRecords frm = new frmDeleteRecords();
             frm.MdiParent = this;
             frm.Text = "Satış İşlemlerinde Silinen Kayıtlar";
+            frm._formType = DeleteForm.SatisDeleted;
             frm.Show();
         }
 
@@ -1045,6 +1046,7 @@ namespace msp.App
             frmDeleteRecords frm = new frmDeleteRecords();
             frm.MdiParent = this;
             frm.Text = "Silinen Ürün Kartları";
+            frm._formType = DeleteForm.UrunKarti;
             frm.Show();
         }
 

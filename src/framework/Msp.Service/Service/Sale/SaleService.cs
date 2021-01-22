@@ -148,6 +148,13 @@ namespace Msp.Service.Service.Sale
             }
         }
 
+        public List<SaleOwnerDTO> Get_List_SaleOwner_Deleted()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Deleted == true).ToList());
+            }
+        }
 
         #endregion
 

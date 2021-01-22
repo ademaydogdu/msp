@@ -49,5 +49,13 @@ namespace Msp.Infrastructure
         Satis = 2
     }
 
+    public enum DeleteForm
+    {
+        SatisDeleted = 1,
+        UrunKarti = 2
+    }
+
+
+
 
 }
