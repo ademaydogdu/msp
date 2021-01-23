@@ -3,6 +3,7 @@ using Msp.Entity.Entities;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
 using Msp.Models.Models.Case;
+using Msp.Models.Models.Daily;
 using Msp.Models.Models.Invoice;
 using Msp.Models.Models.Order;
 using Msp.Models.Models.Sale;
@@ -69,7 +70,10 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<CashPayGroupDefDTO, CashPayGroupDef>();
             cfg.CreateMap<ProductBarCode, ProductBarCodeDTO>();
             cfg.CreateMap<ProductBarCodeDTO, ProductBarCode>();
-
+            cfg.CreateMap<DailyOwner, DailyOwnerDTO>();
+            cfg.CreateMap<DailyOwnerDTO, DailyOwner>();
+            cfg.CreateMap<DailyTrans, DailyTransDTO>();
+            cfg.CreateMap<DailyTransDTO, DailyTrans>();
         }
 
 

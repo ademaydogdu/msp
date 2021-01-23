@@ -3,6 +3,7 @@ using Msp.Models.Models.Case;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,14 @@ namespace Msp.Service.Service.Case
             using (var _db = new MspDbContext())
             {
                 return base.Map<List<CaseMovement>, List<CaseMovementDTO>>(_db.CaseMovement.Where(x => x.Deleted == false && x.CompanyRecId == companyId).ToList());
+            }
+        }
+
+        public List<CaseMovementDTO> Get_List_CaseMovement_Date(int companyId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<CaseMovement>, List<CaseMovementDTO>>(_db.CaseMovement.Where(x => x.Deleted == false && x.CompanyRecId == companyId && EntityFunctions.TruncateTime(x.RecordDate) == DateTime.Today).ToList());
             }
         }
 

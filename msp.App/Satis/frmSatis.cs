@@ -334,6 +334,8 @@ namespace msp.App
                         txt_OdemeTipi.EditValue = "";
                         __dll_SaleOwner.PaymentType = 0;
 
+                        bs_SaleTrans.DataSource = __dl_List_SaleTrans;
+                        bs_SaleOwner.DataSource = __dll_SaleOwner;
                         gridControl1.RefreshDataSource();
                         TopTotal();
                     }

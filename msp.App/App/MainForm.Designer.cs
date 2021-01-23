@@ -247,6 +247,12 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem74 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem92 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_GunSonuBaslat = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.bi_Licence = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem6 = new DevExpress.XtraBars.BarStaticItem();
+            this.bbi_LicenceDay = new DevExpress.XtraBars.BarStaticItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -273,6 +279,7 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup34 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -294,13 +301,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem129 = new DevExpress.XtraBars.BarButtonItem();
-            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
-            this.bi_Licence = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem6 = new DevExpress.XtraBars.BarStaticItem();
-            this.bbi_LicenceDay = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -534,7 +534,7 @@
             this.barButtonItem74,
             this.barButtonItem92,
             this.barButtonItem95,
-            this.barButtonItem129,
+            this.bbi_GunSonuBaslat,
             this.barStaticItem5,
             this.bi_Licence,
             this.barStaticItem6,
@@ -2141,6 +2141,46 @@
             this.barButtonItem92.Name = "barButtonItem92";
             this.barButtonItem92.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem92_ItemClick);
             // 
+            // barButtonItem95
+            // 
+            this.barButtonItem95.Caption = "Gün Sonu İşlemleri";
+            this.barButtonItem95.Id = 217;
+            this.barButtonItem95.ImageOptions.LargeImageIndex = 70;
+            this.barButtonItem95.Name = "barButtonItem95";
+            this.barButtonItem95.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem95_ItemClick);
+            // 
+            // bbi_GunSonuBaslat
+            // 
+            this.bbi_GunSonuBaslat.Caption = "Gün Sonu İşlemini Başlat";
+            this.bbi_GunSonuBaslat.Id = 218;
+            this.bbi_GunSonuBaslat.ImageOptions.LargeImageIndex = 71;
+            this.bbi_GunSonuBaslat.Name = "bbi_GunSonuBaslat";
+            this.bbi_GunSonuBaslat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_GunSonuBaslat_ItemClick);
+            // 
+            // barStaticItem5
+            // 
+            this.barStaticItem5.Caption = "Licence:";
+            this.barStaticItem5.Enabled = false;
+            this.barStaticItem5.Id = 219;
+            this.barStaticItem5.Name = "barStaticItem5";
+            // 
+            // bi_Licence
+            // 
+            this.bi_Licence.Id = 220;
+            this.bi_Licence.Name = "bi_Licence";
+            // 
+            // barStaticItem6
+            // 
+            this.barStaticItem6.Caption = "Licence Kullanım Süresi Dolmasına:";
+            this.barStaticItem6.Enabled = false;
+            this.barStaticItem6.Id = 221;
+            this.barStaticItem6.Name = "barStaticItem6";
+            // 
+            // bbi_LicenceDay
+            // 
+            this.bbi_LicenceDay.Id = 222;
+            this.bbi_LicenceDay.Name = "bbi_LicenceDay";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -2407,6 +2447,11 @@
             this.ribbonPageGroup34.ItemLinks.Add(this.barSubItem23);
             this.ribbonPageGroup34.Name = "ribbonPageGroup34";
             // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.bbi_GunSonuBaslat);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            // 
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -2566,48 +2611,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem95
-            // 
-            this.barButtonItem95.Caption = "Gün Sonu İşlemleri";
-            this.barButtonItem95.Id = 217;
-            this.barButtonItem95.ImageOptions.LargeImageIndex = 70;
-            this.barButtonItem95.Name = "barButtonItem95";
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem129);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            // 
-            // barButtonItem129
-            // 
-            this.barButtonItem129.Caption = "Gün Sonu İşlemini Başlat";
-            this.barButtonItem129.Id = 218;
-            this.barButtonItem129.ImageOptions.LargeImageIndex = 71;
-            this.barButtonItem129.Name = "barButtonItem129";
-            // 
-            // barStaticItem5
-            // 
-            this.barStaticItem5.Caption = "Licence:";
-            this.barStaticItem5.Enabled = false;
-            this.barStaticItem5.Id = 219;
-            this.barStaticItem5.Name = "barStaticItem5";
-            // 
-            // bi_Licence
-            // 
-            this.bi_Licence.Id = 220;
-            this.bi_Licence.Name = "bi_Licence";
-            // 
-            // barStaticItem6
-            // 
-            this.barStaticItem6.Caption = "Licence Kullanım Süresi Dolmasına:";
-            this.barStaticItem6.Id = 221;
-            this.barStaticItem6.Name = "barStaticItem6";
-            // 
-            // bbi_LicenceDay
-            // 
-            this.bbi_LicenceDay.Id = 222;
-            this.bbi_LicenceDay.Name = "bbi_LicenceDay";
             // 
             // MainForm
             // 
@@ -2906,7 +2909,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem74;
         private DevExpress.XtraBars.BarButtonItem barButtonItem92;
         private DevExpress.XtraBars.BarButtonItem barButtonItem95;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem129;
+        private DevExpress.XtraBars.BarButtonItem bbi_GunSonuBaslat;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.BarStaticItem barStaticItem5;
         private DevExpress.XtraBars.BarStaticItem bi_Licence;

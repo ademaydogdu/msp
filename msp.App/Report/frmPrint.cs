@@ -16,6 +16,8 @@ using Msp.App.Report.Depo_Stock;
 using Msp.App.Report.Case;
 using Msp.Models.Models.Case;
 using Msp.Models.Models.Report;
+using Msp.App.Report.Daily;
+using Msp.Models.Models.Daily;
 
 namespace Msp.App.Report
 {
@@ -92,6 +94,16 @@ namespace Msp.App.Report
         public void PrintSumSaleStock(List<SumSaleStockDTO> data)
         {
             EnCokSatanUrunler report = new EnCokSatanUrunler();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+        public void PrintGunSonu(DailyOwnerDTO data)
+        {
+            GunSonuReport report = new GunSonuReport();
             foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
                 p.Visible = false;
             report.InitData(data);

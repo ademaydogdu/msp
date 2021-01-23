@@ -1090,6 +1090,67 @@ namespace Msp.App.App
 
             #endregion
 
+            #region DailyOwner
+
+            if (tblTableList.Rows.Contains("DailyOwner") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[DailyOwner]( " 
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [Date] [datetime] NULL, "
+                + " 	[Amount] [decimal](18, 0) NULL, "
+                + " 	[SaleAmount] [decimal](18, 0) NULL, "
+                + " 	[CashAmount] [decimal](18, 0) NULL, "
+                + " 	[CardAmount] [decimal](18, 0) NULL, "
+                + " 	[TotalProduct] [int] NULL, "
+                + " 	[Remark] [nvarchar] (50) NULL, "
+                + " 	[RetailSaleCount] [int] NULL, "
+                + " 	[RetailSaleAmount] [decimal](18, 0) NULL, "
+                + " 	[Revenue] [decimal](18, 0) NULL, "
+                + " 	[Expense] [decimal](18, 0) NULL, "
+                + " 	[CompanyRecId] [int] NULL, "
+                + " 	[Deleted] [bit] NULL, "
+                + "  CONSTRAINT[PK_DailyOwner] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
+            #region DailyTrans
+
+            if (tblTableList.Rows.Contains("DailyTrans") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[DailyTrans]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [OwnerId] [int] NULL, "
+                + " 	[SaleTransId] [int] NULL, "
+                + " 	[CaseOwnerId] [int] NULL, "
+                + " 	[Quantity] [int] NULL, "
+                + " 	[Amount] [decimal](18, 0) NULL, "
+                + " 	[Type] [int] NULL, "
+                + " 	[Date] [datetime] NULL, "
+                + " 	[CompanyRecId] [int] NULL, "
+                + "  CONSTRAINT[PK_DailyTrans] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+
+
+            #endregion
+
             #endregion
 
             #region CreateColumn

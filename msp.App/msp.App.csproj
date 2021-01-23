@@ -278,6 +278,12 @@
     <Compile Include="DailyEndOpertions\frmDailyEndOpeList.Designer.cs">
       <DependentUpon>frmDailyEndOpeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="DailyEndOpertions\frmDailyStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyEndOpertions\frmDailyStart.Designer.cs">
+      <DependentUpon>frmDailyStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Depo-Stok\frmEnvanterBilgiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,6 +427,12 @@
     </Compile>
     <Compile Include="Report\Case\VeresiyeDefter.Designer.cs">
       <DependentUpon>VeresiyeDefter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Daily\GunSonuReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Daily\GunSonuReport.Designer.cs">
+      <DependentUpon>GunSonuReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\Depo-Stock\EnCokSatanUrunler.cs">
       <SubType>Component</SubType>
@@ -719,6 +731,9 @@
     <EmbeddedResource Include="DailyEndOpertions\frmDailyEndOpeList.resx">
       <DependentUpon>frmDailyEndOpeList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DailyEndOpertions\frmDailyStart.resx">
+      <DependentUpon>frmDailyStart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Depo-Stok\frmEnvanterBilgiler.resx">
       <DependentUpon>frmEnvanterBilgiler.cs</DependentUpon>
     </EmbeddedResource>
@@ -791,6 +806,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Case\VeresiyeDefter.resx">
       <DependentUpon>VeresiyeDefter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Daily\GunSonuReport.resx">
+      <DependentUpon>GunSonuReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Depo-Stock\EnCokSatanUrunler.resx">
       <DependentUpon>EnCokSatanUrunler.cs</DependentUpon>
@@ -937,6 +955,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrencyTypeDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Daily.DailyOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.DepotDTO1.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ExchangeRateDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Invoice.InvoiceOwnerDTO.datasource" />

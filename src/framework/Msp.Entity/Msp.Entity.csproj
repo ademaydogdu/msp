@@ -63,6 +63,8 @@
     <Compile Include="Entities\CurrencyType.cs" />
     <Compile Include="Entities\Customers.cs" />
     <Compile Include="Entities\Cayments.cs" />
+    <Compile Include="Entities\DailyOwner.cs" />
+    <Compile Include="Entities\DailyTrans.cs" />
     <Compile Include="Entities\Depots.cs" />
     <Compile Include="Entities\ExchangeRate.cs" />
     <Compile Include="Entities\FormLayouts.cs" />

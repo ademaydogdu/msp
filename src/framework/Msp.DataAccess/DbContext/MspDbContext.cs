@@ -54,6 +54,8 @@ namespace Msp.Entity.Entities
         public virtual DbSet<CaseDefinition> CaseDefinition { get; set; }
         public virtual DbSet<CaseMovement> CaseMovement { get; set; }
         public virtual DbSet<ProductBarCode> ProductBarCode { get; set; }
+        public virtual DbSet<DailyOwner> DailyOwner { get; set; }
+        public virtual DbSet<DailyTrans> DailyTrans { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -43,6 +43,7 @@ using Msp.Models.Models.Sale;
 using Msp.App.Report.Case;
 using Msp.Service.Service.Report;
 using Msp.Models.Models.Report;
+using Msp.App.DailyEndOpertions;
 
 namespace msp.App
 {
@@ -431,7 +432,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(21, 1, 1, 10);
+            Version oVersionFB = new Version(21, 1, 1, 11);
             AppMain.MspVersion = oVersionFB;
 
             string AppPath = @"C:\Msp";
@@ -1100,7 +1101,23 @@ namespace msp.App
 
         private void barButtonItem73_ItemClick(object sender, ItemClickEventArgs e)
         {
+         
+        }
 
+        private void bbi_GunSonuBaslat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDailyStart frm = new frmDailyStart();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem95_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!formAcikmi("frmDailyEndOpeList"))
+            {
+                frmDailyEndOpeList frm = new frmDailyEndOpeList();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
     }
 }
