@@ -44,6 +44,8 @@ using Msp.App.Report.Case;
 using Msp.Service.Service.Report;
 using Msp.Models.Models.Report;
 using Msp.App.DailyEndOpertions;
+using Msp.Infrastructure.Extensions;
+using SKGL;
 
 namespace msp.App
 {
@@ -58,6 +60,8 @@ namespace msp.App
             this.ribbon.Minimized = true;
         }
         MspTool tool = new MspTool();
+
+        private bool formClosinMessegae = false;
 
         #region Method
         public bool IsConnected()
@@ -190,7 +194,6 @@ namespace msp.App
                 }
             }
         }
-
         public string MACAdresiAl()
         {
             NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
@@ -238,7 +241,6 @@ namespace msp.App
             }
             return _LocalIP;
         }
-
         private bool formAcikmi(string formAdi)
         {
             bool formBulundu = false;
@@ -252,7 +254,6 @@ namespace msp.App
                 }
             return formBulundu;
         }
-
         public void do_RefreshDefault()
         {
             AppMain._productsTask = _repository.RunAsync<Msp.Service.Service.DepotStock.DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
@@ -424,6 +425,30 @@ namespace msp.App
             if (varmi == false)
             { OurKey.SetValue("SqlLocal", "False"); }
 
+            varmi = false;
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "Licence")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("Licence", ""); }
+
+            varmi = false;
+            for (int i = 0; i < lsKeys.Length; i++)
+            {
+                if (lsKeys[i].ToString().Trim() == "IsDemo")
+                {
+                    varmi = true;
+                    break;
+                }
+            }
+            if (varmi == false)
+            { OurKey.SetValue("IsDemo", SecurityExtension.Sifrele("false")); }
+
             #endregion
 
             //if (Global.RegistryDbSettings.Count > 0)
@@ -450,17 +475,46 @@ namespace msp.App
             }
             else
             {
-               AppMain.LocalConnect = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("SqlLocal").ToString());
+                AppMain.LocalConnect = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("SqlLocal").ToString());
+                AppMain.IsDemo = Convert.ToBoolean(SecurityExtension.Sifre_Coz(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("IsDemo").ToString()));
+                AppMain.Licence = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Licence").ToString();
             }
 
 
 
+            if (AppMain.IsDemo)
+            {
+                if (!IsConnected())
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Denem Sürümü Kullanıyorsunuz. İnternet Bağlantısı Zorunludur.");
+                    Application.Exit();
+                }
+            }
 
+            if (AppMain.Licence.Length > 0)
+            {
+                bi_Licence.Caption = AppMain.Licence;
+                Validate validate = new Validate();
+                validate.secretPhase = "c4e128b141aFb";
+                validate.Key = AppMain.Licence;
+                bbi_LicenceDay.Caption = Convert.ToString(validate.DaysLeft) + " Gün";
+                if (validate.DaysLeft == 0 || validate.DaysLeft < 0)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Lisans süreniz dolmuştur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Application.Exit();
+                }
+            }
+            else
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lisans Anahtarı Bulunulamadı. Lütfen Sistem Yüneticinize Başvurunuz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                Application.Exit();
+            }
 
             Login loForm = new Login();
             loForm.TopMost = true;
             loForm.ShowDialog();
 
+            formClosinMessegae = true;
             if (AppMain.User != null)
             {
                 do_versionControl();
@@ -497,7 +551,7 @@ namespace msp.App
             {
                 frmSatis frm = new frmSatis();
                 frm.MdiParent = this;
-                frm.Show(0); 
+                frm.Show(0);
             }
 
         }
@@ -669,12 +723,15 @@ namespace msp.App
         {
             //if (mesassizcik == false)
             //{
-            if (MessageBox.Show("Programdan çıkışı onaylıyormusunuz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (formClosinMessegae)
             {
-                e.Cancel = true;
-                return;
+                if (MessageBox.Show("Programdan çıkışı onaylıyormusunuz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                tool.do_save_User_Skin(AppMain.User.username, UserLookAndFeel.Default.ActiveSkinName, UserLookAndFeel.Default.ActiveSvgPaletteName, this.Name); 
             }
-            tool.do_save_User_Skin(AppMain.User.username, UserLookAndFeel.Default.ActiveSkinName, UserLookAndFeel.Default.ActiveSvgPaletteName, this.Name);
             //}
         }
 
@@ -942,7 +999,7 @@ namespace msp.App
             {
                 CashPayGroupDef frm = new CashPayGroupDef();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
 
@@ -952,7 +1009,7 @@ namespace msp.App
             {
                 frmGroupDefinition frm = new frmGroupDefinition();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
 
@@ -1031,7 +1088,7 @@ namespace msp.App
         {
             if (formAcikmi("frmSatis"))
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Satış Ekranı açık Lütfen Kapatınız...", "Uyarı",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Satış Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             frmSaleProductMovemnet frm = new frmSaleProductMovemnet();
@@ -1090,7 +1147,7 @@ namespace msp.App
             if (!formAcikmi("frmStockMovement"))
             {
                 frmStockMovement frm = new frmStockMovement();
-                frm.ShowDialog(); 
+                frm.ShowDialog();
             }
         }
 
@@ -1107,7 +1164,7 @@ namespace msp.App
 
         private void barButtonItem73_ItemClick(object sender, ItemClickEventArgs e)
         {
-         
+
         }
 
         private void bbi_GunSonuBaslat_ItemClick(object sender, ItemClickEventArgs e)

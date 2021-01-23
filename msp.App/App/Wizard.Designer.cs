@@ -38,7 +38,7 @@
             this.txtdatabase = new DevExpress.XtraEditors.TextEdit();
             this.txtServerUser = new DevExpress.XtraEditors.TextEdit();
             this.txtServerPas = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSqlControl = new DevExpress.XtraEditors.SimpleButton();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.chcSunucu = new DevExpress.XtraEditors.CheckEdit();
             this.chLocalDB = new DevExpress.XtraEditors.CheckEdit();
@@ -49,10 +49,10 @@
             this.grpServer = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.chSunucu = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lytLocalString = new DevExpress.XtraLayout.LayoutControlItem();
@@ -116,10 +116,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpServer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSunucu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).BeginInit();
@@ -203,6 +203,7 @@
             this.welcomeWizardPage1.ProceedText = "Devam etmek için İleri\'ye tıklayın";
             this.welcomeWizardPage1.Size = new System.Drawing.Size(466, 379);
             this.welcomeWizardPage1.Text = "MSP Hoş Geldiniz";
+            this.welcomeWizardPage1.PageValidating += new DevExpress.XtraWizard.WizardPageValidatingEventHandler(this.welcomeWizardPage1_PageValidating);
             // 
             // pageSqlSettings
             // 
@@ -219,7 +220,7 @@
             this.layoutControl1.Controls.Add(this.txtdatabase);
             this.layoutControl1.Controls.Add(this.txtServerUser);
             this.layoutControl1.Controls.Add(this.txtServerPas);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.btnSqlControl);
             this.layoutControl1.Controls.Add(this.chcSunucu);
             this.layoutControl1.Controls.Add(this.chLocalDB);
             this.layoutControl1.Controls.Add(this.textEdit2);
@@ -281,16 +282,17 @@
             this.txtServerPas.StyleController = this.layoutControl1;
             this.txtServerPas.TabIndex = 8;
             // 
-            // simpleButton1
+            // btnSqlControl
             // 
-            this.simpleButton1.ImageOptions.ImageIndex = 0;
-            this.simpleButton1.ImageOptions.ImageList = this.img_bar;
-            this.simpleButton1.Location = new System.Drawing.Point(481, 213);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(146, 41);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Bağlantı Kontrol";
+            this.btnSqlControl.ImageOptions.ImageIndex = 0;
+            this.btnSqlControl.ImageOptions.ImageList = this.img_bar;
+            this.btnSqlControl.Location = new System.Drawing.Point(481, 213);
+            this.btnSqlControl.Name = "btnSqlControl";
+            this.btnSqlControl.Size = new System.Drawing.Size(146, 41);
+            this.btnSqlControl.StyleController = this.layoutControl1;
+            this.btnSqlControl.TabIndex = 9;
+            this.btnSqlControl.Text = "Bağlantı Kontrol";
+            this.btnSqlControl.Click += new System.EventHandler(this.btnSqlControl_Click);
             // 
             // img_bar
             // 
@@ -390,27 +392,9 @@
             this.layoutControlItem2.Text = "Server";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(112, 13);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txtdatabase;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(607, 24);
-            this.layoutControlItem3.Text = "DataBase";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(112, 13);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtServerUser;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(607, 24);
-            this.layoutControlItem4.Text = "Server Kullanıcı Adı";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(112, 13);
-            // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.simpleButton1;
+            this.layoutControlItem6.Control = this.btnSqlControl;
             this.layoutControlItem6.Location = new System.Drawing.Point(457, 96);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(86, 26);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -426,6 +410,24 @@
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(457, 45);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtServerUser;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(607, 24);
+            this.layoutControlItem4.Text = "Server Kullanıcı Adı";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(112, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtdatabase;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(607, 24);
+            this.layoutControlItem3.Text = "DataBase";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(112, 13);
             // 
             // chSunucu
             // 
@@ -879,10 +881,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpServer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chSunucu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lytLocalString)).EndInit();
@@ -947,7 +949,7 @@
         private DevExpress.XtraEditors.TextEdit txtdatabase;
         private DevExpress.XtraEditors.TextEdit txtServerUser;
         private DevExpress.XtraEditors.TextEdit txtServerPas;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnSqlControl;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;

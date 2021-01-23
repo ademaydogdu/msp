@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using System.Data.Common;
 using Msp.Infrastructure.Extensions;
 using Msp.Infrastructure;
+using SKGL;
 
 namespace Msp.App.App
 {
@@ -40,18 +41,22 @@ namespace Msp.App.App
         public System.Reflection.Assembly assembly { get; set; }
         public string Script { get; set; } = "";
 
+        string Licence = "";
 
         private void do_LisansDemo()
         {
             if (rpLisans.Checked)
             {
                 IsDemo = false;
-
-
+                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("IsDemo", SecurityExtension.Sifrele("false"));
+                Licence = txtUrunAnahtar.Text.Trim();
+                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Licence", Licence);
+                AppMain.Licence = Licence;
 
             }
             if (rpDeneme.Checked)
             {
+                //AdminDatabase Kayıt yapılacak
                 IsDemo = true;
                 if (Convert.ToString(txtPhone.EditValue) == "")
                 {
@@ -63,7 +68,13 @@ namespace Msp.App.App
                     XtraMessageBox.Show("E-Posta Adresi Giriniz.");
                     return;
                 }
-                //AdminDatabase Kayıt yapılacak
+                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("IsDemo", SecurityExtension.Sifrele("true"));
+
+                Generate generate = new Generate();
+                generate.secretPhase = "c4e128b141aFb";
+                Licence = generate.doKey(int.Parse("15"));
+                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Licence", Licence);
+                AppMain.Licence = Licence;
             }
         }
 
@@ -921,6 +932,25 @@ namespace Msp.App.App
         private void wizardControl1_CancelClick(object sender, CancelEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void welcomeWizardPage1_PageValidating(object sender, WizardPageValidatingEventArgs e)
+        {
+
+        }
+
+        private void btnSqlControl_Click(object sender, EventArgs e)
+        {
+            SqlConnectionString = $"data source={txtServer.Text.Trim().ToString()};initial catalog={txtdatabase.Text.Trim().ToString()};user id = {txtServerUser.Text.Trim().ToString()}; password = {txtServerPas.Text.Trim().ToString()}; ";
+            if (sqlKontrol(SqlConnectionString) == false)
+            {
+                XtraMessageBox.Show("Bağlantı Sağlanılamadı.");
+            }
+            else
+            {
+                XtraMessageBox.Show("Bağlandı.");
+
+            }
         }
     }
 }
