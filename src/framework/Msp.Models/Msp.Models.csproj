@@ -82,6 +82,8 @@
     <Compile Include="Models\Sale\SaleRequest.cs" />
     <Compile Include="Models\Sale\SaleTransDTO.cs" />
     <Compile Include="Models\Sale\SpeedSaleProductDTO.cs" />
+    <Compile Include="Models\Scheduler\AppointmentsDTO.cs" />
+    <Compile Include="Models\Scheduler\ResourcesDTO.cs" />
     <Compile Include="Models\SecRights\OpenFormRightsDTO.cs" />
     <Compile Include="Models\SecRights\SecRightsDTO.cs" />
     <Compile Include="Models\TCMBCurrency.cs" />

@@ -129,6 +129,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Extensions, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraSpreadsheet.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -373,6 +374,12 @@
     </Compile>
     <Compile Include="Islemler\Hatirlatici.Designer.cs">
       <DependentUpon>Hatirlatici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Islemler\OutlookAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Islemler\OutlookAppointmentForm.Designer.cs">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Musteri-Islemleri\frmBakidenDus.cs">
       <SubType>Form</SubType>
@@ -780,6 +787,22 @@
     <EmbeddedResource Include="Islemler\Hatirlatici.resx">
       <DependentUpon>Hatirlatici.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\OutlookAppointmentForm.de.resx">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\OutlookAppointmentForm.es.resx">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\OutlookAppointmentForm.ja.resx">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\OutlookAppointmentForm.resx">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Islemler\OutlookAppointmentForm.ru.resx">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmBakidenDus.resx">
       <DependentUpon>frmBakidenDus.cs</DependentUpon>
     </EmbeddedResource>
@@ -972,6 +995,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SpeedSaleProductDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Scheduler.AppointmentsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.SecRights.OpenFormRightsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.SecRights.SecRightsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.UnitsDTO1.datasource" />

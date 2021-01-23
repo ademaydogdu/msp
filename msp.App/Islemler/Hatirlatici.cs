@@ -17,5 +17,21 @@ namespace Msp.App.Islemler
         {
             InitializeComponent();
         }
+
+        private void schedulerControl1_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
+        {
+            DevExpress.XtraScheduler.SchedulerControl scheduler = ((DevExpress.XtraScheduler.SchedulerControl)(sender));
+            Msp.App.Islemler.OutlookAppointmentForm form = new Msp.App.Islemler.OutlookAppointmentForm(scheduler, e.Appointment, e.OpenRecurrenceForm);
+            try
+            {
+                e.DialogResult = form.ShowDialog();
+                e.Handled = true;
+            }
+            finally
+            {
+                form.Dispose();
+            }
+
+        }
     }
 }
