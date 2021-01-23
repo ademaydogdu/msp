@@ -949,7 +949,7 @@ namespace Msp.App.App
             else
             {
                 XtraMessageBox.Show("Bağlandı.");
-
+                pageSqlSettings.AllowNext = true;
             }
         }
     }
