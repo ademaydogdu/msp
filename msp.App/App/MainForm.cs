@@ -144,6 +144,12 @@ namespace msp.App
                 }
             }
 
+            if (AppMain.User.username == "Admin")
+            {
+                ripAdmin.Visible = true;
+            }
+
+
         }
         public void do_FormSecRight()
         {

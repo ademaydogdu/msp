@@ -301,6 +301,9 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.ripAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbi_Licence = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -538,10 +541,11 @@
             this.barStaticItem5,
             this.bi_Licence,
             this.barStaticItem6,
-            this.bbi_LicenceDay});
+            this.bbi_LicenceDay,
+            this.bbi_Licence});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 223;
+            this.ribbon.MaxItemId = 224;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -553,7 +557,8 @@
             this.ribbonPage4,
             this.ribbonPage7,
             this.ribbonPage8,
-            this.ribbonPage9});
+            this.ribbonPage9,
+            this.ripAdmin});
             this.ribbon.QuickToolbarItemLinks.Add(this.barLinkContainerItem1);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbon.Size = new System.Drawing.Size(1226, 161);
@@ -623,6 +628,7 @@
             this.img_List.Add("clearheaderandfooter", "image://svgimages/richedit/clearheaderandfooter.svg");
             this.img_List.Add("deletetable", "image://svgimages/richedit/deletetable.svg");
             this.img_List.Add("insertbubblemap", "image://svgimages/dashboards/insertbubblemap.svg");
+            this.img_List.Add("bo_user", "image://svgimages/business objects/bo_user.svg");
             // 
             // skinPaletteRibbonGalleryBarItem1
             // 
@@ -2256,6 +2262,7 @@
             this.img_buton.Add("customerquicksales", "image://svgimages/outlook inspired/customerquicksales.svg");
             this.img_buton.Add("calcdate", "image://svgimages/snap/calcdate.svg");
             this.img_buton.Add("replace", "image://svgimages/spreadsheet/replace.svg");
+            this.img_buton.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
             // 
             // barSatis
             // 
@@ -2612,6 +2619,27 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
+            // ripAdmin
+            // 
+            this.ripAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup27});
+            this.ripAdmin.ImageOptions.ImageIndex = 19;
+            this.ripAdmin.Name = "ripAdmin";
+            this.ripAdmin.Text = "Admin";
+            this.ripAdmin.Visible = false;
+            // 
+            // ribbonPageGroup27
+            // 
+            this.ribbonPageGroup27.ItemLinks.Add(this.bbi_Licence);
+            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
+            // 
+            // bbi_Licence
+            // 
+            this.bbi_Licence.Caption = "Licence Anahtarı Gir";
+            this.bbi_Licence.Id = 223;
+            this.bbi_Licence.ImageOptions.LargeImageIndex = 72;
+            this.bbi_Licence.Name = "bbi_Licence";
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -2915,5 +2943,8 @@
         private DevExpress.XtraBars.BarStaticItem bi_Licence;
         private DevExpress.XtraBars.BarStaticItem barStaticItem6;
         private DevExpress.XtraBars.BarStaticItem bbi_LicenceDay;
+        private DevExpress.XtraBars.BarButtonItem bbi_Licence;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ripAdmin;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup27;
     }
 }
