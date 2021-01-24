@@ -253,6 +253,7 @@
             this.bi_Licence = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem6 = new DevExpress.XtraBars.BarStaticItem();
             this.bbi_LicenceDay = new DevExpress.XtraBars.BarStaticItem();
+            this.bbi_Licence = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -297,13 +298,12 @@
             this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup35 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ripAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.ripAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbi_Licence = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -2173,6 +2173,8 @@
             // bi_Licence
             // 
             this.bi_Licence.Id = 220;
+            this.bi_Licence.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bi_Licence.ItemAppearance.Normal.Options.UseFont = true;
             this.bi_Licence.Name = "bi_Licence";
             // 
             // barStaticItem6
@@ -2185,7 +2187,18 @@
             // bbi_LicenceDay
             // 
             this.bbi_LicenceDay.Id = 222;
+            this.bbi_LicenceDay.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_LicenceDay.ItemAppearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.bbi_LicenceDay.ItemAppearance.Normal.Options.UseFont = true;
+            this.bbi_LicenceDay.ItemAppearance.Normal.Options.UseForeColor = true;
             this.bbi_LicenceDay.Name = "bbi_LicenceDay";
+            // 
+            // bbi_Licence
+            // 
+            this.bbi_Licence.Caption = "Licence Anahtarı Gir";
+            this.bbi_Licence.Id = 223;
+            this.bbi_Licence.ImageOptions.LargeImageIndex = 72;
+            this.bbi_Licence.Name = "bbi_Licence";
             // 
             // img_buton
             // 
@@ -2582,6 +2595,20 @@
             this.ribbonPageGroup35.ItemLinks.Add(this.barButtonItem74);
             this.ribbonPageGroup35.Name = "ribbonPageGroup35";
             // 
+            // ripAdmin
+            // 
+            this.ripAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup27});
+            this.ripAdmin.ImageOptions.ImageIndex = 19;
+            this.ripAdmin.Name = "ripAdmin";
+            this.ripAdmin.Text = "Admin";
+            this.ripAdmin.Visible = false;
+            // 
+            // ribbonPageGroup27
+            // 
+            this.ribbonPageGroup27.ItemLinks.Add(this.bbi_Licence);
+            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
@@ -2618,27 +2645,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // ripAdmin
-            // 
-            this.ripAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup27});
-            this.ripAdmin.ImageOptions.ImageIndex = 19;
-            this.ripAdmin.Name = "ripAdmin";
-            this.ripAdmin.Text = "Admin";
-            this.ripAdmin.Visible = false;
-            // 
-            // ribbonPageGroup27
-            // 
-            this.ribbonPageGroup27.ItemLinks.Add(this.bbi_Licence);
-            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
-            // 
-            // bbi_Licence
-            // 
-            this.bbi_Licence.Caption = "Licence Anahtarı Gir";
-            this.bbi_Licence.Id = 223;
-            this.bbi_Licence.ImageOptions.LargeImageIndex = 72;
-            this.bbi_Licence.Name = "bbi_Licence";
             // 
             // MainForm
             // 
