@@ -121,5 +121,14 @@ namespace Msp.App.Satis
                 }
             }
         }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(gridView1.GetRowCellValue(e.RowHandle, colVeresiyeClosedDate));
+            if (date != new DateTime(0001,01,01))
+            {
+                e.Appearance.BackColor = Color.LightBlue;
+            }
+        }
     }
 }

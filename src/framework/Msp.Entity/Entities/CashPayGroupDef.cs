@@ -15,5 +15,7 @@ namespace Msp.Entity.Entities
         [Key]
         public int RecId { get; set; }
         public string ReCashPayGroupDef { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }

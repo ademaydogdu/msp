@@ -78,11 +78,6 @@ namespace Msp.App.App
             }
         }
 
-        private void do_SqlConnect()
-        {
-
-        }
-
         private void do_FirstRecord()
         {
             if (Convert.ToString(txtKullaniciAdi.EditValue) == "")
@@ -303,22 +298,44 @@ namespace Msp.App.App
                 }
 
 
-                sCommand.CommandText = "INSERT INTO [dbo].[ApplicationServer] "
-                + "        ([Server] "
-                + "        ,[ServerName] "
-                + "        ,[UserName] "
-                + "        ,[Password] "
-                + "        ,[DataBase])"
-                + "  VALUES "
-                + "        (@server "
-                + "        ,@serverName "
-                + "        ,'' "
-                + "        ,'' , '@DataBase')";
-                sCommand.Parameters.Clear();
-                sCommand.Parameters.Add("server", SqlDbType.NVarChar).Value = "(localdb)\\MSSQLLocalDB";
-                sCommand.Parameters.Add("serverName", SqlDbType.NVarChar).Value = "SQLLocal";
-                sCommand.Parameters.Add("DataBase", SqlDbType.NVarChar).Value = "msp7";
-                ExecuteNonQuery(sCommand);
+                if (SqlLocal)
+                {
+                    sCommand.CommandText = "INSERT INTO [dbo].[ApplicationServer] "
+                                        + "        ([Server] "
+                                        + "        ,[ServerName] "
+                                        + "        ,[UserName] "
+                                        + "        ,[Password] "
+                                        + "        ,[DataBase])"
+                                        + "  VALUES "
+                                        + "        (@server "
+                                        + "        ,@serverName "
+                                        + "        ,'' "
+                                        + "        ,'' , @DataBase)";
+                    sCommand.Parameters.Clear();
+                    sCommand.Parameters.Add("server", SqlDbType.NVarChar).Value = "(localdb)\\MSSQLLocalDB";
+                    sCommand.Parameters.Add("serverName", SqlDbType.NVarChar).Value = "SQLLocal";
+                    sCommand.Parameters.Add("DataBase", SqlDbType.NVarChar).Value = "Msp";
+                    ExecuteNonQuery(sCommand);
+                }
+                else
+                {
+                    //sCommand.CommandText = "INSERT INTO [dbo].[ApplicationServer] "
+                    //                    + "        ([Server] "
+                    //                    + "        ,[ServerName] "
+                    //                    + "        ,[UserName] "
+                    //                    + "        ,[Password] "
+                    //                    + "        ,[DataBase])"
+                    //                    + "  VALUES "
+                    //                    + "        (@server "
+                    //                    + "        ,@serverName "
+                    //                    + "        ,'' "
+                    //                    + "        ,'' , @DataBase)";
+                    //sCommand.Parameters.Clear();
+                    //sCommand.Parameters.Add("server", SqlDbType.NVarChar).Value = "(localdb)\\MSSQLLocalDB";
+                    //sCommand.Parameters.Add("serverName", SqlDbType.NVarChar).Value = "SQLLocal";
+                    //sCommand.Parameters.Add("DataBase", SqlDbType.NVarChar).Value = "Msp";
+                    //ExecuteNonQuery(sCommand);
+                }
 
                 #endregion
 
@@ -508,8 +525,8 @@ namespace Msp.App.App
             {
                 AppMain.LocalConnect = true;
                 SqlLocal = true;
-                SqlConnectionString = @"data source=(localdb)\MSSQLLocalDB;initial catalog=msp7;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
-                //SqlConnectionString = "data source = DG; initial catalog = msp7; user id = sa; password = 123D654!; ";
+                SqlConnectionString = @"data source=(localdb)\MSSQLLocalDB;initial catalog=Msp;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
+                //SqlConnectionString = "data source = DG; initial catalog = Msp; user id = sa; password = 123D654!; ";
                 if (sqlKontrol(SqlConnectionString) == false)
                 {
                     DataBaseControl = false;
@@ -574,7 +591,7 @@ namespace Msp.App.App
 
         static string GetDbCreationQuery()
         {
-            string dbName = "msp7";
+            string dbName = "Msp";
             string[] files = { System.IO.Path.Combine(@"C:\Msp\Database", dbName + ".mdf"),
                        System.IO.Path.Combine(@"C:\Msp\Database", dbName + ".ldf") };
             string query = "CREATE DATABASE " + dbName +
@@ -825,6 +842,7 @@ namespace Msp.App.App
                 if (DataBaseControl)
                 {
                     e.Page.AllowNext = true;
+                    do_CreateTable();
                     if (Splash.IsSplashFormVisible)
                     {
                         Splash.CloseWaitForm();
@@ -848,10 +866,9 @@ namespace Msp.App.App
             }
         }
 
-
         public static System.Data.SqlClient.SqlCommand SqlCreateCommandFront(string connectionString)
         {
-            //string connectionString = "initial catalog=msp7"
+            //string connectionString = "initial catalog=Msp"
             //    + ";data source=(localdb)\\MSSQLLocalDB"
             //    //+ ";user id=sa"
             //    //+ ";password=123D654!"

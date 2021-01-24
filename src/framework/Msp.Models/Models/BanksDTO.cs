@@ -22,8 +22,9 @@ namespace Msp.Models.Models
 
         public string BankAccountName { get; set; }
 
-       
+        public int? CompanyRecId { get; set; }
 
-        
+
+
     }
 }

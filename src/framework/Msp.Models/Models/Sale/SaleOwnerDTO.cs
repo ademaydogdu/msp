@@ -21,7 +21,7 @@ namespace Msp.Models.Models.Sale
         public decimal? TotalPrice { get; set; }
         public decimal? ReceivedPrice { get; set; }
         public string Remark { get; set; }
-        public bool? Veresiye { get; set; }
+        public bool? Veresiye { get; set; } = false;
         public int? CompanyRecId { get; set; }
         public bool? Deleted { get; set; } = false;
         public string UserCode { get; set; }

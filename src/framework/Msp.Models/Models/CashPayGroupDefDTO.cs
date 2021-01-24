@@ -10,6 +10,8 @@ namespace Msp.Models.Models
     {
         public int RecId { get; set; }
         public string ReCashPayGroupDef { get; set; }
+        public int? CompanyRecId { get; set; }
+
 
     }
 }

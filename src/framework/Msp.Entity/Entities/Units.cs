@@ -14,6 +14,8 @@ namespace Msp.Entity.Entities
         [Key]
         public int UID { get; set; }
         public string UName { get; set; }
+        public int? CompanyRecId { get; set; }
+
 
     }
 }

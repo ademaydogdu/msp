@@ -11,5 +11,7 @@ namespace Msp.Models.Models
         public int RecId { get; set; }
         public string Mark { get; set; }
         public string Remark { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }

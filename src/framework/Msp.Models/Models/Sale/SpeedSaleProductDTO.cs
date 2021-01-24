@@ -12,5 +12,7 @@ namespace Msp.Models.Models.Sale
         public int? ProductId { get; set; }
         public string İmage { get; set; }
         public int? ButtonType { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }

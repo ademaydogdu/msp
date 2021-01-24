@@ -141,6 +141,7 @@ namespace Msp.App.Depo_Stok
         #region Sale
         private void do_Form(int RecId)
         {
+
             Form _Form_Satis = MspTool.get_OpenForm("frmSatis");
             if (_Form_Satis != null)
             {
@@ -163,6 +164,11 @@ namespace Msp.App.Depo_Stok
                 ProductDTO Orow = (ProductDTO)gcvProducts.GetFocusedRow();
                 if (Orow != null)
                 {
+                    if (Orow.PTotal == 0 || Orow.PTotal <= 0)
+                    {
+                        XtraMessageBox.Show("Ürün Stok'da kalmamıştır.", "Uyarı");
+                        return;
+                    }
                     do_Form(Orow.PID);
                     this.Close();
                 }

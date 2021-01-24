@@ -29,6 +29,7 @@ namespace Msp.Entity.Entities
         public int? withdrawnDeposited { get; set; }
 
         public DateTime? bDate { get; set; }
+        public int? CompanyRecId { get; set; }
 
     }
 }

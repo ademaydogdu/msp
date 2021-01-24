@@ -21,6 +21,8 @@ namespace Msp.Entity.Entities
         public string Durum { get; set; }
         public int? DurumType { get; set; }
         public int? SaleOwnerId { get; set; }
+        public int? CompanyRecId { get; set; }
+
 
     }
 }

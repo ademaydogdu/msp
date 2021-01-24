@@ -25,6 +25,8 @@ namespace Msp.Entity.Entities
 
         [StringLength(50)]
         public string BankAccountName { get; set; }
+        public int? CompanyRecId { get; set; }
+
 
     }
 }

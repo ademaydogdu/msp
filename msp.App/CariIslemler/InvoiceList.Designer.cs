@@ -59,8 +59,10 @@
             this.colFicheDocumentNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFicheRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCariRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_cari = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colVadeTarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_depot = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colIndirim = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_cari)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_depot)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -263,7 +267,9 @@
             this.gc_Invoice.MenuManager = this.barManager1;
             this.gc_Invoice.Name = "gc_Invoice";
             this.gc_Invoice.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.rp_InvoiceType});
+            this.rp_InvoiceType,
+            this.rp_cari,
+            this.rp_depot});
             this.gc_Invoice.Size = new System.Drawing.Size(950, 536);
             this.gc_Invoice.TabIndex = 5;
             this.gc_Invoice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -356,10 +362,19 @@
             // colCariRecId
             // 
             this.colCariRecId.Caption = "Cari Hesap Adı";
+            this.colCariRecId.ColumnEdit = this.rp_cari;
             this.colCariRecId.FieldName = "CariRecId";
             this.colCariRecId.Name = "colCariRecId";
             this.colCariRecId.Visible = true;
             this.colCariRecId.VisibleIndex = 5;
+            // 
+            // rp_cari
+            // 
+            this.rp_cari.AutoHeight = false;
+            this.rp_cari.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_cari.Name = "rp_cari";
+            this.rp_cari.NullText = "";
             // 
             // colVadeTarih
             // 
@@ -371,13 +386,24 @@
             // colDepoName
             // 
             this.colDepoName.Caption = "Depo Adı";
+            this.colDepoName.ColumnEdit = this.rp_depot;
             this.colDepoName.FieldName = "DepoName";
             this.colDepoName.Name = "colDepoName";
             this.colDepoName.Visible = true;
             this.colDepoName.VisibleIndex = 7;
             // 
+            // rp_depot
+            // 
+            this.rp_depot.AutoHeight = false;
+            this.rp_depot.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_depot.Name = "rp_depot";
+            this.rp_depot.NullText = "";
+            // 
             // colIndirim
             // 
+            this.colIndirim.DisplayFormat.FormatString = "n2";
+            this.colIndirim.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colIndirim.FieldName = "Indirim";
             this.colIndirim.Name = "colIndirim";
             this.colIndirim.Visible = true;
@@ -385,6 +411,8 @@
             // 
             // colAraToplam
             // 
+            this.colAraToplam.DisplayFormat.FormatString = "n2";
+            this.colAraToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAraToplam.FieldName = "AraToplam";
             this.colAraToplam.Name = "colAraToplam";
             this.colAraToplam.Visible = true;
@@ -392,6 +420,8 @@
             // 
             // colToplamKDV
             // 
+            this.colToplamKDV.DisplayFormat.FormatString = "n2";
+            this.colToplamKDV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colToplamKDV.FieldName = "ToplamKDV";
             this.colToplamKDV.Name = "colToplamKDV";
             this.colToplamKDV.Visible = true;
@@ -399,6 +429,8 @@
             // 
             // colDiğerMasraflar
             // 
+            this.colDiğerMasraflar.DisplayFormat.FormatString = "n2";
+            this.colDiğerMasraflar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDiğerMasraflar.FieldName = "DiğerMasraflar";
             this.colDiğerMasraflar.Name = "colDiğerMasraflar";
             this.colDiğerMasraflar.Visible = true;
@@ -406,6 +438,8 @@
             // 
             // colGenelToplam
             // 
+            this.colGenelToplam.DisplayFormat.FormatString = "n2";
+            this.colGenelToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGenelToplam.FieldName = "GenelToplam";
             this.colGenelToplam.Name = "colGenelToplam";
             this.colGenelToplam.Visible = true;
@@ -432,6 +466,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_cari)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_depot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,5 +512,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGenelToplam;
         private DevExpress.XtraGrid.Columns.GridColumn colInvoiceType;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_InvoiceType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_cari;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_depot;
     }
 }

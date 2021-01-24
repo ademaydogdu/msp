@@ -26,5 +26,7 @@ namespace Msp.Entity.Entities
         public bool? active { get; set; }
 
         public DateTime? date { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }

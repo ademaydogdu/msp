@@ -499,6 +499,7 @@
             // 
             this.txtUserParola.Location = new System.Drawing.Point(82, 69);
             this.txtUserParola.Name = "txtUserParola";
+            this.txtUserParola.Properties.PasswordChar = '*';
             this.txtUserParola.Size = new System.Drawing.Size(545, 20);
             this.txtUserParola.StyleController = this.layoutControl2;
             this.txtUserParola.TabIndex = 5;

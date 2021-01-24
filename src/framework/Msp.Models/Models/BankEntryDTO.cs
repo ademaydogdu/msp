@@ -22,5 +22,7 @@ namespace Msp.Models.Models
         public int? withdrawnDeposited { get; set; }
 
         public DateTime? bDate { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }

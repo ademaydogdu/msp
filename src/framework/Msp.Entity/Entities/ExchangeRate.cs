@@ -24,5 +24,7 @@ namespace Msp.Entity.Entities
         public decimal? EffectiveSelling { get; set; }
         public string RecordUser { get; set; }
         public DateTime? RecordDate { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }

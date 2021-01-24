@@ -11,6 +11,8 @@ namespace Msp.Models.Models
 
         public int UID { get; set; }
         public string UName { get; set; }
+        public int? CompanyRecId { get; set; }
+
 
     }
 }

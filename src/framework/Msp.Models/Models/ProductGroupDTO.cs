@@ -11,5 +11,7 @@ namespace Msp.Models.Models
         public int RecId { get; set; }
         public string Grouup    { get; set; }
         public string ReGroup { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }

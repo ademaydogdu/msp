@@ -24,5 +24,8 @@ namespace Msp.Models.Models
         public bool? active { get; set; } = true;
 
         public DateTime? date { get; set; }
+
+        public int? CompanyRecId { get; set; }
+
     }
 }

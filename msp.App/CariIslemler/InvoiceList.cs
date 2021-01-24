@@ -15,6 +15,8 @@ using Msp.Models.Models;
 using Msp.Models.Models.Invoice;
 using Msp.Service.Service.Invoice;
 using Msp.Models.Models.Utilities;
+using Msp.Service.Service.CurrentTransactions;
+using Msp.Service.Service.Depot;
 
 namespace Msp.App.CariIslemler
 {
@@ -75,6 +77,16 @@ namespace Msp.App.CariIslemler
             rp_InvoiceType.DataSource = IceType;
             rp_InvoiceType.ValueMember = "Id";
             rp_InvoiceType.DisplayMember = "Value";
+
+            var _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
+            rp_cari.DataSource = _currentTransactionsList;
+            rp_cari.ValueMember = "CurID";
+            rp_cari.DisplayMember = "CurAccountName";
+
+            var _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+            rp_depot.DataSource = _depotList;
+            rp_depot.ValueMember = "DID";
+            rp_depot.DisplayMember = "DepName";
         }
 
         private void InvoiceList_KeyDown(object sender, KeyEventArgs e)

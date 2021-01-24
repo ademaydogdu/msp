@@ -73,6 +73,8 @@ namespace Msp.App.Satis
             {
                 oRow.Veresiye = false;
                 oRow.VeresiyeClosedDate = DateTime.Now;
+                oRow.Remark = oRow.Remark + " - " + Convert.ToString(oRow.Date) + "Satışı yapılan kaydın tahsilatı yapılmıştır.";
+                oRow.Date = DateTime.Now;
                 var response = _repository.Run<SaleService, ActionResponse<SaleOwnerDTO>>(x => x.Update_Veresiye(oRow));
                 if (response.ResponseType != ResponseType.Ok)
                 {

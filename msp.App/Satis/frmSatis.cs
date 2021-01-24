@@ -255,13 +255,16 @@ namespace msp.App
                 XtraMessageBox.Show("Ürün Kaydı olması gerekmektedir.");
                 _return = true;
             }
-            if (_parameters.PaymentyForced.GetValueOrDefault())
+            if (__dll_SaleOwner.Veresiye != true)
             {
-                if (Convert.ToString(txt_OdemeTipi.EditValue) == "")
+                if (_parameters.PaymentyForced.GetValueOrDefault())
                 {
-                    XtraMessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
-                    _return = true;
-                }
+                    if (Convert.ToString(txt_OdemeTipi.EditValue) == "")
+                    {
+                        XtraMessageBox.Show("Ödeme Tipi Alanı Boş Bırakılmaz.");
+                        _return = true;
+                    }
+                } 
             }
             if (__dll_SaleOwner.CaseId == null || __dll_SaleOwner.CaseId == 0)
             {

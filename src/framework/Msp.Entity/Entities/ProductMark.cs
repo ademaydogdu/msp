@@ -15,5 +15,7 @@ namespace Msp.Entity.Entities
         public int RecId { get; set; }
         public string Mark { get; set; }
         public string Remark { get; set; }
+        public int? CompanyRecId { get; set; }
+
     }
 }
