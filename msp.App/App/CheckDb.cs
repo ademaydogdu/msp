@@ -315,7 +315,7 @@ namespace Msp.App.App
             #region Products
             if (tblTableList.Rows.Contains("Products") == false)
             {
-                sCommand.CommandText = "CREATE TABLE [dbo].[products]( "
+                sCommand.CommandText = "CREATE TABLE [dbo].[Products]( "
                         + "    [PID][int] IDENTITY(1, 1) NOT NULL, "
                         + "    [PName] [nvarchar] (max) NULL, "
                         + "	[PBarcode] [nvarchar] (50) NULL, "
@@ -332,7 +332,7 @@ namespace Msp.App.App
                         + "	[PBrandCode] [nvarchar] (50) NULL, "
                         + "	[PGroup] [nvarchar] (50) NULL, "
                         + "	[PImages] [varbinary] (max) NULL, "
-                        + "    [PExpDate] [datetime] NULL, "
+                        + " [PExpDate] [datetime] NULL, "
                         + "	[PSalePrice] [decimal](18, 2) NULL, "
                         + "	[PTaxType] [int] NULL, "
                         + "	[PMalBedeli] [decimal](18, 2) NULL, "
@@ -340,6 +340,9 @@ namespace Msp.App.App
                         + "	[PKdvIstisna] [bit] NULL, "
                         + "	[PKarPrice] [decimal](18, 2) NULL, "
                         + " [PCode] [nvarchar] (max) NULL, "
+                        + " [PCompanyId] [int] NULL, "
+                        + " [PDepotId] [int] NULL, "
+                        + " [Deleted] [bit] NULL, "
                         + " CONSTRAINT[PK_products] PRIMARY KEY CLUSTERED "
                         + "( "
                         + "   [PID] ASC "
