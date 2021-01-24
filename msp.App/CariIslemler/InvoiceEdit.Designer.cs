@@ -928,6 +928,8 @@
             this.txtAraToplam.Location = new System.Drawing.Point(1482, 107);
             this.txtAraToplam.MenuManager = this.barManager1;
             this.txtAraToplam.Name = "txtAraToplam";
+            this.txtAraToplam.Properties.DisplayFormat.FormatString = "n2";
+            this.txtAraToplam.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtAraToplam.Properties.Mask.EditMask = "n2";
             this.txtAraToplam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtAraToplam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -942,6 +944,8 @@
             this.txtIndirim.Location = new System.Drawing.Point(1482, 83);
             this.txtIndirim.MenuManager = this.barManager1;
             this.txtIndirim.Name = "txtIndirim";
+            this.txtIndirim.Properties.DisplayFormat.FormatString = "n2";
+            this.txtIndirim.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtIndirim.Properties.Mask.EditMask = "n2";
             this.txtIndirim.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtIndirim.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -956,6 +960,8 @@
             this.txtToplamKDV.Location = new System.Drawing.Point(1482, 131);
             this.txtToplamKDV.MenuManager = this.barManager1;
             this.txtToplamKDV.Name = "txtToplamKDV";
+            this.txtToplamKDV.Properties.DisplayFormat.FormatString = "n2";
+            this.txtToplamKDV.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtToplamKDV.Properties.Mask.EditMask = "n2";
             this.txtToplamKDV.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtToplamKDV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -969,6 +975,8 @@
             this.txtToplam.Location = new System.Drawing.Point(1482, 59);
             this.txtToplam.MenuManager = this.barManager1;
             this.txtToplam.Name = "txtToplam";
+            this.txtToplam.Properties.DisplayFormat.FormatString = "n2";
+            this.txtToplam.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtToplam.Properties.Mask.EditMask = "n2";
             this.txtToplam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtToplam.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -985,6 +993,8 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
+            this.txtTotal.Properties.DisplayFormat.FormatString = "n2";
+            this.txtTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtTotal.Properties.Mask.EditMask = "n2";
             this.txtTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
