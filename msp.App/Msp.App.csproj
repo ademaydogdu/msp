@@ -32,7 +32,7 @@
     <TargetCulture>tr-TR</TargetCulture>
     <ProductName>Market Satış</ProductName>
     <PublisherName>PC- LAB</PublisherName>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>21.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -209,6 +209,12 @@
     </Compile>
     <Compile Include="App\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\UpdateProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\UpdateProgress.Designer.cs">
+      <DependentUpon>UpdateProgress.cs</DependentUpon>
     </Compile>
     <Compile Include="App\Wizard.cs">
       <SubType>Form</SubType>
@@ -710,6 +716,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\UpdateProgress.resx">
+      <DependentUpon>UpdateProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\Wizard.resx">
       <DependentUpon>Wizard.cs</DependentUpon>

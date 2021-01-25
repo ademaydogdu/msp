@@ -656,6 +656,7 @@ namespace Msp.App.App
                                 }
                                 catch (Exception ex)
                                 {
+                                    XtraMessageBox.Show(ex.Message);
                                     x = false;
                                 }
                                 finally

@@ -41,6 +41,9 @@
             this.progressPanel1.AppearanceCaption.Options.UseFont = true;
             this.progressPanel1.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.progressPanel1.AppearanceDescription.Options.UseFont = true;
+            this.progressPanel1.Caption = "Lütfen Bekleyiniz";
+            this.progressPanel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.progressPanel1.Description = "Yükleniyor...";
             this.progressPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressPanel1.ImageHorzOffset = 20;
             this.progressPanel1.Location = new System.Drawing.Point(0, 17);

@@ -282,10 +282,10 @@ namespace msp.App
                     ad = ApplicationDeployment.CurrentDeployment;
                     if (ad.CheckForUpdate())
                     {
-                        //this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.MainFrm_FormClosing);
-                        //UpdateProgress oForm = new UpdateProgress();
-                        //oForm.ShowDialog();
-                        //return;
+                        this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+                        UpdateProgress oForm = new UpdateProgress();
+                        oForm.ShowDialog();
+                        return;
                     }
                     else
                     {
@@ -721,8 +721,10 @@ namespace msp.App
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (mesassizcik == false)
-            //{
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            //C_MemoryManagement.FlushMemory();
+
             if (formClosinMessegae)
             {
                 if (MessageBox.Show("Programdan çıkışı onaylıyormusunuz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -732,7 +734,7 @@ namespace msp.App
                 }
                 tool.do_save_User_Skin(AppMain.User.username, UserLookAndFeel.Default.ActiveSkinName, UserLookAndFeel.Default.ActiveSvgPaletteName, this.Name); 
             }
-            //}
+
         }
 
         #region applicationMenu
