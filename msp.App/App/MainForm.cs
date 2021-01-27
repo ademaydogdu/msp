@@ -93,21 +93,28 @@ namespace msp.App
         }
         private void do_versionControl()
         {
-            var dataVersion = _repository.Run<StartUp, ProgramsControlsDTO>(x => x.CheckVersion());
-            string[] lsDataVersionFB = dataVersion.MspVersion.Split('.');
-            Version sqlVersionFB = new Version(Convert.ToInt32(lsDataVersionFB[0])
-                , Convert.ToInt32(lsDataVersionFB[1])
-                , Convert.ToInt32(lsDataVersionFB[2])
-                , Convert.ToInt32(lsDataVersionFB[3]));
+            try
+            {
+                var dataVersion = _repository.Run<StartUp, ProgramsControlsDTO>(x => x.CheckVersion());
+                string[] lsDataVersionFB = dataVersion.MspVersion.Split('.');
+                Version sqlVersionFB = new Version(Convert.ToInt32(lsDataVersionFB[0])
+                    , Convert.ToInt32(lsDataVersionFB[1])
+                    , Convert.ToInt32(lsDataVersionFB[2])
+                    , Convert.ToInt32(lsDataVersionFB[3]));
 
-            if (sqlVersionFB.CompareTo(AppMain.MspVersion) < 0)
-            {
-                this.CheckDb();
+                if (sqlVersionFB.CompareTo(AppMain.MspVersion) < 0)
+                {
+                    this.CheckDb();
+                }
+                if (sqlVersionFB.CompareTo(AppMain.MspVersion) > 0)
+                {
+                    MessageBox.Show("Eski Versiyon.Programı Güncelleyiniz...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    Application.Exit();
+                }
             }
-            if (sqlVersionFB.CompareTo(AppMain.MspVersion) > 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("Eski Versiyon.Programı Güncelleyiniz...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                Application.Exit();
+                DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString());
             }
         }
         private void CheckDb()
@@ -305,7 +312,7 @@ namespace msp.App
             //{
             //    MessageBox.Show(message);
             //}
-
+            //ApiUrl
             Registry.CurrentUser.CreateSubKey(@"Software\MSP");
 
             RegistryKey OurKey = Registry.CurrentUser;
@@ -463,11 +470,11 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(21, 1, 1, 11);
+            Version oVersionFB = new Version(21, 1, 1, 12);
             AppMain.MspVersion = oVersionFB;
 
-            string AppPath = @"C:\Msp";
-            if (!Directory.Exists(AppPath))
+            string AppPath = @"C:\Msp\ConnectString.txt";
+            if (!File.Exists(AppPath))
             {
                 Wizard frm = new Wizard();
                 frm.ShowDialog();

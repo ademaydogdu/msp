@@ -29,7 +29,8 @@ namespace Msp.Infrastructure
         public static string IpAdress { get; set; }
         public static string LocalIpAdress { get; set; }
 
-
+        public static string ApiPath { get; set; }
+        public static bool RunningLocal { get; set; }
 
         public static Task<List<ProductDTO>> _productsTask { get; set; }
 

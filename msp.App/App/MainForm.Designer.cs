@@ -254,6 +254,7 @@
             this.barStaticItem6 = new DevExpress.XtraBars.BarStaticItem();
             this.bbi_LicenceDay = new DevExpress.XtraBars.BarStaticItem();
             this.bbi_Licence = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem129 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -304,6 +305,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem130 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -542,10 +544,12 @@
             this.bi_Licence,
             this.barStaticItem6,
             this.bbi_LicenceDay,
-            this.bbi_Licence});
+            this.bbi_Licence,
+            this.barButtonItem129,
+            this.barButtonItem130});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 224;
+            this.ribbon.MaxItemId = 226;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1459,7 +1463,8 @@
             this.barSubItem1.ImageOptions.LargeImageIndex = 18;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem130, true)});
             this.barSubItem1.Name = "barSubItem1";
             // 
             // barButtonItem4
@@ -2200,6 +2205,13 @@
             this.bbi_Licence.ImageOptions.LargeImageIndex = 72;
             this.bbi_Licence.Name = "bbi_Licence";
             // 
+            // barButtonItem129
+            // 
+            this.barButtonItem129.Caption = "Application Server";
+            this.barButtonItem129.Id = 224;
+            this.barButtonItem129.ImageOptions.LargeImageIndex = 73;
+            this.barButtonItem129.Name = "barButtonItem129";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -2276,6 +2288,7 @@
             this.img_buton.Add("calcdate", "image://svgimages/snap/calcdate.svg");
             this.img_buton.Add("replace", "image://svgimages/spreadsheet/replace.svg");
             this.img_buton.Add("highlight", "image://svgimages/pdf viewer/highlight.svg");
+            this.img_buton.Add("bo_category", "image://svgimages/business objects/bo_category.svg");
             // 
             // barSatis
             // 
@@ -2607,6 +2620,7 @@
             // ribbonPageGroup27
             // 
             this.ribbonPageGroup27.ItemLinks.Add(this.bbi_Licence);
+            this.ribbonPageGroup27.ItemLinks.Add(this.barButtonItem129);
             this.ribbonPageGroup27.Name = "ribbonPageGroup27";
             // 
             // ribbonStatusBar1
@@ -2645,6 +2659,12 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barButtonItem130
+            // 
+            this.barButtonItem130.Caption = "Bağımsız Excel Aktarım";
+            this.barButtonItem130.Id = 225;
+            this.barButtonItem130.Name = "barButtonItem130";
             // 
             // MainForm
             // 
@@ -2952,5 +2972,7 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Licence;
         private DevExpress.XtraBars.Ribbon.RibbonPage ripAdmin;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup27;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem129;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem130;
     }
 }

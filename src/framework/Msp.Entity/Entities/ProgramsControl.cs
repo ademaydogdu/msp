@@ -19,7 +19,7 @@ namespace Msp.Entity.Entities
         public string MacAdress { get; set; }
         public string IpAdress { get; set; }
         public string LocalIpAdress { get; set; }
-        public int? IsDemo { get; set; }
+        public bool? IsDemo { get; set; }
 
     }
 }

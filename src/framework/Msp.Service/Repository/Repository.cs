@@ -1,4 +1,5 @@
-﻿using Msp.Infrastructure.Extensions;
+﻿using Msp.Infrastructure;
+using Msp.Infrastructure.Extensions;
 using Msp.Service.Http;
 using Msp.Service.Service;
 using System;
@@ -14,13 +15,13 @@ namespace Msp.Service.Repository
     {
 
         private HttpService _httpService;
-        private bool _localApp = true;
-        string ApiUrl;
+        //private bool _localApp = true;
+        //string ApiUrl;
 
         public Repository()
         {
-            if (!string.IsNullOrEmpty(ApiUrl))
-                _httpService = new HttpService(ApiUrl);
+            if (!string.IsNullOrEmpty(AppMain.ApiPath))
+                _httpService = new HttpService(AppMain.ApiPath);
         }
 
         public G Run<T, G>(Expression<Func<T, G>> expression) where T : BaseService where G : class
@@ -40,7 +41,7 @@ namespace Msp.Service.Repository
             //    }
             //    //break;
             //}
-            if (_localApp)
+            if (AppMain.RunningLocal)
             {
                 var action = expression.Compile();
                 return action(instance);
@@ -62,7 +63,7 @@ namespace Msp.Service.Repository
         public void Run<T>(Expression<Action<T>> expression) where T : BaseService
         {
             var instance = Activator.CreateInstance<T>();
-            if (_localApp)
+            if (AppMain.RunningLocal)
             {
                 var action = expression.Compile();
                 action(instance);
@@ -103,7 +104,7 @@ namespace Msp.Service.Repository
             //}
 
 
-            if (_localApp)
+            if (AppMain.RunningLocal)
             {
                 var action = expression.Compile();
                 return action(instance);

@@ -12,6 +12,7 @@ using Msp.Service.Repository;
 using Msp.Models.Models;
 using Msp.Service.Service.Settings;
 using Msp.App.Tool;
+using Msp.Infrastructure;
 
 namespace Msp.App.Settings
 {
@@ -57,6 +58,13 @@ namespace Msp.App.Settings
             UsersDTO oRow = (UsersDTO)gridView1.GetFocusedRow();
             if (oRow != null)
             {
+                if (oRow.username == "Admin")
+                {
+                    if (AppMain.User.username != "Admin")
+                    {
+                        return;
+                    }
+                }
                 frmKullaniciTanimEdit frm = new frmKullaniciTanimEdit();
                 frm._FormOpenType = Infrastructure.FormOpenType.Edit;
                 frm.Show(oRow.username);

@@ -3,6 +3,7 @@ using Msp.Infrastructure;
 using Msp.Models.Models;
 using Msp.Models.Models.App;
 using Msp.Models.Models.Utilities;
+using Msp.Service.WindowsRegistry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,17 @@ namespace Msp.Service.Service.App
     public class StartUp : BaseService
     {
 
+        private RegistryService _registryService;
+        public StartUp()
+        {
+            _registryService = new RegistryService();
+        }
+
         public void Start()
         {
             LoadStatics();
+            _registryService.Register();
+
         }
 
 

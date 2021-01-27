@@ -68,13 +68,18 @@ namespace Msp.App.App
                     XtraMessageBox.Show("E-Posta Adresi Giriniz.");
                     return;
                 }
-                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("IsDemo", SecurityExtension.Sifrele("true"));
+                string lice = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Licence").ToString();
+                if (lice.ToString().Trim().Length > 0)
+                {
+                    Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("IsDemo", SecurityExtension.Sifrele("true"));
+                    Generate generate = new Generate();
+                    generate.secretPhase = "c4e128b141aFb";
+                    Licence = generate.doKey(int.Parse("15"));
+                    Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Licence", Licence);
+                    AppMain.Licence = Licence; 
+                }
 
-                Generate generate = new Generate();
-                generate.secretPhase = "c4e128b141aFb";
-                Licence = generate.doKey(int.Parse("15"));
-                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Licence", Licence);
-                AppMain.Licence = Licence;
+
             }
         }
 
@@ -452,13 +457,13 @@ namespace Msp.App.App
                 }
 
 
-                sCommand.CommandText = "INSERT INTO [dbo].[ProgramsControl]([MspVersion],[Licence],[FirstDate],[MacAdress],[IpAdress],[LocalIpAdress],[IsDemo]) VALUES ('1.0.0.0','',@date,@MacAdress,@IpAdress,@LocalIp,@Demo)";
+                sCommand.CommandText = "INSERT INTO [dbo].[ProgramsControl]([MspVersion],[Licence],[FirstDate],[IsDemo]) VALUES ('1.0.0.0','',@date,@Demo)";
                 sCommand.Parameters.Clear();
                 sCommand.Parameters.Add("Demo", SqlDbType.Bit).Value = IsDemo;
                 sCommand.Parameters.Add("date", SqlDbType.DateTime).Value = dt_RecordDate.DateTime;
-                sCommand.Parameters.Add("MacAdress", SqlDbType.NVarChar).Value = AppMain.MAcAdress;
-                sCommand.Parameters.Add("IpAdress", SqlDbType.NVarChar).Value = AppMain.IpAdress;
-                sCommand.Parameters.Add("LocalIp", SqlDbType.NVarChar).Value = AppMain.LocalIpAdress;
+                //sCommand.Parameters.Add("MacAdress", SqlDbType.NVarChar).Value = AppMain.MAcAdress;
+                //sCommand.Parameters.Add("IpAdress", SqlDbType.NVarChar).Value = AppMain.IpAdress;
+                //sCommand.Parameters.Add("LocalIp", SqlDbType.NVarChar).Value = AppMain.LocalIpAdress;
                 ExecuteNonQuery(sCommand);
 
 
@@ -525,7 +530,7 @@ namespace Msp.App.App
             {
                 AppMain.LocalConnect = true;
                 SqlLocal = true;
-                SqlConnectionString = @"data source=(localdb)\MSSQLLocalDB;initial catalog=Msp;Trusted_Connection=True;Integrated security=SSPI;Connect Timeout=1000";
+                SqlConnectionString = @"data source=(localdb)\MSSQLLocalDB;initial catalog=Msp;Trusted_Connection=True;Integrated security=False;Connect Timeout=1000";
                 //SqlConnectionString = "data source = DG; initial catalog = Msp; user id = sa; password = 123D654!; ";
                 if (sqlKontrol(SqlConnectionString) == false)
                 {
@@ -533,7 +538,7 @@ namespace Msp.App.App
                 }
                 else
                 {
-                    lblSqlDurumText.Text = "Veri Tabanı Mevcuttur.";
+                    lblSqlDurumText.Text = "Veri Tabanı Mevcuttur. Yeniden Oluşturuluyor...";
                     DataBaseControl = true;
                 }
                 Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("SqlLocal", true);
@@ -609,6 +614,19 @@ namespace Msp.App.App
                 " MAXSIZE = 5MB," +
                 " FILEGROWTH = 10%)" +
                 ";";
+
+            //string _sqlquery = "IF EXISTS ( "
+            //+ "      SELECT name FROM sys.databases "
+            //+ "     WHERE name = N'" + dbName + "' ) "
+            //+ " BEGIN "
+            //+ "     Drop Database  " + dbName
+            //+ "     " + query
+            //+ " END "
+            //+ " ELSE "
+            //+ " BEGIN "
+            //  + "     " + query
+            //+ " END";
+
 
             return query;
         }

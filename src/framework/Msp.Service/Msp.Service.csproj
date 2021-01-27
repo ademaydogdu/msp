@@ -85,6 +85,7 @@
     <Compile Include="Service\Sale\SaleService.cs" />
     <Compile Include="Service\Settings\SettingsService.cs" />
     <Compile Include="Service\Definitions\DefinitionsService.cs" />
+    <Compile Include="WindowsRegistry\RegistryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

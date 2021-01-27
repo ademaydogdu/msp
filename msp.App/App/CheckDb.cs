@@ -1256,6 +1256,19 @@ namespace Msp.App.App
             progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
+            #region Units
+            sCommand.CommandText = "Select top 1 * from Units  WITH (nolock) ";
+            DataTable tblUnits = ExecuteSelectCommand(sCommand);
+            if (tblUnits.Columns.Contains("CompanyRecId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Units ADD CompanyRecId int NULL";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
+
+            #endregion
+
             #endregion
 
 

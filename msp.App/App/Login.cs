@@ -267,7 +267,8 @@ namespace Msp.App.App
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+            //this.Close();
         }
 
         private void Login_Load(object sender, EventArgs e)

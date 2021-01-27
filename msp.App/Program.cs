@@ -30,6 +30,15 @@ namespace msp.App
             StartUp _startup = new StartUp();
             _startup.Start();
 
+            if (string.IsNullOrEmpty(AppMain.ApiPath))
+            {
+                AppMain.RunningLocal = true;
+            }
+            else
+            {
+                AppMain.RunningLocal = false;
+            }
+
             Application.Run(new MainForm());
         }
 
