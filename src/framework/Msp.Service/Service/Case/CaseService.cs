@@ -38,6 +38,14 @@ namespace Msp.Service.Service.Case
             }
         }
 
+        public List<CaseMovementDTO> Get_List_CaseMovement_CariId(int companyId, int CariId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<CaseMovement>, List<CaseMovementDTO>>(_db.CaseMovement.Where(x => x.Deleted == false && x.CompanyRecId == companyId && x.CariId == CariId).ToList());
+            }
+        }
+
         public ActionResponse<CaseMovementDTO> SaveCaseMovement(CaseMovementDTO model)
         {
             ActionResponse<CaseMovementDTO> response = new ActionResponse<CaseMovementDTO>()

@@ -82,6 +82,7 @@
             this.colIrsaliyeId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
+            this.bbi_View = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
@@ -121,8 +122,9 @@
             this.btnRegInfo,
             this.bbi_Refresh,
             this.bbi_Print,
-            this.bbi_Document});
-            this.barManager1.MaxItemId = 12;
+            this.bbi_Document,
+            this.bbi_View});
+            this.barManager1.MaxItemId = 13;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -136,6 +138,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNew),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDelete),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_View),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Refresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Document),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print),
@@ -244,6 +247,7 @@
             this.img_sic.Add("convertto", "image://svgimages/dashboards/convertto.svg");
             this.img_sic.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
             this.img_sic.Add("open2", "image://svgimages/actions/open2.svg");
+            this.img_sic.Add("preview", "image://svgimages/pdf viewer/preview.svg");
             // 
             // barButtonItem1
             // 
@@ -333,6 +337,7 @@
             this.gcv_OrderList.OptionsView.ShowAutoFilterRow = true;
             this.gcv_OrderList.OptionsView.ShowFooter = true;
             this.gcv_OrderList.OptionsView.ShowGroupPanel = false;
+            this.gcv_OrderList.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gcv_OrderList_CustomDrawCell);
             // 
             // colRecId
             // 
@@ -592,6 +597,14 @@
             // 
             this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
+            // bbi_View
+            // 
+            this.bbi_View.Caption = "Ön İzleme";
+            this.bbi_View.Id = 12;
+            this.bbi_View.ImageOptions.ImageIndex = 10;
+            this.bbi_View.Name = "bbi_View";
+            this.bbi_View.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_View_ItemClick);
+            // 
             // OrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,5 +696,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAraToplam;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalSiparis;
         private DevExpress.XtraGrid.Columns.GridColumn colIrsaliyeId;
+        private DevExpress.XtraBars.BarButtonItem bbi_View;
     }
 }

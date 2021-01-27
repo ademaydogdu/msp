@@ -200,7 +200,10 @@ namespace Msp.App.CariIslemler
             }
             if (_FormOpenType == FormOpenType.View)
             {
-
+                __orderOwner = _repository.Run<OrderService, OrderOwnerDTO>(x => x.Get_OrderOwner(RecId));
+                __orderTrans = _repository.Run<OrderService, List<OrderTransDTO>>(x => x.Get_OrderTrans(RecId));
+                bbi_save.Enabled = false;
+                bbi_Delete.Enabled = false;
             }
             _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             bs_Unit.DataSource = _list_UnitsDTO;

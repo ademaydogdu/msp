@@ -173,6 +173,7 @@ namespace Msp.App.CariIslemler
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
+            if(oRow.IrsaliyeId > 0) { XtraMessageBox.Show("Kayıt İrsaliyeleştirilmiştir. İşlem Yapılamaz. Ön İzleme ile açılabilir...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information); return;  }
             if (oRow != null)
             {
                 OrderEdit frm = new OrderEdit();
@@ -203,6 +204,30 @@ namespace Msp.App.CariIslemler
                 {
                     do_refresh();
                 }
+            }
+        }
+
+        private void gcv_OrderList_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            int IrsaliyeId = Convert.ToInt32(gcv_OrderList.GetRowCellValue(e.RowHandle, colIrsaliyeId));
+            if (IrsaliyeId > 0)
+            {
+                e.Appearance.BackColor = Color.LightBlue;
+            }
+
+        }
+
+        private void bbi_View_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
+            if (oRow != null)
+            {
+                OrderEdit frm = new OrderEdit();
+                frm.MdiParent = this.MdiParent;
+                frm._FormOpenType = FormOpenType.View;
+                frm.RecId = oRow.RecId;
+                frm.OrderType = orderType;
+                frm.Show();
             }
         }
     }

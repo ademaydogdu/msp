@@ -756,7 +756,7 @@ namespace Msp.App.App
                 + " 	[OdemeTuru] [int] NULL, "
                 + " 	[OdemeGrubu] [int] NULL, "
                 + " 	[Remark] [nvarchar] (max) NULL, "
-                + "     [CariId] [nchar] (10) NULL, "
+                + "     [CariId] [int] NULL, "
                 + " 	[Deleted] [bit] NULL, "
                 + " 	[CompanyRecId] [int] NULL, "
                 + " 	[RecordUser] [nvarchar] (50) NULL, "

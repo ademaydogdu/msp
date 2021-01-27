@@ -32,7 +32,7 @@ namespace Msp.API.Controllers
 
         [HttpPost]
         [ActionName("LoginModel")]
-        public IActionResult LoginModel([FromBody]UserAuthDto model)
+        public IActionResult LoginModel(UserAuthDto model)
         {
             var userLogin = _authorizationService.LoginControl(model);
             if (userLogin.ResponseType != ResponseType.Ok)
@@ -75,7 +75,7 @@ namespace Msp.API.Controllers
 
         [HttpGet]
         [ActionName("OpenFormRights")]
-        public IActionResult OpenFormRights([FromQuery]string userCode, [FromQuery]int CompnayRecId)
+        public IActionResult OpenFormRights(string userCode, int CompnayRecId)
         {
             return Ok(_authorizationService.OpenFormRights(userCode, CompnayRecId));
         }

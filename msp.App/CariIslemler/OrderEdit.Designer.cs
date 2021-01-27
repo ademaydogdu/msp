@@ -37,9 +37,9 @@
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Close = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Bekleyen = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_SevkBilgileri = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -251,9 +251,9 @@
             this.bbi_Delete,
             this.bbi_InternetAl,
             this.bbi_Refresh,
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3});
+            this.bbi_Bekleyen,
+            this.bbi_Print,
+            this.bbi_SevkBilgileri});
             this.barManager1.LargeImages = this.img_bar;
             this.barManager1.MaxItemId = 8;
             this.barManager1.StatusBar = this.bar3;
@@ -269,9 +269,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_save),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Delete),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Bekleyen, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SevkBilgileri)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -304,29 +304,29 @@
             this.bbi_Close.Name = "bbi_Close";
             this.bbi_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Close_ItemClick);
             // 
-            // barButtonItem1
+            // bbi_Bekleyen
             // 
-            this.barButtonItem1.Caption = "Bekleyen Siparişler";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ImageOptions.ImageIndex = 6;
-            this.barButtonItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.bbi_Bekleyen.Caption = "Bekleyen Siparişler";
+            this.bbi_Bekleyen.Id = 5;
+            this.bbi_Bekleyen.ImageOptions.ImageIndex = 6;
+            this.bbi_Bekleyen.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Bekleyen.Name = "bbi_Bekleyen";
             // 
-            // barButtonItem2
+            // bbi_Print
             // 
-            this.barButtonItem2.Caption = "Yazdır";
-            this.barButtonItem2.Id = 6;
-            this.barButtonItem2.ImageOptions.ImageIndex = 7;
-            this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.bbi_Print.Caption = "Yazdır";
+            this.bbi_Print.Id = 6;
+            this.bbi_Print.ImageOptions.ImageIndex = 7;
+            this.bbi_Print.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Print.Name = "bbi_Print";
             // 
-            // barButtonItem3
+            // bbi_SevkBilgileri
             // 
-            this.barButtonItem3.Caption = "Sevk Bilgileri";
-            this.barButtonItem3.Id = 7;
-            this.barButtonItem3.ImageOptions.ImageIndex = 8;
-            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.bbi_SevkBilgileri.Caption = "Sevk Bilgileri";
+            this.bbi_SevkBilgileri.Id = 7;
+            this.bbi_SevkBilgileri.ImageOptions.ImageIndex = 8;
+            this.bbi_SevkBilgileri.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_SevkBilgileri.Name = "bbi_SevkBilgileri";
             // 
             // barDockControlTop
             // 
@@ -1338,9 +1338,9 @@
         private DevExpress.XtraLayout.SimpleLabelItem lbDurumBaslik;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem bbi_Bekleyen;
+        private DevExpress.XtraBars.BarButtonItem bbi_Print;
+        private DevExpress.XtraBars.BarButtonItem bbi_SevkBilgileri;
         private System.Windows.Forms.BindingSource bs_OrderTrans;
         private DevExpress.XtraGrid.Columns.GridColumn colStockId;
         private DevExpress.XtraGrid.Columns.GridColumn colMiktar;

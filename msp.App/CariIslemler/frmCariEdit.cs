@@ -14,6 +14,8 @@ using Msp.App.Tool;
 using Msp.Models.Models;
 using Msp.Service.Service.CurrentTransactions;
 using Msp.Models.Models.Utilities;
+using Msp.Models.Models.Case;
+using Msp.Service.Service.Case;
 
 namespace Msp.App.CariIslemler
 {
@@ -29,6 +31,9 @@ namespace Msp.App.CariIslemler
 
         MspTool MspTool = new MspTool();
         private CTransactionsDTO __cTransaction = new CTransactionsDTO();
+        List<CaseMovementDTO> _List_CaseMov = new List<CaseMovementDTO>();
+
+        public int RecId;
 
         #region Record
 
@@ -114,12 +119,21 @@ namespace Msp.App.CariIslemler
 
         private void frmCariEdit_Load(object sender, EventArgs e)
         {
+            MspTool.Get_Layout(this);
+
+            if (_FormOpenType == FormOpenType.Edit)
+            {
+                __cTransaction = _repository.Run<CurrentTransactionsService, CTransactionsDTO>(x => x.GetCurrentTransaction(RecId));
+                _List_CaseMov = _repository.Run<CaseService, List<CaseMovementDTO>>(x => x.Get_List_CaseMovement_CariId(AppMain.CompanyRecId, RecId));
+                bs_CaseMov.DataSource = _List_CaseMov;
+            }
+            CurTranBindingSource.DataSource = __cTransaction;
 
         }
 
         private void frmCariEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            MspTool.do_Save_Layout(this);
         }
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

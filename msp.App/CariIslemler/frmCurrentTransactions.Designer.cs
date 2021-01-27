@@ -116,6 +116,7 @@
             this.gcv_CurTrans.GridControl = this.gcvCurTransaction;
             this.gcv_CurTrans.Name = "gcv_CurTrans";
             this.gcv_CurTrans.OptionsBehavior.Editable = false;
+            this.gcv_CurTrans.OptionsView.ColumnAutoWidth = false;
             this.gcv_CurTrans.OptionsView.ShowAutoFilterRow = true;
             this.gcv_CurTrans.OptionsView.ShowGroupPanel = false;
             // 
@@ -242,8 +243,8 @@
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNewAccount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemAccount),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditAccount),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRemAccount),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCurTranClose)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;

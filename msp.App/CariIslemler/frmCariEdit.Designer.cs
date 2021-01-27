@@ -42,6 +42,7 @@
             this.bbi_InternetAl = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.CurTypeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurTranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CurCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -71,58 +72,70 @@
             this.CurCardNoTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurIdentNoTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurTitleTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.ItemForCurType = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurCode = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurSoleProp = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurAccountName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurAuthPersonName = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurDiscount = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurOnCredit = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurRiskLimit = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurCity = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurDistrict = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurBalance = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurCompanyType = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurCreatedDate = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurAdress = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurAdressTwo = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurCountryCode = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurCountryName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurZipCode = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurPhoneOne = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurPhoneTwo = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurFax = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurEmail = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurDescription = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurTaxNo = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurTaxOffice = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurCardNo = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForCurIdentNo = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurTitle = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurType = new DevExpress.XtraLayout.LayoutControlItem();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ItemForCurCountryName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurCountryCode = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurAdress = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurPhoneTwo = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurPhoneOne = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurFax = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurAdressTwo = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurDistrict = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurCity = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurEmail = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurTaxOffice = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurTaxNo = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurZipCode = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurDescription = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.ItemForCurCode = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.ItemForCurCreatedDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.ItemForCurSoleProp = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurAuthPersonName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurIdentNo = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForCurAccountName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gc_CariBakiye = new DevExpress.XtraGrid.GridControl();
+            this.gcv_CariBakiye = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bs_CaseMov = new System.Windows.Forms.BindingSource(this.components);
+            this.colCaseId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVadeDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVadeMonth = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEvrakNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDoviz = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIslemTuru = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdemeTuru = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdemeGrubu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).BeginInit();
@@ -153,55 +166,55 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurCardNoTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurIdentNoTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTitleTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurSoleProp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAccountName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAuthPersonName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurOnCredit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurRiskLimit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDistrict)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurBalance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCompanyType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCreatedDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdressTwo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurZipCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneOne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneTwo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurFax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurEmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDescription)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxOffice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCardNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurIdentNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTitle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
-            this.tabPane1.SuspendLayout();
-            this.tabNavigationPage1.SuspendLayout();
-            this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurFax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdressTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDistrict)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxOffice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurZipCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCreatedDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurSoleProp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAuthPersonName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurIdentNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAccountName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
+            this.tabPane1.SuspendLayout();
+            this.tabNavigationPage1.SuspendLayout();
+            this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_CariBakiye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_CariBakiye)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -371,6 +384,19 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(631, 508);
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(86, 165);
+            this.lookUpEdit1.MenuManager = this.barManager1;
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.lookUpEdit1.Properties.NullText = "";
+            this.lookUpEdit1.Size = new System.Drawing.Size(227, 20);
+            this.lookUpEdit1.StyleController = this.dataLayoutControl1;
+            this.lookUpEdit1.TabIndex = 32;
             // 
             // CurTypeTextEdit
             // 
@@ -692,74 +718,6 @@
             this.CurTitleTextEdit.StyleController = this.dataLayoutControl1;
             this.CurTitleTextEdit.TabIndex = 31;
             // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup1});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(631, 508);
-            this.Root.TextVisible = false;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.AllowDrawBackground = false;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup2,
-            this.ItemForCurDescription,
-            this.emptySpaceItem2,
-            this.layoutControlGroup3});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(611, 488);
-            // 
-            // ItemForCurType
-            // 
-            this.ItemForCurType.Control = this.CurTypeTextEdit;
-            this.ItemForCurType.Location = new System.Drawing.Point(0, 0);
-            this.ItemForCurType.Name = "ItemForCurType";
-            this.ItemForCurType.Size = new System.Drawing.Size(388, 24);
-            this.ItemForCurType.Text = "Cari Tipi";
-            this.ItemForCurType.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // ItemForCurCode
-            // 
-            this.ItemForCurCode.Control = this.CurCodeTextEdit;
-            this.ItemForCurCode.Location = new System.Drawing.Point(0, 0);
-            this.ItemForCurCode.Name = "ItemForCurCode";
-            this.ItemForCurCode.Size = new System.Drawing.Size(180, 24);
-            this.ItemForCurCode.Text = "Cari Kodu";
-            this.ItemForCurCode.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurSoleProp
-            // 
-            this.ItemForCurSoleProp.Control = this.CurSolePropTextEdit;
-            this.ItemForCurSoleProp.Location = new System.Drawing.Point(0, 96);
-            this.ItemForCurSoleProp.Name = "ItemForCurSoleProp";
-            this.ItemForCurSoleProp.Size = new System.Drawing.Size(293, 24);
-            this.ItemForCurSoleProp.Text = "Şahıs Şirketi";
-            this.ItemForCurSoleProp.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurAccountName
-            // 
-            this.ItemForCurAccountName.Control = this.CurAccountNameTextEdit;
-            this.ItemForCurAccountName.Location = new System.Drawing.Point(0, 24);
-            this.ItemForCurAccountName.Name = "ItemForCurAccountName";
-            this.ItemForCurAccountName.Size = new System.Drawing.Size(293, 24);
-            this.ItemForCurAccountName.Text = "Cari Adı";
-            this.ItemForCurAccountName.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurAuthPersonName
-            // 
-            this.ItemForCurAuthPersonName.Control = this.CurAuthPersonNameTextEdit;
-            this.ItemForCurAuthPersonName.Location = new System.Drawing.Point(0, 72);
-            this.ItemForCurAuthPersonName.Name = "ItemForCurAuthPersonName";
-            this.ItemForCurAuthPersonName.Size = new System.Drawing.Size(293, 24);
-            this.ItemForCurAuthPersonName.Text = "Cari Yetkili";
-            this.ItemForCurAuthPersonName.TextSize = new System.Drawing.Size(59, 13);
-            // 
             // ItemForCurDiscount
             // 
             this.ItemForCurDiscount.Control = this.CurDiscountTextEdit;
@@ -787,24 +745,6 @@
             this.ItemForCurRiskLimit.Text = "C.Risk Limit";
             this.ItemForCurRiskLimit.TextSize = new System.Drawing.Size(76, 13);
             // 
-            // ItemForCurCity
-            // 
-            this.ItemForCurCity.Control = this.CurCityTextEdit;
-            this.ItemForCurCity.Location = new System.Drawing.Point(0, 48);
-            this.ItemForCurCity.Name = "ItemForCurCity";
-            this.ItemForCurCity.Size = new System.Drawing.Size(278, 24);
-            this.ItemForCurCity.Text = "İl";
-            this.ItemForCurCity.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurDistrict
-            // 
-            this.ItemForCurDistrict.Control = this.CurDistrictTextEdit;
-            this.ItemForCurDistrict.Location = new System.Drawing.Point(0, 72);
-            this.ItemForCurDistrict.Name = "ItemForCurDistrict";
-            this.ItemForCurDistrict.Size = new System.Drawing.Size(278, 24);
-            this.ItemForCurDistrict.Text = "İlçe";
-            this.ItemForCurDistrict.TextSize = new System.Drawing.Size(59, 13);
-            // 
             // ItemForCurBalance
             // 
             this.ItemForCurBalance.Control = this.CurBalanceTextEdit;
@@ -823,126 +763,6 @@
             this.ItemForCurCompanyType.Text = "C.Şirket Tipi";
             this.ItemForCurCompanyType.TextSize = new System.Drawing.Size(76, 13);
             // 
-            // ItemForCurCreatedDate
-            // 
-            this.ItemForCurCreatedDate.Control = this.CurCreatedDateDateEdit;
-            this.ItemForCurCreatedDate.Location = new System.Drawing.Point(383, 0);
-            this.ItemForCurCreatedDate.Name = "ItemForCurCreatedDate";
-            this.ItemForCurCreatedDate.Size = new System.Drawing.Size(204, 24);
-            this.ItemForCurCreatedDate.Text = "Kayıt Tarihi";
-            this.ItemForCurCreatedDate.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurAdress
-            // 
-            this.ItemForCurAdress.Control = this.CurAdressTextEdit;
-            this.ItemForCurAdress.Location = new System.Drawing.Point(0, 0);
-            this.ItemForCurAdress.MaxSize = new System.Drawing.Size(278, 24);
-            this.ItemForCurAdress.MinSize = new System.Drawing.Size(278, 24);
-            this.ItemForCurAdress.Name = "ItemForCurAdress";
-            this.ItemForCurAdress.Size = new System.Drawing.Size(278, 24);
-            this.ItemForCurAdress.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.ItemForCurAdress.Text = "Adres";
-            this.ItemForCurAdress.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurAdressTwo
-            // 
-            this.ItemForCurAdressTwo.Control = this.CurAdressTwoTextEdit;
-            this.ItemForCurAdressTwo.Location = new System.Drawing.Point(0, 24);
-            this.ItemForCurAdressTwo.Name = "ItemForCurAdressTwo";
-            this.ItemForCurAdressTwo.Size = new System.Drawing.Size(278, 24);
-            this.ItemForCurAdressTwo.Text = "Adres2";
-            this.ItemForCurAdressTwo.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurCountryCode
-            // 
-            this.ItemForCurCountryCode.Control = this.CurCountryCodeTextEdit;
-            this.ItemForCurCountryCode.Location = new System.Drawing.Point(278, 96);
-            this.ItemForCurCountryCode.Name = "ItemForCurCountryCode";
-            this.ItemForCurCountryCode.Size = new System.Drawing.Size(309, 24);
-            this.ItemForCurCountryCode.Text = "Ülke Kodu";
-            this.ItemForCurCountryCode.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurCountryName
-            // 
-            this.ItemForCurCountryName.Control = this.CurCountryNameTextEdit;
-            this.ItemForCurCountryName.Location = new System.Drawing.Point(0, 120);
-            this.ItemForCurCountryName.Name = "ItemForCurCountryName";
-            this.ItemForCurCountryName.Size = new System.Drawing.Size(587, 24);
-            this.ItemForCurCountryName.Text = "Ülke";
-            this.ItemForCurCountryName.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurZipCode
-            // 
-            this.ItemForCurZipCode.Control = this.CurZipCodeTextEdit;
-            this.ItemForCurZipCode.Location = new System.Drawing.Point(0, 96);
-            this.ItemForCurZipCode.Name = "ItemForCurZipCode";
-            this.ItemForCurZipCode.Size = new System.Drawing.Size(278, 24);
-            this.ItemForCurZipCode.Text = "Posta Kodu";
-            this.ItemForCurZipCode.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurPhoneOne
-            // 
-            this.ItemForCurPhoneOne.Control = this.CurPhoneOneTextEdit;
-            this.ItemForCurPhoneOne.Location = new System.Drawing.Point(278, 0);
-            this.ItemForCurPhoneOne.Name = "ItemForCurPhoneOne";
-            this.ItemForCurPhoneOne.Size = new System.Drawing.Size(309, 24);
-            this.ItemForCurPhoneOne.Text = "Telefon";
-            this.ItemForCurPhoneOne.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurPhoneTwo
-            // 
-            this.ItemForCurPhoneTwo.Control = this.CurPhoneTwoTextEdit;
-            this.ItemForCurPhoneTwo.Location = new System.Drawing.Point(278, 24);
-            this.ItemForCurPhoneTwo.Name = "ItemForCurPhoneTwo";
-            this.ItemForCurPhoneTwo.Size = new System.Drawing.Size(309, 24);
-            this.ItemForCurPhoneTwo.Text = "Telefon2";
-            this.ItemForCurPhoneTwo.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurFax
-            // 
-            this.ItemForCurFax.Control = this.CurFaxTextEdit;
-            this.ItemForCurFax.Location = new System.Drawing.Point(278, 48);
-            this.ItemForCurFax.Name = "ItemForCurFax";
-            this.ItemForCurFax.Size = new System.Drawing.Size(309, 24);
-            this.ItemForCurFax.Text = "Faks";
-            this.ItemForCurFax.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurEmail
-            // 
-            this.ItemForCurEmail.Control = this.CurEmailTextEdit;
-            this.ItemForCurEmail.Location = new System.Drawing.Point(278, 72);
-            this.ItemForCurEmail.Name = "ItemForCurEmail";
-            this.ItemForCurEmail.Size = new System.Drawing.Size(309, 24);
-            this.ItemForCurEmail.Text = "Email";
-            this.ItemForCurEmail.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurDescription
-            // 
-            this.ItemForCurDescription.Control = this.CurDescriptionTextEdit;
-            this.ItemForCurDescription.Location = new System.Drawing.Point(0, 426);
-            this.ItemForCurDescription.Name = "ItemForCurDescription";
-            this.ItemForCurDescription.Size = new System.Drawing.Size(611, 24);
-            this.ItemForCurDescription.Text = "Not";
-            this.ItemForCurDescription.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurTaxNo
-            // 
-            this.ItemForCurTaxNo.Control = this.CurTaxNoTextEdit;
-            this.ItemForCurTaxNo.Location = new System.Drawing.Point(0, 144);
-            this.ItemForCurTaxNo.Name = "ItemForCurTaxNo";
-            this.ItemForCurTaxNo.Size = new System.Drawing.Size(587, 24);
-            this.ItemForCurTaxNo.Text = "Vergi No";
-            this.ItemForCurTaxNo.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // ItemForCurTaxOffice
-            // 
-            this.ItemForCurTaxOffice.Control = this.CurTaxOfficeTextEdit;
-            this.ItemForCurTaxOffice.Location = new System.Drawing.Point(0, 168);
-            this.ItemForCurTaxOffice.Name = "ItemForCurTaxOffice";
-            this.ItemForCurTaxOffice.Size = new System.Drawing.Size(587, 24);
-            this.ItemForCurTaxOffice.Text = "Vergi Dairesi";
-            this.ItemForCurTaxOffice.TextSize = new System.Drawing.Size(59, 13);
-            // 
             // ItemForCurCardNo
             // 
             this.ItemForCurCardNo.Control = this.CurCardNoTextEdit;
@@ -952,15 +772,6 @@
             this.ItemForCurCardNo.Text = "C.Kredi Kartı No";
             this.ItemForCurCardNo.TextSize = new System.Drawing.Size(76, 13);
             // 
-            // ItemForCurIdentNo
-            // 
-            this.ItemForCurIdentNo.Control = this.CurIdentNoTextEdit;
-            this.ItemForCurIdentNo.Location = new System.Drawing.Point(0, 48);
-            this.ItemForCurIdentNo.Name = "ItemForCurIdentNo";
-            this.ItemForCurIdentNo.Size = new System.Drawing.Size(293, 24);
-            this.ItemForCurIdentNo.Text = "TC No";
-            this.ItemForCurIdentNo.TextSize = new System.Drawing.Size(59, 13);
-            // 
             // ItemForCurTitle
             // 
             this.ItemForCurTitle.Control = this.CurTitleTextEdit;
@@ -969,6 +780,38 @@
             this.ItemForCurTitle.Size = new System.Drawing.Size(388, 398);
             this.ItemForCurTitle.Text = "C.Başlık";
             this.ItemForCurTitle.TextSize = new System.Drawing.Size(76, 13);
+            // 
+            // ItemForCurType
+            // 
+            this.ItemForCurType.Control = this.CurTypeTextEdit;
+            this.ItemForCurType.Location = new System.Drawing.Point(0, 0);
+            this.ItemForCurType.Name = "ItemForCurType";
+            this.ItemForCurType.Size = new System.Drawing.Size(388, 24);
+            this.ItemForCurType.Text = "Cari Tipi";
+            this.ItemForCurType.TextSize = new System.Drawing.Size(76, 13);
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup1});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(631, 508);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.AllowDrawBackground = false;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup2,
+            this.ItemForCurDescription,
+            this.emptySpaceItem2,
+            this.layoutControlGroup3});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "autoGeneratedGroup0";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(611, 488);
             // 
             // layoutControlGroup2
             // 
@@ -994,63 +837,134 @@
             this.layoutControlGroup2.Size = new System.Drawing.Size(611, 237);
             this.layoutControlGroup2.Text = "Adres/Fatura/İletişim Bilgileri";
             // 
-            // emptySpaceItem1
+            // ItemForCurCountryName
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(180, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(203, 24);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.ItemForCurCountryName.Control = this.CurCountryNameTextEdit;
+            this.ItemForCurCountryName.Location = new System.Drawing.Point(0, 120);
+            this.ItemForCurCountryName.Name = "ItemForCurCountryName";
+            this.ItemForCurCountryName.Size = new System.Drawing.Size(587, 24);
+            this.ItemForCurCountryName.Text = "Ülke";
+            this.ItemForCurCountryName.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // tabPane1
+            // ItemForCurCountryCode
             // 
-            this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Controls.Add(this.tabNavigationPage2);
-            this.tabPane1.Controls.Add(this.tabNavigationPage3);
-            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 0);
-            this.tabPane1.Name = "tabPane1";
-            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2,
-            this.tabNavigationPage3});
-            this.tabPane1.RegularSize = new System.Drawing.Size(631, 537);
-            this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(631, 537);
-            this.tabPane1.TabIndex = 9;
-            this.tabPane1.Text = "tabPane1";
+            this.ItemForCurCountryCode.Control = this.CurCountryCodeTextEdit;
+            this.ItemForCurCountryCode.Location = new System.Drawing.Point(278, 96);
+            this.ItemForCurCountryCode.Name = "ItemForCurCountryCode";
+            this.ItemForCurCountryCode.Size = new System.Drawing.Size(309, 24);
+            this.ItemForCurCountryCode.Text = "Ülke Kodu";
+            this.ItemForCurCountryCode.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // tabNavigationPage1
+            // ItemForCurAdress
             // 
-            this.tabNavigationPage1.Caption = "Genel Bilgiler";
-            this.tabNavigationPage1.Controls.Add(this.dataLayoutControl1);
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(631, 508);
+            this.ItemForCurAdress.Control = this.CurAdressTextEdit;
+            this.ItemForCurAdress.Location = new System.Drawing.Point(0, 0);
+            this.ItemForCurAdress.MaxSize = new System.Drawing.Size(278, 24);
+            this.ItemForCurAdress.MinSize = new System.Drawing.Size(278, 24);
+            this.ItemForCurAdress.Name = "ItemForCurAdress";
+            this.ItemForCurAdress.Size = new System.Drawing.Size(278, 24);
+            this.ItemForCurAdress.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.ItemForCurAdress.Text = "Adres";
+            this.ItemForCurAdress.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // tabNavigationPage2
+            // ItemForCurPhoneTwo
             // 
-            this.tabNavigationPage2.Caption = "Bakiye";
-            this.tabNavigationPage2.Controls.Add(this.gridControl1);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(631, 508);
+            this.ItemForCurPhoneTwo.Control = this.CurPhoneTwoTextEdit;
+            this.ItemForCurPhoneTwo.Location = new System.Drawing.Point(278, 24);
+            this.ItemForCurPhoneTwo.Name = "ItemForCurPhoneTwo";
+            this.ItemForCurPhoneTwo.Size = new System.Drawing.Size(309, 24);
+            this.ItemForCurPhoneTwo.Text = "Telefon2";
+            this.ItemForCurPhoneTwo.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // gridControl1
+            // ItemForCurPhoneOne
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(631, 508);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.ItemForCurPhoneOne.Control = this.CurPhoneOneTextEdit;
+            this.ItemForCurPhoneOne.Location = new System.Drawing.Point(278, 0);
+            this.ItemForCurPhoneOne.Name = "ItemForCurPhoneOne";
+            this.ItemForCurPhoneOne.Size = new System.Drawing.Size(309, 24);
+            this.ItemForCurPhoneOne.Text = "Telefon";
+            this.ItemForCurPhoneOne.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // gridView1
+            // ItemForCurFax
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.ItemForCurFax.Control = this.CurFaxTextEdit;
+            this.ItemForCurFax.Location = new System.Drawing.Point(278, 48);
+            this.ItemForCurFax.Name = "ItemForCurFax";
+            this.ItemForCurFax.Size = new System.Drawing.Size(309, 24);
+            this.ItemForCurFax.Text = "Faks";
+            this.ItemForCurFax.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurAdressTwo
+            // 
+            this.ItemForCurAdressTwo.Control = this.CurAdressTwoTextEdit;
+            this.ItemForCurAdressTwo.Location = new System.Drawing.Point(0, 24);
+            this.ItemForCurAdressTwo.Name = "ItemForCurAdressTwo";
+            this.ItemForCurAdressTwo.Size = new System.Drawing.Size(278, 24);
+            this.ItemForCurAdressTwo.Text = "Adres2";
+            this.ItemForCurAdressTwo.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurDistrict
+            // 
+            this.ItemForCurDistrict.Control = this.CurDistrictTextEdit;
+            this.ItemForCurDistrict.Location = new System.Drawing.Point(0, 72);
+            this.ItemForCurDistrict.Name = "ItemForCurDistrict";
+            this.ItemForCurDistrict.Size = new System.Drawing.Size(278, 24);
+            this.ItemForCurDistrict.Text = "İlçe";
+            this.ItemForCurDistrict.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurCity
+            // 
+            this.ItemForCurCity.Control = this.CurCityTextEdit;
+            this.ItemForCurCity.Location = new System.Drawing.Point(0, 48);
+            this.ItemForCurCity.Name = "ItemForCurCity";
+            this.ItemForCurCity.Size = new System.Drawing.Size(278, 24);
+            this.ItemForCurCity.Text = "İl";
+            this.ItemForCurCity.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurEmail
+            // 
+            this.ItemForCurEmail.Control = this.CurEmailTextEdit;
+            this.ItemForCurEmail.Location = new System.Drawing.Point(278, 72);
+            this.ItemForCurEmail.Name = "ItemForCurEmail";
+            this.ItemForCurEmail.Size = new System.Drawing.Size(309, 24);
+            this.ItemForCurEmail.Text = "Email";
+            this.ItemForCurEmail.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurTaxOffice
+            // 
+            this.ItemForCurTaxOffice.Control = this.CurTaxOfficeTextEdit;
+            this.ItemForCurTaxOffice.Location = new System.Drawing.Point(0, 168);
+            this.ItemForCurTaxOffice.Name = "ItemForCurTaxOffice";
+            this.ItemForCurTaxOffice.Size = new System.Drawing.Size(587, 24);
+            this.ItemForCurTaxOffice.Text = "Vergi Dairesi";
+            this.ItemForCurTaxOffice.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurTaxNo
+            // 
+            this.ItemForCurTaxNo.Control = this.CurTaxNoTextEdit;
+            this.ItemForCurTaxNo.Location = new System.Drawing.Point(0, 144);
+            this.ItemForCurTaxNo.Name = "ItemForCurTaxNo";
+            this.ItemForCurTaxNo.Size = new System.Drawing.Size(587, 24);
+            this.ItemForCurTaxNo.Text = "Vergi No";
+            this.ItemForCurTaxNo.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurZipCode
+            // 
+            this.ItemForCurZipCode.Control = this.CurZipCodeTextEdit;
+            this.ItemForCurZipCode.Location = new System.Drawing.Point(0, 96);
+            this.ItemForCurZipCode.Name = "ItemForCurZipCode";
+            this.ItemForCurZipCode.Size = new System.Drawing.Size(278, 24);
+            this.ItemForCurZipCode.Text = "Posta Kodu";
+            this.ItemForCurZipCode.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurDescription
+            // 
+            this.ItemForCurDescription.Control = this.CurDescriptionTextEdit;
+            this.ItemForCurDescription.Location = new System.Drawing.Point(0, 426);
+            this.ItemForCurDescription.Name = "ItemForCurDescription";
+            this.ItemForCurDescription.Size = new System.Drawing.Size(611, 24);
+            this.ItemForCurDescription.Text = "Not";
+            this.ItemForCurDescription.TextSize = new System.Drawing.Size(59, 13);
             // 
             // emptySpaceItem2
             // 
@@ -1059,6 +973,55 @@
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(611, 38);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutControlGroup3.AppearanceGroup.Options.UseFont = true;
+            this.layoutControlGroup3.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.ItemForCurCode,
+            this.emptySpaceItem1,
+            this.ItemForCurCreatedDate,
+            this.emptySpaceItem3,
+            this.emptySpaceItem4,
+            this.emptySpaceItem5,
+            this.emptySpaceItem6,
+            this.layoutControlItem1,
+            this.ItemForCurSoleProp,
+            this.ItemForCurAuthPersonName,
+            this.ItemForCurIdentNo,
+            this.ItemForCurAccountName});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(611, 189);
+            this.layoutControlGroup3.Text = "Hesap Bilgieri";
+            // 
+            // ItemForCurCode
+            // 
+            this.ItemForCurCode.Control = this.CurCodeTextEdit;
+            this.ItemForCurCode.Location = new System.Drawing.Point(0, 0);
+            this.ItemForCurCode.Name = "ItemForCurCode";
+            this.ItemForCurCode.Size = new System.Drawing.Size(180, 24);
+            this.ItemForCurCode.Text = "Cari Kodu";
+            this.ItemForCurCode.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(180, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(203, 24);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // ItemForCurCreatedDate
+            // 
+            this.ItemForCurCreatedDate.Control = this.CurCreatedDateDateEdit;
+            this.ItemForCurCreatedDate.Location = new System.Drawing.Point(383, 0);
+            this.ItemForCurCreatedDate.Name = "ItemForCurCreatedDate";
+            this.ItemForCurCreatedDate.Size = new System.Drawing.Size(204, 24);
+            this.ItemForCurCreatedDate.Text = "Kayıt Tarihi";
+            this.ItemForCurCreatedDate.TextSize = new System.Drawing.Size(59, 13);
             // 
             // emptySpaceItem3
             // 
@@ -1092,19 +1055,6 @@
             this.emptySpaceItem6.Size = new System.Drawing.Size(294, 48);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(86, 165);
-            this.lookUpEdit1.MenuManager = this.barManager1;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
-            this.lookUpEdit1.Properties.NullText = "";
-            this.lookUpEdit1.Size = new System.Drawing.Size(227, 20);
-            this.lookUpEdit1.StyleController = this.dataLayoutControl1;
-            this.lookUpEdit1.TabIndex = 32;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.lookUpEdit1;
@@ -1114,28 +1064,108 @@
             this.layoutControlItem1.Text = "Cari Grup";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // layoutControlGroup3
+            // ItemForCurSoleProp
             // 
-            this.layoutControlGroup3.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.layoutControlGroup3.AppearanceGroup.Options.UseFont = true;
-            this.layoutControlGroup3.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.ItemForCurCode,
-            this.emptySpaceItem1,
-            this.ItemForCurCreatedDate,
-            this.emptySpaceItem3,
-            this.emptySpaceItem4,
-            this.emptySpaceItem5,
-            this.emptySpaceItem6,
-            this.layoutControlItem1,
-            this.ItemForCurSoleProp,
-            this.ItemForCurAuthPersonName,
-            this.ItemForCurIdentNo,
-            this.ItemForCurAccountName});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(611, 189);
-            this.layoutControlGroup3.Text = "Hesap Bilgieri";
+            this.ItemForCurSoleProp.Control = this.CurSolePropTextEdit;
+            this.ItemForCurSoleProp.Location = new System.Drawing.Point(0, 96);
+            this.ItemForCurSoleProp.Name = "ItemForCurSoleProp";
+            this.ItemForCurSoleProp.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurSoleProp.Text = "Şahıs Şirketi";
+            this.ItemForCurSoleProp.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurAuthPersonName
+            // 
+            this.ItemForCurAuthPersonName.Control = this.CurAuthPersonNameTextEdit;
+            this.ItemForCurAuthPersonName.Location = new System.Drawing.Point(0, 72);
+            this.ItemForCurAuthPersonName.Name = "ItemForCurAuthPersonName";
+            this.ItemForCurAuthPersonName.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurAuthPersonName.Text = "Cari Yetkili";
+            this.ItemForCurAuthPersonName.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurIdentNo
+            // 
+            this.ItemForCurIdentNo.Control = this.CurIdentNoTextEdit;
+            this.ItemForCurIdentNo.Location = new System.Drawing.Point(0, 48);
+            this.ItemForCurIdentNo.Name = "ItemForCurIdentNo";
+            this.ItemForCurIdentNo.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurIdentNo.Text = "TC No";
+            this.ItemForCurIdentNo.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // ItemForCurAccountName
+            // 
+            this.ItemForCurAccountName.Control = this.CurAccountNameTextEdit;
+            this.ItemForCurAccountName.Location = new System.Drawing.Point(0, 24);
+            this.ItemForCurAccountName.Name = "ItemForCurAccountName";
+            this.ItemForCurAccountName.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurAccountName.Text = "Cari Adı";
+            this.ItemForCurAccountName.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // tabPane1
+            // 
+            this.tabPane1.Controls.Add(this.tabNavigationPage1);
+            this.tabPane1.Controls.Add(this.tabNavigationPage2);
+            this.tabPane1.Controls.Add(this.tabNavigationPage3);
+            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPane1.Location = new System.Drawing.Point(0, 0);
+            this.tabPane1.Name = "tabPane1";
+            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.tabNavigationPage1,
+            this.tabNavigationPage2,
+            this.tabNavigationPage3});
+            this.tabPane1.RegularSize = new System.Drawing.Size(631, 537);
+            this.tabPane1.SelectedPage = this.tabNavigationPage1;
+            this.tabPane1.Size = new System.Drawing.Size(631, 537);
+            this.tabPane1.TabIndex = 9;
+            this.tabPane1.Text = "tabPane1";
+            // 
+            // tabNavigationPage1
+            // 
+            this.tabNavigationPage1.Caption = "Genel Bilgiler";
+            this.tabNavigationPage1.Controls.Add(this.dataLayoutControl1);
+            this.tabNavigationPage1.Name = "tabNavigationPage1";
+            this.tabNavigationPage1.Size = new System.Drawing.Size(631, 508);
+            // 
+            // tabNavigationPage2
+            // 
+            this.tabNavigationPage2.Caption = "Bakiye";
+            this.tabNavigationPage2.Controls.Add(this.gc_CariBakiye);
+            this.tabNavigationPage2.Name = "tabNavigationPage2";
+            this.tabNavigationPage2.Size = new System.Drawing.Size(631, 508);
+            // 
+            // gc_CariBakiye
+            // 
+            this.gc_CariBakiye.DataSource = this.bs_CaseMov;
+            this.gc_CariBakiye.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_CariBakiye.Location = new System.Drawing.Point(0, 0);
+            this.gc_CariBakiye.MainView = this.gcv_CariBakiye;
+            this.gc_CariBakiye.MenuManager = this.barManager1;
+            this.gc_CariBakiye.Name = "gc_CariBakiye";
+            this.gc_CariBakiye.Size = new System.Drawing.Size(631, 508);
+            this.gc_CariBakiye.TabIndex = 0;
+            this.gc_CariBakiye.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_CariBakiye});
+            // 
+            // gcv_CariBakiye
+            // 
+            this.gcv_CariBakiye.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCaseId,
+            this.colRecordDate,
+            this.colVadeDate,
+            this.colVadeMonth,
+            this.colEvrakNo,
+            this.colDoviz,
+            this.colIslemTuru,
+            this.colTutar,
+            this.colOdemeTuru,
+            this.colOdemeGrubu,
+            this.colRemark});
+            this.gcv_CariBakiye.GridControl = this.gc_CariBakiye;
+            this.gcv_CariBakiye.Name = "gcv_CariBakiye";
+            this.gcv_CariBakiye.OptionsBehavior.Editable = false;
+            this.gcv_CariBakiye.OptionsView.ColumnAutoWidth = false;
+            this.gcv_CariBakiye.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_CariBakiye.OptionsView.ShowFooter = true;
+            this.gcv_CariBakiye.OptionsView.ShowGroupPanel = false;
             // 
             // tabNavigationPage3
             // 
@@ -1162,6 +1192,87 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // bs_CaseMov
+            // 
+            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
+            // 
+            // colCaseId
+            // 
+            this.colCaseId.FieldName = "CaseId";
+            this.colCaseId.Name = "colCaseId";
+            this.colCaseId.Visible = true;
+            this.colCaseId.VisibleIndex = 0;
+            // 
+            // colRecordDate
+            // 
+            this.colRecordDate.FieldName = "RecordDate";
+            this.colRecordDate.Name = "colRecordDate";
+            this.colRecordDate.Visible = true;
+            this.colRecordDate.VisibleIndex = 1;
+            // 
+            // colVadeDate
+            // 
+            this.colVadeDate.FieldName = "VadeDate";
+            this.colVadeDate.Name = "colVadeDate";
+            this.colVadeDate.Visible = true;
+            this.colVadeDate.VisibleIndex = 2;
+            // 
+            // colVadeMonth
+            // 
+            this.colVadeMonth.FieldName = "VadeMonth";
+            this.colVadeMonth.Name = "colVadeMonth";
+            this.colVadeMonth.Visible = true;
+            this.colVadeMonth.VisibleIndex = 3;
+            // 
+            // colEvrakNo
+            // 
+            this.colEvrakNo.FieldName = "EvrakNo";
+            this.colEvrakNo.Name = "colEvrakNo";
+            this.colEvrakNo.Visible = true;
+            this.colEvrakNo.VisibleIndex = 4;
+            // 
+            // colDoviz
+            // 
+            this.colDoviz.FieldName = "Doviz";
+            this.colDoviz.Name = "colDoviz";
+            this.colDoviz.Visible = true;
+            this.colDoviz.VisibleIndex = 5;
+            // 
+            // colIslemTuru
+            // 
+            this.colIslemTuru.FieldName = "IslemTuru";
+            this.colIslemTuru.Name = "colIslemTuru";
+            this.colIslemTuru.Visible = true;
+            this.colIslemTuru.VisibleIndex = 6;
+            // 
+            // colTutar
+            // 
+            this.colTutar.FieldName = "Tutar";
+            this.colTutar.Name = "colTutar";
+            this.colTutar.Visible = true;
+            this.colTutar.VisibleIndex = 7;
+            // 
+            // colOdemeTuru
+            // 
+            this.colOdemeTuru.FieldName = "OdemeTuru";
+            this.colOdemeTuru.Name = "colOdemeTuru";
+            this.colOdemeTuru.Visible = true;
+            this.colOdemeTuru.VisibleIndex = 8;
+            // 
+            // colOdemeGrubu
+            // 
+            this.colOdemeGrubu.FieldName = "OdemeGrubu";
+            this.colOdemeGrubu.Name = "colOdemeGrubu";
+            this.colOdemeGrubu.Visible = true;
+            this.colOdemeGrubu.VisibleIndex = 9;
+            // 
+            // colRemark
+            // 
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 10;
+            // 
             // frmCariEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1181,6 +1292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).EndInit();
@@ -1211,55 +1323,55 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurCardNoTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurIdentNoTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTitleTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurSoleProp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAccountName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAuthPersonName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurOnCredit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurRiskLimit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDistrict)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCompanyType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCreatedDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdressTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurZipCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneOne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurFax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDescription)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxOffice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCardNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurIdentNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTitle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
-            this.tabPane1.ResumeLayout(false);
-            this.tabNavigationPage1.ResumeLayout(false);
-            this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCountryCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurPhoneOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurFax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAdressTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDistrict)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxOffice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurTaxNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurZipCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurCreatedDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurSoleProp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAuthPersonName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurIdentNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAccountName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
+            this.tabPane1.ResumeLayout(false);
+            this.tabNavigationPage1.ResumeLayout(false);
+            this.tabNavigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_CariBakiye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_CariBakiye)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1344,8 +1456,8 @@
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gc_CariBakiye;
+        private DevExpress.XtraGrid.Views.Grid.GridView gcv_CariBakiye;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
@@ -1357,5 +1469,17 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.BindingSource bs_CaseMov;
+        private DevExpress.XtraGrid.Columns.GridColumn colCaseId;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecordDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colVadeDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colVadeMonth;
+        private DevExpress.XtraGrid.Columns.GridColumn colEvrakNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colDoviz;
+        private DevExpress.XtraGrid.Columns.GridColumn colIslemTuru;
+        private DevExpress.XtraGrid.Columns.GridColumn colTutar;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdemeTuru;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdemeGrubu;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
     }
 }

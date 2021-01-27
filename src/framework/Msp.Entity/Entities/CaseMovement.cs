@@ -24,7 +24,7 @@ namespace Msp.Entity.Entities
         public int? OdemeTuru { get; set; }
         public int? OdemeGrubu { get; set; }
         public string Remark { get; set; }
-        public string CariId { get; set; }
+        public int? CariId { get; set; }
         public bool? Deleted { get; set; }
         public int? CompanyRecId { get; set; }
         public string RecordUser { get; set; }

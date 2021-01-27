@@ -20,7 +20,7 @@ namespace Msp.Models.Models.Case
         public int? OdemeTuru { get; set; }
         public int? OdemeGrubu { get; set; }
         public string Remark { get; set; }
-        public string CariId { get; set; }
+        public int? CariId { get; set; } = 0;
         public bool? Deleted { get; set; } = false;
         public int? CompanyRecId { get; set; }
         public string RecordUser { get; set; }

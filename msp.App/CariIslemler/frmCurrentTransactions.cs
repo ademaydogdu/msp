@@ -53,7 +53,8 @@ namespace msp.App
             {
                 frmCariEdit frm = new frmCariEdit();
                 frm._FormOpenType = Msp.Infrastructure.FormOpenType.Edit;
-                //frm.Show(Orow.CurID);
+                frm.RecId = Orow.CurID;
+                frm.ShowDialog();
             }
         }
 
