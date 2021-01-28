@@ -116,6 +116,8 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lbDurumBaslik = new DevExpress.XtraLayout.SimpleLabelItem();
             this.lbl_Durum = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Company.Properties)).BeginInit();
@@ -182,6 +184,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -311,6 +315,7 @@
             this.bbi_Bekleyen.ImageOptions.ImageIndex = 6;
             this.bbi_Bekleyen.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Bekleyen.Name = "bbi_Bekleyen";
+            this.bbi_Bekleyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Bekleyen_ItemClick);
             // 
             // bbi_Print
             // 
@@ -478,7 +483,9 @@
             this.rp_KDV,
             this.rp_StockKodu,
             this.rp_StockAdi,
-            this.rp_Unit});
+            this.rp_Unit,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2});
             this.gc_OrderTrans.Size = new System.Drawing.Size(1091, 365);
             this.gc_OrderTrans.TabIndex = 4;
             this.gc_OrderTrans.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -559,6 +566,7 @@
             // 
             // colMiktar
             // 
+            this.colMiktar.ColumnEdit = this.repositoryItemTextEdit1;
             this.colMiktar.DisplayFormat.FormatString = "n2";
             this.colMiktar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMiktar.FieldName = "Miktar";
@@ -592,6 +600,7 @@
             // 
             // colBirimFiyat
             // 
+            this.colBirimFiyat.ColumnEdit = this.repositoryItemTextEdit2;
             this.colBirimFiyat.DisplayFormat.FormatString = "n2";
             this.colBirimFiyat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colBirimFiyat.FieldName = "BirimFiyat";
@@ -623,6 +632,7 @@
             this.colTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTutar.FieldName = "Tutar";
             this.colTutar.Name = "colTutar";
+            this.colTutar.OptionsColumn.AllowEdit = false;
             this.colTutar.Visible = true;
             this.colTutar.VisibleIndex = 6;
             // 
@@ -1204,6 +1214,20 @@
             this.lbl_Durum.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lbl_Durum.TextSize = new System.Drawing.Size(73, 19);
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Mask.EditMask = "n2";
+            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Mask.EditMask = "n2";
+            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
             // OrderEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1285,6 +1309,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1379,5 +1405,7 @@
         private DevExpress.XtraLayout.SimpleLabelItem lbl_Durum;
         private DevExpress.XtraEditors.MemoEdit txtAdres;
         private DevExpress.XtraEditors.MemoEdit txt_Remark;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
     }
 }

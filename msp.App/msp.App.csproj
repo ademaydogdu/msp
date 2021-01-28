@@ -32,7 +32,7 @@
     <TargetCulture>tr-TR</TargetCulture>
     <ProductName>Market Satış</ProductName>
     <PublisherName>PC- LAB</PublisherName>
-    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>21.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -78,7 +78,7 @@
     <AssemblyOriginatorKeyFile>Msp.App_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logos.ico</ApplicationIcon>
+    <ApplicationIcon>ico2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
@@ -1034,6 +1034,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SpeedSaleProductDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.SaleBarcodCreateDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Scheduler.AppointmentsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.SecRights.OpenFormRightsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.SecRights.SecRightsDTO.datasource" />
@@ -1197,6 +1198,7 @@
     <EmbeddedResource Include="Scripts\mspTableCreate.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ico2.ico" />
     <Content Include="LINCENSE.txt" />
     <Content Include="logos.ico" />
     <Content Include="Software Protector.exe" />

@@ -344,5 +344,11 @@ namespace Msp.App.CariIslemler
                 TopTotal();
             }
         }
+
+        private void bbi_Bekleyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FindOrderList frm = new FindOrderList();
+            frm.ShowDialog();
+        }
     }
 }

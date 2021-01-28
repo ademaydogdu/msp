@@ -77,7 +77,7 @@ namespace Msp.App.Musteri_Islemleri
         public void do_refresh()
         {
 
-            _customerList = _repository.Run<CustomerTransactionsService, List<CustomersDTO>>(x => x.GetListCustomer());
+            _customerList = _repository.Run<CustomerService, List<CustomersDTO>>(x => x.GetListCustomer());
             bs_Customers.DataSource = _customerList;
         }
 
@@ -109,7 +109,7 @@ namespace Msp.App.Musteri_Islemleri
             {
                 if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
                 {
-                    var result = _repository.Run<CustomerTransactionsService, ActionResponse<CustomersDTO>>(x => x.DeleteCostumers(oRow.id));
+                    var result = _repository.Run<CustomerService, ActionResponse<CustomersDTO>>(x => x.DeleteCostumers(oRow.id));
                     do_refresh();
                 }
             }

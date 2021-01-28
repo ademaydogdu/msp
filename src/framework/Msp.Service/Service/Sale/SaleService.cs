@@ -333,5 +333,20 @@ namespace Msp.Service.Service.Sale
         }
 
         #endregion
+
+        #region SaleBarcodCreate
+
+        public List<SaleBarcodCreateDTO> GetList_SaleBarcodCreateDTO()
+        {
+            using (var _db = new MspDbContext())
+            {
+                var result = base.Map<List<SaleBarcodCreate>, List<SaleBarcodCreateDTO>>(_db.SaleBarcodCreate.ToList());
+                return result;
+            }
+        }
+
+
+
+        #endregion
     }
 }

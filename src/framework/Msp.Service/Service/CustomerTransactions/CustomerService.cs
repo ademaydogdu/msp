@@ -7,30 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Msp.Service.Service.DepotStock
+namespace Msp.Service.Service.CustomerTransactions
 {
-   public class OrderManagementService : BaseService
+   public class CustomerService : BaseService
     {
 
-        public List<OrderManagementDTO> GetListOrder()
+        #region Customers
+        public List<CustomersDTO> GetListCustomer()
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<List<OrderManagement>, List<OrderManagementDTO>>(_db.OrderManagement.ToList());
+                return base.Map<List<Customers>, List<CustomersDTO>>(_db.customers.ToList());
             }
         }
-
-        public OrderManagementDTO GetOrder(int id)
+        public CustomersDTO GetCustomer(int id)
         {
             using (var _db = new MspDbContext())
             {
-                return base.Map<OrderManagement, OrderManagementDTO>(_db.OrderManagement.FirstOrDefault(x => x.oid == id));
+                return base.Map<Customers, CustomersDTO>(_db.customers.FirstOrDefault(x => x.id == id));
             }
         }
 
-        public ActionResponse<OrderManagementDTO> InsertOrder(OrderManagementDTO model)
+        public ActionResponse<CustomersDTO> InsertCustomers(CustomersDTO model)
         {
-            ActionResponse<OrderManagementDTO> response = new ActionResponse<OrderManagementDTO>()
+            ActionResponse<CustomersDTO> response = new ActionResponse<CustomersDTO>()
             {
                 Response = model,
                 ResponseType = ResponseType.Ok
@@ -39,14 +39,14 @@ namespace Msp.Service.Service.DepotStock
             {
                 try
                 {
-                    if (response.Response.oid == 0)
+                    if (response.Response.id == 0)
                     {
-                        _db.OrderManagement.Add(base.Map<OrderManagementDTO, OrderManagement>(model));
+                        _db.customers.Add(base.Map<CustomersDTO, Customers>(model));
                         _db.SaveChanges();
                     }
                     else
                     {
-                        var entity = _db.OrderManagement.FirstOrDefault(x => x.oid == response.Response.oid);
+                        var entity = _db.customers.FirstOrDefault(x => x.id == response.Response.id);
                         if (entity != null)
                         {
                             _db.Entry(entity).CurrentValues.SetValues(entity);
@@ -64,9 +64,9 @@ namespace Msp.Service.Service.DepotStock
             return response;
         }
 
-        public ActionResponse<OrderManagementDTO> SaveOrder(OrderManagementDTO model)
+        public ActionResponse<CustomersDTO> SaveCustomers(CustomersDTO model)
         {
-            ActionResponse<OrderManagementDTO> response = new ActionResponse<OrderManagementDTO>()
+            ActionResponse<CustomersDTO> response = new ActionResponse<CustomersDTO>()
             {
                 Response = model,
                 ResponseType = ResponseType.Ok
@@ -75,14 +75,14 @@ namespace Msp.Service.Service.DepotStock
             {
                 try
                 {
-                    if (response.Response.oid == 0)
+                    if (response.Response.id == 0)
                     {
-                        _db.OrderManagement.Add(base.Map<OrderManagementDTO, OrderManagement>(model));
+                        _db.customers.Add(base.Map<CustomersDTO, Customers>(model));
                         _db.SaveChanges();
                     }
                     else
                     {
-                        var entity = _db.OrderManagement.FirstOrDefault(x => x.oid == response.Response.oid);
+                        var entity = _db.customers.FirstOrDefault(x => x.id == response.Response.id);
                         if (entity != null)
                         {
                             _db.Entry(entity).CurrentValues.SetValues(model);
@@ -100,21 +100,22 @@ namespace Msp.Service.Service.DepotStock
             return response;
         }
 
-        public ActionResponse<OrderManagementDTO> DeleteOrder(int? oid)
+        public ActionResponse<CustomersDTO> DeleteCostumers(int? id)
         {
-            ActionResponse<OrderManagementDTO> response = new ActionResponse<OrderManagementDTO>();
+            ActionResponse<CustomersDTO> response = new ActionResponse<CustomersDTO>();
             using (MspDbContext _db = new MspDbContext())
             {
-                var record = _db.OrderManagement.Where(x => x.oid == oid).FirstOrDefault();
+                var record = _db.customers.Where(x => x.id == id).FirstOrDefault();
                 if (record != null)
                 {
-                    _db.OrderManagement.Remove(record);
+                    _db.customers.Remove(record);
                 }
-
                 _db.SaveChanges();
             }
             return response;
         }
 
+
+        #endregion
     }
 }

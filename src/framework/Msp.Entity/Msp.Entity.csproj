@@ -85,6 +85,7 @@
     <Compile Include="Entities\Products.cs" />
     <Compile Include="Entities\ProgramsControl.cs" />
     <Compile Include="Entities\Resources.cs" />
+    <Compile Include="Entities\SaleBarcodCreate.cs" />
     <Compile Include="Entities\SaleOwner.cs" />
     <Compile Include="Entities\SaleTrans.cs" />
     <Compile Include="Entities\SecRights.cs" />

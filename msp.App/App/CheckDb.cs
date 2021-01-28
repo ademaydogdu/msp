@@ -1165,6 +1165,28 @@ namespace Msp.App.App
 
             #endregion
 
+            #region SaleBarcodCreate
+            if (tblTableList.Rows.Contains("SaleBarcodCreate") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SaleBarcodCreate]( "
+                        + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                        + "     [Type] [int] NULL, "
+                        + " 	[Barcode] [nvarchar] (50) NULL, "
+                        + "  CONSTRAINT[PK_SaleBarcodCreate] PRIMARY KEY CLUSTERED "
+                        + " ( "
+                        + "    [RecId] ASC "
+                        + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                        + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[SaleBarcodCreate]([Type],[Barcode]) VALUES (1,'00000001')";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+            #endregion
+
             #endregion
 
             #region CreateColumn

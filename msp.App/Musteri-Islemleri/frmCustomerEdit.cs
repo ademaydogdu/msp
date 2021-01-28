@@ -38,7 +38,7 @@ namespace Msp.App.Musteri_Islemleri
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
-                __customers = _repository.Run<CustomerTransactionsService, CustomersDTO>(x => x.GetCustomer(id));
+                __customers = _repository.Run<CustomerService, CustomersDTO>(x => x.GetCustomer(id));
             }
 
             bs_CustomersEdit.DataSource = __customers;
@@ -63,7 +63,7 @@ namespace Msp.App.Musteri_Islemleri
             {
                 try
                 {
-                    var response = _repository.Run<CustomerTransactionsService, ActionResponse<CustomersDTO>>(x => x.SaveCustomers(__customers));
+                    var response = _repository.Run<CustomerService, ActionResponse<CustomersDTO>>(x => x.SaveCustomers(__customers));
                     if (response.ResponseType != ResponseType.Ok)
                     {
                         DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);

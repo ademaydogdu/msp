@@ -55,6 +55,11 @@ namespace Msp.Infrastructure
         UrunKarti = 2
     }
 
+    public enum SpeedBarcode
+    {
+        EditBarcode = 1
+    }
+
 
 
 

@@ -42,7 +42,7 @@ namespace Msp.App.App
             DateTime EndDate = DateTime.Now;
             layoutControlGroup1.Text = "Haftalık Satış Listesi " + Convert.ToString(BeginDate.ToShortDateString()) + "-" + Convert.ToString(EndDate.ToShortDateString());
 
-            var customerCount = _repository.Run<CustomerTransactionsService, List<CustomersDTO>>(x => x.GetListCustomer());
+            var customerCount = _repository.Run<CustomerService, List<CustomersDTO>>(x => x.GetListCustomer());
             lblCustomerCount.Text = customerCount.Count() == 0 ? "0" : Convert.ToString(customerCount.Count());
 
             var Product = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
