@@ -34,6 +34,9 @@ namespace Msp.App.CariIslemler
             _repository = new Repository();
         }
         MspTool MspTool = new MspTool();
+
+        public int CariId { get; set; } = 0;
+
         public FormOpenType _FormOpenType;
         public int RecId;
         public OrderType OrderType;
@@ -158,6 +161,7 @@ namespace Msp.App.CariIslemler
 
         }
 
+        
 
 
         #endregion
@@ -190,13 +194,16 @@ namespace Msp.App.CariIslemler
                 __orderOwner.OrderType = (int)OrderType;
                 __orderOwner.SiparisNo = "0";
                 __orderOwner.TeklifSiparis = 0;
+                __orderOwner.SiparisDate = DateTime.Now;
                 lbl_Durum.Text = __orderOwner.Durum = "Bekliyor";
+                bbi_SevkBilgileri.Enabled = false;
 
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
                 __orderOwner = _repository.Run<OrderService, OrderOwnerDTO>(x => x.Get_OrderOwner(RecId));
                 __orderTrans = _repository.Run<OrderService, List<OrderTransDTO>>(x => x.Get_OrderTrans(RecId));
+                if (__orderOwner.IrsaliyeId != 0) { bbi_SevkBilgileri.Enabled = true; } else { bbi_SevkBilgileri.Enabled = false; }
             }
             if (_FormOpenType == FormOpenType.View)
             {
@@ -348,6 +355,26 @@ namespace Msp.App.CariIslemler
         private void bbi_Bekleyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FindOrderList frm = new FindOrderList();
+            frm.ShowDialog();
+        }
+
+        private void grp_CariId_EditValueChanged(object sender, EventArgs e)
+        {
+            if (_currentTransactionsList.Count > 0)
+            {
+                var cariHesap = _currentTransactionsList.FirstOrDefault(x => x.CurID == Convert.ToInt32(grp_CariId.EditValue));
+                if (cariHesap != null)
+                {
+                    txtAdres.EditValue = cariHesap.CurAdress + " \n " + cariHesap.CurDistrict + "/" + cariHesap.CurCity + "/" + cariHesap.CurCountryName;
+                    txtVergiNo.EditValue = cariHesap.CurTaxNo;
+                    txtVergiDaires.EditValue = cariHesap.CurTaxOffice;
+                } 
+            }
+        }
+
+        private void bbi_SevkBilgileri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SevkBilgileriList frm = new SevkBilgileriList();
             frm.ShowDialog();
         }
     }

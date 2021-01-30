@@ -222,6 +222,17 @@ namespace Msp.Service.Service.Invoice
             }
         }
 
+        public List<InvoiceOwnerDTO> GetList_FindIrsaliye_CariId(int CariId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<InvoiceOwnerDTO> result = new List<InvoiceOwnerDTO>();
+                result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 && x.IrsaliyeId == 0 && x.Deleted == false).ToList());
+                return result;
+            }
+        }
+
+
         #endregion
 
     }

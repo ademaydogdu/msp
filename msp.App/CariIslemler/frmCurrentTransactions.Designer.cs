@@ -33,22 +33,12 @@
             this.gcvCurTransaction = new DevExpress.XtraGrid.GridControl();
             this.CurTranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_CurTrans = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCurType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurAuthPersonName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurAdress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurAdressTwo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurPhoneOne = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurPhoneTwo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewAccount = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRemAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRemAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnCurTranClose = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -62,6 +52,14 @@
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colCurCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurAuthPersonName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).BeginInit();
@@ -103,15 +101,9 @@
             // gcv_CurTrans
             // 
             this.gcv_CurTrans.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCurType,
             this.colCurCode,
             this.colCurAccountName,
             this.colCurAuthPersonName,
-            this.colCurCreatedDate,
-            this.colCurAdress,
-            this.colCurAdressTwo,
-            this.colCurPhoneOne,
-            this.colCurPhoneTwo,
             this.colCurEmail});
             this.gcv_CurTrans.GridControl = this.gcvCurTransaction;
             this.gcv_CurTrans.Name = "gcv_CurTrans";
@@ -119,95 +111,6 @@
             this.gcv_CurTrans.OptionsView.ColumnAutoWidth = false;
             this.gcv_CurTrans.OptionsView.ShowAutoFilterRow = true;
             this.gcv_CurTrans.OptionsView.ShowGroupPanel = false;
-            // 
-            // colCurType
-            // 
-            this.colCurType.Caption = "C.Tipi";
-            this.colCurType.FieldName = "CurType";
-            this.colCurType.Name = "colCurType";
-            this.colCurType.Visible = true;
-            this.colCurType.VisibleIndex = 0;
-            this.colCurType.Width = 41;
-            // 
-            // colCurCode
-            // 
-            this.colCurCode.Caption = "C.Kodu";
-            this.colCurCode.FieldName = "CurCode";
-            this.colCurCode.Name = "colCurCode";
-            this.colCurCode.Visible = true;
-            this.colCurCode.VisibleIndex = 1;
-            this.colCurCode.Width = 20;
-            // 
-            // colCurAccountName
-            // 
-            this.colCurAccountName.Caption = "C.Adı";
-            this.colCurAccountName.FieldName = "CurAccountName";
-            this.colCurAccountName.Name = "colCurAccountName";
-            this.colCurAccountName.Visible = true;
-            this.colCurAccountName.VisibleIndex = 2;
-            this.colCurAccountName.Width = 55;
-            // 
-            // colCurAuthPersonName
-            // 
-            this.colCurAuthPersonName.Caption = "C.Yetk.Adı";
-            this.colCurAuthPersonName.FieldName = "CurAuthPersonName";
-            this.colCurAuthPersonName.Name = "colCurAuthPersonName";
-            this.colCurAuthPersonName.Visible = true;
-            this.colCurAuthPersonName.VisibleIndex = 3;
-            this.colCurAuthPersonName.Width = 40;
-            // 
-            // colCurCreatedDate
-            // 
-            this.colCurCreatedDate.Caption = "Oluşt.Tarihi";
-            this.colCurCreatedDate.FieldName = "CurCreatedDate";
-            this.colCurCreatedDate.Name = "colCurCreatedDate";
-            this.colCurCreatedDate.Visible = true;
-            this.colCurCreatedDate.VisibleIndex = 4;
-            this.colCurCreatedDate.Width = 20;
-            // 
-            // colCurAdress
-            // 
-            this.colCurAdress.Caption = "Adres";
-            this.colCurAdress.FieldName = "CurAdress";
-            this.colCurAdress.Name = "colCurAdress";
-            this.colCurAdress.Visible = true;
-            this.colCurAdress.VisibleIndex = 5;
-            this.colCurAdress.Width = 20;
-            // 
-            // colCurAdressTwo
-            // 
-            this.colCurAdressTwo.Caption = "Adres2";
-            this.colCurAdressTwo.FieldName = "CurAdressTwo";
-            this.colCurAdressTwo.Name = "colCurAdressTwo";
-            this.colCurAdressTwo.Visible = true;
-            this.colCurAdressTwo.VisibleIndex = 6;
-            this.colCurAdressTwo.Width = 20;
-            // 
-            // colCurPhoneOne
-            // 
-            this.colCurPhoneOne.Caption = "Telefon";
-            this.colCurPhoneOne.FieldName = "CurPhoneOne";
-            this.colCurPhoneOne.Name = "colCurPhoneOne";
-            this.colCurPhoneOne.Visible = true;
-            this.colCurPhoneOne.VisibleIndex = 7;
-            this.colCurPhoneOne.Width = 20;
-            // 
-            // colCurPhoneTwo
-            // 
-            this.colCurPhoneTwo.Caption = "Telefon2";
-            this.colCurPhoneTwo.FieldName = "CurPhoneTwo";
-            this.colCurPhoneTwo.Name = "colCurPhoneTwo";
-            this.colCurPhoneTwo.Visible = true;
-            this.colCurPhoneTwo.VisibleIndex = 8;
-            this.colCurPhoneTwo.Width = 20;
-            // 
-            // colCurEmail
-            // 
-            this.colCurEmail.Caption = "E-Mail";
-            this.colCurEmail.FieldName = "CurEmail";
-            this.colCurEmail.Name = "colCurEmail";
-            this.colCurEmail.Visible = true;
-            this.colCurEmail.VisibleIndex = 9;
             // 
             // barManager1
             // 
@@ -229,8 +132,12 @@
             this.btnAccountTransactions,
             this.btnCurTranClose,
             this.btnRegInfo,
-            this.btnRefresh});
-            this.barManager1.MaxItemId = 10;
+            this.btnRefresh,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6});
+            this.barManager1.MaxItemId = 14;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -241,11 +148,15 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnNewAccount),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditAccount),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemAccount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnCurTranClose)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnCurTranClose),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -267,14 +178,6 @@
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
             // 
-            // btnRemAccount
-            // 
-            this.btnRemAccount.Caption = "Hesap Sil";
-            this.btnRemAccount.Id = 4;
-            this.btnRemAccount.ImageOptions.ImageIndex = 44;
-            this.btnRemAccount.Name = "btnRemAccount";
-            this.btnRemAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemAccount_ItemClick);
-            // 
             // btnEditAccount
             // 
             this.btnEditAccount.Caption = "Hesap Düzelt";
@@ -282,6 +185,14 @@
             this.btnEditAccount.ImageOptions.ImageIndex = 48;
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditAccount_ItemClick);
+            // 
+            // btnRemAccount
+            // 
+            this.btnRemAccount.Caption = "Hesap Sil";
+            this.btnRemAccount.Id = 4;
+            this.btnRemAccount.ImageOptions.ImageIndex = 44;
+            this.btnRemAccount.Name = "btnRemAccount";
+            this.btnRemAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemAccount_ItemClick);
             // 
             // btnCurTranClose
             // 
@@ -375,6 +286,10 @@
             this.svgImageCollection1.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
             this.svgImageCollection1.Add("editdatasource", "image://svgimages/dashboards/editdatasource.svg");
             this.svgImageCollection1.Add("datasource", "image://svgimages/snap/datasource.svg");
+            this.svgImageCollection1.Add("filldown", "image://svgimages/spreadsheet/filldown.svg");
+            this.svgImageCollection1.Add("fillup", "image://svgimages/spreadsheet/fillup.svg");
+            this.svgImageCollection1.Add("employeesummary", "image://svgimages/outlook inspired/employeesummary.svg");
+            this.svgImageCollection1.Add("printcurrentpage", "image://svgimages/reports/printcurrentpage.svg");
             // 
             // barButtonItem1
             // 
@@ -429,6 +344,74 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // colCurCode
+            // 
+            this.colCurCode.Caption = "Cari Kod";
+            this.colCurCode.FieldName = "CurCode";
+            this.colCurCode.Name = "colCurCode";
+            this.colCurCode.Visible = true;
+            this.colCurCode.VisibleIndex = 0;
+            this.colCurCode.Width = 117;
+            // 
+            // colCurAccountName
+            // 
+            this.colCurAccountName.Caption = "Cari Unvan";
+            this.colCurAccountName.FieldName = "CurAccountName";
+            this.colCurAccountName.Name = "colCurAccountName";
+            this.colCurAccountName.Visible = true;
+            this.colCurAccountName.VisibleIndex = 1;
+            this.colCurAccountName.Width = 121;
+            // 
+            // colCurAuthPersonName
+            // 
+            this.colCurAuthPersonName.Caption = "Yetkili";
+            this.colCurAuthPersonName.FieldName = "CurAuthPersonName";
+            this.colCurAuthPersonName.Name = "colCurAuthPersonName";
+            this.colCurAuthPersonName.Visible = true;
+            this.colCurAuthPersonName.VisibleIndex = 2;
+            // 
+            // colCurEmail
+            // 
+            this.colCurEmail.Caption = "E-Mail";
+            this.colCurEmail.FieldName = "CurEmail";
+            this.colCurEmail.Name = "colCurEmail";
+            this.colCurEmail.Visible = true;
+            this.colCurEmail.VisibleIndex = 3;
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Müşteri Çeki Al";
+            this.barButtonItem3.Id = 10;
+            this.barButtonItem3.ImageOptions.ImageIndex = 50;
+            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Firma Çeki Yaz";
+            this.barButtonItem4.Id = 11;
+            this.barButtonItem4.ImageOptions.ImageIndex = 51;
+            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Cari Hesap Ekstreleri";
+            this.barButtonItem5.Id = 12;
+            this.barButtonItem5.ImageOptions.ImageIndex = 52;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Mutabakat Mektubu";
+            this.barButtonItem6.Id = 13;
+            this.barButtonItem6.ImageOptions.ImageIndex = 53;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
             // frmCurrentTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,16 +465,14 @@
         private DevExpress.XtraBars.BarButtonItem btnRegInfo;
         private System.Windows.Forms.BindingSource CurTranBindingSource;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurType;
+        private DevExpress.XtraBars.BarButtonItem btnRefresh;
         private DevExpress.XtraGrid.Columns.GridColumn colCurCode;
         private DevExpress.XtraGrid.Columns.GridColumn colCurAccountName;
         private DevExpress.XtraGrid.Columns.GridColumn colCurAuthPersonName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurCreatedDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurAdress;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurAdressTwo;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurPhoneOne;
-        private DevExpress.XtraGrid.Columns.GridColumn colCurPhoneTwo;
-        private DevExpress.XtraBars.BarButtonItem btnRefresh;
         private DevExpress.XtraGrid.Columns.GridColumn colCurEmail;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
     }
 }

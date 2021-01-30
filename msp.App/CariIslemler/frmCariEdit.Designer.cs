@@ -33,6 +33,17 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Close = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_CariHareket = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Taksit = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.bbi_AlisSiparis = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_SiparisSatis = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.bbi_AlisIrsaliye = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_SatisIrsaliye = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.bbi_AlimFaturasi = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_SatisFaturasi = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -41,11 +52,15 @@
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_InternetAl = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.CurTypeTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.CurTranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CurCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.bs_CTrans = new System.Windows.Forms.BindingSource(this.components);
             this.CurSolePropTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurAccountNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurAuthPersonNameTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -112,33 +127,58 @@
             this.ItemForCurIdentNo = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCurAccountName = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tb_GenelBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tb_bakiye = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gc_CariBakiye = new DevExpress.XtraGrid.GridControl();
-            this.gcv_CariBakiye = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bs_CaseMov = new System.Windows.Forms.BindingSource(this.components);
-            this.colCaseId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcv_CariBakiye = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRecordDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colVadeDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colVadeMonth = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEvrakNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDoviz = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIslemTuru = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOdemeTuru = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOdemeGrubu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDoviz = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tb_bekleyenIrsaliye = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colFicDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIrsaliyeNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDepoName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKDV1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDovizTuru = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIndirim = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVadeTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tb_bekleyenSiparis = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.bs_OrderList = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colOrderType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSiparisNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSiparisDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSiparisTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOzelKod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDovizId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKdv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDurum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTeklifSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalKDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tb_SevkAdresi = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurSolePropTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAccountNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAuthPersonNameTextEdit.Properties)).BeginInit();
@@ -207,14 +247,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAccountName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
-            this.tabNavigationPage1.SuspendLayout();
-            this.tabNavigationPage2.SuspendLayout();
+            this.tb_GenelBilgileri.SuspendLayout();
+            this.tb_bakiye.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_CariBakiye)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcv_CariBakiye)).BeginInit();
-            this.tabNavigationPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_CariBakiye)).BeginInit();
+            this.tb_bekleyenIrsaliye.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.tb_bekleyenSiparis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -232,9 +277,24 @@
             this.bbi_Close,
             this.bbi_Delete,
             this.bbi_InternetAl,
-            this.bbi_Refresh});
+            this.bbi_Refresh,
+            this.bbi_CariHareket,
+            this.bbi_Taksit,
+            this.barButtonItem3,
+            this.barSubItem1,
+            this.barButtonItem4,
+            this.barSubItem2,
+            this.barSubItem3,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.bbi_AlisSiparis,
+            this.bbi_SiparisSatis,
+            this.bbi_AlisIrsaliye,
+            this.bbi_SatisIrsaliye,
+            this.bbi_AlimFaturasi,
+            this.bbi_SatisFaturasi});
             this.barManager1.LargeImages = this.img_bar;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 20;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -246,7 +306,12 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_save),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_CariHareket, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Taksit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -269,6 +334,96 @@
             this.bbi_Close.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Close.Name = "bbi_Close";
             this.bbi_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Close_ItemClick);
+            // 
+            // bbi_CariHareket
+            // 
+            this.bbi_CariHareket.Caption = "Cari Hareketler";
+            this.bbi_CariHareket.Id = 5;
+            this.bbi_CariHareket.ImageOptions.ImageIndex = 8;
+            this.bbi_CariHareket.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_CariHareket.Name = "bbi_CariHareket";
+            this.bbi_CariHareket.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // bbi_Taksit
+            // 
+            this.bbi_Taksit.Caption = "Taksitler";
+            this.bbi_Taksit.Id = 6;
+            this.bbi_Taksit.ImageOptions.ImageIndex = 6;
+            this.bbi_Taksit.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Taksit.Name = "bbi_Taksit";
+            this.bbi_Taksit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Sipariş";
+            this.barSubItem1.Id = 8;
+            this.barSubItem1.ImageOptions.ImageIndex = 9;
+            this.barSubItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_AlisSiparis),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SiparisSatis)});
+            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // bbi_AlisSiparis
+            // 
+            this.bbi_AlisSiparis.Caption = "Alış Siparişi";
+            this.bbi_AlisSiparis.Id = 14;
+            this.bbi_AlisSiparis.Name = "bbi_AlisSiparis";
+            // 
+            // bbi_SiparisSatis
+            // 
+            this.bbi_SiparisSatis.Caption = "Satış Siparişi";
+            this.bbi_SiparisSatis.Id = 15;
+            this.bbi_SiparisSatis.Name = "bbi_SiparisSatis";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "İrsaliye";
+            this.barSubItem2.Id = 10;
+            this.barSubItem2.ImageOptions.ImageIndex = 7;
+            this.barSubItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_AlisIrsaliye),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SatisIrsaliye)});
+            this.barSubItem2.Name = "barSubItem2";
+            this.barSubItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // bbi_AlisIrsaliye
+            // 
+            this.bbi_AlisIrsaliye.Caption = "Alış İrsaliyesi";
+            this.bbi_AlisIrsaliye.Id = 16;
+            this.bbi_AlisIrsaliye.Name = "bbi_AlisIrsaliye";
+            // 
+            // bbi_SatisIrsaliye
+            // 
+            this.bbi_SatisIrsaliye.Caption = "Satış İrsaliyesi";
+            this.bbi_SatisIrsaliye.Id = 17;
+            this.bbi_SatisIrsaliye.Name = "bbi_SatisIrsaliye";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Fatura";
+            this.barSubItem3.Id = 11;
+            this.barSubItem3.ImageOptions.ImageIndex = 10;
+            this.barSubItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_AlimFaturasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SatisFaturasi)});
+            this.barSubItem3.Name = "barSubItem3";
+            this.barSubItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // bbi_AlimFaturasi
+            // 
+            this.bbi_AlimFaturasi.Caption = "Alım Faturası";
+            this.bbi_AlimFaturasi.Id = 18;
+            this.bbi_AlimFaturasi.Name = "bbi_AlimFaturasi";
+            // 
+            // bbi_SatisFaturasi
+            // 
+            this.bbi_SatisFaturasi.Caption = "Satış Faturası";
+            this.bbi_SatisFaturasi.Id = 19;
+            this.bbi_SatisFaturasi.Name = "bbi_SatisFaturasi";
             // 
             // barDockControlTop
             // 
@@ -310,6 +465,11 @@
             this.img_bar.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
             this.img_bar.Add("refreshallpivottable", "image://svgimages/spreadsheet/refreshallpivottable.svg");
             this.img_bar.Add("bo_localization", "image://svgimages/business objects/bo_localization.svg");
+            this.img_bar.Add("bo_appearance", "image://svgimages/business objects/bo_appearance.svg");
+            this.img_bar.Add("bo_order_item", "image://svgimages/business objects/bo_order_item.svg");
+            this.img_bar.Add("bo_report", "image://svgimages/business objects/bo_report.svg");
+            this.img_bar.Add("bo_task", "image://svgimages/business objects/bo_task.svg");
+            this.img_bar.Add("columnsone", "image://svgimages/richedit/columnsone.svg");
             // 
             // bbi_Delete
             // 
@@ -334,6 +494,30 @@
             this.bbi_Refresh.ImageOptions.ImageIndex = 4;
             this.bbi_Refresh.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Refresh.Name = "bbi_Refresh";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 7;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 9;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Müşteri Çeki Al";
+            this.barButtonItem5.Id = 12;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Firma Çeki Yaz";
+            this.barButtonItem6.Id = 13;
+            this.barButtonItem6.Name = "barButtonItem6";
             // 
             // dataLayoutControl1
             // 
@@ -366,7 +550,6 @@
             this.dataLayoutControl1.Controls.Add(this.CurCardNoTextEdit);
             this.dataLayoutControl1.Controls.Add(this.CurIdentNoTextEdit);
             this.dataLayoutControl1.Controls.Add(this.CurTitleTextEdit);
-            this.dataLayoutControl1.DataSource = this.CurTranBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.ItemForCurDiscount,
@@ -400,7 +583,6 @@
             // 
             // CurTypeTextEdit
             // 
-            this.CurTypeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurType", true));
             this.CurTypeTextEdit.Location = new System.Drawing.Point(81, 12);
             this.CurTypeTextEdit.MenuManager = this.barManager1;
             this.CurTypeTextEdit.Name = "CurTypeTextEdit";
@@ -408,13 +590,9 @@
             this.CurTypeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurTypeTextEdit.TabIndex = 4;
             // 
-            // CurTranBindingSource
-            // 
-            this.CurTranBindingSource.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
-            // 
             // CurCodeTextEdit
             // 
-            this.CurCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCode", true));
+            this.CurCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCode", true));
             this.CurCodeTextEdit.Location = new System.Drawing.Point(86, 45);
             this.CurCodeTextEdit.MenuManager = this.barManager1;
             this.CurCodeTextEdit.Name = "CurCodeTextEdit";
@@ -422,15 +600,17 @@
             this.CurCodeTextEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.CurCodeTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.CurCodeTextEdit.Properties.Mask.EditMask = "N0";
-            this.CurCodeTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.CurCodeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.CurCodeTextEdit.Size = new System.Drawing.Size(114, 20);
             this.CurCodeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCodeTextEdit.TabIndex = 5;
             // 
+            // bs_CTrans
+            // 
+            this.bs_CTrans.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
+            // 
             // CurSolePropTextEdit
             // 
-            this.CurSolePropTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurSoleProp", true));
             this.CurSolePropTextEdit.Location = new System.Drawing.Point(86, 141);
             this.CurSolePropTextEdit.MenuManager = this.barManager1;
             this.CurSolePropTextEdit.Name = "CurSolePropTextEdit";
@@ -440,7 +620,7 @@
             // 
             // CurAccountNameTextEdit
             // 
-            this.CurAccountNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAccountName", true));
+            this.CurAccountNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurAccountName", true));
             this.CurAccountNameTextEdit.Location = new System.Drawing.Point(86, 69);
             this.CurAccountNameTextEdit.MenuManager = this.barManager1;
             this.CurAccountNameTextEdit.Name = "CurAccountNameTextEdit";
@@ -450,7 +630,7 @@
             // 
             // CurAuthPersonNameTextEdit
             // 
-            this.CurAuthPersonNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAuthPersonName", true));
+            this.CurAuthPersonNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurAuthPersonName", true));
             this.CurAuthPersonNameTextEdit.Location = new System.Drawing.Point(86, 117);
             this.CurAuthPersonNameTextEdit.MenuManager = this.barManager1;
             this.CurAuthPersonNameTextEdit.Name = "CurAuthPersonNameTextEdit";
@@ -460,7 +640,6 @@
             // 
             // CurDiscountTextEdit
             // 
-            this.CurDiscountTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDiscount", true));
             this.CurDiscountTextEdit.Location = new System.Drawing.Point(91, 156);
             this.CurDiscountTextEdit.MenuManager = this.barManager1;
             this.CurDiscountTextEdit.Name = "CurDiscountTextEdit";
@@ -476,7 +655,6 @@
             // 
             // CurOnCreditTextEdit
             // 
-            this.CurOnCreditTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurOnCredit", true));
             this.CurOnCreditTextEdit.Location = new System.Drawing.Point(91, 156);
             this.CurOnCreditTextEdit.MenuManager = this.barManager1;
             this.CurOnCreditTextEdit.Name = "CurOnCreditTextEdit";
@@ -486,7 +664,6 @@
             // 
             // CurRiskLimitTextEdit
             // 
-            this.CurRiskLimitTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurRiskLimit", true));
             this.CurRiskLimitTextEdit.Location = new System.Drawing.Point(91, 156);
             this.CurRiskLimitTextEdit.MenuManager = this.barManager1;
             this.CurRiskLimitTextEdit.Name = "CurRiskLimitTextEdit";
@@ -496,7 +673,7 @@
             // 
             // CurCityTextEdit
             // 
-            this.CurCityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCity", true));
+            this.CurCityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCity", true));
             this.CurCityTextEdit.Location = new System.Drawing.Point(86, 282);
             this.CurCityTextEdit.MenuManager = this.barManager1;
             this.CurCityTextEdit.Name = "CurCityTextEdit";
@@ -506,7 +683,7 @@
             // 
             // CurDistrictTextEdit
             // 
-            this.CurDistrictTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDistrict", true));
+            this.CurDistrictTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurDistrict", true));
             this.CurDistrictTextEdit.Location = new System.Drawing.Point(86, 306);
             this.CurDistrictTextEdit.MenuManager = this.barManager1;
             this.CurDistrictTextEdit.Name = "CurDistrictTextEdit";
@@ -516,7 +693,6 @@
             // 
             // CurBalanceTextEdit
             // 
-            this.CurBalanceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurBalance", true));
             this.CurBalanceTextEdit.Location = new System.Drawing.Point(91, 156);
             this.CurBalanceTextEdit.MenuManager = this.barManager1;
             this.CurBalanceTextEdit.Name = "CurBalanceTextEdit";
@@ -532,7 +708,6 @@
             // 
             // CurCompanyTypeTextEdit
             // 
-            this.CurCompanyTypeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCompanyType", true));
             this.CurCompanyTypeTextEdit.Location = new System.Drawing.Point(91, 156);
             this.CurCompanyTypeTextEdit.MenuManager = this.barManager1;
             this.CurCompanyTypeTextEdit.Name = "CurCompanyTypeTextEdit";
@@ -542,8 +717,9 @@
             // 
             // CurCreatedDateDateEdit
             // 
-            this.CurCreatedDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCreatedDate", true));
+            this.CurCreatedDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCreatedDate", true));
             this.CurCreatedDateDateEdit.EditValue = null;
+            this.CurCreatedDateDateEdit.Enabled = false;
             this.CurCreatedDateDateEdit.Location = new System.Drawing.Point(469, 45);
             this.CurCreatedDateDateEdit.MenuManager = this.barManager1;
             this.CurCreatedDateDateEdit.Name = "CurCreatedDateDateEdit";
@@ -558,7 +734,7 @@
             // 
             // CurAdressTextEdit
             // 
-            this.CurAdressTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAdress", true));
+            this.CurAdressTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurAdress", true));
             this.CurAdressTextEdit.Location = new System.Drawing.Point(86, 234);
             this.CurAdressTextEdit.MenuManager = this.barManager1;
             this.CurAdressTextEdit.Name = "CurAdressTextEdit";
@@ -568,7 +744,7 @@
             // 
             // CurAdressTwoTextEdit
             // 
-            this.CurAdressTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurAdressTwo", true));
+            this.CurAdressTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurAdressTwo", true));
             this.CurAdressTwoTextEdit.Location = new System.Drawing.Point(86, 258);
             this.CurAdressTwoTextEdit.MenuManager = this.barManager1;
             this.CurAdressTwoTextEdit.Name = "CurAdressTwoTextEdit";
@@ -578,7 +754,7 @@
             // 
             // CurCountryCodeTextEdit
             // 
-            this.CurCountryCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCountryCode", true));
+            this.CurCountryCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCountryCode", true));
             this.CurCountryCodeTextEdit.Location = new System.Drawing.Point(364, 330);
             this.CurCountryCodeTextEdit.MenuManager = this.barManager1;
             this.CurCountryCodeTextEdit.Name = "CurCountryCodeTextEdit";
@@ -594,7 +770,7 @@
             // 
             // CurCountryNameTextEdit
             // 
-            this.CurCountryNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCountryName", true));
+            this.CurCountryNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCountryName", true));
             this.CurCountryNameTextEdit.Location = new System.Drawing.Point(86, 354);
             this.CurCountryNameTextEdit.MenuManager = this.barManager1;
             this.CurCountryNameTextEdit.Name = "CurCountryNameTextEdit";
@@ -604,7 +780,7 @@
             // 
             // CurZipCodeTextEdit
             // 
-            this.CurZipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurZipCode", true));
+            this.CurZipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurZipCode", true));
             this.CurZipCodeTextEdit.Location = new System.Drawing.Point(86, 330);
             this.CurZipCodeTextEdit.MenuManager = this.barManager1;
             this.CurZipCodeTextEdit.Name = "CurZipCodeTextEdit";
@@ -620,7 +796,7 @@
             // 
             // CurPhoneOneTextEdit
             // 
-            this.CurPhoneOneTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurPhoneOne", true));
+            this.CurPhoneOneTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurPhoneOne", true));
             this.CurPhoneOneTextEdit.Location = new System.Drawing.Point(364, 234);
             this.CurPhoneOneTextEdit.MenuManager = this.barManager1;
             this.CurPhoneOneTextEdit.Name = "CurPhoneOneTextEdit";
@@ -630,7 +806,7 @@
             // 
             // CurPhoneTwoTextEdit
             // 
-            this.CurPhoneTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurPhoneTwo", true));
+            this.CurPhoneTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurPhoneTwo", true));
             this.CurPhoneTwoTextEdit.Location = new System.Drawing.Point(364, 258);
             this.CurPhoneTwoTextEdit.MenuManager = this.barManager1;
             this.CurPhoneTwoTextEdit.Name = "CurPhoneTwoTextEdit";
@@ -640,7 +816,7 @@
             // 
             // CurFaxTextEdit
             // 
-            this.CurFaxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurFax", true));
+            this.CurFaxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurFax", true));
             this.CurFaxTextEdit.Location = new System.Drawing.Point(364, 282);
             this.CurFaxTextEdit.MenuManager = this.barManager1;
             this.CurFaxTextEdit.Name = "CurFaxTextEdit";
@@ -650,7 +826,7 @@
             // 
             // CurEmailTextEdit
             // 
-            this.CurEmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurEmail", true));
+            this.CurEmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurEmail", true));
             this.CurEmailTextEdit.Location = new System.Drawing.Point(364, 306);
             this.CurEmailTextEdit.MenuManager = this.barManager1;
             this.CurEmailTextEdit.Name = "CurEmailTextEdit";
@@ -660,7 +836,7 @@
             // 
             // CurDescriptionTextEdit
             // 
-            this.CurDescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurDescription", true));
+            this.CurDescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurDescription", true));
             this.CurDescriptionTextEdit.Location = new System.Drawing.Point(74, 438);
             this.CurDescriptionTextEdit.MenuManager = this.barManager1;
             this.CurDescriptionTextEdit.Name = "CurDescriptionTextEdit";
@@ -670,7 +846,7 @@
             // 
             // CurTaxNoTextEdit
             // 
-            this.CurTaxNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTaxNo", true));
+            this.CurTaxNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurTaxNo", true));
             this.CurTaxNoTextEdit.Location = new System.Drawing.Point(86, 378);
             this.CurTaxNoTextEdit.MenuManager = this.barManager1;
             this.CurTaxNoTextEdit.Name = "CurTaxNoTextEdit";
@@ -680,7 +856,7 @@
             // 
             // CurTaxOfficeTextEdit
             // 
-            this.CurTaxOfficeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTaxOffice", true));
+            this.CurTaxOfficeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurTaxOffice", true));
             this.CurTaxOfficeTextEdit.Location = new System.Drawing.Point(86, 402);
             this.CurTaxOfficeTextEdit.MenuManager = this.barManager1;
             this.CurTaxOfficeTextEdit.Name = "CurTaxOfficeTextEdit";
@@ -690,7 +866,6 @@
             // 
             // CurCardNoTextEdit
             // 
-            this.CurCardNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurCardNo", true));
             this.CurCardNoTextEdit.Location = new System.Drawing.Point(91, 204);
             this.CurCardNoTextEdit.MenuManager = this.barManager1;
             this.CurCardNoTextEdit.Name = "CurCardNoTextEdit";
@@ -700,17 +875,19 @@
             // 
             // CurIdentNoTextEdit
             // 
-            this.CurIdentNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurIdentNo", true));
+            this.CurIdentNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurIdentNo", true));
             this.CurIdentNoTextEdit.Location = new System.Drawing.Point(86, 93);
             this.CurIdentNoTextEdit.MenuManager = this.barManager1;
             this.CurIdentNoTextEdit.Name = "CurIdentNoTextEdit";
+            this.CurIdentNoTextEdit.Properties.Mask.EditMask = "f0";
+            this.CurIdentNoTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.CurIdentNoTextEdit.Properties.MaxLength = 11;
             this.CurIdentNoTextEdit.Size = new System.Drawing.Size(227, 20);
             this.CurIdentNoTextEdit.StyleController = this.dataLayoutControl1;
             this.CurIdentNoTextEdit.TabIndex = 30;
             // 
             // CurTitleTextEdit
             // 
-            this.CurTitleTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CurTranBindingSource, "CurTitle", true));
             this.CurTitleTextEdit.Location = new System.Drawing.Point(81, 204);
             this.CurTitleTextEdit.MenuManager = this.barManager1;
             this.CurTitleTextEdit.Name = "CurTitleTextEdit";
@@ -941,6 +1118,8 @@
             // 
             // ItemForCurTaxNo
             // 
+            this.ItemForCurTaxNo.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ItemForCurTaxNo.AppearanceItemCaption.Options.UseForeColor = true;
             this.ItemForCurTaxNo.Control = this.CurTaxNoTextEdit;
             this.ItemForCurTaxNo.Location = new System.Drawing.Point(0, 144);
             this.ItemForCurTaxNo.Name = "ItemForCurTaxNo";
@@ -999,6 +1178,8 @@
             // 
             // ItemForCurCode
             // 
+            this.ItemForCurCode.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ItemForCurCode.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForCurCode.Control = this.CurCodeTextEdit;
             this.ItemForCurCode.Location = new System.Drawing.Point(0, 0);
             this.ItemForCurCode.Name = "ItemForCurCode";
@@ -1093,6 +1274,8 @@
             // 
             // ItemForCurAccountName
             // 
+            this.ItemForCurAccountName.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ItemForCurAccountName.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForCurAccountName.Control = this.CurAccountNameTextEdit;
             this.ItemForCurAccountName.Location = new System.Drawing.Point(0, 24);
             this.ItemForCurAccountName.Name = "ItemForCurAccountName";
@@ -1102,35 +1285,40 @@
             // 
             // tabPane1
             // 
-            this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Controls.Add(this.tabNavigationPage2);
-            this.tabPane1.Controls.Add(this.tabNavigationPage3);
+            this.tabPane1.Controls.Add(this.tb_GenelBilgileri);
+            this.tabPane1.Controls.Add(this.tb_bakiye);
+            this.tabPane1.Controls.Add(this.tb_bekleyenIrsaliye);
+            this.tabPane1.Controls.Add(this.tb_bekleyenSiparis);
+            this.tabPane1.Controls.Add(this.tb_SevkAdresi);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 0);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2,
-            this.tabNavigationPage3});
+            this.tb_GenelBilgileri,
+            this.tb_bakiye,
+            this.tb_bekleyenSiparis,
+            this.tb_bekleyenIrsaliye,
+            this.tb_SevkAdresi});
             this.tabPane1.RegularSize = new System.Drawing.Size(631, 537);
-            this.tabPane1.SelectedPage = this.tabNavigationPage1;
+            this.tabPane1.SelectedPage = this.tb_GenelBilgileri;
             this.tabPane1.Size = new System.Drawing.Size(631, 537);
             this.tabPane1.TabIndex = 9;
             this.tabPane1.Text = "tabPane1";
+            this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
             // 
-            // tabNavigationPage1
+            // tb_GenelBilgileri
             // 
-            this.tabNavigationPage1.Caption = "Genel Bilgiler";
-            this.tabNavigationPage1.Controls.Add(this.dataLayoutControl1);
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(631, 508);
+            this.tb_GenelBilgileri.Caption = "Genel Bilgiler";
+            this.tb_GenelBilgileri.Controls.Add(this.dataLayoutControl1);
+            this.tb_GenelBilgileri.Name = "tb_GenelBilgileri";
+            this.tb_GenelBilgileri.Size = new System.Drawing.Size(631, 508);
             // 
-            // tabNavigationPage2
+            // tb_bakiye
             // 
-            this.tabNavigationPage2.Caption = "Bakiye";
-            this.tabNavigationPage2.Controls.Add(this.gc_CariBakiye);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(631, 508);
+            this.tb_bakiye.Caption = "Bakiye";
+            this.tb_bakiye.Controls.Add(this.gc_CariBakiye);
+            this.tb_bakiye.Name = "tb_bakiye";
+            this.tb_bakiye.Size = new System.Drawing.Size(631, 537);
             // 
             // gc_CariBakiye
             // 
@@ -1140,24 +1328,23 @@
             this.gc_CariBakiye.MainView = this.gcv_CariBakiye;
             this.gc_CariBakiye.MenuManager = this.barManager1;
             this.gc_CariBakiye.Name = "gc_CariBakiye";
-            this.gc_CariBakiye.Size = new System.Drawing.Size(631, 508);
+            this.gc_CariBakiye.Size = new System.Drawing.Size(631, 537);
             this.gc_CariBakiye.TabIndex = 0;
             this.gc_CariBakiye.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_CariBakiye});
             // 
+            // bs_CaseMov
+            // 
+            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
+            // 
             // gcv_CariBakiye
             // 
             this.gcv_CariBakiye.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCaseId,
             this.colRecordDate,
-            this.colVadeDate,
-            this.colVadeMonth,
-            this.colEvrakNo,
-            this.colDoviz,
             this.colIslemTuru,
             this.colTutar,
             this.colOdemeTuru,
-            this.colOdemeGrubu,
+            this.colDoviz,
             this.colRemark});
             this.gcv_CariBakiye.GridControl = this.gc_CariBakiye;
             this.gcv_CariBakiye.Name = "gcv_CariBakiye";
@@ -1167,111 +1354,313 @@
             this.gcv_CariBakiye.OptionsView.ShowFooter = true;
             this.gcv_CariBakiye.OptionsView.ShowGroupPanel = false;
             // 
-            // tabNavigationPage3
-            // 
-            this.tabNavigationPage3.Caption = "Bekleyen İrsaliyeler";
-            this.tabNavigationPage3.Controls.Add(this.gridControl2);
-            this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(631, 508);
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.MenuManager = this.barManager1;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(631, 508);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // bs_CaseMov
-            // 
-            this.bs_CaseMov.DataSource = typeof(Msp.Models.Models.Case.CaseMovementDTO);
-            // 
-            // colCaseId
-            // 
-            this.colCaseId.FieldName = "CaseId";
-            this.colCaseId.Name = "colCaseId";
-            this.colCaseId.Visible = true;
-            this.colCaseId.VisibleIndex = 0;
-            // 
             // colRecordDate
             // 
             this.colRecordDate.FieldName = "RecordDate";
             this.colRecordDate.Name = "colRecordDate";
             this.colRecordDate.Visible = true;
-            this.colRecordDate.VisibleIndex = 1;
-            // 
-            // colVadeDate
-            // 
-            this.colVadeDate.FieldName = "VadeDate";
-            this.colVadeDate.Name = "colVadeDate";
-            this.colVadeDate.Visible = true;
-            this.colVadeDate.VisibleIndex = 2;
-            // 
-            // colVadeMonth
-            // 
-            this.colVadeMonth.FieldName = "VadeMonth";
-            this.colVadeMonth.Name = "colVadeMonth";
-            this.colVadeMonth.Visible = true;
-            this.colVadeMonth.VisibleIndex = 3;
-            // 
-            // colEvrakNo
-            // 
-            this.colEvrakNo.FieldName = "EvrakNo";
-            this.colEvrakNo.Name = "colEvrakNo";
-            this.colEvrakNo.Visible = true;
-            this.colEvrakNo.VisibleIndex = 4;
-            // 
-            // colDoviz
-            // 
-            this.colDoviz.FieldName = "Doviz";
-            this.colDoviz.Name = "colDoviz";
-            this.colDoviz.Visible = true;
-            this.colDoviz.VisibleIndex = 5;
+            this.colRecordDate.VisibleIndex = 0;
             // 
             // colIslemTuru
             // 
             this.colIslemTuru.FieldName = "IslemTuru";
             this.colIslemTuru.Name = "colIslemTuru";
             this.colIslemTuru.Visible = true;
-            this.colIslemTuru.VisibleIndex = 6;
+            this.colIslemTuru.VisibleIndex = 1;
             // 
             // colTutar
             // 
             this.colTutar.FieldName = "Tutar";
             this.colTutar.Name = "colTutar";
             this.colTutar.Visible = true;
-            this.colTutar.VisibleIndex = 7;
+            this.colTutar.VisibleIndex = 2;
             // 
             // colOdemeTuru
             // 
             this.colOdemeTuru.FieldName = "OdemeTuru";
             this.colOdemeTuru.Name = "colOdemeTuru";
             this.colOdemeTuru.Visible = true;
-            this.colOdemeTuru.VisibleIndex = 8;
+            this.colOdemeTuru.VisibleIndex = 3;
             // 
-            // colOdemeGrubu
+            // colDoviz
             // 
-            this.colOdemeGrubu.FieldName = "OdemeGrubu";
-            this.colOdemeGrubu.Name = "colOdemeGrubu";
-            this.colOdemeGrubu.Visible = true;
-            this.colOdemeGrubu.VisibleIndex = 9;
+            this.colDoviz.FieldName = "Doviz";
+            this.colDoviz.Name = "colDoviz";
+            this.colDoviz.Visible = true;
+            this.colDoviz.VisibleIndex = 4;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 10;
+            this.colRemark.VisibleIndex = 5;
+            // 
+            // tb_bekleyenIrsaliye
+            // 
+            this.tb_bekleyenIrsaliye.Caption = "Bekleyen İrsaliyeler";
+            this.tb_bekleyenIrsaliye.Controls.Add(this.gridControl2);
+            this.tb_bekleyenIrsaliye.Name = "tb_bekleyenIrsaliye";
+            this.tb_bekleyenIrsaliye.Size = new System.Drawing.Size(631, 537);
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataSource = this.bs_Invoice;
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.MenuManager = this.barManager1;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(631, 537);
+            this.gridControl2.TabIndex = 0;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // bs_Invoice
+            // 
+            this.bs_Invoice.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceOwnerDTO);
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colFicDate,
+            this.colIrsaliyeNo,
+            this.colDepoName,
+            this.colKDV1,
+            this.colAraToplam,
+            this.colDovizTuru,
+            this.colIndirim,
+            this.colToplamKDV,
+            this.colVadeTarih});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsView.ColumnAutoWidth = false;
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colFicDate
+            // 
+            this.colFicDate.FieldName = "FicDate";
+            this.colFicDate.Name = "colFicDate";
+            this.colFicDate.Visible = true;
+            this.colFicDate.VisibleIndex = 0;
+            // 
+            // colIrsaliyeNo
+            // 
+            this.colIrsaliyeNo.FieldName = "IrsaliyeNo";
+            this.colIrsaliyeNo.Name = "colIrsaliyeNo";
+            this.colIrsaliyeNo.Visible = true;
+            this.colIrsaliyeNo.VisibleIndex = 6;
+            // 
+            // colDepoName
+            // 
+            this.colDepoName.FieldName = "DepoName";
+            this.colDepoName.Name = "colDepoName";
+            this.colDepoName.Visible = true;
+            this.colDepoName.VisibleIndex = 2;
+            // 
+            // colKDV1
+            // 
+            this.colKDV1.FieldName = "KDV";
+            this.colKDV1.Name = "colKDV1";
+            this.colKDV1.Visible = true;
+            this.colKDV1.VisibleIndex = 1;
+            // 
+            // colAraToplam
+            // 
+            this.colAraToplam.FieldName = "AraToplam";
+            this.colAraToplam.Name = "colAraToplam";
+            this.colAraToplam.Visible = true;
+            this.colAraToplam.VisibleIndex = 3;
+            // 
+            // colDovizTuru
+            // 
+            this.colDovizTuru.FieldName = "DovizTuru";
+            this.colDovizTuru.Name = "colDovizTuru";
+            this.colDovizTuru.Visible = true;
+            this.colDovizTuru.VisibleIndex = 4;
+            // 
+            // colIndirim
+            // 
+            this.colIndirim.FieldName = "Indirim";
+            this.colIndirim.Name = "colIndirim";
+            this.colIndirim.Visible = true;
+            this.colIndirim.VisibleIndex = 5;
+            // 
+            // colToplamKDV
+            // 
+            this.colToplamKDV.FieldName = "ToplamKDV";
+            this.colToplamKDV.Name = "colToplamKDV";
+            this.colToplamKDV.Visible = true;
+            this.colToplamKDV.VisibleIndex = 7;
+            // 
+            // colVadeTarih
+            // 
+            this.colVadeTarih.FieldName = "VadeTarih";
+            this.colVadeTarih.Name = "colVadeTarih";
+            this.colVadeTarih.Visible = true;
+            this.colVadeTarih.VisibleIndex = 8;
+            // 
+            // tb_bekleyenSiparis
+            // 
+            this.tb_bekleyenSiparis.Caption = "Bekleyen Siparişler";
+            this.tb_bekleyenSiparis.Controls.Add(this.gridControl1);
+            this.tb_bekleyenSiparis.Name = "tb_bekleyenSiparis";
+            this.tb_bekleyenSiparis.Size = new System.Drawing.Size(631, 537);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.bs_OrderList;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.barManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(631, 537);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // bs_OrderList
+            // 
+            this.bs_OrderList.DataSource = typeof(Msp.Models.Models.Order.OrderOwnerDTO);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colOrderType,
+            this.colCompanyId,
+            this.colSiparisNo,
+            this.colSiparisDate,
+            this.colSiparisTime,
+            this.colOzelKod,
+            this.colDovizId,
+            this.colKdv,
+            this.colIskonto,
+            this.colDurum,
+            this.colTeklifSiparis,
+            this.colTotalIskonto,
+            this.colTotalKDV,
+            this.colTotalSiparis,
+            this.colTotalAraToplam});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colOrderType
+            // 
+            this.colOrderType.FieldName = "OrderType";
+            this.colOrderType.Name = "colOrderType";
+            this.colOrderType.Visible = true;
+            this.colOrderType.VisibleIndex = 0;
+            // 
+            // colCompanyId
+            // 
+            this.colCompanyId.FieldName = "CompanyId";
+            this.colCompanyId.Name = "colCompanyId";
+            // 
+            // colSiparisNo
+            // 
+            this.colSiparisNo.FieldName = "SiparisNo";
+            this.colSiparisNo.Name = "colSiparisNo";
+            this.colSiparisNo.Visible = true;
+            this.colSiparisNo.VisibleIndex = 1;
+            // 
+            // colSiparisDate
+            // 
+            this.colSiparisDate.FieldName = "SiparisDate";
+            this.colSiparisDate.Name = "colSiparisDate";
+            this.colSiparisDate.Visible = true;
+            this.colSiparisDate.VisibleIndex = 2;
+            // 
+            // colSiparisTime
+            // 
+            this.colSiparisTime.FieldName = "SiparisTime";
+            this.colSiparisTime.Name = "colSiparisTime";
+            this.colSiparisTime.Visible = true;
+            this.colSiparisTime.VisibleIndex = 3;
+            // 
+            // colOzelKod
+            // 
+            this.colOzelKod.FieldName = "OzelKod";
+            this.colOzelKod.Name = "colOzelKod";
+            this.colOzelKod.Visible = true;
+            this.colOzelKod.VisibleIndex = 4;
+            // 
+            // colDovizId
+            // 
+            this.colDovizId.FieldName = "DovizId";
+            this.colDovizId.Name = "colDovizId";
+            this.colDovizId.Visible = true;
+            this.colDovizId.VisibleIndex = 5;
+            // 
+            // colKdv
+            // 
+            this.colKdv.FieldName = "Kdv";
+            this.colKdv.Name = "colKdv";
+            this.colKdv.Visible = true;
+            this.colKdv.VisibleIndex = 6;
+            // 
+            // colIskonto
+            // 
+            this.colIskonto.FieldName = "Iskonto";
+            this.colIskonto.Name = "colIskonto";
+            this.colIskonto.Visible = true;
+            this.colIskonto.VisibleIndex = 7;
+            // 
+            // colDurum
+            // 
+            this.colDurum.FieldName = "Durum";
+            this.colDurum.Name = "colDurum";
+            this.colDurum.Visible = true;
+            this.colDurum.VisibleIndex = 8;
+            // 
+            // colTeklifSiparis
+            // 
+            this.colTeklifSiparis.FieldName = "TeklifSiparis";
+            this.colTeklifSiparis.Name = "colTeklifSiparis";
+            this.colTeklifSiparis.Visible = true;
+            this.colTeklifSiparis.VisibleIndex = 9;
+            // 
+            // colTotalIskonto
+            // 
+            this.colTotalIskonto.FieldName = "TotalIskonto";
+            this.colTotalIskonto.Name = "colTotalIskonto";
+            this.colTotalIskonto.Visible = true;
+            this.colTotalIskonto.VisibleIndex = 10;
+            // 
+            // colTotalKDV
+            // 
+            this.colTotalKDV.FieldName = "TotalKDV";
+            this.colTotalKDV.Name = "colTotalKDV";
+            this.colTotalKDV.Visible = true;
+            this.colTotalKDV.VisibleIndex = 11;
+            // 
+            // colTotalSiparis
+            // 
+            this.colTotalSiparis.FieldName = "TotalSiparis";
+            this.colTotalSiparis.Name = "colTotalSiparis";
+            this.colTotalSiparis.Visible = true;
+            this.colTotalSiparis.VisibleIndex = 12;
+            // 
+            // colTotalAraToplam
+            // 
+            this.colTotalAraToplam.FieldName = "TotalAraToplam";
+            this.colTotalAraToplam.Name = "colTotalAraToplam";
+            this.colTotalAraToplam.Visible = true;
+            this.colTotalAraToplam.VisibleIndex = 13;
+            // 
+            // tb_SevkAdresi
+            // 
+            this.tb_SevkAdresi.Caption = "Sevk Adresleri";
+            this.tb_SevkAdresi.Name = "tb_SevkAdresi";
+            this.tb_SevkAdresi.Size = new System.Drawing.Size(631, 537);
             // 
             // frmCariEdit
             // 
@@ -1294,8 +1683,8 @@
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CurTranBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurSolePropTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAccountNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAuthPersonNameTextEdit.Properties)).EndInit();
@@ -1364,14 +1753,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCurAccountName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
-            this.tabNavigationPage1.ResumeLayout(false);
-            this.tabNavigationPage2.ResumeLayout(false);
+            this.tb_GenelBilgileri.ResumeLayout(false);
+            this.tb_bakiye.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_CariBakiye)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcv_CariBakiye)).EndInit();
-            this.tabNavigationPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CaseMov)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_CariBakiye)).EndInit();
+            this.tb_bekleyenIrsaliye.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.tb_bekleyenSiparis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1394,7 +1788,6 @@
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraEditors.TextEdit CurTypeTextEdit;
-        private System.Windows.Forms.BindingSource CurTranBindingSource;
         private DevExpress.XtraEditors.TextEdit CurCodeTextEdit;
         private DevExpress.XtraEditors.TextEdit CurSolePropTextEdit;
         private DevExpress.XtraEditors.TextEdit CurAccountNameTextEdit;
@@ -1454,8 +1847,8 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tb_GenelBilgileri;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tb_bakiye;
         private DevExpress.XtraGrid.GridControl gc_CariBakiye;
         private DevExpress.XtraGrid.Views.Grid.GridView gcv_CariBakiye;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
@@ -1466,20 +1859,61 @@
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tb_bekleyenIrsaliye;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.BindingSource bs_CaseMov;
-        private DevExpress.XtraGrid.Columns.GridColumn colCaseId;
         private DevExpress.XtraGrid.Columns.GridColumn colRecordDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colVadeDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colVadeMonth;
-        private DevExpress.XtraGrid.Columns.GridColumn colEvrakNo;
         private DevExpress.XtraGrid.Columns.GridColumn colDoviz;
         private DevExpress.XtraGrid.Columns.GridColumn colIslemTuru;
         private DevExpress.XtraGrid.Columns.GridColumn colTutar;
         private DevExpress.XtraGrid.Columns.GridColumn colOdemeTuru;
-        private DevExpress.XtraGrid.Columns.GridColumn colOdemeGrubu;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tb_bekleyenSiparis;
+        private DevExpress.XtraBars.BarButtonItem bbi_CariHareket;
+        private DevExpress.XtraBars.BarButtonItem bbi_Taksit;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem bbi_AlisSiparis;
+        private DevExpress.XtraBars.BarButtonItem bbi_SiparisSatis;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem bbi_AlisIrsaliye;
+        private DevExpress.XtraBars.BarButtonItem bbi_SatisIrsaliye;
+        private DevExpress.XtraBars.BarSubItem barSubItem3;
+        private DevExpress.XtraBars.BarButtonItem bbi_AlimFaturasi;
+        private DevExpress.XtraBars.BarButtonItem bbi_SatisFaturasi;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private System.Windows.Forms.BindingSource bs_OrderList;
+        private System.Windows.Forms.BindingSource bs_Invoice;
+        private DevExpress.XtraGrid.Columns.GridColumn colFicDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colIrsaliyeNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colDepoName;
+        private DevExpress.XtraGrid.Columns.GridColumn colKDV1;
+        private DevExpress.XtraGrid.Columns.GridColumn colAraToplam;
+        private DevExpress.XtraGrid.Columns.GridColumn colDovizTuru;
+        private DevExpress.XtraGrid.Columns.GridColumn colIndirim;
+        private DevExpress.XtraGrid.Columns.GridColumn colToplamKDV;
+        private DevExpress.XtraGrid.Columns.GridColumn colVadeTarih;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrderType;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSiparisNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colSiparisDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colSiparisTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colOzelKod;
+        private DevExpress.XtraGrid.Columns.GridColumn colDovizId;
+        private DevExpress.XtraGrid.Columns.GridColumn colKdv;
+        private DevExpress.XtraGrid.Columns.GridColumn colIskonto;
+        private DevExpress.XtraGrid.Columns.GridColumn colDurum;
+        private DevExpress.XtraGrid.Columns.GridColumn colTeklifSiparis;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalIskonto;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalKDV;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalSiparis;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalAraToplam;
+        private System.Windows.Forms.BindingSource bs_CTrans;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tb_SevkAdresi;
     }
 }

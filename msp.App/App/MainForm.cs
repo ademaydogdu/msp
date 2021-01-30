@@ -46,6 +46,7 @@ using Msp.Models.Models.Report;
 using Msp.App.DailyEndOpertions;
 using Msp.Infrastructure.Extensions;
 using SKGL;
+using Msp.App.Report.CariHesap;
 
 namespace msp.App
 {
@@ -470,7 +471,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(21, 1, 1, 12);
+            Version oVersionFB = new Version(21, 1, 1, 14);
             AppMain.MspVersion = oVersionFB;
 
             string AppPath = @"C:\Msp\ConnectString.txt";
@@ -513,7 +514,7 @@ namespace msp.App
             }
             else
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lisans Anahtarı Bulunulamadı. Lütfen Sistem Yüneticinize Başvurunuz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lisans Anahtarı Bulunulamadı. Lütfen Sistem Yüneticinize Başvurunuz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
@@ -739,7 +740,7 @@ namespace msp.App
                     e.Cancel = true;
                     return;
                 }
-                tool.do_save_User_Skin(AppMain.User.username, UserLookAndFeel.Default.ActiveSkinName, UserLookAndFeel.Default.ActiveSvgPaletteName, this.Name); 
+                tool.do_save_User_Skin(AppMain.User.username, UserLookAndFeel.Default.ActiveSkinName, UserLookAndFeel.Default.ActiveSvgPaletteName, this.Name);
             }
 
         }
@@ -1190,6 +1191,18 @@ namespace msp.App
                 frm.MdiParent = this;
                 frm.Show();
             }
+        }
+
+        private void bbi_CariHesapEkst_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmCariHesapEkstreFilter frm = new frmCariHesapEkstreFilter();
+            frm.ShowDialog();
+        }
+
+        private void bbi_MutabakatMektubu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmMutabakatFilter frm = new frmMutabakatFilter();
+            frm.ShowDialog();
         }
     }
 }

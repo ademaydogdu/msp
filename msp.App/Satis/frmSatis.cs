@@ -551,10 +551,12 @@ namespace msp.App
         private void txt_Barcode_Click(object sender, EventArgs e)
         {
             SelectedTextBox = sender as MemoEdit;
+            SelectedSpinEdit = null;
         }
         private void txtParaUstu_Click(object sender, EventArgs e)
         {
             SelectedSpinEdit = sender as SpinEdit;
+            SelectedTextBox = null;
         }
         private void btn_N1_Click(object sender, EventArgs e)
         {

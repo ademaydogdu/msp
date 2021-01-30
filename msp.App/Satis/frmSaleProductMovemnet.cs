@@ -230,6 +230,10 @@ namespace Msp.App.Satis
             __dll_SaleOwner.Date = DateTime.Now;
             txt_Date.EditValue = DateTime.Now;
 
+            _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
+            bs_PaymentType.DataSource = _list_PaymnetType;
+
+
             daily_SaleProduct();
             mspTool.Get_Layout(this);
         }
@@ -324,7 +328,28 @@ namespace Msp.App.Satis
             }
         }
 
+        private void bbi_Nakit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (_list_PaymnetType.Count > 0)
+            {
+                txt_OdemeTipi.EditValue = 1;
+            }
+        }
 
+        private void bbi_Pos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (_list_PaymnetType.Count > 0)
+            {
+                txt_OdemeTipi.EditValue = 2;
+            }
+        }
 
+        private void bbi_PosNakit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (_list_PaymnetType.Count > 0)
+            {
+                txt_OdemeTipi.EditValue = 3;
+            }
+        }
     }
 }

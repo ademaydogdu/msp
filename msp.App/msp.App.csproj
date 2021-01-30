@@ -282,6 +282,18 @@
     <Compile Include="CariIslemler\OrderList.Designer.cs">
       <DependentUpon>OrderList.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\SevkBilgileriList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\SevkBilgileriList.Designer.cs">
+      <DependentUpon>SevkBilgileriList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contact\frmContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +449,18 @@
     </Compile>
     <Compile Include="Report\CariHesap\CariHesapListesi.Designer.cs">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CariHesap\frmCariHesapEkstreFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\CariHesap\frmCariHesapEkstreFilter.Designer.cs">
+      <DependentUpon>frmCariHesapEkstreFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CariHesap\frmMutabakatFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\CariHesap\frmMutabakatFilter.Designer.cs">
+      <DependentUpon>frmMutabakatFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\Case\frmKasaReportFilter.cs">
       <SubType>Form</SubType>
@@ -765,6 +789,12 @@
     <EmbeddedResource Include="CariIslemler\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\SevkBilgileriList.resx">
+      <DependentUpon>SevkBilgileriList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Contact\frmContact.resx">
       <DependentUpon>frmContact.cs</DependentUpon>
     </EmbeddedResource>
@@ -856,6 +886,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CariHesap\CariHesapListesi.resx">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CariHesap\frmCariHesapEkstreFilter.resx">
+      <DependentUpon>frmCariHesapEkstreFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CariHesap\frmMutabakatFilter.resx">
+      <DependentUpon>frmMutabakatFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Case\frmKasaReportFilter.resx">
       <DependentUpon>frmKasaReportFilter.cs</DependentUpon>
@@ -1203,7 +1239,9 @@
     <Content Include="logos.ico" />
     <Content Include="Software Protector.exe" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Taksit\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

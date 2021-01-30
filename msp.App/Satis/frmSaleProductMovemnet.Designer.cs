@@ -102,6 +102,11 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
+            this.txt_OdemeTipi = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bbi_Nakit = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Pos = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_PosNakit = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -151,6 +156,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -167,6 +174,7 @@
             this.layoutControl1.Controls.Add(this.txt_NetFiyat);
             this.layoutControl1.Controls.Add(this.txt_İndirimTutar);
             this.layoutControl1.Controls.Add(this.txt_KDV);
+            this.layoutControl1.Controls.Add(this.txt_OdemeTipi);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Images = this.img_sic;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -179,13 +187,13 @@
             // gridControl2
             // 
             this.gridControl2.DataSource = this.bs_ProductMovent;
-            this.gridControl2.Location = new System.Drawing.Point(877, 73);
+            this.gridControl2.Location = new System.Drawing.Point(958, 73);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.gridControl2.Size = new System.Drawing.Size(220, 492);
+            this.gridControl2.Size = new System.Drawing.Size(139, 492);
             this.gridControl2.TabIndex = 25;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -270,8 +278,11 @@
             this.bbi_MiktarAzalt,
             this.barButtonItem2,
             this.bbi_TopluSil,
-            this.bbi_SatırSil});
-            this.barManager1.MaxItemId = 7;
+            this.bbi_SatırSil,
+            this.bbi_Nakit,
+            this.bbi_Pos,
+            this.bbi_PosNakit});
+            this.barManager1.MaxItemId = 10;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -282,7 +293,10 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_PosNakit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Pos),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Nakit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Save),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_MiktarAzalt, true),
@@ -409,6 +423,9 @@
             this.img_sic.Add("deletetablecolumns", "image://svgimages/richedit/deletetablecolumns.svg");
             this.img_sic.Add("deletedatasource", "image://svgimages/dashboards/deletedatasource.svg");
             this.img_sic.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
+            this.img_sic.Add("costanalysis", "image://svgimages/outlook inspired/costanalysis.svg");
+            this.img_sic.Add("calculatenow", "image://svgimages/spreadsheet/calculatenow.svg");
+            this.img_sic.Add("financial", "image://svgimages/spreadsheet/financial.svg");
             // 
             // gridControl1
             // 
@@ -421,7 +438,7 @@
             this.repositoryItemSpinEdit2,
             this.rp_Unit,
             this.rp_KdvOran});
-            this.gridControl1.Size = new System.Drawing.Size(851, 430);
+            this.gridControl1.Size = new System.Drawing.Size(932, 430);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -608,7 +625,7 @@
             // 
             this.txt_Total.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "TotalPriceText", true));
             this.txt_Total.EditValue = "₺ 0.00";
-            this.txt_Total.Location = new System.Drawing.Point(599, 487);
+            this.txt_Total.Location = new System.Drawing.Point(680, 487);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 38F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_Total.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
@@ -691,7 +708,7 @@
             // 
             this.txt_NetFiyat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "NetPriceText", true));
             this.txt_NetFiyat.EditValue = "0.00 ";
-            this.txt_NetFiyat.Location = new System.Drawing.Point(529, 487);
+            this.txt_NetFiyat.Location = new System.Drawing.Point(610, 487);
             this.txt_NetFiyat.Name = "txt_NetFiyat";
             this.txt_NetFiyat.Properties.ReadOnly = true;
             this.txt_NetFiyat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -702,7 +719,7 @@
             // txt_İndirimTutar
             // 
             this.txt_İndirimTutar.EditValue = "0.00 ";
-            this.txt_İndirimTutar.Location = new System.Drawing.Point(529, 535);
+            this.txt_İndirimTutar.Location = new System.Drawing.Point(610, 535);
             this.txt_İndirimTutar.Name = "txt_İndirimTutar";
             this.txt_İndirimTutar.Properties.ReadOnly = true;
             this.txt_İndirimTutar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -713,7 +730,7 @@
             // txt_KDV
             // 
             this.txt_KDV.EditValue = "0.00";
-            this.txt_KDV.Location = new System.Drawing.Point(529, 511);
+            this.txt_KDV.Location = new System.Drawing.Point(610, 511);
             this.txt_KDV.Name = "txt_KDV";
             this.txt_KDV.Properties.ReadOnly = true;
             this.txt_KDV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -737,13 +754,14 @@
             this.simpleLabelItem1,
             this.layoutControlItem41,
             this.layoutControlItem42,
-            this.emptySpaceItem1,
             this.emptySpaceItem4,
             this.layoutControlItem31,
             this.layoutControlItem19,
             this.layoutControlItem20,
             this.layoutControlItem27,
-            this.emptySpaceItem3});
+            this.emptySpaceItem3,
+            this.emptySpaceItem1,
+            this.layoutControlItem23});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1109, 577);
             this.Root.TextVisible = false;
@@ -803,7 +821,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 41);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(104, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(855, 434);
+            this.layoutControlItem4.Size = new System.Drawing.Size(936, 434);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -811,7 +829,7 @@
             // splitterItem1
             // 
             this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(855, 41);
+            this.splitterItem1.Location = new System.Drawing.Point(936, 41);
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(10, 516);
             // 
@@ -820,7 +838,7 @@
             this.layoutControlItem21.Control = this.txt_Total;
             this.layoutControlItem21.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem21.CustomizationFormText = "Toplam : ";
-            this.layoutControlItem21.Location = new System.Drawing.Point(587, 475);
+            this.layoutControlItem21.Location = new System.Drawing.Point(668, 475);
             this.layoutControlItem21.MaxSize = new System.Drawing.Size(268, 82);
             this.layoutControlItem21.MinSize = new System.Drawing.Size(268, 82);
             this.layoutControlItem21.Name = "layoutControlItem21";
@@ -834,9 +852,9 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.gridControl2;
-            this.layoutControlItem5.Location = new System.Drawing.Point(865, 61);
+            this.layoutControlItem5.Location = new System.Drawing.Point(946, 61);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(224, 496);
+            this.layoutControlItem5.Size = new System.Drawing.Size(143, 496);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -847,9 +865,9 @@
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseTextOptions = true;
             this.simpleLabelItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(865, 41);
+            this.simpleLabelItem1.Location = new System.Drawing.Point(946, 41);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.Size = new System.Drawing.Size(224, 20);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(143, 20);
             this.simpleLabelItem1.Text = "Bugün Satılan Ürünler";
             this.simpleLabelItem1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(139, 16);
@@ -889,17 +907,17 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(181, 475);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(181, 499);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(143, 82);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(209, 58);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(432, 547);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(513, 547);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(155, 10);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -925,7 +943,7 @@
             this.layoutControlItem19.Control = this.txt_NetFiyat;
             this.layoutControlItem19.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem19.CustomizationFormText = "Net Fiyat : ";
-            this.layoutControlItem19.Location = new System.Drawing.Point(432, 475);
+            this.layoutControlItem19.Location = new System.Drawing.Point(513, 475);
             this.layoutControlItem19.MaxSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem19.MinSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem19.Name = "layoutControlItem19";
@@ -939,7 +957,7 @@
             this.layoutControlItem20.Control = this.txt_KDV;
             this.layoutControlItem20.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem20.CustomizationFormText = "KDV : ";
-            this.layoutControlItem20.Location = new System.Drawing.Point(432, 499);
+            this.layoutControlItem20.Location = new System.Drawing.Point(513, 499);
             this.layoutControlItem20.MaxSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem20.MinSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem20.Name = "layoutControlItem20";
@@ -953,7 +971,7 @@
             this.layoutControlItem27.Control = this.txt_İndirimTutar;
             this.layoutControlItem27.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem27.CustomizationFormText = "İndirim Tutarı";
-            this.layoutControlItem27.Location = new System.Drawing.Point(432, 523);
+            this.layoutControlItem27.Location = new System.Drawing.Point(513, 523);
             this.layoutControlItem27.MaxSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem27.MinSize = new System.Drawing.Size(155, 24);
             this.layoutControlItem27.Name = "layoutControlItem27";
@@ -965,9 +983,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(324, 475);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(390, 475);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(108, 82);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(123, 82);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // bs_PaymentType
@@ -977,6 +995,75 @@
             // bs_Unit
             // 
             this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
+            // 
+            // txt_OdemeTipi
+            // 
+            this.txt_OdemeTipi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "PaymentType", true));
+            this.txt_OdemeTipi.Location = new System.Drawing.Point(278, 487);
+            this.txt_OdemeTipi.Name = "txt_OdemeTipi";
+            this.txt_OdemeTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.txt_OdemeTipi.Properties.DataSource = this.bs_PaymentType;
+            this.txt_OdemeTipi.Properties.DisplayMember = "Remark";
+            this.txt_OdemeTipi.Properties.NullText = "";
+            this.txt_OdemeTipi.Properties.ValueMember = "RecId";
+            this.txt_OdemeTipi.Size = new System.Drawing.Size(120, 20);
+            this.txt_OdemeTipi.StyleController = this.layoutControl1;
+            this.txt_OdemeTipi.TabIndex = 26;
+            // 
+            // layoutControlItem23
+            // 
+            this.layoutControlItem23.Control = this.txt_OdemeTipi;
+            this.layoutControlItem23.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem23.CustomizationFormText = "Ödeme Tipi :";
+            this.layoutControlItem23.Location = new System.Drawing.Point(181, 475);
+            this.layoutControlItem23.MaxSize = new System.Drawing.Size(209, 24);
+            this.layoutControlItem23.MinSize = new System.Drawing.Size(209, 24);
+            this.layoutControlItem23.Name = "layoutControlItem23";
+            this.layoutControlItem23.Size = new System.Drawing.Size(209, 24);
+            this.layoutControlItem23.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem23.Text = "Ödeme Tipi :";
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(82, 13);
+            // 
+            // bbi_Nakit
+            // 
+            this.bbi_Nakit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bbi_Nakit.Caption = "Nakit";
+            this.bbi_Nakit.Id = 7;
+            this.bbi_Nakit.ImageOptions.ImageIndex = 13;
+            this.bbi_Nakit.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.bbi_Nakit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_Nakit.ItemAppearance.Normal.Options.UseFont = true;
+            this.bbi_Nakit.Name = "bbi_Nakit";
+            this.bbi_Nakit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_Nakit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Nakit_ItemClick);
+            // 
+            // bbi_Pos
+            // 
+            this.bbi_Pos.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bbi_Pos.Caption = "POS";
+            this.bbi_Pos.Id = 8;
+            this.bbi_Pos.ImageOptions.ImageIndex = 12;
+            this.bbi_Pos.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.bbi_Pos.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_Pos.ItemAppearance.Normal.Options.UseFont = true;
+            this.bbi_Pos.Name = "bbi_Pos";
+            this.bbi_Pos.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_Pos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Pos_ItemClick);
+            // 
+            // bbi_PosNakit
+            // 
+            this.bbi_PosNakit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bbi_PosNakit.Caption = "POS && Nakit";
+            this.bbi_PosNakit.Id = 9;
+            this.bbi_PosNakit.ImageOptions.ImageIndex = 11;
+            this.bbi_PosNakit.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.bbi_PosNakit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_PosNakit.ItemAppearance.Normal.Options.UseFont = true;
+            this.bbi_PosNakit.Name = "bbi_PosNakit";
+            this.bbi_PosNakit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_PosNakit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_PosNakit_ItemClick);
             // 
             // frmSaleProductMovemnet
             // 
@@ -1043,6 +1130,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1122,5 +1211,10 @@
         private DevExpress.XtraBars.BarButtonItem bbi_TopluSil;
         private DevExpress.XtraBars.BarButtonItem bbi_SatırSil;
         private System.Windows.Forms.BindingSource bs_CurrencyType;
+        private DevExpress.XtraBars.BarButtonItem bbi_Nakit;
+        private DevExpress.XtraBars.BarButtonItem bbi_Pos;
+        private DevExpress.XtraBars.BarButtonItem bbi_PosNakit;
+        private DevExpress.XtraEditors.LookUpEdit txt_OdemeTipi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
     }
 }

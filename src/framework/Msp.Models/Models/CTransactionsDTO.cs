@@ -13,22 +13,16 @@ namespace Msp.Models.Models
 
         public string CurType { get; set; }
 
-        public Int64? CurCode { get; set; }
-
-        public string CurSoleProp { get; set; }
+        public string CurCode { get; set; }
 
         public string CurAccountName { get; set; }
-
 
         public string CurAuthPersonName { get; set; }
 
         public int? CurDiscount { get; set; }
 
-        public string CurOnCredit { get; set; }
-
         public string CurRiskLimit { get; set; }
 
-       
         public string CurCity { get; set; }
 
         public string CurDistrict { get; set; }

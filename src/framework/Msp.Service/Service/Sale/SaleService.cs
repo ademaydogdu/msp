@@ -48,8 +48,9 @@ namespace Msp.Service.Service.Sale
                                 CompanyRecId = model.SaleOwnerDTO.CompanyRecId,
                                 EvrakNo = "Parakende Satış",
                                 IslemTuru = 1,
-                                SaleOwnerId = saleOwnerId
-
+                                SaleOwnerId = saleOwnerId,
+                                CariId = 1
+                                
                             };
                             _db.CaseMovement.Add(base.Map<CaseMovementDTO, CaseMovement>(caseMovement));
                             _db.SaveChanges();

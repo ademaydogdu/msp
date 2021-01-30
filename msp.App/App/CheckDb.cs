@@ -438,7 +438,7 @@ namespace Msp.App.App
                 sCommand.CommandText = "CREATE TABLE [dbo].[CTransactions]( "
                     + "     [CurID][int] IDENTITY(1, 1) NOT NULL, "
                     + "     [CurType] [nvarchar] (50) NULL, "
-                    + " 	[CurCode] [bigint] NULL, "
+                    + " 	[CurCode] [nvarchar](50) NULL, "
                     + " 	[CurAccountName] [nvarchar] (50) NULL, "
                     + " 	[CurAuthPersonName] [nvarchar] (50) NULL, "
                     + " 	[CurDiscount] [int] NULL, "
@@ -470,6 +470,10 @@ namespace Msp.App.App
                     + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
                     + " ) ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
+
+                sCommand.CommandText = "INSERT INTO CTransactions (CurCode,CurAccountName,CurCreatedDate) VALUES ('PERAKENDE', 'PERAKENDE SATIS', GETDATE())";
+                ExecuteNonQuery(sCommand);
+
 
             }
             progressBarControl1.PerformStep();

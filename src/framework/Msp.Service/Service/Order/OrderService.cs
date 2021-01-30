@@ -173,6 +173,16 @@ namespace Msp.Service.Service.Order
         }
 
 
+        public List<OrderOwnerDTO> GetList_OrderWait_CariId(int CariId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<OrderOwnerDTO> result = new List<OrderOwnerDTO>();
+                result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.IrsaliyeId == 0 && x.Deleted == false && x.CariRecId == CariId).ToList());
+                return result;
+            }
+        }
+
         #endregion
 
 
