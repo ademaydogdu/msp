@@ -3,6 +3,7 @@ using DevExpress.Office.Utils;
 using DevExpress.Utils.CommonDialogs;
 using DevExpress.Utils.MVVM.Services;
 using DevExpress.XtraEditors;
+using Msp.App.Report;
 using Msp.App.Tanimlar;
 using Msp.App.Tool;
 using Msp.Infrastructure;
@@ -52,6 +53,22 @@ namespace Msp.App.Depo_Stok
             new KDVTaxDto(4, "%18", 0.18, 18),
         };
 
+
+        public List<SelectIdValue> BarcodeType = new List<SelectIdValue>
+        {
+            new SelectIdValue(1, "Standart Barkod - (EAN-13)"),
+            new SelectIdValue(2, "Standart Barkod - (EAN-128)"),
+            new SelectIdValue(3, "Standart Barkod - (EAN-8)"),
+        };
+
+        enum BacodeCaracter
+        {
+            EAN13 = 1,
+            EAN128 = 2,
+            EAN8 = 3
+        }
+
+
         public void Show(int id)
         {
             units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
@@ -78,6 +95,10 @@ namespace Msp.App.Depo_Stok
             taxTextEdit.Properties.DataSource = KdvOrani;
             taxTextEdit.Properties.ValueMember = "Id";
             taxTextEdit.Properties.DisplayMember = "Value";
+
+            lc_BarkodType.Properties.DataSource = BarcodeType;
+            lc_BarkodType.Properties.ValueMember = "Id";
+            lc_BarkodType.Properties.DisplayMember = "Value";
 
             bs_StockEdit.DataSource = __product;
             this.ShowDialog();
@@ -386,7 +407,7 @@ namespace Msp.App.Depo_Stok
 
         private void txtBarcode_Leave(object sender, EventArgs e)
         {
-            this.pictureEdit1.Image = null;
+            //this.pictureEdit1.Image = null;
             //barCodeControl1.BackgroundImage = null;
 
             BarCode barCode = new BarCode();
@@ -404,7 +425,47 @@ namespace Msp.App.Depo_Stok
             barCode.Module = 2f;
 
             //barCodeControl1.BackgroundImage = barCode.BarCodeImage;
-            this.pictureEdit1.Image = barCode.BarCodeImage;
+            //this.pictureEdit1.Image = barCode.BarCodeImage;
+        }
+
+        private void lc_BarkodType_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lc_BarkodType.EditValue.ToString()))
+            {
+                if (Convert.ToInt32(lc_BarkodType.EditValue) == (int)BacodeCaracter.EAN13)
+                {
+                    txtBarcode.Properties.MaxLength = 13;
+                }
+                if (Convert.ToInt32(lc_BarkodType.EditValue) == (int)BacodeCaracter.EAN8)
+                {
+                    txtBarcode.Properties.MaxLength = 8;
+                }
+            }
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lc_BarkodType.EditValue.ToString()))
+            {
+                if (Convert.ToInt32(lc_BarkodType.EditValue) == (int)BacodeCaracter.EAN13)
+                {
+                    if (txtBarcode.Text.Length > 0)
+                    {
+                        frmPrint frm = new frmPrint();
+                        frm.PrintBarcode_13(__product);
+                        frm.ShowDialog();
+                    }
+                }
+                if (Convert.ToInt32(lc_BarkodType.EditValue) == (int)BacodeCaracter.EAN8)
+                {
+                    if (txtBarcode.Text.Length > 0)
+                    {
+                        frmPrint frm = new frmPrint();
+                        frm.PrintBarcode_8(__product);
+                        frm.ShowDialog();
+                    }
+                }
+            }
         }
     }
 

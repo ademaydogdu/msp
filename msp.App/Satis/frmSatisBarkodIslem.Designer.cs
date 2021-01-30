@@ -40,21 +40,24 @@
             this.ing_sic = new DevExpress.Utils.SvgImageCollection(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bs_saleBarcodeCreate = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
+            this.rp_Type = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ing_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_saleBarcodeCreate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_saleBarcodeCreate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Type)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -69,8 +72,9 @@
             this.barManager1.Images = this.ing_sic;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbi_save,
-            this.bbi_Close});
-            this.barManager1.MaxItemId = 2;
+            this.bbi_Close,
+            this.bbi_Print});
+            this.barManager1.MaxItemId = 3;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -82,7 +86,8 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_save),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Print, true)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -94,6 +99,7 @@
             this.bbi_save.Id = 0;
             this.bbi_save.ImageOptions.ImageIndex = 0;
             this.bbi_save.Name = "bbi_save";
+            this.bbi_save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_save_ItemClick);
             // 
             // bbi_Close
             // 
@@ -140,6 +146,7 @@
             this.ing_sic.Add("save", "image://svgimages/save/save.svg");
             this.ing_sic.Add("del", "image://svgimages/diagramicons/del.svg");
             this.ing_sic.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
+            this.ing_sic.Add("print", "image://svgimages/dashboards/print.svg");
             // 
             // layoutControl1
             // 
@@ -159,10 +166,16 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rp_Type});
             this.gridControl1.Size = new System.Drawing.Size(577, 391);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bs_saleBarcodeCreate
+            // 
+            this.bs_saleBarcodeCreate.DataSource = typeof(Msp.Models.Models.SaleBarcodCreateDTO);
             // 
             // gridView1
             // 
@@ -173,6 +186,23 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colType
+            // 
+            this.colType.Caption = "Türü";
+            this.colType.ColumnEdit = this.rp_Type;
+            this.colType.FieldName = "Type";
+            this.colType.Name = "colType";
+            this.colType.OptionsColumn.AllowEdit = false;
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 0;
+            // 
+            // colBarcode
+            // 
+            this.colBarcode.FieldName = "Barcode";
+            this.colBarcode.Name = "colBarcode";
+            this.colBarcode.Visible = true;
+            this.colBarcode.VisibleIndex = 1;
             // 
             // Root
             // 
@@ -193,24 +223,21 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // bs_saleBarcodeCreate
+            // bbi_Print
             // 
-            this.bs_saleBarcodeCreate.DataSource = typeof(Msp.Models.Models.SaleBarcodCreateDTO);
+            this.bbi_Print.Caption = "Yazdır";
+            this.bbi_Print.Id = 2;
+            this.bbi_Print.ImageOptions.ImageIndex = 3;
+            this.bbi_Print.Name = "bbi_Print";
+            this.bbi_Print.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Print_ItemClick);
             // 
-            // colType
+            // rp_Type
             // 
-            this.colType.FieldName = "Type";
-            this.colType.Name = "colType";
-            this.colType.OptionsColumn.AllowEdit = false;
-            this.colType.Visible = true;
-            this.colType.VisibleIndex = 0;
-            // 
-            // colBarcode
-            // 
-            this.colBarcode.FieldName = "Barcode";
-            this.colBarcode.Name = "colBarcode";
-            this.colBarcode.Visible = true;
-            this.colBarcode.VisibleIndex = 1;
+            this.rp_Type.AutoHeight = false;
+            this.rp_Type.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Type.Name = "rp_Type";
+            this.rp_Type.NullText = "";
             // 
             // frmSatisBarkodIslem
             // 
@@ -232,10 +259,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_saleBarcodeCreate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_saleBarcodeCreate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Type)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +288,7 @@
         private System.Windows.Forms.BindingSource bs_saleBarcodeCreate;
         private DevExpress.XtraGrid.Columns.GridColumn colType;
         private DevExpress.XtraGrid.Columns.GridColumn colBarcode;
+        private DevExpress.XtraBars.BarButtonItem bbi_Print;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Type;
     }
 }

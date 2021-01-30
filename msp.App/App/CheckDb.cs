@@ -1248,6 +1248,14 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update(); Application.DoEvents();
 
+            if (tblPRoduct.Columns.Contains("PBarcodeType") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Products ADD PBarcodeType bit";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
+
             #endregion
 
             #region SaleOwner

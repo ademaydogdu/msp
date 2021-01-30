@@ -34,6 +34,13 @@ namespace Msp.App.Depo_Stok
         private ProductDTO __product = new ProductDTO();
         List<ProductDTO> _productlist = new List<ProductDTO>();
 
+        enum BacodeCaracter
+        {
+            EAN13 = 1,
+            EAN128 = 2,
+            EAN8 = 3
+        }
+
         public void do_refresh()
         {
             try
@@ -247,6 +254,34 @@ namespace Msp.App.Depo_Stok
         {
             frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
             frm.ShowDialog();
+        }
+
+        private void btnProBarcodeLabel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ProductDTO Orow = (ProductDTO)gcvProducts.GetFocusedRow();
+            if (Orow != null)
+            {
+                if (Orow.PBarcodeType == (int)BacodeCaracter.EAN13)
+                {
+                    if (Orow.PBarcode.Length > 0)
+                    {
+                        frmPrint frm = new frmPrint();
+                        frm.PrintBarcode_13(__product);
+                        frm.ShowDialog();
+                    }
+                }
+                if (Orow.PBarcodeType == (int)BacodeCaracter.EAN8)
+                {
+                    if (Orow.PBarcode.Length > 0)
+                    {
+                        frmPrint frm = new frmPrint();
+                        frm.PrintBarcode_8(__product);
+                        frm.ShowDialog();
+                    }
+                }
+
+            }
+
         }
     }
 }

@@ -57,8 +57,8 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnProductsRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddNewProduct = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRemProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRemProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnProTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_EnvanterGiris = new DevExpress.XtraBars.BarButtonItem();
             this.btnProBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
@@ -367,11 +367,11 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnProductsRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddNewProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditProduct),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemProduct),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProductsRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProTransactions, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_EnvanterGiris),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProBarcodeLabel),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnProClose),
@@ -398,14 +398,6 @@
             this.btnAddNewProduct.Name = "btnAddNewProduct";
             this.btnAddNewProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddNewProduct_ItemClick);
             // 
-            // btnRemProduct
-            // 
-            this.btnRemProduct.Caption = "Ürün Sil";
-            this.btnRemProduct.Id = 4;
-            this.btnRemProduct.ImageOptions.ImageIndex = 44;
-            this.btnRemProduct.Name = "btnRemProduct";
-            this.btnRemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemProduct_ItemClick);
-            // 
             // btnEditProduct
             // 
             this.btnEditProduct.Caption = "Düzelt";
@@ -413,6 +405,14 @@
             this.btnEditProduct.ImageOptions.ImageIndex = 48;
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditProduct_ItemClick);
+            // 
+            // btnRemProduct
+            // 
+            this.btnRemProduct.Caption = "Ürün Sil";
+            this.btnRemProduct.Id = 4;
+            this.btnRemProduct.ImageOptions.ImageIndex = 44;
+            this.btnRemProduct.Name = "btnRemProduct";
+            this.btnRemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemProduct_ItemClick);
             // 
             // btnProTransactions
             // 
@@ -436,6 +436,7 @@
             this.btnProBarcodeLabel.Id = 9;
             this.btnProBarcodeLabel.ImageOptions.ImageIndex = 25;
             this.btnProBarcodeLabel.Name = "btnProBarcodeLabel";
+            this.btnProBarcodeLabel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProBarcodeLabel_ItemClick);
             // 
             // btnProClose
             // 

@@ -444,6 +444,30 @@
     <Compile Include="Musteri-Islemleri\frmMusterVeresiyeDetail.Designer.cs">
       <DependentUpon>frmMusterVeresiyeDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Barcode\BarocedList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Barcode\BarocedList.Designer.cs">
+      <DependentUpon>BarocedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Barcode\SaleBarcodCreate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Barcode\SaleBarcodCreate.Designer.cs">
+      <DependentUpon>SaleBarcodCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Barcode\UrunBarcode13.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Barcode\UrunBarcode13.Designer.cs">
+      <DependentUpon>UrunBarcode13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Barcode\UrunBarcode8.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Barcode\UrunBarcode8.Designer.cs">
+      <DependentUpon>UrunBarcode8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\CariHesap\CariHesapListesi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -883,6 +907,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmMusterVeresiyeDetail.resx">
       <DependentUpon>frmMusterVeresiyeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Barcode\BarocedList.resx">
+      <DependentUpon>BarocedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Barcode\SaleBarcodCreate.resx">
+      <DependentUpon>SaleBarcodCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Barcode\UrunBarcode13.resx">
+      <DependentUpon>UrunBarcode13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Barcode\UrunBarcode8.resx">
+      <DependentUpon>UrunBarcode8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CariHesap\CariHesapListesi.resx">
       <DependentUpon>CariHesapListesi.cs</DependentUpon>

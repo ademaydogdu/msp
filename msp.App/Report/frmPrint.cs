@@ -18,6 +18,7 @@ using Msp.Models.Models.Case;
 using Msp.Models.Models.Report;
 using Msp.App.Report.Daily;
 using Msp.Models.Models.Daily;
+using Msp.App.Report.Barcode;
 
 namespace Msp.App.Report
 {
@@ -111,6 +112,45 @@ namespace Msp.App.Report
             report.CreateDocument();
         }
 
+        public void PrintBarcode_13(ProductDTO data)
+        {
+            UrunBarcode13 report = new UrunBarcode13();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+        public void PrintBarcode_8(ProductDTO data)
+        {
+            UrunBarcode8 report = new UrunBarcode8();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+        public void PrintProductBarcodeList(List<ProductDTO> data)
+        {
+            BarocedList report = new BarocedList();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+        public void PrintSaleBarcodCreate(List<SaleBarcodCreateDTO> data)
+        {
+            SaleBarcodCreate report = new SaleBarcodCreate();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
 
     }
 }

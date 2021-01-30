@@ -256,6 +256,8 @@
             this.bbi_LicenceDay = new DevExpress.XtraBars.BarStaticItem();
             this.bbi_Licence = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem129 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem101 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem112 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -272,6 +274,7 @@
             this.ribbonPageGroup29 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup30 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup36 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup31 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -306,9 +309,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.ribbonPageGroup36 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem101 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem112 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1652,6 +1652,7 @@
             this.barButtonItem82.Id = 148;
             this.barButtonItem82.ImageOptions.LargeImageIndex = 25;
             this.barButtonItem82.Name = "barButtonItem82";
+            this.barButtonItem82.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem82_ItemClick);
             // 
             // btnUrunMarka
             // 
@@ -2225,6 +2226,20 @@
             this.barButtonItem129.ImageOptions.LargeImageIndex = 73;
             this.barButtonItem129.Name = "barButtonItem129";
             // 
+            // barButtonItem101
+            // 
+            this.barButtonItem101.Caption = "Taksit Düzenle";
+            this.barButtonItem101.Id = 226;
+            this.barButtonItem101.ImageOptions.LargeImageIndex = 75;
+            this.barButtonItem101.Name = "barButtonItem101";
+            // 
+            // barButtonItem112
+            // 
+            this.barButtonItem112.Caption = "Taksit Tahsilatı";
+            this.barButtonItem112.Id = 227;
+            this.barButtonItem112.ImageOptions.LargeImageIndex = 74;
+            this.barButtonItem112.Name = "barButtonItem112";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -2421,6 +2436,13 @@
             this.ribbonPageGroup19.ItemLinks.Add(this.btnFaturaAra);
             this.ribbonPageGroup19.Name = "ribbonPageGroup19";
             this.ribbonPageGroup19.Text = "Fatura";
+            // 
+            // ribbonPageGroup36
+            // 
+            this.ribbonPageGroup36.ItemLinks.Add(this.barButtonItem101);
+            this.ribbonPageGroup36.ItemLinks.Add(this.barButtonItem112);
+            this.ribbonPageGroup36.Name = "ribbonPageGroup36";
+            this.ribbonPageGroup36.Text = "Taksit";
             // 
             // ribbonPage3
             // 
@@ -2675,27 +2697,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // ribbonPageGroup36
-            // 
-            this.ribbonPageGroup36.ItemLinks.Add(this.barButtonItem101);
-            this.ribbonPageGroup36.ItemLinks.Add(this.barButtonItem112);
-            this.ribbonPageGroup36.Name = "ribbonPageGroup36";
-            this.ribbonPageGroup36.Text = "Taksit";
-            // 
-            // barButtonItem101
-            // 
-            this.barButtonItem101.Caption = "Taksit Düzenle";
-            this.barButtonItem101.Id = 226;
-            this.barButtonItem101.ImageOptions.LargeImageIndex = 75;
-            this.barButtonItem101.Name = "barButtonItem101";
-            // 
-            // barButtonItem112
-            // 
-            this.barButtonItem112.Caption = "Taksit Tahsilatı";
-            this.barButtonItem112.Id = 227;
-            this.barButtonItem112.ImageOptions.LargeImageIndex = 74;
-            this.barButtonItem112.Name = "barButtonItem112";
             // 
             // MainForm
             // 

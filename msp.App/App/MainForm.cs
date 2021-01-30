@@ -47,6 +47,7 @@ using Msp.App.DailyEndOpertions;
 using Msp.Infrastructure.Extensions;
 using SKGL;
 using Msp.App.Report.CariHesap;
+using Msp.Service.Service.DepotStock;
 
 namespace msp.App
 {
@@ -1203,6 +1204,17 @@ namespace msp.App
         {
             frmMutabakatFilter frm = new frmMutabakatFilter();
             frm.ShowDialog();
+        }
+
+        private void barButtonItem82_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var _Product = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            if (_Product.Count > 0)
+            {
+                frmPrint frm = new frmPrint();
+                frm.PrintProductBarcodeList(_Product);
+                frm.ShowDialog();
+            }
         }
     }
 }

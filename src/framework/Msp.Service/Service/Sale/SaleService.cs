@@ -346,6 +346,45 @@ namespace Msp.Service.Service.Sale
             }
         }
 
+        public ActionResponse<List<SaleBarcodCreateDTO>> SaveSaleBarcodCreateDTO(List<SaleBarcodCreateDTO> model)
+        {
+            ActionResponse<List<SaleBarcodCreateDTO>> response = new ActionResponse<List<SaleBarcodCreateDTO>>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    foreach (var item in model)
+                    {
+                        if (item.RecId == 0)
+                        {
+                            _db.SaleBarcodCreate.Add(base.Map<SaleBarcodCreateDTO, SaleBarcodCreate>(item));
+                            _db.SaveChanges();
+                        }
+                        else
+                        {
+                            var entity = _db.SaleBarcodCreate.FirstOrDefault(x => x.RecId == item.RecId);
+                            if (entity != null)
+                            {
+                                _db.Entry(entity).CurrentValues.SetValues(item);
+                                _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            }
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
 
 
         #endregion

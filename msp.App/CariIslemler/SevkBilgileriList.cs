@@ -17,5 +17,10 @@ namespace Msp.App.CariIslemler
         {
             InitializeComponent();
         }
+
+        private void SevkBilgileriList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
