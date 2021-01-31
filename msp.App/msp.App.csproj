@@ -540,6 +540,12 @@
     <Compile Include="Report\Depo-Stock\frmStockHareketFilter.Designer.cs">
       <DependentUpon>frmStockHareketFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Fatura\FaturaFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Fatura\FaturaFilter.Designer.cs">
+      <DependentUpon>FaturaFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Fatura\InvoiceReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -551,6 +557,12 @@
     </Compile>
     <Compile Include="Report\frmPrint.Designer.cs">
       <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Orders\OrdersFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Orders\OrdersFilter.Designer.cs">
+      <DependentUpon>OrdersFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\ProductList.cs">
       <SubType>Component</SubType>
@@ -655,6 +667,12 @@
     </Compile>
     <Compile Include="Settings\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\frmCallerId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmCallerId.Designer.cs">
+      <DependentUpon>frmCallerId.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\FrmCompany.cs">
       <SubType>Form</SubType>
@@ -980,11 +998,17 @@
     <EmbeddedResource Include="Report\Depo-Stock\frmStockHareketFilter.resx">
       <DependentUpon>frmStockHareketFilter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Fatura\FaturaFilter.resx">
+      <DependentUpon>FaturaFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Fatura\InvoiceReport.resx">
       <DependentUpon>InvoiceReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Orders\OrdersFilter.resx">
+      <DependentUpon>OrdersFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
@@ -1042,6 +1066,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmCallerId.resx">
+      <DependentUpon>frmCallerId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\FrmCompany.resx">
       <DependentUpon>FrmCompany.cs</DependentUpon>

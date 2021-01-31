@@ -61,6 +61,13 @@ namespace Msp.Infrastructure
     }
 
 
+    public enum OrderFilter
+    {
+        Siparis = 1,
+        SevkRapor = 2
+    }
+
+
 
 
 }

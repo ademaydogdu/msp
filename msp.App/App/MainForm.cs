@@ -48,6 +48,7 @@ using Msp.Infrastructure.Extensions;
 using SKGL;
 using Msp.App.Report.CariHesap;
 using Msp.Service.Service.DepotStock;
+using Msp.App.Report.Fatura;
 
 namespace msp.App
 {
@@ -681,7 +682,9 @@ namespace msp.App
 
         private void barButtonItem63_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-
+            frmCallerId frm = new frmCallerId();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void barButtonItem70_ItemClick(object sender, ItemClickEventArgs e)
@@ -1215,6 +1218,38 @@ namespace msp.App
                 frm.PrintProductBarcodeList(_Product);
                 frm.ShowDialog();
             }
+        }
+
+        private void bbi_FaturaRaporlari_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FaturaFilter frm = new FaturaFilter();
+            frm.invoice = InvoiceType.AlımFaturası;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void bbi_IrsaliyeRapor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FaturaFilter frm = new FaturaFilter();
+            frm.invoice = InvoiceType.AlisIrsaliye;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem109_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OrdersFilter frm = new OrdersFilter();
+            frm.MdiParent = this;
+            frm.orderFilter = OrderFilter.Siparis;
+            frm.Show();
+        }
+
+        private void barButtonItem110_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OrdersFilter frm = new OrdersFilter();
+            frm.MdiParent = this;
+            frm.orderFilter = OrderFilter.SevkRapor;
+            frm.Show();
         }
     }
 }
