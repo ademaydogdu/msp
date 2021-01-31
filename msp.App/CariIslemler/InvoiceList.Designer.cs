@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
@@ -49,7 +50,7 @@
             this.btnAccountTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
             this.gc_Invoice = new DevExpress.XtraGrid.GridControl();
-            this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_InvoiceTrans = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_Invoice = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFicDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInvoiceType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,14 +69,18 @@
             this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiğerMasraflar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_cari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_depot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -169,6 +174,7 @@
             this.bbi_Print.Id = 10;
             this.bbi_Print.ImageOptions.ImageIndex = 8;
             this.bbi_Print.Name = "bbi_Print";
+            this.bbi_Print.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Print_ItemClick);
             // 
             // btnCurTranClose
             // 
@@ -262,6 +268,10 @@
             // 
             this.gc_Invoice.DataSource = this.bs_Invoice;
             this.gc_Invoice.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.gridView1;
+            gridLevelNode1.RelationName = "_invoiceTrans";
+            this.gc_Invoice.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gc_Invoice.Location = new System.Drawing.Point(0, 0);
             this.gc_Invoice.MainView = this.gcv_Invoice;
             this.gc_Invoice.MenuManager = this.barManager1;
@@ -273,11 +283,12 @@
             this.gc_Invoice.Size = new System.Drawing.Size(950, 536);
             this.gc_Invoice.TabIndex = 5;
             this.gc_Invoice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gcv_Invoice});
+            this.gcv_Invoice,
+            this.gridView1});
             // 
-            // bs_Invoice
+            // bs_InvoiceTrans
             // 
-            this.bs_Invoice.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceOwnerDTO);
+            this.bs_InvoiceTrans.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceTransDTO);
             // 
             // gcv_Invoice
             // 
@@ -300,6 +311,7 @@
             this.gcv_Invoice.Name = "gcv_Invoice";
             this.gcv_Invoice.OptionsBehavior.Editable = false;
             this.gcv_Invoice.OptionsView.ColumnAutoWidth = false;
+            this.gcv_Invoice.OptionsView.ShowAutoFilterRow = true;
             this.gcv_Invoice.OptionsView.ShowFooter = true;
             this.gcv_Invoice.OptionsView.ShowGroupPanel = false;
             // 
@@ -445,6 +457,15 @@
             this.colGenelToplam.Visible = true;
             this.colGenelToplam.VisibleIndex = 12;
             // 
+            // bs_Invoice
+            // 
+            this.bs_Invoice.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceOwnerDTO);
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_Invoice;
+            this.gridView1.Name = "gridView1";
+            // 
             // InvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,11 +484,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_cari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_depot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,5 +537,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_InvoiceType;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_cari;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_depot;
+        private System.Windows.Forms.BindingSource bs_InvoiceTrans;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

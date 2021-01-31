@@ -228,6 +228,18 @@
     <Compile Include="App\Wizard.Designer.cs">
       <DependentUpon>Wizard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CariIslemler\CekSenetIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\CekSenetIslemleri.Designer.cs">
+      <DependentUpon>CekSenetIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CariIslemler\CekSenetIslemleriList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CariIslemler\CekSenetIslemleriList.Designer.cs">
+      <DependentUpon>CekSenetIslemleriList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CariIslemler\FindInvoiceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -686,6 +698,18 @@
     <Compile Include="Settings\Parameters.Designer.cs">
       <DependentUpon>Parameters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Taksit\frmTaksitDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taksit\frmTaksitDuzenle.Designer.cs">
+      <DependentUpon>frmTaksitDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Taksit\frmTaksitTahsilat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taksit\frmTaksitTahsilat.Designer.cs">
+      <DependentUpon>frmTaksitTahsilat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tanimlar\CashPayGroupDef.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -785,6 +809,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\Wizard.resx">
       <DependentUpon>Wizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\CekSenetIslemleri.resx">
+      <DependentUpon>CekSenetIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CariIslemler\CekSenetIslemleriList.resx">
+      <DependentUpon>CekSenetIslemleriList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CariIslemler\FindInvoiceList.resx">
       <DependentUpon>FindInvoiceList.cs</DependentUpon>
@@ -1034,6 +1064,12 @@
     <EmbeddedResource Include="Settings\Parameters.resx">
       <DependentUpon>Parameters.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Taksit\frmTaksitDuzenle.resx">
+      <DependentUpon>frmTaksitDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taksit\frmTaksitTahsilat.resx">
+      <DependentUpon>frmTaksitTahsilat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\CashPayGroupDef.resx">
       <DependentUpon>CashPayGroupDef.cs</DependentUpon>
     </EmbeddedResource>
@@ -1275,9 +1311,7 @@
     <Content Include="logos.ico" />
     <Content Include="Software Protector.exe" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Taksit\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

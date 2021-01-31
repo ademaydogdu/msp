@@ -19,6 +19,8 @@ using Msp.Models.Models.Report;
 using Msp.App.Report.Daily;
 using Msp.Models.Models.Daily;
 using Msp.App.Report.Barcode;
+using Msp.Models.Models.Invoice;
+using Msp.App.Report.Fatura;
 
 namespace Msp.App.Report
 {
@@ -145,6 +147,16 @@ namespace Msp.App.Report
         public void PrintSaleBarcodCreate(List<SaleBarcodCreateDTO> data)
         {
             SaleBarcodCreate report = new SaleBarcodCreate();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+        public void PrintInvoiceReport(InvoiceOwnerDTO data)
+        {
+            InvoiceReport report = new InvoiceReport();
             foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
                 p.Visible = false;
             report.InitData(data);

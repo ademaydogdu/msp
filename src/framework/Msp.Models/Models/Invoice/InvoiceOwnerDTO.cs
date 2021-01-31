@@ -39,5 +39,7 @@ namespace Msp.Models.Models.Invoice
         public int? OrderId { get; set; } = 0;
         public int? IrsaliyeId { get; set; } = 0;
 
+        public List<InvoiceTransDTO> _invoiceTrans { get; set; }
+
     }
 }

@@ -44,8 +44,6 @@
             this.unitPrice = new DevExpress.XtraReports.UI.XRTableCell();
             this.lineTotal = new DevExpress.XtraReports.UI.XRTableCell();
             this.vendorContactsTable = new DevExpress.XtraReports.UI.XRTable();
-            this.thankYouLabel = new DevExpress.XtraReports.UI.XRLabel();
-            this.heartLabel = new DevExpress.XtraReports.UI.XRLabel();
             this.vendorContactsRow = new DevExpress.XtraReports.UI.XRTableRow();
             this.vendorWebsite = new DevExpress.XtraReports.UI.XRTableCell();
             this.vendorEmail = new DevExpress.XtraReports.UI.XRTableCell();
@@ -119,9 +117,7 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.vendorContactsTable,
-            this.thankYouLabel,
-            this.heartLabel});
+            this.vendorContactsTable});
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -168,9 +164,7 @@
             // 
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.headerTable});
-            this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("EFaturaNo", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader1.HeightF = 50F;
+            this.GroupHeader1.HeightF = 36.87503F;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.RepeatEveryPage = true;
             this.GroupHeader1.StyleName = "baseControlStyle";
@@ -199,6 +193,8 @@
             // 
             // productName
             // 
+            this.productName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[_invoiceTrans].[ProductId]")});
             this.productName.Name = "productName";
             this.productName.StylePriority.UsePadding = false;
             this.productName.Text = "ProductName";
@@ -206,6 +202,8 @@
             // 
             // quantity
             // 
+            this.quantity.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[_invoiceTrans].[Quentity]")});
             this.quantity.Name = "quantity";
             this.quantity.StylePriority.UsePadding = false;
             this.quantity.StylePriority.UseTextAlignment = false;
@@ -215,6 +213,8 @@
             // 
             // unitPrice
             // 
+            this.unitPrice.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[_invoiceTrans].[BirimFiyat]")});
             this.unitPrice.Name = "unitPrice";
             this.unitPrice.StylePriority.UsePadding = false;
             this.unitPrice.StylePriority.UseTextAlignment = false;
@@ -225,6 +225,8 @@
             // 
             // lineTotal
             // 
+            this.lineTotal.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[_invoiceTrans].[Tutar]")});
             this.lineTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(102)))), ((int)(((byte)(78)))));
             this.lineTotal.Name = "lineTotal";
             this.lineTotal.StylePriority.UseFont = false;
@@ -247,34 +249,6 @@
             this.vendorContactsTable.SizeF = new System.Drawing.SizeF(378.9991F, 15F);
             this.vendorContactsTable.StylePriority.UseBorderColor = false;
             this.vendorContactsTable.StylePriority.UseFont = false;
-            // 
-            // thankYouLabel
-            // 
-            this.thankYouLabel.CanGrow = false;
-            this.thankYouLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.thankYouLabel.LocationFloat = new DevExpress.Utils.PointFloat(39.5429F, 9.999974F);
-            this.thankYouLabel.Name = "thankYouLabel";
-            this.thankYouLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.thankYouLabel.SizeF = new System.Drawing.SizeF(110.4167F, 40F);
-            this.thankYouLabel.StylePriority.UseFont = false;
-            this.thankYouLabel.StylePriority.UseTextAlignment = false;
-            this.thankYouLabel.Text = "Thank you!";
-            this.thankYouLabel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // heartLabel
-            // 
-            this.heartLabel.CanGrow = false;
-            this.heartLabel.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.heartLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(102)))), ((int)(((byte)(78)))));
-            this.heartLabel.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999974F);
-            this.heartLabel.Name = "heartLabel";
-            this.heartLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.heartLabel.SizeF = new System.Drawing.SizeF(39.54286F, 40F);
-            this.heartLabel.StylePriority.UseFont = false;
-            this.heartLabel.StylePriority.UseForeColor = false;
-            this.heartLabel.StylePriority.UseTextAlignment = false;
-            this.heartLabel.Text = "♥";
-            this.heartLabel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // vendorContactsRow
             // 
@@ -360,11 +334,14 @@
             // 
             // invoiceLabel
             // 
+            this.invoiceLabel.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "IIF([FicheType] == 1, \'ALIŞ FATURASI\', [FicheType]) \nOr Iif([FicheType] == 2, \'SA" +
+                    "TIŞ FATURASI\' ,[FicheType] ) ")});
             this.invoiceLabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceLabel.LocationFloat = new DevExpress.Utils.PointFloat(0.0004182782F, 9.999995F);
+            this.invoiceLabel.LocationFloat = new DevExpress.Utils.PointFloat(0.0004132589F, 9.999974F);
             this.invoiceLabel.Name = "invoiceLabel";
             this.invoiceLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.invoiceLabel.SizeF = new System.Drawing.SizeF(185F, 50F);
+            this.invoiceLabel.SizeF = new System.Drawing.SizeF(251.6667F, 50F);
             this.invoiceLabel.StylePriority.UseFont = false;
             this.invoiceLabel.Text = "INVOICE";
             // 
@@ -403,6 +380,7 @@
             this.invoiceDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.invoiceDate.Name = "invoiceDate";
             this.invoiceDate.StylePriority.UseFont = false;
+            this.invoiceDate.Text = "InvoiceDate";
             this.invoiceDate.TextFormatString = "{0:d MMMM yyyy}";
             this.invoiceDate.Weight = 1.3680312174875988D;
             // 
@@ -421,10 +399,11 @@
             // 
             this.invoiceNumber.CanShrink = true;
             this.invoiceNumber.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[EFaturaNo]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FicheDocumentNo]")});
             this.invoiceNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.invoiceNumber.Name = "invoiceNumber";
             this.invoiceNumber.StylePriority.UseFont = false;
+            this.invoiceNumber.Text = "000001";
             this.invoiceNumber.Weight = 1.3680312174875988D;
             // 
             // customerNameRow
@@ -437,6 +416,8 @@
             // customerName
             // 
             this.customerName.CanShrink = true;
+            this.customerName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CariRecId]")});
             this.customerName.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.customerName.Name = "customerName";
             this.customerName.StylePriority.UseFont = false;
@@ -561,6 +542,8 @@
             // 
             // invoiceDueDate
             // 
+            this.invoiceDueDate.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FicDate]")});
             this.invoiceDueDate.Font = new System.Drawing.Font("Segoe UI", 26F);
             this.invoiceDueDate.ForeColor = System.Drawing.Color.Black;
             this.invoiceDueDate.Name = "invoiceDueDate";
@@ -574,6 +557,8 @@
             // 
             // total
             // 
+            this.total.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[GenelToplam]")});
             this.total.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold);
             this.total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(102)))), ((int)(((byte)(78)))));
             this.total.Name = "total";
@@ -715,8 +700,6 @@
         private DevExpress.XtraReports.UI.XRTableCell vendorWebsite;
         private DevExpress.XtraReports.UI.XRTableCell vendorEmail;
         private DevExpress.XtraReports.UI.XRTableCell vendorPhone;
-        private DevExpress.XtraReports.UI.XRLabel thankYouLabel;
-        private DevExpress.XtraReports.UI.XRLabel heartLabel;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader2;
         private DevExpress.XtraReports.UI.XRTable invoiceInfoTable;
         private DevExpress.XtraReports.UI.XRTableRow invoiceDateRow;

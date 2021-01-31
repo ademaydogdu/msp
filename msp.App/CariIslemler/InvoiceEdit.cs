@@ -24,6 +24,7 @@ using Msp.App.Tanimlar;
 using Msp.Service.Service.Tanimlar;
 using Msp.Service.Service.Depot;
 using Msp.App.Depo_Stok;
+using Msp.App.Islemler;
 
 namespace Msp.App.CariIslemler
 {
@@ -53,12 +54,22 @@ namespace Msp.App.CariIslemler
 
         List<int> _deleteRow = new List<int>();
 
+        private bool BirimFiyatChance = false;
+
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
             new KDVTaxDto(1, "%0", 0.00, 0),
             new KDVTaxDto(2, "%1", 0.01, 1),
             new KDVTaxDto(3, "%8", 0.08, 8),
             new KDVTaxDto(4, "%18", 0.18, 18),
+        };
+
+        List<SelectIdValue> FaturaTuru = new List<SelectIdValue>
+        {
+            new SelectIdValue(1, "Alış Faturası"),
+            new SelectIdValue(2, "İade Faturası"),
+            new SelectIdValue(3, "Gider Faturası"),
+
         };
 
         #region Record
@@ -79,7 +90,7 @@ namespace Msp.App.CariIslemler
                     _return = true;
                 } 
             }
-            if (invoice == InvoiceType.AlımFaturası)
+            if (invoice == InvoiceType.SatisFaturasi)
             {
                 if (__dll_InvoiceOwner.EFaturaNo == null || __dll_InvoiceOwner.EFaturaNo == "")
                 {
@@ -88,6 +99,12 @@ namespace Msp.App.CariIslemler
 
                 }
             }
+            if(__dll_List_InoviceTrans.Any(x=>x.Quentity == 0))
+            {
+                XtraMessageBox.Show("Miktar Girilmeyen Satırlar Mevcuttur. Düzeltiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = true;
+            }
+
             return _return;
         }
 
@@ -95,14 +112,31 @@ namespace Msp.App.CariIslemler
         {
             try
             {
+                bs_InvoiceOwner.EndEdit();
+                bs_InvoiceTrans.EndEdit();
+
                 if (do_Validation()) return;
+
+                foreach (var item in __dll_List_InoviceTrans)
+                {
+                    if (_productlist.Where(x => x.PID == item.ProductId).FirstOrDefault().PFirstPrice.GetValueOrDefault() != item.BirimFiyat)
+                    {
+                        if(MspTool.get_Question("Birim Fiyatlarında Değişklikleri Mevcuttur. Değiştirilsin Mi?"))
+                        {
+                            BirimFiyatChance = true;
+                        }
+                    } 
+                }
+
                 if (MspTool.get_Question("Kaydedilecektir Onaylıyor musunuz?"))
                 {
                     var req = new InvoiceSaveRequest()
                     {
                         InvoiceOwner = __dll_InvoiceOwner,
                         InvoiceTrans = __dll_List_InoviceTrans,
-                        IsOrder = _IsOrders
+                        IsOrder = _IsOrders,
+                        _invoiceType = (int)invoice,
+                        BirimFiyatChance = BirimFiyatChance,                
                     };
                     var response = _repository.Run<InvoiceService, ActionResponse<InvoiceSaveRequest>>(x => x.Save_Inovice(req));
                     if (response.ResponseType != ResponseType.Ok)
@@ -125,8 +159,6 @@ namespace Msp.App.CariIslemler
             }
             catch (Exception)
             {
-
-                throw;
             }
 
         }
@@ -214,7 +246,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     bbi_İrsaliyeCagir.Enabled = true;
-
+                    bbi_Tahsilat.Caption = "Ödeme";
                     break;
                 case InvoiceType.SatisFaturasi:
                     this.Text = "Satış Faturası";
@@ -226,7 +258,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                     bbi_İrsaliyeCagir.Enabled = true;
-
+                    bbi_Tahsilat.Caption = "Tahsilat";
                     break;
                 case InvoiceType.AlisIrsaliye:
                     this.Text = "Alış İrsaliyesi";
@@ -237,6 +269,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     bbi_İrsaliyeCagir.Enabled = false;
+                    bbi_Tahsilat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     break;
                 case InvoiceType.SatisIrsaliye:
                     this.Text = "Satış İrsaliyesi";
@@ -247,6 +280,7 @@ namespace Msp.App.CariIslemler
                     lc_VadeTarih.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     lc_OdemeTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                     bbi_İrsaliyeCagir.Enabled = false;
+                    bbi_Tahsilat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     break;
                 default:
                     break;
@@ -270,6 +304,10 @@ namespace Msp.App.CariIslemler
             {
 
             }
+
+            txtFaturaTipi.Properties.DataSource = FaturaTuru;
+            txtFaturaTipi.Properties.ValueMember = "Id";
+            txtFaturaTipi.Properties.DisplayMember = "Value";
 
             _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             bs_Unit.DataSource = _list_UnitsDTO;
@@ -482,6 +520,17 @@ namespace Msp.App.CariIslemler
                 }
                 TopTotal();
             }
+        }
+
+        private void bbi_Tahsilat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKasaHareketi frm = new frmKasaHareketi();
+            frm.ShowDialog();
+        }
+
+        private void bbi_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

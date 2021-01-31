@@ -75,15 +75,28 @@ namespace Msp.Service.Service.Invoice
                             {
                                 item.InvoiceOwnerId = InvoiceOwnerRecId;
                                 _db.InvoiceTrans.Add(base.Map<InvoiceTransDTO, InvoiceTrans>(item));
-                                //var product = _db.products.FirstOrDefault(x => x.PID == item.ProductId);
-                                //if (product != null)
-                                //{
-                                //    Products updatePro = new Products();
-                                //    updatePro = product;
-                                //    updatePro.PTotal = updatePro.PTotal - item.ProductQuantity;
-                                //    _db.Entry(product).CurrentValues.SetValues(updatePro);
-                                //    _db.Entry(product).State = System.Data.Entity.EntityState.Modified;
-                                //}
+                                var product = _db.products.FirstOrDefault(x => x.PID == item.ProductId);
+                                if (product != null)
+                                {
+                                    Products updatePro = new Products();
+                                    updatePro = product;
+                                    if (model._invoiceType == 1)
+                                    {                             
+                                        updatePro.PTotal = updatePro.PTotal + item.Quentity;
+                                        if (model.BirimFiyatChance)
+                                        {
+                                            updatePro.PFirstPrice = item.BirimFiyat;
+                                        }
+                                        base.Insert_ProductMovement("Alım Faturası", product.PID, item.Quentity.GetValueOrDefault(), item.BirimFiyat.GetValueOrDefault(), _db);
+                                    }
+                                    if (model._invoiceType ==  2)
+                                    {
+                                        updatePro.PTotal = updatePro.PTotal - item.Quentity;
+                                        base.Insert_ProductMovement("Satış Faturası", product.PID, item.Quentity.GetValueOrDefault(), item.BirimFiyat.GetValueOrDefault(), _db);
+                                    }
+                                    _db.Entry(product).CurrentValues.SetValues(updatePro);
+                                    _db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                                }
                             }
                             else
                             {
@@ -141,6 +154,28 @@ namespace Msp.Service.Service.Invoice
                         if (record != null)
                         {
                             record.Deleted = true;
+
+                            var _InvoiceTrans = _db.InvoiceTrans.Where(x => x.InvoiceOwnerId == invoiceId).ToList();
+                            foreach (var item in _InvoiceTrans)
+                            {
+                                var product = _db.products.FirstOrDefault(x => x.PID == item.ProductId);
+                                if (product != null)
+                                {
+                                    Products updatePro = new Products();
+                                    updatePro = product;
+                                    if (record.InvoiceType == 1)
+                                    {
+                                        updatePro.PTotal = updatePro.PTotal - item.Quentity;
+                                    }
+                                    if (record.InvoiceType == 2)
+                                    {
+                                        updatePro.PTotal = updatePro.PTotal + item.Quentity;
+                                    }
+                                    base.Insert_ProductMovement("Fatura Silinmesi", product.PID, item.Quentity.GetValueOrDefault(), item.BirimFiyat.GetValueOrDefault(), _db);
+                                    _db.Entry(product).CurrentValues.SetValues(updatePro);
+                                    _db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                                }
+                            }
                             _db.Entry(record).CurrentValues.SetValues(record);
                             _db.Entry(record).State = System.Data.Entity.EntityState.Modified;
 

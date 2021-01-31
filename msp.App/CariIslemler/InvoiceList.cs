@@ -17,6 +17,7 @@ using Msp.Service.Service.Invoice;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Service.CurrentTransactions;
 using Msp.Service.Service.Depot;
+using Msp.App.Report;
 
 namespace Msp.App.CariIslemler
 {
@@ -164,6 +165,18 @@ namespace Msp.App.CariIslemler
         private void btnCurTranClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void bbi_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
+            if (oRow != null)
+            {
+                oRow._invoiceTrans = _repository.Run<InvoiceService, List<InvoiceTransDTO>>(x => x.Get_Edit_List_Trans(oRow.RecId));
+                frmPrint frm = new frmPrint();
+                frm.PrintInvoiceReport(oRow);
+                frm.ShowDialog();
+            }
         }
     }
 }
