@@ -93,5 +93,15 @@ namespace Msp.App.Satis
                 lblTotalDiscount.Text = Convert.ToString(Math.Round(TotalPrice - indirimTutar, 2));
             }
         }
+
+        private void txtTLIndirimTutar_EditValueChanged(object sender, EventArgs e)
+        {
+            if (TotalPrice > 0)
+            {
+                indirimTutar = Math.Round(Convert.ToDecimal(txtTLIndirimTutar.EditValue), 2);
+                lblTlIndirimTutar.Text = Convert.ToString(indirimTutar);
+                TotalTlDiscount.Text = Convert.ToString(Math.Round(TotalPrice - indirimTutar, 2));
+            }
+        }
     }
 }

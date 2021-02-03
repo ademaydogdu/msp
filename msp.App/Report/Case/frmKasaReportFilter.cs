@@ -110,7 +110,7 @@ namespace Msp.App.Report.Case
                     {
                         frmPrint frm = new frmPrint();
                         frm.PrintKasaHareketRaporu(caseMovements);
-                        frm.ShowDialog(); 
+                        frm.ShowDialog();
                     }
                 }
 
@@ -128,7 +128,7 @@ namespace Msp.App.Report.Case
                 {
                     companyId = AppMain.CompanyRecId,
                     BeginDate = dt_BaslangicDate.DateTime,
-                    EndDate = dt_BitisDate.DateTime,
+                    EndDate = new DateTime(dt_BitisDate.DateTime.Year, dt_BitisDate.DateTime.Month, dt_BitisDate.DateTime.Day, 23, 59, 0),
                     CaseId = Convert.ToInt32(lc_Case.EditValue)
                 };
 
