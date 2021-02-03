@@ -91,8 +91,15 @@ namespace Msp.App.Report.Case
 
                 if (FormType == 1)
                 {
-
-
+                    List<CaseBakiyeReportDTO> caseBakiye = _repository.Run<ReportService, List<CaseBakiyeReportDTO>>(x => x.Get_List_CaseBakiyeReport(filter));
+                    bs_CaseBakiye.DataSource = caseBakiye;
+                    gc_KasaBakiye.RefreshDataSource();
+                    if (caseBakiye.Count > 0)
+                    {
+                        frmPrint frm = new frmPrint();
+                        frm.PrintCaseBakiye(caseBakiye);
+                        frm.ShowDialog();
+                    }
                 }
                 if (FormType == 2)
                 {
@@ -127,7 +134,9 @@ namespace Msp.App.Report.Case
 
                 if (FormType == 1)
                 {
-
+                    List<CaseBakiyeReportDTO> caseBakiye = _repository.Run<ReportService, List<CaseBakiyeReportDTO>>(x => x.Get_List_CaseBakiyeReport(filter));
+                    bs_CaseBakiye.DataSource = caseBakiye;
+                    gc_KasaBakiye.RefreshDataSource();
                 }
                 if (FormType == 2)
                 {

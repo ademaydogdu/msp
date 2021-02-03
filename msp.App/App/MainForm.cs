@@ -474,7 +474,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(21, 1, 1, 15);
+            Version oVersionFB = new Version(21, 1, 1, 16);
             AppMain.MspVersion = oVersionFB;
 
             string AppPath = @"C:\Msp\ConnectString.txt";

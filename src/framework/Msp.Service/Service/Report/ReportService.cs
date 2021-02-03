@@ -51,6 +51,29 @@ namespace Msp.Service.Service.Report
                 x.CompanyRecId == filter.companyId && x.RecordDate >= filter.BeginDate && x.RecordDate <= filter.EndDate && x.CaseId == filter.CaseId).ToList());
             }
         }
+
+        public List<CaseBakiyeReportDTO> Get_List_CaseBakiyeReport(CaseReportFilter filter)
+        {
+            using (var _db = new MspDbContext())
+            {
+                string _sql = "Select SUM(Case When IslemTuru = 1 then Tutar else 0 end) as DonemGelir, SUM(Case When IslemTuru = 2 then Tutar else 0 end) as DonemGider, "
+                + " SUM(Case When IslemTuru = 2 then Tutar else 0 end) -SUM(Case When IslemTuru = 1 then Tutar else 0 end) as SonBakiye , CaseDefinition.CaseName "
+                + "   from CaseMovement " 
+                + "   Inner Join CaseDefinition on CaseDefinition.RecId = CaseMovement.CaseId "
+                + "where Deleted = 0 and RecordDate >= @BeginDate and RecordDate <= @EndDate and CaseId = @CaseId"
+                + "  Group By CaseDefinition.CaseName";
+                var _param = new SqlParameter[]
+                {
+                    new SqlParameter{ParameterName = "BeginDate", Value = filter.BeginDate },
+                    new SqlParameter{ParameterName = "EndDate", Value = filter.EndDate },
+                    new SqlParameter{ParameterName = "CaseId", Value = filter.CaseId }
+                };
+
+                return _db.Database.SqlQuery<CaseBakiyeReportDTO>(_sql, _param.ToArray()).ToList();
+            }
+        }
+
+
         #endregion
 
         #region StockHareketRaporu

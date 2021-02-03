@@ -76,6 +76,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bs_CaseBakiye = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_KasaHareket)).BeginInit();
@@ -103,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseBakiye)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -283,6 +285,7 @@
             // 
             // gc_KasaBakiye
             // 
+            this.gc_KasaBakiye.DataSource = this.bs_CaseBakiye;
             this.gc_KasaBakiye.Location = new System.Drawing.Point(194, 47);
             this.gc_KasaBakiye.MainView = this.gcv_KasaBakiye;
             this.gc_KasaBakiye.Name = "gc_KasaBakiye";
@@ -306,6 +309,9 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Dönem Çıkan";
+            this.gridColumn2.DisplayFormat.FormatString = "n2";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn2.FieldName = "DonemGider";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
@@ -313,6 +319,9 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Dönem Giren";
+            this.gridColumn1.DisplayFormat.FormatString = "n2";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "DonemGelir";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
@@ -320,6 +329,9 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Son Bakiye";
+            this.gridColumn3.DisplayFormat.FormatString = "n2";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn3.FieldName = "SonBakiye";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
@@ -556,6 +568,10 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // bs_CaseBakiye
+            // 
+            this.bs_CaseBakiye.DataSource = typeof(Msp.Models.Models.Report.CaseBakiyeReportDTO);
+            // 
             // frmKasaReportFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +611,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CaseBakiye)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -648,5 +665,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCompanyRecId;
         private DevExpress.XtraGrid.Columns.GridColumn colRecordUser;
         private DevExpress.XtraGrid.Columns.GridColumn colSaleOwnerId;
+        private System.Windows.Forms.BindingSource bs_CaseBakiye;
     }
 }

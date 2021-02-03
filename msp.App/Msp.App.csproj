@@ -498,6 +498,12 @@
     <Compile Include="Report\CariHesap\frmMutabakatFilter.Designer.cs">
       <DependentUpon>frmMutabakatFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Case\CaseBakiyeReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Case\CaseBakiyeReport.Designer.cs">
+      <DependentUpon>CaseBakiyeReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Case\frmKasaReportFilter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -995,6 +1001,9 @@
     <EmbeddedResource Include="Report\CariHesap\frmMutabakatFilter.resx">
       <DependentUpon>frmMutabakatFilter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Case\CaseBakiyeReport.resx">
+      <DependentUpon>CaseBakiyeReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Case\frmKasaReportFilter.resx">
       <DependentUpon>frmKasaReportFilter.cs</DependentUpon>
     </EmbeddedResource>
@@ -1194,6 +1203,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductGroupDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductMovementDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Report.CaseBakiyeReportDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Report.StockBakiyeReportDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />

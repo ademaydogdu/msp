@@ -77,6 +77,7 @@
     <Compile Include="Models\ProductMarkDTO.cs" />
     <Compile Include="Models\ProductMovementDTO.cs" />
     <Compile Include="Models\Product\ProductPrintRequest.cs" />
+    <Compile Include="Models\Report\CaseBakiyeReportDTO.cs" />
     <Compile Include="Models\Report\CaseReportFilter.cs" />
     <Compile Include="Models\Report\StockBakiyeReportDTO.cs" />
     <Compile Include="Models\Report\SumSaleStockDTO.cs" />

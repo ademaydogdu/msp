@@ -164,5 +164,15 @@ namespace Msp.App.Report
             report.CreateDocument();
         }
 
+        public void PrintCaseBakiye(List<CaseBakiyeReportDTO> data)
+        {
+            CaseBakiyeReport report = new CaseBakiyeReport();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
     }
 }
