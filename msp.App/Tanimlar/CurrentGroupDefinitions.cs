@@ -17,17 +17,17 @@ using Msp.Infrastructure;
 
 namespace Msp.App.Tanimlar
 {
-    public partial class frmPaymnetList : DevExpress.XtraEditors.XtraForm
+    public partial class CurrentGroupDefinitions : DevExpress.XtraEditors.XtraForm
     {
         Repository _repository;
-        public frmPaymnetList()
+        public CurrentGroupDefinitions()
         {
             InitializeComponent();
             _repository = new Repository();
         }
 
 
-        List<PaymentTypeDTO> __paymentTypes = new List<PaymentTypeDTO>();
+        List<CurrentGroupDefinitionsDTO> __CurrentGroupDefinitions = new List<CurrentGroupDefinitionsDTO>();
         MspTool oTool = new MspTool();
 
         #region Record
@@ -36,8 +36,8 @@ namespace Msp.App.Tanimlar
         {
             try
             {
-                __paymentTypes = _repository.Run<DepotStockService, List<PaymentTypeDTO>>(x => x.Get_List_Payment());
-                bs_PaymentType.DataSource = __paymentTypes;
+                __CurrentGroupDefinitions = _repository.Run<DepotStockService, List<CurrentGroupDefinitionsDTO>>(x => x.Get_List_CurrentGroupDefinitions());
+                bs_CurrentGroupDefinitions.DataSource = __CurrentGroupDefinitions;
             }
             catch (Exception ex)
             {
@@ -49,15 +49,15 @@ namespace Msp.App.Tanimlar
         {
             try
             {
-                foreach (var item in __paymentTypes)
+                foreach (var item in __CurrentGroupDefinitions)
                 {
-                    if (__paymentTypes.Where(x => x.Remark == item.Remark).Count() > 1)
+                    if (__CurrentGroupDefinitions.Where(x => x.Remark == item.Remark).Count() > 1)
                     {
                         XtraMessageBox.Show("Mükerrer Kayıt var. Lütfen Kontrol Ediniz.");
                         return;
                     }
                 }
-                var response = _repository.Run<DepotStockService, ActionResponse<List<PaymentTypeDTO>>>(x => x.SavePayment(__paymentTypes));
+                var response = _repository.Run<DepotStockService, ActionResponse<List<CurrentGroupDefinitionsDTO>>>(x => x.Save__CurrentGroupDefinitions(__CurrentGroupDefinitions));
                 if (response.ResponseType != ResponseType.Ok)
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -95,7 +95,7 @@ namespace Msp.App.Tanimlar
 
         private void bbi_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.PaymentType, AppMain.CompanyRecId))
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.CurrentGroupDefinitions, AppMain.CompanyRecId))
             {
                 return;
             }
@@ -111,20 +111,14 @@ namespace Msp.App.Tanimlar
             PaymentTypeDTO oRow = (PaymentTypeDTO)gridView1.GetFocusedRow();
             if (oRow != null)
             {
-                if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.PaymentType, AppMain.CompanyRecId))
+                if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.CurrentGroupDefinitions, AppMain.CompanyRecId))
                 {
-                    return;
-                }
-
-                if (oRow.Remark.Trim() == "Nakit" || oRow.Remark.Trim() == "Pos" || oRow.Remark.Trim() == "Pos & Nakit")
-                {
-                    XtraMessageBox.Show("Silinemiycek Kayıtdır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 if (oTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
                 {
-                    var result = _repository.Run<DepotStockService, ActionResponse<PaymentTypeDTO>>(x => x.DeletePayment(oRow.RecId));
+                    var result = _repository.Run<DepotStockService, ActionResponse<CurrentGroupDefinitionsDTO>>(x => x.Delete__CurrentGroupDefinitions(oRow.RecId));
                     do_refresh();
                 }
             }

@@ -362,13 +362,16 @@ namespace Msp.App.CariIslemler
         {
             if (_currentTransactionsList.Count > 0)
             {
-                var cariHesap = _currentTransactionsList.FirstOrDefault(x => x.CurID == Convert.ToInt32(grp_CariId.EditValue));
-                if (cariHesap != null)
+                if (!string.IsNullOrEmpty(Convert.ToString(grp_CariId.EditValue)))
                 {
-                    txtAdres.EditValue = cariHesap.CurAdress + " \n " + cariHesap.CurDistrict + "/" + cariHesap.CurCity + "/" + cariHesap.CurCountryName;
-                    txtVergiNo.EditValue = cariHesap.CurTaxNo;
-                    txtVergiDaires.EditValue = cariHesap.CurTaxOffice;
-                } 
+                    var cariHesap = _currentTransactionsList.FirstOrDefault(x => x.CurID == Convert.ToInt32(grp_CariId.EditValue));
+                    if (cariHesap != null)
+                    {
+                        txtAdres.EditValue = cariHesap.CurAdress + " \n " + cariHesap.CurDistrict + "/" + cariHesap.CurCity + "/" + cariHesap.CurCountryName;
+                        txtVergiNo.EditValue = cariHesap.CurTaxNo;
+                        txtVergiDaires.EditValue = cariHesap.CurTaxOffice;
+                    }  
+                }
             }
         }
 

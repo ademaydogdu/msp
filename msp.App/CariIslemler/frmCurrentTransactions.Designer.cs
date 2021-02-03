@@ -33,13 +33,21 @@
             this.gcvCurTransaction = new DevExpress.XtraGrid.GridControl();
             this.CurTranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gcv_CurTrans = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCurCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurAuthPersonName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnCurTranClose = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -52,14 +60,6 @@
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colCurCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurAuthPersonName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCurEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcvCurTransaction)).BeginInit();
@@ -111,6 +111,41 @@
             this.gcv_CurTrans.OptionsView.ColumnAutoWidth = false;
             this.gcv_CurTrans.OptionsView.ShowAutoFilterRow = true;
             this.gcv_CurTrans.OptionsView.ShowGroupPanel = false;
+            this.gcv_CurTrans.DoubleClick += new System.EventHandler(this.gcv_CurTrans_DoubleClick);
+            // 
+            // colCurCode
+            // 
+            this.colCurCode.Caption = "Cari Kod";
+            this.colCurCode.FieldName = "CurCode";
+            this.colCurCode.Name = "colCurCode";
+            this.colCurCode.Visible = true;
+            this.colCurCode.VisibleIndex = 0;
+            this.colCurCode.Width = 117;
+            // 
+            // colCurAccountName
+            // 
+            this.colCurAccountName.Caption = "Cari Unvan";
+            this.colCurAccountName.FieldName = "CurAccountName";
+            this.colCurAccountName.Name = "colCurAccountName";
+            this.colCurAccountName.Visible = true;
+            this.colCurAccountName.VisibleIndex = 1;
+            this.colCurAccountName.Width = 121;
+            // 
+            // colCurAuthPersonName
+            // 
+            this.colCurAuthPersonName.Caption = "Yetkili";
+            this.colCurAuthPersonName.FieldName = "CurAuthPersonName";
+            this.colCurAuthPersonName.Name = "colCurAuthPersonName";
+            this.colCurAuthPersonName.Visible = true;
+            this.colCurAuthPersonName.VisibleIndex = 2;
+            // 
+            // colCurEmail
+            // 
+            this.colCurEmail.Caption = "E-Mail";
+            this.colCurEmail.FieldName = "CurEmail";
+            this.colCurEmail.Name = "colCurEmail";
+            this.colCurEmail.Visible = true;
+            this.colCurEmail.VisibleIndex = 3;
             // 
             // barManager1
             // 
@@ -162,14 +197,6 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Caption = "Yenile";
-            this.btnRefresh.Id = 9;
-            this.btnRefresh.ImageOptions.ImageIndex = 43;
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
-            // 
             // btnNewAccount
             // 
             this.btnNewAccount.Caption = "Yeni Hesap";
@@ -194,12 +221,54 @@
             this.btnRemAccount.Name = "btnRemAccount";
             this.btnRemAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemAccount_ItemClick);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Caption = "Yenile";
+            this.btnRefresh.Id = 9;
+            this.btnRefresh.ImageOptions.ImageIndex = 43;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
+            // 
             // btnCurTranClose
             // 
             this.btnCurTranClose.Caption = "Kapat";
             this.btnCurTranClose.Id = 7;
             this.btnCurTranClose.ImageOptions.ImageIndex = 1;
             this.btnCurTranClose.Name = "btnCurTranClose";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Müşteri Çeki Al";
+            this.barButtonItem3.Id = 10;
+            this.barButtonItem3.ImageOptions.ImageIndex = 50;
+            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Firma Çeki Yaz";
+            this.barButtonItem4.Id = 11;
+            this.barButtonItem4.ImageOptions.ImageIndex = 51;
+            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Cari Hesap Ekstreleri";
+            this.barButtonItem5.Id = 12;
+            this.barButtonItem5.ImageOptions.ImageIndex = 52;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Mutabakat Mektubu";
+            this.barButtonItem6.Id = 13;
+            this.barButtonItem6.ImageOptions.ImageIndex = 53;
+            this.barButtonItem6.Name = "barButtonItem6";
             // 
             // barDockControlTop
             // 
@@ -343,74 +412,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(867, 388);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // colCurCode
-            // 
-            this.colCurCode.Caption = "Cari Kod";
-            this.colCurCode.FieldName = "CurCode";
-            this.colCurCode.Name = "colCurCode";
-            this.colCurCode.Visible = true;
-            this.colCurCode.VisibleIndex = 0;
-            this.colCurCode.Width = 117;
-            // 
-            // colCurAccountName
-            // 
-            this.colCurAccountName.Caption = "Cari Unvan";
-            this.colCurAccountName.FieldName = "CurAccountName";
-            this.colCurAccountName.Name = "colCurAccountName";
-            this.colCurAccountName.Visible = true;
-            this.colCurAccountName.VisibleIndex = 1;
-            this.colCurAccountName.Width = 121;
-            // 
-            // colCurAuthPersonName
-            // 
-            this.colCurAuthPersonName.Caption = "Yetkili";
-            this.colCurAuthPersonName.FieldName = "CurAuthPersonName";
-            this.colCurAuthPersonName.Name = "colCurAuthPersonName";
-            this.colCurAuthPersonName.Visible = true;
-            this.colCurAuthPersonName.VisibleIndex = 2;
-            // 
-            // colCurEmail
-            // 
-            this.colCurEmail.Caption = "E-Mail";
-            this.colCurEmail.FieldName = "CurEmail";
-            this.colCurEmail.Name = "colCurEmail";
-            this.colCurEmail.Visible = true;
-            this.colCurEmail.VisibleIndex = 3;
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Müşteri Çeki Al";
-            this.barButtonItem3.Id = 10;
-            this.barButtonItem3.ImageOptions.ImageIndex = 50;
-            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Firma Çeki Yaz";
-            this.barButtonItem4.Id = 11;
-            this.barButtonItem4.ImageOptions.ImageIndex = 51;
-            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "Cari Hesap Ekstreleri";
-            this.barButtonItem5.Id = 12;
-            this.barButtonItem5.ImageOptions.ImageIndex = 52;
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Mutabakat Mektubu";
-            this.barButtonItem6.Id = 13;
-            this.barButtonItem6.ImageOptions.ImageIndex = 53;
-            this.barButtonItem6.Name = "barButtonItem6";
             // 
             // frmCurrentTransactions
             // 

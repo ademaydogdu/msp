@@ -50,6 +50,14 @@ namespace Msp.Service.Service.Invoice
                 {
                     try
                     {
+                        if (_db.InvoiceOwner.Any(x => x.FicheDocumentNo == model.InvoiceOwner.FicheDocumentNo && x.RecId == 0 && x.Deleted == false))
+                        {
+                            response.Message = "Aynı Fatura No'dan vardır.";
+                            response.ResponseType = ResponseType.Error;
+                            return response;
+                        }
+
+
                         int InvoiceOwnerRecId = 0;
                         if (response.Response.InvoiceOwner.RecId == 0)
                         {

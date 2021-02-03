@@ -105,5 +105,10 @@ namespace msp.App
         {
             do_refresh();
         }
+
+        private void gcv_CurTrans_DoubleClick(object sender, EventArgs e)
+        {
+            do_Edit();
+        }
     }
 }

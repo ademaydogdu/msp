@@ -119,6 +119,7 @@
             this.gcv_Depot.OptionsView.ColumnAutoWidth = false;
             this.gcv_Depot.OptionsView.ShowAutoFilterRow = true;
             this.gcv_Depot.OptionsView.ShowGroupPanel = false;
+            this.gcv_Depot.DoubleClick += new System.EventHandler(this.gcv_Depot_DoubleClick);
             // 
             // colDID
             // 

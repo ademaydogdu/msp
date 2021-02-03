@@ -62,6 +62,7 @@ namespace Msp.Models.Models
         public string CurIdentNo { get; set; }
         public string CurTitle { get; set; }
         public int? CompanyRecId { get; set; }
+        public int? GroupId { get; set; }
 
     }
 }

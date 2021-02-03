@@ -35,6 +35,16 @@ namespace Msp.App.Settings
             bs_companyList.DataSource = _List_Company;
         }
 
+        private void do_edit()
+        {
+            CompanyDTO oRow = (CompanyDTO)gcv_company.GetFocusedRow();
+            if (oRow != null)
+            {
+                FrmCompanyEdit _Form = new FrmCompanyEdit();
+                _Form._FormOpenType = Infrastructure.FormOpenType.Edit;
+                _Form.Show(oRow.RecId);
+            }
+        }
 
         private void FrmCompany_Load(object sender, EventArgs e)
         {
@@ -56,13 +66,7 @@ namespace Msp.App.Settings
         #region Form_Button
         private void bbi_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CompanyDTO oRow = (CompanyDTO)gcv_company.GetFocusedRow();
-            if (oRow != null)
-            {
-                FrmCompanyEdit _Form = new FrmCompanyEdit();
-                _Form._FormOpenType = Infrastructure.FormOpenType.Edit;
-                _Form.Show(oRow.RecId);
-            }
+            do_edit();
         }
         private void bbi_New_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -95,6 +99,11 @@ namespace Msp.App.Settings
         {
             mspTool.Save_GridControl(this.Name, gc_company);
 
+        }
+
+        private void gcv_company_DoubleClick(object sender, EventArgs e)
+        {
+            do_edit();
         }
     }
 }

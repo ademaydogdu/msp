@@ -52,6 +52,8 @@ namespace Msp.App.Depo_Stok
             bs_Depot.DataSource = _depotList;
         }
 
+
+
         #region Edit
         public void do_Edit()
         {
@@ -120,6 +122,11 @@ namespace Msp.App.Depo_Stok
         private void frmDepo_FormClosing(object sender, FormClosingEventArgs e)
         {
             mspTool.Save_GridControl(this.Name, gridControl1);
+        }
+
+        private void gcv_Depot_DoubleClick(object sender, EventArgs e)
+        {
+            do_Edit();
         }
     }
 }

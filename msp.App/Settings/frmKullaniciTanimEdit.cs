@@ -34,7 +34,9 @@ namespace Msp.App.Settings
         List<SelectIdValue> tblForm = new List<SelectIdValue>()
         {
             new SelectIdValue(1, "Ürün Kartı"),
-            new SelectIdValue(2, "Satış")
+            new SelectIdValue(2, "Satış"),
+            new SelectIdValue(3, "Ödeme Tipi Tanımları"),
+            new SelectIdValue(4, "Cari Grup Tanımları"),
         };
 
         public void Show(string _UserCode)

@@ -1811,6 +1811,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "InvoiceEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvoiceEdit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InvoiceEdit_FormClosing);
             this.Load += new System.EventHandler(this.InvoiceEdit_Load);

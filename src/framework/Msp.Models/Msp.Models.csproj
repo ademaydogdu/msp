@@ -54,6 +54,7 @@
     <Compile Include="Models\CompanyDTO.cs" />
     <Compile Include="Models\CTransactionsDTO.cs" />
     <Compile Include="Models\CurrencyTypeDTO.cs" />
+    <Compile Include="Models\CurrentGroupDefinitionsDTO.cs" />
     <Compile Include="Models\CustomersDTO.cs" />
     <Compile Include="Models\Daily\DailyOwnerDTO.cs" />
     <Compile Include="Models\Daily\DailyRequest.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Models\ProductMovementDTO.cs" />
     <Compile Include="Models\Product\ProductPrintRequest.cs" />
     <Compile Include="Models\Report\CaseReportFilter.cs" />
+    <Compile Include="Models\Report\StockBakiyeReportDTO.cs" />
     <Compile Include="Models\Report\SumSaleStockDTO.cs" />
     <Compile Include="Models\SaleBarcodCreateDTO.cs" />
     <Compile Include="Models\Sale\SaleOwnerDTO.cs" />

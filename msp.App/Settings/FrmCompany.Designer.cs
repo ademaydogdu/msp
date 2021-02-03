@@ -186,6 +186,7 @@
             this.gcv_company.OptionsBehavior.Editable = false;
             this.gcv_company.OptionsView.ColumnAutoWidth = false;
             this.gcv_company.OptionsView.ShowGroupPanel = false;
+            this.gcv_company.DoubleClick += new System.EventHandler(this.gcv_company_DoubleClick);
             // 
             // colCompanyCode
             // 

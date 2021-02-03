@@ -46,7 +46,9 @@ namespace Msp.Infrastructure
     public enum DocumentType
     {
         StockList = 1,
-        Satis = 2
+        Satis = 2,
+        PaymentType = 3,
+        CurrentGroupDefinitions = 4
     }
 
     public enum DeleteForm

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.bankNameTE = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_BankDetails = new System.Windows.Forms.BindingSource(this.components);
             this.docNoTE = new DevExpress.XtraEditors.TextEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.docDescTE = new DevExpress.XtraEditors.TextEdit();
@@ -59,10 +60,10 @@
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.bbi_Delete = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
-            this.bs_BankDetails = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bankNameTE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_BankDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docNoTE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
@@ -83,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_BankEntries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_BankDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -118,6 +118,10 @@
             this.bankNameTE.StyleController = this.layoutControl1;
             this.bankNameTE.TabIndex = 14;
             this.bankNameTE.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.bankNameTE_ButtonClick);
+            // 
+            // bs_BankDetails
+            // 
+            this.bs_BankDetails.DataSource = typeof(Msp.Models.Models.BanksDTO);
             // 
             // docNoTE
             // 
@@ -453,10 +457,6 @@
             this.bbi_Refresh.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Refresh.Name = "bbi_Refresh";
             // 
-            // bs_BankDetails
-            // 
-            this.bs_BankDetails.DataSource = typeof(Msp.Models.Models.BanksDTO);
-            // 
             // frmBankEntryEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,10 +469,11 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmBankEntryEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBankEntryEdit";
+            this.Text = "Banka";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bankNameTE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_BankDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docNoTE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
@@ -493,7 +494,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_BankEntries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_BankDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -82,6 +82,21 @@ namespace Msp.App.CariIslemler
         }
 
 
+        private void do_edit()
+        {
+            OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
+            if (oRow.IrsaliyeId > 0) { XtraMessageBox.Show("Kayıt İrsaliyeleştirilmiştir. İşlem Yapılamaz. Ön İzleme ile açılabilir...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
+            if (oRow != null)
+            {
+                OrderEdit frm = new OrderEdit();
+                frm.MdiParent = this.MdiParent;
+                frm._FormOpenType = FormOpenType.Edit;
+                frm.RecId = oRow.RecId;
+                frm.OrderType = orderType;
+                frm.Show();
+            }
+        }
+
         #endregion
 
         #region Form
@@ -172,17 +187,7 @@ namespace Msp.App.CariIslemler
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
-            if(oRow.IrsaliyeId > 0) { XtraMessageBox.Show("Kayıt İrsaliyeleştirilmiştir. İşlem Yapılamaz. Ön İzleme ile açılabilir...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information); return;  }
-            if (oRow != null)
-            {
-                OrderEdit frm = new OrderEdit();
-                frm.MdiParent = this.MdiParent;
-                frm._FormOpenType = FormOpenType.Edit;
-                frm.RecId = oRow.RecId;
-                frm.OrderType = orderType;
-                frm.Show();
-            }
+            do_edit();
         }
 
         private void bbi_Refresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -229,6 +234,11 @@ namespace Msp.App.CariIslemler
                 frm.OrderType = orderType;
                 frm.Show();
             }
+        }
+
+        private void gcv_OrderList_DoubleClick(object sender, EventArgs e)
+        {
+            do_edit();
         }
     }
 }

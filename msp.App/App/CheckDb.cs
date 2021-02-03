@@ -1191,6 +1191,34 @@ namespace Msp.App.App
             Application.DoEvents();
             #endregion
 
+            #region CurrentGroupDefinitions
+            if (tblTableList.Rows.Contains("CurrentGroupDefinitions") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[CurrentGroupDefinitions]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [Remark] [nvarchar] (50) NULL, "
+                + "  CONSTRAINT[PK_CurrentGroupDefinitions] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                + " ) ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[CurrentGroupDefinitions]([Remark]) VALUES ('Bayi')";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[CurrentGroupDefinitions]([Remark]) VALUES ('Müşteri')";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[CurrentGroupDefinitions]([Remark]) VALUES ('Tedarikçi')";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "INSERT INTO [dbo].[CurrentGroupDefinitions]([Remark]) VALUES ('Personel')";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
             #endregion
 
             #region CreateColumn
@@ -1301,6 +1329,16 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update(); Application.DoEvents();
 
+            #endregion
+
+            #region CTransactions
+            sCommand.CommandText = "Select top 1 * from CTransactions  WITH (nolock) ";
+            DataTable tblCTransactions = ExecuteSelectCommand(sCommand);
+            if (tblCTransactions.Columns.Contains("GroupId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE CTransactions ADD GroupId int NULL";
+                ExecuteNonQuery(sCommand);
+            }
             #endregion
 
             #endregion

@@ -30,6 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gc_Invoice = new DevExpress.XtraGrid.GridControl();
+            this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
+            this.gcv_Invoice = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colFicDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_InvoiceType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colFichTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFicheType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFicheDocumentNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFicheRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_cari = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colVadeTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDepoName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_depot = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colIndirim = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiğerMasraflar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
@@ -49,39 +70,217 @@
             this.btnSeaAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.btnRegInfo = new DevExpress.XtraBars.BarButtonItem();
-            this.gc_Invoice = new DevExpress.XtraGrid.GridControl();
             this.bs_InvoiceTrans = new System.Windows.Forms.BindingSource(this.components);
-            this.gcv_Invoice = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colFicDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colInvoiceType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rp_InvoiceType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colFichTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFicheType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFicheDocumentNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFicheRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCariRecId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rp_cari = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colVadeTarih = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDepoName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rp_depot = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colIndirim = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colToplamKDV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiğerMasraflar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceTrans)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_cari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_depot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceTrans)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_Invoice;
+            this.gridView1.Name = "gridView1";
+            // 
+            // gc_Invoice
+            // 
+            this.gc_Invoice.DataSource = this.bs_Invoice;
+            this.gc_Invoice.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.gridView1;
+            gridLevelNode1.RelationName = "_invoiceTrans";
+            this.gc_Invoice.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gc_Invoice.Location = new System.Drawing.Point(0, 0);
+            this.gc_Invoice.MainView = this.gcv_Invoice;
+            this.gc_Invoice.MenuManager = this.barManager1;
+            this.gc_Invoice.Name = "gc_Invoice";
+            this.gc_Invoice.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rp_InvoiceType,
+            this.rp_cari,
+            this.rp_depot});
+            this.gc_Invoice.Size = new System.Drawing.Size(950, 536);
+            this.gc_Invoice.TabIndex = 5;
+            this.gc_Invoice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_Invoice,
+            this.gridView1});
+            // 
+            // bs_Invoice
+            // 
+            this.bs_Invoice.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceOwnerDTO);
+            // 
+            // gcv_Invoice
+            // 
+            this.gcv_Invoice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colFicDate,
+            this.colInvoiceType,
+            this.colFichTime,
+            this.colFicheType,
+            this.colFicheDocumentNo,
+            this.colFicheRemark,
+            this.colCariRecId,
+            this.colVadeTarih,
+            this.colDepoName,
+            this.colIndirim,
+            this.colAraToplam,
+            this.colToplamKDV,
+            this.colDiğerMasraflar,
+            this.colGenelToplam});
+            this.gcv_Invoice.GridControl = this.gc_Invoice;
+            this.gcv_Invoice.Name = "gcv_Invoice";
+            this.gcv_Invoice.OptionsBehavior.Editable = false;
+            this.gcv_Invoice.OptionsView.ColumnAutoWidth = false;
+            this.gcv_Invoice.OptionsView.ShowAutoFilterRow = true;
+            this.gcv_Invoice.OptionsView.ShowFooter = true;
+            this.gcv_Invoice.OptionsView.ShowGroupPanel = false;
+            this.gcv_Invoice.DoubleClick += new System.EventHandler(this.gcv_Invoice_DoubleClick);
+            // 
+            // colFicDate
+            // 
+            this.colFicDate.Caption = "Fatura Tarihi";
+            this.colFicDate.FieldName = "FicDate";
+            this.colFicDate.Name = "colFicDate";
+            this.colFicDate.Visible = true;
+            this.colFicDate.VisibleIndex = 0;
+            // 
+            // colInvoiceType
+            // 
+            this.colInvoiceType.ColumnEdit = this.rp_InvoiceType;
+            this.colInvoiceType.FieldName = "InvoiceType";
+            this.colInvoiceType.Name = "colInvoiceType";
+            this.colInvoiceType.Visible = true;
+            this.colInvoiceType.VisibleIndex = 13;
+            // 
+            // rp_InvoiceType
+            // 
+            this.rp_InvoiceType.AutoHeight = false;
+            this.rp_InvoiceType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_InvoiceType.Name = "rp_InvoiceType";
+            // 
+            // colFichTime
+            // 
+            this.colFichTime.Caption = "Fatura Saat";
+            this.colFichTime.FieldName = "FichTime";
+            this.colFichTime.Name = "colFichTime";
+            this.colFichTime.Visible = true;
+            this.colFichTime.VisibleIndex = 1;
+            // 
+            // colFicheType
+            // 
+            this.colFicheType.FieldName = "FicheType";
+            this.colFicheType.Name = "colFicheType";
+            this.colFicheType.Visible = true;
+            this.colFicheType.VisibleIndex = 2;
+            // 
+            // colFicheDocumentNo
+            // 
+            this.colFicheDocumentNo.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colFicheDocumentNo.AppearanceCell.Options.UseFont = true;
+            this.colFicheDocumentNo.Caption = "Fatura Belge No";
+            this.colFicheDocumentNo.FieldName = "FicheDocumentNo";
+            this.colFicheDocumentNo.Name = "colFicheDocumentNo";
+            this.colFicheDocumentNo.Visible = true;
+            this.colFicheDocumentNo.VisibleIndex = 3;
+            // 
+            // colFicheRemark
+            // 
+            this.colFicheRemark.Caption = "Fatura Açıklama";
+            this.colFicheRemark.FieldName = "FicheRemark";
+            this.colFicheRemark.Name = "colFicheRemark";
+            this.colFicheRemark.Visible = true;
+            this.colFicheRemark.VisibleIndex = 4;
+            // 
+            // colCariRecId
+            // 
+            this.colCariRecId.Caption = "Cari Hesap Adı";
+            this.colCariRecId.ColumnEdit = this.rp_cari;
+            this.colCariRecId.FieldName = "CariRecId";
+            this.colCariRecId.Name = "colCariRecId";
+            this.colCariRecId.Visible = true;
+            this.colCariRecId.VisibleIndex = 5;
+            // 
+            // rp_cari
+            // 
+            this.rp_cari.AutoHeight = false;
+            this.rp_cari.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_cari.Name = "rp_cari";
+            this.rp_cari.NullText = "";
+            // 
+            // colVadeTarih
+            // 
+            this.colVadeTarih.FieldName = "VadeTarih";
+            this.colVadeTarih.Name = "colVadeTarih";
+            this.colVadeTarih.Visible = true;
+            this.colVadeTarih.VisibleIndex = 6;
+            // 
+            // colDepoName
+            // 
+            this.colDepoName.Caption = "Depo Adı";
+            this.colDepoName.ColumnEdit = this.rp_depot;
+            this.colDepoName.FieldName = "DepoName";
+            this.colDepoName.Name = "colDepoName";
+            this.colDepoName.Visible = true;
+            this.colDepoName.VisibleIndex = 7;
+            // 
+            // rp_depot
+            // 
+            this.rp_depot.AutoHeight = false;
+            this.rp_depot.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_depot.Name = "rp_depot";
+            this.rp_depot.NullText = "";
+            // 
+            // colIndirim
+            // 
+            this.colIndirim.DisplayFormat.FormatString = "n2";
+            this.colIndirim.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colIndirim.FieldName = "Indirim";
+            this.colIndirim.Name = "colIndirim";
+            this.colIndirim.Visible = true;
+            this.colIndirim.VisibleIndex = 8;
+            // 
+            // colAraToplam
+            // 
+            this.colAraToplam.DisplayFormat.FormatString = "n2";
+            this.colAraToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAraToplam.FieldName = "AraToplam";
+            this.colAraToplam.Name = "colAraToplam";
+            this.colAraToplam.Visible = true;
+            this.colAraToplam.VisibleIndex = 9;
+            // 
+            // colToplamKDV
+            // 
+            this.colToplamKDV.DisplayFormat.FormatString = "n2";
+            this.colToplamKDV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colToplamKDV.FieldName = "ToplamKDV";
+            this.colToplamKDV.Name = "colToplamKDV";
+            this.colToplamKDV.Visible = true;
+            this.colToplamKDV.VisibleIndex = 10;
+            // 
+            // colDiğerMasraflar
+            // 
+            this.colDiğerMasraflar.DisplayFormat.FormatString = "n2";
+            this.colDiğerMasraflar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colDiğerMasraflar.FieldName = "DiğerMasraflar";
+            this.colDiğerMasraflar.Name = "colDiğerMasraflar";
+            this.colDiğerMasraflar.Visible = true;
+            this.colDiğerMasraflar.VisibleIndex = 11;
+            // 
+            // colGenelToplam
+            // 
+            this.colGenelToplam.DisplayFormat.FormatString = "n2";
+            this.colGenelToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colGenelToplam.FieldName = "GenelToplam";
+            this.colGenelToplam.Name = "colGenelToplam";
+            this.colGenelToplam.Visible = true;
+            this.colGenelToplam.VisibleIndex = 12;
             // 
             // barManager1
             // 
@@ -264,207 +463,9 @@
             this.btnRegInfo.ImageOptions.ImageIndex = 11;
             this.btnRegInfo.Name = "btnRegInfo";
             // 
-            // gc_Invoice
-            // 
-            this.gc_Invoice.DataSource = this.bs_Invoice;
-            this.gc_Invoice.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.gridView1;
-            gridLevelNode1.RelationName = "_invoiceTrans";
-            this.gc_Invoice.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gc_Invoice.Location = new System.Drawing.Point(0, 0);
-            this.gc_Invoice.MainView = this.gcv_Invoice;
-            this.gc_Invoice.MenuManager = this.barManager1;
-            this.gc_Invoice.Name = "gc_Invoice";
-            this.gc_Invoice.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.rp_InvoiceType,
-            this.rp_cari,
-            this.rp_depot});
-            this.gc_Invoice.Size = new System.Drawing.Size(950, 536);
-            this.gc_Invoice.TabIndex = 5;
-            this.gc_Invoice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gcv_Invoice,
-            this.gridView1});
-            // 
             // bs_InvoiceTrans
             // 
             this.bs_InvoiceTrans.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceTransDTO);
-            // 
-            // gcv_Invoice
-            // 
-            this.gcv_Invoice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colFicDate,
-            this.colInvoiceType,
-            this.colFichTime,
-            this.colFicheType,
-            this.colFicheDocumentNo,
-            this.colFicheRemark,
-            this.colCariRecId,
-            this.colVadeTarih,
-            this.colDepoName,
-            this.colIndirim,
-            this.colAraToplam,
-            this.colToplamKDV,
-            this.colDiğerMasraflar,
-            this.colGenelToplam});
-            this.gcv_Invoice.GridControl = this.gc_Invoice;
-            this.gcv_Invoice.Name = "gcv_Invoice";
-            this.gcv_Invoice.OptionsBehavior.Editable = false;
-            this.gcv_Invoice.OptionsView.ColumnAutoWidth = false;
-            this.gcv_Invoice.OptionsView.ShowAutoFilterRow = true;
-            this.gcv_Invoice.OptionsView.ShowFooter = true;
-            this.gcv_Invoice.OptionsView.ShowGroupPanel = false;
-            // 
-            // colFicDate
-            // 
-            this.colFicDate.Caption = "Fatura Tarihi";
-            this.colFicDate.FieldName = "FicDate";
-            this.colFicDate.Name = "colFicDate";
-            this.colFicDate.Visible = true;
-            this.colFicDate.VisibleIndex = 0;
-            // 
-            // colInvoiceType
-            // 
-            this.colInvoiceType.ColumnEdit = this.rp_InvoiceType;
-            this.colInvoiceType.FieldName = "InvoiceType";
-            this.colInvoiceType.Name = "colInvoiceType";
-            this.colInvoiceType.Visible = true;
-            this.colInvoiceType.VisibleIndex = 13;
-            // 
-            // rp_InvoiceType
-            // 
-            this.rp_InvoiceType.AutoHeight = false;
-            this.rp_InvoiceType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_InvoiceType.Name = "rp_InvoiceType";
-            // 
-            // colFichTime
-            // 
-            this.colFichTime.Caption = "Fatura Saat";
-            this.colFichTime.FieldName = "FichTime";
-            this.colFichTime.Name = "colFichTime";
-            this.colFichTime.Visible = true;
-            this.colFichTime.VisibleIndex = 1;
-            // 
-            // colFicheType
-            // 
-            this.colFicheType.FieldName = "FicheType";
-            this.colFicheType.Name = "colFicheType";
-            this.colFicheType.Visible = true;
-            this.colFicheType.VisibleIndex = 2;
-            // 
-            // colFicheDocumentNo
-            // 
-            this.colFicheDocumentNo.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.colFicheDocumentNo.AppearanceCell.Options.UseFont = true;
-            this.colFicheDocumentNo.Caption = "Fatura Belge No";
-            this.colFicheDocumentNo.FieldName = "FicheDocumentNo";
-            this.colFicheDocumentNo.Name = "colFicheDocumentNo";
-            this.colFicheDocumentNo.Visible = true;
-            this.colFicheDocumentNo.VisibleIndex = 3;
-            // 
-            // colFicheRemark
-            // 
-            this.colFicheRemark.Caption = "Fatura Açıklama";
-            this.colFicheRemark.FieldName = "FicheRemark";
-            this.colFicheRemark.Name = "colFicheRemark";
-            this.colFicheRemark.Visible = true;
-            this.colFicheRemark.VisibleIndex = 4;
-            // 
-            // colCariRecId
-            // 
-            this.colCariRecId.Caption = "Cari Hesap Adı";
-            this.colCariRecId.ColumnEdit = this.rp_cari;
-            this.colCariRecId.FieldName = "CariRecId";
-            this.colCariRecId.Name = "colCariRecId";
-            this.colCariRecId.Visible = true;
-            this.colCariRecId.VisibleIndex = 5;
-            // 
-            // rp_cari
-            // 
-            this.rp_cari.AutoHeight = false;
-            this.rp_cari.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_cari.Name = "rp_cari";
-            this.rp_cari.NullText = "";
-            // 
-            // colVadeTarih
-            // 
-            this.colVadeTarih.FieldName = "VadeTarih";
-            this.colVadeTarih.Name = "colVadeTarih";
-            this.colVadeTarih.Visible = true;
-            this.colVadeTarih.VisibleIndex = 6;
-            // 
-            // colDepoName
-            // 
-            this.colDepoName.Caption = "Depo Adı";
-            this.colDepoName.ColumnEdit = this.rp_depot;
-            this.colDepoName.FieldName = "DepoName";
-            this.colDepoName.Name = "colDepoName";
-            this.colDepoName.Visible = true;
-            this.colDepoName.VisibleIndex = 7;
-            // 
-            // rp_depot
-            // 
-            this.rp_depot.AutoHeight = false;
-            this.rp_depot.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_depot.Name = "rp_depot";
-            this.rp_depot.NullText = "";
-            // 
-            // colIndirim
-            // 
-            this.colIndirim.DisplayFormat.FormatString = "n2";
-            this.colIndirim.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colIndirim.FieldName = "Indirim";
-            this.colIndirim.Name = "colIndirim";
-            this.colIndirim.Visible = true;
-            this.colIndirim.VisibleIndex = 8;
-            // 
-            // colAraToplam
-            // 
-            this.colAraToplam.DisplayFormat.FormatString = "n2";
-            this.colAraToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colAraToplam.FieldName = "AraToplam";
-            this.colAraToplam.Name = "colAraToplam";
-            this.colAraToplam.Visible = true;
-            this.colAraToplam.VisibleIndex = 9;
-            // 
-            // colToplamKDV
-            // 
-            this.colToplamKDV.DisplayFormat.FormatString = "n2";
-            this.colToplamKDV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colToplamKDV.FieldName = "ToplamKDV";
-            this.colToplamKDV.Name = "colToplamKDV";
-            this.colToplamKDV.Visible = true;
-            this.colToplamKDV.VisibleIndex = 10;
-            // 
-            // colDiğerMasraflar
-            // 
-            this.colDiğerMasraflar.DisplayFormat.FormatString = "n2";
-            this.colDiğerMasraflar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colDiğerMasraflar.FieldName = "DiğerMasraflar";
-            this.colDiğerMasraflar.Name = "colDiğerMasraflar";
-            this.colDiğerMasraflar.Visible = true;
-            this.colDiğerMasraflar.VisibleIndex = 11;
-            // 
-            // colGenelToplam
-            // 
-            this.colGenelToplam.DisplayFormat.FormatString = "n2";
-            this.colGenelToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colGenelToplam.FieldName = "GenelToplam";
-            this.colGenelToplam.Name = "colGenelToplam";
-            this.colGenelToplam.Visible = true;
-            this.colGenelToplam.VisibleIndex = 12;
-            // 
-            // bs_Invoice
-            // 
-            this.bs_Invoice.DataSource = typeof(Msp.Models.Models.Invoice.InvoiceOwnerDTO);
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gc_Invoice;
-            this.gridView1.Name = "gridView1";
             // 
             // InvoiceList
             // 
@@ -481,16 +482,16 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InvoiceList_FormClosing);
             this.Load += new System.EventHandler(this.InvoiceList_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InvoiceList_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_sic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Invoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceTrans)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_Invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_InvoiceType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_cari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rp_depot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_sic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_InvoiceTrans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

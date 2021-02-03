@@ -21,6 +21,8 @@ using Msp.Service.Service.Order;
 using Msp.Service.Service.Invoice;
 using Msp.Models.Models.Invoice;
 using msp.App;
+using Msp.Service.Service.DepotStock;
+using Msp.App.Tanimlar;
 
 namespace Msp.App.CariIslemler
 {
@@ -37,6 +39,7 @@ namespace Msp.App.CariIslemler
         MspTool MspTool = new MspTool();
         private CTransactionsDTO __cTransaction;
         List<CaseMovementDTO> _List_CaseMov;
+        List<CurrentGroupDefinitionsDTO> __CurrentGroupDefinitions = new List<CurrentGroupDefinitionsDTO>();
 
         public int RecId;
 
@@ -114,6 +117,11 @@ namespace Msp.App.CariIslemler
             _List_CaseMov = _repository.Run<CaseService, List<CaseMovementDTO>>(x => x.Get_List_CaseMovement_CariId(AppMain.CompanyRecId, RecId));
             bs_CaseMov.DataSource = _List_CaseMov;
         }
+        public void do_CurrentGroupDefinitions()
+        {
+            __CurrentGroupDefinitions = _repository.Run<DepotStockService, List<CurrentGroupDefinitionsDTO>>(x => x.Get_List_CurrentGroupDefinitions());
+            bs_CurrentGroupDefinitions.DataSource = __CurrentGroupDefinitions;
+        }
 
         public void Show(int _RecId)
         {
@@ -124,12 +132,18 @@ namespace Msp.App.CariIslemler
             {
                 __cTransaction = new CTransactionsDTO();
                 __cTransaction.CurCreatedDate = DateTime.Now;
+                br_Fatura.Enabled = false;
+                br_Irsaliye.Enabled = false;
+                br_Siparis.Enabled = false;
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
                 __cTransaction = _repository.Run<CurrentTransactionsService, CTransactionsDTO>(x => x.GetCurrentTransaction(_RecId));
             }
             bs_CTrans.DataSource = __cTransaction;
+            do_CurrentGroupDefinitions();
+
+
 
             MspTool.Get_Layout(this);
 
@@ -172,6 +186,85 @@ namespace Msp.App.CariIslemler
             if (e.Page == tb_bakiye)
             {
                 do_refreshCaseMov();
+            }
+        }
+
+        private void bbi_AlisIrsaliye_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceEdit frm = new InvoiceEdit();
+            frm.invoice = InvoiceType.AlisIrsaliye;
+            frm._FormOpenType = FormOpenType.New;
+            frm.RecId = 0;
+            frm.CariId = RecId;
+            frm.ShowDialog();
+        }
+
+        private void bbi_SatisIrsaliye_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceEdit frm = new InvoiceEdit();
+            frm.invoice = InvoiceType.SatisIrsaliye;
+            frm._FormOpenType = FormOpenType.New;
+            frm.RecId = 0;
+            frm.CariId = RecId;
+            frm.ShowDialog();
+        }
+
+        private void bbi_AlimFaturasi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceEdit frm = new InvoiceEdit();
+            frm.invoice = InvoiceType.AlımFaturası;
+            frm._FormOpenType = FormOpenType.New;
+            frm.RecId = 0;
+            frm.CariId = RecId;
+            frm.ShowDialog();
+        }
+
+        private void bbi_SatisFaturasi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceEdit frm = new InvoiceEdit();
+            frm.invoice = InvoiceType.SatisFaturasi;
+            frm._FormOpenType = FormOpenType.New;
+            frm.RecId = 0;
+            frm.CariId = RecId;
+            frm.ShowDialog();
+        }
+
+        private void bbi_AlisSiparis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OrderEdit frm = new OrderEdit();
+            frm._FormOpenType = FormOpenType.New;
+            frm.RecId = 0;
+            frm.OrderType = OrderType.AlisSiparis;
+            frm.CariId = RecId;
+            frm.ShowDialog();
+        }
+
+        private void bbi_SiparisSatis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OrderEdit frm = new OrderEdit();
+            frm._FormOpenType = FormOpenType.New;
+            frm.RecId = 0;
+            frm.OrderType = OrderType.SatisSiparis;
+            frm.CariId = RecId;
+            frm.ShowDialog();
+        }
+
+        private void lc_CariGrup_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    CurrentGroupDefinitions frm = new CurrentGroupDefinitions();
+                    frm.ShowDialog();
+                }
+                catch (Exception)
+                {
+                }
+                finally
+                {
+                    do_CurrentGroupDefinitions();
+                }
             }
         }
     }

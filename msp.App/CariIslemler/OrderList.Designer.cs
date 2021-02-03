@@ -34,6 +34,7 @@
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_View = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Document = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
@@ -82,7 +83,6 @@
             this.colIrsaliyeId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bs_Product = new System.Windows.Forms.BindingSource(this.components);
             this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
-            this.bbi_View = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
@@ -171,6 +171,14 @@
             this.btnDelete.ImageOptions.ImageIndex = 5;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
+            // 
+            // bbi_View
+            // 
+            this.bbi_View.Caption = "Ön İzleme";
+            this.bbi_View.Id = 12;
+            this.bbi_View.ImageOptions.ImageIndex = 10;
+            this.bbi_View.Name = "bbi_View";
+            this.bbi_View.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_View_ItemClick);
             // 
             // bbi_Refresh
             // 
@@ -338,6 +346,7 @@
             this.gcv_OrderList.OptionsView.ShowFooter = true;
             this.gcv_OrderList.OptionsView.ShowGroupPanel = false;
             this.gcv_OrderList.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gcv_OrderList_CustomDrawCell);
+            this.gcv_OrderList.DoubleClick += new System.EventHandler(this.gcv_OrderList_DoubleClick);
             // 
             // colRecId
             // 
@@ -596,14 +605,6 @@
             // bs_Unit
             // 
             this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
-            // 
-            // bbi_View
-            // 
-            this.bbi_View.Caption = "Ön İzleme";
-            this.bbi_View.Id = 12;
-            this.bbi_View.ImageOptions.ImageIndex = 10;
-            this.bbi_View.Name = "bbi_View";
-            this.bbi_View.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_View_ItemClick);
             // 
             // OrderList
             // 

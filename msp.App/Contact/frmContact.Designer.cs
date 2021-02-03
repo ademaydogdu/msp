@@ -41,7 +41,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(451, 22, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(403, 283);
+            this.layoutControl1.Size = new System.Drawing.Size(391, 330);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -50,15 +50,17 @@
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(403, 283);
+            this.Root.Size = new System.Drawing.Size(391, 330);
             this.Root.TextVisible = false;
             // 
             // frmContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 283);
+            this.ClientSize = new System.Drawing.Size(391, 330);
             this.Controls.Add(this.layoutControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmContact";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İletişim Bilgileri";

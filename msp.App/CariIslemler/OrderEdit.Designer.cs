@@ -88,6 +88,8 @@
             this.lc_KDV = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtAdres = new DevExpress.XtraEditors.MemoEdit();
             this.txt_Remark = new DevExpress.XtraEditors.MemoEdit();
+            this.txtVergiDaires = new DevExpress.XtraEditors.TextEdit();
+            this.txtVergiNo = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -116,12 +118,10 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lbDurumBaslik = new DevExpress.XtraLayout.SimpleLabelItem();
             this.lbl_Durum = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.txtVergiDaires = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtVergiNo = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -161,6 +161,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lc_KDV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDaires.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -189,12 +191,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDaires.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -858,6 +858,24 @@
             this.txt_Remark.StyleController = this.layoutControl1;
             this.txt_Remark.TabIndex = 14;
             // 
+            // txtVergiDaires
+            // 
+            this.txtVergiDaires.Location = new System.Drawing.Point(100, 193);
+            this.txtVergiDaires.MenuManager = this.barManager1;
+            this.txtVergiDaires.Name = "txtVergiDaires";
+            this.txtVergiDaires.Size = new System.Drawing.Size(158, 20);
+            this.txtVergiDaires.StyleController = this.layoutControl1;
+            this.txtVergiDaires.TabIndex = 18;
+            // 
+            // txtVergiNo
+            // 
+            this.txtVergiNo.Location = new System.Drawing.Point(262, 193);
+            this.txtVergiNo.MenuManager = this.barManager1;
+            this.txtVergiNo.Name = "txtVergiNo";
+            this.txtVergiNo.Size = new System.Drawing.Size(181, 20);
+            this.txtVergiNo.StyleController = this.layoutControl1;
+            this.txtVergiNo.TabIndex = 19;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -1210,6 +1228,24 @@
             this.layoutControlItem3.Text = "Cari";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 13);
             // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.txtVergiDaires;
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 148);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(238, 24);
+            this.layoutControlItem19.Text = "Vergi Da / No";
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(73, 13);
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.txtVergiNo;
+            this.layoutControlItem20.Location = new System.Drawing.Point(238, 148);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(185, 24);
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem20.TextVisible = false;
+            // 
             // lbDurumBaslik
             // 
             this.lbDurumBaslik.AllowHotTrack = false;
@@ -1245,42 +1281,6 @@
             this.lbl_Durum.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lbl_Durum.TextSize = new System.Drawing.Size(73, 19);
             // 
-            // txtVergiDaires
-            // 
-            this.txtVergiDaires.Location = new System.Drawing.Point(100, 193);
-            this.txtVergiDaires.MenuManager = this.barManager1;
-            this.txtVergiDaires.Name = "txtVergiDaires";
-            this.txtVergiDaires.Size = new System.Drawing.Size(158, 20);
-            this.txtVergiDaires.StyleController = this.layoutControl1;
-            this.txtVergiDaires.TabIndex = 18;
-            // 
-            // layoutControlItem19
-            // 
-            this.layoutControlItem19.Control = this.txtVergiDaires;
-            this.layoutControlItem19.Location = new System.Drawing.Point(0, 148);
-            this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(238, 24);
-            this.layoutControlItem19.Text = "Vergi Da / No";
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(73, 13);
-            // 
-            // txtVergiNo
-            // 
-            this.txtVergiNo.Location = new System.Drawing.Point(262, 193);
-            this.txtVergiNo.MenuManager = this.barManager1;
-            this.txtVergiNo.Name = "txtVergiNo";
-            this.txtVergiNo.Size = new System.Drawing.Size(181, 20);
-            this.txtVergiNo.StyleController = this.layoutControl1;
-            this.txtVergiNo.TabIndex = 19;
-            // 
-            // layoutControlItem20
-            // 
-            this.layoutControlItem20.Control = this.txtVergiNo;
-            this.layoutControlItem20.Location = new System.Drawing.Point(238, 148);
-            this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(185, 24);
-            this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem20.TextVisible = false;
-            // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
@@ -1300,6 +1300,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "OrderEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderEdit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderEdit_FormClosing);
             this.Load += new System.EventHandler(this.OrderEdit_Load);
@@ -1342,6 +1343,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lc_KDV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Remark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDaires.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -1370,12 +1373,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbDurumBaslik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_Durum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDaires.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

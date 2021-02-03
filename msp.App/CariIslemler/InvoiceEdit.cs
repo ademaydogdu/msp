@@ -56,6 +56,8 @@ namespace Msp.App.CariIslemler
 
         private bool BirimFiyatChance = false;
 
+        public int CariId = 0;
+
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
             new KDVTaxDto(1, "%0", 0.00, 0),
@@ -98,6 +100,11 @@ namespace Msp.App.CariIslemler
                     _return = true;
 
                 }
+            }
+            if (__dll_InvoiceOwner.DepoName == null)
+            {
+                XtraMessageBox.Show("Lütfen Depo Seçimi Yapınız.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = true;
             }
             if(__dll_List_InoviceTrans.Any(x=>x.Quentity == 0))
             {
@@ -294,6 +301,10 @@ namespace Msp.App.CariIslemler
                 __dll_InvoiceOwner.InvoiceType = (int)invoice;
                 __dll_InvoiceOwner.FicDate = DateTime.Now;
                 __dll_InvoiceOwner.VadeTarih = DateTime.Now;
+                if (CariId != 0)
+                {
+                    txtCariHesapAdi.EditValue = CariId;
+                }
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
@@ -302,7 +313,8 @@ namespace Msp.App.CariIslemler
             }
             if (_FormOpenType == FormOpenType.View)
             {
-
+                gc_invoiceTrans.Enabled = false;
+                bbi_save.Enabled = false;
             }
 
             txtFaturaTipi.Properties.DataSource = FaturaTuru;

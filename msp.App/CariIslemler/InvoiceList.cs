@@ -115,6 +115,20 @@ namespace Msp.App.CariIslemler
             }
         }
 
+        private void do_edit()
+        {
+            InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
+            if (oRow != null)
+            {
+                InvoiceEdit frm = new InvoiceEdit();
+                frm.MdiParent = this.MdiParent;
+                frm.invoice = invoice;
+                frm._FormOpenType = FormOpenType.Edit;
+                frm.RecId = oRow.RecId;
+                frm.Show();
+            }
+        }
+
 
         private void btnNewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -133,16 +147,7 @@ namespace Msp.App.CariIslemler
 
         private void btnEditAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
-            if (oRow != null)
-            {
-                InvoiceEdit frm = new InvoiceEdit();
-                frm.MdiParent = this.MdiParent;
-                frm.invoice = invoice;
-                frm._FormOpenType = FormOpenType.Edit;
-                frm.RecId = oRow.RecId;
-                frm.Show();
-            }
+            do_edit();
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -150,14 +155,17 @@ namespace Msp.App.CariIslemler
             InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
             if (oRow != null)
             {
-                var response = _repository.Run<InvoiceService, ActionResponse<InvoiceOwnerDTO>>(x => x.Deleted_InvoiceOwner(oRow.RecId));
-                if (response.ResponseType != ResponseType.Ok)
+                if (MspTool.get_Question("Fatura Silincektir. Onaylıyor musunu?"))
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                else
-                {
-                    do_refresh();
+                    var response = _repository.Run<InvoiceService, ActionResponse<InvoiceOwnerDTO>>(x => x.Deleted_InvoiceOwner(oRow.RecId));
+                    if (response.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        do_refresh();
+                    } 
                 }
             }
         }
@@ -177,6 +185,11 @@ namespace Msp.App.CariIslemler
                 frm.PrintInvoiceReport(oRow);
                 frm.ShowDialog();
             }
+        }
+
+        private void gcv_Invoice_DoubleClick(object sender, EventArgs e)
+        {
+            do_edit();
         }
     }
 }

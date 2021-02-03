@@ -49,6 +49,7 @@ using SKGL;
 using Msp.App.Report.CariHesap;
 using Msp.Service.Service.DepotStock;
 using Msp.App.Report.Fatura;
+using Msp.App.Report.Depo_Stock;
 
 namespace msp.App
 {
@@ -473,7 +474,7 @@ namespace msp.App
             //    };
             //}
 
-            Version oVersionFB = new Version(21, 1, 1, 14);
+            Version oVersionFB = new Version(21, 1, 1, 15);
             AppMain.MspVersion = oVersionFB;
 
             string AppPath = @"C:\Msp\ConnectString.txt";
@@ -1250,6 +1251,36 @@ namespace msp.App
             frm.MdiParent = this;
             frm.orderFilter = OrderFilter.SevkRapor;
             frm.Show();
+        }
+
+        private void barButtonItem98_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!formAcikmi("frmHareketGormeyenRecord"))
+            {
+                frmHareketGormeyenRecord frm = new frmHareketGormeyenRecord();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
+        }
+
+        private void barButtonItem93_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!formAcikmi("frmStockBakiye"))
+            {
+                frmStockBakiye frm = new frmStockBakiye();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
+        }
+
+        private void bbi_cariHesapTanimlari_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!formAcikmi("CurrentGroupDefinitions"))
+            {
+                CurrentGroupDefinitions frm = new CurrentGroupDefinitions();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
     }
 }

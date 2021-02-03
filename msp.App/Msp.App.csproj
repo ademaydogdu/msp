@@ -534,6 +534,18 @@
     <Compile Include="Report\Depo-Stock\EnvanterBilgileri.Designer.cs">
       <DependentUpon>EnvanterBilgileri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Depo-Stock\frmHareketGormeyenRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Depo-Stock\frmHareketGormeyenRecord.Designer.cs">
+      <DependentUpon>frmHareketGormeyenRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Depo-Stock\frmStockBakiye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Depo-Stock\frmStockBakiye.Designer.cs">
+      <DependentUpon>frmStockBakiye.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Depo-Stock\frmStockHareketFilter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -776,6 +788,12 @@
     <Compile Include="Tanimlar\frmKampanyalar.Designer.cs">
       <DependentUpon>frmKampanyalar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanimlar\CurrentGroupDefinitions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlar\CurrentGroupDefinitions.Designer.cs">
+      <DependentUpon>CurrentGroupDefinitions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tanimlar\frmPaymnetList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -995,6 +1013,12 @@
     <EmbeddedResource Include="Report\Depo-Stock\EnvanterBilgileri.resx">
       <DependentUpon>EnvanterBilgileri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Depo-Stock\frmHareketGormeyenRecord.resx">
+      <DependentUpon>frmHareketGormeyenRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Depo-Stock\frmStockBakiye.resx">
+      <DependentUpon>frmStockBakiye.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Depo-Stock\frmStockHareketFilter.resx">
       <DependentUpon>frmStockHareketFilter.cs</DependentUpon>
     </EmbeddedResource>
@@ -1121,6 +1145,9 @@
     <EmbeddedResource Include="Tanimlar\frmKampanyalar.resx">
       <DependentUpon>frmKampanyalar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlar\CurrentGroupDefinitions.resx">
+      <DependentUpon>CurrentGroupDefinitions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tanimlar\frmPaymnetList.resx">
       <DependentUpon>frmPaymnetList.cs</DependentUpon>
     </EmbeddedResource>
@@ -1151,6 +1178,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.CompanyDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrencyTypeDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.CurrentGroupDefinitionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.CurrentTransactionsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Daily.DailyOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.DepotDTO1.datasource" />
@@ -1166,6 +1194,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.ProductDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductGroupDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductMovementDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Report.StockBakiyeReportDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SpeedSaleProductDTO.datasource" />

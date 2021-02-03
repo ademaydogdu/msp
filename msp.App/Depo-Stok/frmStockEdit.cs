@@ -467,6 +467,64 @@ namespace Msp.App.Depo_Stok
                 }
             }
         }
+
+        private void productGroupTextEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    frmGroupDefinition frm = new frmGroupDefinition();
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+
+                }
+                finally
+                {
+                    productGroup = _repository.Run<DefinitionsService, List<ProductGroupDTO>>(x => x.Get_List_ProductGroup());
+                    bs_UrunGrup.DataSource = productGroup;
+                }
+
+
+            }
+        }
+
+        private void lookUpEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                try
+                {
+                    frmDepo frm = new frmDepo();
+                    frm.ShowDialog();
+
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+                    bs_Depot.DataSource = _depotList;
+                }
+            }
+        }
+
+        private void cb_Tevkifat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_Tevkifat.Checked)
+            {
+                rg_Tevkifat.Visible = true;
+                layout_Tevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            else
+            {
+                rg_Tevkifat.Visible = false;
+                layout_Tevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+        }
     }
 
 }

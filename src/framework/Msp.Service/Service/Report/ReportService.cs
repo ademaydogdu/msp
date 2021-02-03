@@ -5,6 +5,7 @@ using Msp.Models.Models.Product;
 using Msp.Models.Models.Report;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,52 @@ namespace Msp.Service.Service.Report
             }
         }
 
+
+        #endregion
+
+        #region HareketGormeyenStock
+
+        public List<ProductDTO> Get_List_HareketGormeyenStock(DateTime BeginDate, DateTime EndDate)
+        {
+            using (var _db = new MspDbContext())
+            {
+                string _sql = "select * from products where not exists (select * from SaleTrans INNER JOIN SaleOwner  on SaleOwner.RecId = SaleTrans.SaleOwnerId  "
+                            + " where SaleTrans.ProductId = products.PID And SaleOwner.Date >= @BeginDate and SaleOwner.Date <= @EndDate)";
+                var _param = new SqlParameter[]
+                {
+                    new SqlParameter{ParameterName = "BeginDate", Value = BeginDate },
+                    new SqlParameter{ParameterName = "EndDate", Value = EndDate },
+                };
+
+                return _db.Database.SqlQuery<ProductDTO>(_sql, _param.ToArray()).ToList();
+            }
+        }
+
+
+        #endregion
+
+        #region StockBakiyeReport
+
+        public List<StockBakiyeReportDTO> Get_List_StockBakiyeReport(int CompanyId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                string _sql = "SELECT         dbo.products.PID, products.PDepotId, products.PName, products.PTotal, products.PUnitId, SUM(case when  dbo.InvoiceOwner.InvoiceType = 1 then InvoiceTrans.Tutar Else 0 end) as TGiren,  "
+                    + " SUM(case when  dbo.InvoiceOwner.InvoiceType = 2 then InvoiceTrans.Tutar Else 0 end) as TCikis "
+                    + " FROM dbo.products INNER JOIN "
+                    + "                 dbo.InvoiceTrans ON dbo.products.PID = dbo.InvoiceTrans.ProductId INNER JOIN  "
+                    + "                 dbo.InvoiceOwner ON dbo.InvoiceTrans.InvoiceOwnerId = dbo.InvoiceOwner.RecId "
+                    + " where InvoiceOwner.Deleted = 0 and products.Deleted = 0 and InvoiceOwner.CompanyId = @CompanyId "
+                    + " GROUP BY dbo.products.PID,products.PDepotId,products.PName, products.PTotal, products.PUnitId";
+
+                var _param = new SqlParameter[]
+                {
+                    new SqlParameter {ParameterName = "CompanyId", Value = CompanyId }
+                };
+
+                return _db.Database.SqlQuery<StockBakiyeReportDTO>(_sql, _param.ToArray()).ToList();
+            }
+        }
 
         #endregion
     }

@@ -76,6 +76,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<DailyTransDTO, DailyTrans>();
             cfg.CreateMap<SaleBarcodCreate, SaleBarcodCreateDTO>();
             cfg.CreateMap<SaleBarcodCreateDTO, SaleBarcodCreate>();
+            cfg.CreateMap<CurrentGroupDefinitions, CurrentGroupDefinitionsDTO>();
+            cfg.CreateMap<CurrentGroupDefinitionsDTO, CurrentGroupDefinitions>();
         }
 
 

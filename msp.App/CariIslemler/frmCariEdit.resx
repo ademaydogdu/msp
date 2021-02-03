@@ -123,6 +123,9 @@
   <metadata name="bs_CTrans.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1236, 12</value>
   </metadata>
+  <metadata name="bs_CurrentGroupDefinitions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>444, 23</value>
+  </metadata>
   <metadata name="bs_CaseMov.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>890, 12</value>
   </metadata>

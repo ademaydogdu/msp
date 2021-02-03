@@ -339,6 +339,14 @@ namespace Msp.Service.Service.DepotStock
             }
         }
 
+        public List<CurrentGroupDefinitionsDTO> Get_List_CurrentGroupDefinitions()
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<CurrentGroupDefinitions>, List<CurrentGroupDefinitionsDTO>>(_db.CurrentGroupDefinitions.ToList());
+            }
+        }
+
         public ActionResponse<List<PaymentTypeDTO>> SavePayment(List<PaymentTypeDTO> model)
         {
             ActionResponse<List<PaymentTypeDTO>> response = new ActionResponse<List<PaymentTypeDTO>>()
@@ -457,6 +465,63 @@ namespace Msp.Service.Service.DepotStock
             }
         }
 
+        #endregion
+
+        #region __CurrentGroupDefinitions
+
+        public ActionResponse<List<CurrentGroupDefinitionsDTO>> Save__CurrentGroupDefinitions(List<CurrentGroupDefinitionsDTO> model)
+        {
+            ActionResponse<List<CurrentGroupDefinitionsDTO>> response = new ActionResponse<List<CurrentGroupDefinitionsDTO>>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    foreach (var item in model)
+                    {
+                        if (item.RecId == 0)
+                        {
+                            _db.CurrentGroupDefinitions.Add(base.Map<CurrentGroupDefinitionsDTO, CurrentGroupDefinitions>(item));
+                            _db.SaveChanges();
+                        }
+                        else
+                        {
+                            var entity = _db.CurrentGroupDefinitions.FirstOrDefault(x => x.RecId == item.RecId);
+                            if (entity != null)
+                            {
+                                _db.Entry(entity).CurrentValues.SetValues(item);
+                                _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                            }
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
+        public ActionResponse<CurrentGroupDefinitionsDTO> Delete__CurrentGroupDefinitions(int? id)
+        {
+            ActionResponse<CurrentGroupDefinitionsDTO> response = new ActionResponse<CurrentGroupDefinitionsDTO>();
+            using (MspDbContext _db = new MspDbContext())
+            {
+                var record = _db.CurrentGroupDefinitions.Where(x => x.RecId == id).FirstOrDefault();
+                if (record != null)
+                {
+                    _db.CurrentGroupDefinitions.Remove(record);
+                }
+                _db.SaveChanges();
+            }
+            return response;
+        }
         #endregion
 
     }

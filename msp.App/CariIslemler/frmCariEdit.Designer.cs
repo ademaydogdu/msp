@@ -35,13 +35,13 @@
             this.bbi_Close = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_CariHareket = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Taksit = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.br_Siparis = new DevExpress.XtraBars.BarSubItem();
             this.bbi_AlisSiparis = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_SiparisSatis = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.br_Irsaliye = new DevExpress.XtraBars.BarSubItem();
             this.bbi_AlisIrsaliye = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_SatisIrsaliye = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.br_Fatura = new DevExpress.XtraBars.BarSubItem();
             this.bbi_AlimFaturasi = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_SatisFaturasi = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -57,7 +57,8 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lc_CariGrup = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CurrentGroupDefinitions = new System.Windows.Forms.BindingSource(this.components);
             this.CurTypeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.bs_CTrans = new System.Windows.Forms.BindingSource(this.components);
@@ -175,7 +176,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lc_CariGrup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrentGroupDefinitions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).BeginInit();
@@ -281,10 +283,10 @@
             this.bbi_CariHareket,
             this.bbi_Taksit,
             this.barButtonItem3,
-            this.barSubItem1,
+            this.br_Siparis,
             this.barButtonItem4,
-            this.barSubItem2,
-            this.barSubItem3,
+            this.br_Irsaliye,
+            this.br_Fatura,
             this.barButtonItem5,
             this.barButtonItem6,
             this.bbi_AlisSiparis,
@@ -309,9 +311,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Close),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_CariHareket, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Taksit),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.br_Siparis, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.br_Irsaliye),
+            new DevExpress.XtraBars.LinkPersistInfo(this.br_Fatura)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -338,6 +340,7 @@
             // bbi_CariHareket
             // 
             this.bbi_CariHareket.Caption = "Cari Hareketler";
+            this.bbi_CariHareket.Enabled = false;
             this.bbi_CariHareket.Id = 5;
             this.bbi_CariHareket.ImageOptions.ImageIndex = 8;
             this.bbi_CariHareket.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
@@ -347,83 +350,90 @@
             // bbi_Taksit
             // 
             this.bbi_Taksit.Caption = "Taksitler";
+            this.bbi_Taksit.Enabled = false;
             this.bbi_Taksit.Id = 6;
             this.bbi_Taksit.ImageOptions.ImageIndex = 6;
             this.bbi_Taksit.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.bbi_Taksit.Name = "bbi_Taksit";
             this.bbi_Taksit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // barSubItem1
+            // br_Siparis
             // 
-            this.barSubItem1.Caption = "Sipariş";
-            this.barSubItem1.Id = 8;
-            this.barSubItem1.ImageOptions.ImageIndex = 9;
-            this.barSubItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.br_Siparis.Caption = "Sipariş";
+            this.br_Siparis.Id = 8;
+            this.br_Siparis.ImageOptions.ImageIndex = 9;
+            this.br_Siparis.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.br_Siparis.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_AlisSiparis),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SiparisSatis)});
-            this.barSubItem1.Name = "barSubItem1";
-            this.barSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.br_Siparis.Name = "br_Siparis";
+            this.br_Siparis.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bbi_AlisSiparis
             // 
             this.bbi_AlisSiparis.Caption = "Alış Siparişi";
             this.bbi_AlisSiparis.Id = 14;
             this.bbi_AlisSiparis.Name = "bbi_AlisSiparis";
+            this.bbi_AlisSiparis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_AlisSiparis_ItemClick);
             // 
             // bbi_SiparisSatis
             // 
             this.bbi_SiparisSatis.Caption = "Satış Siparişi";
             this.bbi_SiparisSatis.Id = 15;
             this.bbi_SiparisSatis.Name = "bbi_SiparisSatis";
+            this.bbi_SiparisSatis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_SiparisSatis_ItemClick);
             // 
-            // barSubItem2
+            // br_Irsaliye
             // 
-            this.barSubItem2.Caption = "İrsaliye";
-            this.barSubItem2.Id = 10;
-            this.barSubItem2.ImageOptions.ImageIndex = 7;
-            this.barSubItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.br_Irsaliye.Caption = "İrsaliye";
+            this.br_Irsaliye.Id = 10;
+            this.br_Irsaliye.ImageOptions.ImageIndex = 7;
+            this.br_Irsaliye.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.br_Irsaliye.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_AlisIrsaliye),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SatisIrsaliye)});
-            this.barSubItem2.Name = "barSubItem2";
-            this.barSubItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.br_Irsaliye.Name = "br_Irsaliye";
+            this.br_Irsaliye.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bbi_AlisIrsaliye
             // 
             this.bbi_AlisIrsaliye.Caption = "Alış İrsaliyesi";
             this.bbi_AlisIrsaliye.Id = 16;
             this.bbi_AlisIrsaliye.Name = "bbi_AlisIrsaliye";
+            this.bbi_AlisIrsaliye.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_AlisIrsaliye_ItemClick);
             // 
             // bbi_SatisIrsaliye
             // 
             this.bbi_SatisIrsaliye.Caption = "Satış İrsaliyesi";
             this.bbi_SatisIrsaliye.Id = 17;
             this.bbi_SatisIrsaliye.Name = "bbi_SatisIrsaliye";
+            this.bbi_SatisIrsaliye.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_SatisIrsaliye_ItemClick);
             // 
-            // barSubItem3
+            // br_Fatura
             // 
-            this.barSubItem3.Caption = "Fatura";
-            this.barSubItem3.Id = 11;
-            this.barSubItem3.ImageOptions.ImageIndex = 10;
-            this.barSubItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
-            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.br_Fatura.Caption = "Fatura";
+            this.br_Fatura.Id = 11;
+            this.br_Fatura.ImageOptions.ImageIndex = 10;
+            this.br_Fatura.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.br_Fatura.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_AlimFaturasi),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_SatisFaturasi)});
-            this.barSubItem3.Name = "barSubItem3";
-            this.barSubItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.br_Fatura.Name = "br_Fatura";
+            this.br_Fatura.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bbi_AlimFaturasi
             // 
             this.bbi_AlimFaturasi.Caption = "Alım Faturası";
             this.bbi_AlimFaturasi.Id = 18;
             this.bbi_AlimFaturasi.Name = "bbi_AlimFaturasi";
+            this.bbi_AlimFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_AlimFaturasi_ItemClick);
             // 
             // bbi_SatisFaturasi
             // 
             this.bbi_SatisFaturasi.Caption = "Satış Faturası";
             this.bbi_SatisFaturasi.Id = 19;
             this.bbi_SatisFaturasi.Name = "bbi_SatisFaturasi";
+            this.bbi_SatisFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_SatisFaturasi_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -521,7 +531,7 @@
             // 
             // dataLayoutControl1
             // 
-            this.dataLayoutControl1.Controls.Add(this.lookUpEdit1);
+            this.dataLayoutControl1.Controls.Add(this.lc_CariGrup);
             this.dataLayoutControl1.Controls.Add(this.CurTypeTextEdit);
             this.dataLayoutControl1.Controls.Add(this.CurCodeTextEdit);
             this.dataLayoutControl1.Controls.Add(this.CurSolePropTextEdit);
@@ -568,18 +578,27 @@
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
-            // lookUpEdit1
+            // lc_CariGrup
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(86, 165);
-            this.lookUpEdit1.MenuManager = this.barManager1;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lc_CariGrup.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "GroupId", true));
+            this.lc_CariGrup.Location = new System.Drawing.Point(86, 165);
+            this.lc_CariGrup.MenuManager = this.barManager1;
+            this.lc_CariGrup.Name = "lc_CariGrup";
+            this.lc_CariGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
-            this.lookUpEdit1.Properties.NullText = "";
-            this.lookUpEdit1.Size = new System.Drawing.Size(227, 20);
-            this.lookUpEdit1.StyleController = this.dataLayoutControl1;
-            this.lookUpEdit1.TabIndex = 32;
+            this.lc_CariGrup.Properties.DataSource = this.bs_CurrentGroupDefinitions;
+            this.lc_CariGrup.Properties.DisplayMember = "Remark";
+            this.lc_CariGrup.Properties.NullText = "";
+            this.lc_CariGrup.Properties.ValueMember = "RecId";
+            this.lc_CariGrup.Size = new System.Drawing.Size(227, 20);
+            this.lc_CariGrup.StyleController = this.dataLayoutControl1;
+            this.lc_CariGrup.TabIndex = 32;
+            this.lc_CariGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_CariGrup_ButtonClick);
+            // 
+            // bs_CurrentGroupDefinitions
+            // 
+            this.bs_CurrentGroupDefinitions.DataSource = typeof(Msp.Models.Models.CurrentGroupDefinitionsDTO);
             // 
             // CurTypeTextEdit
             // 
@@ -1238,7 +1257,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.lookUpEdit1;
+            this.layoutControlItem1.Control = this.lc_CariGrup;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(293, 24);
@@ -1681,7 +1700,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lc_CariGrup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrentGroupDefinitions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).EndInit();
@@ -1856,7 +1876,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LookUpEdit lc_CariGrup;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tb_bekleyenIrsaliye;
@@ -1874,13 +1894,13 @@
         private DevExpress.XtraBars.BarButtonItem bbi_Taksit;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarSubItem br_Siparis;
         private DevExpress.XtraBars.BarButtonItem bbi_AlisSiparis;
         private DevExpress.XtraBars.BarButtonItem bbi_SiparisSatis;
-        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarSubItem br_Irsaliye;
         private DevExpress.XtraBars.BarButtonItem bbi_AlisIrsaliye;
         private DevExpress.XtraBars.BarButtonItem bbi_SatisIrsaliye;
-        private DevExpress.XtraBars.BarSubItem barSubItem3;
+        private DevExpress.XtraBars.BarSubItem br_Fatura;
         private DevExpress.XtraBars.BarButtonItem bbi_AlimFaturasi;
         private DevExpress.XtraBars.BarButtonItem bbi_SatisFaturasi;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
@@ -1915,5 +1935,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAraToplam;
         private System.Windows.Forms.BindingSource bs_CTrans;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tb_SevkAdresi;
+        private System.Windows.Forms.BindingSource bs_CurrentGroupDefinitions;
     }
 }

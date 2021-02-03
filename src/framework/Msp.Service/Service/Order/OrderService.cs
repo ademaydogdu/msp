@@ -49,7 +49,7 @@ namespace Msp.Service.Service.Order
                     try
                     {
 
-                        if (_db.OrderOwner.Any(x => x.SiparisNo == model.OrderOwner.SiparisNo && x.Deleted == false))
+                        if (_db.OrderOwner.Any(x => x.SiparisNo == model.OrderOwner.SiparisNo && x.RecId == 0 && x.Deleted == false))
                         {
                             response.Message = "Aynı Sipariş No'dan vardır.";
                             response.ResponseType = ResponseType.Error;

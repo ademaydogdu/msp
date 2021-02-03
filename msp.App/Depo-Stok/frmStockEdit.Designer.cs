@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.bs_StockEdit = new System.Windows.Forms.BindingSource(this.components);
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.pn_Tevkifat = new DevExpress.XtraEditors.PanelControl();
+            this.lbOdemeTut = new DevExpress.XtraEditors.LabelControl();
+            this.lblTevkTut = new DevExpress.XtraEditors.LabelControl();
+            this.lblOdemeTutari = new DevExpress.XtraEditors.LabelControl();
+            this.lblTevkTutText = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -83,6 +88,8 @@
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.productGroupTextEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.bs_UrunGrup = new System.Windows.Forms.BindingSource(this.components);
+            this.cb_Tevkifat = new DevExpress.XtraEditors.CheckEdit();
+            this.rg_Tevkifat = new DevExpress.XtraEditors.RadioGroup();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -101,6 +108,9 @@
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layout_Tevkifat = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -153,6 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pn_Tevkifat)).BeginInit();
+            this.pn_Tevkifat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
@@ -194,6 +206,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_Tevkifat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rg_Tevkifat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -212,6 +226,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layout_Tevkifat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
@@ -267,6 +284,7 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.pn_Tevkifat);
             this.dataLayoutControl1.Controls.Add(this.lookUpEdit1);
             this.dataLayoutControl1.Controls.Add(this.panelControl6);
             this.dataLayoutControl1.Controls.Add(this.panelControl5);
@@ -295,6 +313,8 @@
             this.dataLayoutControl1.Controls.Add(this.txtIskonto);
             this.dataLayoutControl1.Controls.Add(this.textEdit3);
             this.dataLayoutControl1.Controls.Add(this.productGroupTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.cb_Tevkifat);
+            this.dataLayoutControl1.Controls.Add(this.rg_Tevkifat);
             this.dataLayoutControl1.DataSource = this.bs_StockEdit;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Images = this.svgImageCollection1;
@@ -306,6 +326,65 @@
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
+            // pn_Tevkifat
+            // 
+            this.pn_Tevkifat.Controls.Add(this.lbOdemeTut);
+            this.pn_Tevkifat.Controls.Add(this.lblTevkTut);
+            this.pn_Tevkifat.Controls.Add(this.lblOdemeTutari);
+            this.pn_Tevkifat.Controls.Add(this.lblTevkTutText);
+            this.pn_Tevkifat.Location = new System.Drawing.Point(470, 562);
+            this.pn_Tevkifat.Name = "pn_Tevkifat";
+            this.pn_Tevkifat.Size = new System.Drawing.Size(155, 58);
+            this.pn_Tevkifat.TabIndex = 41;
+            // 
+            // lbOdemeTut
+            // 
+            this.lbOdemeTut.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lbOdemeTut.Appearance.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbOdemeTut.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lbOdemeTut.Appearance.Options.UseBackColor = true;
+            this.lbOdemeTut.Appearance.Options.UseFont = true;
+            this.lbOdemeTut.Appearance.Options.UseForeColor = true;
+            this.lbOdemeTut.Location = new System.Drawing.Point(89, 31);
+            this.lbOdemeTut.Name = "lbOdemeTut";
+            this.lbOdemeTut.Size = new System.Drawing.Size(10, 18);
+            this.lbOdemeTut.TabIndex = 1;
+            this.lbOdemeTut.Text = "0";
+            // 
+            // lblTevkTut
+            // 
+            this.lblTevkTut.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lblTevkTut.Appearance.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTevkTut.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTevkTut.Appearance.Options.UseBackColor = true;
+            this.lblTevkTut.Appearance.Options.UseFont = true;
+            this.lblTevkTut.Appearance.Options.UseForeColor = true;
+            this.lblTevkTut.Location = new System.Drawing.Point(15, 31);
+            this.lblTevkTut.Name = "lblTevkTut";
+            this.lblTevkTut.Size = new System.Drawing.Size(10, 18);
+            this.lblTevkTut.TabIndex = 1;
+            this.lblTevkTut.Text = "0";
+            // 
+            // lblOdemeTutari
+            // 
+            this.lblOdemeTutari.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.lblOdemeTutari.Appearance.Options.UseFont = true;
+            this.lblOdemeTutari.Location = new System.Drawing.Point(68, 13);
+            this.lblOdemeTutari.Name = "lblOdemeTutari";
+            this.lblOdemeTutari.Size = new System.Drawing.Size(77, 13);
+            this.lblOdemeTutari.TabIndex = 2;
+            this.lblOdemeTutari.Text = "Ödeme Tutarı";
+            // 
+            // lblTevkTutText
+            // 
+            this.lblTevkTutText.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.lblTevkTutText.Appearance.Options.UseFont = true;
+            this.lblTevkTutText.Location = new System.Drawing.Point(5, 13);
+            this.lblTevkTutText.Name = "lblTevkTutText";
+            this.lblTevkTutText.Size = new System.Drawing.Size(53, 13);
+            this.lblTevkTutText.TabIndex = 2;
+            this.lblTevkTutText.Text = "Tevk Tut.";
+            // 
             // lookUpEdit1
             // 
             this.lookUpEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PDepotId", true));
@@ -313,7 +392,8 @@
             this.lookUpEdit1.MenuManager = this.barManager2;
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
             this.lookUpEdit1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DepName", "Depo Adı")});
             this.lookUpEdit1.Properties.DataSource = this.bs_Depot;
@@ -323,6 +403,7 @@
             this.lookUpEdit1.Size = new System.Drawing.Size(175, 20);
             this.lookUpEdit1.StyleController = this.dataLayoutControl1;
             this.lookUpEdit1.TabIndex = 38;
+            this.lookUpEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lookUpEdit1_ButtonClick);
             // 
             // barManager2
             // 
@@ -489,7 +570,7 @@
             this.panelControl6.Controls.Add(this.labelControl8);
             this.panelControl6.Location = new System.Drawing.Point(379, 562);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(135, 58);
+            this.panelControl6.Size = new System.Drawing.Size(87, 58);
             this.panelControl6.TabIndex = 35;
             // 
             // labelControl6
@@ -510,7 +591,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(26, 12);
+            this.labelControl8.Location = new System.Drawing.Point(2, 12);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(81, 13);
             this.labelControl8.TabIndex = 6;
@@ -553,9 +634,9 @@
             // 
             this.panelControl4.Controls.Add(this.lblSatisFiyati);
             this.panelControl4.Controls.Add(this.labelControl7);
-            this.panelControl4.Location = new System.Drawing.Point(518, 562);
+            this.panelControl4.Location = new System.Drawing.Point(629, 562);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(255, 58);
+            this.panelControl4.Size = new System.Drawing.Size(144, 58);
             this.panelControl4.TabIndex = 30;
             // 
             // lblSatisFiyati
@@ -887,7 +968,7 @@
             this.chkKDVIstisna.MenuManager = this.barManager2;
             this.chkKDVIstisna.Name = "chkKDVIstisna";
             this.chkKDVIstisna.Properties.Caption = "KDV İstisna";
-            this.chkKDVIstisna.Size = new System.Drawing.Size(394, 20);
+            this.chkKDVIstisna.Size = new System.Drawing.Size(95, 20);
             this.chkKDVIstisna.StyleController = this.dataLayoutControl1;
             this.chkKDVIstisna.TabIndex = 32;
             this.chkKDVIstisna.CheckedChanged += new System.EventHandler(this.chkKDVIstisna_CheckedChanged);
@@ -949,7 +1030,8 @@
             this.productGroupTextEdit.Location = new System.Drawing.Point(154, 506);
             this.productGroupTextEdit.Name = "productGroupTextEdit";
             this.productGroupTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
             this.productGroupTextEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ReGroup", "Adı")});
             this.productGroupTextEdit.Properties.DataSource = this.bs_UrunGrup;
@@ -959,10 +1041,38 @@
             this.productGroupTextEdit.Size = new System.Drawing.Size(175, 20);
             this.productGroupTextEdit.StyleController = this.dataLayoutControl1;
             this.productGroupTextEdit.TabIndex = 15;
+            this.productGroupTextEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.productGroupTextEdit_ButtonClick);
             // 
             // bs_UrunGrup
             // 
             this.bs_UrunGrup.DataSource = typeof(Msp.Models.Models.ProductGroupDTO);
+            // 
+            // cb_Tevkifat
+            // 
+            this.cb_Tevkifat.Location = new System.Drawing.Point(478, 258);
+            this.cb_Tevkifat.MenuManager = this.barManager2;
+            this.cb_Tevkifat.Name = "cb_Tevkifat";
+            this.cb_Tevkifat.Properties.Caption = "Tevkifat";
+            this.cb_Tevkifat.Size = new System.Drawing.Size(295, 20);
+            this.cb_Tevkifat.StyleController = this.dataLayoutControl1;
+            this.cb_Tevkifat.TabIndex = 39;
+            this.cb_Tevkifat.CheckedChanged += new System.EventHandler(this.cb_Tevkifat_CheckedChanged);
+            // 
+            // rg_Tevkifat
+            // 
+            this.rg_Tevkifat.EditValue = 3;
+            this.rg_Tevkifat.Location = new System.Drawing.Point(379, 392);
+            this.rg_Tevkifat.MenuManager = this.barManager2;
+            this.rg_Tevkifat.Name = "rg_Tevkifat";
+            this.rg_Tevkifat.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "3/10"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "5/10"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "7/10"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(3, "9/10")});
+            this.rg_Tevkifat.Size = new System.Drawing.Size(394, 34);
+            this.rg_Tevkifat.StyleController = this.dataLayoutControl1;
+            this.rg_Tevkifat.TabIndex = 40;
+            this.rg_Tevkifat.Visible = false;
             // 
             // Root
             // 
@@ -1051,7 +1161,10 @@
             this.layoutControlItem13,
             this.layoutControlItem20,
             this.layoutControlItem15,
-            this.layoutControlItem16});
+            this.layoutControlItem16,
+            this.layoutControlItem29,
+            this.layoutControlItem30,
+            this.layout_Tevkifat});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 180);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(422, 411);
@@ -1073,9 +1186,9 @@
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 134);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 172);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(398, 104);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(398, 66);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem17
@@ -1130,7 +1243,7 @@
             this.layoutControlItem14.Control = this.chkKDVIstisna;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(398, 24);
+            this.layoutControlItem14.Size = new System.Drawing.Size(99, 24);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
@@ -1149,11 +1262,10 @@
             // layoutControlItem20
             // 
             this.layoutControlItem20.Control = this.panelControl4;
-            this.layoutControlItem20.Location = new System.Drawing.Point(139, 304);
-            this.layoutControlItem20.MaxSize = new System.Drawing.Size(259, 62);
-            this.layoutControlItem20.MinSize = new System.Drawing.Size(259, 62);
+            this.layoutControlItem20.Location = new System.Drawing.Point(250, 304);
+            this.layoutControlItem20.MinSize = new System.Drawing.Size(5, 5);
             this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(259, 62);
+            this.layoutControlItem20.Size = new System.Drawing.Size(148, 62);
             this.layoutControlItem20.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem20.TextVisible = false;
@@ -1162,8 +1274,10 @@
             // 
             this.layoutControlItem15.Control = this.panelControl6;
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 304);
+            this.layoutControlItem15.MinSize = new System.Drawing.Size(5, 5);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(139, 62);
+            this.layoutControlItem15.Size = new System.Drawing.Size(91, 62);
+            this.layoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
@@ -1176,6 +1290,36 @@
             this.layoutControlItem16.Size = new System.Drawing.Size(398, 36);
             this.layoutControlItem16.Text = "İndirim";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(127, 32);
+            // 
+            // layoutControlItem29
+            // 
+            this.layoutControlItem29.Control = this.cb_Tevkifat;
+            this.layoutControlItem29.Location = new System.Drawing.Point(99, 0);
+            this.layoutControlItem29.Name = "layoutControlItem29";
+            this.layoutControlItem29.Size = new System.Drawing.Size(299, 24);
+            this.layoutControlItem29.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem29.TextVisible = false;
+            // 
+            // layoutControlItem30
+            // 
+            this.layoutControlItem30.Control = this.rg_Tevkifat;
+            this.layoutControlItem30.Location = new System.Drawing.Point(0, 134);
+            this.layoutControlItem30.Name = "layoutControlItem30";
+            this.layoutControlItem30.Size = new System.Drawing.Size(398, 38);
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem30.TextVisible = false;
+            // 
+            // layout_Tevkifat
+            // 
+            this.layout_Tevkifat.Control = this.pn_Tevkifat;
+            this.layout_Tevkifat.Location = new System.Drawing.Point(91, 304);
+            this.layout_Tevkifat.MinSize = new System.Drawing.Size(5, 5);
+            this.layout_Tevkifat.Name = "layout_Tevkifat";
+            this.layout_Tevkifat.Size = new System.Drawing.Size(159, 62);
+            this.layout_Tevkifat.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layout_Tevkifat.TextSize = new System.Drawing.Size(0, 0);
+            this.layout_Tevkifat.TextVisible = false;
+            this.layout_Tevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem12
             // 
@@ -1744,6 +1888,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pn_Tevkifat)).EndInit();
+            this.pn_Tevkifat.ResumeLayout(false);
+            this.pn_Tevkifat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
@@ -1791,6 +1938,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productGroupTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_UrunGrup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_Tevkifat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rg_Tevkifat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -1809,6 +1958,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layout_Tevkifat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
@@ -1984,5 +2136,15 @@
         private DevExpress.XtraEditors.LookUpEdit lc_BarkodType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraEditors.CheckEdit cb_Tevkifat;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
+        private DevExpress.XtraEditors.RadioGroup rg_Tevkifat;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
+        private DevExpress.XtraEditors.PanelControl pn_Tevkifat;
+        private DevExpress.XtraEditors.LabelControl lbOdemeTut;
+        private DevExpress.XtraEditors.LabelControl lblTevkTut;
+        private DevExpress.XtraEditors.LabelControl lblOdemeTutari;
+        private DevExpress.XtraEditors.LabelControl lblTevkTutText;
+        private DevExpress.XtraLayout.LayoutControlItem layout_Tevkifat;
     }
 }
