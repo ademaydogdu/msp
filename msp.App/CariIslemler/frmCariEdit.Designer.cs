@@ -58,10 +58,10 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.lc_CariGrup = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_CTrans = new System.Windows.Forms.BindingSource(this.components);
             this.bs_CurrentGroupDefinitions = new System.Windows.Forms.BindingSource(this.components);
             this.CurTypeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.bs_CTrans = new System.Windows.Forms.BindingSource(this.components);
             this.CurSolePropTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurAccountNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CurAuthPersonNameTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -172,15 +172,40 @@
             this.colTotalSiparis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalAraToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tb_SevkAdresi = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.bs_ShippingInformation = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colAdressDefinition = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.MemoEdit();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_CariGrup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrentGroupDefinitions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurSolePropTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAccountNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAuthPersonNameTextEdit.Properties)).BeginInit();
@@ -262,6 +287,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.tb_SevkAdresi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_ShippingInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -531,6 +582,7 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.lookUpEdit1);
             this.dataLayoutControl1.Controls.Add(this.lc_CariGrup);
             this.dataLayoutControl1.Controls.Add(this.CurTypeTextEdit);
             this.dataLayoutControl1.Controls.Add(this.CurCodeTextEdit);
@@ -591,10 +643,14 @@
             this.lc_CariGrup.Properties.DisplayMember = "Remark";
             this.lc_CariGrup.Properties.NullText = "";
             this.lc_CariGrup.Properties.ValueMember = "RecId";
-            this.lc_CariGrup.Size = new System.Drawing.Size(227, 20);
+            this.lc_CariGrup.Size = new System.Drawing.Size(202, 20);
             this.lc_CariGrup.StyleController = this.dataLayoutControl1;
             this.lc_CariGrup.TabIndex = 32;
             this.lc_CariGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_CariGrup_ButtonClick);
+            // 
+            // bs_CTrans
+            // 
+            this.bs_CTrans.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
             // 
             // bs_CurrentGroupDefinitions
             // 
@@ -624,16 +680,12 @@
             this.CurCodeTextEdit.StyleController = this.dataLayoutControl1;
             this.CurCodeTextEdit.TabIndex = 5;
             // 
-            // bs_CTrans
-            // 
-            this.bs_CTrans.DataSource = typeof(Msp.Models.Models.CTransactionsDTO);
-            // 
             // CurSolePropTextEdit
             // 
             this.CurSolePropTextEdit.Location = new System.Drawing.Point(86, 141);
             this.CurSolePropTextEdit.MenuManager = this.barManager1;
             this.CurSolePropTextEdit.Name = "CurSolePropTextEdit";
-            this.CurSolePropTextEdit.Size = new System.Drawing.Size(227, 20);
+            this.CurSolePropTextEdit.Size = new System.Drawing.Size(202, 20);
             this.CurSolePropTextEdit.StyleController = this.dataLayoutControl1;
             this.CurSolePropTextEdit.TabIndex = 6;
             // 
@@ -643,7 +695,7 @@
             this.CurAccountNameTextEdit.Location = new System.Drawing.Point(86, 69);
             this.CurAccountNameTextEdit.MenuManager = this.barManager1;
             this.CurAccountNameTextEdit.Name = "CurAccountNameTextEdit";
-            this.CurAccountNameTextEdit.Size = new System.Drawing.Size(227, 20);
+            this.CurAccountNameTextEdit.Size = new System.Drawing.Size(202, 20);
             this.CurAccountNameTextEdit.StyleController = this.dataLayoutControl1;
             this.CurAccountNameTextEdit.TabIndex = 7;
             // 
@@ -653,7 +705,7 @@
             this.CurAuthPersonNameTextEdit.Location = new System.Drawing.Point(86, 117);
             this.CurAuthPersonNameTextEdit.MenuManager = this.barManager1;
             this.CurAuthPersonNameTextEdit.Name = "CurAuthPersonNameTextEdit";
-            this.CurAuthPersonNameTextEdit.Size = new System.Drawing.Size(227, 20);
+            this.CurAuthPersonNameTextEdit.Size = new System.Drawing.Size(202, 20);
             this.CurAuthPersonNameTextEdit.StyleController = this.dataLayoutControl1;
             this.CurAuthPersonNameTextEdit.TabIndex = 8;
             // 
@@ -693,7 +745,7 @@
             // CurCityTextEdit
             // 
             this.CurCityTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCity", true));
-            this.CurCityTextEdit.Location = new System.Drawing.Point(86, 282);
+            this.CurCityTextEdit.Location = new System.Drawing.Point(86, 306);
             this.CurCityTextEdit.MenuManager = this.barManager1;
             this.CurCityTextEdit.Name = "CurCityTextEdit";
             this.CurCityTextEdit.Size = new System.Drawing.Size(212, 20);
@@ -703,7 +755,7 @@
             // CurDistrictTextEdit
             // 
             this.CurDistrictTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurDistrict", true));
-            this.CurDistrictTextEdit.Location = new System.Drawing.Point(86, 306);
+            this.CurDistrictTextEdit.Location = new System.Drawing.Point(86, 330);
             this.CurDistrictTextEdit.MenuManager = this.barManager1;
             this.CurDistrictTextEdit.Name = "CurDistrictTextEdit";
             this.CurDistrictTextEdit.Size = new System.Drawing.Size(212, 20);
@@ -754,7 +806,7 @@
             // CurAdressTextEdit
             // 
             this.CurAdressTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurAdress", true));
-            this.CurAdressTextEdit.Location = new System.Drawing.Point(86, 234);
+            this.CurAdressTextEdit.Location = new System.Drawing.Point(86, 258);
             this.CurAdressTextEdit.MenuManager = this.barManager1;
             this.CurAdressTextEdit.Name = "CurAdressTextEdit";
             this.CurAdressTextEdit.Size = new System.Drawing.Size(212, 20);
@@ -764,7 +816,7 @@
             // CurAdressTwoTextEdit
             // 
             this.CurAdressTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurAdressTwo", true));
-            this.CurAdressTwoTextEdit.Location = new System.Drawing.Point(86, 258);
+            this.CurAdressTwoTextEdit.Location = new System.Drawing.Point(86, 282);
             this.CurAdressTwoTextEdit.MenuManager = this.barManager1;
             this.CurAdressTwoTextEdit.Name = "CurAdressTwoTextEdit";
             this.CurAdressTwoTextEdit.Size = new System.Drawing.Size(212, 20);
@@ -774,7 +826,7 @@
             // CurCountryCodeTextEdit
             // 
             this.CurCountryCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCountryCode", true));
-            this.CurCountryCodeTextEdit.Location = new System.Drawing.Point(364, 330);
+            this.CurCountryCodeTextEdit.Location = new System.Drawing.Point(364, 354);
             this.CurCountryCodeTextEdit.MenuManager = this.barManager1;
             this.CurCountryCodeTextEdit.Name = "CurCountryCodeTextEdit";
             this.CurCountryCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -790,7 +842,7 @@
             // CurCountryNameTextEdit
             // 
             this.CurCountryNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurCountryName", true));
-            this.CurCountryNameTextEdit.Location = new System.Drawing.Point(86, 354);
+            this.CurCountryNameTextEdit.Location = new System.Drawing.Point(86, 378);
             this.CurCountryNameTextEdit.MenuManager = this.barManager1;
             this.CurCountryNameTextEdit.Name = "CurCountryNameTextEdit";
             this.CurCountryNameTextEdit.Size = new System.Drawing.Size(521, 20);
@@ -800,7 +852,7 @@
             // CurZipCodeTextEdit
             // 
             this.CurZipCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurZipCode", true));
-            this.CurZipCodeTextEdit.Location = new System.Drawing.Point(86, 330);
+            this.CurZipCodeTextEdit.Location = new System.Drawing.Point(86, 354);
             this.CurZipCodeTextEdit.MenuManager = this.barManager1;
             this.CurZipCodeTextEdit.Name = "CurZipCodeTextEdit";
             this.CurZipCodeTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -816,7 +868,7 @@
             // CurPhoneOneTextEdit
             // 
             this.CurPhoneOneTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurPhoneOne", true));
-            this.CurPhoneOneTextEdit.Location = new System.Drawing.Point(364, 234);
+            this.CurPhoneOneTextEdit.Location = new System.Drawing.Point(364, 258);
             this.CurPhoneOneTextEdit.MenuManager = this.barManager1;
             this.CurPhoneOneTextEdit.Name = "CurPhoneOneTextEdit";
             this.CurPhoneOneTextEdit.Size = new System.Drawing.Size(243, 20);
@@ -826,7 +878,7 @@
             // CurPhoneTwoTextEdit
             // 
             this.CurPhoneTwoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurPhoneTwo", true));
-            this.CurPhoneTwoTextEdit.Location = new System.Drawing.Point(364, 258);
+            this.CurPhoneTwoTextEdit.Location = new System.Drawing.Point(364, 282);
             this.CurPhoneTwoTextEdit.MenuManager = this.barManager1;
             this.CurPhoneTwoTextEdit.Name = "CurPhoneTwoTextEdit";
             this.CurPhoneTwoTextEdit.Size = new System.Drawing.Size(243, 20);
@@ -836,7 +888,7 @@
             // CurFaxTextEdit
             // 
             this.CurFaxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurFax", true));
-            this.CurFaxTextEdit.Location = new System.Drawing.Point(364, 282);
+            this.CurFaxTextEdit.Location = new System.Drawing.Point(364, 306);
             this.CurFaxTextEdit.MenuManager = this.barManager1;
             this.CurFaxTextEdit.Name = "CurFaxTextEdit";
             this.CurFaxTextEdit.Size = new System.Drawing.Size(243, 20);
@@ -846,7 +898,7 @@
             // CurEmailTextEdit
             // 
             this.CurEmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurEmail", true));
-            this.CurEmailTextEdit.Location = new System.Drawing.Point(364, 306);
+            this.CurEmailTextEdit.Location = new System.Drawing.Point(364, 330);
             this.CurEmailTextEdit.MenuManager = this.barManager1;
             this.CurEmailTextEdit.Name = "CurEmailTextEdit";
             this.CurEmailTextEdit.Size = new System.Drawing.Size(243, 20);
@@ -856,7 +908,7 @@
             // CurDescriptionTextEdit
             // 
             this.CurDescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurDescription", true));
-            this.CurDescriptionTextEdit.Location = new System.Drawing.Point(74, 438);
+            this.CurDescriptionTextEdit.Location = new System.Drawing.Point(74, 462);
             this.CurDescriptionTextEdit.MenuManager = this.barManager1;
             this.CurDescriptionTextEdit.Name = "CurDescriptionTextEdit";
             this.CurDescriptionTextEdit.Size = new System.Drawing.Size(545, 20);
@@ -866,7 +918,7 @@
             // CurTaxNoTextEdit
             // 
             this.CurTaxNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurTaxNo", true));
-            this.CurTaxNoTextEdit.Location = new System.Drawing.Point(86, 378);
+            this.CurTaxNoTextEdit.Location = new System.Drawing.Point(86, 402);
             this.CurTaxNoTextEdit.MenuManager = this.barManager1;
             this.CurTaxNoTextEdit.Name = "CurTaxNoTextEdit";
             this.CurTaxNoTextEdit.Size = new System.Drawing.Size(521, 20);
@@ -876,7 +928,7 @@
             // CurTaxOfficeTextEdit
             // 
             this.CurTaxOfficeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "CurTaxOffice", true));
-            this.CurTaxOfficeTextEdit.Location = new System.Drawing.Point(86, 402);
+            this.CurTaxOfficeTextEdit.Location = new System.Drawing.Point(86, 426);
             this.CurTaxOfficeTextEdit.MenuManager = this.barManager1;
             this.CurTaxOfficeTextEdit.Name = "CurTaxOfficeTextEdit";
             this.CurTaxOfficeTextEdit.Size = new System.Drawing.Size(521, 20);
@@ -901,7 +953,7 @@
             this.CurIdentNoTextEdit.Properties.Mask.EditMask = "f0";
             this.CurIdentNoTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.CurIdentNoTextEdit.Properties.MaxLength = 11;
-            this.CurIdentNoTextEdit.Size = new System.Drawing.Size(227, 20);
+            this.CurIdentNoTextEdit.Size = new System.Drawing.Size(202, 20);
             this.CurIdentNoTextEdit.StyleController = this.dataLayoutControl1;
             this.CurIdentNoTextEdit.TabIndex = 30;
             // 
@@ -1028,7 +1080,7 @@
             this.ItemForCurTaxOffice,
             this.ItemForCurTaxNo,
             this.ItemForCurZipCode});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 189);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 213);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(611, 237);
             this.layoutControlGroup2.Text = "Adres/Fatura/İletişim Bilgileri";
@@ -1158,7 +1210,7 @@
             // ItemForCurDescription
             // 
             this.ItemForCurDescription.Control = this.CurDescriptionTextEdit;
-            this.ItemForCurDescription.Location = new System.Drawing.Point(0, 426);
+            this.ItemForCurDescription.Location = new System.Drawing.Point(0, 450);
             this.ItemForCurDescription.Name = "ItemForCurDescription";
             this.ItemForCurDescription.Size = new System.Drawing.Size(611, 24);
             this.ItemForCurDescription.Text = "Not";
@@ -1167,9 +1219,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 450);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 474);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(611, 38);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(611, 14);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
@@ -1189,10 +1241,11 @@
             this.ItemForCurSoleProp,
             this.ItemForCurAuthPersonName,
             this.ItemForCurIdentNo,
-            this.ItemForCurAccountName});
+            this.ItemForCurAccountName,
+            this.layoutControlItem10});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(611, 189);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(611, 213);
             this.layoutControlGroup3.Text = "Hesap Bilgieri";
             // 
             // ItemForCurCode
@@ -1226,33 +1279,33 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(293, 24);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(268, 24);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(294, 24);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(319, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(293, 48);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(268, 48);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(294, 24);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(319, 24);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(293, 72);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(268, 72);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(294, 24);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(319, 24);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(293, 96);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(268, 96);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(294, 48);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(319, 72);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -1260,7 +1313,7 @@
             this.layoutControlItem1.Control = this.lc_CariGrup;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(293, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(268, 24);
             this.layoutControlItem1.Text = "Cari Grup";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 13);
             // 
@@ -1269,7 +1322,7 @@
             this.ItemForCurSoleProp.Control = this.CurSolePropTextEdit;
             this.ItemForCurSoleProp.Location = new System.Drawing.Point(0, 96);
             this.ItemForCurSoleProp.Name = "ItemForCurSoleProp";
-            this.ItemForCurSoleProp.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurSoleProp.Size = new System.Drawing.Size(268, 24);
             this.ItemForCurSoleProp.Text = "Şahıs Şirketi";
             this.ItemForCurSoleProp.TextSize = new System.Drawing.Size(59, 13);
             // 
@@ -1278,7 +1331,7 @@
             this.ItemForCurAuthPersonName.Control = this.CurAuthPersonNameTextEdit;
             this.ItemForCurAuthPersonName.Location = new System.Drawing.Point(0, 72);
             this.ItemForCurAuthPersonName.Name = "ItemForCurAuthPersonName";
-            this.ItemForCurAuthPersonName.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurAuthPersonName.Size = new System.Drawing.Size(268, 24);
             this.ItemForCurAuthPersonName.Text = "Cari Yetkili";
             this.ItemForCurAuthPersonName.TextSize = new System.Drawing.Size(59, 13);
             // 
@@ -1287,7 +1340,7 @@
             this.ItemForCurIdentNo.Control = this.CurIdentNoTextEdit;
             this.ItemForCurIdentNo.Location = new System.Drawing.Point(0, 48);
             this.ItemForCurIdentNo.Name = "ItemForCurIdentNo";
-            this.ItemForCurIdentNo.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurIdentNo.Size = new System.Drawing.Size(268, 24);
             this.ItemForCurIdentNo.Text = "TC No";
             this.ItemForCurIdentNo.TextSize = new System.Drawing.Size(59, 13);
             // 
@@ -1298,7 +1351,7 @@
             this.ItemForCurAccountName.Control = this.CurAccountNameTextEdit;
             this.ItemForCurAccountName.Location = new System.Drawing.Point(0, 24);
             this.ItemForCurAccountName.Name = "ItemForCurAccountName";
-            this.ItemForCurAccountName.Size = new System.Drawing.Size(293, 24);
+            this.ItemForCurAccountName.Size = new System.Drawing.Size(268, 24);
             this.ItemForCurAccountName.Text = "Cari Adı";
             this.ItemForCurAccountName.TextSize = new System.Drawing.Size(59, 13);
             // 
@@ -1337,7 +1390,7 @@
             this.tb_bakiye.Caption = "Bakiye";
             this.tb_bakiye.Controls.Add(this.gc_CariBakiye);
             this.tb_bakiye.Name = "tb_bakiye";
-            this.tb_bakiye.Size = new System.Drawing.Size(631, 537);
+            this.tb_bakiye.Size = new System.Drawing.Size(631, 508);
             // 
             // gc_CariBakiye
             // 
@@ -1347,7 +1400,7 @@
             this.gc_CariBakiye.MainView = this.gcv_CariBakiye;
             this.gc_CariBakiye.MenuManager = this.barManager1;
             this.gc_CariBakiye.Name = "gc_CariBakiye";
-            this.gc_CariBakiye.Size = new System.Drawing.Size(631, 537);
+            this.gc_CariBakiye.Size = new System.Drawing.Size(631, 508);
             this.gc_CariBakiye.TabIndex = 0;
             this.gc_CariBakiye.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gcv_CariBakiye});
@@ -1420,7 +1473,7 @@
             this.tb_bekleyenIrsaliye.Caption = "Bekleyen İrsaliyeler";
             this.tb_bekleyenIrsaliye.Controls.Add(this.gridControl2);
             this.tb_bekleyenIrsaliye.Name = "tb_bekleyenIrsaliye";
-            this.tb_bekleyenIrsaliye.Size = new System.Drawing.Size(631, 537);
+            this.tb_bekleyenIrsaliye.Size = new System.Drawing.Size(631, 508);
             // 
             // gridControl2
             // 
@@ -1430,7 +1483,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(631, 537);
+            this.gridControl2.Size = new System.Drawing.Size(631, 508);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1527,7 +1580,7 @@
             this.tb_bekleyenSiparis.Caption = "Bekleyen Siparişler";
             this.tb_bekleyenSiparis.Controls.Add(this.gridControl1);
             this.tb_bekleyenSiparis.Name = "tb_bekleyenSiparis";
-            this.tb_bekleyenSiparis.Size = new System.Drawing.Size(631, 537);
+            this.tb_bekleyenSiparis.Size = new System.Drawing.Size(631, 508);
             // 
             // gridControl1
             // 
@@ -1537,7 +1590,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(631, 537);
+            this.gridControl1.Size = new System.Drawing.Size(631, 508);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1678,8 +1731,259 @@
             // tb_SevkAdresi
             // 
             this.tb_SevkAdresi.Caption = "Sevk Adresleri";
+            this.tb_SevkAdresi.Controls.Add(this.layoutControl1);
             this.tb_SevkAdresi.Name = "tb_SevkAdresi";
-            this.tb_SevkAdresi.Size = new System.Drawing.Size(631, 537);
+            this.tb_SevkAdresi.Size = new System.Drawing.Size(631, 508);
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.gridControl3);
+            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.textEdit3);
+            this.layoutControl1.Controls.Add(this.textEdit4);
+            this.layoutControl1.Controls.Add(this.textEdit2);
+            this.layoutControl1.Controls.Add(this.textEdit5);
+            this.layoutControl1.Controls.Add(this.textEdit6);
+            this.layoutControl1.Controls.Add(this.textEdit7);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup4;
+            this.layoutControl1.Size = new System.Drawing.Size(631, 508);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.DataSource = this.bs_ShippingInformation;
+            this.gridControl3.Location = new System.Drawing.Point(12, 12);
+            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.MenuManager = this.barManager1;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(226, 484);
+            this.gridControl3.TabIndex = 4;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // bs_ShippingInformation
+            // 
+            this.bs_ShippingInformation.DataSource = typeof(Msp.Models.Models.ShippingInformationDTO);
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colAdressDefinition});
+            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // colAdressDefinition
+            // 
+            this.colAdressDefinition.Caption = "Adres Tanım";
+            this.colAdressDefinition.FieldName = "AdressDefinition";
+            this.colAdressDefinition.Name = "colAdressDefinition";
+            this.colAdressDefinition.Visible = true;
+            this.colAdressDefinition.VisibleIndex = 0;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(252, 28);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(367, 20);
+            this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.TabIndex = 5;
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(252, 226);
+            this.textEdit3.MenuManager = this.barManager1;
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(367, 20);
+            this.textEdit3.StyleController = this.layoutControl1;
+            this.textEdit3.TabIndex = 7;
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Location = new System.Drawing.Point(252, 266);
+            this.textEdit4.MenuManager = this.barManager1;
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(367, 20);
+            this.textEdit4.StyleController = this.layoutControl1;
+            this.textEdit4.TabIndex = 8;
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(252, 68);
+            this.textEdit2.MenuManager = this.barManager1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(367, 138);
+            this.textEdit2.StyleController = this.layoutControl1;
+            this.textEdit2.TabIndex = 6;
+            // 
+            // textEdit5
+            // 
+            this.textEdit5.Location = new System.Drawing.Point(252, 306);
+            this.textEdit5.MenuManager = this.barManager1;
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(367, 20);
+            this.textEdit5.StyleController = this.layoutControl1;
+            this.textEdit5.TabIndex = 9;
+            // 
+            // textEdit6
+            // 
+            this.textEdit6.Location = new System.Drawing.Point(252, 346);
+            this.textEdit6.MenuManager = this.barManager1;
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Properties.Mask.EditMask = "(999) 000-0000";
+            this.textEdit6.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.textEdit6.Size = new System.Drawing.Size(367, 20);
+            this.textEdit6.StyleController = this.layoutControl1;
+            this.textEdit6.TabIndex = 10;
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.Location = new System.Drawing.Point(252, 386);
+            this.textEdit7.MenuManager = this.barManager1;
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Size = new System.Drawing.Size(367, 20);
+            this.textEdit7.StyleController = this.layoutControl1;
+            this.textEdit7.TabIndex = 11;
+            // 
+            // layoutControlGroup4
+            // 
+            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup4.GroupBordersVisible = false;
+            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.splitterItem1,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.emptySpaceItem7});
+            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Size = new System.Drawing.Size(631, 508);
+            this.layoutControlGroup4.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.gridControl3;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(230, 488);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.textEdit1;
+            this.layoutControlItem3.Location = new System.Drawing.Point(240, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(371, 40);
+            this.layoutControlItem3.Text = "Adres Tanımı";
+            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // splitterItem1
+            // 
+            this.splitterItem1.AllowHotTrack = true;
+            this.splitterItem1.Location = new System.Drawing.Point(230, 0);
+            this.splitterItem1.Name = "splitterItem1";
+            this.splitterItem1.Size = new System.Drawing.Size(10, 488);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.textEdit2;
+            this.layoutControlItem4.Location = new System.Drawing.Point(240, 40);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(371, 158);
+            this.layoutControlItem4.Text = "Adres";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.textEdit3;
+            this.layoutControlItem5.Location = new System.Drawing.Point(240, 198);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(371, 40);
+            this.layoutControlItem5.Text = "İl";
+            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.textEdit4;
+            this.layoutControlItem6.Location = new System.Drawing.Point(240, 238);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(371, 40);
+            this.layoutControlItem6.Text = "İlçe";
+            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.textEdit5;
+            this.layoutControlItem7.Location = new System.Drawing.Point(240, 278);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(371, 40);
+            this.layoutControlItem7.Text = "Ülke";
+            this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.textEdit6;
+            this.layoutControlItem8.Location = new System.Drawing.Point(240, 318);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(371, 40);
+            this.layoutControlItem8.Text = "Telefon";
+            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.textEdit7;
+            this.layoutControlItem9.Location = new System.Drawing.Point(240, 358);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(371, 40);
+            this.layoutControlItem9.Text = "Yetkili";
+            this.layoutControlItem9.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(61, 13);
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(240, 398);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(371, 90);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_CTrans, "SevkId", true));
+            this.lookUpEdit1.Location = new System.Drawing.Point(86, 189);
+            this.lookUpEdit1.MenuManager = this.barManager1;
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.NullText = "";
+            this.lookUpEdit1.Size = new System.Drawing.Size(202, 20);
+            this.lookUpEdit1.StyleController = this.dataLayoutControl1;
+            this.lookUpEdit1.TabIndex = 33;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.lookUpEdit1;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(268, 24);
+            this.layoutControlItem10.Text = "Sevk Adresi";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(59, 13);
             // 
             // frmCariEdit
             // 
@@ -1701,10 +2005,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lc_CariGrup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_CurrentGroupDefinitions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurTypeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurCodeTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurSolePropTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAccountNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurAuthPersonNameTextEdit.Properties)).EndInit();
@@ -1786,6 +2090,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.tb_SevkAdresi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_ShippingInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1936,5 +2266,30 @@
         private System.Windows.Forms.BindingSource bs_CTrans;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tb_SevkAdresi;
         private System.Windows.Forms.BindingSource bs_CurrentGroupDefinitions;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
+        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.MemoEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.SplitterItem splitterItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
+        private System.Windows.Forms.BindingSource bs_ShippingInformation;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdressDefinition;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }

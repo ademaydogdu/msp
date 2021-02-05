@@ -1,6 +1,8 @@
 ﻿using Msp.Entity.Entities;
 using Msp.Models.Models;
 using Msp.Models.Models.Case;
+using Msp.Models.Models.Invoice;
+using Msp.Models.Models.Order;
 using Msp.Models.Models.Product;
 using Msp.Models.Models.Report;
 using System;
@@ -58,7 +60,7 @@ namespace Msp.Service.Service.Report
             {
                 string _sql = "Select SUM(Case When IslemTuru = 1 then Tutar else 0 end) as DonemGelir, SUM(Case When IslemTuru = 2 then Tutar else 0 end) as DonemGider, "
                 + " SUM(Case When IslemTuru = 2 then Tutar else 0 end) -SUM(Case When IslemTuru = 1 then Tutar else 0 end) as SonBakiye , CaseDefinition.CaseName "
-                + "   from CaseMovement " 
+                + "   from CaseMovement "
                 + "   Inner Join CaseDefinition on CaseDefinition.RecId = CaseMovement.CaseId "
                 + "where Deleted = 0 and RecordDate >= @BeginDate and RecordDate <= @EndDate and CaseId = @CaseId"
                 + "  Group By CaseDefinition.CaseName";
@@ -85,7 +87,6 @@ namespace Msp.Service.Service.Report
             }
         }
         #endregion
-
 
         #region EncokSatilanStok
 
@@ -148,6 +149,36 @@ namespace Msp.Service.Service.Report
                 return _db.Database.SqlQuery<StockBakiyeReportDTO>(_sql, _param.ToArray()).ToList();
             }
         }
+
+        #endregion
+
+        #region Invoice
+
+        public List<InvoiceOwnerDTO> GetList_Invoice(InvoiceRequest request)
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<InvoiceOwnerDTO> result = new List<InvoiceOwnerDTO>();
+                result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == request.InvoiceType && x.Deleted == false && x.FicDate >= request.BeginDate && x.FicDate <= request.EndDate && x.DovizTuru == request.DovizTuru).ToList());
+                return result;
+            }
+        }
+
+
+        #endregion
+
+        #region Order
+
+        public List<OrderOwnerDTO> GetList_Order(Models.Models.Report.OrderRequest request)
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<OrderOwnerDTO> result = new List<OrderOwnerDTO>();
+                result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == request.OrderType && x.Deleted == false && x.SiparisDate >= request.BeginDate && x.SiparisDate <= request.EndDate).ToList());
+                return result;
+            }
+        }
+
 
         #endregion
     }

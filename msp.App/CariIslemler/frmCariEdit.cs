@@ -41,6 +41,7 @@ namespace Msp.App.CariIslemler
         List<CaseMovementDTO> _List_CaseMov;
         List<CurrentGroupDefinitionsDTO> __CurrentGroupDefinitions = new List<CurrentGroupDefinitionsDTO>();
 
+        List<ShippingInformationDTO> __shippingInformations = new List<ShippingInformationDTO>();
         public int RecId;
 
         #region Record

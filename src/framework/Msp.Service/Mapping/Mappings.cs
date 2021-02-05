@@ -78,6 +78,8 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<SaleBarcodCreateDTO, SaleBarcodCreate>();
             cfg.CreateMap<CurrentGroupDefinitions, CurrentGroupDefinitionsDTO>();
             cfg.CreateMap<CurrentGroupDefinitionsDTO, CurrentGroupDefinitions>();
+            cfg.CreateMap<ShippingInformation, ShippingInformationDTO>();
+            cfg.CreateMap<ShippingInformationDTO, ShippingInformation>();
         }
 
 

@@ -66,6 +66,7 @@ namespace Msp.Entity.Entities
         public string CurTitle { get; set; }
         public int? CompanyRecId { get; set; }
         public int? GroupId { get; set; }
+        public int? SevkId { get; set; }
 
 
     }

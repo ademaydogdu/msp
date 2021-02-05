@@ -13,6 +13,10 @@ using Msp.App.Tool;
 using Msp.Models.Models.Invoice;
 using Msp.Infrastructure;
 using Msp.Models.Models.Utilities;
+using Msp.Models.Models;
+using Msp.Service.Service.Tanimlar;
+using Msp.Service.Service.Report;
+using Msp.Models.Models.Report;
 
 namespace Msp.App.Report.Fatura
 {
@@ -28,6 +32,7 @@ namespace Msp.App.Report.Fatura
 
         MspTool MspTool = new MspTool();
         List<InvoiceOwnerDTO> invoiceList = new List<InvoiceOwnerDTO>();
+        List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
 
         List<SelectIdValue> IceType = new List<SelectIdValue>()
         {
@@ -37,6 +42,43 @@ namespace Msp.App.Report.Fatura
             new SelectIdValue(5, "Satış İrsaliyesi"),
         };
         public InvoiceType invoice;
+
+        #region Record
+
+        private void do_report(bool report)
+        {
+            //if (invoice == InvoiceType.AlımFaturası || invoice == InvoiceType.SatisFaturasi)
+            //{
+            //}
+            //if (invoice == InvoiceType.SatisIrsaliye || invoice == InvoiceType.AlisIrsaliye)
+            //{
+            //}
+            var req = new InvoiceRequest
+            {
+                InvoiceType = (int)invoice,
+                BeginDate = dt_BeginDate.DateTime,
+                EndDate = new DateTime(dt_EndDate.DateTime.Year, dt_EndDate.DateTime.Month, dt_EndDate.DateTime.Day, 23, 59, 00),
+                DovizTuru = Convert.ToInt32(dt_Currencies.EditValue)
+            };
+            invoiceList = _repository.Run<ReportService, List<InvoiceOwnerDTO>>(x => x.GetList_Invoice(req));
+
+            if (invoiceList.Count > 0)
+            {
+                gridControl1.DataSource = invoiceList;
+                if (report)
+                {
+
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Kayıt Bulunamadı...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+
+        #endregion
 
 
         private void FaturaFilter_Load(object sender, EventArgs e)
@@ -59,11 +101,25 @@ namespace Msp.App.Report.Fatura
                     break;
             }
 
+            dt_BeginDate.DateTime = DateTime.Today;
+            dt_EndDate.DateTime = DateTime.Today;
+
+            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyType.DataSource = _currencyTypes;
+            if (_currencyTypes.Count > 0)
+            {
+
+            }
         }
 
         private void bbi_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRaporAl_Click(object sender, EventArgs e)
+        {
+            do_report(false);
         }
     }
 }

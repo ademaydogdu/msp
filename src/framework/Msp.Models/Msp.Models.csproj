@@ -79,6 +79,8 @@
     <Compile Include="Models\Product\ProductPrintRequest.cs" />
     <Compile Include="Models\Report\CaseBakiyeReportDTO.cs" />
     <Compile Include="Models\Report\CaseReportFilter.cs" />
+    <Compile Include="Models\Report\InvoiceRequest.cs" />
+    <Compile Include="Models\Report\OrderRequest.cs" />
     <Compile Include="Models\Report\StockBakiyeReportDTO.cs" />
     <Compile Include="Models\Report\SumSaleStockDTO.cs" />
     <Compile Include="Models\SaleBarcodCreateDTO.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Models\Scheduler\ResourcesDTO.cs" />
     <Compile Include="Models\SecRights\OpenFormRightsDTO.cs" />
     <Compile Include="Models\SecRights\SecRightsDTO.cs" />
+    <Compile Include="Models\ShippingInformationDTO.cs" />
     <Compile Include="Models\TCMBCurrency.cs" />
     <Compile Include="Models\UnitsDTO.cs" />
     <Compile Include="Models\UsersDTO.cs" />

@@ -81,17 +81,22 @@ namespace Msp.App.Satis
 
         private void txtIndirimOrani_EditValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtIndirimOrani_Leave(object sender, EventArgs e)
-        {
             if (TotalPrice > 0)
             {
                 indirimTutar = Math.Round((TotalPrice * Convert.ToDecimal(txtIndirimOrani.EditValue)) / 100, 2);
                 lblIndirimTutar.Text = Convert.ToString(indirimTutar);
                 lblTotalDiscount.Text = Convert.ToString(Math.Round(TotalPrice - indirimTutar, 2));
             }
+        }
+
+        private void txtIndirimOrani_Leave(object sender, EventArgs e)
+        {
+            //if (TotalPrice > 0)
+            //{
+            //    indirimTutar = Math.Round((TotalPrice * Convert.ToDecimal(txtIndirimOrani.EditValue)) / 100, 2);
+            //    lblIndirimTutar.Text = Convert.ToString(indirimTutar);
+            //    lblTotalDiscount.Text = Convert.ToString(Math.Round(TotalPrice - indirimTutar, 2));
+            //}
         }
 
         private void txtTLIndirimTutar_EditValueChanged(object sender, EventArgs e)

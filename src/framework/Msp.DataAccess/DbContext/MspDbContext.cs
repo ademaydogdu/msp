@@ -58,6 +58,7 @@ namespace Msp.Entity.Entities
         public virtual DbSet<DailyTrans> DailyTrans { get; set; }
         public virtual DbSet<SaleBarcodCreate> SaleBarcodCreate { get; set; }
         public virtual DbSet<CurrentGroupDefinitions> CurrentGroupDefinitions { get; set; }
+        public virtual DbSet<ShippingInformation> ShippingInformation { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

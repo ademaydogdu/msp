@@ -1112,7 +1112,7 @@ namespace Msp.App.App
 
             if (tblTableList.Rows.Contains("DailyOwner") == false)
             {
-                sCommand.CommandText = "CREATE TABLE [dbo].[DailyOwner]( " 
+                sCommand.CommandText = "CREATE TABLE [dbo].[DailyOwner]( "
                 + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
                 + "     [Date] [datetime] NULL, "
                 + " 	[Amount] [decimal](18, 0) NULL, "
@@ -1210,6 +1210,37 @@ namespace Msp.App.App
                 sCommand.CommandText = "INSERT INTO [dbo].[CurrentGroupDefinitions]([Remark]) VALUES ('Tedarikçi')";
                 ExecuteNonQuery(sCommand);
                 sCommand.CommandText = "INSERT INTO [dbo].[CurrentGroupDefinitions]([Remark]) VALUES ('Personel')";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+
+            #endregion
+
+            #region ShippingInformation
+
+            if (tblTableList.Rows.Contains("ShippingInformation") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[ShippingInformation]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [AccId] [int] NULL, "
+                    + " 	[AdressDefinition] [nvarchar] (50) NULL, "
+                    + " 	[Adress] "
+                    + "         [nvarchar] "
+                    + "         (max) NULL, "
+                    + "     [County] [nvarchar] (50) NULL, "
+                    + " 	[District] [nvarchar] (50) NULL, "
+                    + " 	[Country] [nvarchar] (50) NULL, "
+                    + " 	[Phone] [nvarchar] (50) NULL, "
+                    + " 	[Authorized] [nvarchar] (50) NULL, "
+                    + " 	[CompanyId] [int] NULL, "
+                    + "  CONSTRAINT[PK_ShippingInformation] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON[PRIMARY] "
+                    + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
                 ExecuteNonQuery(sCommand);
 
             }
@@ -1337,6 +1368,11 @@ namespace Msp.App.App
             if (tblCTransactions.Columns.Contains("GroupId") == false)
             {
                 sCommand.CommandText = "ALTER TABLE CTransactions ADD GroupId int NULL";
+                ExecuteNonQuery(sCommand);
+            }
+            if (tblCTransactions.Columns.Contains("SevkId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE CTransactions ADD SevkId int NULL";
                 ExecuteNonQuery(sCommand);
             }
             #endregion

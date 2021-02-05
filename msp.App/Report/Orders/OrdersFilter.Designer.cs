@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_Report = new DevExpress.XtraBars.BarButtonItem();
@@ -39,11 +41,9 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.sic_img = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.dt_BeginDate = new DevExpress.XtraEditors.DateEdit();
+            this.dt_EndDate = new DevExpress.XtraEditors.DateEdit();
+            this.btnRaporla = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -53,14 +53,14 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sic_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sic_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_BeginDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_BeginDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_EndDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_EndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -73,9 +73,9 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.gridControl1);
-            this.layoutControl1.Controls.Add(this.dateEdit1);
-            this.layoutControl1.Controls.Add(this.dateEdit2);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.dt_BeginDate);
+            this.layoutControl1.Controls.Add(this.dt_EndDate);
+            this.layoutControl1.Controls.Add(this.btnRaporla);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -83,6 +83,23 @@
             this.layoutControl1.Size = new System.Drawing.Size(803, 518);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(12, 107);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.barManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(779, 399);
+            this.gridControl1.TabIndex = 4;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // barManager1
             // 
@@ -168,59 +185,43 @@
             this.sic_img.Add("printarea", "image://svgimages/spreadsheet/printarea.svg");
             this.sic_img.Add("del", "image://svgimages/diagramicons/del.svg");
             // 
-            // gridControl1
+            // dt_BeginDate
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 107);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(779, 399);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(98, 45);
-            this.dateEdit1.MenuManager = this.barManager1;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_BeginDate.EditValue = null;
+            this.dt_BeginDate.Location = new System.Drawing.Point(98, 45);
+            this.dt_BeginDate.MenuManager = this.barManager1;
+            this.dt_BeginDate.Name = "dt_BeginDate";
+            this.dt_BeginDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_BeginDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(108, 20);
-            this.dateEdit1.StyleController = this.layoutControl1;
-            this.dateEdit1.TabIndex = 5;
+            this.dt_BeginDate.Size = new System.Drawing.Size(108, 20);
+            this.dt_BeginDate.StyleController = this.layoutControl1;
+            this.dt_BeginDate.TabIndex = 5;
             // 
-            // dateEdit2
+            // dt_EndDate
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(284, 45);
-            this.dateEdit2.MenuManager = this.barManager1;
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_EndDate.EditValue = null;
+            this.dt_EndDate.Location = new System.Drawing.Point(284, 45);
+            this.dt_EndDate.MenuManager = this.barManager1;
+            this.dt_EndDate.Name = "dt_EndDate";
+            this.dt_EndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_EndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(140, 20);
-            this.dateEdit2.StyleController = this.layoutControl1;
-            this.dateEdit2.TabIndex = 6;
+            this.dt_EndDate.Size = new System.Drawing.Size(140, 20);
+            this.dt_EndDate.StyleController = this.layoutControl1;
+            this.dt_EndDate.TabIndex = 6;
             // 
-            // simpleButton1
+            // btnRaporla
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(24, 69);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(400, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Rapor Al";
+            this.btnRaporla.Location = new System.Drawing.Point(24, 69);
+            this.btnRaporla.Name = "btnRaporla";
+            this.btnRaporla.Size = new System.Drawing.Size(400, 22);
+            this.btnRaporla.StyleController = this.layoutControl1;
+            this.btnRaporla.TabIndex = 8;
+            this.btnRaporla.Text = "Rapor Al";
+            this.btnRaporla.Click += new System.EventHandler(this.btnRaporla_Click);
             // 
             // Root
             // 
@@ -257,7 +258,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.dateEdit2;
+            this.layoutControlItem3.Control = this.dt_EndDate;
             this.layoutControlItem3.Location = new System.Drawing.Point(186, 0);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(218, 24);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(218, 24);
@@ -269,19 +270,25 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.dateEdit1;
+            this.layoutControlItem2.Control = this.dt_BeginDate;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.MaxSize = new System.Drawing.Size(186, 24);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(186, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(186, 24);
+            this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Başlangıç Tarih";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.simpleButton1;
+            this.layoutControlItem5.Control = this.btnRaporla;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem5.MaxSize = new System.Drawing.Size(404, 26);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(404, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(404, 26);
+            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -308,14 +315,14 @@
             this.Load += new System.EventHandler(this.FaturaFilter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sic_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sic_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_BeginDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_BeginDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_EndDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_EndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -343,11 +350,11 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dt_BeginDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.DateEdit dt_EndDate;
+        private DevExpress.XtraEditors.SimpleButton btnRaporla;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
