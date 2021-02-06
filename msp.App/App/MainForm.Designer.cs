@@ -261,6 +261,7 @@
             this.barButtonItem63 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem113 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem116 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_cariHesapTanimlari = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -313,7 +314,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.bbi_cariHesapTanimlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -1771,6 +1771,7 @@
             this.bbi_BekleyenIrsaliye.Id = 162;
             this.bbi_BekleyenIrsaliye.ImageOptions.LargeImageIndex = 56;
             this.bbi_BekleyenIrsaliye.Name = "bbi_BekleyenIrsaliye";
+            this.bbi_BekleyenIrsaliye.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_BekleyenIrsaliye_ItemClick);
             // 
             // barButtonItem88
             // 
@@ -1792,8 +1793,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem96),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem97),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem98),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem99),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem100)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem99)});
             this.barSubItem15.Name = "barSubItem15";
             // 
             // bbi_ReportStockList
@@ -2284,6 +2284,14 @@
             this.barButtonItem116.ImageOptions.LargeImageIndex = 77;
             this.barButtonItem116.Name = "barButtonItem116";
             // 
+            // bbi_cariHesapTanimlari
+            // 
+            this.bbi_cariHesapTanimlari.Caption = "Cari Hesap Grup Tanımları";
+            this.bbi_cariHesapTanimlari.Id = 231;
+            this.bbi_cariHesapTanimlari.ImageOptions.LargeImageIndex = 79;
+            this.bbi_cariHesapTanimlari.Name = "bbi_cariHesapTanimlari";
+            this.bbi_cariHesapTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_cariHesapTanimlari_ItemClick);
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -2755,14 +2763,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // bbi_cariHesapTanimlari
-            // 
-            this.bbi_cariHesapTanimlari.Caption = "Cari Hesap Grup Tanımları";
-            this.bbi_cariHesapTanimlari.Id = 231;
-            this.bbi_cariHesapTanimlari.ImageOptions.LargeImageIndex = 79;
-            this.bbi_cariHesapTanimlari.Name = "bbi_cariHesapTanimlari";
-            this.bbi_cariHesapTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_cariHesapTanimlari_ItemClick);
             // 
             // MainForm
             // 

@@ -69,6 +69,11 @@ namespace Msp.App.CariIslemler
                     btnNew.Enabled = false;
                     btnEdit.Enabled = false;
                     break;
+                case InvoiceType.BekleyenIrsaliye:
+                    this.Text = "Bekleyen Irsaliye Listesi";
+                    btnNew.Enabled = false;
+                    btnEdit.Enabled = false;
+                    break;
                 default:
                     break;
             }

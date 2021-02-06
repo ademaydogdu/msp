@@ -476,7 +476,7 @@ namespace msp.App
                 //    };
                 //}
 
-                Version oVersionFB = new Version(21, 1, 1, 16);
+                Version oVersionFB = new Version(21, 1, 1, 17);
                 AppMain.MspVersion = oVersionFB;
 
                 string AppPath = @"C:\Msp\ConnectString.txt";
@@ -1293,6 +1293,14 @@ namespace msp.App
                 frm.MdiParent = this;
                 frm.Show();
             }
+        }
+
+        private void bbi_BekleyenIrsaliye_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.MdiParent = this;
+            frm.invoice = InvoiceType.BekleyenIrsaliye;
+            frm.Show();
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Msp.Infrastructure
         AlisIrsaliye = 4,
         SatisIrsaliye = 5,
         AllIrsaliye = 6,
+        BekleyenIrsaliye = 7
     }
 
     public enum OrderType

@@ -29,6 +29,10 @@ namespace Msp.Service.Service.Invoice
                 {
                     result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 4 || x.InvoiceType == 5 && x.Deleted == false).ToList());
                 }
+                if (invoiceType == 7)
+                {
+                    result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == 1 || x.InvoiceType == 2 && x.Deleted == false && x.IrsaliyeId == 0).ToList());
+                }
                 else
                 {
                     result = base.Map<List<InvoiceOwner>, List<InvoiceOwnerDTO>>(_db.InvoiceOwner.Where(x => x.InvoiceType == invoiceType && x.Deleted == false).ToList());
