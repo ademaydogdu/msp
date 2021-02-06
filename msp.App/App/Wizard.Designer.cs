@@ -823,7 +823,6 @@
             // rpLisans
             // 
             this.rpLisans.AutoSize = true;
-            this.rpLisans.Enabled = false;
             this.rpLisans.Location = new System.Drawing.Point(37, 27);
             this.rpLisans.Name = "rpLisans";
             this.rpLisans.Size = new System.Drawing.Size(125, 17);

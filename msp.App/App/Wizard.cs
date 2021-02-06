@@ -48,6 +48,7 @@ namespace Msp.App.App
             if (rpLisans.Checked)
             {
                 IsDemo = false;
+                AppMain.IsDemo = false;
                 Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("IsDemo", SecurityExtension.Sifrele("false"));
                 Licence = txtUrunAnahtar.Text.Trim();
                 Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Licence", Licence);
@@ -56,29 +57,38 @@ namespace Msp.App.App
             }
             if (rpDeneme.Checked)
             {
-                //AdminDatabase Kayıt yapılacak
-                IsDemo = true;
-                if (Convert.ToString(txtPhone.EditValue) == "")
+                try
                 {
-                    XtraMessageBox.Show("Telefon Numarası Giriniz.");
-                    return;
-                }
-                if (Convert.ToString(txtEPosta.EditValue) == "")
-                {
-                    XtraMessageBox.Show("E-Posta Adresi Giriniz.");
-                    return;
-                }
-                string lice = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Licence").ToString();
-                if (lice.ToString().Trim().Length > 0)
-                {
-                    Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("IsDemo", SecurityExtension.Sifrele("true"));
-                    Generate generate = new Generate();
-                    generate.secretPhase = "c4e128b141aFb";
-                    Licence = generate.doKey(int.Parse("15"));
-                    Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Licence", Licence);
-                    AppMain.Licence = Licence; 
-                }
+                    //AdminDatabase Kayıt yapılacak
+                    IsDemo = true;
+                    AppMain.IsDemo = true;
+                    if (Convert.ToString(txtPhone.EditValue) == "")
+                    {
+                        XtraMessageBox.Show("Telefon Numarası Giriniz.");
+                        return;
+                    }
+                    if (Convert.ToString(txtEPosta.EditValue) == "")
+                    {
+                        XtraMessageBox.Show("E-Posta Adresi Giriniz.");
+                        return;
+                    }
+                    string lice = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Licence").ToString();
+                    if (lice.ToString().Trim().Length == 0)
+                    {
+                        Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("IsDemo", SecurityExtension.Sifrele("true"));
 
+                        Generate generate = new Generate();
+                        generate.secretPhase = "c4e128b141aFb";
+                        Licence = generate.doKey(int.Parse("15"));
+                        Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\MSP", true).SetValue("Licence", Licence);
+                        AppMain.Licence = Licence;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.ToString());
+                }
 
             }
         }

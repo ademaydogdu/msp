@@ -277,271 +277,283 @@ namespace msp.App
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            MACAdresiAl();
-            if (IsConnected())
-            {
-                getIP();
-            }
-            GetLocalIPAddress();
-
-            #region Güncelleme Kontrol
-            ApplicationDeployment ad;
             try
             {
-                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+                MACAdresiAl();
+                if (IsConnected())
                 {
-                    ad = ApplicationDeployment.CurrentDeployment;
-                    if (ad.CheckForUpdate())
+                    getIP();
+                }
+                GetLocalIPAddress();
+
+                #region Güncelleme Kontrol
+                ApplicationDeployment ad;
+                try
+                {
+                    if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
                     {
-                        this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-                        UpdateProgress oForm = new UpdateProgress();
-                        oForm.ShowDialog();
-                        return;
+                        ad = ApplicationDeployment.CurrentDeployment;
+                        if (ad.CheckForUpdate())
+                        {
+                            this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+                            UpdateProgress oForm = new UpdateProgress();
+                            oForm.ShowDialog();
+                            return;
+                        }
+                        else
+                        {
+                        }
                     }
-                    else
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Uygulama güncellestirirken hata olustu." + ex.Message);
+                }
+
+                #endregion
+
+                #region Regedit
+                //string message = Msp.App.Tool.MspTool.CreateNewRegistry();
+                //if (!string.IsNullOrEmpty(message))
+                //{
+                //    MessageBox.Show(message);
+                //}
+                //ApiUrl
+                //Registry.CurrentUser.CreateSubKey(@"Software\MSP");
+
+                RegistryKey OurKey = Registry.CurrentUser;
+                OurKey = OurKey.OpenSubKey(@"Software\MSP", true);
+                string[] lsKeys = OurKey.GetSubKeyNames();
+                bool varmi = false;
+
+                OurKey = Registry.CurrentUser.OpenSubKey(@"Software\MSP", true);
+                lsKeys = OurKey.GetValueNames();
+                varmi = false;
+
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "LastServer")
                     {
+                        varmi = true;
+                        break;
                     }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("LastServer", ""); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "MspLogo")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("MspLogo", ""); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "LastDatabase")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("LastDatabase", ""); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "LastUser")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("LastUser", ""); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "LastServerId")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("LastServerId", ""); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "Company")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("Company", ""); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "BeniHatirla")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("BeniHatirla", "False"); }
+
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "ParaUstu")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("ParaUstu", "True"); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "SqlLocal")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("SqlLocal", "False"); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "Licence")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("Licence", ""); }
+
+                varmi = false;
+                for (int i = 0; i < lsKeys.Length; i++)
+                {
+                    if (lsKeys[i].ToString().Trim() == "IsDemo")
+                    {
+                        varmi = true;
+                        break;
+                    }
+                }
+                if (varmi == false)
+                { OurKey.SetValue("IsDemo", SecurityExtension.Sifrele("false")); }
+
+                #endregion
+
+                //if (Global.RegistryDbSettings.Count > 0)
+                //{
+                //    SednaFBMain.userName = Global.RegistryDbSettings[0].Username;
+                //    Global.SqlConnection = new SednaAccounting.Infrastructure.DbConnectionModel.ConnectionDTO
+                //    {
+                //        Server = Global.RegistryDbSettings[0].Server,
+                //        Database = Global.RegistryDbSettings[0].Database1,
+                //        UserId = Global.RegistryDbSettings[0].Username,
+                //        Password = Global.RegistryDbSettings[0].Mask == "1" ? Global.RegistryDbSettings[0].PasswordMsk.SifreCoz() : Global.RegistryDbSettings[0].Password
+                //    };
+                //}
+
+                Version oVersionFB = new Version(21, 1, 1, 16);
+                AppMain.MspVersion = oVersionFB;
+
+                string AppPath = @"C:\Msp\ConnectString.txt";
+                if (!File.Exists(AppPath))
+                {
+                    Wizard frm = new Wizard();
+                    frm.ShowDialog();
+                    //Global.AppPath = SednaFBMain.KodAdmin.Service.AppPath;
+                }
+                else
+                {
+                    AppMain.LocalConnect = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("SqlLocal").ToString());
+                    AppMain.IsDemo = Convert.ToBoolean(SecurityExtension.Sifre_Coz(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("IsDemo").ToString()));
+                    AppMain.Licence = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Licence").ToString();
+                }
+
+
+
+                if (AppMain.IsDemo)
+                {
+                    if (!IsConnected())
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Denem Sürümü Kullanıyorsunuz. İnternet Bağlantısı Zorunludur.");
+                        Application.Exit();
+                    }
+                }
+
+                if (AppMain.Licence.Length > 0)
+                {
+                    bi_Licence.Caption = AppMain.Licence;
+                    Validate validate = new Validate();
+                    validate.secretPhase = "c4e128b141aFb";
+                    validate.Key = AppMain.Licence;
+                    bbi_LicenceDay.Caption = Convert.ToString(validate.DaysLeft) + " Gün";
+                    if (validate.DaysLeft == 0 || validate.DaysLeft < 0)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Lisans süreniz dolmuştur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Application.Exit();
+                    }
+                }
+                else
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Lisans Anahtarı Bulunulamadı. Lütfen Sistem Yüneticinize Başvurunuz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Application.Exit();
+                }
+
+                Login loForm = new Login();
+                loForm.TopMost = true;
+                loForm.ShowDialog();
+
+                formClosinMessegae = true;
+                if (AppMain.User != null)
+                {
+                    do_versionControl();
+                    do_barDoldur();
+
+                    do_OpenFormAyarlari();
+                    do_MenuyuControl();
+                    do_RefreshDefault();
+                    do_FormSecRight();
+                    do_OpenFormSale();
+                    UserLookAndFeel.Default.SetSkinStyle(AppMain.User.DefaultTheme, AppMain.User.DefaultTheme2);
+                }
+                else
+                {
+                    Application.ExitThread();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Uygulama güncellestirirken hata olustu." + ex.Message);
-            }
-
-            #endregion
-
-            #region Regedit
-            //string message = Msp.App.Tool.MspTool.CreateNewRegistry();
-            //if (!string.IsNullOrEmpty(message))
-            //{
-            //    MessageBox.Show(message);
-            //}
-            //ApiUrl
-            Registry.CurrentUser.CreateSubKey(@"Software\MSP");
-
-            RegistryKey OurKey = Registry.CurrentUser;
-            OurKey = OurKey.OpenSubKey(@"Software\MSP", true);
-            string[] lsKeys = OurKey.GetSubKeyNames();
-            bool varmi = false;
-
-            OurKey = Registry.CurrentUser.OpenSubKey(@"Software\MSP", true);
-            lsKeys = OurKey.GetValueNames();
-            varmi = false;
-
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "LastServer")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("LastServer", ""); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "MspLogo")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("MspLogo", ""); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "LastDatabase")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("LastDatabase", ""); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "LastUser")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("LastUser", ""); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "LastServerId")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("LastServerId", ""); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "Company")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("Company", ""); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "BeniHatirla")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("BeniHatirla", "False"); }
-
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "ParaUstu")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("ParaUstu", "True"); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "SqlLocal")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("SqlLocal", "False"); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "Licence")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("Licence", ""); }
-
-            varmi = false;
-            for (int i = 0; i < lsKeys.Length; i++)
-            {
-                if (lsKeys[i].ToString().Trim() == "IsDemo")
-                {
-                    varmi = true;
-                    break;
-                }
-            }
-            if (varmi == false)
-            { OurKey.SetValue("IsDemo", SecurityExtension.Sifrele("false")); }
-
-            #endregion
-
-            //if (Global.RegistryDbSettings.Count > 0)
-            //{
-            //    SednaFBMain.userName = Global.RegistryDbSettings[0].Username;
-            //    Global.SqlConnection = new SednaAccounting.Infrastructure.DbConnectionModel.ConnectionDTO
-            //    {
-            //        Server = Global.RegistryDbSettings[0].Server,
-            //        Database = Global.RegistryDbSettings[0].Database1,
-            //        UserId = Global.RegistryDbSettings[0].Username,
-            //        Password = Global.RegistryDbSettings[0].Mask == "1" ? Global.RegistryDbSettings[0].PasswordMsk.SifreCoz() : Global.RegistryDbSettings[0].Password
-            //    };
-            //}
-
-            Version oVersionFB = new Version(21, 1, 1, 16);
-            AppMain.MspVersion = oVersionFB;
-
-            string AppPath = @"C:\Msp\ConnectString.txt";
-            if (!File.Exists(AppPath))
-            {
-                Wizard frm = new Wizard();
-                frm.ShowDialog();
-                //Global.AppPath = SednaFBMain.KodAdmin.Service.AppPath;
-            }
-            else
-            {
-                AppMain.LocalConnect = Convert.ToBoolean(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("SqlLocal").ToString());
-                AppMain.IsDemo = Convert.ToBoolean(SecurityExtension.Sifre_Coz(Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("IsDemo").ToString()));
-                AppMain.Licence = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("Licence").ToString();
-            }
-
-
-
-            if (AppMain.IsDemo)
-            {
-                if (!IsConnected())
-                {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Denem Sürümü Kullanıyorsunuz. İnternet Bağlantısı Zorunludur.");
-                    Application.Exit();
-                }
-            }
-
-            if (AppMain.Licence.Length > 0)
-            {
-                bi_Licence.Caption = AppMain.Licence;
-                Validate validate = new Validate();
-                validate.secretPhase = "c4e128b141aFb";
-                validate.Key = AppMain.Licence;
-                bbi_LicenceDay.Caption = Convert.ToString(validate.DaysLeft) + " Gün";
-                if (validate.DaysLeft == 0 || validate.DaysLeft < 0)
-                {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Lisans süreniz dolmuştur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Application.Exit();
-                }
-            }
-            else
-            {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Lisans Anahtarı Bulunulamadı. Lütfen Sistem Yüneticinize Başvurunuz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 
-            Login loForm = new Login();
-            loForm.TopMost = true;
-            loForm.ShowDialog();
 
-            formClosinMessegae = true;
-            if (AppMain.User != null)
-            {
-                do_versionControl();
-                do_barDoldur();
 
-                do_OpenFormAyarlari();
-                do_MenuyuControl();
-                do_RefreshDefault();
-                do_FormSecRight();
-                do_OpenFormSale();
-                UserLookAndFeel.Default.SetSkinStyle(AppMain.User.DefaultTheme, AppMain.User.DefaultTheme2);
-            }
-            else
-            {
-                Application.ExitThread();
-            }
+
         }
 
 

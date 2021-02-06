@@ -10,8 +10,15 @@ namespace Msp.Service.WindowsRegistry
 {
     public class RegistryService 
     {
+        List<string> keys = new List<string>() { @"Software\MSP" };
+
         public void Register()
         {
+            foreach (var item in keys)
+            {
+                CreateRegistry(item);
+            }
+
             string[] regRootDegerler = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValueNames();
             if (regRootDegerler.Contains("ServiceUrl") == false)
             {
@@ -21,5 +28,7 @@ namespace Msp.Service.WindowsRegistry
             AppMain.ApiPath = Registry.CurrentUser.OpenSubKey(@"Software\MSP").GetValue("ServiceUrl").ToString();
 
         }
+
+        private void CreateRegistry(string path) => Registry.CurrentUser.CreateSubKey(path);
     }
 }
