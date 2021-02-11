@@ -13,6 +13,7 @@ using Msp.Models.Models;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
+using Msp.Infrastructure;
 
 namespace Msp.App.Settings
 {
@@ -37,6 +38,8 @@ namespace Msp.App.Settings
 
         private void do_edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.Company, AppMain.CompanyRecId)) return;
+
             CompanyDTO oRow = (CompanyDTO)gcv_company.GetFocusedRow();
             if (oRow != null)
             {
@@ -70,6 +73,8 @@ namespace Msp.App.Settings
         }
         private void bbi_New_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.Company, AppMain.CompanyRecId)) return;
+
             FrmCompanyEdit _Form = new FrmCompanyEdit();
             _Form._FormOpenType = Infrastructure.FormOpenType.New;
             _Form.Show(0);
@@ -83,6 +88,8 @@ namespace Msp.App.Settings
 
         private void bbi_delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.Company, AppMain.CompanyRecId)) return;
+
             CompanyDTO oRow = (CompanyDTO)gcv_company.GetFocusedRow();
             if (oRow != null)
             {

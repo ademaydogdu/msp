@@ -21,6 +21,11 @@ namespace Msp.Entity.Entities
         public string DefaultTheme { get; set; }
         public string DefaultTheme2 { get; set; }
         public bool? AdminAuthority { get; set; }
+        public bool? ReportPrint { get; set; } 
+        public bool? ExportExcelPdf { get; set; } 
+        public bool? DailyEndOperation { get; set; } 
+        public bool? EnvanterEntry { get; set; } 
+        public bool? VeresiyeDefterClosed { get; set; } 
 
     }
 }

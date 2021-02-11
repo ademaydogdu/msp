@@ -21,6 +21,7 @@ using Msp.Models.Models.Daily;
 using Msp.App.Report.Barcode;
 using Msp.Models.Models.Invoice;
 using Msp.App.Report.Fatura;
+using Msp.Models.Models.Report.List;
 
 namespace Msp.App.Report
 {
@@ -154,12 +155,12 @@ namespace Msp.App.Report
             report.CreateDocument();
         }
 
-        public void PrintInvoiceReport(InvoiceOwnerDTO data)
+        public void PrintInvoiceReport(InvoiceOwnerDTO InvoiceOwner, List<ReportInvoiceTransDTO> reportInvoiceTrans , CTransactionsDTO cTransactions, ReportInvoice reports)
         {
-            InvoiceReport report = new InvoiceReport();
+            InvoiceReport_Sablon1 report = new InvoiceReport_Sablon1();
             foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
                 p.Visible = false;
-            report.InitData(data);
+            report.InitData(InvoiceOwner, reportInvoiceTrans, cTransactions, reports);
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }

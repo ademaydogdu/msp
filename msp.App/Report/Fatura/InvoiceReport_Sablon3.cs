@@ -7,9 +7,9 @@ using Msp.Models.Models.Invoice;
 
 namespace Msp.App.Report.Fatura
 {
-    public partial class InvoiceReport : DevExpress.XtraReports.UI.XtraReport
+    public partial class InvoiceReport_Sablon3 : DevExpress.XtraReports.UI.XtraReport
     {
-        public InvoiceReport()
+        public InvoiceReport_Sablon3()
         {
             InitializeComponent();
         }

@@ -109,7 +109,7 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lc_oranTevkifat = new DevExpress.XtraLayout.LayoutControlItem();
             this.layout_Tevkifat = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -227,7 +227,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lc_oranTevkifat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layout_Tevkifat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -1163,7 +1163,7 @@
             this.layoutControlItem15,
             this.layoutControlItem16,
             this.layoutControlItem29,
-            this.layoutControlItem30,
+            this.lc_oranTevkifat,
             this.layout_Tevkifat});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 180);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
@@ -1300,14 +1300,15 @@
             this.layoutControlItem29.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem29.TextVisible = false;
             // 
-            // layoutControlItem30
+            // lc_oranTevkifat
             // 
-            this.layoutControlItem30.Control = this.rg_Tevkifat;
-            this.layoutControlItem30.Location = new System.Drawing.Point(0, 134);
-            this.layoutControlItem30.Name = "layoutControlItem30";
-            this.layoutControlItem30.Size = new System.Drawing.Size(398, 38);
-            this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem30.TextVisible = false;
+            this.lc_oranTevkifat.Control = this.rg_Tevkifat;
+            this.lc_oranTevkifat.Location = new System.Drawing.Point(0, 134);
+            this.lc_oranTevkifat.Name = "lc_oranTevkifat";
+            this.lc_oranTevkifat.Size = new System.Drawing.Size(398, 38);
+            this.lc_oranTevkifat.TextSize = new System.Drawing.Size(0, 0);
+            this.lc_oranTevkifat.TextVisible = false;
+            this.lc_oranTevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layout_Tevkifat
             // 
@@ -1959,7 +1960,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lc_oranTevkifat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layout_Tevkifat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -2139,7 +2140,7 @@
         private DevExpress.XtraEditors.CheckEdit cb_Tevkifat;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
         private DevExpress.XtraEditors.RadioGroup rg_Tevkifat;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
+        private DevExpress.XtraLayout.LayoutControlItem lc_oranTevkifat;
         private DevExpress.XtraEditors.PanelControl pn_Tevkifat;
         private DevExpress.XtraEditors.LabelControl lbOdemeTut;
         private DevExpress.XtraEditors.LabelControl lblTevkTut;

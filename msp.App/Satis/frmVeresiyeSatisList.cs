@@ -13,6 +13,7 @@ using Msp.App.Tool;
 using Msp.Service.Repository;
 using Msp.Service.Service.Sale;
 using Msp.Models.Models.Utilities;
+using Msp.Infrastructure;
 
 namespace Msp.App.Satis
 {
@@ -35,7 +36,7 @@ namespace Msp.App.Satis
 
         private void frmVeresiyeSatisList_Load(object sender, EventArgs e)
         {
-
+            if(AppMain.User.ExportExcelPdf.GetValueOrDefault() == false) { bbi_exp.Enabled = false; }else { bbi_exp.Enabled = true; }
             do_refresh();
 
             mspTool.Get_GridControl(this.Name, gc_SiparisList);
@@ -58,6 +59,7 @@ namespace Msp.App.Satis
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             mspTool.Export2AnyDocument("xls", gc_SiparisList);
         }
 
@@ -68,6 +70,11 @@ namespace Msp.App.Satis
 
         private void bbi_VeresiyeKapat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (AppMain.User.VeresiyeDefterClosed.GetValueOrDefault() == false)
+            {
+                XtraMessageBox.Show("Veresiye Kapatma Yetkiniz Yoktur.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
             if (oRow != null)
             {
@@ -85,6 +92,11 @@ namespace Msp.App.Satis
                     do_refresh();
                 }
             }
+        }
+
+        private void bbi_Report_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

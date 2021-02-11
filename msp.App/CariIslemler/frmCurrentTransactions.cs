@@ -14,6 +14,7 @@ using Msp.Service.Service.CurrentTransactions;
 using Msp.App.CariIslemler;
 using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
+using Msp.Infrastructure;
 
 namespace msp.App
 {
@@ -48,6 +49,7 @@ namespace msp.App
         #region Edit
         public void do_Edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.CariList, AppMain.CompanyRecId)) return;
             CTransactionsDTO Orow = (CTransactionsDTO)gcv_CurTrans.GetFocusedRow();
             if (Orow != null)
             {
@@ -72,8 +74,8 @@ namespace msp.App
 
         private void btnRemAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.CariList, AppMain.CompanyRecId)) return;
             CTransactionsDTO oRow = (CTransactionsDTO)gcv_CurTrans.GetFocusedRow();
-
             if (oRow != null)
             {
                 if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
@@ -86,6 +88,7 @@ namespace msp.App
 
         private void btnNewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.CariList, AppMain.CompanyRecId)) return;
             frmCariEdit frm = new frmCariEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
             frm.Show(0);

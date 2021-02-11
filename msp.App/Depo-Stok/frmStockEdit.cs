@@ -518,11 +518,13 @@ namespace Msp.App.Depo_Stok
             {
                 rg_Tevkifat.Visible = true;
                 layout_Tevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                lc_oranTevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
             }
             else
             {
                 rg_Tevkifat.Visible = false;
                 layout_Tevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                lc_oranTevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             }
         }
     }

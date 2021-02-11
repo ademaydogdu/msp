@@ -20,5 +20,6 @@ namespace Msp.Models.Models.Invoice
         public DateTime? SKT { get; set; }
         public decimal? AlisFiyati { get; set; } = 0;
         public int? KarOrani { get; set; }
+        public decimal? KDVPrice { get; set; }
     }
 }

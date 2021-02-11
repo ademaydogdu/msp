@@ -20,6 +20,12 @@ namespace Msp.Models.Models
         public string DefaultTheme2 { get; set; }
         public bool? AdminAuthority { get; set; }
 
+        public bool? ReportPrint { get; set; } = true;
+        public bool? ExportExcelPdf { get; set; } = true;
+        public bool? DailyEndOperation { get; set; } = true;
+        public bool? EnvanterEntry { get; set; } = true;
+        public bool? VeresiyeDefterClosed { get; set; } = true;
+
 
     }
 }

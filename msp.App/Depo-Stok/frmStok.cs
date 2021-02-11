@@ -84,6 +84,7 @@ namespace Msp.App.Depo_Stok
         #region Edit
         public void do_Edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.StockList, AppMain.CompanyRecId)) return;
             ProductDTO Orow = (ProductDTO)gcvProducts.GetFocusedRow();
             if (Orow != null)
             {
@@ -121,6 +122,7 @@ namespace Msp.App.Depo_Stok
 
         private void btnRemProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.StockList, AppMain.CompanyRecId)) return;
             ProductDTO oRow = (ProductDTO)gcvProducts.GetFocusedRow();
 
             if (oRow != null)
@@ -222,6 +224,7 @@ namespace Msp.App.Depo_Stok
 
         private void bbi_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (AppMain.User.ReportPrint.GetValueOrDefault() == false) { XtraMessageBox.Show("Rapor Alma Yetkiniz Yoktur.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
             if (_productlist.Count > 0)
             {
                 frmPrint frm = new frmPrint();
@@ -243,6 +246,7 @@ namespace Msp.App.Depo_Stok
 
         private void bbi_EnvanterGiris_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(AppMain.User.EnvanterEntry.GetValueOrDefault() == false) { XtraMessageBox.Show("Ürün Envanter Girişine Yetkiniz. Yoktur.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
             if (_productlist.Count > 0)
             {
                 frmProductEnvanter frm = new frmProductEnvanter();

@@ -44,20 +44,37 @@ namespace Msp.App.Report
                     BeginDate = dt_BeginDate.DateTime,
                     EndDate = new DateTime(dt_EndDate.DateTime.Year, dt_EndDate.DateTime.Month, dt_EndDate.DateTime.Day, 23, 59, 00),
                 };
-                List_OrderOwner = _repository.Run<ReportService, List<OrderOwnerDTO>>(x => x.GetList_Order(req));
-                if (List_OrderOwner.Count > 0)
+                if (orderFilter == OrderFilter.Siparis)
                 {
-                    gridControl1.DataSource = List_OrderOwner;
-                    if (report)
+                    List_OrderOwner = _repository.Run<ReportService, List<OrderOwnerDTO>>(x => x.GetList_Order(req));
+                    if (List_OrderOwner.Count > 0)
                     {
-
+                        gridControl1.DataSource = List_OrderOwner;
+                        if (report)
+                        {
+                        }
                     }
+                    else
+                    {
+                        XtraMessageBox.Show("Kayıt Bulunamadı...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    } 
                 }
-                else
+                if (orderFilter == OrderFilter.SevkRapor)
                 {
-                    XtraMessageBox.Show("Kayıt Bulunamadı...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    List_OrderOwner = _repository.Run<ReportService, List<OrderOwnerDTO>>(x => x.GetList_OrderSevk(req));
+                    if (List_OrderOwner.Count > 0)
+                    {
+                        gridControl1.DataSource = List_OrderOwner;
+                        if (report)
+                        {
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Kayıt Bulunamadı...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
 
+                }
 
 
             }
@@ -83,6 +100,9 @@ namespace Msp.App.Report
                 default:
                     break;
             }
+            dt_BeginDate.EditValue = DateTime.Today;
+            dt_EndDate.EditValue = DateTime.Today;
+
         }
 
         private void bbi_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

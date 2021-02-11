@@ -24,5 +24,7 @@ namespace Msp.Entity.Entities
         public DateTime? SKT { get; set; }
         public decimal? AlisFiyati { get; set; }
         public int? KarOrani { get; set; }
+        public decimal? KDVPrice { get; set; }
+
     }
 }

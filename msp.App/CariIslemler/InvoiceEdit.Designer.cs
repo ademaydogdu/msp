@@ -160,6 +160,7 @@
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            this.colKDVPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
@@ -642,7 +643,8 @@
             this.colTutar,
             this.colSKT,
             this.colAlisFiyati,
-            this.colKarOrani});
+            this.colKarOrani,
+            this.colKDVPrice});
             this.gcv_invoiceTrans.GridControl = this.gc_invoiceTrans;
             this.gcv_invoiceTrans.Name = "gcv_invoiceTrans";
             this.gcv_invoiceTrans.OptionsView.ColumnAutoWidth = false;
@@ -757,7 +759,7 @@
             this.colIndirim.FieldName = "Indirim";
             this.colIndirim.Name = "colIndirim";
             this.colIndirim.Visible = true;
-            this.colIndirim.VisibleIndex = 5;
+            this.colIndirim.VisibleIndex = 6;
             // 
             // colBirimFiyat
             // 
@@ -767,7 +769,7 @@
             this.colBirimFiyat.FieldName = "BirimFiyat";
             this.colBirimFiyat.Name = "colBirimFiyat";
             this.colBirimFiyat.Visible = true;
-            this.colBirimFiyat.VisibleIndex = 6;
+            this.colBirimFiyat.VisibleIndex = 7;
             // 
             // colTutar
             // 
@@ -779,7 +781,7 @@
             this.colTutar.FieldName = "Tutar";
             this.colTutar.Name = "colTutar";
             this.colTutar.Visible = true;
-            this.colTutar.VisibleIndex = 7;
+            this.colTutar.VisibleIndex = 8;
             // 
             // colSKT
             // 
@@ -787,7 +789,7 @@
             this.colSKT.FieldName = "SKT";
             this.colSKT.Name = "colSKT";
             this.colSKT.Visible = true;
-            this.colSKT.VisibleIndex = 8;
+            this.colSKT.VisibleIndex = 9;
             // 
             // colAlisFiyati
             // 
@@ -803,7 +805,7 @@
             this.colKarOrani.FieldName = "KarOrani";
             this.colKarOrani.Name = "colKarOrani";
             this.colKarOrani.Visible = true;
-            this.colKarOrani.VisibleIndex = 9;
+            this.colKarOrani.VisibleIndex = 10;
             // 
             // txtFisSaat
             // 
@@ -1800,6 +1802,16 @@
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(1598, 10);
             // 
+            // colKDVPrice
+            // 
+            this.colKDVPrice.Caption = "KDV Tutarı";
+            this.colKDVPrice.DisplayFormat.FormatString = "n2";
+            this.colKDVPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colKDVPrice.FieldName = "KDVPrice";
+            this.colKDVPrice.Name = "colKDVPrice";
+            this.colKDVPrice.Visible = true;
+            this.colKDVPrice.VisibleIndex = 5;
+            // 
             // InvoiceEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2063,5 +2075,6 @@
         private System.Windows.Forms.BindingSource bs_Depot;
         private DevExpress.XtraEditors.MemoEdit txtFisAciklama;
         private DevExpress.XtraEditors.MemoEdit txtAdress;
+        private DevExpress.XtraGrid.Columns.GridColumn colKDVPrice;
     }
 }

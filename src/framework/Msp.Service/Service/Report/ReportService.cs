@@ -179,6 +179,16 @@ namespace Msp.Service.Service.Report
             }
         }
 
+        public List<OrderOwnerDTO> GetList_OrderSevk(Models.Models.Report.OrderRequest request)
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<OrderOwnerDTO> result = new List<OrderOwnerDTO>();
+                result = base.Map<List<OrderOwner>, List<OrderOwnerDTO>>(_db.OrderOwner.Where(x => x.OrderType == request.OrderType && x.Deleted == false && x.SiparisDate >= request.BeginDate && x.SiparisDate <= request.EndDate && x.IrsaliyeId != 0).ToList());
+                return result;
+            }
+        }
+
 
         #endregion
     }

@@ -170,6 +170,11 @@ namespace Msp.App.DailyEndOpertions
 
         private void bbi_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (AppMain.User.DailyEndOperation.GetValueOrDefault() == false)
+            {
+                XtraMessageBox.Show("Gün Sonu İşlemi Yapmaya Yetkiniz Yoktur.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             do_Save();
         }
     }

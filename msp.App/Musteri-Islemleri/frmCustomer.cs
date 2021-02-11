@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using msp.App;
 using Msp.App.Tool;
+using Msp.Infrastructure;
 using Msp.Models.Models;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Repository;
@@ -42,6 +43,7 @@ namespace Msp.App.Musteri_Islemleri
         #region Edit
         public void do_Edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.MusteriList, AppMain.CompanyRecId)) return;
             CustomersDTO Orow = (CustomersDTO)gcvCustomers.GetFocusedRow();
             if (Orow != null)
             {
@@ -63,6 +65,7 @@ namespace Msp.App.Musteri_Islemleri
         private void btnAddNewCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.MusteriList, AppMain.CompanyRecId)) return;
 
             frmCustomerEdit frm = new frmCustomerEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
@@ -103,6 +106,8 @@ namespace Msp.App.Musteri_Islemleri
         #region Delete
         private void btnRemCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.MusteriList, AppMain.CompanyRecId)) return;
+
             CustomersDTO oRow = (CustomersDTO)gcvCustomers.GetFocusedRow();
 
             if (oRow != null)

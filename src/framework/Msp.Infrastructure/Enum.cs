@@ -49,7 +49,15 @@ namespace Msp.Infrastructure
         StockList = 1,
         Satis = 2,
         PaymentType = 3,
-        CurrentGroupDefinitions = 4
+        CurrentGroupDefinitions = 4,
+        InvoiceList = 5,
+        Order = 6,
+        CariList = 7,
+        Depot = 8,
+        BankEntry = 9,
+        KasaHareketi = 10,
+        MusteriList = 11,
+        Company = 12
     }
 
     public enum DeleteForm

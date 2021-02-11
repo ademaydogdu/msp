@@ -15,6 +15,7 @@ using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
 using msp.App;
 using Msp.Service.Service.Depot;
+using Msp.Infrastructure;
 
 namespace Msp.App.Depo_Stok
 {
@@ -57,6 +58,7 @@ namespace Msp.App.Depo_Stok
         #region Edit
         public void do_Edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.Depot, AppMain.CompanyRecId)) return;
             DepotDTO Orow = (DepotDTO)gcv_Depot.GetFocusedRow();
             if (Orow != null)
             {
@@ -71,6 +73,7 @@ namespace Msp.App.Depo_Stok
         #region Add
         private void btnAddNewDepot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.Depot, AppMain.CompanyRecId)) return;
             frmDepoEdit frm = new frmDepoEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
             frm.Show(0);
@@ -83,9 +86,8 @@ namespace Msp.App.Depo_Stok
         private void btnRemoveDepot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.Depot, AppMain.CompanyRecId)) return;
             DepotDTO oRow = (DepotDTO)gcv_Depot.GetFocusedRow();
-
             if (oRow != null)
             {
                 if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
@@ -96,9 +98,6 @@ namespace Msp.App.Depo_Stok
             }
 
         }
-
-
-
 
 
         #endregion

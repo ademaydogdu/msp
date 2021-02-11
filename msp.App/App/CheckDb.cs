@@ -165,6 +165,11 @@ namespace Msp.App.App
                         + "     [DefaultTheme2] [nvarchar] "
                         + "         (max) NULL, "
                         + "     [AdminAuthority] [bit] NULL, "
+                        + "                         [ReportPrint][bit] NULL, "
+                        + " [ExportExcelPdf] [bit] NULL, "
+	                    + " [DailyEndOperation] [bit] NULL, "
+	                    + " [EnvanterEntry] [bit] NULL, "
+	                    + " [VeresiyeDefterClosed] [bit] NULL, "
                         + "  CONSTRAINT[PK_users] PRIMARY KEY CLUSTERED "
                         + " ( "
                         + "    [username] ASC "
@@ -529,6 +534,22 @@ namespace Msp.App.App
                     + " 	[ToplamKDV] [decimal](18, 2) NULL, "
                     + " 	[DigerMasraflar] [decimal](18, 2) NULL, "
                     + " 	[GenelToplam] [decimal](18, 2) NULL, "
+                    + "     [CompanyId][int] NULL, "
+                    + "     [EFaturaNo] [nvarchar] (50) NULL, "
+	                + "     [EIrsaliyeNo] [nvarchar] (50) NULL, "
+	                + "     [InoviceCancel] [bit] NULL, "
+	                + "     [InvoicePrint] [bit] NULL, "
+	                + "     [VadeGun] [int] NULL, "
+	                + "     [VadeDate] [datetime] NULL, "
+	                + "     [IrsaliyeDate] [datetime] NULL, "
+	                + "     [IrsaliyeNo] [nvarchar] (50) NULL, "
+	                + "     [DovizTuru] [int] NULL, "
+	                + "     [KDV] [nvarchar] (50) NULL, "
+	                + "     [Iskonto] [int] NULL, "
+	                + "     [PaymentType] [nvarchar] (50) NULL, "
+	                + "     [Deleted] [bit] NULL, "
+	                + "     [OrderId] [int] NULL, "
+	                + "     [IrsaliyeId] [int] NULL, "
                     + "  CONSTRAINT[PK_InvoiceOwner] PRIMARY KEY CLUSTERED "
                     + " ( "
                     + "    [RecId] ASC "
@@ -1309,7 +1330,7 @@ namespace Msp.App.App
 
             if (tblPRoduct.Columns.Contains("PBarcodeType") == false)
             {
-                sCommand.CommandText = "ALTER TABLE Products ADD PBarcodeType bit";
+                sCommand.CommandText = "ALTER TABLE Products ADD PBarcodeType int";
                 ExecuteNonQuery(sCommand);
             }
             progressBarControl1.PerformStep();
@@ -1370,11 +1391,49 @@ namespace Msp.App.App
                 sCommand.CommandText = "ALTER TABLE CTransactions ADD GroupId int NULL";
                 ExecuteNonQuery(sCommand);
             }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
             if (tblCTransactions.Columns.Contains("SevkId") == false)
             {
                 sCommand.CommandText = "ALTER TABLE CTransactions ADD SevkId int NULL";
                 ExecuteNonQuery(sCommand);
             }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
+            #endregion
+
+            #region Users
+            sCommand.CommandText = "Select top 1 * from Users  WITH (nolock) ";
+            DataTable tblUsers = ExecuteSelectCommand(sCommand);
+            if (tblPRoduct.Columns.Contains("ReportPrint") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Users ADD ReportPrint bit";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Users set ReportPrint = 1";
+                ExecuteNonQuery(sCommand);
+
+                sCommand.CommandText = "ALTER TABLE Users ADD ExportExcelPdf bit";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Users set ExportExcelPdf = 1";
+                ExecuteNonQuery(sCommand);
+
+                sCommand.CommandText = "ALTER TABLE Users ADD DailyEndOperation bit";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Users set DailyEndOperation = 1";
+                ExecuteNonQuery(sCommand);
+
+                sCommand.CommandText = "ALTER TABLE Users ADD EnvanterEntry bit";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Users set EnvanterEntry = 1";
+                ExecuteNonQuery(sCommand);
+
+                sCommand.CommandText = "ALTER TABLE Users ADD VeresiyeDefterClosed bit";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Users set VeresiyeDefterClosed = 1";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
             #endregion

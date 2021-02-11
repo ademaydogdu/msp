@@ -117,34 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>169, 17</value>
-  </metadata>
-  <metadata name="bs_ShippingInformation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1044, 17</value>
-  </metadata>
-  <metadata name="bs_ShipEdit.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1226, 17</value>
-  </metadata>
-  <metadata name="img_bar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>294, 17</value>
-  </metadata>
-  <metadata name="bs_CTrans.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>735, 17</value>
-  </metadata>
-  <metadata name="bs_lcShippingInfor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="vendorLogo.ImageSource" xml:space="preserve">
+    <value>iVBORw0KGgoAAAANSUhEUgAAAP0AAAB4CAMAAAAOlgSlAAAABGdBTUEAALGPC/xhBQAAADBQTFRFw8PD+/v7y8vLz8/P09PT19fX39/f4+Pj5+fn6+vr8/Pz9/f3x8fH7+/v29vb////x2qpKQAAAAlwSFlzAAAOvwAADr8BOAVTJAAABPpJREFUeF7tmu16gyAMhes3Wm3v/26HEMmBqoM9zbq1eX9NxJSzhBDQi6IoiqIoiqIoiqIoiqIoiqIoiqIoyv+lue1Dt9+c4b7PTPffm89W315JbkQ10O23p1sq0kxUS0e3PoNmIuGWW02Nn8NI0i2fJ17Vb6j6D0PVE6r+V2hb+uPl/L76drnf/4r8cvX1bRiX6TotZjitj+q26824dhwNd6xdeXWlKyLX5NMpVF+beHdwNQduvEERuVKZZm1uqbaGijrbpABF6hvoHVicrIh6SDYQjqm+3OjP+0g9s03KUKK+p44pY7IpPup35x/bQj/XpBD56mebrTauxuD+0HoVYJOV6buuH3cCwe+js01Kka1+DhO5unnH3Hi+VvAsn5psChruOA0eZyHbpBjZ6rljmJQ+fzsmarJ5jVrs+EP0zsGp3GbJNSlHrnr2aE8tlppD1VDThYMZTokMNUWN2SblyFRfUx/rPWpxhBwe3DfTpQUSd0NN+Hi2SUEy1e86L9JKa1hHlxYIcugXfiXbpCB56tlPSZEKNQ3lLbpKPMrxvD2fb1KQPPVw+h2PCNZrP3m5Z1TNci7f5ni+SUHy1B9mYp7Q98U1sO8P1G9hnm9SkCz1MBfTAVGzxUc6LHjumuDIpzdlBSYFyVIPqSxdhliWfx5U7Wc9muQFJgXJUg9TMcrPFg5p0vWY3ywcETsF/rcm5chSz4vTQyKCDO13rTzxwaf8K5vUEpNyZKmHTulQYZ9CMzoMnit1TmTXbToUmRQjS/3JeOB5civUddscD7Nhayk0Kcap+toY55i8oW4+ZLH3aRyGEfZtPI/LTEpxqt5WJG7RORkP3AoqashbyASFe6FJIU7VryrWVkhRaSyCDzlFzXsnW9dISqlJGc7Uu3VqDVaoStPFGYYaLU8tGLZUY3T3RyYFOFPv7q0eg9Ik3XfB8hQ9704rBzOOoxn67jGsfmBSgBP1vkBbZyXsx9KylEM8quuda88ydrlJCU7U+7rFSYC07W4FoISFAKa0dxq3hSZlOFHvI9CNAHJU3ItLWEx6FLunq3WZSSGO1VNsuriEXWe8CHG5Dh4MGc2k/1CgzKQQx+pJg999cx6Od+OcoWDVhuV+GtqjA5oik0IcqycNfmiQovGsEapaEAlJe2UyOzm/0KQQh+q36Ud5l/uFjYqFW3GKwlq+sfdqssSkEIfqtxs0+WYO5yWMlXezcYKDeoWp0n9AkUkB5s5ASbrY0oShxpB6GliGvVdmzk/Jkj1DQkeqeCaXmHw6uy+PH6He+JLpXi3GwOXjutwMkPqAa+T/IpPPBc6WTqHu1jEH/63qcYLOnXtxC4EViJa3ApNPZic37ULdV9ZPblKq4SGhU1DZ3Xw7JPnfEq/umSafzg/U28Emn5lM/l00Um/+9EE+35L39+lClmHyDwGfGHU74wyFKmS4NoqAx2T+jcn/A7+BjqK3B/8n727eCF7DkyId3svLl++vgjdo6ZkFlzHyr2ZfBS+j6YLN2/b39f3Rxs1C7e887zm5px7moyz5jeurgNotrmp43v/CxvVVwKa9ij464pz/vq6PTjZo3+bgDxbFTypfCazrNr91zRrmNbzaeGvx6GVPhdfye7dXc3S0YbX/6f3Ls6h3jzam/hO0O5p+nKCyXwx9hP1BzHXdtE1Tf5xwRVEURVEURVEURVEURVEURVH2uVy+AMfSyau4MvLMAAAAAElFTkSuQmCC</value>
+  </data>
+  <metadata name="objectDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="bs_CurrentGroupDefinitions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>841, 17</value>
+  <metadata name="objectDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
   </metadata>
-  <metadata name="bs_CaseMov.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>389, 17</value>
+  <metadata name="objectDataSource3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
   </metadata>
-  <metadata name="bs_Invoice.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>627, 17</value>
-  </metadata>
-  <metadata name="bs_OrderList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>508, 17</value>
+  <metadata name="objectDataSource4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
   </metadata>
 </root>

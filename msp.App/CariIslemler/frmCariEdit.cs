@@ -38,10 +38,12 @@ namespace Msp.App.CariIslemler
 
         MspTool MspTool = new MspTool();
         private CTransactionsDTO __cTransaction;
+        private ShippingInformationDTO __ShippingInformation;
         List<CaseMovementDTO> _List_CaseMov;
         List<CurrentGroupDefinitionsDTO> __CurrentGroupDefinitions = new List<CurrentGroupDefinitionsDTO>();
 
         List<ShippingInformationDTO> __shippingInformations = new List<ShippingInformationDTO>();
+        List<ShippingInformationDTO> __lc_ShippingInfo = new List<ShippingInformationDTO>();
         public int RecId;
 
         #region Record
@@ -123,6 +125,19 @@ namespace Msp.App.CariIslemler
             __CurrentGroupDefinitions = _repository.Run<DepotStockService, List<CurrentGroupDefinitionsDTO>>(x => x.Get_List_CurrentGroupDefinitions());
             bs_CurrentGroupDefinitions.DataSource = __CurrentGroupDefinitions;
         }
+        public void do_SevkAdressTabsList()
+        {
+            __shippingInformations = _repository.Run<CurrentTransactionsService, List<ShippingInformationDTO>>(x => x.GetListShippingInformation(RecId, AppMain.CompanyRecId));
+            bs_ShippingInformation.DataSource = __shippingInformations;
+        }
+
+        public void do_LookSevkBilgileri()
+        {
+            __lc_ShippingInfo.Add(new ShippingInformationDTO { RecId = 0, AdressDefinition = "Fatura Adresi" });
+            var shipp = _repository.Run<CurrentTransactionsService, List<ShippingInformationDTO>>(x => x.GetListShippingInformation(RecId, AppMain.CompanyRecId));
+            __lc_ShippingInfo.AddRange(shipp);
+            bs_lcShippingInfor.DataSource = __lc_ShippingInfo;
+        }
 
         public void Show(int _RecId)
         {
@@ -143,7 +158,7 @@ namespace Msp.App.CariIslemler
             }
             bs_CTrans.DataSource = __cTransaction;
             do_CurrentGroupDefinitions();
-
+            do_LookSevkBilgileri();
 
 
             MspTool.Get_Layout(this);
@@ -187,6 +202,10 @@ namespace Msp.App.CariIslemler
             if (e.Page == tb_bakiye)
             {
                 do_refreshCaseMov();
+            }
+            if (e.Page == tb_SevkAdresi)
+            {
+                do_SevkAdressTabsList();
             }
         }
 
@@ -250,6 +269,47 @@ namespace Msp.App.CariIslemler
             frm.ShowDialog();
         }
 
+        private bool do_Validation_Ship()
+        {
+            bool _return = false;
+            if (RecId == 0)
+            {
+                XtraMessageBox.Show("İlk Önce Cari Kartını Kaydediniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(txtAdresTanimi.Text) == "")
+            {
+                XtraMessageBox.Show("Adres Tanımı Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(txtAdress.Text) == "")
+            {
+                XtraMessageBox.Show("Adres Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(txtIlce.Text) == "")
+            {
+                XtraMessageBox.Show("İlçe Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(txtİl.Text) == "")
+            {
+                XtraMessageBox.Show("İl Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(txtUlke.Text) == "")
+            {
+                XtraMessageBox.Show("Ülke Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            if (Convert.ToString(txtTelefon.Text) == "")
+            {
+                XtraMessageBox.Show("Telefon Numarası Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _return = true;
+            }
+            return _return;
+        }
+
         private void lc_CariGrup_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (e.Button.Index == 1)
@@ -267,6 +327,76 @@ namespace Msp.App.CariIslemler
                     do_CurrentGroupDefinitions();
                 }
             }
+        }
+
+        private void do_saveShip()
+        {
+            bs_ShipEdit.EndEdit();
+            if (do_Validation_Ship()) return;
+            if (get_Question("Kaydedilecektir Onaylıyor Musunuz?"))
+            {
+                try
+                {
+                    __ShippingInformation.CompanyId = AppMain.CompanyRecId;
+                    __ShippingInformation.AccId = RecId;
+                    var response = _repository.Run<CurrentTransactionsService, ActionResponse<ShippingInformationDTO>>(x => x.SaveShippingInformation(__ShippingInformation));
+                    if (response.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        do_SevkAdressTabsList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnSevkKaydet_Click(object sender, EventArgs e)
+        {
+            do_saveShip();
+        }
+
+        private void gcv_SevkBilgileri_Click(object sender, EventArgs e)
+        {
+            __ShippingInformation = (ShippingInformationDTO)gcv_SevkBilgileri.GetFocusedRow();
+            if (__ShippingInformation != null)
+            {
+
+                bs_ShipEdit.DataSource = __ShippingInformation;
+
+                //txtRecId.Text = Convert.ToString(oRow.RecId);
+                //txtAdresTanimi.Text = oRow.AdressDefinition;
+                //txtAdress.Text = oRow.Adress;
+                //txtIlce.Text = oRow.County;
+                //txtUlke.Text = oRow.Country;
+                //txtİl.Text = oRow.District;
+                //txtTelefon.Text = oRow.Phone;
+                //txtYetkili.Text = oRow.Authorized;
+            }
+        }
+
+        private void btnDeleted_Click(object sender, EventArgs e)
+        {
+            ShippingInformationDTO oRow = (ShippingInformationDTO)gcv_SevkBilgileri.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                {
+                    var result = _repository.Run<CurrentTransactionsService, ActionResponse<ShippingInformationDTO>>(x => x.DeleteShippingInformation(oRow.RecId));
+                    do_SevkAdressTabsList();
+                }
+            }
+        }
+
+        private void btnYeni_Click(object sender, EventArgs e)
+        {
+            __ShippingInformation = new ShippingInformationDTO();
+            bs_ShipEdit.DataSource = __ShippingInformation;
         }
     }
 }

@@ -18,6 +18,8 @@ using Msp.Models.Models.Utilities;
 using Msp.Service.Service.CurrentTransactions;
 using Msp.Service.Service.Depot;
 using Msp.App.Report;
+using Msp.Models.Models.Report.List;
+using Msp.Service.Service.DepotStock;
 
 namespace Msp.App.CariIslemler
 {
@@ -41,6 +43,9 @@ namespace Msp.App.CariIslemler
             new SelectIdValue(4, "Alım İrsaliyesi"),
             new SelectIdValue(5, "Satış İrsaliyesi"),
         };
+
+        List<CTransactionsDTO> _currentTransactionsList = new List<CTransactionsDTO>();
+        List<UnitsDTO> _list_UnitsDTO = new List<UnitsDTO>();
 
         public InvoiceType invoice;
         private void InvoiceList_Load(object sender, EventArgs e)
@@ -84,7 +89,7 @@ namespace Msp.App.CariIslemler
             rp_InvoiceType.ValueMember = "Id";
             rp_InvoiceType.DisplayMember = "Value";
 
-            var _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
+            _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
             rp_cari.DataSource = _currentTransactionsList;
             rp_cari.ValueMember = "CurID";
             rp_cari.DisplayMember = "CurAccountName";
@@ -93,6 +98,8 @@ namespace Msp.App.CariIslemler
             rp_depot.DataSource = _depotList;
             rp_depot.ValueMember = "DID";
             rp_depot.DisplayMember = "DepName";
+
+            _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
         }
 
         private void InvoiceList_KeyDown(object sender, KeyEventArgs e)
@@ -122,6 +129,10 @@ namespace Msp.App.CariIslemler
 
         private void do_edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.InvoiceList, AppMain.CompanyRecId))
+            {
+                return;
+            }
             InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
             if (oRow != null)
             {
@@ -134,9 +145,12 @@ namespace Msp.App.CariIslemler
             }
         }
 
-
         private void btnNewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.InvoiceList, AppMain.CompanyRecId))
+            {
+                return;
+            }
             InvoiceEdit frm = new InvoiceEdit();
             frm.MdiParent = this.MdiParent;
             frm.invoice = invoice;
@@ -157,6 +171,10 @@ namespace Msp.App.CariIslemler
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.InvoiceList, AppMain.CompanyRecId))
+            {
+                return;
+            }
             InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
             if (oRow != null)
             {
@@ -170,7 +188,7 @@ namespace Msp.App.CariIslemler
                     else
                     {
                         do_refresh();
-                    } 
+                    }
                 }
             }
         }
@@ -185,9 +203,30 @@ namespace Msp.App.CariIslemler
             InvoiceOwnerDTO oRow = (InvoiceOwnerDTO)gcv_Invoice.GetFocusedRow();
             if (oRow != null)
             {
-                oRow._invoiceTrans = _repository.Run<InvoiceService, List<InvoiceTransDTO>>(x => x.Get_Edit_List_Trans(oRow.RecId));
+                var trans = _repository.Run<InvoiceService, List<InvoiceTransDTO>>(x => x.Get_Edit_List_Trans(oRow.RecId));
+                CTransactionsDTO cTransactions = _currentTransactionsList.FirstOrDefault(x => x.CurID == oRow.CariRecId);
+                List<ReportInvoiceTransDTO> reportTrans = new List<ReportInvoiceTransDTO>();
+                foreach (var item in trans)
+                {
+                    reportTrans.Add(new ReportInvoiceTransDTO
+                    {
+                        ProductName = AppMain.Products.FirstOrDefault(x => x.PID == item.ProductId).PName,
+                        Tutar = item.Tutar,
+                        Unit = item.Quentity + " " + _list_UnitsDTO.FirstOrDefault(x=>x.UID == item.UnitID.GetValueOrDefault()).UName
+                    });
+                }
+
+                ReportInvoice reportInvoice = new ReportInvoice
+                {
+                    CustomerName = cTransactions.CurAccountName,
+                    FaturaNo = oRow.FicheDocumentNo,
+                    FichDate = oRow.FicDate.GetValueOrDefault(),
+                    trans = reportTrans
+                };
+
+
                 frmPrint frm = new frmPrint();
-                frm.PrintInvoiceReport(oRow);
+                frm.PrintInvoiceReport(oRow, reportTrans, cTransactions, reportInvoice);
                 frm.ShowDialog();
             }
         }

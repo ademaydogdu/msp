@@ -396,6 +396,7 @@ namespace Msp.App.CariIslemler
                     oRow.BirimFiyat = product.PFirstPrice;
                 }
                 oRow.Tutar = oRow.Quentity * oRow.BirimFiyat;
+                oRow.KDVPrice = Math.Round(oRow.Tutar.GetValueOrDefault() * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)oRow.KDV).TaxOrani, 2);
                 TopTotal();
             }
 

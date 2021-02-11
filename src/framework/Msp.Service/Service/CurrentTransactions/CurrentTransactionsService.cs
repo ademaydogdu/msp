@@ -118,8 +118,65 @@ namespace Msp.Service.Service.CurrentTransactions
         }
 
 
+        public List<ShippingInformationDTO> GetListShippingInformation(int CariId, int CompanyId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                return base.Map<List<ShippingInformation>, List<ShippingInformationDTO>>(_db.ShippingInformation.Where(x=>x.CompanyId == CompanyId && x.AccId == CariId).ToList());
+            }
+        }
 
+        public ActionResponse<ShippingInformationDTO> DeleteShippingInformation(int? RecId)
+        {
+            ActionResponse<ShippingInformationDTO> response = new ActionResponse<ShippingInformationDTO>();
+            using (MspDbContext _db = new MspDbContext())
+            {
+                var record = _db.ShippingInformation.Where(x => x.RecId == RecId).FirstOrDefault();
+                if (record != null)
+                {
+                    _db.ShippingInformation.Remove(record);
+                }
 
+                _db.SaveChanges();
+            }
+            return response;
+        }
+
+        public ActionResponse<ShippingInformationDTO> SaveShippingInformation(ShippingInformationDTO model)
+        {
+            ActionResponse<ShippingInformationDTO> response = new ActionResponse<ShippingInformationDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    if (response.Response.RecId == 0)
+                    {
+                        _db.ShippingInformation.Add(base.Map<ShippingInformationDTO, ShippingInformation>(model));
+                        _db.SaveChanges();
+                    }
+                    else
+                    {
+                        var entity = _db.ShippingInformation.FirstOrDefault(x => x.RecId == response.Response.RecId);
+                        if (entity != null)
+                        {
+                            _db.Entry(entity).CurrentValues.SetValues(model);
+                            _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                        }
+                    }
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
 
 
 

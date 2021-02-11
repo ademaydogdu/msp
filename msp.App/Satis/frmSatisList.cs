@@ -15,6 +15,7 @@ using Msp.App.Tool;
 using msp.App;
 using Msp.App.Report;
 using Msp.Models.Models.Utilities;
+using Msp.Infrastructure;
 
 namespace Msp.App.Satis
 {
@@ -104,6 +105,8 @@ namespace Msp.App.Satis
 
         private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.Satis, AppMain.CompanyRecId)) return;
+
             SaleOwnerDTO oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
             if (oRow != null)
             {

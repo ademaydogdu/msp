@@ -51,6 +51,17 @@ namespace Msp.App.Islemler
             bs_CaseMov.DataSource = _List_CaseMov;
         }
 
+        public void do_edit()
+        {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.KasaHareketi, AppMain.CompanyRecId)) return;
+            var oRow = (CaseMovementDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                frmKasaHareketi frm = new frmKasaHareketi();
+                frm._FormOpenType = FormOpenType.Edit;
+                frm.Show(oRow.RecId);
+            }
+        }
 
         #endregion
 
@@ -87,6 +98,7 @@ namespace Msp.App.Islemler
 
         private void btnAddNewCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.KasaHareketi, AppMain.CompanyRecId)) return;
             frmKasaHareketi frm = new frmKasaHareketi();
             frm._FormOpenType = Infrastructure.FormOpenType.New;
             frm.Show(0);
@@ -99,18 +111,13 @@ namespace Msp.App.Islemler
 
         private void btnEditCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var oRow = (CaseMovementDTO)gridView1.GetFocusedRow();
-            if (oRow != null)
-            {
-                frmKasaHareketi frm = new frmKasaHareketi();
-                frm._FormOpenType = FormOpenType.Edit;
-                frm.Show(oRow.RecId);
-            }
+            do_edit();
 
         }
 
         private void btnRemCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.KasaHareketi, AppMain.CompanyRecId)) return;
             var oRow = (CaseMovementDTO)gridView1.GetFocusedRow();
             if (oRow != null)
             {
@@ -122,7 +129,9 @@ namespace Msp.App.Islemler
             }
         }
 
-
-
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            do_edit();
+        }
     }
 }

@@ -61,7 +61,20 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.ch_ExportReport = new DevExpress.XtraEditors.CheckEdit();
+            this.ch_ExcelExport = new DevExpress.XtraEditors.CheckEdit();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.ch_GunSonu = new DevExpress.XtraEditors.CheckEdit();
+            this.ch_EnvanterGiris = new DevExpress.XtraEditors.CheckEdit();
+            this.ch_VeresiyeKapat = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
@@ -127,7 +140,21 @@
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_ExportReport.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_ExcelExport.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_GunSonu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_EnvanterGiris.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_VeresiyeKapat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             this.xtraTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
@@ -472,7 +499,15 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.ch_ExportReport);
+            this.layoutControl2.Controls.Add(this.ch_ExcelExport);
+            this.layoutControl2.Controls.Add(this.textEdit1);
+            this.layoutControl2.Controls.Add(this.ch_GunSonu);
+            this.layoutControl2.Controls.Add(this.ch_EnvanterGiris);
+            this.layoutControl2.Controls.Add(this.ch_VeresiyeKapat);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem19});
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
@@ -480,13 +515,145 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // ch_ExportReport
+            // 
+            this.ch_ExportReport.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "ReportPrint", true));
+            this.ch_ExportReport.Location = new System.Drawing.Point(12, 12);
+            this.ch_ExportReport.MenuManager = this.barManager1;
+            this.ch_ExportReport.Name = "ch_ExportReport";
+            this.ch_ExportReport.Properties.Caption = "Rapor Yazdırabilsin";
+            this.ch_ExportReport.Size = new System.Drawing.Size(547, 20);
+            this.ch_ExportReport.StyleController = this.layoutControl2;
+            this.ch_ExportReport.TabIndex = 4;
+            // 
+            // ch_ExcelExport
+            // 
+            this.ch_ExcelExport.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "ExportExcelPdf", true));
+            this.ch_ExcelExport.Location = new System.Drawing.Point(12, 36);
+            this.ch_ExcelExport.MenuManager = this.barManager1;
+            this.ch_ExcelExport.Name = "ch_ExcelExport";
+            this.ch_ExcelExport.Properties.Caption = "Excel/PDF Çıktısı Alsın";
+            this.ch_ExcelExport.Size = new System.Drawing.Size(547, 20);
+            this.ch_ExcelExport.StyleController = this.layoutControl2;
+            this.ch_ExcelExport.TabIndex = 5;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(114, 60);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(445, 20);
+            this.textEdit1.StyleController = this.layoutControl2;
+            this.textEdit1.TabIndex = 6;
+            // 
+            // ch_GunSonu
+            // 
+            this.ch_GunSonu.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "DailyEndOperation", true));
+            this.ch_GunSonu.Location = new System.Drawing.Point(12, 60);
+            this.ch_GunSonu.MenuManager = this.barManager1;
+            this.ch_GunSonu.Name = "ch_GunSonu";
+            this.ch_GunSonu.Properties.Caption = "Gün Sonu İşlemi Yapabilsin";
+            this.ch_GunSonu.Size = new System.Drawing.Size(547, 20);
+            this.ch_GunSonu.StyleController = this.layoutControl2;
+            this.ch_GunSonu.TabIndex = 7;
+            // 
+            // ch_EnvanterGiris
+            // 
+            this.ch_EnvanterGiris.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "EnvanterEntry", true));
+            this.ch_EnvanterGiris.Location = new System.Drawing.Point(12, 84);
+            this.ch_EnvanterGiris.MenuManager = this.barManager1;
+            this.ch_EnvanterGiris.Name = "ch_EnvanterGiris";
+            this.ch_EnvanterGiris.Properties.Caption = "Envanter Girişi Yapabilsin";
+            this.ch_EnvanterGiris.Size = new System.Drawing.Size(547, 20);
+            this.ch_EnvanterGiris.StyleController = this.layoutControl2;
+            this.ch_EnvanterGiris.TabIndex = 8;
+            // 
+            // ch_VeresiyeKapat
+            // 
+            this.ch_VeresiyeKapat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_usersEdit, "VeresiyeDefterClosed", true));
+            this.ch_VeresiyeKapat.Location = new System.Drawing.Point(12, 108);
+            this.ch_VeresiyeKapat.MenuManager = this.barManager1;
+            this.ch_VeresiyeKapat.Name = "ch_VeresiyeKapat";
+            this.ch_VeresiyeKapat.Properties.Caption = "Veresiye Defterinde Kayıt Kapatabilsin";
+            this.ch_VeresiyeKapat.Size = new System.Drawing.Size(547, 20);
+            this.ch_VeresiyeKapat.StyleController = this.layoutControl2;
+            this.ch_VeresiyeKapat.TabIndex = 9;
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.textEdit1;
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(50, 20);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem17,
+            this.layoutControlItem18,
+            this.emptySpaceItem6,
+            this.layoutControlItem20,
+            this.layoutControlItem21,
+            this.layoutControlItem22});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(571, 384);
             this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.ch_ExportReport;
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.ch_ExcelExport;
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem18.TextVisible = false;
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 120);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(551, 244);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.ch_GunSonu;
+            this.layoutControlItem20.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem20.TextVisible = false;
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.ch_EnvanterGiris;
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem21.TextVisible = false;
+            // 
+            // layoutControlItem22
+            // 
+            this.layoutControlItem22.Control = this.ch_VeresiyeKapat;
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem22.Name = "layoutControlItem22";
+            this.layoutControlItem22.Size = new System.Drawing.Size(551, 24);
+            this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem22.TextVisible = false;
             // 
             // xtraTabPage4
             // 
@@ -902,7 +1069,21 @@
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ch_ExportReport.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_ExcelExport.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_GunSonu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_EnvanterGiris.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ch_VeresiyeKapat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             this.xtraTabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
@@ -1015,5 +1196,18 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn colSecDelete;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit4;
+        private DevExpress.XtraEditors.CheckEdit ch_ExportReport;
+        private DevExpress.XtraEditors.CheckEdit ch_ExcelExport;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.CheckEdit ch_GunSonu;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
+        private DevExpress.XtraEditors.CheckEdit ch_EnvanterGiris;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
+        private DevExpress.XtraEditors.CheckEdit ch_VeresiyeKapat;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
     }
 }

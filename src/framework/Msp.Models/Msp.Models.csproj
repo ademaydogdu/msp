@@ -81,6 +81,8 @@
     <Compile Include="Models\Report\CaseBakiyeReportDTO.cs" />
     <Compile Include="Models\Report\CaseReportFilter.cs" />
     <Compile Include="Models\Report\InvoiceRequest.cs" />
+    <Compile Include="Models\Report\List\ReportInvoice.cs" />
+    <Compile Include="Models\Report\List\ReportInvoiceTransDTO.cs" />
     <Compile Include="Models\Report\OrderRequest.cs" />
     <Compile Include="Models\Report\StockBakiyeReportDTO.cs" />
     <Compile Include="Models\Report\SumSaleStockDTO.cs" />

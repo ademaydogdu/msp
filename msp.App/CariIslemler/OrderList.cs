@@ -64,7 +64,6 @@ namespace Msp.App.CariIslemler
         };
 
         #region Record
-
         public void do_refresh()
         {
             try
@@ -80,10 +79,12 @@ namespace Msp.App.CariIslemler
             {
             }
         }
-
-
         private void do_edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.Order, AppMain.CompanyRecId))
+            {
+                return;
+            }
             OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
             if (oRow.IrsaliyeId > 0) { XtraMessageBox.Show("Kayıt İrsaliyeleştirilmiştir. İşlem Yapılamaz. Ön İzleme ile açılabilir...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
             if (oRow != null)
@@ -96,7 +97,6 @@ namespace Msp.App.CariIslemler
                 frm.Show();
             }
         }
-
         #endregion
 
         #region Form
@@ -176,6 +176,10 @@ namespace Msp.App.CariIslemler
 
         private void btnNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.Order, AppMain.CompanyRecId))
+            {
+                return;
+            }
             OrderEdit frm = new OrderEdit();
             frm.MdiParent = this.MdiParent;
             frm._FormOpenType = FormOpenType.New;
@@ -197,17 +201,24 @@ namespace Msp.App.CariIslemler
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.Order, AppMain.CompanyRecId))
+            {
+                return;
+            }
             OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
             if (oRow != null)
             {
-                var response = _repository.Run<OrderService, ActionResponse<OrderOwnerDTO>>(x => x.Deleted_Order(oRow.RecId));
-                if (response.ResponseType != ResponseType.Ok)
+                if (MspTool.get_Question("Kayıt Silincektir. Onaylıyor musunuz?"))
                 {
-                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                else
-                {
-                    do_refresh();
+                    var response = _repository.Run<OrderService, ActionResponse<OrderOwnerDTO>>(x => x.Deleted_Order(oRow.RecId));
+                    if (response.ResponseType != ResponseType.Ok)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        do_refresh();
+                    } 
                 }
             }
         }
@@ -224,6 +235,10 @@ namespace Msp.App.CariIslemler
 
         private void bbi_View_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Preview, (int)DocumentType.Order, AppMain.CompanyRecId))
+            {
+                return;
+            }
             OrderOwnerDTO oRow = (OrderOwnerDTO)gcv_OrderList.GetFocusedRow();
             if (oRow != null)
             {

@@ -252,13 +252,29 @@ namespace msp.App
             }
             return _LocalIP;
         }
-        private bool formAcikmi(string formAdi)
+        //private bool formAcikmi(string formAdi)
+        //{
+
+        //    bool formBulundu = false;
+        //    foreach (Form ofrom in Application.OpenForms)
+        //        if (ofrom.Name == formAdi)
+        //        {
+
+        //            formBulundu = true;
+        //            ofrom.Activate();
+        //            break;
+        //        }
+        //    return formBulundu;
+        //}
+
+        private async Task<bool> formAcikmi(string formAdi)
         {
             bool formBulundu = false;
+            bool x = await CheckDefinatinAsync();
+
             foreach (Form ofrom in Application.OpenForms)
                 if (ofrom.Name == formAdi)
                 {
-
                     formBulundu = true;
                     ofrom.Activate();
                     break;
@@ -270,6 +286,14 @@ namespace msp.App
             AppMain._productsTask = _repository.RunAsync<Msp.Service.Service.DepotStock.DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
         }
 
+        private async Task<bool> CheckDefinatinAsync()
+        {
+            if (AppMain.Products == null || !AppMain.Products.Any())
+                AppMain.Products = await AppMain._productsTask;
+
+            return true;
+
+        }
 
         #endregion
 
@@ -563,14 +587,14 @@ namespace msp.App
 
         #region Bar_Buton
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (formAcikmi("frmSaleProductMovemnet"))
+            if(await formAcikmi("frmSaleProductMovemnet"))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Satış - Ürün Hareket Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!formAcikmi("frmSatis"))
+            if (await formAcikmi("frmSatis"))
             {
                 frmSatis frm = new frmSatis();
                 frm.MdiParent = this;
@@ -584,11 +608,15 @@ namespace msp.App
 
         }
 
-        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmStok frm = new frmStok();
-            frm.MdiParent = this;
-            frm.Show();
+            bool x = await formAcikmi("frmStok");
+            if (!x)
+            {
+                frmStok frm = new frmStok();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
         }
 
         private void barButtonItem41_ItemClick(object sender, ItemClickEventArgs e)
@@ -596,11 +624,15 @@ namespace msp.App
 
         }
 
-        private void barButtonItem63_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem63_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmCurrentTransactions frm = new frmCurrentTransactions();
-            frm.MdiParent = this;
-            frm.Show();
+            bool x = await formAcikmi("frmCurrentTransactions");
+            if (!x)
+            {
+                frmCurrentTransactions frm = new frmCurrentTransactions();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
         }
         private void btnParameters_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -620,11 +652,15 @@ namespace msp.App
             frm.MdiParent = this;
             frm.Show();
         }
-        private void btnSatisListesi_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnSatisListesi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmSatisList frmSatis = new frmSatisList();
-            frmSatis.MdiParent = this;
-            frmSatis.Show();
+            bool x = await formAcikmi("frmSatisList");
+            if (!x)
+            {
+                frmSatisList frmSatis = new frmSatisList();
+                frmSatis.MdiParent = this;
+                frmSatis.Show(); 
+            }
         }
         private void btnSpeedSale_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -806,8 +842,10 @@ namespace msp.App
             }
         }
 
-        private void btnAlimFaturasi_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnAlimFaturasi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            bool x = await CheckDefinatinAsync();
+
             InvoiceList frm = new InvoiceList();
             frm.MdiParent = this;
             frm.invoice = InvoiceType.AlımFaturası;
@@ -821,32 +859,40 @@ namespace msp.App
             frm.Show();
         }
 
-        private void barButtonItem87_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem87_ItemClick(object sender, ItemClickEventArgs e)
         {
+            bool x = await CheckDefinatinAsync();
+
             InvoiceList frm = new InvoiceList();
             frm.MdiParent = this;
             frm.invoice = InvoiceType.SatisFaturasi;
             frm.Show();
         }
 
-        private void btnFaturaAra_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnFaturaAra_ItemClick(object sender, ItemClickEventArgs e)
         {
+            bool x = await CheckDefinatinAsync();
+
             InvoiceList frm = new InvoiceList();
             frm.MdiParent = this;
             frm.invoice = InvoiceType.AllFatura;
             frm.Show();
         }
 
-        private void barButtonItem89_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem89_ItemClick(object sender, ItemClickEventArgs e)
         {
+            bool x = await CheckDefinatinAsync();
+
             InvoiceList frm = new InvoiceList();
             frm.MdiParent = this;
             frm.invoice = InvoiceType.AlisIrsaliye;
             frm.Show();
         }
 
-        private void barButtonItem90_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem90_ItemClick(object sender, ItemClickEventArgs e)
         {
+            bool x = await CheckDefinatinAsync();
+
             InvoiceList frm = new InvoiceList();
             frm.MdiParent = this;
             frm.invoice = InvoiceType.SatisIrsaliye;
@@ -860,8 +906,10 @@ namespace msp.App
             frm.Show();
         }
 
-        private void barButtonItem91_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem91_ItemClick(object sender, ItemClickEventArgs e)
         {
+            bool x = await CheckDefinatinAsync();
+
             InvoiceList frm = new InvoiceList();
             frm.MdiParent = this;
             frm.invoice = InvoiceType.AllIrsaliye;
@@ -1020,9 +1068,10 @@ namespace msp.App
 
         #endregion
 
-        private void barButtonItem119_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem119_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!formAcikmi("CashPayGroupDef"))
+            bool x = await formAcikmi("CashPayGroupDef");
+            if (!x)
             {
                 CashPayGroupDef frm = new CashPayGroupDef();
                 frm.MdiParent = this;
@@ -1030,9 +1079,10 @@ namespace msp.App
             }
         }
 
-        private void barButtonItem120_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem120_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!formAcikmi("frmGroupDefinition"))
+            bool x = await formAcikmi("frmGroupDefinition");
+            if (!x)
             {
                 frmGroupDefinition frm = new frmGroupDefinition();
                 frm.MdiParent = this;
@@ -1111,9 +1161,9 @@ namespace msp.App
             frm.ShowDialog();
         }
 
-        private void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (formAcikmi("frmSatis"))
+            if(!await formAcikmi("frmSatis"))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Satış Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -1169,9 +1219,10 @@ namespace msp.App
             frm.Show();
         }
 
-        private void barButtonItem96_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem96_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!formAcikmi("frmStockMovement"))
+            bool x = await formAcikmi("frmStockMovement");
+            if (!x)
             {
                 frmStockMovement frm = new frmStockMovement();
                 frm.ShowDialog();
@@ -1200,9 +1251,10 @@ namespace msp.App
             frm.ShowDialog();
         }
 
-        private void barButtonItem95_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem95_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!formAcikmi("frmDailyEndOpeList"))
+            bool x = await formAcikmi("frmDailyEndOpeList");
+            if (!x)
             {
                 frmDailyEndOpeList frm = new frmDailyEndOpeList();
                 frm.MdiParent = this;
@@ -1265,9 +1317,10 @@ namespace msp.App
             frm.Show();
         }
 
-        private void barButtonItem98_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem98_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!formAcikmi("frmHareketGormeyenRecord"))
+            bool x = await formAcikmi("frmHareketGormeyenRecord");
+            if (!x)
             {
                 frmHareketGormeyenRecord frm = new frmHareketGormeyenRecord();
                 frm.MdiParent = this;
@@ -1275,9 +1328,11 @@ namespace msp.App
             }
         }
 
-        private void barButtonItem93_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem93_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!formAcikmi("frmStockBakiye"))
+            bool x = await formAcikmi("frmStockBakiye");
+
+            if (!x)
             {
                 frmStockBakiye frm = new frmStockBakiye();
                 frm.MdiParent = this;
@@ -1285,9 +1340,10 @@ namespace msp.App
             }
         }
 
-        private void bbi_cariHesapTanimlari_ItemClick(object sender, ItemClickEventArgs e)
+        private async void bbi_cariHesapTanimlari_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (!formAcikmi("CurrentGroupDefinitions"))
+            bool x = await formAcikmi("CurrentGroupDefinitions");
+            if (!x)
             {
                 CurrentGroupDefinitions frm = new CurrentGroupDefinitions();
                 frm.MdiParent = this;
@@ -1295,8 +1351,10 @@ namespace msp.App
             }
         }
 
-        private void bbi_BekleyenIrsaliye_ItemClick(object sender, ItemClickEventArgs e)
+        private async void bbi_BekleyenIrsaliye_ItemClick(object sender, ItemClickEventArgs e)
         {
+            bool x = await CheckDefinatinAsync();
+
             InvoiceList frm = new InvoiceList();
             frm.MdiParent = this;
             frm.invoice = InvoiceType.BekleyenIrsaliye;

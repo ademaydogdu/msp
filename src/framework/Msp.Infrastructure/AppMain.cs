@@ -33,6 +33,7 @@ namespace Msp.Infrastructure
         public static bool RunningLocal { get; set; }
 
         public static Task<List<ProductDTO>> _productsTask { get; set; }
+        public static List<ProductDTO> Products { get; set; }
 
 
 

@@ -13,6 +13,7 @@ using Msp.Models.Models;
 using Msp.Service.Service.Operations;
 using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
+using Msp.Infrastructure;
 
 namespace Msp.App.Islemler
 {
@@ -59,6 +60,7 @@ namespace Msp.App.Islemler
         #region Edit
         public void do_Edit()
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Update, (int)DocumentType.BankEntry, AppMain.CompanyRecId)) return;
             BankEntryDTO Orow = (BankEntryDTO)gcv_BankEntry.GetFocusedRow();
             if (Orow != null)
             {
@@ -87,6 +89,7 @@ namespace Msp.App.Islemler
 
         private void btnBankEntryAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Insert, (int)DocumentType.BankEntry, AppMain.CompanyRecId)) return;
             frmBankEntryEdit frm = new frmBankEntryEdit();
             frm._FormOpenType = Msp.Infrastructure.FormOpenType.New;
             frm.Show(0);
@@ -94,6 +97,7 @@ namespace Msp.App.Islemler
 
         private void btnBankEntryEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.BankEntry, AppMain.CompanyRecId)) return;
             BankEntryDTO oRow = (BankEntryDTO)gcv_BankEntry.GetFocusedRow();
 
             if (oRow != null)

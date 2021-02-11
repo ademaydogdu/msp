@@ -250,6 +250,7 @@
             this.bbi_Report.Id = 4;
             this.bbi_Report.ImageOptions.ImageIndex = 4;
             this.bbi_Report.Name = "bbi_Report";
+            this.bbi_Report.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Report_ItemClick);
             // 
             // bbi_exp
             // 
@@ -260,6 +261,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.bbi_exp.Name = "bbi_exp";
+            this.bbi_exp.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // barButtonItem1
             // 
