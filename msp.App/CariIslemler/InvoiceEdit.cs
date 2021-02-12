@@ -92,7 +92,7 @@ namespace Msp.App.CariIslemler
                     _return = true;
                 } 
             }
-            if (invoice == InvoiceType.SatisFaturasi)
+            if (invoice == InvoiceType.SatisFaturasi || invoice == InvoiceType.AlımFaturası)
             {
                 if (__dll_InvoiceOwner.EFaturaNo == null || __dll_InvoiceOwner.EFaturaNo == "")
                 {
@@ -293,6 +293,11 @@ namespace Msp.App.CariIslemler
                     break;
             }
 
+            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            bs_CurrencyType.DataSource = _currencyTypes;
+
+            _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
+            bs_company.DataSource = _company;
 
             if (_FormOpenType == FormOpenType.New)
             {
@@ -301,6 +306,15 @@ namespace Msp.App.CariIslemler
                 __dll_InvoiceOwner.InvoiceType = (int)invoice;
                 __dll_InvoiceOwner.FicDate = DateTime.Now;
                 __dll_InvoiceOwner.VadeTarih = DateTime.Now;
+                __dll_InvoiceOwner.VadeGun = 0;
+                __dll_InvoiceOwner.KDV = "Dahil";
+                __dll_InvoiceOwner.CompanyId = AppMain.CompanyRecId;
+                lc_Company.EditValue = AppMain.Company;
+                if (_currencyTypes.Count > 0)
+                {
+                    __dll_InvoiceOwner.DovizTuru = _currencyTypes.FirstOrDefault(x => x.Remark == "TL").RecId;
+                    lc_DovizTuru.EditValue  = _currencyTypes.FirstOrDefault(x => x.Remark == "TL").Remark;
+                }
                 if (CariId != 0)
                 {
                     txtCariHesapAdi.EditValue = CariId;
@@ -330,11 +344,8 @@ namespace Msp.App.CariIslemler
             _currentTransactionsList = _repository.Run<CurrentTransactionsService, List<CTransactionsDTO>>(x => x.GetListCurrentTransactions());
             bs_CariHesap.DataSource = _currentTransactionsList;
 
-            _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
-            bs_company.DataSource = _company;
 
-            _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
-            bs_CurrencyType.DataSource = _currencyTypes;
+   
 
             _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
             bs_Depot.DataSource = _depotList;
@@ -544,6 +555,18 @@ namespace Msp.App.CariIslemler
         private void bbi_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void txtCariHesapAdi_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Convert.ToString(txtCariHesapAdi.EditValue)))
+            {
+                var cariHesap = _currentTransactionsList.FirstOrDefault(x => x.CurID == Convert.ToInt32(txtCariHesapAdi.EditValue));
+                if (cariHesap != null)
+                {
+                    txtAdress.Text = cariHesap.CurAdress;
+                }
+            }
         }
     }
 }

@@ -212,15 +212,20 @@ namespace Msp.App.CariIslemler
                     {
                         ProductName = AppMain.Products.FirstOrDefault(x => x.PID == item.ProductId).PName,
                         Tutar = item.Tutar,
-                        Unit = item.Quentity + " " + _list_UnitsDTO.FirstOrDefault(x=>x.UID == item.UnitID.GetValueOrDefault()).UName
+                        Unit = item.Quentity + " " + _list_UnitsDTO.FirstOrDefault(x=>x.UID == item.UnitID.GetValueOrDefault()).UName,
+                        PTax = item.KDVPrice
                     });
                 }
 
                 ReportInvoice reportInvoice = new ReportInvoice
                 {
                     CustomerName = cTransactions.CurAccountName,
+                    CustomerAddress = cTransactions.CurAdress,
+                    CustomerCity = cTransactions.CurCity,
+                    CustomerCountry = cTransactions.CurCountryName,
                     FaturaNo = oRow.FicheDocumentNo,
                     FichDate = oRow.FicDate.GetValueOrDefault(),
+                    InvoiceType = oRow.InvoiceType.GetValueOrDefault(),
                     trans = reportTrans
                 };
 

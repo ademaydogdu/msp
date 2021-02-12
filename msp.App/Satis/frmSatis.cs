@@ -505,8 +505,11 @@ namespace msp.App
         {
             var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
             var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
-            frmChangeMoney frm = new frmChangeMoney();
-            frm.Show(Convert.ToDecimal(totalAmount), Convert.ToDecimal(txtParaUstu.EditValue));
+            if (totalAmount != 0)
+            {
+                frmChangeMoney frm = new frmChangeMoney();
+                frm.Show(Convert.ToDecimal(totalAmount), Convert.ToDecimal(txtParaUstu.EditValue)); 
+            }
         }
 
         private void frmSatis_KeyDown(object sender, KeyEventArgs e)

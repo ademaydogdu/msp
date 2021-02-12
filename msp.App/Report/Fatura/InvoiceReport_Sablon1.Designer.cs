@@ -445,6 +445,8 @@
             // customerAddress
             // 
             this.customerAddress.CanShrink = true;
+            this.customerAddress.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CustomerAddress]")});
             this.customerAddress.Name = "customerAddress";
             this.customerAddress.Text = "CustomerAddress";
             this.customerAddress.Weight = 1.1915477284685581D;
@@ -459,6 +461,8 @@
             // customerCity
             // 
             this.customerCity.CanShrink = true;
+            this.customerCity.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CustomerCity]")});
             this.customerCity.Name = "customerCity";
             this.customerCity.Text = "CustomerCity";
             this.customerCity.Weight = 1.1915477284685581D;
@@ -473,6 +477,8 @@
             // customerCountry
             // 
             this.customerCountry.CanShrink = true;
+            this.customerCountry.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CustomerCountry]")});
             this.customerCountry.Name = "customerCountry";
             this.customerCountry.Text = "CustomerCountry";
             this.customerCountry.Weight = 1.1915477284685581D;
@@ -571,7 +577,7 @@
             this.invoiceNumberCaption.CanShrink = true;
             this.invoiceNumberCaption.Name = "invoiceNumberCaption";
             this.invoiceNumberCaption.StylePriority.UseTextAlignment = false;
-            this.invoiceNumberCaption.Text = "Invoice No.";
+            this.invoiceNumberCaption.Text = "Fatura No.";
             this.invoiceNumberCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             this.invoiceNumberCaption.Weight = 1.0235326443596697D;
             // 

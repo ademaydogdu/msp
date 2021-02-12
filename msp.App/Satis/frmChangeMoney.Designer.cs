@@ -81,10 +81,10 @@
             this.lblParaUstu.AppearanceItemCaption.Options.UseFont = true;
             this.lblParaUstu.AppearanceItemCaption.Options.UseForeColor = true;
             this.lblParaUstu.Location = new System.Drawing.Point(0, 60);
-            this.lblParaUstu.MaxSize = new System.Drawing.Size(236, 141);
-            this.lblParaUstu.MinSize = new System.Drawing.Size(236, 141);
+            this.lblParaUstu.MaxSize = new System.Drawing.Size(400, 146);
+            this.lblParaUstu.MinSize = new System.Drawing.Size(400, 146);
             this.lblParaUstu.Name = "lblParaUstu";
-            this.lblParaUstu.Size = new System.Drawing.Size(236, 146);
+            this.lblParaUstu.Size = new System.Drawing.Size(400, 146);
             this.lblParaUstu.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lblParaUstu.Text = "0.00 ₺";
             this.lblParaUstu.TextSize = new System.Drawing.Size(203, 77);
@@ -106,9 +106,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(236, 60);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(400, 60);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(244, 146);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(80, 146);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // barManager1

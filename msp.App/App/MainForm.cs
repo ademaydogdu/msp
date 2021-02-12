@@ -589,12 +589,15 @@ namespace msp.App
 
         private async void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if(await formAcikmi("frmSaleProductMovemnet"))
+            bool x = await formAcikmi("frmSaleProductMovemnet");
+            if (x)
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Satış - Ürün Hareket Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (await formAcikmi("frmSatis"))
+            bool xy = await formAcikmi("frmCurrentTransactions");
+
+            if (!xy)
             {
                 frmSatis frm = new frmSatis();
                 frm.MdiParent = this;
@@ -1163,7 +1166,7 @@ namespace msp.App
 
         private async void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if(!await formAcikmi("frmSatis"))
+            if(await formAcikmi("frmSatis"))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Satış Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

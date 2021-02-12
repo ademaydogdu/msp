@@ -11,5 +11,6 @@ namespace Msp.Models.Models.Report.List
         public string ProductName { get; set; }
         public string Unit { get; set; }
         public decimal? Tutar { get; set; }
+        public decimal? PTax { get; set; }
     }
 }
