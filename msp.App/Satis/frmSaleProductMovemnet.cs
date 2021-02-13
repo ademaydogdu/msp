@@ -333,6 +333,10 @@ namespace Msp.App.Satis
             if (_list_PaymnetType.Count > 0)
             {
                 txt_OdemeTipi.EditValue = 1;
+                if (_parameters.PaymentFisSave.GetValueOrDefault())
+                {
+                    do_save();
+                }
             }
         }
 
@@ -341,6 +345,10 @@ namespace Msp.App.Satis
             if (_list_PaymnetType.Count > 0)
             {
                 txt_OdemeTipi.EditValue = 2;
+                if (_parameters.PaymentFisSave.GetValueOrDefault())
+                {
+                    do_save();
+                }
             }
         }
 
@@ -349,6 +357,10 @@ namespace Msp.App.Satis
             if (_list_PaymnetType.Count > 0)
             {
                 txt_OdemeTipi.EditValue = 3;
+                if (_parameters.PaymentFisSave.GetValueOrDefault())
+                {
+                    do_save();
+                }
             }
         }
     }

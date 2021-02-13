@@ -1449,6 +1449,17 @@ namespace Msp.App.App
             progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
+            #region Parameters
+            sCommand.CommandText = "Select top 1 * from Parameters  WITH (nolock) ";
+            DataTable tblParameters = ExecuteSelectCommand(sCommand);
+            if (tblParameters.Columns.Contains("PaymentFisSave") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Parameters ADD PaymentFisSave bit NULL";
+                ExecuteNonQuery(sCommand);
+            }
+
+            #endregion
+
             #endregion
 
 

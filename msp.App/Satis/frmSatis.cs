@@ -232,6 +232,10 @@ namespace msp.App
             {
                 //__dll_SaleOwner.PaymentType = 1;
                 txt_OdemeTipi.EditValue = 1;
+                if (_parameters.PaymentFisSave.GetValueOrDefault())
+                {
+                    do_save();
+                }
             }
         }
 
@@ -243,6 +247,10 @@ namespace msp.App
                 //btnSatis.Enabled = false;
                 //btnVeresiyeSatis.Enabled = false;
                 txt_OdemeTipi.EditValue = 2;
+                if (_parameters.PaymentFisSave.GetValueOrDefault())
+                {
+                    do_save();
+                }
             }
         }
 
@@ -252,6 +260,10 @@ namespace msp.App
             {
                 //__dll_SaleOwner.PaymentType = 2;
                 txt_OdemeTipi.EditValue = 3;
+                if (_parameters.PaymentFisSave.GetValueOrDefault())
+                {
+                    do_save();
+                }
             }
         }
 
