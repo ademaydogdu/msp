@@ -203,7 +203,6 @@
             this.barButtonItem97 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem98 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem99 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem100 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem16 = new DevExpress.XtraBars.BarSubItem();
             this.bbi_FaturaRaporlari = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem114 = new DevExpress.XtraBars.BarButtonItem();
@@ -227,6 +226,7 @@
             this.barButtonItem105 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem106 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem94 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem100 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem107 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem108 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem117 = new DevExpress.XtraBars.BarButtonItem();
@@ -1845,13 +1845,6 @@
             this.barButtonItem99.Name = "barButtonItem99";
             this.barButtonItem99.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem99_ItemClick);
             // 
-            // barButtonItem100
-            // 
-            this.barButtonItem100.Caption = "Stok Sayım Raporları";
-            this.barButtonItem100.Enabled = false;
-            this.barButtonItem100.Id = 181;
-            this.barButtonItem100.Name = "barButtonItem100";
-            // 
             // barSubItem16
             // 
             this.barSubItem16.Caption = "Fatura Raporları";
@@ -1880,9 +1873,9 @@
             // barButtonItem115
             // 
             this.barButtonItem115.Caption = "KDV Raporları";
-            this.barButtonItem115.Enabled = false;
             this.barButtonItem115.Id = 196;
             this.barButtonItem115.Name = "barButtonItem115";
+            this.barButtonItem115.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem115_ItemClick);
             // 
             // barButtonItem78
             // 
@@ -2029,6 +2022,13 @@
             this.barButtonItem94.Caption = "Satış Raporu";
             this.barButtonItem94.Id = 175;
             this.barButtonItem94.Name = "barButtonItem94";
+            // 
+            // barButtonItem100
+            // 
+            this.barButtonItem100.Caption = "Stok Sayım Raporları";
+            this.barButtonItem100.Enabled = false;
+            this.barButtonItem100.Id = 181;
+            this.barButtonItem100.Name = "barButtonItem100";
             // 
             // barButtonItem107
             // 

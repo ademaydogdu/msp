@@ -191,5 +191,31 @@ namespace Msp.Service.Service.Report
 
 
         #endregion
+
+        #region KDVReport
+        public List<KDVReportDto> Get_List_KDVReport(int CompanyId, DateTime BeginDate, DateTime EndDate)
+        {
+            using (var _db = new MspDbContext())
+            {
+                string _sql = "SELECT        InvoiceTrans.KDV, SUM(Case When InvoiceOwner.InvoiceType = 1 then InvoiceTrans.Tutar Else 0 End) as AlisMatrah, "
+                + " SUM(Case When InvoiceOwner.InvoiceType = 2 then InvoiceTrans.Tutar Else 0 End) as SatisMatrah, SUM(Case When InvoiceOwner.InvoiceType = 1 then InvoiceTrans.KDVPrice Else 0 End) as AlisKDV,  "
+                + " SUM(Case When InvoiceOwner.InvoiceType = 2 then InvoiceTrans.KDVPrice Else 0 End) as SatisKDV, SUM(Case When InvoiceOwner.InvoiceType = 1 then InvoiceTrans.KDVPrice Else 0 End) - SUM(Case When InvoiceOwner.InvoiceType = 2 then InvoiceTrans.KDVPrice Else 0 End) as Farki "
+                + " FROM InvoiceTrans INNER JOIN "
+                + "                          dbo.InvoiceOwner ON InvoiceTrans.InvoiceOwnerId = InvoiceOwner.RecId "
+                + "                          where ISNULL(InvoiceOwner.Deleted,0) = 0 and InvoiceOwner.CompanyId = @CompanyId "
+                + "                          and InvoiceOwner.FicDate >= @BeginDate and InvoiceOwner.FicDate <= @EndDate "
+                + " Group By InvoiceTrans.KDV";
+                var _param = new SqlParameter[]
+                {
+                    new SqlParameter {ParameterName = "CompanyId", Value = CompanyId },
+                    new SqlParameter{ParameterName = "BeginDate", Value = BeginDate },
+                    new SqlParameter{ParameterName = "EndDate", Value = EndDate }
+                };
+
+                return _db.Database.SqlQuery<KDVReportDto>(_sql, _param.ToArray()).ToList();
+            }
+        }
+
+        #endregion
     }
 }

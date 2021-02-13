@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.svgImageBox3 = new DevExpress.XtraEditors.SvgImageBox();
@@ -69,8 +69,8 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
@@ -106,7 +106,7 @@
             this.panelControl5.Controls.Add(this.lblTotalCiro);
             this.panelControl5.Location = new System.Drawing.Point(522, 12);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(246, 92);
+            this.panelControl5.Size = new System.Drawing.Size(276, 92);
             this.panelControl5.TabIndex = 11;
             // 
             // svgImageBox3
@@ -132,7 +132,7 @@
             // 
             this.lblTotalCiro.AutoSize = true;
             this.lblTotalCiro.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.lblTotalCiro.Location = new System.Drawing.Point(128, 4);
+            this.lblTotalCiro.Location = new System.Drawing.Point(126, 4);
             this.lblTotalCiro.Name = "lblTotalCiro";
             this.lblTotalCiro.Size = new System.Drawing.Size(120, 48);
             this.lblTotalCiro.TabIndex = 0;
@@ -140,9 +140,9 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Location = new System.Drawing.Point(772, 12);
+            this.panelControl3.Location = new System.Drawing.Point(802, 12);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(338, 92);
+            this.panelControl3.Size = new System.Drawing.Size(308, 92);
             this.panelControl3.TabIndex = 11;
             // 
             // panelControl2
@@ -231,15 +231,15 @@
             // 
             // chartControl1
             // 
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram1;
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram2;
             this.chartControl1.Legend.Name = "Default Legend";
             this.chartControl1.Location = new System.Drawing.Point(24, 141);
             this.chartControl1.Name = "chartControl1";
-            series1.Name = "Series 1";
+            series2.Name = "Series 1";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+        series2};
             this.chartControl1.Size = new System.Drawing.Size(1074, 563);
             this.chartControl1.TabIndex = 4;
             // 
@@ -306,10 +306,10 @@
             // 
             this.layoutControlItem2.Control = this.panelControl5;
             this.layoutControlItem2.Location = new System.Drawing.Point(510, 0);
-            this.layoutControlItem2.MaxSize = new System.Drawing.Size(250, 96);
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(250, 96);
+            this.layoutControlItem2.MaxSize = new System.Drawing.Size(280, 96);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(280, 96);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(250, 96);
+            this.layoutControlItem2.Size = new System.Drawing.Size(280, 96);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -317,9 +317,9 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.panelControl3;
-            this.layoutControlItem8.Location = new System.Drawing.Point(760, 0);
+            this.layoutControlItem8.Location = new System.Drawing.Point(790, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(342, 96);
+            this.layoutControlItem8.Size = new System.Drawing.Size(312, 96);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -352,8 +352,8 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();

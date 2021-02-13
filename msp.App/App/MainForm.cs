@@ -500,7 +500,7 @@ namespace msp.App
                 //    };
                 //}
 
-                Version oVersionFB = new Version(21, 1, 1, 17);
+                Version oVersionFB = new Version(21, 1, 1, 18);
                 AppMain.MspVersion = oVersionFB;
 
                 string AppPath = @"C:\Msp\ConnectString.txt";
@@ -1362,6 +1362,17 @@ namespace msp.App
             frm.MdiParent = this;
             frm.invoice = InvoiceType.BekleyenIrsaliye;
             frm.Show();
+        }
+
+        private async void barButtonItem115_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool x = await formAcikmi("FaturaKDV");
+            if (!x)
+            {
+                FaturaKDV frm = new FaturaKDV();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
         }
     }
 }

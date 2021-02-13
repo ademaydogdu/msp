@@ -569,6 +569,12 @@
     <Compile Include="Report\Fatura\FaturaFilter.Designer.cs">
       <DependentUpon>FaturaFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Fatura\FaturaKDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Fatura\FaturaKDV.Designer.cs">
+      <DependentUpon>FaturaKDV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Fatura\InvoiceReport_Sablon3.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1051,6 +1057,9 @@
     <EmbeddedResource Include="Report\Fatura\FaturaFilter.resx">
       <DependentUpon>FaturaFilter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Fatura\FaturaKDV.resx">
+      <DependentUpon>FaturaKDV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Fatura\InvoiceReport_Sablon3.resx">
       <DependentUpon>InvoiceReport_Sablon3.cs</DependentUpon>
     </EmbeddedResource>
@@ -1227,6 +1236,7 @@
     <None Include="Properties\DataSources\Msp.Models.Models.ProductGroupDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.ProductMovementDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Report.CaseBakiyeReportDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.Models.Report.KDVReportDto.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Report.StockBakiyeReportDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleOwnerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.Sale.SaleTransDTO.datasource" />

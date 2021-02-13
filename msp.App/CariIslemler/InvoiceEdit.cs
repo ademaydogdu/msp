@@ -137,6 +137,7 @@ namespace Msp.App.CariIslemler
 
                 if (MspTool.get_Question("Kaydedilecektir Onaylıyor musunuz?"))
                 {
+                    __dll_InvoiceOwner.CompanyId = AppMain.CompanyRecId;
                     var req = new InvoiceSaveRequest()
                     {
                         InvoiceOwner = __dll_InvoiceOwner,
