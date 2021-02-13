@@ -71,37 +71,44 @@ namespace Msp.App.Depo_Stok
 
         public void Show(int id)
         {
-            units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
-            bs_Unit.DataSource = units;
-
-            _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
-            bs_Depot.DataSource = _depotList;
-
-            productGroup = _repository.Run<DefinitionsService, List<ProductGroupDTO>>(x => x.Get_List_ProductGroup());
-            bs_UrunGrup.DataSource = productGroup;
-
-            if (_FormOpenType == FormOpenType.New)
+            try
             {
-                __product = new ProductDTO();
-                __product.PDate = DateTime.Now;
-                __product.PExpDate = DateTime.Now;
-                __product.PCompanyId = AppMain.CompanyRecId;
+                units = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+                bs_Unit.DataSource = units;
+
+                _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
+                bs_Depot.DataSource = _depotList;
+
+                productGroup = _repository.Run<DefinitionsService, List<ProductGroupDTO>>(x => x.Get_List_ProductGroup());
+                bs_UrunGrup.DataSource = productGroup;
+
+                if (_FormOpenType == FormOpenType.New)
+                {
+                    __product = new ProductDTO();
+                    __product.PDate = DateTime.Now;
+                    __product.PExpDate = DateTime.Now;
+                    __product.PCompanyId = AppMain.CompanyRecId;
+                }
+                if (_FormOpenType == FormOpenType.Edit)
+                {
+                    __product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(id));
+                }
+
+                taxTextEdit.Properties.DataSource = KdvOrani;
+                taxTextEdit.Properties.ValueMember = "Id";
+                taxTextEdit.Properties.DisplayMember = "Value";
+
+                lc_BarkodType.Properties.DataSource = BarcodeType;
+                lc_BarkodType.Properties.ValueMember = "Id";
+                lc_BarkodType.Properties.DisplayMember = "Value";
+
+                bs_StockEdit.DataSource = __product;
+                this.ShowDialog();
             }
-            if (_FormOpenType == FormOpenType.Edit)
+            catch (Exception ex)
             {
-                __product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(id));
+                XtraMessageBox.Show(ex.Message);
             }
-
-            taxTextEdit.Properties.DataSource = KdvOrani;
-            taxTextEdit.Properties.ValueMember = "Id";
-            taxTextEdit.Properties.DisplayMember = "Value";
-
-            lc_BarkodType.Properties.DataSource = BarcodeType;
-            lc_BarkodType.Properties.ValueMember = "Id";
-            lc_BarkodType.Properties.DisplayMember = "Value";
-
-            bs_StockEdit.DataSource = __product;
-            this.ShowDialog();
         }
 
         #region Record
