@@ -1457,6 +1457,16 @@ namespace Msp.App.App
                 sCommand.CommandText = "ALTER TABLE Parameters ADD PaymentFisSave bit NULL";
                 ExecuteNonQuery(sCommand);
             }
+            if (tblParameters.Columns.Contains("IsBarcode") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Parameters ADD IsBarcode bit NULL";
+                ExecuteNonQuery(sCommand);
+            }
+            if (tblParameters.Columns.Contains("BorcodeCOM") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Parameters ADD BorcodeCOM nchar(10) NULL";
+                ExecuteNonQuery(sCommand);
+            }
 
             #endregion
 

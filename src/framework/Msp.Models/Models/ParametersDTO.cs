@@ -23,5 +23,7 @@ namespace Msp.Models.Models
         public bool? SaleProductEndDate { get; set; } = false;
         public bool? PaymentFisSave { get; set; } = false;
         public int? ProductEndDateDay { get; set; } = 0;
+        public bool? IsBarcode { get; set; } = false;
+        public string BorcodeCOM { get; set; }
     }
 }

@@ -42,6 +42,9 @@
             this.colDurum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.bbi_PosNakit = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Pos = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Nakit = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Close = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
@@ -81,6 +84,8 @@
             this.txt_NetFiyat = new DevExpress.XtraEditors.TextEdit();
             this.txt_İndirimTutar = new DevExpress.XtraEditors.TextEdit();
             this.txt_KDV = new DevExpress.XtraEditors.TextEdit();
+            this.txt_OdemeTipi = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -93,20 +98,16 @@
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem42 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bs_PaymentType = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
-            this.txt_OdemeTipi = new DevExpress.XtraEditors.LookUpEdit();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bbi_Nakit = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_Pos = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_PosNakit = new DevExpress.XtraBars.BarButtonItem();
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -135,6 +136,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -147,17 +150,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -307,6 +308,45 @@
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
+            // 
+            // bbi_PosNakit
+            // 
+            this.bbi_PosNakit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bbi_PosNakit.Caption = "POS && Nakit";
+            this.bbi_PosNakit.Id = 9;
+            this.bbi_PosNakit.ImageOptions.ImageIndex = 11;
+            this.bbi_PosNakit.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.bbi_PosNakit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_PosNakit.ItemAppearance.Normal.Options.UseFont = true;
+            this.bbi_PosNakit.Name = "bbi_PosNakit";
+            this.bbi_PosNakit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_PosNakit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_PosNakit_ItemClick);
+            // 
+            // bbi_Pos
+            // 
+            this.bbi_Pos.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bbi_Pos.Caption = "POS";
+            this.bbi_Pos.Id = 8;
+            this.bbi_Pos.ImageOptions.ImageIndex = 12;
+            this.bbi_Pos.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.bbi_Pos.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_Pos.ItemAppearance.Normal.Options.UseFont = true;
+            this.bbi_Pos.Name = "bbi_Pos";
+            this.bbi_Pos.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_Pos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Pos_ItemClick);
+            // 
+            // bbi_Nakit
+            // 
+            this.bbi_Nakit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bbi_Nakit.Caption = "Nakit";
+            this.bbi_Nakit.Id = 7;
+            this.bbi_Nakit.ImageOptions.ImageIndex = 13;
+            this.bbi_Nakit.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
+            this.bbi_Nakit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bbi_Nakit.ItemAppearance.Normal.Options.UseFont = true;
+            this.bbi_Nakit.Name = "bbi_Nakit";
+            this.bbi_Nakit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_Nakit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Nakit_ItemClick);
             // 
             // bbi_Close
             // 
@@ -738,6 +778,26 @@
             this.txt_KDV.StyleController = this.layoutControl1;
             this.txt_KDV.TabIndex = 23;
             // 
+            // txt_OdemeTipi
+            // 
+            this.txt_OdemeTipi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "PaymentType", true));
+            this.txt_OdemeTipi.Location = new System.Drawing.Point(278, 487);
+            this.txt_OdemeTipi.Name = "txt_OdemeTipi";
+            this.txt_OdemeTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.txt_OdemeTipi.Properties.DataSource = this.bs_PaymentType;
+            this.txt_OdemeTipi.Properties.DisplayMember = "Remark";
+            this.txt_OdemeTipi.Properties.NullText = "";
+            this.txt_OdemeTipi.Properties.ValueMember = "RecId";
+            this.txt_OdemeTipi.Size = new System.Drawing.Size(120, 20);
+            this.txt_OdemeTipi.StyleController = this.layoutControl1;
+            this.txt_OdemeTipi.TabIndex = 26;
+            // 
+            // bs_PaymentType
+            // 
+            this.bs_PaymentType.DataSource = typeof(Msp.Models.Models.PaymentTypeDTO);
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -904,16 +964,6 @@
             this.layoutControlItem42.TextSize = new System.Drawing.Size(26, 13);
             this.layoutControlItem42.TextToControlDistance = 3;
             // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(181, 499);
-            this.emptySpaceItem1.MinSize = new System.Drawing.Size(104, 24);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(209, 58);
-            this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
@@ -988,29 +1038,15 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(123, 82);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // bs_PaymentType
+            // emptySpaceItem1
             // 
-            this.bs_PaymentType.DataSource = typeof(Msp.Models.Models.PaymentTypeDTO);
-            // 
-            // bs_Unit
-            // 
-            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
-            // 
-            // txt_OdemeTipi
-            // 
-            this.txt_OdemeTipi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "PaymentType", true));
-            this.txt_OdemeTipi.Location = new System.Drawing.Point(278, 487);
-            this.txt_OdemeTipi.Name = "txt_OdemeTipi";
-            this.txt_OdemeTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
-            this.txt_OdemeTipi.Properties.DataSource = this.bs_PaymentType;
-            this.txt_OdemeTipi.Properties.DisplayMember = "Remark";
-            this.txt_OdemeTipi.Properties.NullText = "";
-            this.txt_OdemeTipi.Properties.ValueMember = "RecId";
-            this.txt_OdemeTipi.Size = new System.Drawing.Size(120, 20);
-            this.txt_OdemeTipi.StyleController = this.layoutControl1;
-            this.txt_OdemeTipi.TabIndex = 26;
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(181, 499);
+            this.emptySpaceItem1.MinSize = new System.Drawing.Size(104, 24);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(209, 58);
+            this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem23
             // 
@@ -1026,44 +1062,9 @@
             this.layoutControlItem23.Text = "Ödeme Tipi :";
             this.layoutControlItem23.TextSize = new System.Drawing.Size(82, 13);
             // 
-            // bbi_Nakit
+            // bs_Unit
             // 
-            this.bbi_Nakit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bbi_Nakit.Caption = "Nakit";
-            this.bbi_Nakit.Id = 7;
-            this.bbi_Nakit.ImageOptions.ImageIndex = 13;
-            this.bbi_Nakit.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
-            this.bbi_Nakit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.bbi_Nakit.ItemAppearance.Normal.Options.UseFont = true;
-            this.bbi_Nakit.Name = "bbi_Nakit";
-            this.bbi_Nakit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbi_Nakit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Nakit_ItemClick);
-            // 
-            // bbi_Pos
-            // 
-            this.bbi_Pos.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bbi_Pos.Caption = "POS";
-            this.bbi_Pos.Id = 8;
-            this.bbi_Pos.ImageOptions.ImageIndex = 12;
-            this.bbi_Pos.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
-            this.bbi_Pos.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.bbi_Pos.ItemAppearance.Normal.Options.UseFont = true;
-            this.bbi_Pos.Name = "bbi_Pos";
-            this.bbi_Pos.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbi_Pos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Pos_ItemClick);
-            // 
-            // bbi_PosNakit
-            // 
-            this.bbi_PosNakit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bbi_PosNakit.Caption = "POS && Nakit";
-            this.bbi_PosNakit.Id = 9;
-            this.bbi_PosNakit.ImageOptions.ImageIndex = 11;
-            this.bbi_PosNakit.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 32);
-            this.bbi_PosNakit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.bbi_PosNakit.ItemAppearance.Normal.Options.UseFont = true;
-            this.bbi_PosNakit.Name = "bbi_PosNakit";
-            this.bbi_PosNakit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbi_PosNakit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_PosNakit_ItemClick);
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
             // 
             // frmSaleProductMovemnet
             // 
@@ -1109,6 +1110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -1121,17 +1124,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_PaymentType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_OdemeTipi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1216,5 +1217,6 @@
         private DevExpress.XtraBars.BarButtonItem bbi_PosNakit;
         private DevExpress.XtraEditors.LookUpEdit txt_OdemeTipi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }

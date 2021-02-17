@@ -20,6 +20,7 @@ using Msp.Service.Service.Tanimlar;
 using Msp.Service.Service.Sale;
 using Msp.Models.Models.Utilities;
 using Msp.Service.Service.Settings;
+using System.IO.Ports;
 
 namespace Msp.App.Satis
 {
@@ -33,7 +34,10 @@ namespace Msp.App.Satis
             InitializeComponent();
             _repository = new Repository();
             _parameters = new ParametersDTO();
+            SetForm();
         }
+        private string BarCode = "";
+
         MspTool mspTool = new MspTool();
         private bool IsPosSale = false;
         ProductDTO _product = new ProductDTO();
@@ -58,6 +62,74 @@ namespace Msp.App.Satis
 
 
         #region Record
+
+        private void SetForm()
+        {
+            _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
+            if (_parameters.IsBarcode.GetValueOrDefault())
+            {
+                serialPort1.PortName = _parameters.BorcodeCOM;
+                serialPort1.BaudRate = 9600;
+            }
+
+        }
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            BarCode = "";
+            BarCode = serialPort1.ReadExisting();
+            this.Invoke(new EventHandler(displayData_event));
+        }
+        private void displayData_event(object sender, EventArgs e)
+        {
+            do_ProductBarcode(BarCode);
+        }
+
+
+        private void do_ProductBarcode(string __barcode)
+        {
+            if (__barcode.Length > 0)
+            {
+                var product = AppMain.Products.Where(x => x.PBarcode == __barcode.Trim()).FirstOrDefault();
+                if (product != null)
+                {
+                    var _varmi = __dl_List_SaleTrans.Where(x => x.ProductId == product.PID).FirstOrDefault();
+                    if (_varmi != null)
+                    {
+                        _varmi.ProductQuantity += 1;
+                        var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                        _varmi.ProductAmount = ProductAmount;
+                        _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                    }
+                    else
+                    {
+                        SaleTransDTO saleTrans = new SaleTransDTO();
+                        saleTrans.ProductId = product.PID;
+                        saleTrans.ProductName = product.PName;
+                        saleTrans.ProductBarcode = product.PBarcode;
+                        saleTrans.ProductPrice = product.PSalePrice.GetValueOrDefault(); //_product.PMalBedeli;
+                        saleTrans.UnitId = product.PUnitId;
+                        saleTrans.ProductQuantity = 1;
+                        saleTrans.Deleted = false;
+                        saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
+                        saleTrans.Tax = product.PTax;
+                        saleTrans.TaxAmount = product.PPaxAmout;
+                        saleTrans.ProductDate = product.PExpDate == null ? new DateTime(1900, 1, 1) : product.PExpDate.GetValueOrDefault();
+                        saleTrans.CompanyId = AppMain.CompanyRecId;
+                        __dl_List_SaleTrans.Add(saleTrans);
+                    }
+                    TopTotal();
+                    bs_SaleTrans.DataSource = __dl_List_SaleTrans;
+                    gridControl1.RefreshDataSource();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Ürün Bulunamadı", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+        }
+
+
         public void Insert_Product(int ProductId)
         {
             try
@@ -205,7 +277,7 @@ namespace Msp.App.Satis
 
         private void frmSaleProductMovemnet_Load(object sender, EventArgs e)
         {
-            _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
+            //_parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
             __List_CaseDef = _repository.Run<DefinitionsService, List<CaseDefinitionDTO>>(x => x.Get_List_CaseDef(AppMain.CompanyRecId));
             bs_CaseList.DataSource = __List_CaseDef;
             if (__List_CaseDef.Count > 0)
@@ -236,10 +308,25 @@ namespace Msp.App.Satis
 
             daily_SaleProduct();
             mspTool.Get_Layout(this);
+
+            try
+            {
+                if (_parameters.IsBarcode.GetValueOrDefault())
+                {
+                    if (!(serialPort1.IsOpen))
+                        serialPort1.Open();
+                    serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Okutma Cihazına Erişilemiyor : " + ex.Message, "Error!");
+            }
         }
 
         private void frmSaleProductMovemnet_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (serialPort1.IsOpen) serialPort1.Close();
             mspTool.do_Save_Layout(this);
         }
 

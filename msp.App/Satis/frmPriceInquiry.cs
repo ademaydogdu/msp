@@ -28,10 +28,7 @@ namespace Msp.App.Satis
             _repository = new Repository();
             _parameters = new ParametersDTO();
             SetForm();
-
             Control.CheckForIllegalCrossThreadCalls = false;
-            serialPort1.PortName = "COM3";
-            serialPort1.BaudRate = 9600;
         }
         MspTool mspTool = new MspTool();
         List<ProductDTO> _productlist = new List<ProductDTO>();
@@ -47,6 +44,12 @@ namespace Msp.App.Satis
         private void SetForm()
         {
             _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
+            if (_parameters.IsBarcode.GetValueOrDefault())
+            {
+                serialPort1.PortName = _parameters.BorcodeCOM;
+                serialPort1.BaudRate = 9600;
+            }
+       
         }
 
         private string BarCode = "";
@@ -60,19 +63,19 @@ namespace Msp.App.Satis
         private void frmPriceInquiry_Load(object sender, EventArgs e)
         {
             mspTool.Get_GridControl(this.Name, gc_PriceInQuery);
-
             _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
-
             rp_KdvOran.DataSource = KdvOrani;
             rp_KdvOran.DisplayMember = "Value";
             rp_KdvOran.ValueMember = "Id";
             bs_Unit.DataSource = _list_UnitsDTO;
             try
             {
-                if (!(serialPort1.IsOpen))
-                    serialPort1.Open();
-              
-                serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
+                if (_parameters.IsBarcode.GetValueOrDefault())
+                {
+                    if (!(serialPort1.IsOpen))
+                        serialPort1.Open();
+                    serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived); 
+                }
             }
             catch (Exception ex)
             {
@@ -103,9 +106,23 @@ namespace Msp.App.Satis
                     bs_products.DataSource = _productlist;
                     gc_PriceInQuery.RefreshDataSource();
                 }
+                else
+                {
+                    XtraMessageBox.Show("Ürün Bulunamadı", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
         }
 
+        private void bntFind_Click(object sender, EventArgs e)
+        {
+            do_ProductBarcode(txtBarcode.Text.Trim().ToString());
+        }
+
+        private void bbi_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _productlist.Clear();
+            gc_PriceInQuery.RefreshDataSource();
+        }
     }
 }
