@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
@@ -43,11 +44,13 @@
             this.rp_KdvOran = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.bs_products = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_Unit = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
@@ -61,6 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -101,6 +106,7 @@
             // 
             // gc_PriceInQuery
             // 
+            this.gc_PriceInQuery.DataSource = this.bs_products;
             this.gc_PriceInQuery.Location = new System.Drawing.Point(12, 56);
             this.gc_PriceInQuery.MainView = this.gridView1;
             this.gc_PriceInQuery.Name = "gc_PriceInQuery";
@@ -122,8 +128,7 @@
             this.gridColumn3,
             this.gridColumn6,
             this.colTax,
-            this.gridColumn4,
-            this.gridColumn5});
+            this.gridColumn4});
             this.gridView1.GridControl = this.gc_PriceInQuery;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
@@ -136,7 +141,7 @@
             this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.Caption = "Ürün Barkodu";
-            this.gridColumn1.FieldName = "ProductBarcode";
+            this.gridColumn1.FieldName = "PBarcode";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
@@ -148,7 +153,7 @@
             this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.Caption = "Ürün Adı";
-            this.gridColumn2.FieldName = "ProductName";
+            this.gridColumn2.FieldName = "PName";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
@@ -162,7 +167,7 @@
             this.gridColumn3.Caption = "Miktar";
             this.gridColumn3.ColumnEdit = this.repositoryItemSpinEdit1;
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn3.FieldName = "ProductQuantity";
+            this.gridColumn3.FieldName = "PTotal";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Width = 91;
             // 
@@ -177,7 +182,7 @@
             // 
             this.gridColumn6.Caption = "Birim";
             this.gridColumn6.ColumnEdit = this.rp_Unit;
-            this.gridColumn6.FieldName = "UnitId";
+            this.gridColumn6.FieldName = "PUnitId";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
@@ -198,7 +203,7 @@
             // 
             this.colTax.Caption = "KDV";
             this.colTax.ColumnEdit = this.rp_KdvOran;
-            this.colTax.FieldName = "Tax";
+            this.colTax.FieldName = "PTax";
             this.colTax.Name = "colTax";
             this.colTax.OptionsColumn.AllowEdit = false;
             this.colTax.Visible = true;
@@ -222,7 +227,7 @@
             this.gridColumn4.ColumnEdit = this.repositoryItemSpinEdit2;
             this.gridColumn4.DisplayFormat.FormatString = "n2";
             this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn4.FieldName = "ProductPrice";
+            this.gridColumn4.FieldName = "PSalePrice";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
@@ -235,20 +240,6 @@
             this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridColumn5.AppearanceCell.Options.UseFont = true;
-            this.gridColumn5.Caption = "Tutar";
-            this.gridColumn5.DisplayFormat.FormatString = "n2";
-            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn5.FieldName = "ProductAmount";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
-            this.gridColumn5.Width = 114;
             // 
             // layoutControlItem2
             // 
@@ -293,6 +284,18 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
+            // bs_products
+            // 
+            this.bs_products.DataSource = typeof(Msp.Models.Models.ProductDTO);
+            // 
+            // bs_Unit
+            // 
+            this.bs_Unit.DataSource = typeof(Msp.Models.Models.UnitsDTO);
+            // 
             // frmPriceInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +319,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_products)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Unit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,10 +342,12 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_KdvOran;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.BindingSource bs_products;
+        private System.Windows.Forms.BindingSource bs_Unit;
     }
 }

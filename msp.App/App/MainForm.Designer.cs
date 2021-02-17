@@ -314,6 +314,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barButtonItem131 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -560,10 +561,11 @@
             this.barButtonItem63,
             this.barButtonItem113,
             this.barButtonItem116,
-            this.bbi_cariHesapTanimlari});
+            this.bbi_cariHesapTanimlari,
+            this.barButtonItem131});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 232;
+            this.ribbon.MaxItemId = 233;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -1599,6 +1601,7 @@
             this.barButtonItem71.Id = 136;
             this.barButtonItem71.ImageOptions.LargeImageIndex = 34;
             this.barButtonItem71.Name = "barButtonItem71";
+            this.barButtonItem71.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem71_ItemClick);
             // 
             // bbi_veresiye
             // 
@@ -2375,6 +2378,7 @@
             this.img_buton.Add("bo_opportunity", "image://svgimages/business objects/bo_opportunity.svg");
             this.img_buton.Add("bo_organization_1", "image://svgimages/business objects/bo_organization.svg");
             this.img_buton.Add("assigntask", "image://svgimages/outlook inspired/assigntask.svg");
+            this.img_buton.Add("employeequickwelcome_1", "image://svgimages/outlook inspired/employeequickwelcome.svg");
             // 
             // barSatis
             // 
@@ -2551,6 +2555,7 @@
             // ribbonPageGroup24
             // 
             this.ribbonPageGroup24.ItemLinks.Add(this.barButtonItem71);
+            this.ribbonPageGroup24.ItemLinks.Add(this.barButtonItem131);
             this.ribbonPageGroup24.Name = "ribbonPageGroup24";
             // 
             // ribbonPage5
@@ -2763,6 +2768,13 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
+            // 
+            // barButtonItem131
+            // 
+            this.barButtonItem131.Caption = "Basit Cari İşemi";
+            this.barButtonItem131.Id = 232;
+            this.barButtonItem131.ImageOptions.LargeImageIndex = 80;
+            this.barButtonItem131.Name = "barButtonItem131";
             // 
             // MainForm
             // 
@@ -3080,5 +3092,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem116;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup37;
         private DevExpress.XtraBars.BarButtonItem bbi_cariHesapTanimlari;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem131;
     }
 }

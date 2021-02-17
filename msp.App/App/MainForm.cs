@@ -50,6 +50,7 @@ using Msp.App.Report.CariHesap;
 using Msp.Service.Service.DepotStock;
 using Msp.App.Report.Fatura;
 using Msp.App.Report.Depo_Stock;
+using System.Reflection;
 
 namespace msp.App
 {
@@ -665,11 +666,15 @@ namespace msp.App
                 frmSatis.Show(); 
             }
         }
-        private void btnSpeedSale_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnSpeedSale_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmSpeedSatis frmSatis = new frmSpeedSatis();
-            frmSatis.MdiParent = this;
-            frmSatis.Show();
+            bool x = await formAcikmi("frmSpeedSatis");
+            if (!x)
+            {
+                frmSpeedSatis frmSatis = new frmSpeedSatis();
+                frmSatis.MdiParent = this;
+                frmSatis.Show(); 
+            }
         }
 
         private void btn_BirimTanimlari_ItemClick(object sender, ItemClickEventArgs e)
@@ -686,11 +691,15 @@ namespace msp.App
             frm.Show();
         }
 
-        private void tbnPriceInquiry_ItemClick(object sender, ItemClickEventArgs e)
+        private async void tbnPriceInquiry_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmPriceInquiry frm = new frmPriceInquiry();
-            frm.MdiParent = this;
-            frm.Show();
+            bool x = await formAcikmi("frmPriceInquiry");
+            if (!x)
+            {
+                frmPriceInquiry frm = new frmPriceInquiry();
+                frm.MdiParent = this;
+                frm.Show(); 
+            }
         }
         private void btnMusteriler_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1372,6 +1381,27 @@ namespace msp.App
                 FaturaKDV frm = new FaturaKDV();
                 frm.MdiParent = this;
                 frm.Show(); 
+            }
+        }
+
+        private void barButtonItem71_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Assembly assembly = Assembly.LoadFile(@"C:\Msp\Moduls\Msp.EInvoice.dll");
+                foreach (Type type in assembly.GetTypes())
+                {
+                    if (type.Name == "Program")
+                    {
+                        MethodInfo V_Dll = type.GetMethod("Main");
+
+                        V_Dll.Invoke(type, new object[] { AppMain.SqlConnection.Server, AppMain.SqlConnection.Database,AppMain.SqlConnection.UserId, AppMain.SqlConnection.Password, UserLookAndFeel.Default.ActiveSkinName });
+                    }
+                }
+            }
+            catch (Exception et)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Error:Call Dll:" + et.ToString());
             }
         }
     }

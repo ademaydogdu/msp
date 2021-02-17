@@ -13,6 +13,7 @@ using Msp.Models.Models;
 using Msp.Service.Service.Settings;
 using Msp.Models.Models.Utilities;
 using Msp.App.Tool;
+using System.IO.Ports;
 
 namespace Msp.App.Settings
 {
@@ -30,6 +31,12 @@ namespace Msp.App.Settings
 
         private void Parameters_Load(object sender, EventArgs e)
         {
+            string[] portlar = SerialPort.GetPortNames();
+            foreach (string portAdi in portlar)
+            {
+                comboBoxEdit2.Properties.Items.Add(portAdi);
+            }
+
             _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
             bs_Parameter.DataSource = _parameters;
         }

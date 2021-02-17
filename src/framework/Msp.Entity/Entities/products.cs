@@ -6,6 +6,7 @@ namespace Msp.Entity.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("Products")]
     public partial class Products
     {
         [Key]

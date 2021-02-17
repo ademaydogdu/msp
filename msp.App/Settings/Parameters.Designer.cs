@@ -93,6 +93,11 @@
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.checkEdit14 = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
@@ -153,6 +158,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -172,6 +182,8 @@
             this.layoutControl1.Controls.Add(this.checkEdit12);
             this.layoutControl1.Controls.Add(this.textEdit2);
             this.layoutControl1.Controls.Add(this.checkEdit13);
+            this.layoutControl1.Controls.Add(this.comboBoxEdit2);
+            this.layoutControl1.Controls.Add(this.checkEdit14);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -598,7 +610,8 @@
             this.emptySpaceItem3,
             this.layoutControlItem2,
             this.layoutControlItem4,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlGroup5});
             this.layoutControlGroup2.Location = new System.Drawing.Point(307, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(315, 643);
@@ -607,9 +620,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 72);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 165);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(291, 526);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(291, 433);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -823,6 +836,57 @@
             this.emptySpaceItem8.Size = new System.Drawing.Size(949, 643);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // comboBoxEdit2
+            // 
+            this.comboBoxEdit2.Location = new System.Drawing.Point(506, 174);
+            this.comboBoxEdit2.MenuManager = this.barManager1;
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit2.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit2.StyleController = this.layoutControl1;
+            this.comboBoxEdit2.TabIndex = 19;
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.comboBoxEdit2;
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(267, 24);
+            this.layoutControlItem18.Text = "Barkod Cihazı COM Bağlantısı";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(160, 13);
+            // 
+            // checkEdit14
+            // 
+            this.checkEdit14.Location = new System.Drawing.Point(343, 150);
+            this.checkEdit14.MenuManager = this.barManager1;
+            this.checkEdit14.Name = "checkEdit14";
+            this.checkEdit14.Properties.Caption = "Barkod Cihazı Aktif";
+            this.checkEdit14.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEdit14.Size = new System.Drawing.Size(263, 20);
+            this.checkEdit14.StyleController = this.layoutControl1;
+            this.checkEdit14.TabIndex = 20;
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.checkEdit14;
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(267, 24);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem19.TextVisible = false;
+            // 
+            // layoutControlGroup5
+            // 
+            this.layoutControlGroup5.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem18,
+            this.layoutControlItem19});
+            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlGroup5.Name = "layoutControlGroup5";
+            this.layoutControlGroup5.Size = new System.Drawing.Size(291, 93);
+            this.layoutControlGroup5.Text = "Barkod Cihazı";
+            // 
             // Parameters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -897,6 +961,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -968,5 +1037,10 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
         private DevExpress.XtraEditors.CheckEdit checkEdit13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraEditors.CheckEdit checkEdit14;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
     }
 }
