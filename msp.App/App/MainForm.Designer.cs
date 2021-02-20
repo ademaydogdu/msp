@@ -262,6 +262,7 @@
             this.barButtonItem113 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem116 = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_cariHesapTanimlari = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem131 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -314,7 +315,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem131 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem132 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -562,10 +563,11 @@
             this.barButtonItem113,
             this.barButtonItem116,
             this.bbi_cariHesapTanimlari,
-            this.barButtonItem131});
+            this.barButtonItem131,
+            this.barButtonItem132});
             this.ribbon.LargeImages = this.img_buton;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 233;
+            this.ribbon.MaxItemId = 234;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.barSatis,
@@ -2295,6 +2297,13 @@
             this.bbi_cariHesapTanimlari.Name = "bbi_cariHesapTanimlari";
             this.bbi_cariHesapTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_cariHesapTanimlari_ItemClick);
             // 
+            // barButtonItem131
+            // 
+            this.barButtonItem131.Caption = "Basit Cari İşemi";
+            this.barButtonItem131.Id = 232;
+            this.barButtonItem131.ImageOptions.LargeImageIndex = 80;
+            this.barButtonItem131.Name = "barButtonItem131";
+            // 
             // img_buton
             // 
             this.img_buton.ImageSize = new System.Drawing.Size(26, 26);
@@ -2379,6 +2388,7 @@
             this.img_buton.Add("bo_organization_1", "image://svgimages/business objects/bo_organization.svg");
             this.img_buton.Add("assigntask", "image://svgimages/outlook inspired/assigntask.svg");
             this.img_buton.Add("employeequickwelcome_1", "image://svgimages/outlook inspired/employeequickwelcome.svg");
+            this.img_buton.Add("managedatasource", "image://svgimages/spreadsheet/managedatasource.svg");
             // 
             // barSatis
             // 
@@ -2674,6 +2684,7 @@
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnParameters);
             this.ribbonPageGroup9.ItemLinks.Add(this.btnGrdiLayouytDeleted);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem132);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Sistem";
             // 
@@ -2769,12 +2780,12 @@
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
             // 
-            // barButtonItem131
+            // barButtonItem132
             // 
-            this.barButtonItem131.Caption = "Basit Cari İşemi";
-            this.barButtonItem131.Id = 232;
-            this.barButtonItem131.ImageOptions.LargeImageIndex = 80;
-            this.barButtonItem131.Name = "barButtonItem131";
+            this.barButtonItem132.Caption = "Veri Tabanı Yedekle";
+            this.barButtonItem132.Id = 233;
+            this.barButtonItem132.ImageOptions.LargeImageIndex = 81;
+            this.barButtonItem132.Name = "barButtonItem132";
             // 
             // MainForm
             // 
@@ -3093,5 +3104,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup37;
         private DevExpress.XtraBars.BarButtonItem bbi_cariHesapTanimlari;
         private DevExpress.XtraBars.BarButtonItem barButtonItem131;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem132;
     }
 }
