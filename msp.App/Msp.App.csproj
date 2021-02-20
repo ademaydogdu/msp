@@ -593,6 +593,12 @@
     <Compile Include="Report\Fatura\InvoiceReport_Sablon2.Designer.cs">
       <DependentUpon>InvoiceReport_Sablon2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Fatura\InvoiceReport_Sablon4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Fatura\InvoiceReport_Sablon4.Designer.cs">
+      <DependentUpon>InvoiceReport_Sablon4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1068,6 +1074,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Fatura\InvoiceReport_Sablon2.resx">
       <DependentUpon>InvoiceReport_Sablon2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Fatura\InvoiceReport_Sablon4.resx">
+      <DependentUpon>InvoiceReport_Sablon4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
