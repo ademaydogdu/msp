@@ -27,5 +27,11 @@ namespace Msp.SimleCurrent.Screen
         {
             this.Close();
         }
+
+        private void bbi_New_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmSimleCurrentDefinition frm = new frmSimleCurrentDefinition();
+            frm.ShowDialog();
+        }
     }
 }

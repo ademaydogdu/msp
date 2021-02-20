@@ -1404,5 +1404,26 @@ namespace msp.App
                 DevExpress.XtraEditors.XtraMessageBox.Show("Error:Call Dll:" + et.ToString());
             }
         }
+
+        private void barButtonItem131_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Assembly assembly = Assembly.LoadFile(@"C:\Msp\Moduls\Msp.SimleCurrent.dll");
+                foreach (Type type in assembly.GetTypes())
+                {
+                    if (type.Name == "Program")
+                    {
+                        MethodInfo V_Dll = type.GetMethod("Main");
+
+                        V_Dll.Invoke(type, new object[] { AppMain.SqlConnection.Server, AppMain.SqlConnection.Database, AppMain.SqlConnection.UserId, AppMain.SqlConnection.Password, UserLookAndFeel.Default.ActiveSkinName });
+                    }
+                }
+            }
+            catch (Exception et)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Error:Call Dll:" + et.ToString());
+            }
+        }
     }
 }

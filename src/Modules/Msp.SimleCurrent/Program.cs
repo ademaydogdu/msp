@@ -26,7 +26,7 @@ namespace Msp.SimleCurrent
                + ";Packet Size=8000;Connect Timeout=120";
 
             MainForm form = new MainForm(connectionString);
-            form.Show();
+            form.ShowDialog();
 
         }
     }

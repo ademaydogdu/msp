@@ -263,6 +263,7 @@
             this.barButtonItem116 = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_cariHesapTanimlari = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem131 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem132 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -315,7 +316,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem132 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -2303,6 +2303,14 @@
             this.barButtonItem131.Id = 232;
             this.barButtonItem131.ImageOptions.LargeImageIndex = 80;
             this.barButtonItem131.Name = "barButtonItem131";
+            this.barButtonItem131.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem131_ItemClick);
+            // 
+            // barButtonItem132
+            // 
+            this.barButtonItem132.Caption = "Veri Tabanı Yedekle";
+            this.barButtonItem132.Id = 233;
+            this.barButtonItem132.ImageOptions.LargeImageIndex = 81;
+            this.barButtonItem132.Name = "barButtonItem132";
             // 
             // img_buton
             // 
@@ -2779,13 +2787,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem132
-            // 
-            this.barButtonItem132.Caption = "Veri Tabanı Yedekle";
-            this.barButtonItem132.Id = 233;
-            this.barButtonItem132.ImageOptions.LargeImageIndex = 81;
-            this.barButtonItem132.Name = "barButtonItem132";
             // 
             // MainForm
             // 

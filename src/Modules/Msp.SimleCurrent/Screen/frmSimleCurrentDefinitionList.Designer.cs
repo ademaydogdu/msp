@@ -92,6 +92,7 @@ namespace Msp.SimleCurrent.Screen
             this.bbi_New.Id = 0;
             this.bbi_New.ImageOptions.ImageIndex = 0;
             this.bbi_New.Name = "bbi_New";
+            this.bbi_New.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_New_ItemClick);
             // 
             // bbi_Edit
             // 

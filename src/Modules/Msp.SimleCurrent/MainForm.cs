@@ -29,7 +29,7 @@ namespace Msp.SimleCurrent
         {
             frmSimleCurrentDefinitionList frn = new frmSimleCurrentDefinitionList();
             frn.MdiParent = this;
-            frn.ShowDialog();
+            frn.Show();
         }
     }
 }
