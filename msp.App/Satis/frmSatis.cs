@@ -301,7 +301,11 @@ namespace msp.App
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                TopTotal();
+            }
 
         }
 

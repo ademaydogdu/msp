@@ -92,6 +92,7 @@
     <Compile Include="Entities\SaleTrans.cs" />
     <Compile Include="Entities\SecRights.cs" />
     <Compile Include="Entities\ShippingInformation.cs" />
+    <Compile Include="Entities\SimleCurrentDefinition.cs" />
     <Compile Include="Entities\SpeedSaleProduct.cs" />
     <Compile Include="Entities\Units.cs" />
     <Compile Include="Entities\Users.cs" />

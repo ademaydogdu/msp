@@ -37,6 +37,9 @@
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -57,12 +60,56 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\frmSimleCurrentDefinition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\frmSimleCurrentDefinition.Designer.cs">
+      <DependentUpon>frmSimleCurrentDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\frmSimleCurrentDefinitionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\frmSimleCurrentDefinitionList.Designer.cs">
+      <DependentUpon>frmSimleCurrentDefinitionList.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\frmSimleCurrentDefinition.resx">
+      <DependentUpon>frmSimleCurrentDefinition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\frmSimleCurrentDefinitionList.resx">
+      <DependentUpon>frmSimleCurrentDefinitionList.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\framework\Msp.Infrastructure\Msp.Infrastructure.csproj">
+      <Project>{b9c80f3f-9556-4138-9a6c-bf8b372dde90}</Project>
+      <Name>Msp.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\framework\Msp.Models\Msp.Models.csproj">
+      <Project>{76986572-478b-449e-8642-484912c72375}</Project>
+      <Name>Msp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\framework\Msp.Service\Msp.Service.csproj">
+      <Project>{c24e92e1-f855-4319-9916-5d050462745c}</Project>
+      <Name>Msp.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Msp.Models.SimleCurrentModels.SimleCurrentDefinitionDTO.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

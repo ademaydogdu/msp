@@ -472,6 +472,7 @@
             this.gridColumn5});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.RowHeight = 45;

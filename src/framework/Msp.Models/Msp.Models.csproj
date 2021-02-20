@@ -103,6 +103,7 @@
     <Compile Include="Models\Utilities\ActionResponse.cs" />
     <Compile Include="Models\Utilities\SelectIdValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimleCurrentModels\SimleCurrentDefinitionDTO.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
