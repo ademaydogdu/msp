@@ -41,12 +41,12 @@ namespace Msp.SimleCurrent.Screen
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gc_InvoiceList = new DevExpress.XtraGrid.GridControl();
+            this.gcv_InvoiceList = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_InvoiceList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_InvoiceList)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -153,40 +153,41 @@ namespace Msp.SimleCurrent.Screen
             this.svgImageCollection1.Add("edit", "image://svgimages/dashboards/edit.svg");
             this.svgImageCollection1.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
             // 
-            // gridControl1
+            // gc_InvoiceList
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(811, 478);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gc_InvoiceList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_InvoiceList.Location = new System.Drawing.Point(0, 0);
+            this.gc_InvoiceList.MainView = this.gcv_InvoiceList;
+            this.gc_InvoiceList.MenuManager = this.barManager1;
+            this.gc_InvoiceList.Name = "gc_InvoiceList";
+            this.gc_InvoiceList.Size = new System.Drawing.Size(811, 478);
+            this.gc_InvoiceList.TabIndex = 4;
+            this.gc_InvoiceList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_InvoiceList});
             // 
-            // gridView1
+            // gcv_InvoiceList
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gcv_InvoiceList.GridControl = this.gc_InvoiceList;
+            this.gcv_InvoiceList.Name = "gcv_InvoiceList";
+            this.gcv_InvoiceList.OptionsView.ShowGroupPanel = false;
             // 
             // InvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 519);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gc_InvoiceList);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "InvoiceList";
             this.Text = "InvoiceList";
+            this.Load += new System.EventHandler(this.InvoiceList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_InvoiceList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_InvoiceList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,8 +205,8 @@ namespace Msp.SimleCurrent.Screen
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gc_InvoiceList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gcv_InvoiceList;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
     }
 }
