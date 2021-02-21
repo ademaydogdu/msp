@@ -67,9 +67,6 @@ namespace Msp.SimleCurrent.Screen
             this.tb_AlimFatura = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tb_Satis = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bs_SimpleCurrent = new System.Windows.Forms.BindingSource(this.components);
@@ -106,9 +103,6 @@ namespace Msp.SimleCurrent.Screen
             this.tb_AlimFatura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.tb_Satis.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SimpleCurrent)).BeginInit();
@@ -212,13 +206,11 @@ namespace Msp.SimleCurrent.Screen
             // 
             this.tabPane1.Controls.Add(this.tb_Tanim);
             this.tabPane1.Controls.Add(this.tb_AlimFatura);
-            this.tabPane1.Controls.Add(this.tb_Satis);
             this.tabPane1.Location = new System.Drawing.Point(12, 12);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tb_Tanim,
-            this.tb_AlimFatura,
-            this.tb_Satis});
+            this.tb_AlimFatura});
             this.tabPane1.RegularSize = new System.Drawing.Size(671, 520);
             this.tabPane1.SelectedPage = this.tb_Tanim;
             this.tabPane1.Size = new System.Drawing.Size(671, 520);
@@ -230,7 +222,7 @@ namespace Msp.SimleCurrent.Screen
             this.tb_Tanim.Caption = "Tanım";
             this.tb_Tanim.Controls.Add(this.layoutControl2);
             this.tb_Tanim.Name = "tb_Tanim";
-            this.tb_Tanim.Size = new System.Drawing.Size(671, 491);
+            this.tb_Tanim.Size = new System.Drawing.Size(671, 487);
             // 
             // layoutControl2
             // 
@@ -247,79 +239,79 @@ namespace Msp.SimleCurrent.Screen
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(671, 491);
+            this.layoutControl2.Size = new System.Drawing.Size(671, 487);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // txtCariUnvan
             // 
-            this.txtCariUnvan.Location = new System.Drawing.Point(74, 12);
+            this.txtCariUnvan.Location = new System.Drawing.Point(83, 12);
             this.txtCariUnvan.MenuManager = this.barManager1;
             this.txtCariUnvan.Name = "txtCariUnvan";
-            this.txtCariUnvan.Size = new System.Drawing.Size(227, 20);
+            this.txtCariUnvan.Size = new System.Drawing.Size(218, 20);
             this.txtCariUnvan.StyleController = this.layoutControl2;
             this.txtCariUnvan.TabIndex = 4;
             // 
             // txtVergiNo
             // 
-            this.txtVergiNo.Location = new System.Drawing.Point(74, 36);
+            this.txtVergiNo.Location = new System.Drawing.Point(83, 36);
             this.txtVergiNo.MenuManager = this.barManager1;
             this.txtVergiNo.Name = "txtVergiNo";
-            this.txtVergiNo.Size = new System.Drawing.Size(227, 20);
+            this.txtVergiNo.Size = new System.Drawing.Size(218, 20);
             this.txtVergiNo.StyleController = this.layoutControl2;
             this.txtVergiNo.TabIndex = 6;
             // 
             // txtVergiDairesi
             // 
-            this.txtVergiDairesi.Location = new System.Drawing.Point(367, 36);
+            this.txtVergiDairesi.Location = new System.Drawing.Point(376, 36);
             this.txtVergiDairesi.MenuManager = this.barManager1;
             this.txtVergiDairesi.Name = "txtVergiDairesi";
-            this.txtVergiDairesi.Size = new System.Drawing.Size(292, 20);
+            this.txtVergiDairesi.Size = new System.Drawing.Size(283, 20);
             this.txtVergiDairesi.StyleController = this.layoutControl2;
             this.txtVergiDairesi.TabIndex = 7;
             // 
             // txtSicilNo
             // 
-            this.txtSicilNo.Location = new System.Drawing.Point(74, 60);
+            this.txtSicilNo.Location = new System.Drawing.Point(83, 60);
             this.txtSicilNo.MenuManager = this.barManager1;
             this.txtSicilNo.Name = "txtSicilNo";
-            this.txtSicilNo.Size = new System.Drawing.Size(227, 20);
+            this.txtSicilNo.Size = new System.Drawing.Size(218, 20);
             this.txtSicilNo.StyleController = this.layoutControl2;
             this.txtSicilNo.TabIndex = 8;
             // 
             // txtMersis
             // 
-            this.txtMersis.Location = new System.Drawing.Point(367, 60);
+            this.txtMersis.Location = new System.Drawing.Point(376, 60);
             this.txtMersis.MenuManager = this.barManager1;
             this.txtMersis.Name = "txtMersis";
-            this.txtMersis.Size = new System.Drawing.Size(292, 20);
+            this.txtMersis.Size = new System.Drawing.Size(283, 20);
             this.txtMersis.StyleController = this.layoutControl2;
             this.txtMersis.TabIndex = 9;
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(74, 84);
+            this.txtTel.Location = new System.Drawing.Point(83, 84);
             this.txtTel.MenuManager = this.barManager1;
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(227, 20);
+            this.txtTel.Size = new System.Drawing.Size(218, 20);
             this.txtTel.StyleController = this.layoutControl2;
             this.txtTel.TabIndex = 10;
             // 
             // txtFax
             // 
-            this.txtFax.Location = new System.Drawing.Point(367, 84);
+            this.txtFax.Location = new System.Drawing.Point(376, 84);
             this.txtFax.MenuManager = this.barManager1;
             this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(292, 20);
+            this.txtFax.Size = new System.Drawing.Size(283, 20);
             this.txtFax.StyleController = this.layoutControl2;
             this.txtFax.TabIndex = 11;
             // 
             // txtEposta
             // 
-            this.txtEposta.Location = new System.Drawing.Point(74, 108);
+            this.txtEposta.Location = new System.Drawing.Point(83, 108);
             this.txtEposta.MenuManager = this.barManager1;
             this.txtEposta.Name = "txtEposta";
-            this.txtEposta.Size = new System.Drawing.Size(585, 20);
+            this.txtEposta.Size = new System.Drawing.Size(576, 20);
             this.txtEposta.StyleController = this.layoutControl2;
             this.txtEposta.TabIndex = 12;
             // 
@@ -328,7 +320,7 @@ namespace Msp.SimleCurrent.Screen
             this.txtAdress.Location = new System.Drawing.Point(12, 157);
             this.txtAdress.MenuManager = this.barManager1;
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(647, 189);
+            this.txtAdress.Size = new System.Drawing.Size(647, 186);
             this.txtAdress.StyleController = this.layoutControl2;
             this.txtAdress.TabIndex = 5;
             // 
@@ -349,7 +341,7 @@ namespace Msp.SimleCurrent.Screen
             this.layoutControlItem5,
             this.layoutControlItem7});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(671, 491);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(671, 487);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
@@ -411,7 +403,7 @@ namespace Msp.SimleCurrent.Screen
             this.layoutControlItem3.Control = this.txtAdress;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(651, 218);
+            this.layoutControlItem3.Size = new System.Drawing.Size(651, 215);
             this.layoutControlItem3.Text = "Adres";
             this.layoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
@@ -421,9 +413,9 @@ namespace Msp.SimleCurrent.Screen
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 338);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 335);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(651, 133);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(651, 132);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -454,10 +446,10 @@ namespace Msp.SimleCurrent.Screen
             // 
             // tb_AlimFatura
             // 
-            this.tb_AlimFatura.Caption = "Alım Fatura";
+            this.tb_AlimFatura.Caption = "Fatura";
             this.tb_AlimFatura.Controls.Add(this.gridControl1);
             this.tb_AlimFatura.Name = "tb_AlimFatura";
-            this.tb_AlimFatura.Size = new System.Drawing.Size(671, 491);
+            this.tb_AlimFatura.Size = new System.Drawing.Size(671, 487);
             // 
             // gridControl1
             // 
@@ -466,7 +458,7 @@ namespace Msp.SimleCurrent.Screen
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(671, 491);
+            this.gridControl1.Size = new System.Drawing.Size(671, 487);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -476,31 +468,6 @@ namespace Msp.SimleCurrent.Screen
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // tb_Satis
-            // 
-            this.tb_Satis.Caption = "Satış Fatura";
-            this.tb_Satis.Controls.Add(this.gridControl2);
-            this.tb_Satis.Name = "tb_Satis";
-            this.tb_Satis.Size = new System.Drawing.Size(671, 491);
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.MenuManager = this.barManager1;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(671, 491);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // Root
             // 
@@ -572,9 +539,6 @@ namespace Msp.SimleCurrent.Screen
             this.tb_AlimFatura.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.tb_Satis.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SimpleCurrent)).EndInit();
@@ -619,14 +583,11 @@ namespace Msp.SimleCurrent.Screen
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tb_AlimFatura;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tb_Satis;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.Utils.SvgImageCollection img_sic;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.BindingSource bs_SimpleCurrent;
     }
 }
