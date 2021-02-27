@@ -98,7 +98,7 @@ namespace Msp.App.Satis
                         _varmi.ProductQuantity += 1;
                         var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                         _varmi.ProductAmount = ProductAmount;
-                        _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                        _varmi.TaxAmount = Math.Round(_product.PPaxAmout.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2); //Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                     }
                     else
                     {
@@ -142,7 +142,7 @@ namespace Msp.App.Satis
                     _varmi.ProductQuantity += 1;
                     var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                     _varmi.ProductAmount = ProductAmount;
-                    _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                    _varmi.TaxAmount = Math.Round(_product.PPaxAmout.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2); //Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                 }
                 else
                 {

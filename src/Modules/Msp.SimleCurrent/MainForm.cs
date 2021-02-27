@@ -31,5 +31,27 @@ namespace Msp.SimleCurrent
             frn.MdiParent = this;
             frn.Show();
         }
+
+        private void btnHizliFaturaGirisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmSpeedInvoice frm = new frmSpeedInvoice();
+            frm.ShowDialog();
+        }
+
+        private void btnAlimFaturasi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.invoice = Models.InvoiceType.AlisFaturasi;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnSatisFaturasi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            InvoiceList frm = new InvoiceList();
+            frm.invoice = Models.InvoiceType.SatisFaturasi;
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

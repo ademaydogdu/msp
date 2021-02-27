@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbi_HesapTanimlari = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAlimFaturasi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSatisFaturasi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFis = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAlinanCekListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHizliFaturaGirisi = new DevExpress.XtraBars.BarButtonItem();
             this.img_sicButton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -56,14 +57,15 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.bbi_HesapTanimlari,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
+            this.btnAlimFaturasi,
+            this.btnSatisFaturasi,
+            this.btnFis,
             this.barButtonItem5,
-            this.barButtonItem6});
+            this.btnAlinanCekListesi,
+            this.btnHizliFaturaGirisi});
             this.ribbonControl1.LargeImages = this.img_sicButton;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -78,26 +80,28 @@
             this.bbi_HesapTanimlari.Name = "bbi_HesapTanimlari";
             this.bbi_HesapTanimlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_HesapTanimlari_ItemClick);
             // 
-            // barButtonItem2
+            // btnAlimFaturasi
             // 
-            this.barButtonItem2.Caption = "Alım Faturası";
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.ImageOptions.LargeImageIndex = 3;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnAlimFaturasi.Caption = "Alım Faturası";
+            this.btnAlimFaturasi.Id = 2;
+            this.btnAlimFaturasi.ImageOptions.LargeImageIndex = 3;
+            this.btnAlimFaturasi.Name = "btnAlimFaturasi";
+            this.btnAlimFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlimFaturasi_ItemClick);
             // 
-            // barButtonItem3
+            // btnSatisFaturasi
             // 
-            this.barButtonItem3.Caption = "Satış Faturası";
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.ImageOptions.LargeImageIndex = 4;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnSatisFaturasi.Caption = "Satış Faturası";
+            this.btnSatisFaturasi.Id = 3;
+            this.btnSatisFaturasi.ImageOptions.LargeImageIndex = 4;
+            this.btnSatisFaturasi.Name = "btnSatisFaturasi";
+            this.btnSatisFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSatisFaturasi_ItemClick);
             // 
-            // barButtonItem4
+            // btnFis
             // 
-            this.barButtonItem4.Caption = "Fiş";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.LargeImageIndex = 1;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnFis.Caption = "Fiş";
+            this.btnFis.Id = 4;
+            this.btnFis.ImageOptions.LargeImageIndex = 1;
+            this.btnFis.Name = "btnFis";
             // 
             // barButtonItem5
             // 
@@ -105,12 +109,20 @@
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // barButtonItem6
+            // btnAlinanCekListesi
             // 
-            this.barButtonItem6.Caption = "Alınan/Verilen Çek Listesi";
-            this.barButtonItem6.Id = 6;
-            this.barButtonItem6.ImageOptions.LargeImageIndex = 2;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.btnAlinanCekListesi.Caption = "Alınan/Verilen Çek Listesi";
+            this.btnAlinanCekListesi.Id = 6;
+            this.btnAlinanCekListesi.ImageOptions.LargeImageIndex = 2;
+            this.btnAlinanCekListesi.Name = "btnAlinanCekListesi";
+            // 
+            // btnHizliFaturaGirisi
+            // 
+            this.btnHizliFaturaGirisi.Caption = "Hızlı Fatura Girişi";
+            this.btnHizliFaturaGirisi.Id = 7;
+            this.btnHizliFaturaGirisi.ImageOptions.LargeImageIndex = 5;
+            this.btnHizliFaturaGirisi.Name = "btnHizliFaturaGirisi";
+            this.btnHizliFaturaGirisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHizliFaturaGirisi_ItemClick);
             // 
             // img_sicButton
             // 
@@ -120,6 +132,7 @@
             this.img_sicButton.Add("bo_security_permission_member", "image://svgimages/business objects/bo_security_permission_member.svg");
             this.img_sicButton.Add("snapinsertheader", "image://svgimages/snap/snapinsertheader.svg");
             this.img_sicButton.Add("removegroupheader", "image://svgimages/snap/removegroupheader.svg");
+            this.img_sicButton.Add("weather_lightning", "image://svgimages/icon builder/weather_lightning.svg");
             // 
             // ribbonPage1
             // 
@@ -137,14 +150,15 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnHizliFaturaGirisi);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAlimFaturasi);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnSatisFaturasi);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnFis);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAlinanCekListesi);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonStatusBar1
@@ -195,14 +209,15 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.BarButtonItem bbi_HesapTanimlari;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnAlimFaturasi;
+        private DevExpress.XtraBars.BarButtonItem btnSatisFaturasi;
+        private DevExpress.XtraBars.BarButtonItem btnFis;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem btnAlinanCekListesi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.Utils.SvgImageCollection img_sicButton;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnHizliFaturaGirisi;
     }
 }

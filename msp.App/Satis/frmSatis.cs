@@ -99,7 +99,7 @@ namespace msp.App
                         _varmi.ProductQuantity += 1;
                         var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                         _varmi.ProductAmount = ProductAmount;
-                        _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                        _varmi.TaxAmount = Math.Round(product.PPaxAmout.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2); //Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                     }
                     else
                     {
@@ -134,7 +134,7 @@ namespace msp.App
         {
             try
             {
-                _product = _repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(ProductId));
+                _product = AppMain.Products.Where(x => x.PID == ProductId).FirstOrDefault(); //_repository.Run<DepotStockService, ProductDTO>(x => x.GetProduct(ProductId));
                 if (_product == null) return;
                 var _varmi = __dl_List_SaleTrans.Where(x => x.ProductId == _product.PID).FirstOrDefault();
                 if (_varmi != null)
@@ -142,7 +142,7 @@ namespace msp.App
                     _varmi.ProductQuantity += 1;
                     var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                     _varmi.ProductAmount = ProductAmount;
-                    _varmi.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                    _varmi.TaxAmount = Math.Round(_product.PPaxAmout.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2); //Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
                 }
                 else
                 {

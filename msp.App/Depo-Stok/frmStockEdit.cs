@@ -161,6 +161,15 @@ namespace Msp.App.Depo_Stok
                     }
                     else
                     {
+                        if (AppMain.Products.Any(x=>x.PID == __product.PID))
+                        {
+                            AppMain.Products.Remove(__product);
+                            AppMain.Products.Add(__product);
+                        }
+                        else
+                        {
+                            AppMain.Products.Add(__product);
+                        }
                         foreach (Form item in Application.OpenForms)
                         {
                             if (item.Name == "frmStok")

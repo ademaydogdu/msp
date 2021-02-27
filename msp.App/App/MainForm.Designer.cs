@@ -2408,7 +2408,7 @@
             this.ribbonPageGroup26});
             this.barSatis.ImageOptions.ImageIndex = 0;
             this.barSatis.Name = "barSatis";
-            this.barSatis.Text = "Satış";
+            this.barSatis.Text = "Perakende Satış";
             // 
             // ribbonPageGroup1
             // 
