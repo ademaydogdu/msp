@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\Msp.Models.SimleCurrentModels.SimleCurrentDefinitionDTO.datasource" />
+    <None Include="Properties\DataSources\Msp.Models.SimleCurrentModels.SimpleInvoiceOwnerDTO.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

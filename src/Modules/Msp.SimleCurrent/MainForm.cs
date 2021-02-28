@@ -35,7 +35,7 @@ namespace Msp.SimleCurrent
         private void btnHizliFaturaGirisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmSpeedInvoice frm = new frmSpeedInvoice();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void btnAlimFaturasi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

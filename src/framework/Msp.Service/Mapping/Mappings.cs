@@ -8,6 +8,7 @@ using Msp.Models.Models.Invoice;
 using Msp.Models.Models.Order;
 using Msp.Models.Models.Sale;
 using Msp.Models.Models.SecRights;
+using Msp.Models.SimleCurrentModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,6 +81,12 @@ namespace Msp.Service.Mapping
             cfg.CreateMap<CurrentGroupDefinitionsDTO, CurrentGroupDefinitions>();
             cfg.CreateMap<ShippingInformation, ShippingInformationDTO>();
             cfg.CreateMap<ShippingInformationDTO, ShippingInformation>();
+            cfg.CreateMap<SimleCurrentDefinition, SimleCurrentDefinitionDTO>();
+            cfg.CreateMap<SimleCurrentDefinitionDTO, SimleCurrentDefinition>();
+            cfg.CreateMap<SimpleInvoiceOwner, SimpleInvoiceOwnerDTO>();
+            cfg.CreateMap<SimpleInvoiceOwnerDTO, SimpleInvoiceOwner>();
+            cfg.CreateMap<SimpleInvoiceTrans, SimpleInvoiceTransDTO>();
+            cfg.CreateMap<SimpleInvoiceTransDTO, SimpleInvoiceTrans>();
         }
 
 

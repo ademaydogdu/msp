@@ -60,6 +60,8 @@ namespace Msp.Entity.Entities
         public virtual DbSet<CurrentGroupDefinitions> CurrentGroupDefinitions { get; set; }
         public virtual DbSet<ShippingInformation> ShippingInformation { get; set; }
         public virtual DbSet<SimleCurrentDefinition> SimleCurrentDefinition { get; set; }
+        public virtual DbSet<SimpleInvoiceOwner> SimpleInvoiceOwner { get; set; }
+        public virtual DbSet<SimpleInvoiceTrans> SimpleInvoiceTrans { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

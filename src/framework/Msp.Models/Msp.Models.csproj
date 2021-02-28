@@ -104,6 +104,8 @@
     <Compile Include="Models\Utilities\SelectIdValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimleCurrentModels\SimleCurrentDefinitionDTO.cs" />
+    <Compile Include="SimleCurrentModels\SimpleInvoiceOwnerDTO.cs" />
+    <Compile Include="SimleCurrentModels\SimpleInvoiceTransDTO.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
