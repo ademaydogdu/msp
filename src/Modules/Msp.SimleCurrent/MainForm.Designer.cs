@@ -45,6 +45,7 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sicButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -62,10 +63,11 @@
             this.btnFis,
             this.barButtonItem5,
             this.btnAlinanCekListesi,
-            this.btnHizliFaturaGirisi});
+            this.btnHizliFaturaGirisi,
+            this.barButtonItem1});
             this.ribbonControl1.LargeImages = this.img_sicButton;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -133,6 +135,7 @@
             this.img_sicButton.Add("snapinsertheader", "image://svgimages/snap/snapinsertheader.svg");
             this.img_sicButton.Add("removegroupheader", "image://svgimages/snap/removegroupheader.svg");
             this.img_sicButton.Add("weather_lightning", "image://svgimages/icon builder/weather_lightning.svg");
+            this.img_sicButton.Add("zoom", "image://svgimages/spreadsheet/zoom.svg");
             // 
             // ribbonPage1
             // 
@@ -154,6 +157,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnAlimFaturasi);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnSatisFaturasi);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnFis);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPageGroup3
@@ -177,6 +181,13 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Fatura ve Fiş Arama";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.ImageOptions.LargeImageIndex = 6;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // MainForm
             // 
@@ -219,5 +230,6 @@
         private DevExpress.Utils.SvgImageCollection img_sicButton;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btnHizliFaturaGirisi;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

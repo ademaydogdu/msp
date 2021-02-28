@@ -921,6 +921,7 @@
             // 
             // lcRapor
             // 
+            this.lcRapor.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "ReportType", true));
             this.lcRapor.Location = new System.Drawing.Point(88, 12);
             this.lcRapor.MenuManager = this.barManager1;
             this.lcRapor.Name = "lcRapor";

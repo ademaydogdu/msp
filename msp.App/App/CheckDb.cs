@@ -1467,6 +1467,14 @@ namespace Msp.App.App
                 sCommand.CommandText = "ALTER TABLE Parameters ADD BorcodeCOM nchar(10) NULL";
                 ExecuteNonQuery(sCommand);
             }
+            if (tblParameters.Columns.Contains("ReportType") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Parameters ADD ReportType int NULL";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Parameters set ReportType = 0";
+                ExecuteNonQuery(sCommand);
+
+            }
 
             #endregion
 

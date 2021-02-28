@@ -41,14 +41,23 @@ namespace Msp.SimleCurrent.Screen
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bs_CurrentList = new System.Windows.Forms.BindingSource(this.components);
+            this.gc_Current = new DevExpress.XtraGrid.GridControl();
+            this.gcv_Current = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bs_Current = new System.Windows.Forms.BindingSource(this.components);
+            this.colCUnvan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAdress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVergiNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVergiDairesi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSicilNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMersis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEPosta = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Current)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Current)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -100,6 +109,7 @@ namespace Msp.SimleCurrent.Screen
             this.bbi_Edit.Id = 1;
             this.bbi_Edit.ImageOptions.ImageIndex = 3;
             this.bbi_Edit.Name = "bbi_Edit";
+            this.bbi_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Edit_ItemClick);
             // 
             // bbi_Deleted
             // 
@@ -107,6 +117,7 @@ namespace Msp.SimleCurrent.Screen
             this.bbi_Deleted.Id = 3;
             this.bbi_Deleted.ImageOptions.ImageIndex = 4;
             this.bbi_Deleted.Name = "bbi_Deleted";
+            this.bbi_Deleted.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Deleted_ItemClick);
             // 
             // bbi_closed
             // 
@@ -157,30 +168,109 @@ namespace Msp.SimleCurrent.Screen
             this.svgImageCollection1.Add("edit", "image://svgimages/dashboards/edit.svg");
             this.svgImageCollection1.Add("deletetablerows", "image://svgimages/richedit/deletetablerows.svg");
             // 
-            // gridControl1
+            // gc_Current
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(700, 472);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gc_Current.DataSource = this.bs_Current;
+            this.gc_Current.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_Current.Location = new System.Drawing.Point(0, 0);
+            this.gc_Current.MainView = this.gcv_Current;
+            this.gc_Current.MenuManager = this.barManager1;
+            this.gc_Current.Name = "gc_Current";
+            this.gc_Current.Size = new System.Drawing.Size(700, 472);
+            this.gc_Current.TabIndex = 4;
+            this.gc_Current.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcv_Current});
             // 
-            // gridView1
+            // gcv_Current
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gcv_Current.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCUnvan,
+            this.colAdress,
+            this.colVergiNo,
+            this.colVergiDairesi,
+            this.colSicilNo,
+            this.colMersis,
+            this.colPhone,
+            this.colFax,
+            this.colEPosta});
+            this.gcv_Current.GridControl = this.gc_Current;
+            this.gcv_Current.Name = "gcv_Current";
+            this.gcv_Current.OptionsView.ColumnAutoWidth = false;
+            this.gcv_Current.OptionsView.ShowGroupPanel = false;
+            // 
+            // bs_Current
+            // 
+            this.bs_Current.DataSource = typeof(Msp.Models.SimleCurrentModels.SimleCurrentDefinitionDTO);
+            // 
+            // colCUnvan
+            // 
+            this.colCUnvan.FieldName = "CUnvan";
+            this.colCUnvan.Name = "colCUnvan";
+            this.colCUnvan.Visible = true;
+            this.colCUnvan.VisibleIndex = 0;
+            // 
+            // colAdress
+            // 
+            this.colAdress.FieldName = "Adress";
+            this.colAdress.Name = "colAdress";
+            this.colAdress.Visible = true;
+            this.colAdress.VisibleIndex = 1;
+            // 
+            // colVergiNo
+            // 
+            this.colVergiNo.FieldName = "VergiNo";
+            this.colVergiNo.Name = "colVergiNo";
+            this.colVergiNo.Visible = true;
+            this.colVergiNo.VisibleIndex = 2;
+            // 
+            // colVergiDairesi
+            // 
+            this.colVergiDairesi.FieldName = "VergiDairesi";
+            this.colVergiDairesi.Name = "colVergiDairesi";
+            this.colVergiDairesi.Visible = true;
+            this.colVergiDairesi.VisibleIndex = 3;
+            // 
+            // colSicilNo
+            // 
+            this.colSicilNo.FieldName = "SicilNo";
+            this.colSicilNo.Name = "colSicilNo";
+            this.colSicilNo.Visible = true;
+            this.colSicilNo.VisibleIndex = 4;
+            // 
+            // colMersis
+            // 
+            this.colMersis.FieldName = "Mersis";
+            this.colMersis.Name = "colMersis";
+            this.colMersis.Visible = true;
+            this.colMersis.VisibleIndex = 5;
+            // 
+            // colPhone
+            // 
+            this.colPhone.FieldName = "Phone";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.Visible = true;
+            this.colPhone.VisibleIndex = 6;
+            // 
+            // colFax
+            // 
+            this.colFax.FieldName = "Fax";
+            this.colFax.Name = "colFax";
+            this.colFax.Visible = true;
+            this.colFax.VisibleIndex = 7;
+            // 
+            // colEPosta
+            // 
+            this.colEPosta.FieldName = "EPosta";
+            this.colEPosta.Name = "colEPosta";
+            this.colEPosta.Visible = true;
+            this.colEPosta.VisibleIndex = 8;
             // 
             // frmSimleCurrentDefinitionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 513);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gc_Current);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -191,9 +281,9 @@ namespace Msp.SimleCurrent.Screen
             this.Load += new System.EventHandler(this.frmSimleCurrentDefinitionList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_CurrentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcv_Current)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Current)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,9 +301,18 @@ namespace Msp.SimleCurrent.Screen
         private DevExpress.XtraBars.BarButtonItem bbi_Edit;
         private DevExpress.XtraBars.BarButtonItem bbi_Deleted;
         private DevExpress.XtraBars.BarButtonItem bbi_closed;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gc_Current;
+        private DevExpress.XtraGrid.Views.Grid.GridView gcv_Current;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
-        private System.Windows.Forms.BindingSource bs_CurrentList;
+        private System.Windows.Forms.BindingSource bs_Current;
+        private DevExpress.XtraGrid.Columns.GridColumn colCUnvan;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdress;
+        private DevExpress.XtraGrid.Columns.GridColumn colVergiNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colVergiDairesi;
+        private DevExpress.XtraGrid.Columns.GridColumn colSicilNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colMersis;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn colFax;
+        private DevExpress.XtraGrid.Columns.GridColumn colEPosta;
     }
 }

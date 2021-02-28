@@ -29,6 +29,7 @@ namespace Msp.Entity.Entities
         public int? ProductEndDateDay { get; set; } = 0;
         public bool? IsBarcode { get; set; } = false;
         public string BorcodeCOM { get; set; }
+        public int? ReportType { get; set; } = 0;
 
 
     }

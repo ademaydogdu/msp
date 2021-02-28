@@ -33,7 +33,7 @@ namespace Msp.SimleCurrent.Screen
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_Save = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Closed = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -120,7 +120,7 @@ namespace Msp.SimleCurrent.Screen
             this.barManager1.Images = this.img_sic;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbi_Save,
-            this.barButtonItem2});
+            this.bbi_Closed});
             this.barManager1.MaxItemId = 2;
             this.barManager1.StatusBar = this.bar3;
             // 
@@ -133,7 +133,7 @@ namespace Msp.SimleCurrent.Screen
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Save),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Closed)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -145,13 +145,15 @@ namespace Msp.SimleCurrent.Screen
             this.bbi_Save.Id = 0;
             this.bbi_Save.ImageOptions.ImageIndex = 0;
             this.bbi_Save.Name = "bbi_Save";
+            this.bbi_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Save_ItemClick);
             // 
-            // barButtonItem2
+            // bbi_Closed
             // 
-            this.barButtonItem2.Caption = "Vazgeç";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.ImageIndex = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.bbi_Closed.Caption = "Vazgeç";
+            this.bbi_Closed.Id = 1;
+            this.bbi_Closed.ImageOptions.ImageIndex = 1;
+            this.bbi_Closed.Name = "bbi_Closed";
+            this.bbi_Closed.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Closed_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -245,6 +247,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtCariUnvan
             // 
+            this.txtCariUnvan.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "CUnvan", true));
             this.txtCariUnvan.Location = new System.Drawing.Point(83, 12);
             this.txtCariUnvan.MenuManager = this.barManager1;
             this.txtCariUnvan.Name = "txtCariUnvan";
@@ -254,6 +257,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtVergiNo
             // 
+            this.txtVergiNo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "VergiNo", true));
             this.txtVergiNo.Location = new System.Drawing.Point(83, 36);
             this.txtVergiNo.MenuManager = this.barManager1;
             this.txtVergiNo.Name = "txtVergiNo";
@@ -263,6 +267,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtVergiDairesi
             // 
+            this.txtVergiDairesi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "VergiDairesi", true));
             this.txtVergiDairesi.Location = new System.Drawing.Point(376, 36);
             this.txtVergiDairesi.MenuManager = this.barManager1;
             this.txtVergiDairesi.Name = "txtVergiDairesi";
@@ -272,6 +277,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtSicilNo
             // 
+            this.txtSicilNo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "SicilNo", true));
             this.txtSicilNo.Location = new System.Drawing.Point(83, 60);
             this.txtSicilNo.MenuManager = this.barManager1;
             this.txtSicilNo.Name = "txtSicilNo";
@@ -281,6 +287,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtMersis
             // 
+            this.txtMersis.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "Mersis", true));
             this.txtMersis.Location = new System.Drawing.Point(376, 60);
             this.txtMersis.MenuManager = this.barManager1;
             this.txtMersis.Name = "txtMersis";
@@ -290,6 +297,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtTel
             // 
+            this.txtTel.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "Phone", true));
             this.txtTel.Location = new System.Drawing.Point(83, 84);
             this.txtTel.MenuManager = this.barManager1;
             this.txtTel.Name = "txtTel";
@@ -299,6 +307,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtFax
             // 
+            this.txtFax.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "Fax", true));
             this.txtFax.Location = new System.Drawing.Point(376, 84);
             this.txtFax.MenuManager = this.barManager1;
             this.txtFax.Name = "txtFax";
@@ -308,6 +317,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtEposta
             // 
+            this.txtEposta.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "EPosta", true));
             this.txtEposta.Location = new System.Drawing.Point(83, 108);
             this.txtEposta.MenuManager = this.barManager1;
             this.txtEposta.Name = "txtEposta";
@@ -317,6 +327,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // txtAdress
             // 
+            this.txtAdress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SimpleCurrent, "Adress", true));
             this.txtAdress.Location = new System.Drawing.Point(12, 157);
             this.txtAdress.MenuManager = this.barManager1;
             this.txtAdress.Name = "txtAdress";
@@ -556,7 +567,7 @@ namespace Msp.SimleCurrent.Screen
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem bbi_Save;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem bbi_Closed;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tb_Tanim;

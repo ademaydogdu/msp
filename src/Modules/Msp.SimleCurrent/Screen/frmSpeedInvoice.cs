@@ -45,11 +45,69 @@ namespace Msp.SimleCurrent.Screen
             bs_Current.DataSource = List_simleCurrent;
 
         }
+        public bool do_Validation()
+        {
+            bool _return = false;
+            if (Convert.ToInt32(txtTutar.EditValue) == 0)
+            {
+                XtraMessageBox.Show("Tutar Girişi yapınız", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = true;
+            }
+            if ((string)lc_Doviz.EditValue == "")
+            {
+                XtraMessageBox.Show("Döviz Cinsi Seçiniz", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _return = true;
+            }
+
+            return _return;
+        }
 
         private void do_save()
         {
             try
             {
+                if (do_Validation()) return;
+
+                decimal _tutar = (decimal)txtTutar.EditValue;
+                if ((int)lc_FaaturaTuru.EditValue == 1)
+                {
+                    if (lc_Doviz.EditValue.ToString().Trim() == "TL")
+                    {
+                        __InvoiceOwner.Alacak = _tutar;
+                        __InvoiceOwner.Borc = 0;
+                    }
+                    else
+                    {
+                        __InvoiceOwner.CurrencyAlacak = _tutar;
+                        __InvoiceOwner.CurrencyBorc = 0;
+                    }
+                }
+                else
+                {
+                    if (lc_Doviz.EditValue.ToString().Trim() == "TL")
+                    {
+                        __InvoiceOwner.Borc = _tutar;
+                        __InvoiceOwner.Alacak = 0;
+                    }
+                    else
+                    {
+                        __InvoiceOwner.CurrencyBorc = _tutar;
+                        __InvoiceOwner.CurrencyAlacak = 0;
+                    }
+                }
+
+
+
+
+                var response = _repository.Run<SimleCurrentService, ActionResponse<SimpleInvoiceOwnerDTO>>(x => x.Save_SimpleInvoiceOwner_Easy(__InvoiceOwner));
+                if (response.ResponseType != ResponseType.Ok)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(response.Message, "HATA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    this.Close();
+                }
 
             }
             catch (Exception ex)

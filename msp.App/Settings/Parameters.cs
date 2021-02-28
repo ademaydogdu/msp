@@ -26,6 +26,19 @@ namespace Msp.App.Settings
             _repository = new Repository();
         }
 
+        List<SelectIdValue> report_List = new List<SelectIdValue>()
+        {
+            new SelectIdValue(0, "Rapor Klasik"),
+            new SelectIdValue(1, "Şablon 1"),
+            new SelectIdValue(2, "Şablon 2"),
+            new SelectIdValue(3, "Şablon 3"),
+            new SelectIdValue(4, "Şablon 4"),
+            new SelectIdValue(5, "Şablon 5"),
+            new SelectIdValue(6, "Şablon 6"),
+            new SelectIdValue(7, "Şablon 7"),
+        };
+
+
         ParametersDTO _parameters = new ParametersDTO();
         MspTool oTool = new MspTool(); 
 
@@ -37,8 +50,15 @@ namespace Msp.App.Settings
                 comboBoxEdit2.Properties.Items.Add(portAdi);
             }
 
+            lcRapor.Properties.DataSource = report_List;
+            lcRapor.Properties.DisplayMember = "Value";
+            lcRapor.Properties.ValueMember = "Id";
+
             _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
             bs_Parameter.DataSource = _parameters;
+
+
+
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

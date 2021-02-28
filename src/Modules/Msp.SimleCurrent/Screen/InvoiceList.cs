@@ -20,6 +20,17 @@ namespace Msp.SimleCurrent.Screen
         }
         public InvoiceType invoice;
 
+        #region Record
+
+        public void do_refresh()
+        {
+
+        }
+
+
+        #endregion
+
+
         private void InvoiceList_Load(object sender, EventArgs e)
         {
 
@@ -34,9 +45,6 @@ namespace Msp.SimleCurrent.Screen
                 default:
                     break;
             }
-
-
-
 
         }
     }

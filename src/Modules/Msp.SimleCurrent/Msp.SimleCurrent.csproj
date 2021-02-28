@@ -66,6 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Screen\frmFindInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\frmFindInvoice.Designer.cs">
+      <DependentUpon>frmFindInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screen\frmSimleCurrentDefinition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\frmFindInvoice.resx">
+      <DependentUpon>frmFindInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\frmSimleCurrentDefinition.resx">
       <DependentUpon>frmSimleCurrentDefinition.cs</DependentUpon>
