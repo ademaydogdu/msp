@@ -1411,6 +1411,16 @@
     <Content Include="ico2.ico" />
     <Content Include="LINCENSE.txt" />
     <Content Include="logos.ico" />
+    <Resource Include="Report\ReportViewImage\Invoice1.png" />
+    <Content Include="Report\ReportViewImage\Invoice2.png" />
+    <Content Include="Report\ReportViewImage\Invoice3.png" />
+    <Content Include="Report\ReportViewImage\Invoice4.png" />
+    <Content Include="Report\ReportViewImage\Invoice5.png" />
+    <Content Include="Report\ReportViewImage\Invoice6.png" />
+    <Content Include="Report\ReportViewImage\Invoice7.png" />
+    <Content Include="Report\ReportViewImage\Invoice8.png" />
+    <Content Include="Report\ReportViewImage\Invoice9.png" />
+    <Content Include="Report\ReportViewImage\Klasik.png" />
     <Content Include="Software Protector.exe" />
   </ItemGroup>
   <ItemGroup />
