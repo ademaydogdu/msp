@@ -1,4 +1,7 @@
 ﻿using DevExpress.XtraEditors;
+using Msp.Models.SimleCurrentModels;
+using Msp.Service.Repository;
+using Msp.Service.Service.SimleCurrent;
 using Msp.SimleCurrent.Models;
 using System;
 using System.Collections.Generic;
@@ -14,17 +17,28 @@ namespace Msp.SimleCurrent.Screen
 {
     public partial class InvoiceList : DevExpress.XtraEditors.XtraForm
     {
+        Repository _repository;
         public InvoiceList()
         {
             InitializeComponent();
+            _repository = new Repository();
         }
         public InvoiceType invoice;
+
+        List<SimpleInvoiceOwnerDTO> invoiceList = new List<SimpleInvoiceOwnerDTO>();
 
         #region Record
 
         public void do_refresh()
         {
-
+            try
+            {
+                invoiceList = _repository.Run<SimleCurrentService, List<SimpleInvoiceOwnerDTO>>(x => x.GetList_Invoice((int)invoice));
+                bs_Invoice.DataSource = invoiceList;
+            }
+            catch (Exception)
+            {
+            }
         }
 
 
@@ -45,7 +59,7 @@ namespace Msp.SimleCurrent.Screen
                 default:
                     break;
             }
-
+            do_refresh();
         }
     }
 }

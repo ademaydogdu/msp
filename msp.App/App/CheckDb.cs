@@ -1272,6 +1272,98 @@ namespace Msp.App.App
 
             #endregion
 
+
+            #region SimleCurrentDefinition
+            if (tblTableList.Rows.Contains("SimleCurrentDefinition") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SimleCurrentDefinition]( "
+                    + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                    + "     [CUnvan] [nvarchar](max)NULL, "
+                    + " 	[Adress] [nvarchar](max)NULL, "
+                    + " 	[VergiNo] [nvarchar](50) NULL, "
+                    + " 	[VergiDairesi] [nvarchar](50) NULL, "
+                    + " 	[SicilNo] [nvarchar](50) NULL, "
+                    + " 	[Mersis] [nvarchar](50) NULL, "
+                    + " 	[Phone] [int] NULL, "
+                    + " 	[Fax] [int] NULL, "
+                    + " 	[EPosta] [nvarchar](50) NULL, "
+                    + "  CONSTRAINT[PK_SimleCurrentDefinition] PRIMARY KEY CLUSTERED "
+                    + " ( "
+                    + "    [RecId] ASC "
+                    + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON[PRIMARY] "
+                    + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY]";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+            #endregion
+
+            #region SimpleInvoiceOwner
+            if (tblTableList.Rows.Contains("SimpleInvoiceOwner") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SimpleInvoiceOwner]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "     [CariId] [int] NULL,  "
+                + " 	[InvoiceDate] [datetime] NULL,   "
+                + " 	[InvoiceType] [int] NULL, "
+                + " 	[InvoiceNo] [nvarchar](max)NULL, "
+                + " 	[Remark] [nvarchar](max)NULL, "
+                + " 	[Vade] [int] NULL, "
+                + " 	[Borc] [decimal](18, 2) NULL, "
+                + " 	[Alacak] [decimal](18, 2) NULL, "
+                + " 	[Bakiye] [decimal](18, 2) NULL, "
+                + " 	[CurrencyBorc] [decimal](18, 2) NULL, "
+                + " 	[CurrencyAlacak] [decimal](18, 2) NULL, "
+                + " 	[CurrencyBakiye] [decimal](18, 2) NULL, "
+                + " 	[IsDetail] [bit] NULL, "
+                + " 	[CurrencyId] [int] NULL, "
+                + " 	[Deleted] [bit] NULL, "
+                + "  CONSTRAINT[PK_SimpleInvoiceOwner] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON[PRIMARY] "
+                + " ) ON[PRIMARY] TEXTIMAGE_ON[PRIMARY] ";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+            #endregion
+
+            #region SimpleInvoiceTrans
+            if (tblTableList.Rows.Contains("SimpleInvoiceTrans") == false)
+            {
+                sCommand.CommandText = "CREATE TABLE [dbo].[SimpleInvoiceTrans]( "
+                + "     [RecId][int] IDENTITY(1, 1) NOT NULL, "
+                + "  "
+                + "     [InvoiceOwnerId] [int] NULL, "
+                + " 	[ProductId] [int] NULL, "
+                + " 	[Quentity] [int] NULL, "
+                + " 	[UnitID] [int] NULL, "
+                + " 	[KDV] [int] NULL, "
+                + " 	[Indirim] [int] NULL, "
+                + " 	[BirimFiyat] [decimal](18, 2) NULL, "
+                + " 	[Tutar] [decimal](18, 2) NULL, "
+                + " 	[SKT] [datetime] NULL, "
+                + " 	[AlisFiyati] [decimal](18, 2) NULL, "
+                + " 	[KarOrani] [int] NULL, "
+                + " 	[KDVPrice] [decimal](18, 2) NULL, "
+                + "  CONSTRAINT[PK_SimpleInvoiceTrans] PRIMARY KEY CLUSTERED "
+                + " ( "
+                + "    [RecId] ASC "
+                + " )WITH(PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON[PRIMARY] "
+                + " ) ON[PRIMARY] ";
+                ExecuteNonQuery(sCommand);
+
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+            Application.DoEvents();
+            #endregion
+
             #endregion
 
             #region CreateColumn
@@ -1456,10 +1548,14 @@ namespace Msp.App.App
             {
                 sCommand.CommandText = "ALTER TABLE Parameters ADD PaymentFisSave bit NULL";
                 ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Parameters set PaymentFisSave = 0";
+                ExecuteNonQuery(sCommand);
             }
             if (tblParameters.Columns.Contains("IsBarcode") == false)
             {
                 sCommand.CommandText = "ALTER TABLE Parameters ADD IsBarcode bit NULL";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Parameters set IsBarcode = 0";
                 ExecuteNonQuery(sCommand);
             }
             if (tblParameters.Columns.Contains("BorcodeCOM") == false)
@@ -1473,7 +1569,6 @@ namespace Msp.App.App
                 ExecuteNonQuery(sCommand);
                 sCommand.CommandText = "Update Parameters set ReportType = 0";
                 ExecuteNonQuery(sCommand);
-
             }
 
             #endregion

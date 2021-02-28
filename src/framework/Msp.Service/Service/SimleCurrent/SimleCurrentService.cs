@@ -68,6 +68,27 @@ namespace Msp.Service.Service.SimleCurrent
 
 
         #region InvoiceOwner
+        public List<SimpleInvoiceOwnerDTO> GetList_Invoice(int invoiceType)
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<SimpleInvoiceOwnerDTO> result = new List<SimpleInvoiceOwnerDTO>();
+                if (invoiceType == 1)
+                {
+                    result = base.Map<List<SimpleInvoiceOwner>, List<SimpleInvoiceOwnerDTO>>(_db.SimpleInvoiceOwner.Where(x => x.InvoiceType == 1 && x.Deleted == false).ToList());
+                }
+                if (invoiceType == 2)
+                {
+                    result = base.Map<List<SimpleInvoiceOwner>, List<SimpleInvoiceOwnerDTO>>(_db.SimpleInvoiceOwner.Where(x => x.InvoiceType == 2 && x.Deleted == false).ToList());
+                }
+                else
+                {
+                    result = base.Map<List<SimpleInvoiceOwner>, List<SimpleInvoiceOwnerDTO>>(_db.SimpleInvoiceOwner.Where(x => x.Deleted == false).ToList());
+                }
+                return result;
+            }
+        }
+
 
         public ActionResponse<SimpleInvoiceOwnerDTO> Save_SimpleInvoiceOwner_Easy(SimpleInvoiceOwnerDTO model)
         {

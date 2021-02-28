@@ -27,6 +27,7 @@ namespace Msp.Entity.Entities
         public decimal? CurrencyBakiye { get; set; }
         public bool? IsDetail { get; set; }
         public int? CurrencyId { get; set; }
+        public bool? Deleted { get; set; }
 
     }
 }

@@ -15,6 +15,7 @@ using Msp.Service.Service.DepotStock;
 using Msp.Service.Service.Dashboard;
 using Msp.Models.Models.Sale;
 using System.Globalization;
+using Msp.Models.Models.Dashboard;
 
 namespace Msp.App.App
 {
@@ -25,10 +26,14 @@ namespace Msp.App.App
         {
             InitializeComponent();
             _repository = new Repository();
-
+            set_Form();
         }
 
-
+        private void set_Form()
+        {
+            var weekSaleOwner = _repository.Run<DashboardService, List<SaleWeekListDTO>>(x => x.GetList_WeekSaleOwner());
+            bs_SaleOwnerWeek.DataSource = weekSaleOwner;
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -50,6 +55,8 @@ namespace Msp.App.App
 
             var SaleOwner = _repository.Run<DashboardService, List<SaleOwnerDTO>>(x => x.GetList_SaleOwner());
             lblTotalCiro.Text = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", SaleOwner.Sum(x => x.TotalPrice));
+
+ 
 
         }
     }

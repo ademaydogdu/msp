@@ -37,6 +37,7 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnAlinanCekListesi = new DevExpress.XtraBars.BarButtonItem();
             this.btnHizliFaturaGirisi = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.img_sicButton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -45,7 +46,6 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_sicButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -126,6 +126,14 @@
             this.btnHizliFaturaGirisi.Name = "btnHizliFaturaGirisi";
             this.btnHizliFaturaGirisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHizliFaturaGirisi_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Fatura ve Fiş Arama";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.ImageOptions.LargeImageIndex = 6;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // img_sicButton
             // 
             this.img_sicButton.ImageSize = new System.Drawing.Size(32, 32);
@@ -181,13 +189,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Fatura ve Fiş Arama";
-            this.barButtonItem1.Id = 8;
-            this.barButtonItem1.ImageOptions.LargeImageIndex = 6;
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // MainForm
             // 

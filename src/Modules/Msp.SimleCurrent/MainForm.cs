@@ -53,5 +53,12 @@ namespace Msp.SimleCurrent
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmFindInvoice frm = new frmFindInvoice();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

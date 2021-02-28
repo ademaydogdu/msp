@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using Msp.Infrastructure;
+using Msp.Models.Models;
 using Msp.Models.Models.Utilities;
 using Msp.Models.SimleCurrentModels;
 using Msp.Service.Repository;
@@ -27,6 +28,7 @@ namespace Msp.SimleCurrent.Screen
 
         SimpleInvoiceOwnerDTO __InvoiceOwner = new SimpleInvoiceOwnerDTO();
         List<SimleCurrentDefinitionDTO> List_simleCurrent = new List<SimleCurrentDefinitionDTO>();
+        List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
 
         List<SelectIdValue> FaturaTuru = new List<SelectIdValue>
         {
@@ -53,7 +55,7 @@ namespace Msp.SimleCurrent.Screen
                 XtraMessageBox.Show("Tutar Girişi yapınız", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
             }
-            if ((string)lc_Doviz.EditValue == "")
+            if (Convert.ToInt32(lc_Doviz.EditValue) == 0)
             {
                 XtraMessageBox.Show("Döviz Cinsi Seçiniz", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 _return = true;
@@ -71,7 +73,7 @@ namespace Msp.SimleCurrent.Screen
                 decimal _tutar = (decimal)txtTutar.EditValue;
                 if ((int)lc_FaaturaTuru.EditValue == 1)
                 {
-                    if (lc_Doviz.EditValue.ToString().Trim() == "TL")
+                    if (lc_Doviz.Text.ToString().Trim() == "TL")
                     {
                         __InvoiceOwner.Alacak = _tutar;
                         __InvoiceOwner.Borc = 0;
@@ -84,7 +86,7 @@ namespace Msp.SimleCurrent.Screen
                 }
                 else
                 {
-                    if (lc_Doviz.EditValue.ToString().Trim() == "TL")
+                    if (lc_Doviz.Text.ToString().Trim() == "TL")
                     {
                         __InvoiceOwner.Borc = _tutar;
                         __InvoiceOwner.Alacak = 0;
@@ -95,9 +97,6 @@ namespace Msp.SimleCurrent.Screen
                         __InvoiceOwner.CurrencyAlacak = 0;
                     }
                 }
-
-
-
 
                 var response = _repository.Run<SimleCurrentService, ActionResponse<SimpleInvoiceOwnerDTO>>(x => x.Save_SimpleInvoiceOwner_Easy(__InvoiceOwner));
                 if (response.ResponseType != ResponseType.Ok)
@@ -132,11 +131,19 @@ namespace Msp.SimleCurrent.Screen
                 __InvoiceOwner.InvoiceDate = DateTime.Today;
                 dt_FisTarihi.DateTime = DateTime.Today;
                 __InvoiceOwner.InvoiceType = 1;
+                __InvoiceOwner.Deleted = false;
+               
             }
             if (_FormOpenType == FormOpenType.Edit)
             {
 
             }
+
+            _currencyTypes = _repository.Run<Service.Service.Tanimlar.DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+            lc_Doviz.Properties.DataSource = _currencyTypes;
+            lc_Doviz.Properties.ValueMember = "RecId";
+            lc_Doviz.Properties.DisplayMember = "Remark";
+
             bs_InoviceOwner.DataSource = __InvoiceOwner;
         }
 

@@ -32,6 +32,7 @@ namespace Msp.SimleCurrent.Screen
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lc_Doviz = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_InoviceOwner = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btn_Save = new DevExpress.XtraBars.BarButtonItem();
@@ -42,7 +43,6 @@ namespace Msp.SimleCurrent.Screen
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.sic_img = new DevExpress.Utils.SvgImageCollection(this.components);
             this.lc_CariKodu = new DevExpress.XtraEditors.LookUpEdit();
-            this.bs_InoviceOwner = new System.Windows.Forms.BindingSource(this.components);
             this.bs_Current = new System.Windows.Forms.BindingSource(this.components);
             this.lc_FaaturaTuru = new DevExpress.XtraEditors.LookUpEdit();
             this.txtUnvan = new DevExpress.XtraEditors.TextEdit();
@@ -74,13 +74,15 @@ namespace Msp.SimleCurrent.Screen
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Doviz.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_InoviceOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sic_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_CariKodu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_InoviceOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Current)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_FaaturaTuru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnvan.Properties)).BeginInit();
@@ -113,6 +115,8 @@ namespace Msp.SimleCurrent.Screen
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -141,15 +145,20 @@ namespace Msp.SimleCurrent.Screen
             // 
             // lc_Doviz
             // 
+            this.lc_Doviz.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_InoviceOwner, "CurrencyId", true));
             this.lc_Doviz.Location = new System.Drawing.Point(83, 273);
             this.lc_Doviz.MenuManager = this.barManager1;
             this.lc_Doviz.Name = "lc_Doviz";
             this.lc_Doviz.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lc_Doviz.Properties.NullText = "";
-            this.lc_Doviz.Size = new System.Drawing.Size(646, 20);
+            this.lc_Doviz.Size = new System.Drawing.Size(250, 20);
             this.lc_Doviz.StyleController = this.layoutControl1;
             this.lc_Doviz.TabIndex = 16;
+            // 
+            // bs_InoviceOwner
+            // 
+            this.bs_InoviceOwner.DataSource = typeof(Msp.Models.SimleCurrentModels.SimpleInvoiceOwnerDTO);
             // 
             // barManager1
             // 
@@ -254,10 +263,6 @@ namespace Msp.SimleCurrent.Screen
             this.lc_CariKodu.TabIndex = 5;
             this.lc_CariKodu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lc_CariKodu_ButtonClick);
             this.lc_CariKodu.EditValueChanged += new System.EventHandler(this.lc_CariKodu_EditValueChanged);
-            // 
-            // bs_InoviceOwner
-            // 
-            this.bs_InoviceOwner.DataSource = typeof(Msp.Models.SimleCurrentModels.SimpleInvoiceOwnerDTO);
             // 
             // bs_Current
             // 
@@ -380,7 +385,15 @@ namespace Msp.SimleCurrent.Screen
             this.txtTutar.Location = new System.Drawing.Point(83, 297);
             this.txtTutar.MenuManager = this.barManager1;
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(646, 20);
+            this.txtTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.txtTutar.Properties.Appearance.Options.UseFont = true;
+            this.txtTutar.Properties.BeepOnError = false;
+            this.txtTutar.Properties.DisplayFormat.FormatString = "n2";
+            this.txtTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtTutar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtTutar.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtTutar.Properties.MaskSettings.Set("mask", "n");
+            this.txtTutar.Size = new System.Drawing.Size(250, 20);
             this.txtTutar.StyleController = this.layoutControl1;
             this.txtTutar.TabIndex = 17;
             // 
@@ -399,7 +412,9 @@ namespace Msp.SimleCurrent.Screen
             this.layoutControlItem11,
             this.layoutControlItem12,
             this.layoutControlItem13,
-            this.layoutControlItem14});
+            this.layoutControlItem14,
+            this.emptySpaceItem3,
+            this.emptySpaceItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(741, 425);
             this.Root.TextVisible = false;
@@ -549,18 +564,36 @@ namespace Msp.SimleCurrent.Screen
             this.layoutControlItem13.Control = this.lc_Doviz;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 261);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(721, 24);
+            this.layoutControlItem13.Size = new System.Drawing.Size(325, 24);
             this.layoutControlItem13.Text = "Döviz";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(59, 13);
             // 
             // layoutControlItem14
             // 
+            this.layoutControlItem14.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutControlItem14.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem14.Control = this.txtTutar;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 285);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(721, 24);
+            this.layoutControlItem14.Size = new System.Drawing.Size(325, 24);
             this.layoutControlItem14.Text = "Tutar";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(59, 13);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(325, 261);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(396, 24);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(325, 285);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(396, 24);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmSpeedInvoice
             // 
@@ -579,10 +612,10 @@ namespace Msp.SimleCurrent.Screen
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lc_Doviz.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_InoviceOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sic_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_CariKodu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_InoviceOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Current)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_FaaturaTuru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnvan.Properties)).EndInit();
@@ -615,6 +648,8 @@ namespace Msp.SimleCurrent.Screen
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,5 +701,7 @@ namespace Msp.SimleCurrent.Screen
         private DevExpress.XtraEditors.TextEdit txtTutar;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private System.Windows.Forms.BindingSource bs_Current;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
     }
 }

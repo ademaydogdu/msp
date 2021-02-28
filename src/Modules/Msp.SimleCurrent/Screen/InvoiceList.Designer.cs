@@ -43,10 +43,27 @@ namespace Msp.SimleCurrent.Screen
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.gc_InvoiceList = new DevExpress.XtraGrid.GridControl();
             this.gcv_InvoiceList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bs_Invoice = new System.Windows.Forms.BindingSource(this.components);
+            this.colRecId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVade = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBorc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlacak = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurrencyBorc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurrencyAlacak = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurrencyBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsDetail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCurrencyId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_InvoiceList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_InvoiceList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -155,6 +172,7 @@ namespace Msp.SimleCurrent.Screen
             // 
             // gc_InvoiceList
             // 
+            this.gc_InvoiceList.DataSource = this.bs_Invoice;
             this.gc_InvoiceList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gc_InvoiceList.Location = new System.Drawing.Point(0, 0);
             this.gc_InvoiceList.MainView = this.gcv_InvoiceList;
@@ -167,9 +185,134 @@ namespace Msp.SimleCurrent.Screen
             // 
             // gcv_InvoiceList
             // 
+            this.gcv_InvoiceList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRecId,
+            this.colCariId,
+            this.colInvoiceDate,
+            this.colInvoiceType,
+            this.colInvoiceNo,
+            this.colRemark,
+            this.colVade,
+            this.colBorc,
+            this.colAlacak,
+            this.colBakiye,
+            this.colCurrencyBorc,
+            this.colCurrencyAlacak,
+            this.colCurrencyBakiye,
+            this.colIsDetail,
+            this.colCurrencyId});
             this.gcv_InvoiceList.GridControl = this.gc_InvoiceList;
             this.gcv_InvoiceList.Name = "gcv_InvoiceList";
             this.gcv_InvoiceList.OptionsView.ShowGroupPanel = false;
+            // 
+            // bs_Invoice
+            // 
+            this.bs_Invoice.DataSource = typeof(Msp.Models.SimleCurrentModels.SimpleInvoiceOwnerDTO);
+            // 
+            // colRecId
+            // 
+            this.colRecId.FieldName = "RecId";
+            this.colRecId.Name = "colRecId";
+            this.colRecId.Visible = true;
+            this.colRecId.VisibleIndex = 0;
+            // 
+            // colCariId
+            // 
+            this.colCariId.FieldName = "CariId";
+            this.colCariId.Name = "colCariId";
+            this.colCariId.Visible = true;
+            this.colCariId.VisibleIndex = 1;
+            // 
+            // colInvoiceDate
+            // 
+            this.colInvoiceDate.FieldName = "InvoiceDate";
+            this.colInvoiceDate.Name = "colInvoiceDate";
+            this.colInvoiceDate.Visible = true;
+            this.colInvoiceDate.VisibleIndex = 2;
+            // 
+            // colInvoiceType
+            // 
+            this.colInvoiceType.FieldName = "InvoiceType";
+            this.colInvoiceType.Name = "colInvoiceType";
+            this.colInvoiceType.Visible = true;
+            this.colInvoiceType.VisibleIndex = 3;
+            // 
+            // colInvoiceNo
+            // 
+            this.colInvoiceNo.FieldName = "InvoiceNo";
+            this.colInvoiceNo.Name = "colInvoiceNo";
+            this.colInvoiceNo.Visible = true;
+            this.colInvoiceNo.VisibleIndex = 4;
+            // 
+            // colRemark
+            // 
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 5;
+            // 
+            // colVade
+            // 
+            this.colVade.FieldName = "Vade";
+            this.colVade.Name = "colVade";
+            this.colVade.Visible = true;
+            this.colVade.VisibleIndex = 6;
+            // 
+            // colBorc
+            // 
+            this.colBorc.FieldName = "Borc";
+            this.colBorc.Name = "colBorc";
+            this.colBorc.Visible = true;
+            this.colBorc.VisibleIndex = 7;
+            // 
+            // colAlacak
+            // 
+            this.colAlacak.FieldName = "Alacak";
+            this.colAlacak.Name = "colAlacak";
+            this.colAlacak.Visible = true;
+            this.colAlacak.VisibleIndex = 8;
+            // 
+            // colBakiye
+            // 
+            this.colBakiye.FieldName = "Bakiye";
+            this.colBakiye.Name = "colBakiye";
+            this.colBakiye.Visible = true;
+            this.colBakiye.VisibleIndex = 9;
+            // 
+            // colCurrencyBorc
+            // 
+            this.colCurrencyBorc.FieldName = "CurrencyBorc";
+            this.colCurrencyBorc.Name = "colCurrencyBorc";
+            this.colCurrencyBorc.Visible = true;
+            this.colCurrencyBorc.VisibleIndex = 10;
+            // 
+            // colCurrencyAlacak
+            // 
+            this.colCurrencyAlacak.FieldName = "CurrencyAlacak";
+            this.colCurrencyAlacak.Name = "colCurrencyAlacak";
+            this.colCurrencyAlacak.Visible = true;
+            this.colCurrencyAlacak.VisibleIndex = 11;
+            // 
+            // colCurrencyBakiye
+            // 
+            this.colCurrencyBakiye.FieldName = "CurrencyBakiye";
+            this.colCurrencyBakiye.Name = "colCurrencyBakiye";
+            this.colCurrencyBakiye.Visible = true;
+            this.colCurrencyBakiye.VisibleIndex = 12;
+            // 
+            // colIsDetail
+            // 
+            this.colIsDetail.FieldName = "IsDetail";
+            this.colIsDetail.Name = "colIsDetail";
+            this.colIsDetail.Visible = true;
+            this.colIsDetail.VisibleIndex = 13;
+            // 
+            // colCurrencyId
+            // 
+            this.colCurrencyId.FieldName = "CurrencyId";
+            this.colCurrencyId.Name = "colCurrencyId";
+            this.colCurrencyId.Visible = true;
+            this.colCurrencyId.VisibleIndex = 14;
             // 
             // InvoiceList
             // 
@@ -188,6 +331,7 @@ namespace Msp.SimleCurrent.Screen
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_InvoiceList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcv_InvoiceList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Invoice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +352,21 @@ namespace Msp.SimleCurrent.Screen
         private DevExpress.XtraGrid.GridControl gc_InvoiceList;
         private DevExpress.XtraGrid.Views.Grid.GridView gcv_InvoiceList;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
+        private System.Windows.Forms.BindingSource bs_Invoice;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariId;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceType;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colVade;
+        private DevExpress.XtraGrid.Columns.GridColumn colBorc;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlacak;
+        private DevExpress.XtraGrid.Columns.GridColumn colBakiye;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurrencyBorc;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurrencyAlacak;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurrencyBakiye;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsDetail;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurrencyId;
     }
 }

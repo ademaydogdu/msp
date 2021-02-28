@@ -14,14 +14,15 @@ namespace Msp.Models.SimleCurrentModels
         public int? InvoiceType { get; set; }
         public string InvoiceNo { get; set; }
         public string Remark { get; set; }
-        public int? Vade { get; set; }
-        public decimal? Borc { get; set; }
-        public decimal? Alacak { get; set; }
-        public decimal? Bakiye { get; set; }
-        public decimal? CurrencyBorc { get; set; }
-        public decimal? CurrencyAlacak { get; set; }
+        public int? Vade { get; set; } = 0;
+        public decimal? Borc { get; set; } = 0;
+        public decimal? Alacak { get; set; } = 0;
+        public decimal? Bakiye { get; set; } 
+        public decimal? CurrencyBorc { get; set; } = 0;
+        public decimal? CurrencyAlacak { get; set; } = 0;
         public decimal? CurrencyBakiye { get; set; }
         public bool? IsDetail { get; set; }
         public int? CurrencyId { get; set; }
+        public bool? Deleted { get; set; } = false;
     }
 }

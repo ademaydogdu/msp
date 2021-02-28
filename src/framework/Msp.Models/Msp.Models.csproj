@@ -60,6 +60,7 @@
     <Compile Include="Models\Daily\DailyOwnerDTO.cs" />
     <Compile Include="Models\Daily\DailyRequest.cs" />
     <Compile Include="Models\Daily\DailyTransDTO.cs" />
+    <Compile Include="Models\Dashboard\SaleWeekListDTO.cs" />
     <Compile Include="Models\DepotDTO.cs" />
     <Compile Include="Models\ExchangeRateDTO.cs" />
     <Compile Include="Models\Invoice\InvoiceOwnerDTO.cs" />

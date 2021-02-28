@@ -161,14 +161,14 @@ namespace Msp.App.Depo_Stok
                     }
                     else
                     {
-                        if (AppMain.Products.Any(x=>x.PID == __product.PID))
+                        if (AppMain.Products.Any(x=>x.PID == response.Response.PID))
                         {
-                            AppMain.Products.Remove(__product);
-                            AppMain.Products.Add(__product);
+                            AppMain.Products.Remove(response.Response);
+                            AppMain.Products.Add(response.Response);
                         }
                         else
                         {
-                            AppMain.Products.Add(__product);
+                            AppMain.Products.Add(response.Response);
                         }
                         foreach (Form item in Application.OpenForms)
                         {
