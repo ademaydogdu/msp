@@ -1425,5 +1425,15 @@ namespace msp.App
                 DevExpress.XtraEditors.XtraMessageBox.Show("Error:Call Dll:" + et.ToString());
             }
         }
+
+        private async void barButtonItem132_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool x = await formAcikmi("frmBackUp");
+            if (!x)
+            {
+                frmBackUp frm = new frmBackUp();
+                frm.ShowDialog(); 
+            }
+        }
     }
 }

@@ -54,6 +54,16 @@ namespace Msp.App.App
             {
                 Directory.CreateDirectory(root);
             }
+            string MspBacUp = @"C:\Msp\BackUp";
+            if (!Directory.Exists(MspBacUp))
+            {
+                Directory.CreateDirectory(MspBacUp);
+            }
+            string MspModuls = @"C:\Msp\Moduls";
+            if (!Directory.Exists(MspModuls))
+            {
+                Directory.CreateDirectory(MspModuls);
+            }
             string path = @"C:\Msp\ConnectString.txt";
             if (!File.Exists(path))
             {
