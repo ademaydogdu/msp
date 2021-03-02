@@ -38,22 +38,25 @@ namespace Msp.Service.Service.Sale
                             _db.SaveChanges();
                             saleOwnerId = saleOwner.RecId;
 
-                            CaseMovementDTO caseMovement = new CaseMovementDTO()
+                            if (saleOwner.Veresiye != true)
                             {
-                                CaseId = model.SaleOwnerDTO.CaseId,
-                                Doviz = model.SaleOwnerDTO.DovizId,
-                                RecordDate = model.SaleOwnerDTO.Date,
-                                Tutar = model.SaleOwnerDTO.TotalPrice,
-                                OdemeTuru = model.SaleOwnerDTO.PaymentType,
-                                CompanyRecId = model.SaleOwnerDTO.CompanyRecId,
-                                EvrakNo = "Parakende Satış",
-                                IslemTuru = 1,
-                                SaleOwnerId = saleOwnerId,
-                                CariId = 1
-                                
-                            };
-                            _db.CaseMovement.Add(base.Map<CaseMovementDTO, CaseMovement>(caseMovement));
-                            _db.SaveChanges();
+                                CaseMovementDTO caseMovement = new CaseMovementDTO()
+                                {
+                                    CaseId = model.SaleOwnerDTO.CaseId,
+                                    Doviz = model.SaleOwnerDTO.DovizId,
+                                    RecordDate = model.SaleOwnerDTO.Date,
+                                    Tutar = model.SaleOwnerDTO.TotalPrice,
+                                    OdemeTuru = model.SaleOwnerDTO.PaymentType,
+                                    CompanyRecId = model.SaleOwnerDTO.CompanyRecId,
+                                    EvrakNo = "Parakende Satış",
+                                    IslemTuru = 1,
+                                    SaleOwnerId = saleOwnerId,
+                                    CariId = 1
+
+                                };
+                                _db.CaseMovement.Add(base.Map<CaseMovementDTO, CaseMovement>(caseMovement));
+                                _db.SaveChanges(); 
+                            }
                         }
                         else
                         {
@@ -323,6 +326,26 @@ namespace Msp.Service.Service.Sale
                         _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                     }
                     _db.SaveChanges();
+
+                    if (entity != null)
+                    {
+                        CaseMovementDTO caseMovement = new CaseMovementDTO()
+                        {
+                            CaseId = entity.CaseId,
+                            Doviz = entity.DovizId,
+                            RecordDate = DateTime.Now,
+                            Tutar = entity.TotalPrice,
+                            OdemeTuru = entity.PaymentType,
+                            CompanyRecId = entity.CompanyRecId,
+                            EvrakNo = "Parakende Satış",
+                            IslemTuru = 1,
+                            SaleOwnerId = entity.RecId,
+                            CariId = 1,
+                            Remark = "Veresiye Satış"
+                        };
+                        _db.CaseMovement.Add(base.Map<CaseMovementDTO, CaseMovement>(caseMovement));
+                        _db.SaveChanges(); 
+                    }
                 }
                 catch (Exception e)
                 {

@@ -37,6 +37,14 @@ namespace Msp.App.Settings
             new SelectIdValue(2, "Satış"),
             new SelectIdValue(3, "Ödeme Tipi Tanımları"),
             new SelectIdValue(4, "Cari Grup Tanımları"),
+            new SelectIdValue(5, "Fatura"),
+            new SelectIdValue(6, "Sipariş"),
+            new SelectIdValue(7, "Cari Kartları"),
+            new SelectIdValue(8, "Depo Tanımları"),
+            new SelectIdValue(9, "Banka"),
+            new SelectIdValue(10, "Kasa Hareketi"),
+            new SelectIdValue(11, "Müşteri Listesi"),
+            new SelectIdValue(12, "İşyeri"),
         };
 
         public void Show(string _UserCode)

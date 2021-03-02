@@ -117,15 +117,22 @@ namespace Msp.App.Islemler
 
         private void btnRemCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.KasaHareketi, AppMain.CompanyRecId)) return;
-            var oRow = (CaseMovementDTO)gridView1.GetFocusedRow();
-            if (oRow != null)
+            try
             {
-                if (mspTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.KasaHareketi, AppMain.CompanyRecId)) { XtraMessageBox.Show("Silme Yetkiniz Yoktur.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+                var oRow = (CaseMovementDTO)gridView1.GetFocusedRow();
+                if (oRow != null)
                 {
-                    var result = _repository.Run<CaseService, ActionResponse<CaseMovementDTO>>(x => x.Delete_Case(oRow));
-                    do_refresh();
+                    if (mspTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                    {
+                        var result = _repository.Run<CaseService, ActionResponse<CaseMovementDTO>>(x => x.Delete_Case(oRow));
+                        do_refresh();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

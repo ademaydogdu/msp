@@ -199,10 +199,36 @@ namespace msp.App
                     if (_parameters.PaymentLock == true) txt_OdemeTipi.Enabled = true; else txt_OdemeTipi.Enabled = false;
                 }
 
+                _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
+                _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
+                __List_CaseDef = _repository.Run<DefinitionsService, List<CaseDefinitionDTO>>(x => x.Get_List_CaseDef(AppMain.CompanyRecId));
+                bs_CaseList.DataSource = __List_CaseDef;
+               
+                rp_KdvOran.DataSource = KdvOrani;
+                rp_KdvOran.DisplayMember = "Value";
+                rp_KdvOran.ValueMember = "Id";
+                bs_Unit.DataSource = _list_UnitsDTO;
+                bs_PaymentType.DataSource = _list_PaymnetType;
+
+
+                _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
+                bs_CurrencyType.DataSource = _currencyTypes;
+
                 if (_FormOpenType == FormOpenType.New)
                 {
                     __dll_SaleOwner = new SaleOwnerDTO();
                     __dll_SaleOwner.Date = DateTime.Now;
+                    if (__List_CaseDef.Count > 0)
+                    {
+                        __dll_SaleOwner.CaseId = __List_CaseDef.FirstOrDefault().RecId;
+                        lc_CaseDef.EditValue = __List_CaseDef.FirstOrDefault().RecId;
+                    }
+                    if (_currencyTypes.Count > 0)
+                    {
+                        __dll_SaleOwner.DovizId = _currencyTypes.FirstOrDefault().RecId;
+                        lc_Doviz.EditValue = _currencyTypes.FirstOrDefault().RecId;
+                    }
+
                 }
                 if (_FormOpenType == FormOpenType.Edit)
                 {
@@ -210,24 +236,9 @@ namespace msp.App
                     __dl_List_SaleTrans = _repository.Run<SaleService, List<SaleTransDTO>>(x => x.Get_List_SaleOwner(RecId));
                 }
 
-                _list_UnitsDTO = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
-                _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
-                __List_CaseDef = _repository.Run<DefinitionsService, List<CaseDefinitionDTO>>(x => x.Get_List_CaseDef(AppMain.CompanyRecId));
-                bs_CaseList.DataSource = __List_CaseDef;
-                if (__List_CaseDef.Count > 0)
-                {
-                    lc_CaseDef.EditValue = __List_CaseDef.FirstOrDefault().RecId;
-                }
-                rp_KdvOran.DataSource = KdvOrani;
-                rp_KdvOran.DisplayMember = "Value";
-                rp_KdvOran.ValueMember = "Id";
-                bs_Unit.DataSource = _list_UnitsDTO;
-                bs_PaymentType.DataSource = _list_PaymnetType;
                 bs_SaleOwner.DataSource = __dll_SaleOwner;
                 bs_SaleTrans.DataSource = __dl_List_SaleTrans;
 
-                _currencyTypes = _repository.Run<DefinitionsService, List<CurrencyTypeDTO>>(x => x.Get_List_CurrencyType());
-                bs_CurrencyType.DataSource = _currencyTypes;
                 this.Show();
             }
             catch (Exception ex)
