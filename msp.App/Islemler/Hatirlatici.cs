@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Msp.Entity.Entities;
 
 namespace Msp.App.Islemler
 {
@@ -17,6 +18,9 @@ namespace Msp.App.Islemler
         {
             InitializeComponent();
         }
+
+        List<Appointments> __Appointments = new List<Appointments>();
+        List<Resources> __Resources = new List<Resources>();
 
         private void schedulerControl1_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
         {
@@ -31,6 +35,32 @@ namespace Msp.App.Islemler
             {
                 form.Dispose();
             }
+
+        }
+
+
+
+        public static DateTime FirstDayOfWeek(DateTime date)
+        {
+            DayOfWeek fdow = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
+            int offset = fdow - date.DayOfWeek;
+            DateTime fdowDate = date.AddDays(offset + 1);
+            return fdowDate;
+        }
+
+        public static DateTime LastDayOfWeek(DateTime date)
+        {
+            DateTime ldowDate = FirstDayOfWeek(date).AddDays(6);
+            return ldowDate;
+        }
+
+        private void Hatirlatici_Load(object sender, EventArgs e)
+        {
+            schedulerControl1.LimitInterval.Start = FirstDayOfWeek(DateTime.Now);
+            schedulerControl1.LimitInterval.End = LastDayOfWeek(DateTime.Now);
+
+
+
 
         }
     }

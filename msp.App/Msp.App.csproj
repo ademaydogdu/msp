@@ -1346,6 +1346,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Msp.App.Tanimlar.CashPayGroupDef.datasource" />
     <None Include="Properties\DataSources\Msp.App.Tanimlar.frmGroupDefinition.datasource" />
+    <None Include="Properties\DataSources\Msp.Entity.Entities.Resources.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.ApplicationServerDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.App.LogsDTO.datasource" />
     <None Include="Properties\DataSources\Msp.Models.Models.BankEntryDTO.datasource" />

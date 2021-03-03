@@ -34,6 +34,7 @@
             DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
             this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
+            this.bs_Appointments = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.actionsBar1 = new DevExpress.XtraScheduler.UI.ActionsBar();
             this.editAppointmentQueryItem1 = new DevExpress.XtraScheduler.UI.EditAppointmentQueryItem();
@@ -86,9 +87,13 @@
             this.schedulerControl1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController(this.components);
-            this.bs_Appointments = new System.Windows.Forms.BindingSource(this.components);
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bs_Resources = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Appointments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
@@ -99,7 +104,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Appointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Resources)).BeginInit();
             this.SuspendLayout();
             // 
             // schedulerControl1
@@ -118,6 +128,7 @@
             this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.schedulerControl1.Views.WeekView.Enabled = false;
             this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.schedulerControl1.Views.YearView.UseOptimizedScrolling = false;
             this.schedulerControl1.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl1_EditAppointmentFormShowing);
             // 
             // schedulerDataStorage1
@@ -140,6 +151,18 @@
             this.schedulerDataStorage1.Appointments.Mappings.Subject = "Subject";
             this.schedulerDataStorage1.Appointments.Mappings.TimeZoneId = "TimeZoneId";
             this.schedulerDataStorage1.Appointments.Mappings.Type = "UniqueID";
+            // 
+            // 
+            // 
+            this.schedulerDataStorage1.Resources.DataSource = this.bs_Resources;
+            this.schedulerDataStorage1.Resources.Mappings.Caption = "ResourceName";
+            this.schedulerDataStorage1.Resources.Mappings.Color = "Color";
+            this.schedulerDataStorage1.Resources.Mappings.Id = "ResourceID";
+            this.schedulerDataStorage1.Resources.Mappings.Image = "Image";
+            // 
+            // bs_Appointments
+            // 
+            this.bs_Appointments.DataSource = typeof(Msp.Models.Models.Scheduler.AppointmentsDTO);
             // 
             // barManager1
             // 
@@ -510,14 +533,16 @@
             this.calendarControl1.AutoSize = false;
             this.calendarControl1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calendarControl1.Location = new System.Drawing.Point(791, 12);
+            this.calendarControl1.Location = new System.Drawing.Point(796, 12);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(214, 472);
+            this.calendarControl1.Size = new System.Drawing.Size(209, 472);
             this.calendarControl1.StyleController = this.HatirlaticilayoutControl1ConvertedLayout;
             this.calendarControl1.TabIndex = 2;
             // 
             // HatirlaticilayoutControl1ConvertedLayout
             // 
+            this.HatirlaticilayoutControl1ConvertedLayout.Controls.Add(this.splitContainerControl1);
+            this.HatirlaticilayoutControl1ConvertedLayout.Controls.Add(this.splitterControl1);
             this.HatirlaticilayoutControl1ConvertedLayout.Controls.Add(this.calendarControl1);
             this.HatirlaticilayoutControl1ConvertedLayout.Controls.Add(this.schedulerControl1);
             this.HatirlaticilayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -533,7 +558,8 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.calendarControl1item,
-            this.schedulerControl1item});
+            this.schedulerControl1item,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1017, 496);
             this.layoutControlGroup1.TextVisible = false;
@@ -541,9 +567,9 @@
             // calendarControl1item
             // 
             this.calendarControl1item.Control = this.calendarControl1;
-            this.calendarControl1item.Location = new System.Drawing.Point(779, 0);
+            this.calendarControl1item.Location = new System.Drawing.Point(784, 0);
             this.calendarControl1item.Name = "calendarControl1item";
-            this.calendarControl1item.Size = new System.Drawing.Size(218, 476);
+            this.calendarControl1item.Size = new System.Drawing.Size(213, 476);
             this.calendarControl1item.TextSize = new System.Drawing.Size(0, 0);
             this.calendarControl1item.TextVisible = false;
             // 
@@ -591,9 +617,41 @@
             this.schedulerBarController1.BarItems.Add(this.changeSnapToCellsUIItem1);
             this.schedulerBarController1.Control = this.schedulerControl1;
             // 
-            // bs_Appointments
+            // splitterControl1
             // 
-            this.bs_Appointments.DataSource = typeof(Msp.Models.Models.Scheduler.AppointmentsDTO);
+            this.splitterControl1.Location = new System.Drawing.Point(792, 187);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(10, 3);
+            this.splitterControl1.TabIndex = 4;
+            this.splitterControl1.TabStop = false;
+            // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Location = new System.Drawing.Point(791, 12);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            // 
+            // splitContainerControl1.Panel1
+            // 
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1, 472);
+            this.splitContainerControl1.TabIndex = 5;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.splitContainerControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(779, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(5, 476);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // bs_Resources
+            // 
+            this.bs_Resources.DataSource = typeof(Msp.Entity.Entities.Resources);
             // 
             // Hatirlatici
             // 
@@ -608,8 +666,10 @@
             this.Name = "Hatirlatici";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajandam";
+            this.Load += new System.EventHandler(this.Hatirlatici_Load);
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Appointments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
@@ -620,7 +680,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Appointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Resources)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,5 +747,9 @@
         private DevExpress.XtraScheduler.UI.ChangeSnapToCellsUIItem changeSnapToCellsUIItem1;
         private DevExpress.XtraScheduler.UI.SchedulerBarController schedulerBarController1;
         private System.Windows.Forms.BindingSource bs_Appointments;
+        private System.Windows.Forms.BindingSource bs_Resources;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraEditors.SplitterControl splitterControl1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
