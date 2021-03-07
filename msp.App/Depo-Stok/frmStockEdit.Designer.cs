@@ -89,6 +89,7 @@
             this.cb_Tevkifat = new DevExpress.XtraEditors.CheckEdit();
             this.rg_Tevkifat = new DevExpress.XtraEditors.RadioGroup();
             this.textEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.bs_Marka = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -139,7 +140,8 @@
             this.lc_BarkodType = new DevExpress.XtraEditors.LookUpEdit();
             this.btn_Print = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtBarcode = new DevExpress.XtraEditors.MemoEdit();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtBarcode = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -147,6 +149,7 @@
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
@@ -159,7 +162,6 @@
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.bs_Marka = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -207,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cb_Tevkifat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rg_Tevkifat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Marka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -256,6 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lc_BarkodType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
@@ -264,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -274,7 +279,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Marka)).BeginInit();
             this.SuspendLayout();
             // 
             // bs_StockEdit
@@ -1072,6 +1076,10 @@
             this.textEdit2.TabIndex = 12;
             this.textEdit2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.textEdit2_ButtonClick);
             // 
+            // bs_Marka
+            // 
+            this.bs_Marka.DataSource = typeof(Msp.Models.Models.ProductMarkDTO);
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -1603,6 +1611,7 @@
             this.layoutControl1.Controls.Add(this.lc_BarkodType);
             this.layoutControl1.Controls.Add(this.btn_Print);
             this.layoutControl1.Controls.Add(this.simpleButton3);
+            this.layoutControl1.Controls.Add(this.textEdit4);
             this.layoutControl1.Controls.Add(this.txtBarcode);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -1616,13 +1625,13 @@
             // lc_BarkodType
             // 
             this.lc_BarkodType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PBarcodeType", true));
-            this.lc_BarkodType.Location = new System.Drawing.Point(92, 12);
+            this.lc_BarkodType.Location = new System.Drawing.Point(119, 12);
             this.lc_BarkodType.MenuManager = this.barManager2;
             this.lc_BarkodType.Name = "lc_BarkodType";
             this.lc_BarkodType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lc_BarkodType.Properties.NullText = "";
-            this.lc_BarkodType.Size = new System.Drawing.Size(190, 20);
+            this.lc_BarkodType.Size = new System.Drawing.Size(163, 20);
             this.lc_BarkodType.StyleController = this.layoutControl1;
             this.lc_BarkodType.TabIndex = 7;
             this.lc_BarkodType.EditValueChanged += new System.EventHandler(this.lc_BarkodType_EditValueChanged);
@@ -1631,7 +1640,7 @@
             // 
             this.btn_Print.ImageOptions.ImageIndex = 66;
             this.btn_Print.ImageOptions.ImageList = this.svgImageCollection1;
-            this.btn_Print.Location = new System.Drawing.Point(12, 76);
+            this.btn_Print.Location = new System.Drawing.Point(12, 81);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(94, 42);
             this.btn_Print.StyleController = this.layoutControl1;
@@ -1641,11 +1650,10 @@
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Enabled = false;
             this.simpleButton3.ImageOptions.ImageIndex = 67;
             this.simpleButton3.ImageOptions.ImageList = this.svgImageCollection1;
             this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(110, 76);
+            this.simpleButton3.Location = new System.Drawing.Point(110, 81);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(687, 42);
             this.simpleButton3.StyleController = this.layoutControl1;
@@ -1653,20 +1661,30 @@
             this.simpleButton3.Text = "Rastgale Barkod";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
+            // textEdit4
+            // 
+            this.textEdit4.Location = new System.Drawing.Point(119, 127);
+            this.textEdit4.MenuManager = this.barManager2;
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(678, 20);
+            this.textEdit4.StyleController = this.layoutControl1;
+            this.textEdit4.TabIndex = 8;
+            this.textEdit4.TextChanged += new System.EventHandler(this.textEdit4_TextChanged);
+            // 
             // txtBarcode
             // 
             this.txtBarcode.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_StockEdit, "PBarcode", true));
             this.txtBarcode.EditValue = "";
-            this.txtBarcode.Location = new System.Drawing.Point(92, 36);
+            this.txtBarcode.Location = new System.Drawing.Point(119, 36);
             this.txtBarcode.MenuManager = this.barManager2;
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.txtBarcode.Properties.Appearance.Options.UseFont = true;
             this.txtBarcode.Properties.MaxLength = 13;
-            this.txtBarcode.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBarcode.Size = new System.Drawing.Size(705, 36);
+            this.txtBarcode.Size = new System.Drawing.Size(678, 40);
             this.txtBarcode.StyleController = this.layoutControl1;
             this.txtBarcode.TabIndex = 4;
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             this.txtBarcode.Leave += new System.EventHandler(this.txtBarcode_Leave);
             // 
             // layoutControlGroup5
@@ -1679,7 +1697,8 @@
             this.emptySpaceItem7,
             this.layoutControlItem23,
             this.layoutControlItem24,
-            this.emptySpaceItem4});
+            this.emptySpaceItem4,
+            this.layoutControlItem7});
             this.layoutControlGroup5.Name = "Root";
             this.layoutControlGroup5.Size = new System.Drawing.Size(809, 652);
             this.layoutControlGroup5.TextVisible = false;
@@ -1688,18 +1707,18 @@
             // 
             this.layoutControlItem21.Control = this.txtBarcode;
             this.layoutControlItem21.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem21.MaxSize = new System.Drawing.Size(789, 40);
-            this.layoutControlItem21.MinSize = new System.Drawing.Size(789, 40);
+            this.layoutControlItem21.MaxSize = new System.Drawing.Size(789, 45);
+            this.layoutControlItem21.MinSize = new System.Drawing.Size(789, 45);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(789, 40);
+            this.layoutControlItem21.Size = new System.Drawing.Size(789, 45);
             this.layoutControlItem21.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem21.Text = "Ürün Barkodu ";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(68, 13);
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(95, 13);
             // 
             // layoutControlItem22
             // 
             this.layoutControlItem22.Control = this.btn_Print;
-            this.layoutControlItem22.Location = new System.Drawing.Point(0, 64);
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 69);
             this.layoutControlItem22.MaxSize = new System.Drawing.Size(98, 46);
             this.layoutControlItem22.MinSize = new System.Drawing.Size(98, 46);
             this.layoutControlItem22.Name = "layoutControlItem22";
@@ -1711,15 +1730,15 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 110);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 139);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(789, 522);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(789, 493);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem23
             // 
             this.layoutControlItem23.Control = this.simpleButton3;
-            this.layoutControlItem23.Location = new System.Drawing.Point(98, 64);
+            this.layoutControlItem23.Location = new System.Drawing.Point(98, 69);
             this.layoutControlItem23.MaxSize = new System.Drawing.Size(691, 46);
             this.layoutControlItem23.MinSize = new System.Drawing.Size(691, 46);
             this.layoutControlItem23.Name = "layoutControlItem23";
@@ -1735,7 +1754,7 @@
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.Size = new System.Drawing.Size(274, 24);
             this.layoutControlItem24.Text = "Barkod Türü";
-            this.layoutControlItem24.TextSize = new System.Drawing.Size(68, 13);
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(95, 13);
             // 
             // emptySpaceItem4
             // 
@@ -1744,6 +1763,15 @@
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(515, 24);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.textEdit4;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 115);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(789, 24);
+            this.layoutControlItem7.Text = "Manuel Barkod Girişi";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(95, 13);
             // 
             // tabNavigationPage3
             // 
@@ -1857,10 +1885,6 @@
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
-            // bs_Marka
-            // 
-            this.bs_Marka.DataSource = typeof(Msp.Models.Models.ProductMarkDTO);
-            // 
             // frmStockEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1931,6 +1955,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cb_Tevkifat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rg_Tevkifat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Marka)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -1980,6 +2005,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lc_BarkodType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
@@ -1988,6 +2014,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
@@ -1998,7 +2025,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Marka)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2095,7 +2121,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btn_Print;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.MemoEdit txtBarcode;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
@@ -2137,5 +2162,8 @@
         private System.IO.Ports.SerialPort serialPort1;
         private DevExpress.XtraEditors.LookUpEdit textEdit2;
         private System.Windows.Forms.BindingSource bs_Marka;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.TextEdit txtBarcode;
     }
 }

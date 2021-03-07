@@ -969,6 +969,8 @@
     <Compile Include="Tanimlar\SpeedSaleProductTanim.Designer.cs">
       <DependentUpon>SpeedSaleProductTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tool\ChanceTextColor.cs" />
+    <Compile Include="Tool\EAN13Class.cs" />
     <Compile Include="Tool\MspTool.cs" />
     <Compile Include="Waiting\SplashScreenWaiting.cs">
       <SubType>Form</SubType>

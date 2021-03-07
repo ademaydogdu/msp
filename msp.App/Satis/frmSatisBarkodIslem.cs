@@ -106,5 +106,30 @@ namespace Msp.App.Satis
                 frm.ShowDialog();
             }
         }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var Orow = (SaleBarcodCreateDTO)gridView1.GetFocusedRow();
+            if (Orow != null)
+            {
+                string Barcode, Check12Digits;
+
+                Random rnd = new Random();
+                int sayi1 = (Convert.ToInt32(rnd.Next(10000, 999999999)));
+                int sayi2 = (Convert.ToInt32(rnd.Next(10, 99)));
+                string _barcode = Convert.ToString(sayi1 + "" + sayi2);
+
+                if (_barcode.Length > 0)
+                {
+                    Check12Digits = _barcode.PadRight(12, '0');
+                    Barcode = EAN13Class.EAN13(Check12Digits);
+                    if (!String.Equals(EAN13Class.Barcode13Digits, "") || (EAN13Class.Barcode13Digits != ""))
+                    {
+                        Orow.Barcode = EAN13Class.Barcode13Digits.ToString();
+                    }
+                }
+                gridControl1.RefreshDataSource();
+            }
+        }
     }
 }

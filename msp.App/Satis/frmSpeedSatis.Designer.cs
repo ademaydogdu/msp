@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -51,6 +51,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txt_Total = new DevExpress.XtraEditors.MemoEdit();
             this.txt_NetFiyat = new DevExpress.XtraEditors.TextEdit();
+            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.txt_İndirimTutar = new DevExpress.XtraEditors.TextEdit();
             this.txt_KDV = new DevExpress.XtraEditors.TextEdit();
             this.btn_New = new DevExpress.XtraEditors.SimpleButton();
@@ -65,29 +66,28 @@
             this.btnRowDeleted = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tileItem4 = new DevExpress.XtraEditors.TileItem();
             this.tileItem8 = new DevExpress.XtraEditors.TileItem();
             this.tileItem5 = new DevExpress.XtraEditors.TileItem();
             this.tileItem2 = new DevExpress.XtraEditors.TileItem();
-            this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -99,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).BeginInit();
@@ -107,24 +108,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_EkleSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -323,7 +323,7 @@
             // txt_Total
             // 
             this.txt_Total.EditValue = "₺ 0.00";
-            this.txt_Total.Location = new System.Drawing.Point(1145, 626);
+            this.txt_Total.Location = new System.Drawing.Point(1062, 626);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 38F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_Total.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
@@ -337,7 +337,7 @@
             this.txt_Total.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_Total.Properties.WordWrap = false;
             this.txt_Total.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_Total.Size = new System.Drawing.Size(182, 64);
+            this.txt_Total.Size = new System.Drawing.Size(265, 64);
             this.txt_Total.StyleController = this.layoutControl1;
             this.txt_Total.TabIndex = 24;
             // 
@@ -345,33 +345,37 @@
             // 
             this.txt_NetFiyat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "NetPrice", true));
             this.txt_NetFiyat.EditValue = "0.00 ";
-            this.txt_NetFiyat.Location = new System.Drawing.Point(1145, 601);
+            this.txt_NetFiyat.Location = new System.Drawing.Point(1062, 601);
             this.txt_NetFiyat.Name = "txt_NetFiyat";
             this.txt_NetFiyat.Properties.ReadOnly = true;
             this.txt_NetFiyat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_NetFiyat.Size = new System.Drawing.Size(182, 20);
+            this.txt_NetFiyat.Size = new System.Drawing.Size(265, 20);
             this.txt_NetFiyat.StyleController = this.layoutControl1;
             this.txt_NetFiyat.TabIndex = 22;
+            // 
+            // bs_SaleOwner
+            // 
+            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
             // 
             // txt_İndirimTutar
             // 
             this.txt_İndirimTutar.EditValue = "0.00 ";
-            this.txt_İndirimTutar.Location = new System.Drawing.Point(1145, 551);
+            this.txt_İndirimTutar.Location = new System.Drawing.Point(1062, 551);
             this.txt_İndirimTutar.Name = "txt_İndirimTutar";
             this.txt_İndirimTutar.Properties.ReadOnly = true;
             this.txt_İndirimTutar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_İndirimTutar.Size = new System.Drawing.Size(182, 20);
+            this.txt_İndirimTutar.Size = new System.Drawing.Size(265, 20);
             this.txt_İndirimTutar.StyleController = this.layoutControl1;
             this.txt_İndirimTutar.TabIndex = 31;
             // 
             // txt_KDV
             // 
             this.txt_KDV.EditValue = "0.00";
-            this.txt_KDV.Location = new System.Drawing.Point(1145, 575);
+            this.txt_KDV.Location = new System.Drawing.Point(1062, 575);
             this.txt_KDV.Name = "txt_KDV";
             this.txt_KDV.Properties.ReadOnly = true;
             this.txt_KDV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_KDV.Size = new System.Drawing.Size(182, 20);
+            this.txt_KDV.Size = new System.Drawing.Size(265, 20);
             this.txt_KDV.StyleController = this.layoutControl1;
             this.txt_KDV.TabIndex = 23;
             // 
@@ -437,14 +441,14 @@
             this.txt_Date.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "Date", true));
             this.txt_Date.EditValue = null;
             this.txt_Date.Enabled = false;
-            this.txt_Date.Location = new System.Drawing.Point(1145, 527);
+            this.txt_Date.Location = new System.Drawing.Point(1062, 527);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Date.Properties.Mask.EditMask = "G";
-            this.txt_Date.Size = new System.Drawing.Size(182, 20);
+            this.txt_Date.Size = new System.Drawing.Size(265, 20);
             this.txt_Date.StyleController = this.layoutControl1;
             this.txt_Date.TabIndex = 36;
             // 
@@ -569,20 +573,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // layoutControlItem21
-            // 
-            this.layoutControlItem21.Control = this.txt_Total;
-            this.layoutControlItem21.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem21.CustomizationFormText = "Toplam : ";
-            this.layoutControlItem21.Location = new System.Drawing.Point(0, 99);
-            this.layoutControlItem21.MaxSize = new System.Drawing.Size(252, 68);
-            this.layoutControlItem21.MinSize = new System.Drawing.Size(252, 68);
-            this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(252, 68);
-            this.layoutControlItem21.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem21.Text = "Toplam : ";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(63, 13);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.tileControl1;
@@ -591,48 +581,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(943, 626);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // layoutControlItem27
-            // 
-            this.layoutControlItem27.Control = this.txt_İndirimTutar;
-            this.layoutControlItem27.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem27.CustomizationFormText = "İndirim Tutarı";
-            this.layoutControlItem27.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem27.MaxSize = new System.Drawing.Size(252, 24);
-            this.layoutControlItem27.MinSize = new System.Drawing.Size(252, 24);
-            this.layoutControlItem27.Name = "layoutControlItem27";
-            this.layoutControlItem27.Size = new System.Drawing.Size(252, 24);
-            this.layoutControlItem27.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem27.Text = "İndirim Tutarı";
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(63, 13);
-            // 
-            // layoutControlItem20
-            // 
-            this.layoutControlItem20.Control = this.txt_KDV;
-            this.layoutControlItem20.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem20.CustomizationFormText = "KDV : ";
-            this.layoutControlItem20.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem20.MaxSize = new System.Drawing.Size(252, 26);
-            this.layoutControlItem20.MinSize = new System.Drawing.Size(252, 26);
-            this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(252, 26);
-            this.layoutControlItem20.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem20.Text = "KDV : ";
-            this.layoutControlItem20.TextSize = new System.Drawing.Size(63, 13);
-            // 
-            // layoutControlItem19
-            // 
-            this.layoutControlItem19.Control = this.txt_NetFiyat;
-            this.layoutControlItem19.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem19.CustomizationFormText = "Net Fiyat : ";
-            this.layoutControlItem19.Location = new System.Drawing.Point(0, 74);
-            this.layoutControlItem19.MaxSize = new System.Drawing.Size(252, 25);
-            this.layoutControlItem19.MinSize = new System.Drawing.Size(252, 25);
-            this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(252, 25);
-            this.layoutControlItem19.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem19.Text = "Net Fiyat : ";
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(63, 13);
             // 
             // layoutControlItem3
             // 
@@ -682,20 +630,6 @@
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(65, 68);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem31
-            // 
-            this.layoutControlItem31.Control = this.txt_Date;
-            this.layoutControlItem31.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem31.CustomizationFormText = "Tarih";
-            this.layoutControlItem31.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem31.MaxSize = new System.Drawing.Size(252, 24);
-            this.layoutControlItem31.MinSize = new System.Drawing.Size(252, 24);
-            this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(252, 24);
-            this.layoutControlItem31.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem31.Text = "Tarih";
-            this.layoutControlItem31.TextSize = new System.Drawing.Size(63, 13);
             // 
             // layoutControlItem5
             // 
@@ -757,42 +691,6 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // tileItem4
-            // 
-            tileItemElement5.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement5);
-            this.tileItem4.Id = 3;
-            this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem4.Name = "tileItem4";
-            // 
-            // tileItem8
-            // 
-            tileItemElement6.Text = "tileItem8";
-            this.tileItem8.Elements.Add(tileItemElement6);
-            this.tileItem8.Id = 7;
-            this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem8.Name = "tileItem8";
-            // 
-            // tileItem5
-            // 
-            tileItemElement7.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement7);
-            this.tileItem5.Id = 4;
-            this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem5.Name = "tileItem5";
-            // 
-            // tileItem2
-            // 
-            tileItemElement8.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement8);
-            this.tileItem2.Id = 1;
-            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
-            this.tileItem2.Name = "tileItem2";
-            // 
-            // bs_SaleOwner
-            // 
-            this.bs_SaleOwner.DataSource = typeof(Msp.Models.Models.Sale.SaleOwnerDTO);
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
@@ -802,18 +700,117 @@
             this.layoutControlItem20,
             this.layoutControlItem27,
             this.layoutControlItem31});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(1055, 503);
+            this.layoutControlGroup1.Location = new System.Drawing.Point(963, 503);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(276, 191);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(368, 191);
             this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.txt_Total;
+            this.layoutControlItem21.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem21.CustomizationFormText = "Toplam : ";
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 99);
+            this.layoutControlItem21.MaxSize = new System.Drawing.Size(344, 68);
+            this.layoutControlItem21.MinSize = new System.Drawing.Size(344, 68);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Size = new System.Drawing.Size(344, 68);
+            this.layoutControlItem21.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem21.Text = "Toplam : ";
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.txt_NetFiyat;
+            this.layoutControlItem19.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem19.CustomizationFormText = "Net Fiyat : ";
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 74);
+            this.layoutControlItem19.MinSize = new System.Drawing.Size(129, 24);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(344, 25);
+            this.layoutControlItem19.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem19.Text = "Net Fiyat : ";
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.txt_KDV;
+            this.layoutControlItem20.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem20.CustomizationFormText = "KDV : ";
+            this.layoutControlItem20.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem20.MinSize = new System.Drawing.Size(129, 24);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(344, 26);
+            this.layoutControlItem20.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem20.Text = "KDV : ";
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // layoutControlItem27
+            // 
+            this.layoutControlItem27.Control = this.txt_İndirimTutar;
+            this.layoutControlItem27.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem27.CustomizationFormText = "İndirim Tutarı";
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem27.MinSize = new System.Drawing.Size(129, 24);
+            this.layoutControlItem27.Name = "layoutControlItem27";
+            this.layoutControlItem27.Size = new System.Drawing.Size(344, 24);
+            this.layoutControlItem27.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem27.Text = "İndirim Tutarı";
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // layoutControlItem31
+            // 
+            this.layoutControlItem31.Control = this.txt_Date;
+            this.layoutControlItem31.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem31.CustomizationFormText = "Tarih";
+            this.layoutControlItem31.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem31.MaxSize = new System.Drawing.Size(344, 24);
+            this.layoutControlItem31.MinSize = new System.Drawing.Size(344, 24);
+            this.layoutControlItem31.Name = "layoutControlItem31";
+            this.layoutControlItem31.Size = new System.Drawing.Size(344, 24);
+            this.layoutControlItem31.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem31.Text = "Tarih";
+            this.layoutControlItem31.TextSize = new System.Drawing.Size(63, 13);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(953, 503);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(102, 191);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(10, 191);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // tileItem4
+            // 
+            tileItemElement1.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement1);
+            this.tileItem4.Id = 3;
+            this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem4.Name = "tileItem4";
+            // 
+            // tileItem8
+            // 
+            tileItemElement2.Text = "tileItem8";
+            this.tileItem8.Elements.Add(tileItemElement2);
+            this.tileItem8.Id = 7;
+            this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileItem8.Name = "tileItem8";
+            // 
+            // tileItem5
+            // 
+            tileItemElement3.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement3);
+            this.tileItem5.Id = 4;
+            this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileItem5.Name = "tileItem5";
+            // 
+            // tileItem2
+            // 
+            tileItemElement4.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement4);
+            this.tileItem2.Id = 1;
+            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
+            this.tileItem2.Name = "tileItem2";
             // 
             // frmSpeedSatis
             // 
@@ -837,6 +834,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_NetFiyat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_İndirimTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KDV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_svg)).EndInit();
@@ -845,24 +843,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_EkleSatis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
 

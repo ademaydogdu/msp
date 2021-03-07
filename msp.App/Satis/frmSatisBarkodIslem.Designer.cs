@@ -33,6 +33,7 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Close = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -43,11 +44,12 @@
             this.bs_saleBarcodeCreate = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rp_Type = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bbi_Print = new DevExpress.XtraBars.BarButtonItem();
-            this.rp_Type = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ing_sic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -55,9 +57,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_saleBarcodeCreate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -107,6 +110,14 @@
             this.bbi_Close.Id = 1;
             this.bbi_Close.ImageOptions.ImageIndex = 1;
             this.bbi_Close.Name = "bbi_Close";
+            // 
+            // bbi_Print
+            // 
+            this.bbi_Print.Caption = "Yazdır";
+            this.bbi_Print.Id = 2;
+            this.bbi_Print.ImageOptions.ImageIndex = 3;
+            this.bbi_Print.Name = "bbi_Print";
+            this.bbi_Print.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Print_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -167,7 +178,8 @@
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.rp_Type});
+            this.rp_Type,
+            this.repositoryItemButtonEdit1});
             this.gridControl1.Size = new System.Drawing.Size(577, 391);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -181,10 +193,12 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colType,
-            this.colBarcode});
+            this.colBarcode,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colType
@@ -193,9 +207,16 @@
             this.colType.ColumnEdit = this.rp_Type;
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
-            this.colType.OptionsColumn.AllowEdit = false;
             this.colType.Visible = true;
             this.colType.VisibleIndex = 0;
+            // 
+            // rp_Type
+            // 
+            this.rp_Type.AutoHeight = false;
+            this.rp_Type.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rp_Type.Name = "rp_Type";
+            this.rp_Type.NullText = "";
             // 
             // colBarcode
             // 
@@ -223,21 +244,26 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // bbi_Print
+            // gridColumn1
             // 
-            this.bbi_Print.Caption = "Yazdır";
-            this.bbi_Print.Id = 2;
-            this.bbi_Print.ImageOptions.ImageIndex = 3;
-            this.bbi_Print.Name = "bbi_Print";
-            this.bbi_Print.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Print_ItemClick);
+            this.gridColumn1.Caption = "Rastgele Barkod";
+            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsColumn.AllowShowHide = false;
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
             // 
-            // rp_Type
+            // repositoryItemButtonEdit1
             // 
-            this.rp_Type.AutoHeight = false;
-            this.rp_Type.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rp_Type.Name = "rp_Type";
-            this.rp_Type.NullText = "";
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 
             // frmSatisBarkodIslem
             // 
@@ -261,9 +287,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_saleBarcodeCreate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rp_Type)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rp_Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +317,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBarcode;
         private DevExpress.XtraBars.BarButtonItem bbi_Print;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rp_Type;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }

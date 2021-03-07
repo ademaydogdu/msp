@@ -441,6 +441,11 @@ namespace Msp.App.Depo_Stok
             //Random Rnd = new Random();
             //int RandomSayi = Convert.ToInt32(Rnd.Next(0, sayi));
             //txtBarcode.EditValue = Convert.ToString(RandomSayi);
+            Random rnd = new Random();
+            int sayi1 = (Convert.ToInt32(rnd.Next(10000, 999999999)));
+            int sayi2 = (Convert.ToInt32(rnd.Next(10, 99)));
+            textEdit4.EditValue = Convert.ToString(sayi1 + "" + sayi2);
+
         }
 
         private void txtBarcode_Leave(object sender, EventArgs e)
@@ -611,6 +616,29 @@ namespace Msp.App.Depo_Stok
             {
                 productMarks = _repository.Run<DefinitionsService, List<ProductMarkDTO>>(x => x.Get_List_ProductMark());
                 bs_Marka.DataSource = productMarks;
+            }
+        }
+
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void textEdit4_TextChanged(object sender, EventArgs e)
+        {
+            string Barcode, Check12Digits;
+            if (textEdit4.Text != "")
+            {
+                Check12Digits = textEdit4.Text.PadRight(12, '0');
+                Barcode = EAN13Class.EAN13(Check12Digits);
+
+                if (!String.Equals(EAN13Class.Barcode13Digits,"") || (EAN13Class.Barcode13Digits != ""))
+                {
+                    txtBarcode.Text = EAN13Class.Barcode13Digits.ToString();
+                    Int32 inStart = Convert.ToInt32(txtBarcode.Text.Length - 1);
+                    ChanceTextColor.ChangeColor(txtBarcode, inStart);
+                }
+
             }
         }
     }
