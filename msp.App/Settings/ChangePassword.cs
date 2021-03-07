@@ -17,5 +17,15 @@ namespace Msp.App.Settings
         {
             InitializeComponent();
         }
+
+        private void ChangePassword_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

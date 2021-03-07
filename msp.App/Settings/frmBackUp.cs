@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Ionic.Zip;
 using Microsoft.SqlServer.Management.Smo;
 using Msp.Infrastructure;
 using System;
@@ -10,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,6 +50,21 @@ namespace Msp.App.Settings
                         connection.Open();
                         command.ExecuteNonQuery();
                     }
+
+                    Thread thread = new Thread(t =>
+                    {
+                        using (Ionic.Zip.ZipFile zip = new Ionic.Zip.ZipFile())
+                        {
+                            FileInfo fi = new FileInfo(filePath);
+                            System.IO.DirectoryInfo di = new DirectoryInfo(filePath);
+                            zip.SaveProgress += Zip_SaveProgress;
+                            zip.Save(string.Format("{0}{1}.zip", di.Parent.FullName, fi.Name));
+                        }
+                    })
+                    { IsBackground = true };
+                    thread.Start();
+
+
                     Log(AppMain.SqlConnection.Database + " veritabanı yedeklendi. \n");
                 }
             }
@@ -60,6 +77,20 @@ namespace Msp.App.Settings
                 this.Close();
             }
         }
+
+        private void Zip_SaveProgress(object sender, SaveProgressEventArgs e)
+        {
+            if (e.EventType == Ionic.Zip.ZipProgressEventType.Saving_EntryBytesRead)
+            {
+                progressBarControl1.Invoke(new MethodInvoker(delegate
+                {
+                    progressBarControl1.Properties.Maximum = 100;
+                    progressBarControl1.Properties.Step = (int)((e.BytesTransferred * 100) / e.TotalBytesToTransfer);
+                    progressBarControl1.Update();
+                }));
+            }
+        }
+
         //public void BackupAllUserDatabases()
         //{
         //    foreach (string databaseName in GetAllUserDatabases())
@@ -98,6 +129,11 @@ namespace Msp.App.Settings
 
         private void bbi_Yedek_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (string.IsNullOrEmpty(btnPath.Text))
+            {
+                XtraMessageBox.Show("Kaynak Yer Belirtiniz.");
+                return;
+            }
             do_BackUp();
         }
 

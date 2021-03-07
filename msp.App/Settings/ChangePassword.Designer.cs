@@ -75,25 +75,25 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(122, 12);
+            this.textEdit1.Location = new System.Drawing.Point(131, 12);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(281, 20);
+            this.textEdit1.Size = new System.Drawing.Size(272, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 4;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(122, 36);
+            this.textEdit2.Location = new System.Drawing.Point(131, 36);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(281, 20);
+            this.textEdit2.Size = new System.Drawing.Size(272, 20);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 5;
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(122, 60);
+            this.textEdit3.Location = new System.Drawing.Point(131, 60);
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(281, 20);
+            this.textEdit3.Size = new System.Drawing.Size(272, 20);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 6;
             // 
@@ -183,6 +183,7 @@
             this.barButtonItem2.ImageOptions.ImageIndex = 0;
             this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -235,6 +236,7 @@
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parola Değiştir";
+            this.Load += new System.EventHandler(this.ChangePassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
