@@ -501,7 +501,7 @@ namespace msp.App
                 //    };
                 //}
 
-                Version oVersionFB = new Version(21, 1, 1, 21);
+                Version oVersionFB = new Version(21, 1, 1, 22);
                 AppMain.MspVersion = oVersionFB;
 
                 string AppPath = @"C:\Msp\ConnectString.txt";
@@ -835,10 +835,14 @@ namespace msp.App
             frm.Show();
         }
 
-        private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
+        private async void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
-            frm.ShowDialog();
+            bool x = await formAcikmi("frmEnvanterBilgiler");
+            if (!x)
+            {
+                frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
+                frm.ShowDialog();
+            }
         }
 
         private void btnGrdiLayouytDeleted_ItemClick(object sender, ItemClickEventArgs e)
@@ -1167,10 +1171,14 @@ namespace msp.App
             frm.Show();
         }
 
-        private void bbi_StockEnvanterRapor_ItemClick(object sender, ItemClickEventArgs e)
+        private async void bbi_StockEnvanterRapor_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
-            frm.ShowDialog();
+            bool x = await formAcikmi("frmEnvanterBilgiler");
+            if (!x)
+            {
+                frmEnvanterBilgiler frm = new frmEnvanterBilgiler();
+                frm.ShowDialog();
+            }
         }
 
         private async void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)

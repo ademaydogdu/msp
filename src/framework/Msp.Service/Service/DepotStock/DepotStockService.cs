@@ -103,6 +103,7 @@ namespace Msp.Service.Service.DepotStock
                         var product = base.Map<ProductDTO, Products>(response.Response);
                         _db.products.Add(product);
                         _db.SaveChanges();
+                        response.Response.PID = product.PID;
 
                         if (model.PBarcode.Length > 0)
                         {

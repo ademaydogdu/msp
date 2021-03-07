@@ -43,6 +43,8 @@
             this.gc_ProductMarks = new DevExpress.XtraGrid.GridControl();
             this.gcv_ProductMarks = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bs_ProductMarks = new System.Windows.Forms.BindingSource(this.components);
+            this.colMark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_ProductMarks)).BeginInit();
@@ -164,6 +166,7 @@
             // 
             // gc_ProductMarks
             // 
+            this.gc_ProductMarks.DataSource = this.bs_ProductMarks;
             this.gc_ProductMarks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gc_ProductMarks.Location = new System.Drawing.Point(0, 0);
             this.gc_ProductMarks.MainView = this.gcv_ProductMarks;
@@ -176,9 +179,34 @@
             // 
             // gcv_ProductMarks
             // 
+            this.gcv_ProductMarks.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMark,
+            this.colRemark});
             this.gcv_ProductMarks.GridControl = this.gc_ProductMarks;
             this.gcv_ProductMarks.Name = "gcv_ProductMarks";
+            this.gcv_ProductMarks.OptionsView.ColumnAutoWidth = false;
+            this.gcv_ProductMarks.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gcv_ProductMarks.OptionsView.ShowGroupPanel = false;
+            // 
+            // bs_ProductMarks
+            // 
+            this.bs_ProductMarks.DataSource = typeof(Msp.Models.Models.ProductMarkDTO);
+            // 
+            // colMark
+            // 
+            this.colMark.Caption = "Marka";
+            this.colMark.FieldName = "Mark";
+            this.colMark.Name = "colMark";
+            this.colMark.Visible = true;
+            this.colMark.VisibleIndex = 0;
+            // 
+            // colRemark
+            // 
+            this.colRemark.Caption = "Açıklama";
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 1;
             // 
             // frmUrunTanimlari
             // 
@@ -221,5 +249,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gcv_ProductMarks;
         private System.Windows.Forms.BindingSource bs_ProductMarks;
         private DevExpress.XtraBars.BarButtonItem bbi_Refresh;
+        private DevExpress.XtraGrid.Columns.GridColumn colMark;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
     }
 }

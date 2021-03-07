@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Msp.Entity.Entities
     [Table("Appointments")]
     public class Appointments
     {
+        [Key]
         public int UniqueID { get; set; }
         public int? Type { get; set; }
         public DateTime? StartDate { get; set; }

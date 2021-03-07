@@ -53,7 +53,7 @@ namespace Msp.Models.Models
         public int? PDepotId { get; set; }
         public bool? Deleted { get; set; } = false;
         public int? PBarcodeType { get; set; } = 1;
-
+        public int? PMarkId { get; set; } 
 
 
     }

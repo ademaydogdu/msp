@@ -13,6 +13,7 @@ using Msp.Models.Models;
 using Msp.Service.Service.Settings;
 using Msp.App.Tool;
 using Msp.Infrastructure;
+using Msp.Models.Models.Utilities;
 
 namespace Msp.App.Settings
 {
@@ -84,6 +85,21 @@ namespace Msp.App.Settings
         private void bbi_Refresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             do_refresh();
+        }
+
+        private void bbi_DeletedRow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!MspTool.PermissionControl(AppMain.User.username, SecRightType.Delete, (int)DocumentType.Users, AppMain.CompanyRecId)) return;
+
+            UsersDTO oRow = (UsersDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                if (mspTool.get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
+                {
+                    var result = _repository.Run<SettingsService, ActionResponse<UsersDTO>>(x => x.DeleteUsers(oRow.id));
+                    do_refresh();
+                }
+            }
         }
     }
 }

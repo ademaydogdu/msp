@@ -12,6 +12,7 @@ using Msp.Models.Models.Utilities;
 using Msp.Service.Repository;
 using Msp.Service.Service.Depot;
 using Msp.Service.Service.DepotStock;
+using Msp.Service.Service.Settings;
 using Msp.Service.Service.Tanimlar;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,15 @@ namespace Msp.App.Depo_Stok
     public partial class frmStockEdit : XtraForm
     {
         Repository _repository = new Repository();
+        ParametersDTO _parameters;
 
         public frmStockEdit()
         {
             InitializeComponent();
+            _repository = new Repository();
+            _parameters = new ParametersDTO();
+
+            set_Form();
         }
 
         public FormOpenType _FormOpenType;
@@ -43,7 +49,8 @@ namespace Msp.App.Depo_Stok
         byte[] imgbyte;
         List<DepotDTO> _depotList = new List<DepotDTO>();
         List<ProductGroupDTO> productGroup = new List<ProductGroupDTO>();
-
+        private string BarCode = "";
+        List<ProductMarkDTO> productMarks = new List<ProductMarkDTO>();
 
         public List<KDVTaxDto> KdvOrani = new List<KDVTaxDto>
         {
@@ -69,6 +76,17 @@ namespace Msp.App.Depo_Stok
         }
 
 
+        private void set_Form()
+        {
+            _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
+            if (_parameters.IsBarcode.GetValueOrDefault())
+            {
+                serialPort1.PortName = _parameters.BorcodeCOM;
+                serialPort1.BaudRate = 9600;
+            }
+        }
+
+
         public void Show(int id)
         {
             try
@@ -81,6 +99,9 @@ namespace Msp.App.Depo_Stok
 
                 productGroup = _repository.Run<DefinitionsService, List<ProductGroupDTO>>(x => x.Get_List_ProductGroup());
                 bs_UrunGrup.DataSource = productGroup;
+
+                productMarks = _repository.Run<DefinitionsService, List<ProductMarkDTO>>(x => x.Get_List_ProductMark());
+                bs_Marka.DataSource = productMarks;
 
                 if (_FormOpenType == FormOpenType.New)
                 {
@@ -163,7 +184,7 @@ namespace Msp.App.Depo_Stok
                     {
                         if (AppMain.Products.Any(x=>x.PID == response.Response.PID))
                         {
-                            AppMain.Products.Remove(response.Response);
+                            AppMain.Products.Remove(AppMain.Products.FirstOrDefault(x=>x.PID == response.Response.PID));
                             AppMain.Products.Add(response.Response);
                         }
                         else
@@ -296,16 +317,17 @@ namespace Msp.App.Depo_Stok
                     ////textMalBedeli = Math.Round((price - KarTutar - kdvTutar), 2);
                     ////SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
                     ///
-                    kdvTutar = Math.Round(KarTutar * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
+                    kdvTutar = Math.Round((KarTutar / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani), 2);
                     MalBedeli = Math.Round(price, 2);
                     textMalBedeli = Math.Round((KarTutar - kdvTutar), 2);
-                    SatisFiyati = Math.Round(KarTutar + kdvTutar, 2);
+                    SatisFiyati = Math.Round(KarTutar, 2);
                 }
                 else //Hariç
                 {
 
                     kdvTutar = Math.Round(KarTutar * (decimal)KdvOrani.FirstOrDefault(x => x.Id == (int)taxTextEdit.EditValue).TaxOrani, 2);
                     MalBedeli = Math.Round(price, 2);
+                    textMalBedeli = Math.Round((KarTutar - kdvTutar), 2);
                     SatisFiyati = Math.Round(MalBedeli + kdvTutar, 2);
                 }
             }
@@ -541,6 +563,54 @@ namespace Msp.App.Depo_Stok
                 rg_Tevkifat.Visible = false;
                 layout_Tevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 lc_oranTevkifat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+        }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            BarCode = "";
+            BarCode = serialPort1.ReadExisting();
+            this.Invoke(new EventHandler(displayData_event));
+        }
+        private void displayData_event(object sender, EventArgs e)
+        {
+            do_WriteBarcode(BarCode);
+        }
+
+        private void do_WriteBarcode(string _barcode)
+        {
+            if (_barcode.Length > 0)
+            {
+                if (_barcode.Length == 13)
+                {
+                    __product.PBarcodeType = 1;
+                    lc_BarkodType.EditValue = 1;
+                }
+                if (_barcode.Length == 8)
+                {
+                    __product.PBarcodeType = 3;
+                    lc_BarkodType.EditValue = 3;
+                }
+                __product.PBarcode = _barcode;
+                txtBarcode.EditValue = _barcode;
+            }
+        }
+
+        private void textEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                frmUrunTanimlari frm = new frmUrunTanimlari();
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                productMarks = _repository.Run<DefinitionsService, List<ProductMarkDTO>>(x => x.Get_List_ProductMark());
+                bs_Marka.DataSource = productMarks;
             }
         }
     }

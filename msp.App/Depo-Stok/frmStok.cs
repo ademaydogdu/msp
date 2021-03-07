@@ -130,6 +130,13 @@ namespace Msp.App.Depo_Stok
                 if (get_Question("Kayıt Silinecektir. Onaylıyor musunuz?"))
                 {
                     var result = _repository.Run<DepotStockService, ActionResponse<ProductDTO>>(x => x.DeleteProduct(oRow.PID));
+                    if (result.ResponseType != ResponseType.Error)
+                    {
+                        if (AppMain.Products.Any(x => x.PID == oRow.PID))
+                        {
+                            AppMain.Products.Remove(oRow);
+                        }
+                    }
                     do_refresh();
                 }
             }

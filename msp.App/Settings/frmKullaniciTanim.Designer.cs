@@ -34,8 +34,9 @@
             this.bbi_New = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Edit = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_View = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_Cancel = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_DeletedRow = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Refresh = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Cancel = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -49,7 +50,6 @@
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusername = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bbi_DeletedRow = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bbi_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -124,13 +124,13 @@
             this.bbi_View.Name = "bbi_View";
             this.bbi_View.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_View_ItemClick);
             // 
-            // bbi_Cancel
+            // bbi_DeletedRow
             // 
-            this.bbi_Cancel.Caption = "Çıkış";
-            this.bbi_Cancel.Id = 3;
-            this.bbi_Cancel.ImageOptions.ImageIndex = 1;
-            this.bbi_Cancel.Name = "bbi_Cancel";
-            this.bbi_Cancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Cancel_ItemClick);
+            this.bbi_DeletedRow.Caption = "Satır Sil";
+            this.bbi_DeletedRow.Id = 7;
+            this.bbi_DeletedRow.ImageOptions.ImageIndex = 6;
+            this.bbi_DeletedRow.Name = "bbi_DeletedRow";
+            this.bbi_DeletedRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_DeletedRow_ItemClick);
             // 
             // bbi_Refresh
             // 
@@ -139,6 +139,14 @@
             this.bbi_Refresh.ImageOptions.ImageIndex = 3;
             this.bbi_Refresh.Name = "bbi_Refresh";
             this.bbi_Refresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Refresh_ItemClick);
+            // 
+            // bbi_Cancel
+            // 
+            this.bbi_Cancel.Caption = "Çıkış";
+            this.bbi_Cancel.Id = 3;
+            this.bbi_Cancel.ImageOptions.ImageIndex = 1;
+            this.bbi_Cancel.Name = "bbi_Cancel";
+            this.bbi_Cancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Cancel_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -250,13 +258,6 @@
             this.colEmail.Visible = true;
             this.colEmail.VisibleIndex = 2;
             this.colEmail.Width = 156;
-            // 
-            // bbi_DeletedRow
-            // 
-            this.bbi_DeletedRow.Caption = "Satır Sil";
-            this.bbi_DeletedRow.Id = 7;
-            this.bbi_DeletedRow.ImageOptions.ImageIndex = 6;
-            this.bbi_DeletedRow.Name = "bbi_DeletedRow";
             // 
             // frmKullaniciTanim
             // 

@@ -32,7 +32,11 @@ namespace Msp.App.Satis
         List<SelectIdValue> type = new List<SelectIdValue>()
         {
             new SelectIdValue(1 , "Yeni Kayıt"),
-            new SelectIdValue(2 , "Silme")
+            new SelectIdValue(2 , "Silme - Liste Temizleme"),
+            new SelectIdValue(3, "Satış"),
+            new SelectIdValue(4, "Nakit - Satış"),
+            new SelectIdValue(5, "Kredi Kartı - Satış"),
+
         };
 
         private void do_refresh()
@@ -77,7 +81,7 @@ namespace Msp.App.Satis
         {
             do_refresh();
             rp_Type.DataSource = type;
-            rp_Type.DisplayMember = "value";
+            rp_Type.DisplayMember = "Value";
             rp_Type.ValueMember = "Id";
 
 

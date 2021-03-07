@@ -57,6 +57,8 @@ namespace Msp.Entity.Entities
         public virtual DbSet<DailyOwner> DailyOwner { get; set; }
         public virtual DbSet<DailyTrans> DailyTrans { get; set; }
         public virtual DbSet<SaleBarcodCreate> SaleBarcodCreate { get; set; }
+        public virtual DbSet<Appointments> Appointments { get; set; }
+        public virtual DbSet<Resources> Resources { get; set; }
         public virtual DbSet<CurrentGroupDefinitions> CurrentGroupDefinitions { get; set; }
         public virtual DbSet<ShippingInformation> ShippingInformation { get; set; }
         public virtual DbSet<SimleCurrentDefinition> SimleCurrentDefinition { get; set; }

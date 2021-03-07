@@ -117,6 +117,9 @@
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.checkEdit15 = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
@@ -202,6 +205,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -223,6 +229,7 @@
             this.layoutControl1.Controls.Add(this.checkEdit13);
             this.layoutControl1.Controls.Add(this.comboBoxEdit2);
             this.layoutControl1.Controls.Add(this.checkEdit14);
+            this.layoutControl1.Controls.Add(this.checkEdit15);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -674,7 +681,8 @@
             this.layoutControlItem2,
             this.layoutControlItem4,
             this.layoutControlItem8,
-            this.layoutControlGroup5});
+            this.layoutControlGroup5,
+            this.layoutControlGroup7});
             this.layoutControlGroup2.Location = new System.Drawing.Point(307, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(315, 639);
@@ -683,9 +691,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 165);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 234);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(291, 429);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(291, 360);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -1156,6 +1164,36 @@
             this.layoutControlItem28.TextSize = new System.Drawing.Size(41, 13);
             this.layoutControlItem28.TextToControlDistance = 5;
             // 
+            // layoutControlGroup7
+            // 
+            this.layoutControlGroup7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem30});
+            this.layoutControlGroup7.Location = new System.Drawing.Point(0, 165);
+            this.layoutControlGroup7.Name = "layoutControlGroup7";
+            this.layoutControlGroup7.Size = new System.Drawing.Size(291, 69);
+            this.layoutControlGroup7.Text = "Ürün Kartı";
+            // 
+            // checkEdit15
+            // 
+            this.checkEdit15.Location = new System.Drawing.Point(343, 243);
+            this.checkEdit15.MenuManager = this.barManager1;
+            this.checkEdit15.Name = "checkEdit15";
+            this.checkEdit15.Properties.Caption = "Ürün Kodu ve Ürün Adını Büyük harfe dönüştür";
+            this.checkEdit15.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEdit15.Size = new System.Drawing.Size(263, 20);
+            this.checkEdit15.StyleController = this.layoutControl1;
+            this.checkEdit15.TabIndex = 22;
+            // 
+            // layoutControlItem30
+            // 
+            this.layoutControlItem30.Control = this.checkEdit15;
+            this.layoutControlItem30.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem30.Name = "layoutControlItem30";
+            this.layoutControlItem30.Size = new System.Drawing.Size(267, 24);
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem30.TextVisible = false;
+            // 
             // Parameters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1255,6 +1293,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1350,5 +1391,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem27;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem28;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit15;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
     }
 }

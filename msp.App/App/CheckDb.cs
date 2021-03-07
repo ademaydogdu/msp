@@ -1429,6 +1429,13 @@ namespace Msp.App.App
             progressBarControl1.PerformStep();
             progressBarControl1.Update(); Application.DoEvents();
 
+            if (tblPRoduct.Columns.Contains("PMarkId") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Products ADD PMarkId int";
+                ExecuteNonQuery(sCommand);
+            }
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update(); Application.DoEvents();
             #endregion
 
             #region SaleOwner

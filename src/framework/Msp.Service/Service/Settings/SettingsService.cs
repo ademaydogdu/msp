@@ -73,6 +73,21 @@ namespace Msp.Service.Service.Settings
             }
             return response;
         }
+
+        public ActionResponse<UsersDTO> DeleteUsers(int? RecId)
+        {
+            ActionResponse<UsersDTO> response = new ActionResponse<UsersDTO>();
+            using (MspDbContext _db = new MspDbContext())
+            {
+                var record = _db.users.Where(x => x.id == RecId).FirstOrDefault();
+                if (record != null)
+                {
+                    _db.users.Remove(record);
+                }
+                _db.SaveChanges();
+            }
+            return response;
+        }
         #endregion
 
         #region Company

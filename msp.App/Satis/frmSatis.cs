@@ -443,6 +443,11 @@ namespace msp.App
                         {
                             lc_CaseDef.EditValue = __dll_SaleOwner.CaseId = __List_CaseDef.FirstOrDefault().RecId;
                         }
+                        if (_currencyTypes.Count > 0)
+                        {
+                            __dll_SaleOwner.DovizId = _currencyTypes.FirstOrDefault().RecId;
+                            lc_Doviz.EditValue = _currencyTypes.FirstOrDefault().RecId;
+                        }
 
                         __dl_List_SaleTrans.Clear();
                         __dl_List_SaleTrans = new List<SaleTransDTO>();
@@ -500,7 +505,7 @@ namespace msp.App
                 oRow.ProductQuantity += 1;
                 var ProductAmount = Math.Round(oRow.ProductPrice.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(), 2);
                 oRow.ProductAmount = ProductAmount;
-                oRow.TaxAmount = Math.Round((decimal)KdvOrani.Where(x => x.Id == oRow.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
+                oRow.TaxAmount = Math.Round(AppMain.Products.Where(x=>x.PID == oRow.ProductId).FirstOrDefault().PPaxAmout.GetValueOrDefault() * oRow.ProductQuantity.GetValueOrDefault(),2); //Math.Round((decimal)KdvOrani.Where(x => x.Id == oRow.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * oRow.ProductQuantity.GetValueOrDefault(), 2);
 
                 gridControl1.RefreshDataSource();
                 TopTotal();
@@ -610,7 +615,7 @@ namespace msp.App
         private void txtParaUstu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
-            var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount) + totalKdv;
+            var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
             if (totalAmount != 0)
             {
                 frmChangeMoney frm = new frmChangeMoney();

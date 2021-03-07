@@ -34,6 +34,8 @@ namespace Msp.App.Tanimlar
             this.gc_Group = new DevExpress.XtraGrid.GridControl();
             this.bs_GroupDefinition = new System.Windows.Forms.BindingSource(this.components);
             this.gvc_Group = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colGrouup = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bbi_save = new DevExpress.XtraBars.BarButtonItem();
@@ -47,8 +49,6 @@ namespace Msp.App.Tanimlar
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colGrouup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colReGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Group)).BeginInit();
@@ -97,6 +97,20 @@ namespace Msp.App.Tanimlar
             this.gvc_Group.OptionsView.ColumnAutoWidth = false;
             this.gvc_Group.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gvc_Group.OptionsView.ShowGroupPanel = false;
+            // 
+            // colGrouup
+            // 
+            this.colGrouup.FieldName = "Grouup";
+            this.colGrouup.Name = "colGrouup";
+            this.colGrouup.Visible = true;
+            this.colGrouup.VisibleIndex = 0;
+            // 
+            // colReGroup
+            // 
+            this.colReGroup.FieldName = "ReGroup";
+            this.colReGroup.Name = "colReGroup";
+            this.colReGroup.Visible = true;
+            this.colReGroup.VisibleIndex = 1;
             // 
             // barManager1
             // 
@@ -229,20 +243,6 @@ namespace Msp.App.Tanimlar
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // colGrouup
-            // 
-            this.colGrouup.FieldName = "Grouup";
-            this.colGrouup.Name = "colGrouup";
-            this.colGrouup.Visible = true;
-            this.colGrouup.VisibleIndex = 0;
-            // 
-            // colReGroup
-            // 
-            this.colReGroup.FieldName = "ReGroup";
-            this.colReGroup.Name = "colReGroup";
-            this.colReGroup.Visible = true;
-            this.colReGroup.VisibleIndex = 1;
-            // 
             // frmGroupDefinition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +254,7 @@ namespace Msp.App.Tanimlar
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmGroupDefinition";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürün Grup Tanımları";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGroupDefinition_FormClosing);
             this.Load += new System.EventHandler(this.frmGroupDefinition_Load);

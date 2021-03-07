@@ -17,6 +17,7 @@ using Msp.Service.Service.Depot;
 using Msp.Models.Models.Product;
 using Msp.Service.Service.Report;
 using Msp.App.Report;
+using Msp.Infrastructure;
 
 namespace Msp.App.Depo_Stok
 {
@@ -36,7 +37,7 @@ namespace Msp.App.Depo_Stok
         private void frmEnvanterBilgiler_Load(object sender, EventArgs e)
         {
             MspTool.Get_Layout(this);
-            _productlist = _repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
+            _productlist = AppMain.Products.ToList(); //_repository.Run<DepotStockService, List<ProductDTO>>(x => x.GetListProduct());
             bs_Product.DataSource = _productlist;
 
             _company = _repository.Run<StartUp, List<CompanyDTO>>(x => x.GetList_Company());
@@ -45,7 +46,19 @@ namespace Msp.App.Depo_Stok
             _depotList = _repository.Run<DepotService, List<DepotDTO>>(x => x.GetListDepot());
             bs_Depot.DataSource = _depotList;
 
-
+            if (_productlist.Count > 0)
+            {
+                lp_PRoductBegin.EditValue = _productlist[0].PID;
+                lp_PRoductEnd.EditValue = _productlist[_productlist.Count - 1].PID;
+            }
+            if (_company.Count > 0)
+            {
+                lc_Company.EditValue = AppMain.CompanyRecId;
+            }
+            if (_depotList.Count > 0)
+            {
+                lc_Depot.EditValue = _depotList[0].DID;
+            }
 
         }
 

@@ -57,7 +57,8 @@ namespace Msp.Infrastructure
         BankEntry = 9,
         KasaHareketi = 10,
         MusteriList = 11,
-        Company = 12
+        Company = 12,
+        Users = 13
     }
 
     public enum DeleteForm
