@@ -79,6 +79,14 @@ namespace Msp.Infrastructure
         SevkRapor = 2
     }
 
+    public enum SaleBarcodeType
+    {
+        YeniKayit = 1,
+        SilmeListeTemizleme = 2,
+        Satis = 3,
+        NakitSatis = 4,
+        KrediKartiSatis = 5
+    }
 
 
 

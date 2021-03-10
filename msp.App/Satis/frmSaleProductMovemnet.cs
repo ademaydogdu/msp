@@ -58,8 +58,8 @@ namespace Msp.App.Satis
         List<ProductMovementDTO> __List_ProductMocemenet = new List<ProductMovementDTO>();
         List<ProductDTO> _productlist = new List<ProductDTO>();
         List<CurrencyTypeDTO> _currencyTypes = new List<CurrencyTypeDTO>();
-
-
+        SaleBarcodeType _SaleBarcode;
+        List<SaleBarcodCreateDTO> __dll_SaleBarcodCreate = new List<SaleBarcodCreateDTO>();
 
         #region Record
 
@@ -84,11 +84,93 @@ namespace Msp.App.Satis
             do_ProductBarcode(BarCode);
         }
 
+        public void do_NewRecord()
+        {
+            __dll_SaleOwner = new SaleOwnerDTO();
+            __dll_SaleOwner.Date = DateTime.Now;
+            if (__List_CaseDef.Count > 0)
+            {
+                lc_CaseDef.EditValue = __dll_SaleOwner.CaseId = __List_CaseDef.FirstOrDefault().RecId;
+            }
+            if (_currencyTypes.Count > 0)
+            {
+                __dll_SaleOwner.DovizId = _currencyTypes.FirstOrDefault().RecId;
+                lc_Doviz.EditValue = _currencyTypes.FirstOrDefault().RecId;
+            }
+            __dl_List_SaleTrans.Clear();
+            __dl_List_SaleTrans = new List<SaleTransDTO>();
+            //txt_CustomerName.Text = "";
+            txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
+            txt_OdemeTipi.EditValue = "";
+            __dll_SaleOwner.PaymentType = 0;
+
+            bs_SaleTrans.DataSource = __dl_List_SaleTrans;
+            bs_SaleOwner.DataSource = __dll_SaleOwner;
+            gridControl1.RefreshDataSource();
+            TopTotal();
+        }
+
+        public void do_ListDelete()
+        {
+            if (__dl_List_SaleTrans.Count > 0)
+            {
+                __dl_List_SaleTrans.Clear();
+                __dll_SaleOwner.TotalPrice = 0;
+                txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
+                gridControl1.RefreshDataSource();
+            }
+        }
+        public void do_NakitSatis()
+        {
+            txt_OdemeTipi.EditValue = 1;
+            __dll_SaleOwner.PaymentType = 1;
+            do_save();
+        }
+        public void do_KrediCartSatis()
+        {
+            txt_OdemeTipi.EditValue = 2;
+            __dll_SaleOwner.PaymentType = 2;
+            do_save();
+        }
 
         private void do_ProductBarcode(string __barcode)
         {
             if (__barcode.Length > 0)
             {
+                if (__dll_SaleBarcodCreate.Any(x => x.Barcode == __barcode.Trim()))
+                {
+                    bool y = false;
+                    _SaleBarcode = (SaleBarcodeType)__dll_SaleBarcodCreate.Where(x => x.Barcode == __barcode).FirstOrDefault().Type;
+                    switch (_SaleBarcode)
+                    {
+                        case SaleBarcodeType.YeniKayit:
+                            do_NewRecord();
+                            y = true;
+                            break;
+                        case SaleBarcodeType.SilmeListeTemizleme:
+                            do_ListDelete();
+                            y = true;
+                            break;
+                        case SaleBarcodeType.Satis:
+                            do_save();
+                            y = true;
+                            break;
+                        case SaleBarcodeType.NakitSatis:
+                            do_NakitSatis();
+                            y = true;
+                            break;
+                        case SaleBarcodeType.KrediKartiSatis:
+                            do_KrediCartSatis();
+                            y = true;
+                            break;
+                        default:
+                            break;
+                    }
+                    if (y)
+                    {
+                        return;
+                    }
+                }
                 var product = AppMain.Products.Where(x => x.PBarcode == __barcode.Trim()).FirstOrDefault();
                 if (product != null)
                 {
@@ -304,7 +386,7 @@ namespace Msp.App.Satis
 
             _list_PaymnetType = _repository.Run<DefinitionsService, List<PaymentTypeDTO>>(x => x.GetListPayments());
             bs_PaymentType.DataSource = _list_PaymnetType;
-
+            __dll_SaleBarcodCreate = _repository.Run<SaleService, List<SaleBarcodCreateDTO>>(x => x.GetList_SaleBarcodCreateDTO());
 
             daily_SaleProduct();
             mspTool.Get_Layout(this);

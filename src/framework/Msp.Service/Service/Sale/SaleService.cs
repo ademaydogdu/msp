@@ -382,8 +382,15 @@ namespace Msp.Service.Service.Sale
                 {
                     foreach (var item in model)
                     {
-                        if (item.RecId == 0)
+                        var Product = _db.products.Where(x => x.PBarcode == item.Barcode).ToList();
+                        if (Product.Count > 0)
                         {
+                            response.ResponseType = ResponseType.Error;
+                            response.Message = "Farklı Bir Barkod Giriniz. Ürün Çakışması yaşanmıştır";
+                            return response;
+                        }
+                        if (item.RecId == 0)
+                        {                          
                             _db.SaleBarcodCreate.Add(base.Map<SaleBarcodCreateDTO, SaleBarcodCreate>(item));
                             _db.SaveChanges();
                         }
