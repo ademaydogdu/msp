@@ -32,7 +32,7 @@
     <TargetCulture>tr-TR</TargetCulture>
     <ProductName>Shop Center</ProductName>
     <PublisherName>PC-LAB</PublisherName>
-    <ApplicationRevision>59</ApplicationRevision>
+    <ApplicationRevision>63</ApplicationRevision>
     <ApplicationVersion>21.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -320,6 +320,12 @@
     <Compile Include="AdminSettings\frmLicenceKeyUpdate.Designer.cs">
       <DependentUpon>frmLicenceKeyUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\AppLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\AppLock.Designer.cs">
+      <DependentUpon>AppLock.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\CheckDb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +445,12 @@
     </Compile>
     <Compile Include="Contact\frmMailSend.Designer.cs">
       <DependentUpon>frmMailSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\frmTalep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact\frmTalep.Designer.cs">
+      <DependentUpon>frmTalep.cs</DependentUpon>
     </Compile>
     <Compile Include="DailyEndOpertions\frmDailyEndOpeList.cs">
       <SubType>Form</SubType>
@@ -990,6 +1002,9 @@
     <EmbeddedResource Include="AdminSettings\frmLicenceKeyUpdate.resx">
       <DependentUpon>frmLicenceKeyUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="App\AppLock.resx">
+      <DependentUpon>AppLock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App\CheckDb.resx">
       <DependentUpon>CheckDb.cs</DependentUpon>
     </EmbeddedResource>
@@ -1049,6 +1064,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contact\frmMailSend.resx">
       <DependentUpon>frmMailSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\frmTalep.resx">
+      <DependentUpon>frmTalep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DailyEndOpertions\frmDailyEndOpeList.resx">
       <DependentUpon>frmDailyEndOpeList.cs</DependentUpon>
@@ -1535,7 +1553,18 @@
     <Content Include="Report\ReportViewImage\Klasik.png" />
     <Content Include="Software Protector.exe" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PublishFile Include="Microsoft.SqlServer.Assessment.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

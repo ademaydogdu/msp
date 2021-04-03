@@ -95,7 +95,7 @@ namespace Msp.Service.Service.DepotStock
                             var barcodControl = _db.products.Where(x => x.PBarcode == model.PBarcode).Any();
                             if (barcodControl)
                             {
-                                response.Message = "Aynı Barkod Ürününden Mevcuttur.";
+                                response.Message = model.PName + " " + model.PBarcode +" Aynı Barkod Ürününden Mevcuttur.";
                                 response.ResponseType = ResponseType.Error;
                                 return response;
                             }

@@ -778,7 +778,42 @@ namespace msp.App
 
 
 
+
         #endregion
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            var oRow = (SaleTransDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                frmStockEdit frm = new frmStockEdit();
+                frm._FormOpenType = Msp.Infrastructure.FormOpenType.Edit;
+                frm.Show(oRow.ProductId.GetValueOrDefault());
+            }
+        }
+
+        public void do_SaleTransRefresh(ProductDTO products)
+        {
+            if (products != null)
+            {
+                var saleTrans = (SaleTransDTO)gridView1.GetFocusedRow();
+                if (saleTrans != null)
+                {
+                    saleTrans.ProductId = products.PID;
+                    saleTrans.ProductName = products.PName;
+                    saleTrans.ProductBarcode = products.PBarcode;
+                    saleTrans.ProductPrice = products.PSalePrice.GetValueOrDefault();
+                    saleTrans.UnitId = products.PUnitId;
+                    saleTrans.ProductQuantity = 1;
+                    saleTrans.Deleted = false;
+                    saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
+                    saleTrans.Tax = products.PTax;
+                    saleTrans.TaxAmount = products.PPaxAmout; 
+                }
+                TopTotal();
+            }
+        }
+
 
 
     }

@@ -17,6 +17,7 @@ using msp.App;
 using Msp.App.Report;
 using Msp.Infrastructure;
 using Msp.App.Satis;
+using Msp.Service.Service.Settings;
 
 namespace Msp.App.Depo_Stok
 {
@@ -33,6 +34,7 @@ namespace Msp.App.Depo_Stok
         MspTool mspTool = new MspTool();
         private ProductDTO __product = new ProductDTO();
         List<ProductDTO> _productlist = new List<ProductDTO>();
+        ParametersDTO _parameters = new ParametersDTO();
 
         enum BacodeCaracter
         {
@@ -64,6 +66,7 @@ namespace Msp.App.Depo_Stok
             repositoryItemLookUpEdit1.DataSource = _repository.Run<DepotStockService, List<UnitsDTO>>(x => x.GetListUnit());
             repositoryItemLookUpEdit1.ValueMember = "UID";
             repositoryItemLookUpEdit1.DisplayMember = "UName";
+            _parameters = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
 
             do_refresh();
             mspTool.Get_GridControl(this.Name, gcProducts);
@@ -91,7 +94,6 @@ namespace Msp.App.Depo_Stok
                 frmStockEdit frm = new frmStockEdit();
                 frm._FormOpenType = Infrastructure.FormOpenType.Edit;
                 frm.Show(Orow.PID);
-
             }
 
 
@@ -180,10 +182,13 @@ namespace Msp.App.Depo_Stok
                 ProductDTO Orow = (ProductDTO)gcvProducts.GetFocusedRow();
                 if (Orow != null)
                 {
-                    if (Orow.PTotal == 0 || Orow.PTotal <= 0)
+                    if (_parameters.SaleOutOfStock.GetValueOrDefault())
                     {
-                        XtraMessageBox.Show("Ürün Stok'da kalmamıştır.", "Uyarı");
-                        return;
+                        if (Orow.PTotal == 0 || Orow.PTotal <= 0)
+                        {
+                            XtraMessageBox.Show("Ürün Stok'da kalmamıştır.", "Uyarı");
+                            return;
+                        } 
                     }
                     do_Form(Orow.PID);
                     this.Close();

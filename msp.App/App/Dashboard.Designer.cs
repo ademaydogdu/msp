@@ -185,7 +185,7 @@
             // 
             this.lblProductCount.AutoSize = true;
             this.lblProductCount.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.lblProductCount.Location = new System.Drawing.Point(180, 4);
+            this.lblProductCount.Location = new System.Drawing.Point(164, 4);
             this.lblProductCount.Name = "lblProductCount";
             this.lblProductCount.Size = new System.Drawing.Size(64, 48);
             this.lblProductCount.TabIndex = 0;

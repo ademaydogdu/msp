@@ -3,6 +3,7 @@ using DevExpress.Office.Utils;
 using DevExpress.Utils.CommonDialogs;
 using DevExpress.Utils.MVVM.Services;
 using DevExpress.XtraEditors;
+using msp.App;
 using Msp.App.Report;
 using Msp.App.Tanimlar;
 using Msp.App.Tool;
@@ -196,6 +197,10 @@ namespace Msp.App.Depo_Stok
                             if (item.Name == "frmStok")
                             {
                                 ((frmStok)item).do_refresh();
+                            }
+                            if (item.Name == "frmSatis")
+                            {
+                                ((frmSatis)item).do_SaleTransRefresh(response.Response);
                             }
                         }
                         this.Close();

@@ -338,7 +338,7 @@
             // lc_Doviz
             // 
             this.lc_Doviz.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "DovizId", true));
-            this.lc_Doviz.Location = new System.Drawing.Point(1037, 728);
+            this.lc_Doviz.Location = new System.Drawing.Point(1046, 728);
             this.lc_Doviz.Name = "lc_Doviz";
             this.lc_Doviz.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
@@ -349,7 +349,7 @@
             this.lc_Doviz.Properties.DisplayMember = "CurrencyCode";
             this.lc_Doviz.Properties.NullText = "";
             this.lc_Doviz.Properties.ValueMember = "RecId";
-            this.lc_Doviz.Size = new System.Drawing.Size(361, 20);
+            this.lc_Doviz.Size = new System.Drawing.Size(352, 20);
             this.lc_Doviz.StyleController = this.layoutControl1;
             this.lc_Doviz.TabIndex = 47;
             // 
@@ -364,7 +364,7 @@
             // lc_CaseDef
             // 
             this.lc_CaseDef.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "CaseId", true));
-            this.lc_CaseDef.Location = new System.Drawing.Point(1037, 776);
+            this.lc_CaseDef.Location = new System.Drawing.Point(1046, 776);
             this.lc_CaseDef.Name = "lc_CaseDef";
             this.lc_CaseDef.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -372,7 +372,7 @@
             this.lc_CaseDef.Properties.DisplayMember = "CaseName";
             this.lc_CaseDef.Properties.NullText = "";
             this.lc_CaseDef.Properties.ValueMember = "RecId";
-            this.lc_CaseDef.Size = new System.Drawing.Size(138, 20);
+            this.lc_CaseDef.Size = new System.Drawing.Size(129, 20);
             this.lc_CaseDef.StyleController = this.layoutControl1;
             this.lc_CaseDef.TabIndex = 46;
             // 
@@ -396,25 +396,25 @@
             // txt_İndirimTutar
             // 
             this.txt_İndirimTutar.EditValue = "0.00 ";
-            this.txt_İndirimTutar.Location = new System.Drawing.Point(1037, 873);
+            this.txt_İndirimTutar.Location = new System.Drawing.Point(1046, 873);
             this.txt_İndirimTutar.Name = "txt_İndirimTutar";
             this.txt_İndirimTutar.Properties.ReadOnly = true;
             this.txt_İndirimTutar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_İndirimTutar.Size = new System.Drawing.Size(70, 20);
+            this.txt_İndirimTutar.Size = new System.Drawing.Size(61, 20);
             this.txt_İndirimTutar.StyleController = this.layoutControl1;
             this.txt_İndirimTutar.TabIndex = 31;
             // 
             // txt_Barcode
             // 
             this.txt_Barcode.EditValue = "";
-            this.txt_Barcode.Location = new System.Drawing.Point(93, 12);
+            this.txt_Barcode.Location = new System.Drawing.Point(102, 12);
             this.txt_Barcode.Name = "txt_Barcode";
             this.txt_Barcode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)), true);
             this.txt_Barcode.Properties.Appearance.Options.UseFont = true;
             this.txt_Barcode.Properties.MaxLength = 50;
             this.txt_Barcode.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_Barcode.Properties.WordWrap = false;
-            this.txt_Barcode.Size = new System.Drawing.Size(386, 34);
+            this.txt_Barcode.Size = new System.Drawing.Size(377, 34);
             this.txt_Barcode.StyleController = this.layoutControl1;
             this.txt_Barcode.TabIndex = 28;
             this.txt_Barcode.Click += new System.EventHandler(this.txt_Barcode_Click);
@@ -422,7 +422,7 @@
             // txt_OdemeTipi
             // 
             this.txt_OdemeTipi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "PaymentType", true));
-            this.txt_OdemeTipi.Location = new System.Drawing.Point(1037, 801);
+            this.txt_OdemeTipi.Location = new System.Drawing.Point(1046, 801);
             this.txt_OdemeTipi.Name = "txt_OdemeTipi";
             this.txt_OdemeTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
@@ -431,7 +431,7 @@
             this.txt_OdemeTipi.Properties.DisplayMember = "Remark";
             this.txt_OdemeTipi.Properties.NullText = "";
             this.txt_OdemeTipi.Properties.ValueMember = "RecId";
-            this.txt_OdemeTipi.Size = new System.Drawing.Size(361, 20);
+            this.txt_OdemeTipi.Size = new System.Drawing.Size(352, 20);
             this.txt_OdemeTipi.StyleController = this.layoutControl1;
             this.txt_OdemeTipi.TabIndex = 26;
             this.txt_OdemeTipi.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txt_OdemeTipi_ButtonClick);
@@ -477,6 +477,7 @@
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.RowHeight = 45;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // gridColumn1
             // 
@@ -607,9 +608,9 @@
             // txt_Remark
             // 
             this.txt_Remark.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "Remark", true));
-            this.txt_Remark.Location = new System.Drawing.Point(93, 823);
+            this.txt_Remark.Location = new System.Drawing.Point(102, 823);
             this.txt_Remark.Name = "txt_Remark";
-            this.txt_Remark.Size = new System.Drawing.Size(270, 70);
+            this.txt_Remark.Size = new System.Drawing.Size(261, 70);
             this.txt_Remark.StyleController = this.layoutControl1;
             this.txt_Remark.TabIndex = 5;
             // 
@@ -848,22 +849,22 @@
             // 
             this.txt_NetFiyat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "NetPriceText", true));
             this.txt_NetFiyat.EditValue = "0.00 ";
-            this.txt_NetFiyat.Location = new System.Drawing.Point(1037, 825);
+            this.txt_NetFiyat.Location = new System.Drawing.Point(1046, 825);
             this.txt_NetFiyat.Name = "txt_NetFiyat";
             this.txt_NetFiyat.Properties.ReadOnly = true;
             this.txt_NetFiyat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_NetFiyat.Size = new System.Drawing.Size(70, 20);
+            this.txt_NetFiyat.Size = new System.Drawing.Size(61, 20);
             this.txt_NetFiyat.StyleController = this.layoutControl1;
             this.txt_NetFiyat.TabIndex = 22;
             // 
             // txt_KDV
             // 
             this.txt_KDV.EditValue = "0.00";
-            this.txt_KDV.Location = new System.Drawing.Point(1037, 849);
+            this.txt_KDV.Location = new System.Drawing.Point(1046, 849);
             this.txt_KDV.Name = "txt_KDV";
             this.txt_KDV.Properties.ReadOnly = true;
             this.txt_KDV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_KDV.Size = new System.Drawing.Size(70, 20);
+            this.txt_KDV.Size = new System.Drawing.Size(61, 20);
             this.txt_KDV.StyleController = this.layoutControl1;
             this.txt_KDV.TabIndex = 23;
             // 
@@ -956,9 +957,9 @@
             // txt_CustomerName
             // 
             this.txt_CustomerName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "CustomerName", true));
-            this.txt_CustomerName.Location = new System.Drawing.Point(1260, 776);
+            this.txt_CustomerName.Location = new System.Drawing.Point(1269, 776);
             this.txt_CustomerName.Name = "txt_CustomerName";
-            this.txt_CustomerName.Size = new System.Drawing.Size(138, 20);
+            this.txt_CustomerName.Size = new System.Drawing.Size(129, 20);
             this.txt_CustomerName.StyleController = this.layoutControl1;
             this.txt_CustomerName.TabIndex = 35;
             // 
@@ -967,14 +968,14 @@
             this.txt_Date.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_SaleOwner, "Date", true));
             this.txt_Date.EditValue = null;
             this.txt_Date.Enabled = false;
-            this.txt_Date.Location = new System.Drawing.Point(1037, 752);
+            this.txt_Date.Location = new System.Drawing.Point(1046, 752);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Date.Properties.Mask.EditMask = "G";
-            this.txt_Date.Size = new System.Drawing.Size(361, 20);
+            this.txt_Date.Size = new System.Drawing.Size(352, 20);
             this.txt_Date.StyleController = this.layoutControl1;
             this.txt_Date.TabIndex = 36;
             // 
@@ -1028,7 +1029,7 @@
             0,
             0,
             0});
-            this.txtParaUstu.Location = new System.Drawing.Point(1049, 395);
+            this.txtParaUstu.Location = new System.Drawing.Point(1058, 395);
             this.txtParaUstu.Name = "txtParaUstu";
             this.txtParaUstu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 24F);
             this.txtParaUstu.Properties.Appearance.Options.UseFont = true;
@@ -1042,7 +1043,7 @@
             this.txtParaUstu.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtParaUstu.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.txtParaUstu.Properties.Mask.EditMask = "n2";
-            this.txtParaUstu.Size = new System.Drawing.Size(337, 46);
+            this.txtParaUstu.Size = new System.Drawing.Size(328, 46);
             this.txtParaUstu.StyleController = this.layoutControl1;
             this.txtParaUstu.TabIndex = 37;
             this.txtParaUstu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtParaUstu_ButtonClick);

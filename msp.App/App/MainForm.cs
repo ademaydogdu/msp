@@ -619,7 +619,7 @@ namespace msp.App
             {
                 frmStok frm = new frmStok();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
 
@@ -635,7 +635,7 @@ namespace msp.App
             {
                 frmCurrentTransactions frm = new frmCurrentTransactions();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
         private void btnParameters_ItemClick(object sender, ItemClickEventArgs e)
@@ -663,7 +663,7 @@ namespace msp.App
             {
                 frmSatisList frmSatis = new frmSatisList();
                 frmSatis.MdiParent = this;
-                frmSatis.Show(); 
+                frmSatis.Show();
             }
         }
         private async void btnSpeedSale_ItemClick(object sender, ItemClickEventArgs e)
@@ -673,7 +673,7 @@ namespace msp.App
             {
                 frmSpeedSatis frmSatis = new frmSpeedSatis();
                 frmSatis.MdiParent = this;
-                frmSatis.Show(); 
+                frmSatis.Show();
             }
         }
 
@@ -698,7 +698,7 @@ namespace msp.App
             {
                 frmPriceInquiry frm = new frmPriceInquiry();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
         private void btnMusteriler_ItemClick(object sender, ItemClickEventArgs e)
@@ -1022,19 +1022,23 @@ namespace msp.App
                     {
 
                         //GetProduct_Code
+                        string barcode = oRow[0].ToString();
+                        string productCode = oRow[1].ToString();
+                        string productName = oRow[2].ToString();
+                        int miltar = Convert.ToInt32(oRow[3]);
+                        string Birim = oRow[4].ToString();
+                        decimal GirisFiyat = Convert.ToDecimal(oRow[5]);
+                        decimal KarPrice = Convert.ToDecimal(oRow[6]);
+                        int KDV = Convert.ToInt32(oRow[7]);
+                        decimal kdvTutar = kdvTutar = Math.Round((KarPrice / (1 + (decimal)KdvOrani.FirstOrDefault(x => x.Tax == (int)KDV).TaxOrani) * (decimal)KdvOrani.FirstOrDefault(x => x.Tax == (int)KDV).TaxOrani), 2);//Math.Round(KarPrice * (decimal)KdvOrani.FirstOrDefault(x => x.Tax == (int)KDV).TaxOrani, 2);
 
-                        string productCode = oRow[0].ToString();
-                        string productName = oRow[1].ToString();
-                        int miltar = Convert.ToInt32(oRow[2]);
-                        string Birim = oRow[3].ToString();
-                        decimal GirisFiyat = Convert.ToDecimal(oRow[4]);
-                        decimal KarPrice = Convert.ToDecimal(oRow[5]);
-                        int KDV = Convert.ToInt32(oRow[6]);
-                        decimal kdvTutar = Math.Round(KarPrice * (decimal)KdvOrani.FirstOrDefault(x => x.Tax == (int)KDV).TaxOrani, 2);
+                        decimal textMalBedeli = 0;
+                        textMalBedeli = Math.Round((KarPrice - kdvTutar), 2);
 
                         var row = new Msp.Models.Models.ProductDTO
                         {
                             PID = 0,
+                            PBarcode = barcode,
                             PCode = productCode,
                             PName = productName,
                             PTotal = miltar,
@@ -1042,7 +1046,11 @@ namespace msp.App
                             PFirstPrice = GirisFiyat,
                             PKarPrice = KarPrice,
                             PTax = KdvOrani.Where(x => x.Tax == KDV).FirstOrDefault().Id,
-                            PSalePrice = KarPrice + kdvTutar
+                            PSalePrice = KarPrice,
+                            PTaxType = 0,
+                            PBarcodeType = barcode.Length == 8 ? 3 : 1,
+                            PMalBedeli = textMalBedeli,
+                            PPaxAmout = kdvTutar
                         };
                         var response = _repository.Run<Msp.Service.Service.DepotStock.DepotStockService, ActionResponse<Msp.Models.Models.ProductDTO>>(x => x.SaveProduct(row));
                         if (response.ResponseType != ResponseType.Ok)
@@ -1183,7 +1191,7 @@ namespace msp.App
 
         private async void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if(await formAcikmi("frmSatis"))
+            if (await formAcikmi("frmSatis"))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Satış Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -1344,7 +1352,7 @@ namespace msp.App
             {
                 frmHareketGormeyenRecord frm = new frmHareketGormeyenRecord();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
 
@@ -1356,7 +1364,7 @@ namespace msp.App
             {
                 frmStockBakiye frm = new frmStockBakiye();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
 
@@ -1388,7 +1396,7 @@ namespace msp.App
             {
                 FaturaKDV frm = new FaturaKDV();
                 frm.MdiParent = this;
-                frm.Show(); 
+                frm.Show();
             }
         }
 
@@ -1403,7 +1411,7 @@ namespace msp.App
                     {
                         MethodInfo V_Dll = type.GetMethod("Main");
 
-                        V_Dll.Invoke(type, new object[] { AppMain.SqlConnection.Server, AppMain.SqlConnection.Database,AppMain.SqlConnection.UserId, AppMain.SqlConnection.Password, UserLookAndFeel.Default.ActiveSkinName });
+                        V_Dll.Invoke(type, new object[] { AppMain.SqlConnection.Server, AppMain.SqlConnection.Database, AppMain.SqlConnection.UserId, AppMain.SqlConnection.Password, UserLookAndFeel.Default.ActiveSkinName });
                     }
                 }
             }
@@ -1440,7 +1448,7 @@ namespace msp.App
             if (!x)
             {
                 frmBackUp frm = new frmBackUp();
-                frm.ShowDialog(); 
+                frm.ShowDialog();
             }
         }
     }
