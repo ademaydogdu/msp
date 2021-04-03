@@ -39,6 +39,9 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lblTotalCiro = new System.Windows.Forms.Label();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.svgImageBox4 = new DevExpress.XtraEditors.SvgImageBox();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.svgImageBox2 = new DevExpress.XtraEditors.SvgImageBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -56,6 +59,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sic_img = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -64,6 +68,8 @@
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).BeginInit();
@@ -82,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sic_img)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +143,7 @@
             // 
             this.lblTotalCiro.AutoSize = true;
             this.lblTotalCiro.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.lblTotalCiro.Location = new System.Drawing.Point(126, 4);
+            this.lblTotalCiro.Location = new System.Drawing.Point(121, 4);
             this.lblTotalCiro.Name = "lblTotalCiro";
             this.lblTotalCiro.Size = new System.Drawing.Size(120, 48);
             this.lblTotalCiro.TabIndex = 0;
@@ -144,10 +151,45 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.panelControl3.Appearance.Options.UseBackColor = true;
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.svgImageBox4);
+            this.panelControl3.Controls.Add(this.labelControl4);
+            this.panelControl3.Controls.Add(this.label1);
             this.panelControl3.Location = new System.Drawing.Point(802, 12);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(308, 92);
+            this.panelControl3.Size = new System.Drawing.Size(281, 92);
             this.panelControl3.TabIndex = 11;
+            // 
+            // svgImageBox4
+            // 
+            this.svgImageBox4.Location = new System.Drawing.Point(12, 4);
+            this.svgImageBox4.Name = "svgImageBox4";
+            this.svgImageBox4.Size = new System.Drawing.Size(64, 48);
+            this.svgImageBox4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox4.SvgImage")));
+            this.svgImageBox4.TabIndex = 2;
+            this.svgImageBox4.Text = "svgImageBox1";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 17F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(12, 54);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(144, 28);
+            this.labelControl4.TabIndex = 1;
+            this.labelControl4.Text = "G. Toplam Kar";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 30F);
+            this.label1.Location = new System.Drawing.Point(121, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 48);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "₺0,00";
             // 
             // panelControl2
             // 
@@ -185,7 +227,7 @@
             // 
             this.lblProductCount.AutoSize = true;
             this.lblProductCount.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.lblProductCount.Location = new System.Drawing.Point(164, 4);
+            this.lblProductCount.Location = new System.Drawing.Point(160, 4);
             this.lblProductCount.Name = "lblProductCount";
             this.lblProductCount.Size = new System.Drawing.Size(64, 48);
             this.lblProductCount.TabIndex = 0;
@@ -274,7 +316,8 @@
             this.layoutControlItem7,
             this.layoutControlGroup1,
             this.layoutControlItem2,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.emptySpaceItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1122, 728);
             this.Root.TextVisible = false;
@@ -340,10 +383,21 @@
             // 
             this.layoutControlItem8.Control = this.panelControl3;
             this.layoutControlItem8.Location = new System.Drawing.Point(790, 0);
+            this.layoutControlItem8.MaxSize = new System.Drawing.Size(285, 96);
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(285, 96);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(312, 96);
+            this.layoutControlItem8.Size = new System.Drawing.Size(285, 96);
+            this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(1075, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(27, 96);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // timer1
             // 
@@ -366,6 +420,9 @@
             this.panelControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -386,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sic_img)).EndInit();
             this.ResumeLayout(false);
 
@@ -418,5 +476,9 @@
         private System.Windows.Forms.Label lblTotalCiro;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.BindingSource bs_SaleOwnerWeek;
+        private DevExpress.XtraEditors.SvgImageBox svgImageBox4;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

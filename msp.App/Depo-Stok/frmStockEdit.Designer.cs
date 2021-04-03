@@ -444,6 +444,7 @@
             this.bbi_Save.Id = 0;
             this.bbi_Save.ImageOptions.ImageIndex = 0;
             this.bbi_Save.ImageOptions.SvgImageSize = new System.Drawing.Size(30, 30);
+            this.bbi_Save.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.bbi_Save.Name = "bbi_Save";
             this.bbi_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Save_ItemClick);
             // 
@@ -1901,6 +1902,7 @@
             this.Text = "Ürün Ekle";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmStockEdit_FormClosing);
             this.Load += new System.EventHandler(this.frmStockEdit_Load_1);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmStockEdit_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.bs_StockEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);

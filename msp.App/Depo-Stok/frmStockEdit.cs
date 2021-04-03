@@ -646,6 +646,14 @@ namespace Msp.App.Depo_Stok
 
             }
         }
+
+        private void frmStockEdit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 
 }
