@@ -282,7 +282,7 @@ namespace Msp.App.Depo_Stok
                     if (Orow.PBarcode.Length > 0)
                     {
                         frmPrint frm = new frmPrint();
-                        frm.PrintBarcode_13(__product);
+                        frm.PrintBarcode_13(Orow);
                         frm.ShowDialog();
                     }
                 }
@@ -291,7 +291,7 @@ namespace Msp.App.Depo_Stok
                     if (Orow.PBarcode.Length > 0)
                     {
                         frmPrint frm = new frmPrint();
-                        frm.PrintBarcode_8(__product);
+                        frm.PrintBarcode_8(Orow);
                         frm.ShowDialog();
                     }
                 }

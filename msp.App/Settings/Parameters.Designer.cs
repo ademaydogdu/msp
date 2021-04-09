@@ -57,6 +57,9 @@
             this.checkEdit13 = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.checkEdit14 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit15 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit16 = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEdit17 = new DevExpress.XtraEditors.CheckEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -71,6 +74,8 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -79,6 +84,8 @@
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -117,9 +124,6 @@
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.checkEdit15 = new DevExpress.XtraEditors.CheckEdit();
-            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
@@ -142,6 +146,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit13.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit16.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit17.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -156,6 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -164,6 +173,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
@@ -205,9 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit15.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -230,6 +238,8 @@
             this.layoutControl1.Controls.Add(this.comboBoxEdit2);
             this.layoutControl1.Controls.Add(this.checkEdit14);
             this.layoutControl1.Controls.Add(this.checkEdit15);
+            this.layoutControl1.Controls.Add(this.checkEdit16);
+            this.layoutControl1.Controls.Add(this.checkEdit17);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -529,6 +539,40 @@
             this.checkEdit14.StyleController = this.layoutControl1;
             this.checkEdit14.TabIndex = 20;
             // 
+            // checkEdit15
+            // 
+            this.checkEdit15.Location = new System.Drawing.Point(343, 243);
+            this.checkEdit15.MenuManager = this.barManager1;
+            this.checkEdit15.Name = "checkEdit15";
+            this.checkEdit15.Properties.Caption = "Ürün Kodu ve Ürün Adını Büyük harfe dönüştür";
+            this.checkEdit15.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEdit15.Size = new System.Drawing.Size(263, 20);
+            this.checkEdit15.StyleController = this.layoutControl1;
+            this.checkEdit15.TabIndex = 22;
+            // 
+            // checkEdit16
+            // 
+            this.checkEdit16.Location = new System.Drawing.Point(24, 285);
+            this.checkEdit16.MenuManager = this.barManager1;
+            this.checkEdit16.Name = "checkEdit16";
+            this.checkEdit16.Properties.Caption = "Ürün Bilgilerine Girilebilsin";
+            this.checkEdit16.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEdit16.Size = new System.Drawing.Size(279, 20);
+            this.checkEdit16.StyleController = this.layoutControl1;
+            this.checkEdit16.TabIndex = 23;
+            // 
+            // checkEdit17
+            // 
+            this.checkEdit17.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bs_Parameter, "ProductNotFoundNewRecord", true));
+            this.checkEdit17.Location = new System.Drawing.Point(24, 309);
+            this.checkEdit17.MenuManager = this.barManager1;
+            this.checkEdit17.Name = "checkEdit17";
+            this.checkEdit17.Properties.Caption = "Ürün Bulunamazsa Yeni Kayıt ekranı açılsın";
+            this.checkEdit17.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEdit17.Size = new System.Drawing.Size(279, 20);
+            this.checkEdit17.StyleController = this.layoutControl1;
+            this.checkEdit17.TabIndex = 24;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -566,7 +610,9 @@
             this.layoutControlItem10,
             this.layoutControlItem12,
             this.layoutControlItem13,
-            this.layoutControlItem17});
+            this.layoutControlItem17,
+            this.layoutControlItem29,
+            this.layoutControlItem31});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(307, 639);
@@ -575,9 +621,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 240);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 288);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(283, 354);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(283, 306);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -673,6 +719,24 @@
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
             // 
+            // layoutControlItem29
+            // 
+            this.layoutControlItem29.Control = this.checkEdit16;
+            this.layoutControlItem29.Location = new System.Drawing.Point(0, 240);
+            this.layoutControlItem29.Name = "layoutControlItem29";
+            this.layoutControlItem29.Size = new System.Drawing.Size(283, 24);
+            this.layoutControlItem29.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem29.TextVisible = false;
+            // 
+            // layoutControlItem31
+            // 
+            this.layoutControlItem31.Control = this.checkEdit17;
+            this.layoutControlItem31.Location = new System.Drawing.Point(0, 264);
+            this.layoutControlItem31.Name = "layoutControlItem31";
+            this.layoutControlItem31.Size = new System.Drawing.Size(283, 24);
+            this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem31.TextVisible = false;
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.GroupStyle = DevExpress.Utils.GroupStyle.Light;
@@ -754,6 +818,25 @@
             this.layoutControlItem19.Size = new System.Drawing.Size(267, 24);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
+            // 
+            // layoutControlGroup7
+            // 
+            this.layoutControlGroup7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem30});
+            this.layoutControlGroup7.Location = new System.Drawing.Point(0, 165);
+            this.layoutControlGroup7.Name = "layoutControlGroup7";
+            this.layoutControlGroup7.Size = new System.Drawing.Size(291, 69);
+            this.layoutControlGroup7.Text = "Ürün Kartı";
+            // 
+            // layoutControlItem30
+            // 
+            this.layoutControlItem30.Control = this.checkEdit15;
+            this.layoutControlItem30.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem30.Name = "layoutControlItem30";
+            this.layoutControlItem30.Size = new System.Drawing.Size(267, 24);
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem30.TextVisible = false;
             // 
             // layoutControlItem11
             // 
@@ -1164,36 +1247,6 @@
             this.layoutControlItem28.TextSize = new System.Drawing.Size(41, 13);
             this.layoutControlItem28.TextToControlDistance = 5;
             // 
-            // layoutControlGroup7
-            // 
-            this.layoutControlGroup7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem30});
-            this.layoutControlGroup7.Location = new System.Drawing.Point(0, 165);
-            this.layoutControlGroup7.Name = "layoutControlGroup7";
-            this.layoutControlGroup7.Size = new System.Drawing.Size(291, 69);
-            this.layoutControlGroup7.Text = "Ürün Kartı";
-            // 
-            // checkEdit15
-            // 
-            this.checkEdit15.Location = new System.Drawing.Point(343, 243);
-            this.checkEdit15.MenuManager = this.barManager1;
-            this.checkEdit15.Name = "checkEdit15";
-            this.checkEdit15.Properties.Caption = "Ürün Kodu ve Ürün Adını Büyük harfe dönüştür";
-            this.checkEdit15.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.checkEdit15.Size = new System.Drawing.Size(263, 20);
-            this.checkEdit15.StyleController = this.layoutControl1;
-            this.checkEdit15.TabIndex = 22;
-            // 
-            // layoutControlItem30
-            // 
-            this.layoutControlItem30.Control = this.checkEdit15;
-            this.layoutControlItem30.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem30.Name = "layoutControlItem30";
-            this.layoutControlItem30.Size = new System.Drawing.Size(267, 24);
-            this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem30.TextVisible = false;
-            // 
             // Parameters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1230,6 +1283,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit13.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit16.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit17.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -1244,6 +1300,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -1252,6 +1310,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
@@ -1293,9 +1353,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit15.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1394,5 +1451,9 @@
         private DevExpress.XtraEditors.CheckEdit checkEdit15;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
+        private DevExpress.XtraEditors.CheckEdit checkEdit16;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
+        private DevExpress.XtraEditors.CheckEdit checkEdit17;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
     }
 }

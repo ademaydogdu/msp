@@ -26,5 +26,6 @@ namespace Msp.Models.Models
         public bool? IsBarcode { get; set; } = false;
         public string BorcodeCOM { get; set; }
         public int? ReportType { get; set; } = 0;
+        public bool? ProductNotFoundNewRecord { get; set; }
     }
 }

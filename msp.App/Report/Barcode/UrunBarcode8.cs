@@ -16,7 +16,7 @@ namespace Msp.App.Report.Barcode
 
         public void InitData(ProductDTO data)
         {
-            objectDataSource1.DataSource = data;
+            objectDataSource2.DataSource = data;
         }
 
     }

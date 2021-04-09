@@ -90,78 +90,91 @@ namespace msp.App
         }
         private void do_ProductBarcode(string __barcode)
         {
-            if (__barcode.Length > 0)
+            try
             {
-                if (__dll_SaleBarcodCreate.Any(x=>x.Barcode == __barcode.Trim()))
+                if (__barcode.Length > 0)
                 {
-                    bool y = false;
-                    _SaleBarcode = (SaleBarcodeType)__dll_SaleBarcodCreate.Where(x => x.Barcode == __barcode).FirstOrDefault().Type;
-                    switch (_SaleBarcode)
+                    if (__dll_SaleBarcodCreate.Any(x => x.Barcode == __barcode.Trim()))
                     {
-                        case SaleBarcodeType.YeniKayit:
-                            do_NewRecord();
-                            y = true;
-                            break;
-                        case SaleBarcodeType.SilmeListeTemizleme:
-                            do_ListDelete();
-                            y = true;
-                            break;
-                        case SaleBarcodeType.Satis:
-                            do_save();
-                            y = true;
-                            break;
-                        case SaleBarcodeType.NakitSatis:
-                            do_NakitSatis();
-                            y = true;
-                            break;
-                        case SaleBarcodeType.KrediKartiSatis:
-                            do_KrediCartSatis();
-                            y = true;
-                            break;
-                        default:
-                            break;
+                        bool y = false;
+                        _SaleBarcode = (SaleBarcodeType)__dll_SaleBarcodCreate.Where(x => x.Barcode == __barcode.Trim()).FirstOrDefault().Type;
+                        switch (_SaleBarcode)
+                        {
+                            case SaleBarcodeType.YeniKayit:
+                                do_NewRecord();
+                                y = true;
+                                break;
+                            case SaleBarcodeType.SilmeListeTemizleme:
+                                do_ListDelete();
+                                y = true;
+                                break;
+                            case SaleBarcodeType.Satis:
+                                do_save();
+                                y = true;
+                                break;
+                            case SaleBarcodeType.NakitSatis:
+                                do_NakitSatis();
+                                y = true;
+                                break;
+                            case SaleBarcodeType.KrediKartiSatis:
+                                do_KrediCartSatis();
+                                y = true;
+                                break;
+                            default:
+                                break;
+                        }
+                        if (y)
+                        {
+                            return;
+                        }
                     }
-                    if (y)
+                    var product = AppMain.Products.Where(x => x.PBarcode == __barcode.Trim()).FirstOrDefault();
+                    if (product != null)
                     {
-                        return;
-                    }
-                }
-                var product = AppMain.Products.Where(x => x.PBarcode == __barcode.Trim()).FirstOrDefault();
-                if (product != null)
-                {
-                    var _varmi = __dl_List_SaleTrans.Where(x => x.ProductId == product.PID).FirstOrDefault();
-                    if (_varmi != null)
-                    {
-                        _varmi.ProductQuantity += 1;
-                        var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
-                        _varmi.ProductAmount = ProductAmount;
-                        _varmi.TaxAmount = Math.Round(product.PPaxAmout.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2); //Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                        var _varmi = __dl_List_SaleTrans.Where(x => x.ProductId == product.PID).FirstOrDefault();
+                        if (_varmi != null)
+                        {
+                            _varmi.ProductQuantity += 1;
+                            var ProductAmount = Math.Round(_varmi.ProductPrice.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                            _varmi.ProductAmount = ProductAmount;
+                            _varmi.TaxAmount = Math.Round(product.PPaxAmout.GetValueOrDefault() * _varmi.ProductQuantity.GetValueOrDefault(), 2); //Math.Round((decimal)KdvOrani.Where(x => x.Id == _varmi.Tax.GetValueOrDefault()).FirstOrDefault().TaxOrani * _varmi.ProductQuantity.GetValueOrDefault(), 2);
+                        }
+                        else
+                        {
+                            SaleTransDTO saleTrans = new SaleTransDTO();
+                            saleTrans.ProductId = product.PID;
+                            saleTrans.ProductName = product.PName;
+                            saleTrans.ProductBarcode = product.PBarcode;
+                            saleTrans.ProductPrice = product.PSalePrice.GetValueOrDefault(); //_product.PMalBedeli;
+                            saleTrans.UnitId = product.PUnitId;
+                            saleTrans.ProductQuantity = 1;
+                            saleTrans.Deleted = false;
+                            saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
+                            saleTrans.Tax = product.PTax;
+                            saleTrans.TaxAmount = product.PPaxAmout;
+                            saleTrans.ProductDate = product.PExpDate == null ? new DateTime(1900, 1, 1) : product.PExpDate.GetValueOrDefault();
+                            saleTrans.CompanyId = AppMain.CompanyRecId;
+                            __dl_List_SaleTrans.Add(saleTrans);
+                        }
+                        TopTotal();
+                        bs_SaleTrans.DataSource = __dl_List_SaleTrans;
+                        gridControl1.RefreshDataSource();
                     }
                     else
                     {
-                        SaleTransDTO saleTrans = new SaleTransDTO();
-                        saleTrans.ProductId = product.PID;
-                        saleTrans.ProductName = product.PName;
-                        saleTrans.ProductBarcode = product.PBarcode;
-                        saleTrans.ProductPrice = product.PSalePrice.GetValueOrDefault(); //_product.PMalBedeli;
-                        saleTrans.UnitId = product.PUnitId;
-                        saleTrans.ProductQuantity = 1;
-                        saleTrans.Deleted = false;
-                        saleTrans.ProductAmount = Math.Round(saleTrans.ProductPrice.GetValueOrDefault() * saleTrans.ProductQuantity.GetValueOrDefault(), 5, MidpointRounding.ToEven);
-                        saleTrans.Tax = product.PTax;
-                        saleTrans.TaxAmount = product.PPaxAmout;
-                        saleTrans.ProductDate = product.PExpDate == null ? new DateTime(1900, 1, 1) : product.PExpDate.GetValueOrDefault();
-                        saleTrans.CompanyId = AppMain.CompanyRecId;
-                        __dl_List_SaleTrans.Add(saleTrans);
+                        XtraMessageBox.Show("Ürün Bulunamadı", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (_parameters.ProductNotFoundNewRecord.GetValueOrDefault() == true)
+                        {
+                            frmStockEdit stock = new frmStockEdit();
+                            stock._FormOpenType = FormOpenType.New;
+                            stock.ShowSatis(__barcode.Trim());
+                        }
                     }
-                    TopTotal();
-                    bs_SaleTrans.DataSource = __dl_List_SaleTrans;
-                    gridControl1.RefreshDataSource();
                 }
-                else
-                {
-                    XtraMessageBox.Show("Ürün Bulunamadı", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.ToString());
             }
 
         }
@@ -486,7 +499,7 @@ namespace msp.App
             }
         }
 
-        public void do_save()
+        public void do_save(bool IsPosChiaz = false)
         {
             try
             {

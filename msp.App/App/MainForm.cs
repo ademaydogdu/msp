@@ -193,16 +193,20 @@ namespace msp.App
             _repository.Run<AuthorizationService>(x => x.SaveSecRights(newSecRights));
 
         }
-        private void do_OpenFormSale()
+        private async void do_OpenFormSale()
         {
             var param = _repository.Run<SettingsService, ParametersDTO>(x => x.Get_Parameters());
             if (param != null)
             {
                 if (param.MainSaleForm.GetValueOrDefault())
                 {
-                    frmSatis frm = new frmSatis();
-                    frm.MdiParent = this;
-                    frm.Show();
+                    bool xy = await formAcikmi("frmSatis");
+                    if (!xy)
+                    {
+                        frmSatis frm = new frmSatis();
+                        frm.MdiParent = this;
+                        frm.Show();
+                    }
                 }
             }
         }
@@ -501,7 +505,7 @@ namespace msp.App
                 //    };
                 //}
 
-                Version oVersionFB = new Version(21, 1, 1, 22);
+                Version oVersionFB = new Version(21, 1, 1, 23);
                 AppMain.MspVersion = oVersionFB;
 
                 string AppPath = @"C:\Msp\ConnectString.txt";
@@ -596,7 +600,7 @@ namespace msp.App
                 DevExpress.XtraEditors.XtraMessageBox.Show("Satış - Ürün Hareket Ekranı açık Lütfen Kapatınız...", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            bool xy = await formAcikmi("frmCurrentTransactions");
+            bool xy = await formAcikmi("frmSatis");
 
             if (!xy)
             {

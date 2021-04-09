@@ -1577,7 +1577,13 @@ namespace Msp.App.App
                 sCommand.CommandText = "Update Parameters set ReportType = 0";
                 ExecuteNonQuery(sCommand);
             }
-
+            if (tblParameters.Columns.Contains("ProductNotFoundNewRecord") == false)
+            {
+                sCommand.CommandText = "ALTER TABLE Parameters ADD ProductNotFoundNewRecord bit NULL";
+                ExecuteNonQuery(sCommand);
+                sCommand.CommandText = "Update Parameters set ProductNotFoundNewRecord = 0";
+                ExecuteNonQuery(sCommand);
+            }
             #endregion
 
             #endregion
