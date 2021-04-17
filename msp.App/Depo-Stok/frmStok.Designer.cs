@@ -55,10 +55,10 @@
             this.colPPaxAmout = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.btnProductsRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddNewProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditProduct = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProductsRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnProTransactions = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_EnvanterGiris = new DevExpress.XtraBars.BarButtonItem();
             this.btnProBarcodeLabel = new DevExpress.XtraBars.BarButtonItem();
@@ -87,6 +87,11 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.colPTaxType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPTax1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPKdvIstisna = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPLastPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPMarkId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
@@ -153,12 +158,19 @@
             this.colPTax,
             this.colPKarPrice,
             this.colPMalBedeli,
-            this.colPPaxAmout});
+            this.colPPaxAmout,
+            this.colPTaxType,
+            this.colPTax1,
+            this.colPKdvIstisna,
+            this.colPLastPrice,
+            this.colPMarkId});
             this.gcvProducts.GridControl = this.gcProducts;
             this.gcvProducts.Name = "gcvProducts";
             this.gcvProducts.OptionsBehavior.Editable = false;
             this.gcvProducts.OptionsView.ShowAutoFilterRow = true;
             this.gcvProducts.OptionsView.ShowGroupPanel = false;
+            this.gcvProducts.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colPKdvIstisna, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gcvProducts.DoubleClick += new System.EventHandler(this.gcvProducts_DoubleClick);
             // 
             // colPID
@@ -195,16 +207,12 @@
             this.colPCategoryId.Caption = "Kategori ID";
             this.colPCategoryId.FieldName = "PCategoryId";
             this.colPCategoryId.Name = "colPCategoryId";
-            this.colPCategoryId.Visible = true;
-            this.colPCategoryId.VisibleIndex = 3;
             // 
             // colPDate
             // 
             this.colPDate.Caption = "Tarih";
             this.colPDate.FieldName = "PDate";
             this.colPDate.Name = "colPDate";
-            this.colPDate.Visible = true;
-            this.colPDate.VisibleIndex = 4;
             // 
             // colPSalePrice
             // 
@@ -214,7 +222,7 @@
             this.colPSalePrice.FieldName = "PSalePrice";
             this.colPSalePrice.Name = "colPSalePrice";
             this.colPSalePrice.Visible = true;
-            this.colPSalePrice.VisibleIndex = 14;
+            this.colPSalePrice.VisibleIndex = 6;
             // 
             // colPFirstPrice
             // 
@@ -223,8 +231,6 @@
             this.colPFirstPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPFirstPrice.FieldName = "PFirstPrice";
             this.colPFirstPrice.Name = "colPFirstPrice";
-            this.colPFirstPrice.Visible = true;
-            this.colPFirstPrice.VisibleIndex = 5;
             // 
             // colPTotal
             // 
@@ -232,15 +238,13 @@
             this.colPTotal.FieldName = "PTotal";
             this.colPTotal.Name = "colPTotal";
             this.colPTotal.Visible = true;
-            this.colPTotal.VisibleIndex = 6;
+            this.colPTotal.VisibleIndex = 3;
             // 
             // colPUnitId
             // 
             this.colPUnitId.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.colPUnitId.FieldName = "PUnitId";
             this.colPUnitId.Name = "colPUnitId";
-            this.colPUnitId.Visible = true;
-            this.colPUnitId.VisibleIndex = 7;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -255,46 +259,38 @@
             this.colPVarDescription.FieldName = "PVarDescription";
             this.colPVarDescription.Name = "colPVarDescription";
             this.colPVarDescription.Visible = true;
-            this.colPVarDescription.VisibleIndex = 8;
+            this.colPVarDescription.VisibleIndex = 4;
             // 
             // colPSpecCode
             // 
             this.colPSpecCode.Caption = "Özel Kodu";
             this.colPSpecCode.FieldName = "PSpecCode";
             this.colPSpecCode.Name = "colPSpecCode";
-            this.colPSpecCode.Visible = true;
-            this.colPSpecCode.VisibleIndex = 9;
             // 
             // colPBrandName
             // 
             this.colPBrandName.Caption = "Marka Adı";
             this.colPBrandName.FieldName = "PBrandName";
             this.colPBrandName.Name = "colPBrandName";
-            this.colPBrandName.Visible = true;
-            this.colPBrandName.VisibleIndex = 10;
             // 
             // colPBrandCode
             // 
             this.colPBrandCode.Caption = "Marka Kodu";
             this.colPBrandCode.FieldName = "PBrandCode";
             this.colPBrandCode.Name = "colPBrandCode";
-            this.colPBrandCode.Visible = true;
-            this.colPBrandCode.VisibleIndex = 11;
             // 
             // colPGroup
             // 
             this.colPGroup.Caption = "Ürün Grubu";
             this.colPGroup.FieldName = "PGroup";
             this.colPGroup.Name = "colPGroup";
-            this.colPGroup.Visible = true;
-            this.colPGroup.VisibleIndex = 12;
             // 
             // colPTax
             // 
             this.colPTax.Caption = "KDV";
             this.colPTax.Name = "colPTax";
             this.colPTax.Visible = true;
-            this.colPTax.VisibleIndex = 13;
+            this.colPTax.VisibleIndex = 5;
             // 
             // colPKarPrice
             // 
@@ -302,7 +298,7 @@
             this.colPKarPrice.FieldName = "PKarPrice";
             this.colPKarPrice.Name = "colPKarPrice";
             this.colPKarPrice.Visible = true;
-            this.colPKarPrice.VisibleIndex = 15;
+            this.colPKarPrice.VisibleIndex = 7;
             // 
             // colPMalBedeli
             // 
@@ -310,7 +306,7 @@
             this.colPMalBedeli.FieldName = "PMalBedeli";
             this.colPMalBedeli.Name = "colPMalBedeli";
             this.colPMalBedeli.Visible = true;
-            this.colPMalBedeli.VisibleIndex = 16;
+            this.colPMalBedeli.VisibleIndex = 8;
             // 
             // colPPaxAmout
             // 
@@ -318,7 +314,7 @@
             this.colPPaxAmout.FieldName = "PPaxAmout";
             this.colPPaxAmout.Name = "colPPaxAmout";
             this.colPPaxAmout.Visible = true;
-            this.colPPaxAmout.VisibleIndex = 17;
+            this.colPPaxAmout.VisibleIndex = 9;
             // 
             // barManager1
             // 
@@ -382,14 +378,6 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // btnProductsRefresh
-            // 
-            this.btnProductsRefresh.Caption = "barButtonItem1";
-            this.btnProductsRefresh.Id = 0;
-            this.btnProductsRefresh.ImageOptions.ImageIndex = 43;
-            this.btnProductsRefresh.Name = "btnProductsRefresh";
-            this.btnProductsRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductsRefresh_ItemClick);
-            // 
             // btnAddNewProduct
             // 
             this.btnAddNewProduct.Caption = "Yeni Ürün";
@@ -413,6 +401,14 @@
             this.btnRemProduct.ImageOptions.ImageIndex = 44;
             this.btnRemProduct.Name = "btnRemProduct";
             this.btnRemProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemProduct_ItemClick);
+            // 
+            // btnProductsRefresh
+            // 
+            this.btnProductsRefresh.Caption = "barButtonItem1";
+            this.btnProductsRefresh.Id = 0;
+            this.btnProductsRefresh.ImageOptions.ImageIndex = 43;
+            this.btnProductsRefresh.Name = "btnProductsRefresh";
+            this.btnProductsRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductsRefresh_ItemClick);
             // 
             // btnProTransactions
             // 
@@ -684,6 +680,37 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // colPTaxType
+            // 
+            this.colPTaxType.FieldName = "PTaxType";
+            this.colPTaxType.Name = "colPTaxType";
+            this.colPTaxType.Visible = true;
+            this.colPTaxType.VisibleIndex = 10;
+            // 
+            // colPTax1
+            // 
+            this.colPTax1.FieldName = "PTax";
+            this.colPTax1.Name = "colPTax1";
+            this.colPTax1.Visible = true;
+            this.colPTax1.VisibleIndex = 11;
+            // 
+            // colPKdvIstisna
+            // 
+            this.colPKdvIstisna.FieldName = "PKdvIstisna";
+            this.colPKdvIstisna.Name = "colPKdvIstisna";
+            this.colPKdvIstisna.Visible = true;
+            this.colPKdvIstisna.VisibleIndex = 12;
+            // 
+            // colPLastPrice
+            // 
+            this.colPLastPrice.FieldName = "PLastPrice";
+            this.colPLastPrice.Name = "colPLastPrice";
+            // 
+            // colPMarkId
+            // 
+            this.colPMarkId.FieldName = "PMarkId";
+            this.colPMarkId.Name = "colPMarkId";
+            // 
             // frmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -778,5 +805,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn colPTaxType;
+        private DevExpress.XtraGrid.Columns.GridColumn colPTax1;
+        private DevExpress.XtraGrid.Columns.GridColumn colPKdvIstisna;
+        private DevExpress.XtraGrid.Columns.GridColumn colPLastPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colPMarkId;
     }
 }

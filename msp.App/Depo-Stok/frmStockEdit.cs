@@ -197,10 +197,13 @@ namespace Msp.App.Depo_Stok
                 XtraMessageBox.Show("Birim Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _return = true;
             }
-            if ((decimal)firstPriceTextEdit.EditValue == 0)
+            if (firstPriceTextEdit.EditValue != null)
             {
-                XtraMessageBox.Show("Fiyat Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _return = true;
+                if ((decimal)firstPriceTextEdit.EditValue == 0)
+                {
+                    XtraMessageBox.Show("Fiyat Girilmesi Zorunludur.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _return = true;
+                } 
             }
 
             return _return;
@@ -226,9 +229,9 @@ namespace Msp.App.Depo_Stok
                     }
                     else
                     {
-                        if (AppMain.Products.Any(x=>x.PID == response.Response.PID))
+                        if (AppMain.Products.Any(x => x.PID == response.Response.PID))
                         {
-                            AppMain.Products.Remove(AppMain.Products.FirstOrDefault(x=>x.PID == response.Response.PID));
+                            AppMain.Products.Remove(AppMain.Products.FirstOrDefault(x => x.PID == response.Response.PID));
                             AppMain.Products.Add(response.Response);
                         }
                         else
@@ -669,7 +672,7 @@ namespace Msp.App.Depo_Stok
 
         private void txtBarcode_TextChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         private void textEdit4_TextChanged(object sender, EventArgs e)
@@ -680,7 +683,7 @@ namespace Msp.App.Depo_Stok
                 Check12Digits = textEdit4.Text.PadRight(12, '0');
                 Barcode = EAN13Class.EAN13(Check12Digits);
 
-                if (!String.Equals(EAN13Class.Barcode13Digits,"") || (EAN13Class.Barcode13Digits != ""))
+                if (!String.Equals(EAN13Class.Barcode13Digits, "") || (EAN13Class.Barcode13Digits != ""))
                 {
                     txtBarcode.Text = EAN13Class.Barcode13Digits.ToString();
                     Int32 inStart = Convert.ToInt32(txtBarcode.Text.Length - 1);

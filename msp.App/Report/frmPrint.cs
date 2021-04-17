@@ -174,6 +174,15 @@ namespace Msp.App.Report
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }
+        public void PrintBarcode_13_Barkodsuz(List<ProductDTO> data)
+        {
+            BarkodsuzUrun13 report = new BarkodsuzUrun13();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+                p.Visible = false;
+            report.InitData(data);
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
 
     }
 }

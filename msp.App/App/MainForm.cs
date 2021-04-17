@@ -1455,5 +1455,18 @@ namespace msp.App
                 frm.ShowDialog();
             }
         }
+
+        private void barButtonItem135_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var productBarcode = _repository.Run<ReportService, List<ProductDTO>>(x => x.Get_ListProduct_NotBarcode()); 
+            if (productBarcode.Count > 0)
+            {
+                frmPrint frm = new frmPrint();
+                frm.PrintBarcode_13_Barkodsuz(productBarcode);
+                frm.ShowDialog();
+            }
+
+     
+        }
     }
 }

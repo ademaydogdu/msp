@@ -217,5 +217,28 @@ namespace Msp.Service.Service.Report
         }
 
         #endregion
+
+        #region BarkodsuzProduct
+
+        public List<ProductDTO> Get_ListProduct_NotBarcode()
+        {
+            using (var _db = new MspDbContext())
+            {
+                List<ProductDTO> result = new List<ProductDTO>();
+
+                string str = "Barkodsuz";
+                var ProductGroups = _db.ProductGroup.Where(x => x.Grouup == str.Trim()).FirstOrDefault();
+                if (ProductGroups == null)
+                {
+                    return result;
+                }
+
+                result = base.Map<List<Products>, List<ProductDTO>>(_db.products.Where(x => x.PGroup == ProductGroups.RecId).ToList());
+                return result;
+            }
+        }
+
+        #endregion
+
     }
 }

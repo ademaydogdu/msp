@@ -63,6 +63,7 @@ namespace Msp.App.Musteri_Islemleri
             {
                 try
                 {
+                    bs_CustomersEdit.EndEdit();
                     var response = _repository.Run<CustomerService, ActionResponse<CustomersDTO>>(x => x.SaveCustomers(__customers));
                     if (response.ResponseType != ResponseType.Ok)
                     {
@@ -70,6 +71,13 @@ namespace Msp.App.Musteri_Islemleri
                     }
                     else
                     {
+                        foreach (Form item in Application.OpenForms)
+                        {
+                            if (item.Name == "frmCustomer")
+                            {
+                                ((frmCustomer)item).do_refresh();
+                            }
+                        }
                         this.Close();
                     }
                 }

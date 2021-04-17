@@ -32,7 +32,7 @@
     <TargetCulture>tr-TR</TargetCulture>
     <ProductName>Shop Center</ProductName>
     <PublisherName>PC-LAB</PublisherName>
-    <ApplicationRevision>67</ApplicationRevision>
+    <ApplicationRevision>69</ApplicationRevision>
     <ApplicationVersion>21.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -589,6 +589,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Report\Barcode\BarkodsuzUrun13.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Barcode\BarkodsuzUrun13.Designer.cs">
+      <DependentUpon>BarkodsuzUrun13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Barcode\BarocedList.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1134,6 +1140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri-Islemleri\frmMusterVeresiyeDetail.resx">
       <DependentUpon>frmMusterVeresiyeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Barcode\BarkodsuzUrun13.resx">
+      <DependentUpon>BarkodsuzUrun13.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Barcode\BarocedList.resx">
       <DependentUpon>BarocedList.cs</DependentUpon>

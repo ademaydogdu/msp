@@ -45,10 +45,10 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.btnCustomerRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddNewCustomer = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRemCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRemCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCustomerRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnCustomerClose = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_VeresiyeDefter = new DevExpress.XtraBars.BarButtonItem();
@@ -328,29 +328,13 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // btnCustomerRefresh
-            // 
-            this.btnCustomerRefresh.Caption = "Yenile";
-            this.btnCustomerRefresh.Id = 0;
-            this.btnCustomerRefresh.ImageOptions.ImageIndex = 43;
-            this.btnCustomerRefresh.Name = "btnCustomerRefresh";
-            this.btnCustomerRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomerRefresh_ItemClick);
-            // 
             // btnAddNewCustomer
             // 
-            this.btnAddNewCustomer.Caption = "Yeni Ürün";
+            this.btnAddNewCustomer.Caption = "Yeni Müşteri";
             this.btnAddNewCustomer.Id = 1;
             this.btnAddNewCustomer.ImageOptions.ImageIndex = 46;
             this.btnAddNewCustomer.Name = "btnAddNewCustomer";
             this.btnAddNewCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddNewCustomer_ItemClick);
-            // 
-            // btnRemCustomer
-            // 
-            this.btnRemCustomer.Caption = "Ürün Sil";
-            this.btnRemCustomer.Id = 4;
-            this.btnRemCustomer.ImageOptions.ImageIndex = 44;
-            this.btnRemCustomer.Name = "btnRemCustomer";
-            this.btnRemCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemCustomer_ItemClick);
             // 
             // btnEditCustomer
             // 
@@ -359,6 +343,22 @@
             this.btnEditCustomer.ImageOptions.ImageIndex = 48;
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditCustomer_ItemClick);
+            // 
+            // btnRemCustomer
+            // 
+            this.btnRemCustomer.Caption = "Müşteri Sil";
+            this.btnRemCustomer.Id = 4;
+            this.btnRemCustomer.ImageOptions.ImageIndex = 44;
+            this.btnRemCustomer.Name = "btnRemCustomer";
+            this.btnRemCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRemCustomer_ItemClick);
+            // 
+            // btnCustomerRefresh
+            // 
+            this.btnCustomerRefresh.Caption = "Yenile";
+            this.btnCustomerRefresh.Id = 0;
+            this.btnCustomerRefresh.ImageOptions.ImageIndex = 43;
+            this.btnCustomerRefresh.Name = "btnCustomerRefresh";
+            this.btnCustomerRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomerRefresh_ItemClick);
             // 
             // btnCustomerClose
             // 
