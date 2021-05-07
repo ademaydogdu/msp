@@ -266,6 +266,7 @@
             this.barButtonItem132 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem133 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem134 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem135 = new DevExpress.XtraBars.BarButtonItem();
             this.img_buton = new DevExpress.Utils.SvgImageCollection(this.components);
             this.barSatis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -318,7 +319,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barButtonItem135 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_List)).BeginInit();
@@ -604,10 +604,10 @@
             // bbi_ProgramKilitle
             // 
             this.bbi_ProgramKilitle.Caption = "Program Kilitle";
-            this.bbi_ProgramKilitle.Enabled = false;
             this.bbi_ProgramKilitle.Id = 139;
             this.bbi_ProgramKilitle.ImageOptions.ImageIndex = 10;
             this.bbi_ProgramKilitle.Name = "bbi_ProgramKilitle";
+            this.bbi_ProgramKilitle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_ProgramKilitle_ItemClick);
             // 
             // bbi_AllFormClosed
             // 
@@ -2327,6 +2327,7 @@
             this.barButtonItem133.Id = 234;
             this.barButtonItem133.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem133.ImageOptions.SvgImage")));
             this.barButtonItem133.Name = "barButtonItem133";
+            this.barButtonItem133.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem133_ItemClick);
             // 
             // barButtonItem134
             // 
@@ -2334,6 +2335,14 @@
             this.barButtonItem134.Id = 235;
             this.barButtonItem134.ImageOptions.LargeImageIndex = 82;
             this.barButtonItem134.Name = "barButtonItem134";
+            // 
+            // barButtonItem135
+            // 
+            this.barButtonItem135.Caption = "Barkodsuz Ürün Yazdırma";
+            this.barButtonItem135.Id = 236;
+            this.barButtonItem135.ImageOptions.LargeImageIndex = 31;
+            this.barButtonItem135.Name = "barButtonItem135";
+            this.barButtonItem135.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem135_ItemClick);
             // 
             // img_buton
             // 
@@ -2814,14 +2823,6 @@
             this.radialMenu1.ItemLinks.Add(this.barButtonItem77);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Ribbon = this.ribbon;
-            // 
-            // barButtonItem135
-            // 
-            this.barButtonItem135.Caption = "Barkodsuz Ürün Yazdırma";
-            this.barButtonItem135.Id = 236;
-            this.barButtonItem135.ImageOptions.LargeImageIndex = 31;
-            this.barButtonItem135.Name = "barButtonItem135";
-            this.barButtonItem135.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem135_ItemClick);
             // 
             // MainForm
             // 

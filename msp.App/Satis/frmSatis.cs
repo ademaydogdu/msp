@@ -481,6 +481,8 @@ namespace msp.App
             txt_Total.EditValue = __dll_SaleOwner.TotalPriceText = "₺ 0.00";
             txt_OdemeTipi.EditValue = "";
             __dll_SaleOwner.PaymentType = 0;
+            IskontoTutari = 0;
+            txt_İndirimTutar.EditValue = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", IskontoTutari);
 
             bs_SaleTrans.DataSource = __dl_List_SaleTrans;
             bs_SaleOwner.DataSource = __dll_SaleOwner;

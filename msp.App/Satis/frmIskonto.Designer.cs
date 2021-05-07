@@ -107,13 +107,13 @@
             // radioGroup1
             // 
             this.radioGroup1.EditValue = 0;
-            this.radioGroup1.Location = new System.Drawing.Point(168, 12);
+            this.radioGroup1.Location = new System.Drawing.Point(177, 12);
             this.radioGroup1.MenuManager = this.barManager1;
             this.radioGroup1.Name = "radioGroup1";
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "%"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "₺")});
-            this.radioGroup1.Size = new System.Drawing.Size(313, 43);
+            this.radioGroup1.Size = new System.Drawing.Size(304, 43);
             this.radioGroup1.StyleController = this.layoutControl1;
             this.radioGroup1.TabIndex = 4;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
@@ -206,20 +206,20 @@
             // txtOranTotalTutar
             // 
             this.txtOranTotalTutar.Enabled = false;
-            this.txtOranTotalTutar.Location = new System.Drawing.Point(180, 94);
+            this.txtOranTotalTutar.Location = new System.Drawing.Point(189, 94);
             this.txtOranTotalTutar.MenuManager = this.barManager1;
             this.txtOranTotalTutar.Name = "txtOranTotalTutar";
-            this.txtOranTotalTutar.Size = new System.Drawing.Size(289, 20);
+            this.txtOranTotalTutar.Size = new System.Drawing.Size(280, 20);
             this.txtOranTotalTutar.StyleController = this.layoutControl1;
             this.txtOranTotalTutar.TabIndex = 5;
             // 
             // txtIndirimOrani
             // 
-            this.txtIndirimOrani.Location = new System.Drawing.Point(180, 118);
+            this.txtIndirimOrani.Location = new System.Drawing.Point(189, 118);
             this.txtIndirimOrani.MenuManager = this.barManager1;
             this.txtIndirimOrani.Name = "txtIndirimOrani";
-            this.txtIndirimOrani.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtIndirimOrani.Size = new System.Drawing.Size(289, 20);
+            this.txtIndirimOrani.Properties.BeepOnError = false;
+            this.txtIndirimOrani.Size = new System.Drawing.Size(280, 20);
             this.txtIndirimOrani.StyleController = this.layoutControl1;
             this.txtIndirimOrani.TabIndex = 6;
             this.txtIndirimOrani.EditValueChanged += new System.EventHandler(this.txtIndirimOrani_EditValueChanged);
@@ -228,19 +228,23 @@
             // txtTLTotalTutar
             // 
             this.txtTLTotalTutar.Enabled = false;
-            this.txtTLTotalTutar.Location = new System.Drawing.Point(180, 94);
+            this.txtTLTotalTutar.Location = new System.Drawing.Point(189, 94);
             this.txtTLTotalTutar.MenuManager = this.barManager1;
             this.txtTLTotalTutar.Name = "txtTLTotalTutar";
-            this.txtTLTotalTutar.Size = new System.Drawing.Size(289, 20);
+            this.txtTLTotalTutar.Size = new System.Drawing.Size(280, 20);
             this.txtTLTotalTutar.StyleController = this.layoutControl1;
             this.txtTLTotalTutar.TabIndex = 7;
             // 
             // txtTLIndirimTutar
             // 
-            this.txtTLIndirimTutar.Location = new System.Drawing.Point(180, 118);
+            this.txtTLIndirimTutar.Location = new System.Drawing.Point(189, 118);
             this.txtTLIndirimTutar.MenuManager = this.barManager1;
             this.txtTLIndirimTutar.Name = "txtTLIndirimTutar";
-            this.txtTLIndirimTutar.Size = new System.Drawing.Size(289, 20);
+            this.txtTLIndirimTutar.Properties.BeepOnError = false;
+            this.txtTLIndirimTutar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtTLIndirimTutar.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtTLIndirimTutar.Properties.MaskSettings.Set("mask", "n");
+            this.txtTLIndirimTutar.Size = new System.Drawing.Size(280, 20);
             this.txtTLIndirimTutar.StyleController = this.layoutControl1;
             this.txtTLIndirimTutar.TabIndex = 8;
             this.txtTLIndirimTutar.EditValueChanged += new System.EventHandler(this.txtTLIndirimTutar_EditValueChanged);
@@ -271,7 +275,7 @@
             // 
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 47);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
             this.tabbedControlGroup1.Size = new System.Drawing.Size(473, 174);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,

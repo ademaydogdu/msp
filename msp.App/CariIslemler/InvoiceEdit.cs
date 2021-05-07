@@ -94,7 +94,7 @@ namespace Msp.App.CariIslemler
             }
             if (invoice == InvoiceType.SatisFaturasi || invoice == InvoiceType.AlımFaturası)
             {
-                if (__dll_InvoiceOwner.EFaturaNo == null || __dll_InvoiceOwner.EFaturaNo == "")
+                if (__dll_InvoiceOwner.FicheDocumentNo == null || __dll_InvoiceOwner.FicheDocumentNo == "")
                 {
                     XtraMessageBox.Show("Fatura No Giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     _return = true;

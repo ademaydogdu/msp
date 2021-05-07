@@ -1468,5 +1468,17 @@ namespace msp.App
 
      
         }
+
+        private void barButtonItem133_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AppLock frm = new AppLock();
+            frm.ShowDialog();
+        }
+
+        private void bbi_ProgramKilitle_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AppLock frm = new AppLock();
+            frm.ShowDialog();
+        }
     }
 }

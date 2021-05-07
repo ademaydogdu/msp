@@ -26,6 +26,7 @@ namespace Msp.App.Satis
             TotalPrice = _totalPrice;
             txtOranTotalTutar.EditValue = _totalPrice;
             txtTLTotalTutar.EditValue = _totalPrice;
+            layoutControlGroup2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             this.ShowDialog();
         }
 
@@ -83,9 +84,12 @@ namespace Msp.App.Satis
         {
             if (TotalPrice > 0)
             {
-                indirimTutar = Math.Round((TotalPrice * Convert.ToDecimal(txtIndirimOrani.EditValue)) / 100, 2);
-                lblIndirimTutar.Text = Convert.ToString(indirimTutar);
-                lblTotalDiscount.Text = Convert.ToString(Math.Round(TotalPrice - indirimTutar, 2));
+                if ((string)txtIndirimOrani.EditValue != "")
+                {
+                    indirimTutar = Math.Round((TotalPrice * Convert.ToDecimal(txtIndirimOrani.EditValue)) / 100, 2);
+                    lblIndirimTutar.Text = Convert.ToString(indirimTutar);
+                    lblTotalDiscount.Text = Convert.ToString(Math.Round(TotalPrice - indirimTutar, 2)); 
+                }
             }
         }
 
