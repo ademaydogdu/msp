@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.gc_SiparisList = new DevExpress.XtraGrid.GridControl();
             this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,6 +62,9 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -68,19 +72,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gc_SiparisList
             // 
             this.gc_SiparisList.DataSource = this.bs_SaleOwner;
             this.gc_SiparisList.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.gridView2;
+            gridLevelNode1.RelationName = "_SaleTrans";
+            this.gc_SiparisList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gc_SiparisList.Location = new System.Drawing.Point(0, 0);
             this.gc_SiparisList.MainView = this.gridView1;
             this.gc_SiparisList.Name = "gc_SiparisList";
             this.gc_SiparisList.Size = new System.Drawing.Size(754, 528);
             this.gc_SiparisList.TabIndex = 1;
             this.gc_SiparisList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView1,
+            this.gridView2});
             // 
             // bs_SaleOwner
             // 
@@ -107,6 +117,7 @@
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colRecId
             // 
@@ -341,6 +352,32 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProductName,
+            this.colProductPrice});
+            this.gridView2.GridControl = this.gc_SiparisList;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colProductName
+            // 
+            this.colProductName.Caption = "Ürün Adı";
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 0;
+            // 
+            // colProductPrice
+            // 
+            this.colProductPrice.Caption = "Ürün Fiyatı";
+            this.colProductPrice.FieldName = "ProductPrice";
+            this.colProductPrice.Name = "colProductPrice";
+            this.colProductPrice.Visible = true;
+            this.colProductPrice.VisibleIndex = 1;
+            // 
             // frmVeresiyeSatisList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,6 +401,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +441,8 @@
         private DevExpress.XtraBars.BarButtonItem bbi_VeresiyeKapat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductPrice;
     }
 }

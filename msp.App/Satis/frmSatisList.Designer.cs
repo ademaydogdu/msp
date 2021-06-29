@@ -29,7 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProductBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnitId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCaseId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gc_SiparisList = new DevExpress.XtraGrid.GridControl();
             this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,6 +55,8 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVeresiyeClosedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVeresiye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -68,12 +78,13 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
@@ -85,31 +96,94 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
             this.SuspendLayout();
             // 
-            // layoutControl1
+            // gridView2
             // 
-            this.layoutControl1.Controls.Add(this.gc_SiparisList);
-            this.layoutControl1.Controls.Add(this.panelControl1);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(895, 648);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProductBarcode,
+            this.colProductName,
+            this.colProductQuantity,
+            this.colProductPrice,
+            this.colProductAmount,
+            this.colUnitId,
+            this.colCaseId});
+            this.gridView2.GridControl = this.gc_SiparisList;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colProductBarcode
+            // 
+            this.colProductBarcode.Caption = "Ürün Barkodu";
+            this.colProductBarcode.FieldName = "ProductBarcode";
+            this.colProductBarcode.Name = "colProductBarcode";
+            this.colProductBarcode.Visible = true;
+            this.colProductBarcode.VisibleIndex = 0;
+            // 
+            // colProductName
+            // 
+            this.colProductName.Caption = "Ürün Adı";
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 1;
+            // 
+            // colProductQuantity
+            // 
+            this.colProductQuantity.Caption = "Adet";
+            this.colProductQuantity.FieldName = "ProductQuantity";
+            this.colProductQuantity.Name = "colProductQuantity";
+            this.colProductQuantity.Visible = true;
+            this.colProductQuantity.VisibleIndex = 2;
+            // 
+            // colProductPrice
+            // 
+            this.colProductPrice.Caption = "Ürün Fiyatı";
+            this.colProductPrice.FieldName = "ProductPrice";
+            this.colProductPrice.Name = "colProductPrice";
+            this.colProductPrice.Visible = true;
+            this.colProductPrice.VisibleIndex = 3;
+            // 
+            // colProductAmount
+            // 
+            this.colProductAmount.Caption = "Ürün Toplamı";
+            this.colProductAmount.FieldName = "ProductAmount";
+            this.colProductAmount.Name = "colProductAmount";
+            this.colProductAmount.Visible = true;
+            this.colProductAmount.VisibleIndex = 4;
+            // 
+            // colUnitId
+            // 
+            this.colUnitId.Caption = "Birim";
+            this.colUnitId.FieldName = "UnitId";
+            this.colUnitId.Name = "colUnitId";
+            this.colUnitId.Visible = true;
+            this.colUnitId.VisibleIndex = 5;
+            // 
+            // colCaseId
+            // 
+            this.colCaseId.Caption = "Kasa";
+            this.colCaseId.FieldName = "CaseId";
+            this.colCaseId.Name = "colCaseId";
+            this.colCaseId.Visible = true;
+            this.colCaseId.VisibleIndex = 6;
             // 
             // gc_SiparisList
             // 
             this.gc_SiparisList.DataSource = this.bs_SaleOwner;
+            gridLevelNode1.LevelTemplate = this.gridView2;
+            gridLevelNode1.RelationName = "_SaleTrans";
+            this.gc_SiparisList.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gc_SiparisList.Location = new System.Drawing.Point(12, 62);
             this.gc_SiparisList.MainView = this.gridView1;
             this.gc_SiparisList.Name = "gc_SiparisList";
             this.gc_SiparisList.Size = new System.Drawing.Size(871, 574);
             this.gc_SiparisList.TabIndex = 0;
             this.gc_SiparisList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView1,
+            this.gridView2});
             // 
             // bs_SaleOwner
             // 
@@ -140,6 +214,7 @@
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colRecId
@@ -249,6 +324,22 @@
             this.colVeresiye.Name = "colVeresiye";
             this.colVeresiye.Visible = true;
             this.colVeresiye.VisibleIndex = 11;
+            // 
+            // bs_SaleTrans
+            // 
+            this.bs_SaleTrans.DataSource = typeof(Msp.Models.Models.Sale.SaleTransDTO);
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.gc_SiparisList);
+            this.layoutControl1.Controls.Add(this.panelControl1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(895, 648);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
             // panelControl1
             // 
@@ -475,11 +566,13 @@
             this.Text = "Satış Listesi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSatisList_FormClosing);
             this.Load += new System.EventHandler(this.frmSatisList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SiparisList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
@@ -491,7 +584,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,5 +631,13 @@
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraGrid.Columns.GridColumn colVeresiyeClosedDate;
         private DevExpress.XtraGrid.Columns.GridColumn colVeresiye;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductBarcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCaseId;
     }
 }

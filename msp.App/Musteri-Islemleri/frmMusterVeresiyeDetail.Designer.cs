@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.bbi_VeresiyeKapat = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_BakiyedenDus = new DevExpress.XtraBars.BarButtonItem();
-            this.bbi_Closed = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProductBarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnitId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCaseId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bs_SaleOwner = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,117 +60,105 @@
             this.colAlinanPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCaseId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVeresiyeClosedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.bbi_VeresiyeKapat = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_BakiyedenDus = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiBakiyeAdd = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_Closed = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
             this.bs_SaleTrans = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).BeginInit();
             this.SuspendLayout();
             // 
-            // barManager1
+            // gridView2
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar3});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Images = this.img_bar;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bbi_VeresiyeKapat,
-            this.bbi_Closed,
-            this.bbi_BakiyedenDus});
-            this.barManager1.MaxItemId = 3;
-            this.barManager1.StatusBar = this.bar3;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProductBarcode,
+            this.colProductName,
+            this.colProductQuantity,
+            this.colProductPrice,
+            this.colProductAmount,
+            this.colUnitId,
+            this.colCaseId1});
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // bar3
+            // colProductBarcode
             // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_VeresiyeKapat),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_BakiyedenDus),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Closed, true)});
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
+            this.colProductBarcode.Caption = "Ürün Barkodu";
+            this.colProductBarcode.FieldName = "ProductBarcode";
+            this.colProductBarcode.Name = "colProductBarcode";
+            this.colProductBarcode.Visible = true;
+            this.colProductBarcode.VisibleIndex = 0;
             // 
-            // bbi_VeresiyeKapat
+            // colProductName
             // 
-            this.bbi_VeresiyeKapat.Caption = "Veresiye Kapat";
-            this.bbi_VeresiyeKapat.Id = 0;
-            this.bbi_VeresiyeKapat.ImageOptions.ImageIndex = 0;
-            this.bbi_VeresiyeKapat.Name = "bbi_VeresiyeKapat";
-            this.bbi_VeresiyeKapat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbi_VeresiyeKapat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_VeresiyeKapat_ItemClick);
+            this.colProductName.Caption = "Ürün Adı";
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 1;
             // 
-            // bbi_BakiyedenDus
+            // colProductQuantity
             // 
-            this.bbi_BakiyedenDus.Caption = "Bakiyeden Düş";
-            this.bbi_BakiyedenDus.Id = 2;
-            this.bbi_BakiyedenDus.ImageOptions.ImageIndex = 1;
-            this.bbi_BakiyedenDus.Name = "bbi_BakiyedenDus";
-            this.bbi_BakiyedenDus.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbi_BakiyedenDus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_BakiyedenDus_ItemClick);
+            this.colProductQuantity.Caption = "Ürün Adeti";
+            this.colProductQuantity.FieldName = "ProductQuantity";
+            this.colProductQuantity.Name = "colProductQuantity";
+            this.colProductQuantity.Visible = true;
+            this.colProductQuantity.VisibleIndex = 2;
             // 
-            // bbi_Closed
+            // colProductPrice
             // 
-            this.bbi_Closed.Caption = "Vazgeç";
-            this.bbi_Closed.Id = 1;
-            this.bbi_Closed.ImageOptions.ImageIndex = 2;
-            this.bbi_Closed.Name = "bbi_Closed";
-            this.bbi_Closed.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Closed_ItemClick);
+            this.colProductPrice.Caption = "Ürün Fiyatı";
+            this.colProductPrice.FieldName = "ProductPrice";
+            this.colProductPrice.Name = "colProductPrice";
+            this.colProductPrice.Visible = true;
+            this.colProductPrice.VisibleIndex = 3;
             // 
-            // barDockControlTop
+            // colProductAmount
             // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(790, 0);
+            this.colProductAmount.Caption = "Ürün Toplam Fiyat";
+            this.colProductAmount.FieldName = "ProductAmount";
+            this.colProductAmount.Name = "colProductAmount";
+            this.colProductAmount.Visible = true;
+            this.colProductAmount.VisibleIndex = 4;
             // 
-            // barDockControlBottom
+            // colUnitId
             // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 515);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(790, 36);
+            this.colUnitId.Caption = "Birim";
+            this.colUnitId.FieldName = "UnitId";
+            this.colUnitId.Name = "colUnitId";
+            this.colUnitId.Visible = true;
+            this.colUnitId.VisibleIndex = 5;
             // 
-            // barDockControlLeft
+            // colCaseId1
             // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 515);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(790, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 515);
-            // 
-            // img_bar
-            // 
-            this.img_bar.ImageSize = new System.Drawing.Size(26, 26);
-            this.img_bar.Add("saveandclose", "image://svgimages/outlook inspired/saveandclose.svg");
-            this.img_bar.Add("bottom10items", "image://svgimages/spreadsheet/bottom10items.svg");
-            this.img_bar.Add("del", "image://svgimages/diagramicons/del.svg");
+            this.colCaseId1.Caption = "Kasa";
+            this.colCaseId1.FieldName = "CaseId";
+            this.colCaseId1.Name = "colCaseId1";
+            this.colCaseId1.Visible = true;
+            this.colCaseId1.VisibleIndex = 6;
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.bs_SaleOwner;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.gridView2;
+            gridLevelNode1.RelationName = "_SaleTrans";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
@@ -179,7 +166,8 @@
             this.gridControl1.Size = new System.Drawing.Size(790, 515);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView1,
+            this.gridView2});
             // 
             // bs_SaleOwner
             // 
@@ -213,6 +201,7 @@
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colRecId
             // 
@@ -347,6 +336,116 @@
             this.colVeresiyeClosedDate.Visible = true;
             this.colVeresiyeClosedDate.VisibleIndex = 18;
             // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Images = this.img_bar;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.bbi_VeresiyeKapat,
+            this.bbi_Closed,
+            this.bbi_BakiyedenDus,
+            this.bbiBakiyeAdd});
+            this.barManager1.MaxItemId = 4;
+            this.barManager1.StatusBar = this.bar3;
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_VeresiyeKapat),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_BakiyedenDus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiBakiyeAdd),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Closed, true)});
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
+            // bbi_VeresiyeKapat
+            // 
+            this.bbi_VeresiyeKapat.Caption = "Veresiye Kapat";
+            this.bbi_VeresiyeKapat.Id = 0;
+            this.bbi_VeresiyeKapat.ImageOptions.ImageIndex = 0;
+            this.bbi_VeresiyeKapat.Name = "bbi_VeresiyeKapat";
+            this.bbi_VeresiyeKapat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_VeresiyeKapat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_VeresiyeKapat_ItemClick);
+            // 
+            // bbi_BakiyedenDus
+            // 
+            this.bbi_BakiyedenDus.Caption = "Bakiyeden Düş";
+            this.bbi_BakiyedenDus.Id = 2;
+            this.bbi_BakiyedenDus.ImageOptions.ImageIndex = 1;
+            this.bbi_BakiyedenDus.Name = "bbi_BakiyedenDus";
+            this.bbi_BakiyedenDus.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbi_BakiyedenDus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_BakiyedenDus_ItemClick);
+            // 
+            // bbiBakiyeAdd
+            // 
+            this.bbiBakiyeAdd.Caption = "Baki/Elden Ekle";
+            this.bbiBakiyeAdd.Id = 3;
+            this.bbiBakiyeAdd.ImageOptions.ImageIndex = 3;
+            this.bbiBakiyeAdd.Name = "bbiBakiyeAdd";
+            this.bbiBakiyeAdd.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiBakiyeAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiBakiyeAdd_ItemClick);
+            // 
+            // bbi_Closed
+            // 
+            this.bbi_Closed.Caption = "Vazgeç";
+            this.bbi_Closed.Id = 1;
+            this.bbi_Closed.ImageOptions.ImageIndex = 2;
+            this.bbi_Closed.Name = "bbi_Closed";
+            this.bbi_Closed.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_Closed_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(790, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 515);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(790, 36);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 515);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(790, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 515);
+            // 
+            // img_bar
+            // 
+            this.img_bar.ImageSize = new System.Drawing.Size(26, 26);
+            this.img_bar.Add("saveandclose", "image://svgimages/outlook inspired/saveandclose.svg");
+            this.img_bar.Add("bottom10items", "image://svgimages/spreadsheet/bottom10items.svg");
+            this.img_bar.Add("del", "image://svgimages/diagramicons/del.svg");
+            this.img_bar.Add("above average", "image://svgimages/spreadsheet/above average.svg");
+            // 
             // frmMusterVeresiyeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,11 +462,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMusterVeresiyeDetail_FormClosing);
             this.Load += new System.EventHandler(this.frmMusterVeresiyeDetail_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMusterVeresiyeDetail_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleTrans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -409,5 +509,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCaseId;
         private DevExpress.XtraGrid.Columns.GridColumn colVeresiyeClosedDate;
         private System.Windows.Forms.BindingSource bs_SaleTrans;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductBarcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCaseId1;
+        private DevExpress.XtraBars.BarButtonItem bbiBakiyeAdd;
     }
 }

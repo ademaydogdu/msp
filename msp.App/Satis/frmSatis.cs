@@ -693,6 +693,21 @@ namespace msp.App
 
         private void txtParaUstu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+
+            //ButonIndex - 2 - 20TL
+            if (e.Button.Index == 2)
+            {
+                txtParaUstu.EditValue = "20";
+            }
+            if (e.Button.Index == 3)
+            {
+                txtParaUstu.EditValue = "50";
+            }
+            if (e.Button.Index == 4)
+            {
+                txtParaUstu.EditValue = "100";
+            }
+
             var totalKdv = __dl_List_SaleTrans.Sum(x => x.TaxAmount);
             var totalAmount = __dl_List_SaleTrans.Sum(x => x.ProductAmount);
             if (totalAmount != 0)

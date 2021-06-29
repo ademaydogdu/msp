@@ -35,6 +35,7 @@ namespace Msp.App.Satis
         #region Record
         private void do_refresh(DateTime date)
         {
+
             try
             {
                 __dll_SaleOwner = _repository.Run<SaleService, List<SaleOwnerDTO>>(x => x.GetList_Date(date));
@@ -44,7 +45,6 @@ namespace Msp.App.Satis
             {
                 XtraMessageBox.Show(ex.Message);
             }
-
 
         }
 
@@ -131,6 +131,20 @@ namespace Msp.App.Satis
             if (date != new DateTime(0001,01,01))
             {
                 e.Appearance.BackColor = Color.LightBlue;
+            }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            SaleOwnerDTO oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                var saleTrans = _repository.Run<SaleService, List<SaleTransDTO>>(x => x.Get_List_SaleTrans_RecID(oRow.RecId));
+                if (saleTrans.Count > 0)
+                {
+                    oRow._SaleTrans = saleTrans;
+                }
+                gc_SiparisList.RefreshDataSource();
             }
         }
     }

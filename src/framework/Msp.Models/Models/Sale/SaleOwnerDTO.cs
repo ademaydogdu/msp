@@ -30,7 +30,6 @@ namespace Msp.Models.Models.Sale
         public DateTime? VeresiyeClosedDate { get; set; }
         public int? DovizId { get; set; }
 
-
         [NotMapped]
         public List<SaleTransDTO> _SaleTrans { get; set; }
 

@@ -32,7 +32,7 @@
     <TargetCulture>tr-TR</TargetCulture>
     <ProductName>Shop Center</ProductName>
     <PublisherName>PC-LAB</PublisherName>
-    <ApplicationRevision>70</ApplicationRevision>
+    <ApplicationRevision>72</ApplicationRevision>
     <ApplicationVersion>21.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -763,6 +763,12 @@
     <Compile Include="Report\Satis\HaftalikSatisChart.Designer.cs">
       <DependentUpon>HaftalikSatisChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Musteri-Islemleri\frmBakiyeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri-Islemleri\frmBakiyeAdd.Designer.cs">
+      <DependentUpon>frmBakiyeAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satis\frmChangeMoney.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1227,6 +1233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Satis\HaftalikSatisChart.resx">
       <DependentUpon>HaftalikSatisChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri-Islemleri\frmBakiyeAdd.resx">
+      <DependentUpon>frmBakiyeAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Satis\frmChangeMoney.resx">
       <DependentUpon>frmChangeMoney.cs</DependentUpon>

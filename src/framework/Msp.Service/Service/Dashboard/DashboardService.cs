@@ -33,7 +33,14 @@ namespace Msp.Service.Service.Dashboard
             }
         }
 
-
+        public List<SaleOwnerDTO> GetList_SaleOwner_Veresiye()
+        {
+            using (var _db = new MspDbContext())
+            {
+                var result = base.Map<List<SaleOwner>, List<SaleOwnerDTO>>(_db.SaleOwner.Where(x => x.Deleted != true && x.Veresiye == true).ToList());
+                return result;
+            }
+        }
 
     }
 

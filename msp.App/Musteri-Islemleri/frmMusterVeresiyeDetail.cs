@@ -13,6 +13,7 @@ using Msp.App.Tool;
 using Msp.Service.Service.Sale;
 using Msp.Models.Models.Sale;
 using Msp.Models.Models.Utilities;
+using Msp.App.Satis;
 
 namespace Msp.App.Musteri_Islemleri
 {
@@ -82,6 +83,7 @@ namespace Msp.App.Musteri_Islemleri
             if (oRow != null)
             {
                 frmBakidenDus frm = new frmBakidenDus();
+                frm._saleOwner = oRow;
                 frm.ShowDialog(); 
             }
         }
@@ -91,6 +93,31 @@ namespace Msp.App.Musteri_Islemleri
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
+            }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            var oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                var saleTrans = _repository.Run<SaleService, List<SaleTransDTO>>(x => x.Get_List_SaleTrans_RecID(oRow.RecId));
+                if (saleTrans.Count > 0)
+                {
+                    oRow._SaleTrans = saleTrans;
+                }
+                gridControl1.RefreshDataSource();
+            }
+        }
+
+        private void bbiBakiyeAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var oRow = (SaleOwnerDTO)gridView1.GetFocusedRow();
+            if (oRow != null)
+            {
+                frmBakiyeAdd frm = new frmBakiyeAdd();
+                frm.saleOwner = oRow;
+                frm.ShowDialog();
             }
         }
     }

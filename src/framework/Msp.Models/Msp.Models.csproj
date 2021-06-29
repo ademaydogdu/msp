@@ -57,6 +57,7 @@
     <Compile Include="Models\CurrencyTypeDTO.cs" />
     <Compile Include="Models\CurrentGroupDefinitionsDTO.cs" />
     <Compile Include="Models\CustomersDTO.cs" />
+    <Compile Include="Models\Customer\CustomerBakiyeAddFilter.cs" />
     <Compile Include="Models\Daily\DailyOwnerDTO.cs" />
     <Compile Include="Models\Daily\DailyRequest.cs" />
     <Compile Include="Models\Daily\DailyTransDTO.cs" />

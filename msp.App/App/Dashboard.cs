@@ -56,7 +56,9 @@ namespace Msp.App.App
             var SaleOwner = _repository.Run<DashboardService, List<SaleOwnerDTO>>(x => x.GetList_SaleOwner());
             lblTotalCiro.Text = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", SaleOwner.Sum(x => x.TotalPrice));
 
- 
+            var SaleOwner_veresiye = _repository.Run<DashboardService, List<SaleOwnerDTO>>(x => x.GetList_SaleOwner_Veresiye());
+            lblVeresiyeTutar.Text = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", SaleOwner.Sum(x => x.TotalPrice));
+
 
         }
     }

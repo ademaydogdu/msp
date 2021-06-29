@@ -1,6 +1,7 @@
-﻿namespace Msp.App.Musteri_Islemleri
+﻿
+namespace Msp.App.Satis
 {
-    partial class frmBakidenDus
+    partial class frmBakiyeAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -29,55 +30,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.txtTutar = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.bbi_BakiyedenDus = new DevExpress.XtraBars.BarButtonItem();
+            this.bbi_BakiyedenAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbi_Closed = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.img_bar = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.lblTutar = new DevExpress.XtraLayout.SimpleLabelItem();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblTutar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.txtTutar);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(428, 65);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // txtTutar
-            // 
-            this.txtTutar.Location = new System.Drawing.Point(85, 29);
-            this.txtTutar.MenuManager = this.barManager1;
-            this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Properties.DisplayFormat.FormatString = "n2";
-            this.txtTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtTutar.Properties.EditFormat.FormatString = "n2";
-            this.txtTutar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtTutar.Size = new System.Drawing.Size(331, 20);
-            this.txtTutar.StyleController = this.layoutControl1;
-            this.txtTutar.TabIndex = 4;
             // 
             // barManager1
             // 
@@ -90,7 +66,7 @@
             this.barManager1.Form = this;
             this.barManager1.Images = this.img_bar;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bbi_BakiyedenDus,
+            this.bbi_BakiyedenAdd,
             this.bbi_Closed});
             this.barManager1.MaxItemId = 2;
             this.barManager1.StatusBar = this.bar3;
@@ -103,20 +79,20 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_BakiyedenDus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbi_BakiyedenAdd),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbi_Closed)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
-            // bbi_BakiyedenDus
+            // bbi_BakiyedenAdd
             // 
-            this.bbi_BakiyedenDus.Caption = "Bakiyeden Düş";
-            this.bbi_BakiyedenDus.Id = 0;
-            this.bbi_BakiyedenDus.ImageOptions.ImageIndex = 2;
-            this.bbi_BakiyedenDus.Name = "bbi_BakiyedenDus";
-            this.bbi_BakiyedenDus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_BakiyedenDus_ItemClick);
+            this.bbi_BakiyedenAdd.Caption = "Bakiyeden Ekle";
+            this.bbi_BakiyedenAdd.Id = 0;
+            this.bbi_BakiyedenAdd.ImageOptions.ImageIndex = 3;
+            this.bbi_BakiyedenAdd.Name = "bbi_BakiyedenAdd";
+            this.bbi_BakiyedenAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbi_BakiyedenAdd_ItemClick);
             // 
             // bbi_Closed
             // 
@@ -132,15 +108,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(428, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(536, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 65);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 88);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(428, 36);
+            this.barDockControlBottom.Size = new System.Drawing.Size(536, 36);
             // 
             // barDockControlLeft
             // 
@@ -148,15 +124,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 65);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 88);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(428, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(536, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 65);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 88);
             // 
             // img_bar
             // 
@@ -164,70 +140,91 @@
             this.img_bar.Add("chartaxistitlehorizontal_none", "image://svgimages/spreadsheet/chartaxistitlehorizontal_none.svg");
             this.img_bar.Add("del", "image://svgimages/diagramicons/del.svg");
             this.img_bar.Add("bottom10items", "image://svgimages/spreadsheet/bottom10items.svg");
+            this.img_bar.Add("above average", "image://svgimages/spreadsheet/above average.svg");
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Bakiyeden Düş";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.ImageIndex = 2;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Kapat";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.ImageOptions.ImageIndex = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(536, 0);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 88);
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(536, 88);
+            this.layoutControl1.TabIndex = 8;
+            this.layoutControl1.Text = "layoutControl1";
             // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.simpleLabelItem1,
-            this.lblTutar});
+            this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(428, 65);
+            this.Root.Size = new System.Drawing.Size(536, 88);
             this.Root.TextVisible = false;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(85, 12);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(439, 20);
+            this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.TabIndex = 4;
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.txtTutar;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 17);
+            this.layoutControlItem1.Control = this.textEdit1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(408, 28);
-            this.layoutControlItem1.Text = "Tutar";
+            this.layoutControlItem1.Size = new System.Drawing.Size(516, 68);
+            this.layoutControlItem1.Text = "Tutar Giriniz.";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(61, 13);
             // 
-            // simpleLabelItem1
-            // 
-            this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
-            this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.Size = new System.Drawing.Size(111, 17);
-            this.simpleLabelItem1.Text = "Toplam Borç";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(61, 13);
-            // 
-            // lblTutar
-            // 
-            this.lblTutar.AllowHotTrack = false;
-            this.lblTutar.Location = new System.Drawing.Point(111, 0);
-            this.lblTutar.Name = "lblTutar";
-            this.lblTutar.Size = new System.Drawing.Size(297, 17);
-            this.lblTutar.TextSize = new System.Drawing.Size(61, 13);
-            // 
-            // frmBakidenDus
+            // frmBakiyeAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 101);
+            this.ClientSize = new System.Drawing.Size(536, 124);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmBakidenDus";
+            this.Name = "frmBakiyeAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lütfen Düşülcek Tutarı Giriniz";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBakidenDus_FormClosing);
-            this.Load += new System.EventHandler(this.frmBakidenDus_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmBakidenDus_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtTutar.Properties)).EndInit();
+            this.Text = "Lütfen Eklenecek Bakiyeyi Giriniz.";
+            this.Load += new System.EventHandler(this.frmBakiyeAdd_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmBakiyeAdd_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblTutar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,20 +232,21 @@
 
         #endregion
 
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.BarButtonItem bbi_BakiyedenAdd;
+        private DevExpress.XtraBars.BarButtonItem bbi_Closed;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.TextEdit txtTutar;
-        private DevExpress.XtraBars.BarButtonItem bbi_BakiyedenDus;
-        private DevExpress.XtraBars.BarButtonItem bbi_Closed;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.Utils.SvgImageCollection img_bar;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
-        private DevExpress.XtraLayout.SimpleLabelItem lblTutar;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

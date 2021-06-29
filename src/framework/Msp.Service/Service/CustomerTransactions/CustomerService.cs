@@ -1,15 +1,18 @@
 ﻿using Msp.Entity.Entities;
 using Msp.Models.Models;
+using Msp.Models.Models.Customer;
+using Msp.Models.Models.Sale;
 using Msp.Models.Models.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Msp.Service.Service.CustomerTransactions
 {
-   public class CustomerService : BaseService
+    public class CustomerService : BaseService
     {
 
         #region Customers
@@ -112,6 +115,92 @@ namespace Msp.Service.Service.CustomerTransactions
                 }
                 _db.SaveChanges();
             }
+            return response;
+        }
+
+
+        public ActionResponse<SaleOwnerDTO> Update_Veresiye(SaleOwnerDTO model)
+        {
+            ActionResponse<SaleOwnerDTO> response = new ActionResponse<SaleOwnerDTO>()
+            {
+                Response = model,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+                try
+                {
+                    var entity = _db.SaleOwner.FirstOrDefault(x => x.RecId == response.Response.RecId);
+                    if (entity != null)
+                    {
+                        if (model.TotalPrice == 0)
+                        {
+                            model.Veresiye = false;
+                            model.VeresiyeClosedDate = DateTime.Now;
+                        }
+                        _db.Entry(entity).CurrentValues.SetValues(model);
+                        _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    _db.SaveChanges();
+
+                }
+                catch (Exception e)
+                {
+                    response.Message = e.ToString();
+                    response.ResponseType = ResponseType.Error;
+                }
+            }
+            return response;
+        }
+
+
+        public ActionResponse<SaleOwnerDTO> UpdateBakiyeAdd(CustomerBakiyeAddFilter result)
+        {
+            ActionResponse<SaleOwnerDTO> response = new ActionResponse<SaleOwnerDTO>()
+            {
+                Response = result._saleOwner,
+                ResponseType = ResponseType.Ok
+            };
+            using (MspDbContext _db = new MspDbContext())
+            {
+
+                if (result._saleOwner.RecId > 0)
+                {
+                    SaleTrans _trans = new SaleTrans()
+                    {
+                        SaleOwnerId = result._saleOwner.RecId,
+                        ProductId = 0,
+                        ProductName = "Elden Veresiye - " + DateTime.Today,
+                        UnitId = 0,
+                        Deleted = false,
+                        CaseId = result._saleOwner.CaseId,
+                        ProductBarcode = "",
+                        ProductQuantity = 1,
+                        ProductAmount = result.Amount,
+                        ProductPrice = 0,
+                        ProductDate = new DateTime(1900, 1, 1),       
+                        
+                    };
+                    _db.SaleTrans.Add(_trans);
+                    _db.SaveChanges();
+
+                    var entity = _db.SaleOwner.FirstOrDefault(x => x.RecId == result._saleOwner.RecId);
+                    if (entity != null)
+                    {
+                        var trans = _db.SaleTrans.Where(x => x.SaleOwnerId == result._saleOwner.RecId).ToList();
+                        result._saleOwner.TotalPrice = trans.Sum(x => x.ProductAmount).GetValueOrDefault();
+                        result._saleOwner.TotalPriceText = string.Format(CultureInfo.CreateSpecificCulture("tr-TR"), "{0:C}", trans.Sum(x => x.ProductAmount).GetValueOrDefault());
+                        result._saleOwner.NetPrice = trans.Sum(x => x.ProductAmount).GetValueOrDefault();
+
+                        _db.Entry(entity).CurrentValues.SetValues(result._saleOwner);
+                        _db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                        _db.SaveChanges();
+                    }
+
+                }
+
+            }
+
             return response;
         }
 

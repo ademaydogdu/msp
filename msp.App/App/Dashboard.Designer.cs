@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.svgImageBox3 = new DevExpress.XtraEditors.SvgImageBox();
@@ -62,6 +62,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sic_img = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.svgImageBox5 = new DevExpress.XtraEditors.SvgImageBox();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.lblVeresiyeTutar = new System.Windows.Forms.Label();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -77,9 +82,9 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwnerWeek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -90,10 +95,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sic_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.panelControl4);
             this.layoutControl1.Controls.Add(this.panelControl5);
             this.layoutControl1.Controls.Add(this.panelControl3);
             this.layoutControl1.Controls.Add(this.panelControl2);
@@ -103,7 +113,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1122, 728);
+            this.layoutControl1.Size = new System.Drawing.Size(1425, 728);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -143,7 +153,7 @@
             // 
             this.lblTotalCiro.AutoSize = true;
             this.lblTotalCiro.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.lblTotalCiro.Location = new System.Drawing.Point(121, 4);
+            this.lblTotalCiro.Location = new System.Drawing.Point(104, 4);
             this.lblTotalCiro.Name = "lblTotalCiro";
             this.lblTotalCiro.Size = new System.Drawing.Size(120, 48);
             this.lblTotalCiro.TabIndex = 0;
@@ -227,7 +237,7 @@
             // 
             this.lblProductCount.AutoSize = true;
             this.lblProductCount.Font = new System.Drawing.Font("Tahoma", 30F);
-            this.lblProductCount.Location = new System.Drawing.Point(160, 4);
+            this.lblProductCount.Location = new System.Drawing.Point(149, 4);
             this.lblProductCount.Name = "lblProductCount";
             this.lblProductCount.Size = new System.Drawing.Size(64, 48);
             this.lblProductCount.TabIndex = 0;
@@ -279,28 +289,28 @@
             // 
             this.chartControl1.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chartControl1.DataSource = this.bs_SaleOwnerWeek;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram1;
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram2;
             this.chartControl1.Legend.Name = "Default Legend";
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.Location = new System.Drawing.Point(24, 141);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.SeriesDataMember = "ToplamTutar";
-            series1.Name = "Series 1";
-            series1.ValueDataMembersSerializable = "ToplamTutar";
+            series2.Name = "Series 1";
+            series2.ValueDataMembersSerializable = "ToplamTutar";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+        series2};
             this.chartControl1.SeriesTemplate.ArgumentDataMember = "Date";
             this.chartControl1.SeriesTemplate.DateTimeSummaryOptions.MeasureUnit = DevExpress.XtraCharts.DateTimeMeasureUnit.Week;
             this.chartControl1.SeriesTemplate.DateTimeSummaryOptions.MeasureUnitMultiplier = 1;
-            sideBySideBarSeriesLabel1.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Center;
-            this.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel1;
+            sideBySideBarSeriesLabel2.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Center;
+            this.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel2;
             this.chartControl1.SeriesTemplate.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             this.chartControl1.SeriesTemplate.LegendName = "Default Legend";
             this.chartControl1.SeriesTemplate.SeriesDataMember = "ToplamTutar";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "ToplamTutar";
-            this.chartControl1.Size = new System.Drawing.Size(1074, 563);
+            this.chartControl1.Size = new System.Drawing.Size(1377, 563);
             this.chartControl1.TabIndex = 4;
             // 
             // bs_SaleOwnerWeek
@@ -317,9 +327,10 @@
             this.layoutControlGroup1,
             this.layoutControlItem2,
             this.layoutControlItem8,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem3});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1122, 728);
+            this.Root.Size = new System.Drawing.Size(1425, 728);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem6
@@ -355,7 +366,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 96);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1102, 612);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1405, 612);
             this.layoutControlGroup1.Text = "Haftalık Satış Listesi";
             // 
             // layoutControlItem1
@@ -363,7 +374,7 @@
             this.layoutControlItem1.Control = this.chartControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1078, 567);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1381, 567);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -394,9 +405,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(1075, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(1365, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(27, 96);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(40, 96);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // timer1
@@ -404,11 +415,65 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panelControl4
+            // 
+            this.panelControl4.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.panelControl4.Appearance.Options.UseBackColor = true;
+            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl4.Controls.Add(this.svgImageBox5);
+            this.panelControl4.Controls.Add(this.labelControl5);
+            this.panelControl4.Controls.Add(this.lblVeresiyeTutar);
+            this.panelControl4.Location = new System.Drawing.Point(1087, 12);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(286, 92);
+            this.panelControl4.TabIndex = 12;
+            // 
+            // svgImageBox5
+            // 
+            this.svgImageBox5.Location = new System.Drawing.Point(12, 4);
+            this.svgImageBox5.Name = "svgImageBox5";
+            this.svgImageBox5.Size = new System.Drawing.Size(64, 48);
+            this.svgImageBox5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox5.SvgImage")));
+            this.svgImageBox5.TabIndex = 2;
+            this.svgImageBox5.Text = "svgImageBox1";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 17F);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(12, 54);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(226, 28);
+            this.labelControl5.TabIndex = 1;
+            this.labelControl5.Text = "Toplam Veresiye Tutar";
+            // 
+            // lblVeresiyeTutar
+            // 
+            this.lblVeresiyeTutar.AutoSize = true;
+            this.lblVeresiyeTutar.Font = new System.Drawing.Font("Tahoma", 30F);
+            this.lblVeresiyeTutar.Location = new System.Drawing.Point(110, 4);
+            this.lblVeresiyeTutar.Name = "lblVeresiyeTutar";
+            this.lblVeresiyeTutar.Size = new System.Drawing.Size(120, 48);
+            this.lblVeresiyeTutar.TabIndex = 0;
+            this.lblVeresiyeTutar.Text = "₺0,00";
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.panelControl4;
+            this.layoutControlItem3.Location = new System.Drawing.Point(1075, 0);
+            this.layoutControlItem3.MaxSize = new System.Drawing.Size(290, 96);
+            this.layoutControlItem3.MinSize = new System.Drawing.Size(290, 96);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(290, 96);
+            this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 728);
+            this.ClientSize = new System.Drawing.Size(1425, 728);
             this.Controls.Add(this.layoutControl1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -431,9 +496,9 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_SaleOwnerWeek)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -445,6 +510,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sic_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,5 +550,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.SvgImageBox svgImageBox5;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private System.Windows.Forms.Label lblVeresiyeTutar;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

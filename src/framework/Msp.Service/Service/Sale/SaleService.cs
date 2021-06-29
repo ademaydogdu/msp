@@ -172,6 +172,14 @@ namespace Msp.Service.Service.Sale
                 return result;
             }
         }
+        public List<SaleTransDTO> Get_List_SaleTrans_RecID(int saleOwnerId)
+        {
+            using (var _db = new MspDbContext())
+            {
+                var result = base.Map<List<SaleTrans>, List<SaleTransDTO>>(_db.SaleTrans.Where(x =>  x.SaleOwnerId == saleOwnerId).ToList());
+                return result;
+            }
+        }
 
         public List<SaleOwnerDTO> GetList_VeresiyeSale()
         {
