@@ -32,8 +32,8 @@
     <TargetCulture>tr-TR</TargetCulture>
     <ProductName>Shop Center</ProductName>
     <PublisherName>PC-LAB</PublisherName>
-    <ApplicationRevision>72</ApplicationRevision>
-    <ApplicationVersion>21.1.1.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>21.6.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
